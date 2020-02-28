@@ -3,10 +3,47 @@
 <head>
   <meta charset="UTF-8">
   <title>Leo Chan</title>
+  <link href="style/character_display.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-  <h1>Hello World</h1>
-  <h2>Magia Record</h2>
-  <img src="/assets/magireco/ui/frame_rank_5.png" title="frame_rank_5">
+  <header>
+    <h1>Leo's Testing Website</h1>
+  </header>
+  
+  <div id="options">
+    <tr>
+      <td>Name:</td>
+      <td><select id="id_select"></select></td>
+    </tr>
+    <tr>
+      <td>Attribute: 
+      <td><select id="attr_select">
+        <option value="dark">Dark</option>
+        <option value="fire">Fire</option>
+        <option value="light">Light</option>
+        <option value="forest">Forest</option>
+        <option value="void">Void</option>
+        <option value="water">Water</option>
+      </select></td>
+    </tr>
+    <tr>
+      <td>Rank:</td>
+      <td><select id="rank_select">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select></td> 
+    </tr>
+  </div>
+
+  <div id="display">
+    
+  </div>
+
+
+  <script type="javascript" src="/assets/magireco/collection.json"></script>
+  <script src="script/index.js"></script>
 </body>
 </html>

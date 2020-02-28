@@ -1,0 +1,26 @@
+#display {
+  margin-top: 20px;
+  position: relative;
+
+}
+
+#display .background, .frame_rank, .star_rank, .att {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  align-items: center;
+  vertical-align: middle;
+}
+
+#display .card_image {
+  -webkit-mask-image: url(/assets/magireco/ui/frame_mask.png);
+  -webkit-mask-position-x: +9px;
+  -webkit-mask-position-y: +16px;
+  -webkit-mask-repeat: no-repeat;
+  mask-image: url(/assets/magireco/ui/frame_mask.png);
+  mask-position: -9px, -16px;
+  mask-repeat: no-repeat;
+  position: absolute;
+  left: -9px;
+  top: -16px;
+}
