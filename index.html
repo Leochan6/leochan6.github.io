@@ -11,31 +11,66 @@
   </header>
   
   <div id="options">
-    <tr>
-      <td>Name:</td>
-      <td><select id="id_select"></select></td>
-    </tr>
-    <tr>
-      <td>Attribute: 
-      <td><select id="attr_select">
-        <option value="dark">Dark</option>
-        <option value="fire">Fire</option>
-        <option value="light">Light</option>
-        <option value="forest">Forest</option>
-        <option value="void">Void</option>
-        <option value="water">Water</option>
-      </select></td>
-    </tr>
-    <tr>
-      <td>Rank:</td>
-      <td><select id="rank_select">
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-      </select></td> 
-    </tr>
+    <table>
+      <tr>
+        <td>Name:</td>
+        <td><select id="id_select"></select></td>
+      </tr>
+      <tr>
+        <td>Attribute:</td>
+        <td><select id="attr_select">
+          <option value="dark">Dark</option>
+          <option value="fire">Fire</option>
+          <option value="light">Light</option>
+          <option value="forest">Forest</option>
+          <option value="void">Void</option>
+          <option value="water">Water</option>
+        </select></td>
+      </tr>
+      <tr>
+        <td>Rank:</td>
+        <td><select id="rank_select">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select></td> 
+      </tr>
+      <tr>    
+        <td>Experience Level:</td> 
+        <td><input id="level_select" class="custom-input" type="number" value=1 maxlength="3" size=3 min=1 max=100 border="2px solid black"></td> 
+      </tr>
+      <tr>    
+          <td>Magic Level:</td> 
+          <td><select id="magic_select">
+              <option selected value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+          </select></td> 
+      </tr>
+      <tr>
+          <td>Magia Level:</td> 
+          <td><select id="magia_select"> 
+              <option selectedvalue="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+          </select></td> 
+      </tr>
+      <tr>
+          <td>Episode Level:</td> 
+          <td><select id="episode_select">
+              <option selectedvalue="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+          </select></td>
+      </tr>
+    </table>
   </div>
 
   <div id="display">
@@ -43,7 +78,9 @@
   </div>
 
 
-  <script type="javascript" src="/assets/magireco/collection.json"></script>
+  <!-- <script type="javascript" src="/assets/magireco/collection.json"></script> -->
+  <script src="script/utils.js"></script>
+  <script src="script/character.js"></script>
   <script src="script/index.js"></script>
 </body>
 </html>
