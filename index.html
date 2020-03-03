@@ -10,71 +10,74 @@
     <h1>Leo's Testing Website</h1>
   </header>
   
-  <div id="options">
-    <table>
-      <tr>
-        <td>Name:</td>
-        <td><select id="id_select"></select></td>
-      </tr>
-      <tr>
-        <td>Attribute:</td>
-        <td><select id="attr_select">
-          <option value="dark">Dark</option>
-          <option value="fire">Fire</option>
-          <option value="light">Light</option>
-          <option value="forest">Forest</option>
-          <option value="void">Void</option>
-          <option value="water">Water</option>
-        </select></td>
-      </tr>
-      <tr>
-        <td>Rank:</td>
-        <td><select id="rank_select">
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-        </select></td> 
-      </tr>
-      <tr>    
-        <td>Experience Level:</td> 
-        <td><input id="level_select" class="custom-input" type="number" value=1 maxlength="3" size=3 min=1 max=100 border="2px solid black"></td> 
-      </tr>
-      <tr>    
-          <td>Magic Level:</td> 
-          <td><select id="magic_select">
-              <option selected value="0">0</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-          </select></td> 
-      </tr>
-      <tr>
-          <td>Magia Level:</td> 
-          <td><select id="magia_select"> 
-              <option selectedvalue="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-          </select></td> 
-      </tr>
-      <tr>
-          <td>Episode Level:</td> 
-          <td><select id="episode_select">
-              <option selectedvalue="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
+  <div id="left_bar">
+    <div id="options">
+      <table>
+        <tr>
+          <td>Name:</td>
+          <td><select id="name_select"></select></td>
+        </tr>
+        <tr>
+          <td>Attribute:</td>
+          <td><select class="form" id="attr_select">
+            <option value="dark">Dark</option>
+            <option value="fire">Fire</option>
+            <option value="light">Light</option>
+            <option value="forest">Forest</option>
+            <option value="void">Void</option>
+            <option value="water">Water</option>
           </select></td>
-      </tr>
-    </table>
+        </tr>
+        <tr>
+          <td>Rank:</td>
+          <td><select class="form" id="rank_select">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select></td> 
+        </tr>
+        <tr>    
+          <td>Experience Level:</td> 
+          <td><input class="form" id="level_select" class="custom-input" type="number" value=1 maxlength="3" size=3 min=1 max=100 border="2px solid black"></td> 
+        </tr>
+        <tr>    
+            <td>Magic Level:</td> 
+            <td><select class="form" id="magic_select">
+                <option selected value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select></td> 
+        </tr>
+        <tr>
+            <td>Magia Level:</td> 
+            <td><select class="form" id="magia_select"> 
+                <option selectedvalue="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select></td> 
+        </tr>
+        <tr>
+            <td>Episode Level:</td> 
+            <td><select class="form" id="episode_select">
+                <option selectedvalue="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select></td>
+        </tr>
+      </table>
+    </div>
+  
+    <div id="display_preview"></div>
   </div>
-
-  <div id="display">
-    
+  <div id="center">
+    <div id="character_list"></div>
   </div>
 
 
