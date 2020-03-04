@@ -1,0 +1,63 @@
+.btn{
+	border-radius:10px;
+	text-align:center;
+	font-size: 16px;
+	color: #3C3D3F;
+	background: #ffffff;
+	border: 2px #3C3D3F solid;
+	padding: 5px;
+	cursor: pointer;
+}
+
+.btn:hover {
+  background: #3C3D3F;
+  color: #ffffff;
+}
+
+.btn:disabled {
+	visibility: 50%;
+}
+
+#display_preview {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+#content {
+	display: flex;
+	flex-direction: row;
+}
+
+#left_bar {
+	height: auto;
+	padding: 0px 10px;
+	width: 300px;
+	max-width: 300px;
+	border-right: black solid 1px;
+}
+
+#buttons {
+	margin-top: 10px;
+}
+
+#main {
+	padding: 0px 10px;
+	min-width: 500px;
+}
+
+#character_list {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+#options_table tbody tr td {
+	width: 100px;
+	min-width: 100px;
+}
+
+header h1, h2 {
+	overflow: hidden;
+	white-space: nowrap;
+}

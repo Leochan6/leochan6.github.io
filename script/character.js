@@ -57,34 +57,37 @@ let character_api = (() => {
     });
   };
 
+  // gets the basic display for the character.
   module.getCharacterDisplay = (character) => {
     return new module.Display(character.id, character.name, character.ranks.indexOf(true) + 1, character.attr, "1", "0", "1", "1");
   };
 
   // check if disaply is valid.
-  module.isValidCharacterDisplay = (display, character) => {
-    let err = [];
-    // check id.
-    if (display.id !== character.id) err.push(`Display Id ${display.id} does not match Character ID ${character.id}.`);
-    // check name.
-    if (display.name !== character.name) err.push(`Display Name ${display.name} does not match Character Name ${character.Name}.`);
-    // check rank.
-    if (!character.ranks[display.rank - 1]) err.push(`Display Rank ${display.rank} does not match Character Ranks ${character.ranks}`)
-    // check level.
-    if      (display.rank == "1" && (display.level < 1 || display.level > 40)) err.push(`Display Level ${display.level} for Display Rank ${display.rank} must be between 1 and 40.`);
-    else if (display.rank == "2" && (display.level < 1 || display.level > 50)) err.push(`Display Level ${display.level} for Display Rank ${display.rank} must be between 1 and 50.`);
-    else if (display.rank == "3" && (display.level < 1 || display.level > 60)) err.push(`Display Level ${display.level} for Display Rank ${display.rank} must be between 1 and 60.`);
-    else if (display.rank == "4" && (display.level < 1 || display.level > 80)) err.push(`Display Level ${display.level} for Display Rank ${display.rank} must be between 1 and 80.`);
-    else if (display.rank == "5" && (display.level < 1 || display.level > 100)) err.push(`Display Level ${display.level} for Display Rank ${display.rank} must be between 1 and 100.`);
-    // check magic.
-    if (display.magic < 0 || display.magic > 3) err.push(`Display Magic ${display.magic} must be between 0 and 3.`);
-    // check magia.
-    if (display.magia < 1 || display.magia > 5) err.push(`Display Magia ${display.magia} must be between 1 and 5.`);
-    if (display.magia > display.episode) err.push(`Display Magia ${display.magia} must be less than or equal to Display Episode ${display.episode}.`);
-    // check episode.
-    if (display.episode < 1 || display.episode > 5) err.push(`Display Episode ${display.episode} must be between 1 and 5.`);
-
-    return err;
+  module.isValidCharacterDisplay = (character_id, display, callback) => {
+    module.getCharacter(character_id, character => {
+      let err = [];
+      // check id.
+      if (display.id !== character.id) err.push(`Display Id ${display.id} does not match Character ID ${character.id}.`);
+      // check name.
+      if (display.name !== character.name) err.push(`Display Name ${display.name} does not match Character Name ${character.Name}.`);
+      // check rank.
+      if (!character.ranks[display.rank - 1]) err.push(`Display Rank ${display.rank} does not match Character Ranks ${character.ranks}`)
+      // check level.
+      if      (display.rank == "1" && (display.level < 1 || display.level > 40)) err.push(`Display Level ${display.level} for Display Rank ${display.rank} must be between 1 and 40.`);
+      else if (display.rank == "2" && (display.level < 1 || display.level > 50)) err.push(`Display Level ${display.level} for Display Rank ${display.rank} must be between 1 and 50.`);
+      else if (display.rank == "3" && (display.level < 1 || display.level > 60)) err.push(`Display Level ${display.level} for Display Rank ${display.rank} must be between 1 and 60.`);
+      else if (display.rank == "4" && (display.level < 1 || display.level > 80)) err.push(`Display Level ${display.level} for Display Rank ${display.rank} must be between 1 and 80.`);
+      else if (display.rank == "5" && (display.level < 1 || display.level > 100)) err.push(`Display Level ${display.level} for Display Rank ${display.rank} must be between 1 and 100.`);
+      // check magic.
+      if (display.magic < 0 || display.magic > 3) err.push(`Display Magic ${display.magic} must be between 0 and 3.`);
+      // check magia.
+      if (display.magia < 1 || display.magia > 5) err.push(`Display Magia ${display.magia} must be between 1 and 5.`);
+      if (display.magia > display.episode) err.push(`Display Magia ${display.magia} must be less than or equal to Display Episode ${display.episode}.`);
+      // check episode.
+      if (display.episode < 1 || display.episode > 5) err.push(`Display Episode ${display.episode} must be between 1 and 5.`);
+      
+      callback(err);
+    });
   };
 
   module.updateDisplay = (character, display) => {
@@ -100,7 +103,19 @@ let character_api = (() => {
     module.getCharacter("1001", character => {
       listener(character, module.getCharacterDisplay(character));
     });
-  }
+  };
+
+  let errorListeners = [];
+
+  module.onErrorUpdate = (listener) => {
+    displayListeners.push(listener);
+  };
+
+  const notifyErrorListeners = (error) => {
+    errorListeners.forEach(listener => {
+      listener(error.toString());
+    })
+  };
 
   // let notifyDisplayListeners = (display) => {
   //   displayListeners.forEach(listener => listener(display));

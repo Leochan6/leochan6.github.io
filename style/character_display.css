@@ -1,37 +1,65 @@
 .character_display {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   position: relative;
-  margin: 20px 20px 20px 20px;
+  height: 156px;
+  width: 112px;
+  box-sizing: border-box;
+  border: solid 1px transparent;
+  margin: 5px;
 }
 
-.character_display .background, .frame_rank, .star_rank, .att {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  align-items: center;
-  vertical-align: middle;
+.character_display:not(.selected):hover {
+  outline: 1px solid gray;
 }
 
-.character_display .magic {
-  position: absolute;
-  top: 112px;
-  left: 0px;
-  align-items: center;
+.character_display :not(.card_image) {
+  position: relative;
 }
 
-.character_display .magia {
-  position: absolute;
-  top: 135px;
-  left: 0px;
-  align-items: center;
+.frame_rank {
+  margin-top: -112px;
 }
 
-.character_display .level {
-  position: absolute;
+.star_rank {
+  margin-top: -112px;
+}
+
+.att {
+  margin-top: -112px;
+}
+
+.magic {
+  margin-top: 0px;
+}
+
+.magia {
+  margin-top: 0px;
+}
+
+.level {
+  display: flex;
+  flex-direction: row;
+  margin-left: auto;
+  margin-right: 0px;
+  margin-top: -156px;
   text-align: right;
-  right: 50%;
-  font-size: 40px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.level .level_pre {
+  position: relative;
+  margin-top: 8px;
+  margin-right: 5px;
+  font-size: 16px;
+  color: #D8D58A;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.level .level_num {
+  font-size: 24px;
+  color: white;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 .character_display .card_image {
@@ -45,4 +73,13 @@
   position: absolute;
   left: -9px;
   top: -16px;
+}
+
+#error_text {
+  min-height: 16px;
+  color: red;
+}
+
+.selected {
+  outline: solid 2px black;
 }
