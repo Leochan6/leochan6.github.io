@@ -3,11 +3,11 @@ let character_api = (() => {
   let module = {};
 
   module.Display = class Display {
-    constructor(id, name, rank, attr, level, magic, magia, episode) {
+    constructor(id, name, rank, attribute, level, magic, magia, episode) {
       this.id = id;
       this.name = name;
       this.rank = rank;
-      this.attr = attr;
+      this.attribute = attribute;
       this.level = level;
       this.magic = magic;
       this.magia = magia;
@@ -16,10 +16,10 @@ let character_api = (() => {
   }
 
   module.Character = class Character {
-    constructor(id, name, attr, ranks) {
+    constructor(id, name, attribute, ranks) {
       this.id = id;
       this.name = name;
-      this.attr = attr;
+      this.attribute = attribute;
       this.ranks = ranks;
     }
   }
@@ -42,7 +42,7 @@ let character_api = (() => {
   };
 
   // get the attribute and rank for the character.
-  module.getCharacter = (id, callback) => {
+  const getCharacter = (id, callback) => {
     module.getCollection((collection) => {
       let character_list = collection.filter(character => character.id === id);
       let name = character_list[0].name
@@ -58,13 +58,13 @@ let character_api = (() => {
   };
 
   // gets the basic display for the character.
-  module.getCharacterDisplay = (character) => {
-    return new module.Display(character.id, character.name, character.ranks.indexOf(true) + 1, character.attr, "1", "0", "1", "1");
+  const getBasicCharacterDisplay = (character) => {
+    return new module.Display(character.id, character.name, character.ranks.indexOf(true) + 1, character.attribute, "1", "0", "1", "1");
   };
 
   // check if disaply is valid.
-  module.isValidCharacterDisplay = (character_id, display, callback) => {
-    module.getCharacter(character_id, character => {
+  const isValidCharacterDisplay = (character_id, display, callback) => {
+    getCharacter(character_id, character => {
       let err = [];
       // check id.
       if (display.id !== character.id) err.push(`Display Id ${display.id} does not match Character ID ${character.id}.`);
@@ -90,18 +90,267 @@ let character_api = (() => {
     });
   };
 
-  module.updateDisplay = (character, display) => {
+  /**
+   * get Display from the form.
+   * 
+   * @return {Display}
+   */ 
+  const getFormDisplay = () => {
+    let display = new character_api.Display(
+      name_select.value,
+      name_select[name_select.options.selectedIndex].text,
+      rank_select.value,
+      attr_select.value,
+      level_select.value,
+      magic_select.value,
+      magia_select.value,
+      episode_select.value);
+    character_preview = display;
+    return display;
+  };
+
+  const getSortProperties = () => {
+    let properties = {
+      group_by: group_by_select.value,
+      group_dir: parseInt(group_dir_select.value),
+      sort_by_1: sort_by_1_select.value,
+      sort_dir_1_: parseInt(sort_dir_1_select.value),
+      sort_by_2: sort_by_2_select.value,
+      sort_dir_2_: parseInt(sort_dir_2_select.value),
+      sort_id_dir: parseInt(sort_id_dir_select.value),
+      displays_per_row: parseInt(displays_per_row.value)
+    }
+    return properties;
+  };
+  
+  /**
+   * get Display from character display.
+   * 
+   * @param {HTMLDivElement} character_display
+   * @return {Display}
+   */ 
+  const getCharacterDisplay = (character_display) => {
+    let display = new character_api.Display(
+      character_display.getAttribute("character_id"),
+      character_display.getAttribute("name"),
+      character_display.getAttribute("rank"),
+      character_display.getAttribute("attribute"),
+      character_display.getAttribute("level"),
+      character_display.getAttribute("magic"),
+      character_display.getAttribute("magia"),
+      character_display.getAttribute("episode"));
+    return display;
+  };
+
+  /**
+   * create a character display element from Display.
+   * 
+   * @param {Display} display
+   * @return {HTMLDivElement}
+   */ 
+  const createDisplay = (display, listener) => {
+    let character_display = document.createElement("div");
+    character_display.classList.add("character_display");
+    character_display.setAttribute("character_id", display.id);
+    character_display.setAttribute("name", display.name);
+    character_display.setAttribute("rank", display.rank);
+    character_display.setAttribute("attribute", display.attribute);
+    character_display.setAttribute("magic", display.magic);
+    character_display.setAttribute("magia", display.magia);
+    character_display.setAttribute("episode", display.episode);
+    character_display.setAttribute("level", display.level);
+    character_display.innerHTML = `
+    <img class="background" src="assets/magireco/ui/bg/${display.attribute}.png">
+    <img class="card_image" src="assets/magireco/card/image/card_${display.id}${display.rank}_d.png">
+    <img class="frame_rank" src="assets/magireco/ui/frame/${display.rank}.png">
+    <img class="star_rank" src="assets/magireco/ui/star/${display.rank}.png">
+    <img class="attribute" src="assets/magireco/ui/attribute/${display.attribute}.png">
+    <img class="magic" src="assets/magireco/ui/magic/${display.magic}.png">
+    <img class="magia" src="assets/magireco/ui/magia/${display.magia}-${display.episode}.png">
+    <div class="level">
+      <div class="level_pre">Lvl.</div>
+      <div class="level_num">${display.level}</div>
+    </div>`;
+    if (listener) {
+      character_display.addEventListener("click", () => {
+        // return of already selected.
+        if (character_display.classList.contains("selected")) return;
+        // deselect all other character displays
+        document.querySelectorAll(".character_display:not(.preview)").forEach(child => {
+          if (child.classList.contains("selected")) child.classList.remove("selected");
+        });
+        if (character_display.classList.contains("selected")) character_display.classList.remove("selected");
+        else character_display.classList.add("selected");
+      });
+    }
+    return character_display;
+  }
+
+  /**
+   * updates the character display with the display.
+   * 
+   * @param {HTMLDivElement} character_display 
+   * @param {Display} display 
+   */
+  const updateDisplay = (character_display, display) => {
+    character_display.querySelector(".background").setAttribute("src", `assets/magireco/ui/bg/${display.attribute}.png`);
+    character_display.querySelector(".card_image").setAttribute("src", `assets/magireco/card/image/card_${display.id}${display.rank}_d.png`);
+    character_display.querySelector(".frame_rank").setAttribute("src", `assets/magireco/ui/frame/${display.rank}.png`);
+    character_display.querySelector(".star_rank").setAttribute("src", `assets/magireco/ui/star/${display.rank}.png`);
+    character_display.querySelector(".attribute").setAttribute("src", `assets/magireco/ui/attribute/${display.attribute}.png`);
+    character_display.querySelector(".magic").setAttribute("src", `assets/magireco/ui/magic/${display.magic}.png`);
+    character_display.querySelector(".magia").setAttribute("src", `assets/magireco/ui/magia/${display.magia}-${display.episode}.png`);
+    character_display.querySelector(".level_num").innerHTML = `${display.level}`;
+  };
+
+  /**
+   * updates the display preview with Display.
+   * 
+   * @param {HTMLDivElement} display
+   */ 
+  const updatePreviewDisplay = (display) => {
+    let character_display = createDisplay(display);
+    character_display.classList.add("preview");
+    display_preview.innerHTML = "";
+    display_preview.appendChild(character_display);
+  };
+
+  /**
+   * updates the form with Display.
+   * 
+   * @param {Display} display
+   */ 
+  const updateForm = (display) => {
+    name_select.value = display.id;
+    rank_select.value = display.rank;
+    attr_select.value = display.attribute;
+    level_select.value = display.level;
+    magic_select.value = display.magic;
+    magia_select.value = display.magia;
+    episode_select.value = display.episode;
+  };
+
+  /**
+   * updates the form with the available options and selects lowest.
+   * 
+   * @param {Character} character
+   */ 
+  const updateFormEnabled = (character) => {
+    // enable or disable the attribute select.
+    for (let i = 0; i < 6; i++) {
+      attr_select.options[i].disabled = attr_select.options[i].value != character.attribute;
+    }
+    attr_select.value = character.attribute;
+    // enable or disable the rank select.
+    for (let i = 0; i < 5; i++) {
+      rank_select.options[i].disabled = !character.ranks[i];
+    }
+    // if the currently select rank is disabled, then select minimum available rank.
+    if (!character.ranks[rank_select.selectedIndex]) {
+      rank_select.selectedIndex = character.ranks.indexOf(true);
+    }
+  };
+
+  const ATTRIBUTE_ORDER = {"fire": 0, "water": 1, "forest": 2, "light": 3, "dark": 4, "void": 5};
+
+  const sortList = (properties) => {
+    let {group_by, group_dir, sort_by_1, sort_dir_1, sort_by_2, sort_dir_2, sort_id_dir, num_per_row} = properties;
+    // get the Display of every character display in the list.
+    let character_displays = [];
+    document.querySelectorAll(".character_display:not(.preview)").forEach(child => {
+      character_displays.push(getCharacterDisplay(child));
+    });
+
+    // add each display_property to the corresponding group.
+    let display_groups = group_properties(character_displays, group_by, group_dir); 
+
+    // convert attributes to numbers.
+    for (let group_name in display_groups) {
+      let group = display_groups[group_name];
+      // group.forEach(properties => {
+      //   let attribute = properties["attribute"];
+      //   properties["attribute"] = ATTRIBUTE_ORDER[attribute];
+      // });
+    }
+
+    // sort each group by the specified property.
+    var sortBy = [];
+    if (sort_by_1 != "none") {
+      sortBy.push({ prop: sort_by_1, direction: sort_dir_1, isString: false });
+    }
+    if (sort_by_2 != "none") {
+      sortBy.push({ prop: sort_by_2, direction: sort_dir_2, isString: false });
+    }
+    sortBy.push({ prop: "id", direction: sort_id_dir, isString: false });
+
+    for (var group in display_groups) {
+      display_groups[group] = display_groups[group].sort((a, b) => utils.sortArrayBy(a, b, sortBy));
+    }
+    // placeCharacterDisplays(display_groups, num_per_row);
+    return display_groups;
+  };
+
+  const NUM_TO_WORD = {"0": "zero", "1": "one", "2": "two", "3": "three", "4": "four", "5": "five"};
+  
+  // adds each display_property to the corresponding group.
+  const group_properties = (display_properties, group_by, group_dir) => {
+    let display_groups = {};
+    if (group_by == "attribute") {
+      if (group_dir == 1) display_groups = {"fire": [], "water": [], "forest": [], "light": [], "dark": [], "void": []};
+      if (group_dir == -1) display_groups = {"void": [], "dark": [], "light": [], "forest": [], "water": [], "fire": []};
+      display_properties.forEach(properties => {
+        display_groups[properties["attribute"]].push(properties);
+      });
+    } else if (group_by == "rank") {
+      if (group_dir == 1) display_groups = {"one": [], "two": [], "three": [], "four": [], "five": []};
+      if (group_dir == -1) display_groups = {"five": [], "four": [], "three": [], "two": [], "one": []};
+      display_properties.forEach(properties => {
+        display_groups[NUM_TO_WORD[properties["rank"]]].push(properties);
+      });
+    } else if (group_by == "magic") {
+      if (group_dir == 1) display_groups = {"zero": [], "one": [], "two": [], "three": []};
+      if (group_dir == -1) display_groups = {"three": [], "two": [], "one": [], "zero": []};
+      display_properties.forEach(properties => {
+        display_groups[NUM_TO_WORD[properties["magic"]]].push(properties);
+      });
+    } else if (group_by == "magia") {
+      if (group_dir == 1) display_groups = {"one": [], "two": [], "three": [], "four": [], "five": []};
+      if (group_dir == -1) display_groups = {"five": [], "four": [], "three": [], "two": [], "one": []};
+      display_properties.forEach(properties => {
+        display_groups[NUM_TO_WORD[properties["magia"]]].push(properties);
+      });
+    } else if (group_by == "episode") {
+      if (group_dir == 1) display_groups = {"one": [], "two": [], "three": [], "four": [], "five": []};
+      if (group_dir == -1) display_groups = {"five": [], "four": [], "three": [], "two": [], "one": []};
+      display_properties.forEach(properties => {
+        display_groups[NUM_TO_WORD[properties["episode"]]].push(properties);
+      });
+    } else if (group_by == "none") {
+      display_groups = {"none": []};
+      display_properties.forEach(properties => {
+        display_groups["none"].push(properties);
+      });
+    }
+    return display_groups;
+  }
+
+  const placeCharacterDisplays = (display_groups, num_per_row) => {
+
+  }
+
+  const updateCharacterWithDisplay = (character, display) => {
     // return the default display.
-    if (!display) return module.getCharacterDisplay(character);
-    return new module.Display(character.id, character.name, display.rank, character.attr, display.level, display.magic, display.magia, display.episode);
+    if (!display) return getBasicCharacterDisplay(character);
+    return new module.Display(character.id, character.name, display.rank, character.attribute, display.level, display.magic, display.magia, display.episode);
   }
 
   let displayListeners = [];
 
-  module.onDisplayUpdate = (listener) => {
+  module.startUp = (listener) => {
     displayListeners.push(listener);
-    module.getCharacter("1001", character => {
-      listener(character, module.getCharacterDisplay(character));
+    getCharacter("1001", character => {
+      updateFormEnabled(character);
+      updatePreviewDisplay(getBasicCharacterDisplay(character));
     });
   };
 
@@ -120,6 +369,75 @@ let character_api = (() => {
   // let notifyDisplayListeners = (display) => {
   //   displayListeners.forEach(listener => listener(display));
   // }
+
+  module.updateFieldsOnName = () => {
+    getCharacter(name_select.value, character => {
+      updateFormEnabled(character);
+      character_preview = updateCharacterWithDisplay(character, getFormDisplay());
+      updateForm(character_preview);
+      updatePreviewDisplay(character_preview);
+    });
+  };
+
+  module.createAddDisplay = () => {
+    let display = getFormDisplay();
+    let character_display = createDisplay(display, true);
+    character_list.appendChild(character_display);
+    character_list.dispatchEvent(new Event("change"));
+  };
+
+  module.updateSelectedDisplay = () => {
+    let character_display = Array.from(document.querySelectorAll(".character_display:not(.preview)")).find(child => child.classList.contains("selected"));
+    character_display.remove()
+    
+    let display = getFormDisplay();
+    character_display = createDisplay(display, true);
+    character_list.appendChild(character_display);
+    character_list.dispatchEvent(new Event("change"));
+    // updateDisplay(character_display, display);
+    // character_list.dispatchEvent(new Event("change"));
+  };
+
+  module.copyDisplay = () => {
+    let character_display = Array.from(document.querySelectorAll(".character_display:not(.preview)")).find(child => child.classList.contains("selected"));
+    let display = getCharacterDisplay(character_display);
+    getCharacter(character_display.getAttribute("character_id"), character => updateFormEnabled(character));
+    updateForm(display);
+    updatePreviewDisplay(display);
+  };
+
+  module.updatePreviewOnForm = () => {
+    let display = getFormDisplay();
+    error_text.innerHTML = '';
+    isValidCharacterDisplay(name_select.value, display, error => {
+      if (error.length == 0) {
+        create_button.disabled = false;
+        updatePreviewDisplay(display);
+      }
+      else {
+        create_button.disabled = true;
+        error_text.innerHTML = error.toString();
+        console.log(error);
+      }
+    });
+  };
+
+  module.sortOnFormUpdate = () => {
+    let properties = getSortProperties();
+    let display_groups = sortList(properties);
+    character_list.innerHTML = '';
+    for (var group in display_groups) {
+      if (display_groups[group].length == 0) continue;
+      let group_row = document.createElement("div");
+      group_row.classList.add("character_row");
+      group_row.setAttribute("group", group);
+      display_groups[group].forEach((display) => {
+        let character_display = createDisplay(display, true);
+        group_row.appendChild(character_display);
+      });
+      character_list.appendChild(group_row);
+    }
+  };
 
   return module;
 })();

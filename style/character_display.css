@@ -9,7 +9,7 @@
   margin: 5px;
 }
 
-.character_display:not(.selected):hover {
+.character_display:not(.selected):not(.preview):hover {
   outline: 1px solid gray;
 }
 
@@ -25,7 +25,7 @@
   margin-top: -112px;
 }
 
-.att {
+.attribute {
   margin-top: -112px;
 }
 

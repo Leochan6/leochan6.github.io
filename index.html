@@ -1,101 +1,185 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Leo Chan</title>
-  <link href="style/character_display.css" rel="stylesheet" type="text/css"/>
-  <link href="style/main.css" rel="stylesheet" type="text/css"/>
+  <link href="style/character_display.css" rel="stylesheet" type="text/css" />
+  <link href="style/main.css" rel="stylesheet" type="text/css" />
 </head>
+
 <body>
   <header>
     <h1>Magia Record Character List Creator</h1>
   </header>
   <div id="content">
+
     <div id="left_bar">
-      <h2>Options</h2>
-      <p id="error_text"></p>
-      <div id="options">
-        <table id="options_table">
-          <tr>
-            <td>Name:</td>
-            <td><select class="" id="name_select"></select></td>
-          </tr>
-          <tr>
-            <td>Attribute:</td>
-            <td><select class="form" id="attr_select">
-              <option value="dark">Dark</option>
-              <option value="fire">Fire</option>
-              <option value="light">Light</option>
-              <option value="forest">Forest</option>
-              <option value="void">Void</option>
-              <option value="water">Water</option>
-            </select></td>
-          </tr>
-          <tr>
-            <td>Rank:</td>
-            <td><select class="form" id="rank_select">
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-            </select></td> 
-          </tr>
-          <tr>    
-            <td>Experience Level:</td> 
-            <td><input class="form" id="level_select" class="custom-input" type="number" value=1 maxlength="3" size=3 min=1 max=100 border="2px solid black"></td> 
-          </tr>
-          <tr>    
-              <td>Magic Level:</td> 
-              <td><select class="form" id="magic_select">
-                  <option selected value="0">0</option>
+      <div id="tab_bar">
+        <button id="home_btn" class="tablink tab_btn btnBlue">Home</button>
+        <button id="sorting_btn" class="tablink tab_btn btnGray">Sorting</button>
+      </div>
+      <div id="tabs">
+        <div id="home_tab" class="tab">
+          <div id="home_fields">
+            <table id="fields_table" width=100%>
+              <tr>
+                <td title="Name of the Character.">Name:</td>
+                <td><select id="name_select" style="width:140px"></select></td>
+              </tr>
+              <tr>
+                <td title="Attribute of the Character.">Attribute:
+                <td><select id="attr_select" class="form">
+                  <option value="dark">Dark</option>
+                  <option value="fire">Fire</option>
+                  <option value="light">Light</option>
+                  <option value="forest">Forest</option>
+                  <option value="void">Void</option>
+                  <option value="water">Water</option>
+                </select></td>
+              </tr>
+              <tr>
+                <td title="Rank of the Character (Stars/Rarity).">Rank:</td>
+                <td><select id="rank_select" class="form">
                   <option value="1">1</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
-              </select></td> 
-          </tr>
-          <tr>
-              <td>Magia Level:</td> 
-              <td><select class="form" id="magia_select"> 
-                  <option selectedvalue="1">1</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select></td>
+              </tr>
+              <tr>
+                <td title="Experience Level of the Character (Enhancement).">Experience Level:</td>
+                <td><input id="level_select" class="form custom-input" type="number" value=1 maxlength="3" size=3 min=1
+                    max=100 border="2px solid black"></td>
+              </tr>
+              <tr>
+                <td title="Magic Level of the Character (Memoria Slots).">Magic Level:</td>
+                <td><select id="magic_select" class="form">
+                  <option value="0">0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                </select></td>
+              </tr>
+              <tr>
+                <td title="Magia Level of the Character.">Magia Level:</td>
+                <td><select id="magia_select" class="form">
+                  <option value="1">1</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
                   <option value="4">4</option>
                   <option value="5">5</option>
-              </select></td> 
-          </tr>
-          <tr>
-              <td>Episode Level:</td> 
-              <td><select class="form" id="episode_select">
-                  <option selectedvalue="1">1</option>
+                </select></td>
+              </tr>
+              <tr>
+                <td title="Episode Level of the Character (Bond).">Episode Level:</td>
+                <td><select id="episode_select" class="form">
+                  <option value="1">1</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
                   <option value="4">4</option>
                   <option value="5">5</option>
-              </select></td>
-          </tr>
-        </table>
+                </select></td>
+              </tr>
+            </table>
+          </div>
+          <div id="home_buttons" align="left">
+            <button id="create_button" class="btn" type="submit">Create</button>
+            <button id="update_button" class="btn">Update</button>
+            <button id="copy_button" class="btn">Copy</button>
+            <button id="delete_button" class="btn">Delete</button>
+          </div>
+          <p id="error_text"></p>
+          <h2 id="preview_text">Preview:</h2>
+          <div id="display_preview"></div>
+        </div>
+        <div id="sorting_tab" class="tab" style="display:none">
+          <div id="sorting_fields" align="left">
+            <table id="sorting_table" width=100%>
+              <tr>
+                <td title="Group by this property.">Group By:</td>
+                <td><select id="group_by_select" class="sort_form">
+                    <option selected value="attribute">Attribute</option>
+                    <option value="rank">Rank</option>
+                    <option value="magic">Magic</option>
+                    <option value="magia">Magia</option>
+                    <option value="episode">Episode</option>
+                    <option value="none">None</option>
+                  </select>
+                </td>
+                <td><select id="group_dir_select" class="sort_form">
+                    <option selected value="1">Ascending</option>
+                    <option value="-1">Descending</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td title="Sort by this property first.">Sort By 1:</td>
+                <td><select id="sort_by_1_select" class="sort_form">
+                    <option value="attribute">Attribute</option>
+                    <option value="rank">Rank</option>
+                    <option selected value="level">Level</option>
+                    <option value="magic">Magic</option>
+                    <option value="magia">Magia</option>
+                    <option value="episode">Episode</option>
+                    <option value="none">None</option>
+                  </select>
+                </td>
+                <td><select id="sort_dir_1_select" class="sort_form">
+                    <option value="1">Ascending</option>
+                    <option selected value="-1">Descending</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td title="Sort by this property second.">Sort By 2:</td>
+                <td><select id="sort_by_2_select" class="sort_form">
+                    <option value="attribute">Attribute</option>
+                    <option value="rank">Rank</option>
+                    <option value="level">Level</option>
+                    <option value="magic">Magic</option>
+                    <option value="magia">Magia</option>
+                    <option value="episode">Episode</option>
+                    <option selected value="none">None</option>
+                  </select>
+                </td>
+                <td><select id="sort_dir_2_select" class="sort_form">
+                    <option value="1">Ascending</option>
+                    <option selected value="-1">Descending</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td title="Sort by the id of the character last.">ID Sort Direction:</td>
+                <td></td>
+                <td><select id="sort_id_dir_select" class="sort_form">
+                    <option value="1">Ascending</option>
+                    <option selected value="-1">Descending</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td>Displays Per Row:</td>
+                <td><input id="displays_per_row" class="custom-input sort_form" type="number" value=8 maxlength="2" size=2 min=1
+                    max=99 border="2px solid black"></td>
+              </tr>
+            </table>
+          </div>
+        </div>
       </div>
-    
-      <div id="buttons">
-        <button class="btn" id="create_button">Create</button>
-        <button class="btn" id="update_button">Update</button>
-        <button class="btn" id="clear_button">Clear</button>
-      </div>
-  
-      <h2 id="preview_text">Preview:</h2>
-      <div id="display_preview"></div>
     </div>
     <div id="main">
       <h2>My List</h2>
+      <button id="clear_button" class="btn">Clear</button>
       <div id="character_list"></div>
     </div>
   </div>
 
-
-  <!-- <script type="javascript" src="/assets/magireco/collection.json"></script> -->
+  <script src="script/elements.js"></script>
   <script src="script/utils.js"></script>
   <script src="script/character.js"></script>
   <script src="script/index.js"></script>
 </body>
+
 </html>
