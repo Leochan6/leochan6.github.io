@@ -24,10 +24,17 @@ let character_api = (() => {
     }
   }
   
+  let collection = null;
+
   // sends HTML request to get the collection json.
 	module.getCollection = (callback) => {
+    // return the stored collection
+    if (collection) return callback(collection);
 		var xhr = new XMLHttpRequest();
-		xhr.onload = () => callback(JSON.parse(xhr.responseText));
+		xhr.onload = () => {
+      collection = JSON.parse(xhr.responseText);
+      callback(collection);
+    }
     xhr.open("GET", "/assets/magireco/collection.json", true);
     xhr.send();
   };
@@ -85,7 +92,6 @@ let character_api = (() => {
       if (display.magia > display.episode) err.push(`Display Magia ${display.magia} must be less than or equal to Display Episode ${display.episode}.`);
       // check episode.
       if (display.episode < 1 || display.episode > 5) err.push(`Display Episode ${display.episode} must be between 1 and 5.`);
-      
       callback(err);
     });
   };
@@ -114,9 +120,9 @@ let character_api = (() => {
       group_by: group_by_select.value,
       group_dir: parseInt(group_dir_select.value),
       sort_by_1: sort_by_1_select.value,
-      sort_dir_1_: parseInt(sort_dir_1_select.value),
+      sort_dir_1: parseInt(sort_dir_1_select.value),
       sort_by_2: sort_by_2_select.value,
-      sort_dir_2_: parseInt(sort_dir_2_select.value),
+      sort_dir_2: parseInt(sort_dir_2_select.value),
       sort_id_dir: parseInt(sort_id_dir_select.value),
       displays_per_row: parseInt(displays_per_row.value)
     }
@@ -254,7 +260,6 @@ let character_api = (() => {
   const ATTRIBUTE_ORDER = {"fire": 0, "water": 1, "forest": 2, "light": 3, "dark": 4, "void": 5};
 
   const sortList = (properties) => {
-    let {group_by, group_dir, sort_by_1, sort_dir_1, sort_by_2, sort_dir_2, sort_id_dir, num_per_row} = properties;
     // get the Display of every character display in the list.
     let character_displays = [];
     document.querySelectorAll(".character_display:not(.preview)").forEach(child => {
@@ -262,7 +267,7 @@ let character_api = (() => {
     });
 
     // add each display_property to the corresponding group.
-    let display_groups = group_properties(character_displays, group_by, group_dir); 
+    let display_groups = group_properties(character_displays, properties.group_by, properties.group_dir); 
 
     // convert attributes to numbers.
     for (let group_name in display_groups) {
@@ -275,13 +280,13 @@ let character_api = (() => {
 
     // sort each group by the specified property.
     var sortBy = [];
-    if (sort_by_1 != "none") {
-      sortBy.push({ prop: sort_by_1, direction: sort_dir_1, isString: false });
+    if (properties.sort_by_1 != "none") {
+      sortBy.push({ prop: properties.sort_by_1, direction: properties.sort_dir_1, isString: false });
     }
-    if (sort_by_2 != "none") {
-      sortBy.push({ prop: sort_by_2, direction: sort_dir_2, isString: false });
+    if (properties.sort_by_2 != "none") {
+      sortBy.push({ prop: properties.sort_by_2, direction: properties.sort_dir_2, isString: false });
     }
-    sortBy.push({ prop: "id", direction: sort_id_dir, isString: false });
+    sortBy.push({ prop: "id", direction: properties.sort_id_dir, isString: false });
 
     for (var group in display_groups) {
       display_groups[group] = display_groups[group].sort((a, b) => utils.sortArrayBy(a, b, sortBy));
@@ -332,10 +337,6 @@ let character_api = (() => {
       });
     }
     return display_groups;
-  }
-
-  const placeCharacterDisplays = (display_groups, num_per_row) => {
-
   }
 
   const updateCharacterWithDisplay = (character, display) => {

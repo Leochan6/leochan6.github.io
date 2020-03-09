@@ -59,6 +59,7 @@
 #content {
 	display: flex;
 	flex-direction: row;
+	border-top: black solid 1px;
 }
 
 #left_bar {
@@ -71,10 +72,6 @@
 
 #buttons {
 	margin-top: 10px;
-}
-
-#content {
-	border-top: black solid 1px;
 }
 
 #main {
