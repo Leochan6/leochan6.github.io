@@ -102,12 +102,12 @@
             <table id="sorting_profile_table">
               <tr>
                 <td>Current Profile:</td>
-                <td><select id="profile_select"></select></td>
+                <td><select id="profile_select" style="width: 100%;"></select></td>
                 <td><button id="new_profile_button">+</button></td>
               </tr>
               <tr id="new_profile_row" style="visibility: collapse;">
                 <td>Profile Name:</td>
-                <td><input id="new_name_field" type="text"></td>
+                <td><input id="new_profile_field" type="text"></td>
                 <td><button id="save_profile_button">Save</button></td>
                 <td><button id="close_new_profile_button">×</button></td>
               </tr>
@@ -126,11 +126,7 @@
                     <option value="none">None</option>
                   </select>
                 </td>
-                <td><select id="group_dir_select" class="sort_form">
-                    <option selected value="1">Ascending</option>
-                    <option value="-1">Descending</option>
-                  </select>
-                </td>
+                <td id="group_dir_select" class="sort_dir ascend"></td>
               </tr>
               <tr>
                 <td title="Sort by this property first.">Sort By 1:</td>
@@ -144,11 +140,7 @@
                     <option value="none">None</option>
                   </select>
                 </td>
-                <td><select id="sort_dir_1_select" class="sort_form">
-                    <option value="1">Ascending</option>
-                    <option selected value="-1">Descending</option>
-                  </select>
-                </td>
+                <td id="sort_dir_1_select" class="sort_dir descend"></td>
               </tr>
               <tr>
                 <td title="Sort by this property second.">Sort By 2:</td>
@@ -162,20 +154,12 @@
                     <option selected value="none">None</option>
                   </select>
                 </td>
-                <td><select id="sort_dir_2_select" class="sort_form">
-                    <option value="1">Ascending</option>
-                    <option selected value="-1">Descending</option>
-                  </select>
-                </td>
+                <td id="sort_dir_2_select" class="sort_dir descend"></td>
               </tr>
               <tr>
                 <td title="Sort by the id of the character last.">ID Sort Direction:</td>
                 <td></td>
-                <td><select id="sort_id_dir_select" class="sort_form">
-                    <option value="1">Ascending</option>
-                    <option selected value="-1">Descending</option>
-                  </select>
-                </td>
+                <td id="sort_id_dir_select" class="sort_dir descend"></td>
               </tr>
               <tr>
                 <td>Displays Per Row:</td>

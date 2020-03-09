@@ -118,12 +118,12 @@ let character_api = (() => {
   const getSortProperties = () => {
     let properties = {
       group_by: group_by_select.value,
-      group_dir: parseInt(group_dir_select.value),
+      group_dir: group_dir_select.classList.contains("ascend") ? 1 : -1,
       sort_by_1: sort_by_1_select.value,
-      sort_dir_1: parseInt(sort_dir_1_select.value),
+      sort_dir_1: sort_dir_1_select.classList.contains("ascend") ? 1 : -1,
       sort_by_2: sort_by_2_select.value,
-      sort_dir_2: parseInt(sort_dir_2_select.value),
-      sort_id_dir: parseInt(sort_id_dir_select.value),
+      sort_dir_2: sort_dir_2_select.classList.contains("ascend") ? 1 : -1,
+      sort_id_dir: sort_id_dir_select.classList.contains("ascend") ? 1 : -1,
       displays_per_row: parseInt(displays_per_row.value)
     }
     return properties;
@@ -367,10 +367,6 @@ let character_api = (() => {
     })
   };
 
-  // let notifyDisplayListeners = (display) => {
-  //   displayListeners.forEach(listener => listener(display));
-  // }
-
   module.updateFieldsOnName = () => {
     getCharacter(name_select.value, character => {
       updateFormEnabled(character);
@@ -395,8 +391,6 @@ let character_api = (() => {
     character_display = createDisplay(display, true);
     character_list.appendChild(character_display);
     character_list.dispatchEvent(new Event("change"));
-    // updateDisplay(character_display, display);
-    // character_list.dispatchEvent(new Event("change"));
   };
 
   module.copyDisplay = () => {
@@ -437,6 +431,17 @@ let character_api = (() => {
       });
       character_list.appendChild(group_row);
     }
+  };
+
+  module.saveProfile = () => {
+    let profileName = new_profile_field.value;
+    if (settings_api.profileExists(profileName)) {
+      sorting_error_text.innerHTML = `The sorting profile ${profileName} already exists.`;
+      return;
+    }
+    new_profile_field.value = "";
+    let properties = getSortProperties();
+    settings_api.updateSettings(profileName, properties);
   };
 
   return module;

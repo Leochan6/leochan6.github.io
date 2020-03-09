@@ -63,8 +63,7 @@ h2 {
   white-space: nowrap;
 }
 
-
 .error_text {
-	min-height: 16px;
-	color: red;
-  }
+  min-height: 16px;
+  color: red;
+}

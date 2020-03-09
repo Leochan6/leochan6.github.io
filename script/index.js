@@ -54,6 +54,19 @@
       });
     });
 
+    // update the list on sort dir click.
+    document.querySelectorAll(".sort_dir").forEach(element => {
+      element.addEventListener("click", () => {
+        if (element.classList.contains("ascend")) {
+          element.classList.replace("ascend", "descend");
+        }
+        else if (element.classList.contains("descend")) {
+          element.classList.replace("descend", "ascend");
+        }
+        character_api.sortOnFormUpdate();
+      });
+    });
+
     // resort when character list changes.
     character_list.addEventListener("change", () => {
       character_api.sortOnFormUpdate();
@@ -78,7 +91,10 @@
       new_profile_row.style.visibility = "collapse"
     });
 
-    // 
+    // save the new sorting profile.
+    save_profile_button.addEventListener("click", () => {
+      // character_api.saveProfile();
+    })
   };
 
   // initilize name field.

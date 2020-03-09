@@ -18,12 +18,12 @@ let settings_api = (() => {
     // set sort settings with default.
     profile_select.selectedIndex = 0;
     setSelectedText(group_by_select, module.settings[0].settings.group_by_select);
-    setSelectedText(group_dir_select, module.settings[0].settings.group_dir_select);
+    setSelectedDirection(group_dir_select, module.settings[0].settings.group_dir_select);
     setSelectedText(sort_by_1_select, module.settings[0].settings.sort_by_1_select);
-    setSelectedText(sort_dir_1_select, module.settings[0].settings.sort_dir_1_select);
+    setSelectedDirection(sort_dir_1_select, module.settings[0].settings.sort_dir_1_select);
     setSelectedText(sort_by_2_select, module.settings[0].settings.sort_by_2_select);
-    setSelectedText(sort_dir_2_select, module.settings[0].settings.sort_dir_2_select);
-    setSelectedText(sort_id_dir_select, module.settings[0].settings.sort_id_dir_select);
+    setSelectedDirection(sort_dir_2_select, module.settings[0].settings.sort_dir_2_select);
+    setSelectedDirection(sort_id_dir_select, module.settings[0].settings.sort_id_dir_select);
     displays_per_row.value = module.settings[0].settings.displays_per_row;
 
   };
@@ -37,8 +37,26 @@ let settings_api = (() => {
     return settings
   };
 
-  module.updateSettings = () => {
+  module.updateSettings = (name, properties) => {
+    let settings = module.getSettings();
+    console.log("before", settings);
+    let replace = false;
+    settings.forEach(setting => {
+      if (setting.name === name) {
+        setting.settings = properties;
+        replace = true;
+        return;
+      }
+    });
+    if (!replace) settings.splice(settings.length-1, 0, {name: name, settings: properties});
+    console.log("after", settings);
+    window.localStorage.setItem("settings", JSON.stringify(settings));
+  };
 
+  module.profileExists = (name) => {
+    let settings = module.getSettings();
+    if (settings.find(setting => setting.name === name)) return true;
+    return false;
   };
 
   const initSettings = () => {
@@ -55,9 +73,16 @@ let settings_api = (() => {
         break;
       }
     }
-
   };
 
+  const setSelectedDirection = (element, direction) => {
+    if (element.classList.contains("ascend") && direction === -1) {
+      element.classList.replae("ascend", "descend");
+    }
+    else if (element.classList.contains("descend") && direction === 1) {
+      element.classList.replae("descend", "ascend");
+    }
+  };
 
 
 
