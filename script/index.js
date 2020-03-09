@@ -4,11 +4,11 @@
   window.onload = () => {
 
     // Open the Home Tab.
-    document.getElementById('home_btn').addEventListener("click", event => utils.openTab(event,'home_tab'));
+    document.getElementById('home_btn').addEventListener("click", event => utils.openTab(event, 'home_tab'));
 
     // Open the Sorting Tab.
-    document.getElementById('sorting_btn').addEventListener("click", event => utils.openTab(event,'sorting_tab'));
-  
+    document.getElementById('sorting_btn').addEventListener("click", event => utils.openTab(event, 'sorting_tab'));
+
     // update the available fields on name change and update preview display.
     name_select.addEventListener("change", () => {
       character_api.updateFieldsOnName();
@@ -60,13 +60,25 @@
     })
 
     // deselect currently selected.
-    main.addEventListener("click", (e) => {
+    document.addEventListener("click", (e) => {
       if (e.target.parentElement.className.indexOf("character_display") === -1 && e.target.parentElement.parentElement.className.indexOf("character_display") === -1) {
         document.querySelectorAll(".character_display:not(.preview)").forEach(child => {
           if (child.classList.contains("selected")) child.classList.remove("selected");
         });
       }
     });
+
+    // show the save new profile form.
+    new_profile_button.addEventListener("click", () => {
+      new_profile_row.style.visibility = "visible"
+    });
+
+    // hide the save new profile form.
+    close_new_profile_button.addEventListener("click", () => {
+      new_profile_row.style.visibility = "collapse"
+    });
+
+    // 
   };
 
   // initilize name field.
@@ -89,11 +101,14 @@
   // update form and preview display on startup.
   character_api.startUp();
 
+  // laod the settings from the storage.
+  settings_api.loadSettings();
+
   character_api.onErrorUpdate(error => {
     error_text.innerHTML = error.toString();
   });
 
-  
+
 
 
 

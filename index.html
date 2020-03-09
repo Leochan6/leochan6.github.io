@@ -4,7 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <title>Leo Chan</title>
-  <link href="style/character_display.css" rel="stylesheet" type="text/css" />
+  <link href="style/character.css" rel="stylesheet" type="text/css" />
+  <link href="style/second.css" rel="stylesheet" type="text/css" />
   <link href="style/main.css" rel="stylesheet" type="text/css" />
 </head>
 
@@ -16,11 +17,12 @@
 
     <div id="left_bar">
       <div id="tab_bar">
-        <button id="home_btn" class="tablink tab_btn btnBlue">Home</button>
-        <button id="sorting_btn" class="tablink tab_btn btnGray">Sorting</button>
+        <button id="home_btn" class="tablink btn btnBlue">Home</button>
+        <button id="sorting_btn" class="tablink btn btnGray">Sorting</button>
       </div>
       <div id="tabs">
         <div id="home_tab" class="tab">
+          <h2>Display</h2>
           <div id="home_fields">
             <table id="fields_table" width=100%>
               <tr>
@@ -30,23 +32,23 @@
               <tr>
                 <td title="Attribute of the Character.">Attribute:
                 <td><select id="attr_select" class="form">
-                  <option value="dark">Dark</option>
-                  <option value="fire">Fire</option>
-                  <option value="light">Light</option>
-                  <option value="forest">Forest</option>
-                  <option value="void">Void</option>
-                  <option value="water">Water</option>
-                </select></td>
+                    <option value="dark">Dark</option>
+                    <option value="fire">Fire</option>
+                    <option value="light">Light</option>
+                    <option value="forest">Forest</option>
+                    <option value="void">Void</option>
+                    <option value="water">Water</option>
+                  </select></td>
               </tr>
               <tr>
                 <td title="Rank of the Character (Stars/Rarity).">Rank:</td>
                 <td><select id="rank_select" class="form">
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
-                </select></td>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                  </select></td>
               </tr>
               <tr>
                 <td title="Experience Level of the Character (Enhancement).">Experience Level:</td>
@@ -56,45 +58,61 @@
               <tr>
                 <td title="Magic Level of the Character (Memoria Slots).">Magic Level:</td>
                 <td><select id="magic_select" class="form">
-                  <option value="0">0</option>
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                </select></td>
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                  </select></td>
               </tr>
               <tr>
                 <td title="Magia Level of the Character.">Magia Level:</td>
                 <td><select id="magia_select" class="form">
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
-                </select></td>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                  </select></td>
               </tr>
               <tr>
                 <td title="Episode Level of the Character (Bond).">Episode Level:</td>
                 <td><select id="episode_select" class="form">
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
-                </select></td>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                  </select></td>
               </tr>
             </table>
           </div>
           <div id="home_buttons" align="left">
-            <button id="create_button" class="btn" type="submit">Create</button>
-            <button id="update_button" class="btn">Update</button>
-            <button id="copy_button" class="btn">Copy</button>
-            <button id="delete_button" class="btn">Delete</button>
+            <button id="create_button" class="btn btnGray" type="submit">Create</button>
+            <button id="update_button" class="btn btnGray">Update</button>
+            <button id="copy_button" class="btn btnGray">Copy</button>
+            <button id="delete_button" class="btn btnGray">Delete</button>
           </div>
-          <p id="error_text"></p>
+          <p class="error_text" id="character_error_text"></p>
           <h2 id="preview_text">Preview:</h2>
           <div id="display_preview"></div>
         </div>
         <div id="sorting_tab" class="tab" style="display:none">
+          <h2>Profile</h2>
+          <div id="sorting_profiles">
+            <table id="sorting_profile_table">
+              <tr>
+                <td>Current Profile:</td>
+                <td><select id="profile_select"></select></td>
+                <td><button id="new_profile_button">+</button></td>
+              </tr>
+              <tr id="new_profile_row" style="visibility: collapse;">
+                <td>Profile Name:</td>
+                <td><input id="new_name_field" type="text"></td>
+                <td><button id="save_profile_button">Save</button></td>
+                <td><button id="close_new_profile_button">×</button></td>
+              </tr>
+            </table>
+          </div>
           <div id="sorting_fields" align="left">
             <table id="sorting_table" width=100%>
               <tr>
@@ -161,17 +179,18 @@
               </tr>
               <tr>
                 <td>Displays Per Row:</td>
-                <td><input id="displays_per_row" class="custom-input sort_form" type="number" value=8 maxlength="2" size=2 min=1
-                    max=99 border="2px solid black"></td>
+                <td><input id="displays_per_row" class="custom-input sort_form" type="number" value=8 maxlength="2"
+                    size=2 min=1 max=99 border="2px solid black"></td>
               </tr>
             </table>
           </div>
+          <p class="error_text" id="profile_error_text"></p>
         </div>
       </div>
     </div>
     <div id="main">
       <h2>My List</h2>
-      <button id="clear_button" class="btn">Clear</button>
+      <button id="clear_button" class="btn btnGray">Clear</button>
       <div id="character_list"></div>
     </div>
   </div>

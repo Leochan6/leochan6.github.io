@@ -1,0 +1,39 @@
+#character_list {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+#character_list .character_row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+#display_preview {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+#sorting_fields {
+  padding-top: 10px;
+  margin-top: 10px;
+  border-top: black solid 1px;
+}
+
+#sorting_profile_table {
+	table-layout: fixed;
+}
+
+/* tbody.collapsed > tr {
+    visibility: collapse;
+} */
+
+.ascend::after {
+	content: "▲";
+}
+
+.descend::after {
+	content: "▼";
+}

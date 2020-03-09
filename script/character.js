@@ -23,15 +23,15 @@ let character_api = (() => {
       this.ranks = ranks;
     }
   }
-  
+
   let collection = null;
 
   // sends HTML request to get the collection json.
-	module.getCollection = (callback) => {
+  module.getCollection = (callback) => {
     // return the stored collection
     if (collection) return callback(collection);
-		var xhr = new XMLHttpRequest();
-		xhr.onload = () => {
+    var xhr = new XMLHttpRequest();
+    xhr.onload = () => {
       collection = JSON.parse(xhr.responseText);
       callback(collection);
     }
@@ -42,7 +42,7 @@ let character_api = (() => {
   // get the list of names.
   module.getNames = (callback) => {
     module.getCollection((collection) => {
-      let names = collection.map(character => {return {id: character.id, name: character.name}});
+      let names = collection.map(character => { return { id: character.id, name: character.name } });
       names = [...new Set(names)];
       callback(names);
     })
@@ -57,7 +57,7 @@ let character_api = (() => {
       let rank_list = character_list.map((character) => character.rank);
       let ranks = Array(5).fill(false);
       for (let i = 0; i < 5; i++) {
-        if (rank_list.indexOf((i+1).toString(10)) != -1) ranks[i] = true;
+        if (rank_list.indexOf((i + 1).toString(10)) != -1) ranks[i] = true;
       }
       let character = new module.Character(id, name, attribute, ranks);
       callback(character);
@@ -80,7 +80,7 @@ let character_api = (() => {
       // check rank.
       if (!character.ranks[display.rank - 1]) err.push(`Display Rank ${display.rank} does not match Character Ranks ${character.ranks}`)
       // check level.
-      if      (display.rank == "1" && (display.level < 1 || display.level > 40)) err.push(`Display Level ${display.level} for Display Rank ${display.rank} must be between 1 and 40.`);
+      if (display.rank == "1" && (display.level < 1 || display.level > 40)) err.push(`Display Level ${display.level} for Display Rank ${display.rank} must be between 1 and 40.`);
       else if (display.rank == "2" && (display.level < 1 || display.level > 50)) err.push(`Display Level ${display.level} for Display Rank ${display.rank} must be between 1 and 50.`);
       else if (display.rank == "3" && (display.level < 1 || display.level > 60)) err.push(`Display Level ${display.level} for Display Rank ${display.rank} must be between 1 and 60.`);
       else if (display.rank == "4" && (display.level < 1 || display.level > 80)) err.push(`Display Level ${display.level} for Display Rank ${display.rank} must be between 1 and 80.`);
@@ -100,7 +100,7 @@ let character_api = (() => {
    * get Display from the form.
    * 
    * @return {Display}
-   */ 
+   */
   const getFormDisplay = () => {
     let display = new character_api.Display(
       name_select.value,
@@ -128,13 +128,13 @@ let character_api = (() => {
     }
     return properties;
   };
-  
+
   /**
    * get Display from character display.
    * 
    * @param {HTMLDivElement} character_display
    * @return {Display}
-   */ 
+   */
   const getCharacterDisplay = (character_display) => {
     let display = new character_api.Display(
       character_display.getAttribute("character_id"),
@@ -153,7 +153,7 @@ let character_api = (() => {
    * 
    * @param {Display} display
    * @return {HTMLDivElement}
-   */ 
+   */
   const createDisplay = (display, listener) => {
     let character_display = document.createElement("div");
     character_display.classList.add("character_display");
@@ -213,7 +213,7 @@ let character_api = (() => {
    * updates the display preview with Display.
    * 
    * @param {HTMLDivElement} display
-   */ 
+   */
   const updatePreviewDisplay = (display) => {
     let character_display = createDisplay(display);
     character_display.classList.add("preview");
@@ -225,7 +225,7 @@ let character_api = (() => {
    * updates the form with Display.
    * 
    * @param {Display} display
-   */ 
+   */
   const updateForm = (display) => {
     name_select.value = display.id;
     rank_select.value = display.rank;
@@ -240,7 +240,7 @@ let character_api = (() => {
    * updates the form with the available options and selects lowest.
    * 
    * @param {Character} character
-   */ 
+   */
   const updateFormEnabled = (character) => {
     // enable or disable the attribute select.
     for (let i = 0; i < 6; i++) {
@@ -257,7 +257,7 @@ let character_api = (() => {
     }
   };
 
-  const ATTRIBUTE_ORDER = {"fire": 0, "water": 1, "forest": 2, "light": 3, "dark": 4, "void": 5};
+  const ATTRIBUTE_ORDER = { "fire": 0, "water": 1, "forest": 2, "light": 3, "dark": 4, "void": 5 };
 
   const sortList = (properties) => {
     // get the Display of every character display in the list.
@@ -267,7 +267,7 @@ let character_api = (() => {
     });
 
     // add each display_property to the corresponding group.
-    let display_groups = group_properties(character_displays, properties.group_by, properties.group_dir); 
+    let display_groups = group_properties(character_displays, properties.group_by, properties.group_dir);
 
     // convert attributes to numbers.
     for (let group_name in display_groups) {
@@ -295,43 +295,43 @@ let character_api = (() => {
     return display_groups;
   };
 
-  const NUM_TO_WORD = {"0": "zero", "1": "one", "2": "two", "3": "three", "4": "four", "5": "five"};
-  
+  const NUM_TO_WORD = { "0": "zero", "1": "one", "2": "two", "3": "three", "4": "four", "5": "five" };
+
   // adds each display_property to the corresponding group.
   const group_properties = (display_properties, group_by, group_dir) => {
     let display_groups = {};
     if (group_by == "attribute") {
-      if (group_dir == 1) display_groups = {"fire": [], "water": [], "forest": [], "light": [], "dark": [], "void": []};
-      if (group_dir == -1) display_groups = {"void": [], "dark": [], "light": [], "forest": [], "water": [], "fire": []};
+      if (group_dir == 1) display_groups = { "fire": [], "water": [], "forest": [], "light": [], "dark": [], "void": [] };
+      if (group_dir == -1) display_groups = { "void": [], "dark": [], "light": [], "forest": [], "water": [], "fire": [] };
       display_properties.forEach(properties => {
         display_groups[properties["attribute"]].push(properties);
       });
     } else if (group_by == "rank") {
-      if (group_dir == 1) display_groups = {"one": [], "two": [], "three": [], "four": [], "five": []};
-      if (group_dir == -1) display_groups = {"five": [], "four": [], "three": [], "two": [], "one": []};
+      if (group_dir == 1) display_groups = { "one": [], "two": [], "three": [], "four": [], "five": [] };
+      if (group_dir == -1) display_groups = { "five": [], "four": [], "three": [], "two": [], "one": [] };
       display_properties.forEach(properties => {
         display_groups[NUM_TO_WORD[properties["rank"]]].push(properties);
       });
     } else if (group_by == "magic") {
-      if (group_dir == 1) display_groups = {"zero": [], "one": [], "two": [], "three": []};
-      if (group_dir == -1) display_groups = {"three": [], "two": [], "one": [], "zero": []};
+      if (group_dir == 1) display_groups = { "zero": [], "one": [], "two": [], "three": [] };
+      if (group_dir == -1) display_groups = { "three": [], "two": [], "one": [], "zero": [] };
       display_properties.forEach(properties => {
         display_groups[NUM_TO_WORD[properties["magic"]]].push(properties);
       });
     } else if (group_by == "magia") {
-      if (group_dir == 1) display_groups = {"one": [], "two": [], "three": [], "four": [], "five": []};
-      if (group_dir == -1) display_groups = {"five": [], "four": [], "three": [], "two": [], "one": []};
+      if (group_dir == 1) display_groups = { "one": [], "two": [], "three": [], "four": [], "five": [] };
+      if (group_dir == -1) display_groups = { "five": [], "four": [], "three": [], "two": [], "one": [] };
       display_properties.forEach(properties => {
         display_groups[NUM_TO_WORD[properties["magia"]]].push(properties);
       });
     } else if (group_by == "episode") {
-      if (group_dir == 1) display_groups = {"one": [], "two": [], "three": [], "four": [], "five": []};
-      if (group_dir == -1) display_groups = {"five": [], "four": [], "three": [], "two": [], "one": []};
+      if (group_dir == 1) display_groups = { "one": [], "two": [], "three": [], "four": [], "five": [] };
+      if (group_dir == -1) display_groups = { "five": [], "four": [], "three": [], "two": [], "one": [] };
       display_properties.forEach(properties => {
         display_groups[NUM_TO_WORD[properties["episode"]]].push(properties);
       });
     } else if (group_by == "none") {
-      display_groups = {"none": []};
+      display_groups = { "none": [] };
       display_properties.forEach(properties => {
         display_groups["none"].push(properties);
       });
@@ -390,7 +390,7 @@ let character_api = (() => {
   module.updateSelectedDisplay = () => {
     let character_display = Array.from(document.querySelectorAll(".character_display:not(.preview)")).find(child => child.classList.contains("selected"));
     character_display.remove()
-    
+
     let display = getFormDisplay();
     character_display = createDisplay(display, true);
     character_list.appendChild(character_display);
@@ -409,15 +409,14 @@ let character_api = (() => {
 
   module.updatePreviewOnForm = () => {
     let display = getFormDisplay();
-    error_text.innerHTML = '';
+    character_error_text.innerHTML = '';
     isValidCharacterDisplay(name_select.value, display, error => {
       if (error.length == 0) {
         create_button.disabled = false;
         updatePreviewDisplay(display);
-      }
-      else {
+      } else {
         create_button.disabled = true;
-        error_text.innerHTML = error.toString();
+        character_error_text.innerHTML = error.toString();
         console.log(error);
       }
     });
