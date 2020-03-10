@@ -26,8 +26,8 @@
 	table-layout: fixed;
 }
 
-/* tbody.collapsed > tr {
-    visibility: collapse;
+/* #sorting_table * {
+  border: 1px black solid;
 } */
 
 .ascend, .descend {

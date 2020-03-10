@@ -35,7 +35,7 @@ let character_api = (() => {
       collection = JSON.parse(xhr.responseText);
       callback(collection);
     }
-    xhr.open("GET", "/assets/magireco/collection.json", true);
+    xhr.open("GET", "/magireco/assets/collection.json", true);
     xhr.send();
   };
 
@@ -166,13 +166,13 @@ let character_api = (() => {
     character_display.setAttribute("episode", display.episode);
     character_display.setAttribute("level", display.level);
     character_display.innerHTML = `
-    <img class="background" src="assets/magireco/ui/bg/${display.attribute}.png">
-    <img class="card_image" src="assets/magireco/card/image/card_${display.id}${display.rank}_d.png">
-    <img class="frame_rank" src="assets/magireco/ui/frame/${display.rank}.png">
-    <img class="star_rank" src="assets/magireco/ui/star/${display.rank}.png">
-    <img class="attribute" src="assets/magireco/ui/attribute/${display.attribute}.png">
-    <img class="magic" src="assets/magireco/ui/magic/${display.magic}.png">
-    <img class="magia" src="assets/magireco/ui/magia/${display.magia}-${display.episode}.png">
+    <img class="background" src="/magireco/assets/ui/bg/${display.attribute}.png">
+    <img class="card_image" src="/magireco/assets/image/card_${display.id}${display.rank}_d.png">
+    <img class="frame_rank" src="/magireco/assets/ui/frame/${display.rank}.png">
+    <img class="star_rank" src="/magireco/assets/ui/star/${display.rank}.png">
+    <img class="attribute" src="/magireco/assets/ui/attribute/${display.attribute}.png">
+    <img class="magic" src="/magireco/assets/ui/magic/${display.magic}.png">
+    <img class="magia" src="/magireco/assets/ui/magia/${display.magia}-${display.episode}.png">
     <div class="level">
       <div class="level_pre">Lvl.</div>
       <div class="level_num">${display.level}</div>
@@ -185,8 +185,7 @@ let character_api = (() => {
         document.querySelectorAll(".character_display:not(.preview)").forEach(child => {
           if (child.classList.contains("selected")) child.classList.remove("selected");
         });
-        if (character_display.classList.contains("selected")) character_display.classList.remove("selected");
-        else character_display.classList.add("selected");
+        character_display.classList.add("selected");
       });
     }
     return character_display;
@@ -436,12 +435,27 @@ let character_api = (() => {
   module.saveProfile = () => {
     let profileName = new_profile_field.value;
     if (settings_api.profileExists(profileName)) {
-      sorting_error_text.innerHTML = `The sorting profile ${profileName} already exists.`;
+      profile_error_text.innerHTML = `The sorting profile ${profileName} already exists.`;
       return;
     }
     new_profile_field.value = "";
     let properties = getSortProperties();
     settings_api.updateSettings(profileName, properties);
+  };
+
+  module.checkProfile = () => {
+    let profileName = new_profile_field.value;
+    if (settings_api.profileExists(profileName)) profile_error_text.innerHTML = `The sorting profile ${profileName} already exists.`;
+    else profile_error_text.innerHTML = "";
+  };
+
+  module.setProfile = () => {
+    let profileIndex = profile_select.value;
+    settings_api.setSortingFields(settings_api.settings[profileIndex]);
+  };
+
+  module.changeToCustom = () => {
+    profile_select.selectedIndex = settings_api.customIndex;
   };
 
   return module;

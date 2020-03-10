@@ -51,6 +51,7 @@
     document.querySelectorAll(".sort_form").forEach(element => {
       element.addEventListener("change", () => {
         character_api.sortOnFormUpdate();
+        character_api.changeToCustom();
       });
     });
 
@@ -65,6 +66,9 @@
         }
         character_api.sortOnFormUpdate();
       });
+      element.addEventListener("change", () => {
+        character_api.changeToCustom();
+      });
     });
 
     // resort when character list changes.
@@ -74,10 +78,14 @@
 
     // deselect currently selected.
     document.addEventListener("click", (e) => {
-      if (e.target.parentElement.className.indexOf("character_display") === -1 && e.target.parentElement.parentElement.className.indexOf("character_display") === -1) {
-        document.querySelectorAll(".character_display:not(.preview)").forEach(child => {
-          if (child.classList.contains("selected")) child.classList.remove("selected");
-        });
+      try {
+        if (e.target.parentElement.className.indexOf("character_display") === -1 && e.target.parentElement.parentElement.className.indexOf("character_display") === -1) {
+          document.querySelectorAll(".character_display:not(.preview)").forEach(child => {
+            if (child.classList.contains("selected")) child.classList.remove("selected");
+          });
+        }
+      } catch (error) {
+        // type error
       }
     });
 
@@ -93,8 +101,20 @@
 
     // save the new sorting profile.
     save_profile_button.addEventListener("click", () => {
-      // character_api.saveProfile();
-    })
+      character_api.saveProfile();
+    });
+
+    // check the profile name on change.
+    new_profile_field.addEventListener("change", () => {
+      character_api.checkProfile();
+    });
+
+    // check set the profile properties on change.
+    profile_select.addEventListener("change", () => {
+      if (profile_select.selectedIndex == settings_api.customIndex) return;
+      character_api.setProfile();
+      character_api.sortOnFormUpdate();
+    });
   };
 
   // initilize name field.
@@ -119,28 +139,6 @@
 
   // laod the settings from the storage.
   settings_api.loadSettings();
-
-  character_api.onErrorUpdate(error => {
-    error_text.innerHTML = error.toString();
-  });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 }());

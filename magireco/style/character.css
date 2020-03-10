@@ -19,22 +19,27 @@
 
 .frame_rank {
   margin-top: -112px;
+  -webkit-user-drag: none;
 }
 
 .star_rank {
   margin-top: -112px;
+  -webkit-user-drag: none;
 }
 
 .attribute {
   margin-top: -112px;
+  -webkit-user-drag: none;
 }
 
 .magic {
   margin-top: 0px;
+  -webkit-user-drag: none;
 }
 
 .magia {
   margin-top: 0px;
+  -webkit-user-drag: none;
 }
 
 .level {
@@ -45,6 +50,8 @@
   margin-top: -156px;
   text-align: right;
   font-family: Arial, Helvetica, sans-serif;
+  cursor: default;
+  user-select: none;
 }
 
 .level .level_pre {
@@ -63,11 +70,11 @@
 }
 
 .character_display .card_image {
-  -webkit-mask-image: url(/assets/magireco/ui/frame_mask.png);
-  -webkit-mask-position-x: +0px;
+  -webkit-mask-image: url(/magireco/assets/ui/frame_mask.png);
+  -webkit-mask-position-x: +8px;
   -webkit-mask-position-y: +16px;
   -webkit-mask-repeat: no-repeat;
-  mask-image: url(/assets/magireco/ui/frame_mask.png);
+  mask-image: url(/magireco/assets/ui/frame_mask.png);
   mask-position: -9px, -16px;
   mask-repeat: no-repeat;
   position: absolute;
