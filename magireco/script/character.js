@@ -441,6 +441,7 @@ let character_api = (() => {
     new_profile_field.value = "";
     let properties = getSortProperties();
     settings_api.updateSettings(profileName, properties);
+    new_profile_row.style.visibility = "collapse"
   };
 
   module.checkProfile = () => {

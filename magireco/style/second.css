@@ -26,10 +26,6 @@
 	table-layout: fixed;
 }
 
-/* #sorting_table * {
-  border: 1px black solid;
-} */
-
 .ascend, .descend {
 	font-size: 12px;
 	color: #18a0fb;

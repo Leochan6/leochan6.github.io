@@ -19,14 +19,29 @@
 
     <div id="left_bar">
       <div id="tab_bar">
-        <button id="home_btn" class="tablink btn btnBlue">Home</button>
-        <button id="sorting_btn" class="tablink btn btnGray">Sorting</button>
+        <button id="home_btn" class="tablink btn btnBlue" tab_name="home_tab">Home</button>
+        <button id="char_btn" class="tablink btn btnGray" tab_name="char_tab">Character</button>
+        <button id="sort_btn" class="tablink btn btnGray" tab_name="sort_tab">Sorting</button>
       </div>
       <div id="tabs">
         <div id="home_tab" class="tab">
-          <h2>Display</h2>
-          <div id="home_fields">
-            <table id="fields_table" width=100%>
+          <h2>My Lists</h2>
+          <div id="list_create">
+            <button id="new_list_button" class="btn btnGray">Create New List</button>
+            <table id="new_list_table" style="visibility: collapse;">
+              <tr>
+                <td>List Name:</td>
+                <td><input id type="text"></td>
+                <td></td>
+              </tr>
+            </table>
+          </div>
+          <div id="lists_"></div>
+        </div>
+        <div id="char_tab" class="tab tab_hidden">
+          <h2>Character</h2>
+          <div id="char_fields">
+            <table id="char_fields_table" width=100%>
               <tr title="Name of the Character.">
                 <td>Name:</td>
                 <td><select id="name_select" style="width:140px"></select></td>
@@ -98,7 +113,7 @@
           <h2 id="preview_text">Preview:</h2>
           <div id="display_preview"></div>
         </div>
-        <div id="sorting_tab" class="tab" style="display:none">
+        <div id="sort_tab" class="tab tab_hidden">
           <h2>Profile</h2>
           <div id="sorting_profiles">
             <table id="sorting_profile_table">
@@ -176,8 +191,7 @@
       </div>
     </div>
     <div id="main">
-      <h2>My List</h2>
-      <button id="clear_button" class="btn btnGray">Clear</button>
+      <h2 id="list_name_title">Untitled List</h2>
       <div id="character_list"></div>
     </div>
   </div>

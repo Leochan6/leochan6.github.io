@@ -2,8 +2,14 @@ let elements = (() => {
   let module = {};
 
 
+  // Error Text
   module.character_error_text = document.querySelector("#character_error_text");
   module.profile_error_text = document.querySelector("#profile_error_text");
+
+  // Tab Buttons
+  module.home_tab_button = document.querySelector("#home_btn");
+  module.char_tab_button = document.querySelector("#char_btn");
+  module.sort_tab_button = document.querySelector("#sort_btn");
 
   // Home Fields
   module.name_select = document.querySelector("#name_select");

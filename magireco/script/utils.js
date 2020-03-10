@@ -15,9 +15,11 @@ const utils = (() => {
 
   // Open the tab tabName and change event's button colour.
   module.openTab = (event, tabName) => {
-    document.querySelectorAll(".tab").forEach(tab => tab.style.display = "none");
+    // document.querySelectorAll(".tab").forEach(tab => tab.style.display = "none");
+    document.querySelectorAll(".tab").forEach(tab => tab.classList.add("tab_hidden"));
     document.querySelectorAll(".tablink").forEach(link => link.classList.replace("btnBlue", "btnGray"))
-    document.getElementById(tabName).style.display = "block";
+    // document.getElementById(tabName).style.display = "block";
+    document.getElementById(tabName).classList.remove("tab_hidden");
     event.target.className = event.target.className.replace("btnGray", "btnBlue");
   }
 

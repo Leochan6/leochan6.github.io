@@ -3,11 +3,21 @@
 
   window.onload = () => {
 
-    // Open the Home Tab.
-    document.getElementById('home_btn').addEventListener("click", event => utils.openTab(event, 'home_tab'));
+    // // Open the Home Tab.
+    // home_tab_button.addEventListener("click", event => utils.openTab(event, 'home_tab'));
+    
+    // // Open the Character Tab.
+    // char_tab_button.addEventListener("click", event => utils.openTab(event, 'char_tab'));
 
-    // Open the Sorting Tab.
-    document.getElementById('sorting_btn').addEventListener("click", event => utils.openTab(event, 'sorting_tab'));
+    // // Open the Sorting Tab.
+    // sorting_tab_button.addEventListener("click", event => utils.openTab(event, 'sorting_tab'));
+
+    // open the tab.
+    document.querySelectorAll(".tablink").forEach(element => {
+      element.addEventListener("click", event => {
+        utils.openTab(event, element.getAttribute("tab_name"));
+      });
+    });
 
     // update the available fields on name change and update preview display.
     name_select.addEventListener("change", () => {
@@ -43,9 +53,9 @@
     });
 
     // clears all character displays from list.
-    clear_button.addEventListener("click", () => {
-      character_list.innerHTML = "";
-    });
+    // clear_button.addEventListener("click", () => {
+    //   character_list.innerHTML = "";
+    // });
 
     // update the list on sort form change.
     document.querySelectorAll(".sort_form").forEach(element => {
