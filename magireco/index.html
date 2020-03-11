@@ -21,22 +21,24 @@
       <div id="tab_bar">
         <button id="home_btn" class="tablink btn btnBlue" tab_name="home_tab">Home</button>
         <button id="char_btn" class="tablink btn btnGray" tab_name="char_tab">Character</button>
-        <button id="sort_btn" class="tablink btn btnGray" tab_name="sort_tab">Sorting</button>
+        <button id="sort_btn" class="tablink btn btnGray" tab_name="sort_tab">Sort</button>
+        <button id="setting_btn" class="tablink btn btnGray" tab_name="setting_tab">Setting</button>
       </div>
       <div id="tabs">
         <div id="home_tab" class="tab">
-          <h2>My Lists</h2>
+          <h2>My Lists <button id="new_list_button" class="small_btn" title="Create a new list">+</button></h2>
           <div id="list_create">
-            <button id="new_list_button" class="btn btnGray">Create New List</button>
             <table id="new_list_table" style="visibility: collapse;">
               <tr>
                 <td>List Name:</td>
-                <td><input id type="text"></td>
-                <td></td>
+                <td><input id="new_list_name_field" type="text"></td>
+                <td><button id="new_list_create_button">Create</button></td>
+                <td><button id="new_list_cancel_button">×</button></td>
               </tr>
             </table>
           </div>
-          <div id="lists_"></div>
+          <div id="saved_character_lists"></div>
+          <p class="error_text" id="home_error_text"></p>
         </div>
         <div id="char_tab" class="tab tab_hidden">
           <h2>Character</h2>
@@ -188,16 +190,28 @@
           </div>
           <p class="error_text" id="profile_error_text"></p>
         </div>
+        <div id="setting_tab" class="tab tab_hidden">
+          <h2>Settings</h2>
+          <table id="settings_table">
+            <tr>
+              <td><button id="reset_profiles_button">Reset Profiles</button></td>
+            </tr>
+            <tr>
+              <td>Hi</td>
+            </tr>
+
+          </table>
+        </div>
       </div>
     </div>
     <div id="main">
       <h2 id="list_name_title">Untitled List</h2>
-      <div id="character_list"></div>
+      <div id="character_list_content"></div>
     </div>
   </div>
 
   <script src="script/elements.js"></script>
-  <script src="script/settings.js"></script>
+  <script src="script/storage.js"></script>
   <script src="script/utils.js"></script>
   <script src="script/character.js"></script>
   <script src="script/index.js"></script>

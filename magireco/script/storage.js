@@ -1,8 +1,10 @@
-let settings_api = (() => {
+let storage_api = (() => {
 
   let module = {};
 
   module.settings = [];
+
+  module.lists = [];
 
   module.customIndex = 1;
 
@@ -33,22 +35,20 @@ let settings_api = (() => {
 
   module.updateSettings = (name, properties) => {
     let settings = module.getSettings();
-    let replace = false;
-    settings.forEach(setting => {
+    let settingIndex = -1;
+    settings.forEach((setting, i) => {
       if (setting.name === name) {
         setting.settings = properties;
-        replace = true;
         return;
       }
     });
-    if (!replace) settings.splice(settings.length-1, 0, {name: name, settings: properties, isDefault: false});
+    if (settingIndex == -1) settings.splice(settings.length-1, 0, {name: name, settings: properties, isDefault: false});
     window.localStorage.setItem("profiles", JSON.stringify(settings));
     module.loadSettings();
   };
 
   module.profileExists = (name) => {
-    let settings = module.getSettings();
-    if (settings.find(setting => setting.name === name)) return true;
+    if (module.settings.find(setting => setting.name === name)) return true;
     return false;
   };
 
@@ -62,6 +62,65 @@ let settings_api = (() => {
     setSelectedDirection(sort_id_dir_select, profile.settings.sort_id_dir);
     displays_per_row.value = profile.settings.displays_per_row;
   }
+
+  module.resetSettings = () => {
+    initSettings();
+    module.loadSettings();
+  };
+
+  module.loadLists = () => {
+    module.lists = module.getLists();
+    saved_character_lists.innerHTML = "";
+    module.lists.forEach(list => {
+      let div = document.createElement("div");
+      div.classList.add("character_list_row");
+      let entry = document.createElement("div");
+      entry.classList.add("character_list_entry");
+      // entry.className = "large_btn character_list_entry";
+      entry.innerHTML = list.name;
+      entry.addEventListener("click", () => {
+        character_api.selectList(list);
+      });
+      let deleteButton = document.createElement("button");
+      deleteButton.className = "small_btn delete";
+      deleteButton.addEventListener("click", () => {
+        character_api.deleteList(list);
+      })
+      div.append(entry);
+      div.append(deleteButton);
+      saved_character_lists.append(div);
+    });
+
+  };
+
+  module.getLists = () => {
+    let lists = JSON.parse(window.localStorage.getItem("lists"));
+    if (!lists) {
+      window.localStorage.setItem("lists", JSON.stringify([]));
+      lists = JSON.parse(window.localStorage.getItem("lists"));
+    }
+    return lists;
+  };
+
+  module.listExists = (name) => {
+    if (module.lists.find(list => list.name === name)) return true;
+    return false
+  };
+
+  module.updateList = (name, character_list) => {
+    let lists = module.getLists();
+    let listIndex = -1
+    lists.forEach((list, i) => {
+      if (list.name === name) {
+        list.character_list = character_list;
+        listIndex = i;
+        return;
+      }
+    });
+    if (listIndex == -1) lists.push({name: name, character_list: character_list ? character_list : [], selectedProfile: character_api.getSelectedProfile()});
+    lists = window.localStorage.setItem("lists", JSON.stringify(lists));
+    module.loadLists();
+  };
 
   const initSettings = () => {
     let defaultProfile = { name: "Default", settings: { group_by: "attribute", group_by_dir: 1, sort_by_1: "level", sort_dir_1: -1, sort_by_2: "none", sort_dir_2: -1, sort_id_dir: -1, displays_per_row: 8 }, isDefault: true };

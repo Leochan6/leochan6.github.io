@@ -34,6 +34,44 @@
   background-color: #000000;
 }
 
+.small_btn {
+  font-size: 16px;
+  border: black solid 1px;
+  border-radius: 10px;
+  margin: 5px;
+  padding: 5px;
+  min-width: 30px;
+  min-height: 30px;
+  cursor: pointer;
+  user-select: none;
+  text-align: center;
+  outline: none;
+}
+
+.small_btn:hover {
+  color: #FFFFFF;
+  background-color: #2c2c2c;
+}
+
+.large_btn {
+  font-size: 16px;
+  border: black solid 1px;
+  border-radius: 10px;
+  margin: 5px;
+  padding: 5px;
+  min-width: 30px;
+  min-height: 30px;
+  cursor: pointer;
+  user-select: none;
+  text-align: center;
+  outline: none;
+}
+
+.large_btn:hover {
+  color: #FFFFFF;
+  background-color: #2c2c2c;
+}
+
 .tab_hidden {
   display: none;
 }

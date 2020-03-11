@@ -3,15 +3,6 @@
 
   window.onload = () => {
 
-    // // Open the Home Tab.
-    // home_tab_button.addEventListener("click", event => utils.openTab(event, 'home_tab'));
-    
-    // // Open the Character Tab.
-    // char_tab_button.addEventListener("click", event => utils.openTab(event, 'char_tab'));
-
-    // // Open the Sorting Tab.
-    // sorting_tab_button.addEventListener("click", event => utils.openTab(event, 'sorting_tab'));
-
     // open the tab.
     document.querySelectorAll(".tablink").forEach(element => {
       element.addEventListener("click", event => {
@@ -52,11 +43,6 @@
       character_display.remove();
     });
 
-    // clears all character displays from list.
-    // clear_button.addEventListener("click", () => {
-    //   character_list.innerHTML = "";
-    // });
-
     // update the list on sort form change.
     document.querySelectorAll(".sort_form").forEach(element => {
       element.addEventListener("change", () => {
@@ -82,9 +68,10 @@
     });
 
     // resort when character list changes.
-    character_list.addEventListener("change", () => {
+    character_list_content.addEventListener("change", () => {
       character_api.sortOnFormUpdate();
-    })
+      character_api.updateList();
+    });
 
     // deselect currently selected.
     document.addEventListener("click", (e) => {
@@ -121,9 +108,34 @@
 
     // check set the profile properties on change.
     profile_select.addEventListener("change", () => {
-      if (profile_select.selectedIndex == settings_api.customIndex) return;
+      if (profile_select.selectedIndex == storage_api.customIndex) return;
       character_api.setProfile();
       character_api.sortOnFormUpdate();
+    });
+
+    // reset the profiles to default.
+    reset_profiles_button.addEventListener("click", () => {
+      character_api.resetProfiles();
+    });
+
+    // show the create new list form.
+    new_list_button.addEventListener("click", () => {
+      new_list_table.style.visibility = "visible";
+    });
+
+    // hide the create new list form.
+    new_list_cancel_button.addEventListener("click", () => {
+      new_list_table.style.visibility = "collapse";
+    });
+
+    // create a new list.
+    new_list_create_button.addEventListener("click", () => {
+      character_api.createList();
+    });
+
+    // check the list name on change.
+    new_list_name_field.addEventListener("change", () => {
+      character_api.checkListName();
     });
   };
 
@@ -147,8 +159,10 @@
   // update form and preview display on startup.
   character_api.startUp();
 
-  // laod the settings from the storage.
-  settings_api.loadSettings();
+  // load the settings from the storage.
+  storage_api.loadSettings();
 
+  // load the character lists.
+  storage_api.loadLists();
 
 }());

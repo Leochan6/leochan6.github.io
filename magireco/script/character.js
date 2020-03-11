@@ -192,23 +192,6 @@ let character_api = (() => {
   }
 
   /**
-   * updates the character display with the display.
-   * 
-   * @param {HTMLDivElement} character_display 
-   * @param {Display} display 
-   */
-  const updateDisplay = (character_display, display) => {
-    character_display.querySelector(".background").setAttribute("src", `assets/magireco/ui/bg/${display.attribute}.png`);
-    character_display.querySelector(".card_image").setAttribute("src", `assets/magireco/card/image/card_${display.id}${display.rank}_d.png`);
-    character_display.querySelector(".frame_rank").setAttribute("src", `assets/magireco/ui/frame/${display.rank}.png`);
-    character_display.querySelector(".star_rank").setAttribute("src", `assets/magireco/ui/star/${display.rank}.png`);
-    character_display.querySelector(".attribute").setAttribute("src", `assets/magireco/ui/attribute/${display.attribute}.png`);
-    character_display.querySelector(".magic").setAttribute("src", `assets/magireco/ui/magic/${display.magic}.png`);
-    character_display.querySelector(".magia").setAttribute("src", `assets/magireco/ui/magia/${display.magia}-${display.episode}.png`);
-    character_display.querySelector(".level_num").innerHTML = `${display.level}`;
-  };
-
-  /**
    * updates the display preview with Display.
    * 
    * @param {HTMLDivElement} display
@@ -256,8 +239,6 @@ let character_api = (() => {
     }
   };
 
-  const ATTRIBUTE_ORDER = { "fire": 0, "water": 1, "forest": 2, "light": 3, "dark": 4, "void": 5 };
-
   const sortList = (properties) => {
     // get the Display of every character display in the list.
     let character_displays = [];
@@ -267,15 +248,6 @@ let character_api = (() => {
 
     // add each display_property to the corresponding group.
     let display_groups = group_properties(character_displays, properties.group_by, properties.group_dir);
-
-    // convert attributes to numbers.
-    for (let group_name in display_groups) {
-      let group = display_groups[group_name];
-      // group.forEach(properties => {
-      //   let attribute = properties["attribute"];
-      //   properties["attribute"] = ATTRIBUTE_ORDER[attribute];
-      // });
-    }
 
     // sort each group by the specified property.
     var sortBy = [];
@@ -344,6 +316,14 @@ let character_api = (() => {
     return new module.Display(character.id, character.name, display.rank, character.attribute, display.level, display.magic, display.magia, display.episode);
   }
 
+  const loadCharacterList = (character_list) => {
+    character_list_content.innerHTML = "";  
+    character_list.forEach(display => {
+      character_list_content.append(createDisplay(display));
+    })
+    character_list_content.dispatchEvent(new Event("change"));
+  };
+
   let displayListeners = [];
 
   module.startUp = (listener) => {
@@ -352,18 +332,6 @@ let character_api = (() => {
       updateFormEnabled(character);
       updatePreviewDisplay(getBasicCharacterDisplay(character));
     });
-  };
-
-  let errorListeners = [];
-
-  module.onErrorUpdate = (listener) => {
-    displayListeners.push(listener);
-  };
-
-  const notifyErrorListeners = (error) => {
-    errorListeners.forEach(listener => {
-      listener(error.toString());
-    })
   };
 
   module.updateFieldsOnName = () => {
@@ -378,8 +346,8 @@ let character_api = (() => {
   module.createAddDisplay = () => {
     let display = getFormDisplay();
     let character_display = createDisplay(display, true);
-    character_list.appendChild(character_display);
-    character_list.dispatchEvent(new Event("change"));
+    character_list_content.appendChild(character_display);
+    character_list_content.dispatchEvent(new Event("change"));
   };
 
   module.updateSelectedDisplay = () => {
@@ -388,8 +356,8 @@ let character_api = (() => {
 
     let display = getFormDisplay();
     character_display = createDisplay(display, true);
-    character_list.appendChild(character_display);
-    character_list.dispatchEvent(new Event("change"));
+    character_list_content.appendChild(character_display);
+    character_list_content.dispatchEvent(new Event("change"));
   };
 
   module.copyDisplay = () => {
@@ -418,7 +386,8 @@ let character_api = (() => {
   module.sortOnFormUpdate = () => {
     let properties = getSortProperties();
     let display_groups = sortList(properties);
-    character_list.innerHTML = '';
+    console.log(display_groups);
+    character_list_content.innerHTML = '';
     for (var group in display_groups) {
       if (display_groups[group].length == 0) continue;
       let group_row = document.createElement("div");
@@ -428,35 +397,92 @@ let character_api = (() => {
         let character_display = createDisplay(display, true);
         group_row.appendChild(character_display);
       });
-      character_list.appendChild(group_row);
+      character_list_content.appendChild(group_row);
     }
   };
 
+  module.updateList = () => {
+    let character_list = module.getCharacterList();
+    let listName = module.getListName();
+    storage_api.updateList(listName, character_list)
+  }
+
   module.saveProfile = () => {
     let profileName = new_profile_field.value;
-    if (settings_api.profileExists(profileName)) {
+    if (storage_api.profileExists(profileName)) {
       profile_error_text.innerHTML = `The sorting profile ${profileName} already exists.`;
       return;
     }
     new_profile_field.value = "";
     let properties = getSortProperties();
-    settings_api.updateSettings(profileName, properties);
+    storage_api.updateSettings(profileName, properties);
     new_profile_row.style.visibility = "collapse"
   };
 
   module.checkProfile = () => {
     let profileName = new_profile_field.value;
-    if (settings_api.profileExists(profileName)) profile_error_text.innerHTML = `The sorting profile ${profileName} already exists.`;
+    if (storage_api.profileExists(profileName)) profile_error_text.innerHTML = `The sorting profile ${profileName} already exists.`;
     else profile_error_text.innerHTML = "";
   };
 
   module.setProfile = () => {
     let profileIndex = profile_select.value;
-    settings_api.setSortingFields(settings_api.settings[profileIndex]);
+    storage_api.setSortingFields(storage_api.settings[profileIndex]);
+  };
+
+  module.getSelectedProfile = () => {
+    return profile_select.value;
+  };
+
+  module.getListName = () => {
+    return list_name_title.innerText;
+  };
+
+  module.getCharacterList = () => {
+    let character_list = [];
+    document.querySelectorAll(".character_display:not(.preview)").forEach(child => {
+      character_list.push(getCharacterDisplay(child));
+    });
+    return character_list;
   };
 
   module.changeToCustom = () => {
-    profile_select.selectedIndex = settings_api.customIndex;
+    profile_select.selectedIndex = storage_api.customIndex;
+  };
+
+  module.resetProfiles = () => {
+    if (window.confirm("Are you sure you want to reset the profiles?")) {
+      storage_api.resetSettings();
+    }
+  };
+
+  module.checkListName = () => {
+    let listName = new_list_name_field.value;
+    if (storage_api.listExists(listName)) home_error_text.innerHTML = `The list name ${listName} already exists.`;
+    else home_error_text.innerHTML = "";
+  }
+
+  module.createList = () => {
+    let listName = new_list_name_field.value;
+    if (storage_api.listExists(listName)) {
+      home_error_text.innerHTML = `The list name ${listName} already exists.`;
+      return;
+    }
+    new_list_name_field.value = "";
+    storage_api.updateList(listName, null);
+    new_list_table.style.visibility = "collapse"
+    list_name_title.innerHTML = listName;
+  };
+
+  module.selectList = (list) => {
+    list_name_title.innerHTML = list.name;
+    loadCharacterList(list.character_list);
+    profile_select.selectedIndex = list.selectedProfile;
+    profile_select.dispatchEvent(new Event("change"));
+  };
+
+  module.deleteList = (list) => {
+    console.log("deleting", list);
   };
 
   return module;
