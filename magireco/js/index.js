@@ -6,7 +6,9 @@
     // open the tab.
     document.querySelectorAll(".tablink").forEach(element => {
       element.addEventListener("click", event => {
-        utils.openTab(event, element.getAttribute("tab_name"));
+        // if (element.classList.contains("btnGray") && !storage_api.settings["show_all_menus"])
+        if (element.classList.contains("btnGray"))
+          utils.openTab(event, element.getAttribute("tab_name"));
       });
     });
 
@@ -41,6 +43,7 @@
     delete_button.addEventListener("click", () => {
       let character_display = Array.from(document.querySelectorAll(".character_display:not(.preview)")).find(child => child.classList.contains("selected"));
       character_display.remove();
+      character_list_content.dispatchEvent(new Event("change"));
     });
 
     // update the list on sort form change.
@@ -88,12 +91,12 @@
 
     // show the save new profile form.
     new_profile_button.addEventListener("click", () => {
-      new_profile_row.style.visibility = "visible"
+      new_profile_row.style.visibility = "visible";
     });
 
     // hide the save new profile form.
     close_new_profile_button.addEventListener("click", () => {
-      new_profile_row.style.visibility = "collapse"
+      new_profile_row.style.visibility = "collapse";
     });
 
     // save the new sorting profile.
@@ -118,14 +121,16 @@
       character_api.resetProfiles();
     });
 
-    // show the create new list form.
+    // show or hidthe create new list form.
     new_list_button.addEventListener("click", () => {
-      new_list_table.style.visibility = "visible";
-    });
-
-    // hide the create new list form.
-    new_list_cancel_button.addEventListener("click", () => {
-      new_list_table.style.visibility = "collapse";
+      if (new_list_button.classList.contains("add")) {
+        new_list_table.style.visibility = "visible";
+        new_list_button.classList.replace("add", "minus");
+      }
+      else {
+        new_list_table.style.visibility = "collapse";
+        new_list_button.classList.replace("minus", "add");
+      }
     });
 
     // create a new list.
@@ -136,6 +141,23 @@
     // check the list name on change.
     new_list_name_field.addEventListener("change", () => {
       character_api.checkListName();
+    });
+
+    // show all menus checkbox.
+    show_all_menus_checkbox.addEventListener("click", () => {
+      if (show_all_menus_checkbox.checked) {
+        tab_bar.classList.add("tab_hidden");
+        document.querySelectorAll(".tab").forEach(element => {
+          element.classList.remove("tab_hidden");
+        });
+      }
+      else {
+        tab_bar.classList.remove("tab_hidden");
+        document.querySelectorAll(".tab").forEach(element => {
+          if (element.id !== "setting_tab")
+            element.classList.add("tab_hidden");
+        });
+      }
     });
   };
 
@@ -159,10 +181,8 @@
   // update form and preview display on startup.
   character_api.startUp();
 
-  // load the settings from the storage.
-  storage_api.loadSettings();
-
-  // load the character lists.
-  storage_api.loadLists();
+  // load the settings, profiles, and character lists from storage.
+  let userId = new URL(document.location).searchParams.get("user")
+  storage_api.startUp(userId);
 
 }());

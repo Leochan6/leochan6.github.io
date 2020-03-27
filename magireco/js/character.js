@@ -24,44 +24,25 @@ let character_api = (() => {
     }
   }
 
-  let collection = null;
-
-  // sends HTML request to get the collection json.
-  module.getCollection = (callback) => {
-    // return the stored collection
-    if (collection) return callback(collection);
-    var xhr = new XMLHttpRequest();
-    xhr.onload = () => {
-      collection = JSON.parse(xhr.responseText);
-      callback(collection);
-    }
-    xhr.open("GET", "/magireco/assets/collection.json", true);
-    xhr.send();
-  };
-
   // get the list of names.
   module.getNames = (callback) => {
-    module.getCollection((collection) => {
-      let names = collection.map(character => { return { id: character.id, name: character.name } });
-      names = [...new Set(names)];
-      callback(names);
-    })
+    let names = collection.map(character => { return { id: character.id, name: character.name } });
+    names = [...new Set(names)];
+    callback(names);
   };
 
   // get the attribute and rank for the character.
   const getCharacter = (id, callback) => {
-    module.getCollection((collection) => {
-      let character_list = collection.filter(character => character.id === id);
-      let name = character_list[0].name
-      let attribute = character_list[0].attribute.toLowerCase();
-      let rank_list = character_list.map((character) => character.rank);
-      let ranks = Array(5).fill(false);
-      for (let i = 0; i < 5; i++) {
-        if (rank_list.indexOf((i + 1).toString(10)) != -1) ranks[i] = true;
-      }
-      let character = new module.Character(id, name, attribute, ranks);
-      callback(character);
-    });
+    let character_list = collection.filter(character => character.id === id);
+    let name = character_list[0].name
+    let attribute = character_list[0].attribute.toLowerCase();
+    let rank_list = character_list.map((character) => character.rank);
+    let ranks = Array(5).fill(false);
+    for (let i = 0; i < 5; i++) {
+      if (rank_list.indexOf((i + 1).toString(10)) != -1) ranks[i] = true;
+    }
+    let character = new module.Character(id, name, attribute, ranks);
+    callback(character);
   };
 
   // gets the basic display for the character.
@@ -317,17 +298,15 @@ let character_api = (() => {
   }
 
   const loadCharacterList = (character_list) => {
-    character_list_content.innerHTML = "";  
+    character_list_content.innerHTML = "";
+    character_list = character_list ? character_list : [];
     character_list.forEach(display => {
       character_list_content.append(createDisplay(display));
     })
     character_list_content.dispatchEvent(new Event("change"));
   };
 
-  let displayListeners = [];
-
   module.startUp = (listener) => {
-    displayListeners.push(listener);
     getCharacter("1001", character => {
       updateFormEnabled(character);
       updatePreviewDisplay(getBasicCharacterDisplay(character));
@@ -386,7 +365,6 @@ let character_api = (() => {
   module.sortOnFormUpdate = () => {
     let properties = getSortProperties();
     let display_groups = sortList(properties);
-    console.log(display_groups);
     character_list_content.innerHTML = '';
     for (var group in display_groups) {
       if (display_groups[group].length == 0) continue;
@@ -415,7 +393,7 @@ let character_api = (() => {
     }
     new_profile_field.value = "";
     let properties = getSortProperties();
-    storage_api.updateSettings(profileName, properties);
+    storage_api.updateProfile(profileName, properties);
     new_profile_row.style.visibility = "collapse"
   };
 
@@ -427,7 +405,7 @@ let character_api = (() => {
 
   module.setProfile = () => {
     let profileIndex = profile_select.value;
-    storage_api.setSortingFields(storage_api.settings[profileIndex]);
+    storage_api.setProfileFields(storage_api.profiles[profileIndex]);
   };
 
   module.getSelectedProfile = () => {
@@ -452,7 +430,7 @@ let character_api = (() => {
 
   module.resetProfiles = () => {
     if (window.confirm("Are you sure you want to reset the profiles?")) {
-      storage_api.resetSettings();
+      storage_api.resetSorting();
     }
   };
 

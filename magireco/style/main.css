@@ -83,11 +83,23 @@
 }
 
 #left_bar {
-  height: 100%;
-  padding: 0px 10px;
-  width: 300px;
+  min-height: fit-content;
+  width: max-content;
   min-width: 300px;
+  max-width: 500px;
   border-right: black solid 1px;
+}
+
+#tabs {
+  width: fit-content;
+}
+
+.tab {
+  border: 1px solid black;
+  margin: 5px;
+  padding: 5px;
+  width: fit-content;
+  max-width: 300px;
 }
 
 #buttons {
@@ -99,13 +111,22 @@
   min-width: 500px;
 }
 
-header h1,
-h2 {
+header h1, h2 {
   overflow: hidden;
   white-space: nowrap;
 }
 
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
 .error_text {
   min-height: 16px;
+  width: 100%;
   color: red;
 }

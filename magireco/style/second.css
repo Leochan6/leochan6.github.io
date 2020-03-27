@@ -7,6 +7,7 @@
   user-select: none;
   text-align: center;
   width: 100%;
+  max-width: 200px;
   cursor: pointer;
   outline: none;
 }
@@ -15,13 +16,11 @@
   color: #FFFFFF;
   background-color: #2c2c2c;
 }
+
 .character_list_row {
   display: flex;
   flex-direction: row;
 }
-
-
-
 
 #character_list {
   display: flex;
@@ -29,7 +28,7 @@
   flex-wrap: wrap;
 }
 
-#character_list .character_row {
+#character_list_content .character_row {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -47,23 +46,31 @@
   border-top: black solid 1px;
 }
 
-#sorting_profile_table {
-	table-layout: fixed;
+#new_profile_field {
+  width: 100px;
 }
 
 .ascend, .descend {
-	font-size: 12px;
-	color: #18a0fb;
+  font-size: 12px;
+  color: #18a0fb;
 }
 
 .ascend::after {
-	content: "▲";
+  content: "▲";
 }
 
 .descend::after {
-	content: "▼";
+  content: "▼";
 }
 
 .delete::after {
-	content: "×";
+  content: "×";
+}
+
+.add::after {
+  content: "+";
+}
+
+.minus::after {
+  content: "-";
 }

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <a href="/magireco/" style="position: absolute; top: 0px; left: 0px;">Home</a>
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <title>Magia Record Character List</title>
+  <link href="style/character.css" rel="stylesheet" type="text/css" />
+  <link href="style/second.css" rel="stylesheet" type="text/css" />
+  <link href="style/main.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <header>
+    <h1>Magia Record Character List</h1>
+  </header>
+  <div id="content">
+
+    <div id="left_bar">
+      <h2 class="" id="name_heading"></h2>
+      <div id="tab_bar" class="tab_hidden">
+        <button id="home_btn" class="tablink btn btnBlue" tab_name="home_tab">Home</button>
+        <button id="char_btn" class="tablink btn btnGray" tab_name="char_tab">Character</button>
+        <button id="sort_btn" class="tablink btn btnGray" tab_name="sort_tab">Sort</button>
+        <button id="setting_btn" class="tablink btn btnGray" tab_name="setting_tab">Setting</button>
+      </div>
+      <div id="tabs">
+        <div id="home_tab" class="tab">
+          <h2 class="tab_heading" id="home_heading">My Lists <button id="new_list_button" class="small_btn add"
+              title="Show/Hide New List Form"></button></h2>
+          <div id="list_create">
+            <table id="new_list_table" style="visibility: collapse;">
+              <tr>
+                <td>List Name:</td>
+                <td><input id="new_list_name_field" type="text"></td>
+                <td><button id="new_list_create_button">Create</button></td>
+              </tr>
+            </table>
+          </div>
+          <div id="saved_character_lists"></div>
+          <p class="error_text" id="home_error_text"></p>
+        </div>
+        <div id="char_tab" class="tab">
+          <h2 class="tab_heading" id="char_heading">Character</h2>
+          <div id="char_fields">
+            <table id="char_fields_table" width=100%>
+              <tr title="Name of the Character.">
+                <td>Name:</td>
+                <td><select id="name_select" style="width:140px"></select></td>
+              </tr>
+              <tr title="Attribute of the Character.">
+                <td>Attribute:
+                <td><select id="attr_select" class="form">
+                    <option value="dark">Dark</option>
+                    <option value="fire">Fire</option>
+                    <option value="light">Light</option>
+                    <option value="forest">Forest</option>
+                    <option value="void">Void</option>
+                    <option value="water">Water</option>
+                  </select></td>
+              </tr>
+              <tr title="Rank of the Character (Stars/Rarity).">
+                <td>Rank:</td>
+                <td><select id="rank_select" class="form">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                  </select></td>
+              </tr>
+              <tr title="Experience Level of the Character (Enhancement).">
+                <td>Experience Level:</td>
+                <td><input id="level_select" class="form custom-input" type="number" value=1 maxlength="3" size=3 min=1
+                    max=100 border="2px solid black"></td>
+              </tr>
+              <tr title="Magic Level of the Character (Memoria Slots).">
+                <td>Magic Level:</td>
+                <td><select id="magic_select" class="form">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                  </select></td>
+              </tr>
+              <tr title="Magia Level of the Character.">
+                <td>Magia Level:</td>
+                <td><select id="magia_select" class="form">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                  </select></td>
+              </tr>
+              <tr title="Episode Level of the Character (Bond).">
+                <td>Episode Level:</td>
+                <td><select id="episode_select" class="form">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                  </select></td>
+              </tr>
+            </table>
+          </div>
+          <div id="home_buttons" align="left">
+            <button id="create_button" class="btn btnGray" type="submit">Create</button>
+            <button id="update_button" class="btn btnGray">Update</button>
+            <button id="copy_button" class="btn btnGray">Copy</button>
+            <button id="delete_button" class="btn btnGray">Delete</button>
+          </div>
+          <p class="error_text" id="character_error_text"></p>
+          <h3 id="preview_text">Preview:</h3>
+          <div id="display_preview"></div>
+        </div>
+        <div id="sort_tab" class="tab">
+          <h2 class="tab_heading" id="sort_heading">Sorting Profile</h2>
+          <div id="sorting_profiles">
+            <table id="sorting_profile_table">
+              <tbody>
+                <tr>
+                  <td>Current Profile:</td>
+                  <td><select id="profile_select"></select></td>
+                  <td><button id="new_profile_button" title="Create a new profile">+</button></td>
+                  <td><button id="delete_profile_button" title="Delete">×</button></td>
+                </tr>
+                <tr id="new_profile_row" style="visibility: collapse;">
+                  <td>Profile Name:</td>
+                  <td><input id="new_profile_field" type="text"></td>
+                  <td><button id="save_profile_button" title="Save this profile">Save</button></td>
+                  <td><button id="close_new_profile_button" title="Close">×</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div id="sorting_fields" align="left">
+            <table id="sorting_table">
+              <tr>
+                <td title="Group by this property.">Group By:</td>
+                <td><select id="group_by_select" class="sort_form">
+                    <option value="attribute">Attribute</option>
+                    <option value="rank">Rank</option>
+                    <option value="magic">Magic</option>
+                    <option value="magia">Magia</option>
+                    <option value="episode">Episode</option>
+                    <option value="none">None</option>
+                  </select>
+                </td>
+                <td id="group_dir_select" class="sort_dir ascend"></td>
+              </tr>
+              <tr>
+                <td title="Sort by this property first.">Sort By 1:</td>
+                <td><select id="sort_by_1_select" class="sort_form">
+                    <option value="attribute">Attribute</option>
+                    <option value="rank">Rank</option>
+                    <option value="level">Level</option>
+                    <option value="magic">Magic</option>
+                    <option value="magia">Magia</option>
+                    <option value="episode">Episode</option>
+                    <option value="none">None</option>
+                  </select>
+                </td>
+                <td id="sort_dir_1_select" class="sort_dir descend"></td>
+              </tr>
+              <tr>
+                <td title="Sort by this property second.">Sort By 2:</td>
+                <td><select id="sort_by_2_select" class="sort_form">
+                    <option value="attribute">Attribute</option>
+                    <option value="rank">Rank</option>
+                    <option value="level">Level</option>
+                    <option value="magic">Magic</option>
+                    <option value="magia">Magia</option>
+                    <option value="episode">Episode</option>
+                    <option value="none">None</option>
+                  </select>
+                </td>
+                <td id="sort_dir_2_select" class="sort_dir descend"></td>
+              </tr>
+              <tr>
+                <td title="Sort by the id of the character last.">ID Sort Direction:</td>
+                <td></td>
+                <td id="sort_id_dir_select" class="sort_dir descend"></td>
+              </tr>
+              <tr>
+                <td>Displays Per Row:</td>
+                <td><input id="displays_per_row" class="custom-input sort_form" type="number" value=8 maxlength="2"
+                    size=2 min=1 max=99 border="2px solid black"></td>
+              </tr>
+            </table>
+          </div>
+          <p class="error_text" id="profile_error_text"></p>
+        </div>
+        <div id="setting_tab" class="tab">
+          <h2 class="tab_heading" id="setting_heading">Settings</h2>
+          <table id="settings_table" class="tab_hidden">
+            <tr>
+              <td><button id="reset_profiles_button">Reset Profiles</button></td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" id="show_all_menus_checkbox">Show All</td>
+            </tr>
+
+          </table>
+        </div>
+      </div>
+    </div>
+    <div id="main">
+      <h2 id="list_name_title"></h2>
+      <div id="character_list_content"></div>
+    </div>
+  </div>
+  <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-database.js"></script>
+  <script src="js/firebase.js"></script>
+  <!-- <script src="js/collection.js"></script>
+  <script src="js/elements.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/character.js"></script>
+  <script src="js/index.js"></script> -->
+</body>
+
+</html>

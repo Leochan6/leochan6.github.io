@@ -7,7 +7,11 @@ let elements = (() => {
   module.character_error_text = document.querySelector("#character_error_text");
   module.profile_error_text = document.querySelector("#profile_error_text");
 
+  // User Heading
+  module.name_heading = document.querySelector("#name_heading");
+
   // Tab Buttons
+  module.tab_bar = document.querySelector("#tab_bar");
   module.home_tab_button = document.querySelector("#home_btn");
   module.char_tab_button = document.querySelector("#char_btn");
   module.sort_tab_button = document.querySelector("#sort_btn");
@@ -59,6 +63,7 @@ let elements = (() => {
 
   // Settings
   module.reset_profiles_button = document.querySelector("#reset_profiles_button");
+  module.show_all_menus_checkbox = document.querySelector("#show_all_menus_checkbox");
 
   // Body
   module.list_name_title = document.querySelector("#list_name_title");
