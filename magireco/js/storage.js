@@ -5,7 +5,6 @@ let storage_api = (() => {
   module.profiles = {};
   module.lists = {};
   module.settings = {};
-  module.customIndex = 1;
 
   let userId = null;
 
@@ -18,126 +17,125 @@ let storage_api = (() => {
   };
 
   module.listExists = (name) => {
-    if (module.lists.find(list => list.name === name)) return true;
+    if (module.lists[name]) return true;
     return false
   };
 
-  module.updateList = (name, character_list) => {
-    console.log("update", name, character_list);
-    let lists = module.lists;
-    let listIndex = -1
-    let listKey = "";
-    for (const [key, list] of Object.entries(lists)) {
-      if (list.name === name) {
-        list.character_list = character_list;
-        listIndex = key;
-        listKey = key;
-        break;
-      }
-    }
-    if (listIndex == -1) lists.push({ name: name, character_list: character_list ? character_list : [], selectedProfile: character_api.getSelectedProfile() });
-    else lists[listIndex].selectedProfile = character_api.getSelectedProfile();
-    console.log("updateList", userId, listKey, lists);
-    database.updateList(userId, listKey, lists);
-    loadLists();
+  module.updateList = (name, characterList, selectedProfile, created = null) => {
+    if (characterList.length == 0) characterList = true;
+    console.log(characterList);
+    database.updateList(userId, name, { characterList: characterList, selectedProfile: selectedProfile });
+    loadLists(true, created);
   };
 
-  module.updateProfile = (name, properties) => {
-    let profiles = module.profiles;
-    let profileIndex = -1;
-    let profileKey = "";
-    for (const [key, profile] of Object.entries(profiles)) {
-      if (profile.name === name) {
-        console.log(key, profile);
-        profile.settings = properties;
-        profileIndex = key;
-        break;
-      }
-    }
-    if (profileIndex == -1) profiles.splice(profiles.length - 1, 0, { name: name, settings: properties, isDefault: false });
-    database.updateProfile(userId, profiles);
-    loadProfiles();
+  module.deleteList = (name) => {
+    database.deleteList(userId, name);
+    loadLists(true);
+  }
+
+  module.updateProfile = (name, profile) => {
+    database.updateProfile(userId, name, profile);
+    loadProfiles(true);
   };
 
   module.profileExists = (name) => {
-    if (module.sorting.find(setting => setting.name === name)) return true;
+    if (module.profiles[name]) return true;
     return false;
   };
 
+  module.deleteProfile = (name) => {
+    database.deleteProfile(userId, name);
+    loadProfiles();
+  }
+
   module.setProfileFields = (profile) => {
-    setSelectedText(group_by_select, profile.settings.group_by);
-    setSelectedDirection(group_dir_select, profile.settings.group_dir);
-    setSelectedText(sort_by_1_select, profile.settings.sort_by_1);
-    setSelectedDirection(sort_dir_1_select, profile.settings.sort_dir_1);
-    setSelectedText(sort_by_2_select, profile.settings.sort_by_2);
-    setSelectedDirection(sort_dir_2_select, profile.settings.sort_dir_2);
-    setSelectedDirection(sort_id_dir_select, profile.settings.sort_id_dir);
-    displays_per_row.value = profile.settings.displays_per_row;
+    setSelectedText(group_by_select, profile.group_by);
+    setSelectedDirection(group_dir_select, profile.group_dir);
+    setSelectedText(sort_by_1_select, profile.sort_by_1);
+    setSelectedDirection(sort_dir_1_select, profile.sort_dir_1);
+    setSelectedText(sort_by_2_select, profile.sort_by_2);
+    setSelectedDirection(sort_dir_2_select, profile.sort_dir_2);
+    setSelectedDirection(sort_id_dir_select, profile.sort_id_dir);
+    displays_per_row.value = profile.displays_per_row;
   };
 
-  module.updateSettings = (name, newSettings) => {
+  module.updateSettings = (newSettings) => {
     database.updateSettings(userId, newSettings);
     loadSettings();
   };
 
   const loadUserName = () => {
-    database.getUser(userId).then(snap => {
-      name_heading.innerHTML = "Welcome " + snap.val().name;
-    })
+    database.onAuthStateChanged(user => {
+      let name = user.displayName ? user.displayName : "User";
+      name_heading.innerHTML = "Welcome " + name;
+    });
   };
 
   const loadSettings = () => {
     database.getSettings(userId).then(snap => {
-      module.settings = snap.val() ? snap.val() : [];
+      module.settings = snap.val() ? snap.val() : {};
       show_all_menus_checkbox.checked = module.settings.show_all_menus;
     });
   }
 
-  const loadProfiles = () => {
+  const loadProfiles = (reload = false) => {
+    // get the previous profile.
+    let previous = character_api.getSelectedProfile();
     // get the settings.
-    database.getProfile(userId).then(snapshot => {
-      module.profiles = snapshot.val()[Object.keys(snapshot.val())[0]].profiles;
+    database.getProfiles(userId).then(snapshot => {
+      module.profiles = snapshot.val();
       // update the profile select.
-      let defaultIndex = 0;
       profile_select.innerHTML = "";
-      module.profiles.forEach((profile, i) => {
-        if (profile.isDefault) defaultIndex = i;
-        if (profile.name === "Custom") module.customIndex = i;
-        profile_select.options.add(new Option(profile.name, i, false));
-      });
-      // set sort settings with default.
-      profile_select.selectedIndex = defaultIndex;
-      module.setProfileFields(module.profiles[defaultIndex]);
+      for (let [name, profile] of Object.entries(module.profiles)) {
+        profile_select.options.add(new Option(name, name, false));
+      }
+      if (reload) profile_select.value = previous;
+      else {
+        // set sort settings with default if no list selected.
+        profile_select.value = "Default";
+        module.setProfileFields(module.profiles["Default"]);
+      }
     });
   };
 
-  const loadLists = () => {
-    database.getList(userId).then(snapshot => {
-      module.lists = snapshot.val()[Object.keys(snapshot.val())[0]].lists ? snapshot.val()[Object.keys(snapshot.val())[0]].lists : [];
-      // initilize as empty list if empty.
-      module.lists.forEach(list => {
-        if (!list.character_list) list.character_list = [];
-      });
+  const loadLists = (reload = false, created = null) => {
+    database.getLists(userId).then(snapshot => {
+      module.lists = snapshot.val() ? snapshot.val() : {};
+      // get the previously selected list.
+      let previous = character_api.getSelectedList();
       saved_character_lists.innerHTML = "";
-      module.lists.forEach(list => {
+      for (let [name, list] of Object.entries(module.lists)) {
         let div = document.createElement("div");
         div.classList.add("character_list_row");
         let entry = document.createElement("div");
         entry.classList.add("character_list_entry");
-        // entry.className = "large_btn character_list_entry";
-        entry.innerHTML = list.name;
+        entry.innerHTML = name;
         entry.addEventListener("click", () => {
-          character_api.selectList(list);
+          character_api.selectList(name, list);
         });
         let deleteButton = document.createElement("button");
         deleteButton.className = "small_btn delete";
         deleteButton.addEventListener("click", () => {
-          character_api.deleteList(list);
+          character_api.deleteList(name, list);
         })
         div.append(entry);
         div.append(deleteButton);
         saved_character_lists.append(div);
-      });
+      }
+      if (created) {
+        if (module.lists[created]) return character_api.selectList(created, module.lists[created]);
+      }
+      if (reload) {
+        if (module.lists[previous]) return character_api.selectList(previous, module.lists[previous]);
+        else {
+          character_list_content.innerHTML = "";
+          list_name_title.innerHTML = "";
+        }
+      }
+      if (Object.entries(module.lists).length > 0) {
+        let first = Object.entries(module.lists)[0][0];
+        return character_api.selectList(first, module.lists[first]);
+      }
     });
   };
 

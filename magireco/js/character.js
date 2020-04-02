@@ -299,11 +299,11 @@ let character_api = (() => {
 
   const loadCharacterList = (character_list) => {
     character_list_content.innerHTML = "";
-    character_list = character_list ? character_list : [];
+    character_list = character_list !== true ? character_list : [];
     character_list.forEach(display => {
       character_list_content.append(createDisplay(display));
     })
-    character_list_content.dispatchEvent(new Event("change"));
+    // character_list_content.dispatchEvent(new Event("change"));
   };
 
   module.startUp = (listener) => {
@@ -379,10 +379,12 @@ let character_api = (() => {
     }
   };
 
-  module.updateList = () => {
-    let character_list = module.getCharacterList();
+  module.updateList = (createdName = null) => {
     let listName = module.getListName();
-    storage_api.updateList(listName, character_list)
+    let character_list = module.getCharacterList();
+    let selectedProfile = module.getSelectedProfile();
+    if (!listName) return;
+    storage_api.updateList(listName, character_list, selectedProfile, createdName);
   }
 
   module.saveProfile = () => {
@@ -397,19 +399,42 @@ let character_api = (() => {
     new_profile_row.style.visibility = "collapse"
   };
 
+  module.updateProfile = () => {
+    let profileName = module.getSelectedProfile();
+    let properties = getSortProperties();
+    storage_api.updateProfile(profileName, properties);
+    new_profile_row.style.visibility = "collapse"
+  };
+
   module.checkProfile = () => {
     let profileName = new_profile_field.value;
     if (storage_api.profileExists(profileName)) profile_error_text.innerHTML = `The sorting profile ${profileName} already exists.`;
     else profile_error_text.innerHTML = "";
   };
 
+  module.deleteProfile = () => {
+    let profileName = module.getSelectedProfile();
+    if (profileName !== "Default" && profileName !== "Custom") {
+      storage_api.deleteProfile(profileName);
+      let listName = module.getSelectedList();
+      if (listName) storage_api.updateList(listName, storage_api.lists[listName].characterList, "Default");
+    }
+  };
+
   module.setProfile = () => {
-    let profileIndex = profile_select.value;
-    storage_api.setProfileFields(storage_api.profiles[profileIndex]);
+    let profileName = profile_select.value;
+    storage_api.setProfileFields(storage_api.profiles[profileName]);
   };
 
   module.getSelectedProfile = () => {
     return profile_select.value;
+  };
+
+  module.getSelectedList = () => {
+    for (let element of document.querySelectorAll(".character_list_entry")) {
+      if (element.classList.contains("selectedList")) return element.innerHTML;
+    }
+    return null;
   };
 
   module.getListName = () => {
@@ -425,7 +450,7 @@ let character_api = (() => {
   };
 
   module.changeToCustom = () => {
-    profile_select.selectedIndex = storage_api.customIndex;
+    profile_select.value = "Custom";
   };
 
   module.resetProfiles = () => {
@@ -447,20 +472,31 @@ let character_api = (() => {
       return;
     }
     new_list_name_field.value = "";
-    storage_api.updateList(listName, null);
+    new_list_button.classList.replace("minus", "add");
     new_list_table.style.visibility = "collapse"
     list_name_title.innerHTML = listName;
+    module.updateList(listName);
   };
 
-  module.selectList = (list) => {
-    list_name_title.innerHTML = list.name;
-    loadCharacterList(list.character_list);
-    profile_select.selectedIndex = list.selectedProfile;
-    profile_select.dispatchEvent(new Event("change"));
+  module.selectList = (name, list) => {
+    for (let element of document.querySelectorAll(".character_list_entry")) {
+      // element already selected.
+      if (element.innerHTML === name) {
+        if (element.classList.contains("selectedList")) return;
+        else element.classList.add("selectedList");
+      }
+      else if (element.classList.contains("selectedList")) element.classList.remove("selectedList");
+    }
+    list_name_title.innerHTML = name;
+    loadCharacterList(list.characterList);
+    profile_select.value = list.selectedProfile;
+    character_api.setProfile();
+    module.sortOnFormUpdate();
   };
 
-  module.deleteList = (list) => {
-    console.log("deleting", list);
+  module.deleteList = (name, list) => {
+    console.log("deleting", name, list);
+    storage_api.deleteList(name)
   };
 
   return module;

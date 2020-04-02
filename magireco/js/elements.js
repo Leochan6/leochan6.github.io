@@ -50,6 +50,7 @@ let elements = (() => {
   module.new_name_field = document.querySelector("#new_name_field");
   module.save_profile_button = document.querySelector("#save_profile_button");
   module.close_new_profile_button = document.querySelector("#close_new_profile_button");
+  module.delete_profile_button = document.querySelector("#delete_profile_button");
 
   // Sorting Fields
   module.group_by_select = document.querySelector("#group_by_select");

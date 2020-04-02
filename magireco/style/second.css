@@ -17,6 +17,15 @@
   background-color: #2c2c2c;
 }
 
+.selectedList {
+  border: black solid 2px;
+}
+
+.selectedList:hover {
+  color: #2c2c2c;
+  background-color: #FFFFFF;
+}
+
 .character_list_row {
   display: flex;
   flex-direction: row;

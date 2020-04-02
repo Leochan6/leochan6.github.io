@@ -22,6 +22,9 @@
       element.addEventListener("change", () => {
         character_api.updatePreviewOnForm();
       });
+      element.addEventListener("keyup", () => {
+        character_api.updatePreviewOnForm();
+      });
     });
 
     // add new character display to list.
@@ -50,7 +53,8 @@
     document.querySelectorAll(".sort_form").forEach(element => {
       element.addEventListener("change", () => {
         character_api.sortOnFormUpdate();
-        character_api.changeToCustom();
+        if (character_api.getSelectedProfile() === "Default") character_api.changeToCustom();
+        character_api.updateList();
       });
     });
 
@@ -64,9 +68,10 @@
           element.classList.replace("descend", "ascend");
         }
         character_api.sortOnFormUpdate();
-      });
-      element.addEventListener("change", () => {
-        character_api.changeToCustom();
+        if (character_api.getSelectedProfile() === "Default") character_api.changeToCustom();
+        character_api.updateList();
+        character_api.updateProfile();
+
       });
     });
 
@@ -77,7 +82,7 @@
     });
 
     // deselect currently selected.
-    document.addEventListener("click", (e) => {
+    main.addEventListener("click", (e) => {
       try {
         if (e.target.parentElement.className.indexOf("character_display") === -1 && e.target.parentElement.parentElement.className.indexOf("character_display") === -1) {
           document.querySelectorAll(".character_display:not(.preview)").forEach(child => {
@@ -109,11 +114,17 @@
       character_api.checkProfile();
     });
 
+    // delete the selected profile.
+    delete_profile_button.addEventListener("click", () => {
+      character_api.deleteProfile();
+    });
+
     // check set the profile properties on change.
     profile_select.addEventListener("change", () => {
-      if (profile_select.selectedIndex == storage_api.customIndex) return;
+      if (profile_select.value == "Custom") return;
       character_api.setProfile();
       character_api.sortOnFormUpdate();
+      character_api.updateList();
     });
 
     // reset the profiles to default.
@@ -182,7 +193,9 @@
   character_api.startUp();
 
   // load the settings, profiles, and character lists from storage.
-  let userId = new URL(document.location).searchParams.get("user")
-  storage_api.startUp(userId);
+  database.onAuthStateChanged(user => {
+    if (user) storage_api.startUp(user.uid);
+    else window.location.href = "index.html";
+  });
 
 }());

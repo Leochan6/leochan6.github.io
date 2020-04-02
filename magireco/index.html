@@ -6,7 +6,7 @@
   <a href="/" style="position: absolute; top: 0px; left: 0px;">Home</a>
   <link rel="shortcut icon" href="/favicon.ico" />
   <title>Magia Record Character List</title>
-  <link href="style/login.css" rel="stylesheet" type="text/css" />
+  <!-- <link href="style/login.css" rel="stylesheet" type="text/css" /> -->
   <link href="style/main.css" rel="stylesheet" type="text/css" />
 </head>
 
@@ -15,38 +15,14 @@
   <header>
     <h1>Magia Record Character List</h1>
   </header>
-  <div id="login_content">
+  <form id="login_form">
+    <p>Email: <input type="text" name="email" id="email_text"></p>
+    <p>Password: <input type="password" name="password" id="password_text"></p>
+    <button type="submit" id="login_button">Login</button>
+    <button type="submit" id="signup_button">Sign Up</button>
+  </form>
 
-    <div id="login_box">
-      <h3>Login</h3>
-      <form id="login_form">
-        User ID:
-        <input id="login_id_field" type="text">
-        <button id="login_button" class="btn btnGray" type="submit">Login</button>
-      </form>
-      <p class="error_text" id="login_error"></p>
-    </div>
-
-
-
-    <hr />
-
-    <div id="signup_box">
-      <h3>Sign Up</h3>
-      <form id="signup_form">
-        User Name:
-        <input id="signup_name_field" type="text"></td>
-        <button id="signup_button" class="btn btnGray" type="submit">Sign Up</button>
-      </form>
-      <p class="error_text" id="signup_error"></p>
-    </div>
-
-    <div class="tab_hidden" id="signup_result">
-      <div>Your User ID is:</div>
-      <h2 id="user_id_result"></h2>
-      <button id="copy_id_button">Copy</button>
-      <div>Please save this ID somewhere.</div>
-    </div>
+  <p class="error_text" id="login_error"></p>
 
 
   </div>
