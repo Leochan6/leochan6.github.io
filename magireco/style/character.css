@@ -12,6 +12,7 @@
 
 .character_display:not(.selected):not(.preview):hover {
   outline: 1px solid gray;
+  background-color: rgb(220, 220, 220);
 }
 
 .character_display :not(.card_image) {

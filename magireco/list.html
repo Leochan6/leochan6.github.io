@@ -14,6 +14,7 @@
 <body>
   <header>
     <h1>Magia Record Character List</h1>
+    <button id="signout_button">Sign Out</button>
   </header>
   <div id="content">
 
@@ -209,6 +210,30 @@
     </div>
     <div id="main">
       <h2 id="list_name_title"></h2>
+      <button id="export_button">Export</button>
+      <div id="list_filters">
+        <h3 id="list_filter_title">Filters</h3>
+        Attribute: <select id="attribute_filter">
+          <option value="dark">Dark</option>
+          <option value="fire">Fire</option>
+          <option value="light">Light</option>
+          <option value="forest">Forest</option>
+          <option value="void">Void</option>
+          <option value="water">Water</option>
+        </select>
+        Rank: <select id="rank_filter">
+          <option value="two-four">1-4</option>
+          <option value="one-five">1-5</option>
+          <option value="two-four">2-4</option>
+          <option value="two-five">2-5</option>
+          <option value="three-four">3-4</option>
+          <option value="three-five">3-5</option>
+          <option value="four-five">4-5</option>
+        </select>
+        Level Is: <input type="number" id="level_is_filter" value=1 maxlength="3" size=3 min=1 max=100>
+        Level Min: <input type="number" id="level_min_filter" value=1 maxlength="3" size=3 min=1 max=100>
+        Level Max: <input type="number" id="level_max_filter" value=100 maxlength="3" size=3 min=1 max=100>
+      </div>
       <div id="character_list_content"></div>
     </div>
   </div>
@@ -219,6 +244,8 @@
   <script src="js/firebase.js"></script>
   <script src="js/collection.js"></script>
   <script src="js/elements.js"></script>
+  <script src="js/canvas2image.js"></script>
+  <script src="js/html2canvas.js"></script>
   <script src="js/storage.js"></script>
   <script src="js/utils.js"></script>
   <script src="js/character.js"></script>

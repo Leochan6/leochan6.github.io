@@ -28,6 +28,7 @@ let character_api = (() => {
   module.getNames = (callback) => {
     let names = collection.map(character => { return { id: character.id, name: character.name } });
     names = [...new Set(names)];
+    names = names.sort((a, b) => a.name > b.name ? 1 : -1);
     callback(names);
   };
 
@@ -370,6 +371,7 @@ let character_api = (() => {
       if (display_groups[group].length == 0) continue;
       let group_row = document.createElement("div");
       group_row.classList.add("character_row");
+      group_row.style.width = `${properties.displays_per_row * 122}px`;
       group_row.setAttribute("group", group);
       display_groups[group].forEach((display) => {
         let character_display = createDisplay(display, true);

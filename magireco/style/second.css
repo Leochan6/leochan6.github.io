@@ -26,6 +26,19 @@
   background-color: #FFFFFF;
 }
 
+#list_filter_title {
+  margin: 0px;
+}
+
+#list_filters {
+  padding-bottom: 5px;
+}
+
+#list_name_title {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
 .character_list_row {
   display: flex;
   flex-direction: row;

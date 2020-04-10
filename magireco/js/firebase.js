@@ -30,7 +30,7 @@ let database = (() => {
   };
 
   module.signout = () => {
-
+    firebase.auth().signOut().then(() => { window.location.href = "index.html"; }).catch((error) => { console.error(error) });
   };
 
   module.onAuthStateChanged = (callback) => {
@@ -66,7 +66,7 @@ let database = (() => {
   };
 
   module.updateList = (userId, listName, content) => {
-    console.log("updateList", userId, listName, content);
+    // console.log("updateList", userId, listName, content);
     return lists.child(`${userId}/${listName}`).set(content);
   };
 
@@ -94,7 +94,7 @@ let database = (() => {
   };
 
   module.updateProfile = (userId, profileName, content) => {
-    console.log("updateProfile", userId, profileName, content);
+    // console.log("updateProfile", userId, profileName, content);
     return profiles.child(`${userId}/${profileName}`).set(content);
   };
 

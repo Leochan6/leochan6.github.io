@@ -23,7 +23,6 @@ let storage_api = (() => {
 
   module.updateList = (name, characterList, selectedProfile, created = null) => {
     if (characterList.length == 0) characterList = true;
-    console.log(characterList);
     database.updateList(userId, name, { characterList: characterList, selectedProfile: selectedProfile });
     loadLists(true, created);
   };

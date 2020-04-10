@@ -1,6 +1,7 @@
 let elements = (() => {
   let module = {};
 
+  module.signout_button = document.querySelector("#signout_button");
 
   // Error Text
   module.home_error_text = document.querySelector("#home_error_text");

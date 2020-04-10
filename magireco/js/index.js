@@ -3,6 +3,10 @@
 
   window.onload = () => {
 
+    signout_button.addEventListener("click", () => {
+      database.signout();
+    });
+
     // open the tab.
     document.querySelectorAll(".tablink").forEach(element => {
       element.addEventListener("click", event => {
@@ -55,6 +59,7 @@
         character_api.sortOnFormUpdate();
         if (character_api.getSelectedProfile() === "Default") character_api.changeToCustom();
         character_api.updateList();
+        character_api.updateProfile();
       });
     });
 
@@ -170,6 +175,13 @@
         });
       }
     });
+
+    // export button.
+    document.querySelector("#export_button").addEventListener("click", () => {
+      html2canvas(character_list_content).then(canvas => {
+        Canvas2Image.saveAsImage(canvas);
+      })
+    })
   };
 
   // initilize name field.
@@ -185,7 +197,8 @@
     characters.forEach((character) => {
       name_select.options.add(new Option(character.name, character.id, false));
     });
-    name_select.selectedIndex = 0;
+    // name_select.selectedIndex = 0;
+    name_select.value = 1001;
     name_select.dispatchEvent(new Event("change"));
   });
 
