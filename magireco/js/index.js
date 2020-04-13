@@ -177,11 +177,44 @@
     });
 
     // export button.
-    document.querySelector("#export_button").addEventListener("click", () => {
+    export_button.addEventListener("click", () => {
       html2canvas(character_list_content).then(canvas => {
         Canvas2Image.saveAsImage(canvas);
-      })
-    })
+      });
+    });
+
+    // zoom range slider.
+    zoom_field.addEventListener("change", () => {
+      let value = zoom_field.value;
+      if (value > 500) value = 500;
+      else if (value < 1) value = 1;
+      if (value !== zoom_field.value) zoom_field.value = value;
+      zoom_range.value = zoom_field.value;
+      character_api.changeZoom(zoom_range.value);
+    });
+    zoom_field.addEventListener("input", () => {
+      zoom_range.value = zoom_field.value;
+      character_api.changeZoom(zoom_range.value);
+    });
+    zoom_range.addEventListener("change", () => {
+      zoom_field.value = zoom_range.value;
+      character_api.changeZoom(zoom_range.value);
+    });
+    zoom_range.addEventListener("input", () => {
+      zoom_field.value = zoom_range.value;
+      character_api.changeZoom(zoom_range.value);
+    });
+
+    // check auto zoom.
+    zoom_checkbox.addEventListener("change", () => {
+      if (zoom_checkbox.checked) character_api.zoom_fit();
+    });
+
+    // zoom to fix if window size changes.
+    window.addEventListener("resize", () => {
+      if (zoom_checkbox.checked) character_api.zoom_fit();
+    });
+
   };
 
   // initilize name field.

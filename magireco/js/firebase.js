@@ -17,7 +17,7 @@ let database = (() => {
 
   let module = {};
 
-  module.login = (email, password, loginHandler, errorHandler) => {
+  module.signin = (email, password, loginHandler, errorHandler) => {
     firebase.auth().signInWithEmailAndPassword(email, password)
       .then(userCreds => loginHandler(userCreds))
       .catch(error => errorHandler(error.message));

@@ -70,8 +70,23 @@ let elements = (() => {
   // Body
   module.list_name_title = document.querySelector("#list_name_title");
   module.character_list_content = document.querySelector("#character_list_content");
+  module.header_content_divider = document.querySelector("#header_content_divider");
+  module.content = document.querySelector("#content");
   module.main = document.querySelector("#main");
   module.left_bar = document.querySelector("#left_bar");
+  module.left_main_divider = document.querySelector("#left_main_divider");
+  module.main_header = document.querySelector("#main_header");
+  module.export_button = document.querySelector("#export_button");
+
+  // Filters
+  module.attribute_filter = document.querySelector("#attribute_filter");
+  module.rank_filter = document.querySelector("#rank_filter");
+  module.level_is_filter = document.querySelector("#level_is_filter");
+  module.level_min_filter = document.querySelector("#level_min_filter");
+  module.level_max_filter = document.querySelector("#level_max_filter");
+  module.zoom_field = document.querySelector("#zoom_label");
+  module.zoom_range = document.querySelector("#zoom_range");
+  module.zoom_checkbox = document.querySelector("#zoom_checkbox");
 
 
   return module;

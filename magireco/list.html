@@ -3,29 +3,31 @@
 
 <head>
   <meta charset="UTF-8">
-  <a href="/magireco/" style="position: absolute; top: 0px; left: 0px;">Home</a>
   <link rel="shortcut icon" href="/favicon.ico" />
   <title>Magia Record Character List</title>
-  <link href="style/character.css" rel="stylesheet" type="text/css" />
-  <link href="style/second.css" rel="stylesheet" type="text/css" />
   <link href="style/main.css" rel="stylesheet" type="text/css" />
+  <link href="style/list.css" rel="stylesheet" type="text/css" />
+  <link href="style/character.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
   <header>
+    <a href="/magireco/" style="position: absolute; top: 0px; left: 0px;">Home</a>
     <h1>Magia Record Character List</h1>
     <button id="signout_button">Sign Out</button>
   </header>
+  <div class="horizontal-divider" id="header_content_divider"></div>
   <div id="content">
-
     <div id="left_bar">
       <h2 class="" id="name_heading"></h2>
+      <div class="horizontal-divider"></div>
       <div id="tab_bar" class="tab_hidden">
         <button id="home_btn" class="tablink btn btnBlue" tab_name="home_tab">Home</button>
         <button id="char_btn" class="tablink btn btnGray" tab_name="char_tab">Character</button>
         <button id="sort_btn" class="tablink btn btnGray" tab_name="sort_tab">Sort</button>
         <button id="setting_btn" class="tablink btn btnGray" tab_name="setting_tab">Setting</button>
       </div>
+      <div class="hidden left" id="collapse_sidebar_button"></div>
       <div id="tabs">
         <div id="home_tab" class="tab">
           <h2 class="tab_heading" id="home_heading">My Lists <button id="new_list_button" class="small_btn add"
@@ -42,6 +44,7 @@
           <div id="saved_character_lists"></div>
           <p class="error_text" id="home_error_text"></p>
         </div>
+        <div class="horizontal-divider"></div>
         <div id="char_tab" class="tab">
           <h2 class="tab_heading" id="char_heading">Character</h2>
           <div id="char_fields">
@@ -117,6 +120,7 @@
           <h3 id="preview_text">Preview:</h3>
           <div id="display_preview"></div>
         </div>
+        <div class="horizontal-divider"></div>
         <div id="sort_tab" class="tab">
           <h2 class="tab_heading" id="sort_heading">Sorting Profile</h2>
           <div id="sorting_profiles">
@@ -194,7 +198,8 @@
           </div>
           <p class="error_text" id="profile_error_text"></p>
         </div>
-        <div id="setting_tab" class="tab">
+        <div class="horizontal-divider"></div>
+        <div id="setting_tab" class="tab hidden">
           <h2 class="tab_heading" id="setting_heading">Settings</h2>
           <table id="settings_table" class="tab_hidden">
             <tr>
@@ -208,31 +213,37 @@
         </div>
       </div>
     </div>
+    <div class="vertical-divider margin-right-10" id="left_main_divider"></div>
     <div id="main">
-      <h2 id="list_name_title"></h2>
-      <button id="export_button">Export</button>
-      <div id="list_filters">
-        <h3 id="list_filter_title">Filters</h3>
-        Attribute: <select id="attribute_filter">
-          <option value="dark">Dark</option>
-          <option value="fire">Fire</option>
-          <option value="light">Light</option>
-          <option value="forest">Forest</option>
-          <option value="void">Void</option>
-          <option value="water">Water</option>
-        </select>
-        Rank: <select id="rank_filter">
-          <option value="two-four">1-4</option>
-          <option value="one-five">1-5</option>
-          <option value="two-four">2-4</option>
-          <option value="two-five">2-5</option>
-          <option value="three-four">3-4</option>
-          <option value="three-five">3-5</option>
-          <option value="four-five">4-5</option>
-        </select>
-        Level Is: <input type="number" id="level_is_filter" value=1 maxlength="3" size=3 min=1 max=100>
-        Level Min: <input type="number" id="level_min_filter" value=1 maxlength="3" size=3 min=1 max=100>
-        Level Max: <input type="number" id="level_max_filter" value=100 maxlength="3" size=3 min=1 max=100>
+      <div id="main_header">
+        <h2 id="list_name_title"></h2>
+        <button class="hidden" id="export_button">Export</button>
+        <div id="list_filters">
+          <h3 id="list_filter_title">Filters</h3>
+          Attribute: <select id="attribute_filter">
+            <option value="dark">Dark</option>
+            <option value="fire">Fire</option>
+            <option value="light">Light</option>
+            <option value="forest">Forest</option>
+            <option value="void">Void</option>
+            <option value="water">Water</option>
+          </select>
+          Rank: <select id="rank_filter">
+            <option value="two-four">1-4</option>
+            <option value="one-five">1-5</option>
+            <option value="two-four">2-4</option>
+            <option value="two-five">2-5</option>
+            <option value="three-four">3-4</option>
+            <option value="three-five">3-5</option>
+            <option value="four-five">4-5</option>
+          </select>
+          Level Is: <input type="number" id="level_is_filter" value=1 maxlength="3" size=3 min=1 max=100>
+          Level Min: <input type="number" id="level_min_filter" value=1 maxlength="3" size=3 min=1 max=100>
+          Level Max: <input type="number" id="level_max_filter" value=100 maxlength="3" size=3 min=1 max=100>
+          Zoom: <input type="number" id="zoom_field" value=100 maxlength="3" size=3 min=30 max=300 style="width: 40px;">
+          <input type="range" min="30" max="300" value="100" id="zoom_range">
+          Auto: <input type="checkbox" id="zoom_checkbox">
+        </div>
       </div>
       <div id="character_list_content"></div>
     </div>

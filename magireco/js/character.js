@@ -477,6 +477,8 @@ let character_api = (() => {
     new_list_button.classList.replace("minus", "add");
     new_list_table.style.visibility = "collapse"
     list_name_title.innerHTML = listName;
+    profile_select.value = "Default";
+    character_list_content.innerHTML = "";
     module.updateList(listName);
   };
 
@@ -497,8 +499,24 @@ let character_api = (() => {
   };
 
   module.deleteList = (name, list) => {
-    console.log("deleting", name, list);
     storage_api.deleteList(name)
+  };
+
+  module.changeZoom = (zoom) => {
+    character_list_content.style.zoom = zoom / 100;
+  };
+
+  module.zoom_fit = () => {
+    if (character_list_content.innerHTML) {
+      let widthRatio = Math.max((document.querySelector("body").clientWidth - left_bar.clientWidth - left_main_divider.clientWidth - 10), 500) / character_list_content.clientWidth
+      let heightRatio = Math.max((document.querySelector("body").clientHeight - main_header.clientHeight - header_content_divider.clientHeight - main_header.clientHeight - 10), 300) / character_list_content.clientHeight
+      console.log(character_list_content.clientWidth, widthRatio, heightRatio);
+      let zoom = Math.min(widthRatio, heightRatio);
+      zoom = zoom < 1 ? zoom : 1;
+      character_list_content.style.zoom = zoom
+      zoom_range.value = Math.round(zoom * 100);
+      zoom_field.value = Math.round(zoom * 100);
+    }
   };
 
   return module;

@@ -1,3 +1,5 @@
+/* Character Display */
+
 .character_display {
   display: flex;
   flex-direction: column;
@@ -84,6 +86,25 @@
   top: -16px;
 }
 
+.character_display .card_image {
+  pointer-events: none;
+}
+
 .selected {
   outline: solid 2px black;
+}
+
+/* Character List */
+
+#character_list_content {}
+
+#character_list_content .character_row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.character_list_row {
+  display: flex;
+  flex-direction: row;
 }

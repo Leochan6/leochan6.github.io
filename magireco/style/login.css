@@ -1,0 +1,25 @@
+#login_content {
+  border: black solid 1px;
+  border-radius: 25px;
+  margin: 20px;
+  padding: 20px;
+  width: fit-content;
+}
+
+#login_label {
+  font-size: 24px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 5px;
+}
+
+.login_field {
+  width: 250px;
+  padding: 5px;
+  margin: 0px 5px;
+}
+
+.login_button {
+  width: 100px;
+  padding: 5px;
+  margin: 0px 5px;
+}

@@ -8,11 +8,11 @@
     }));
 
 
-    document.querySelector("#login_button").addEventListener("click", e => {
+    document.querySelector("#signin_button").addEventListener("click", e => {
       e.preventDefault();
       let email = document.querySelector("#email_text").value;
       let password = document.querySelector("#password_text").value;
-      database.login(email, password, loginHandler, errorHandler);
+      database.signin(email, password, loginHandler, errorHandler);
     });
 
     document.querySelector("#signup_button").addEventListener("click", e => {
@@ -34,6 +34,8 @@
   const errorHandler = (errorMsg) => {
     document.querySelector("#email_text").value = ""
     document.querySelector("#password_text").value = ""
+    document.querySelector("#login_error").classList.remove("hidden");
+    document.querySelector("#login_error").innerHTML = ""
     document.querySelector("#login_error").innerHTML = errorMsg;
   };
 

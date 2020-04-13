@@ -12,7 +12,7 @@ let storage_api = (() => {
     userId = _userId;
     loadUserName();
     loadSettings();
-    loadProfiles();
+    loadProfiles(true);
     loadLists();
   };
 
@@ -47,7 +47,9 @@ let storage_api = (() => {
     loadProfiles();
   }
 
+  let num = 0
   module.setProfileFields = (profile) => {
+    console.log(profile, num++);
     setSelectedText(group_by_select, profile.group_by);
     setSelectedDirection(group_dir_select, profile.group_dir);
     setSelectedText(sort_by_1_select, profile.sort_by_1);

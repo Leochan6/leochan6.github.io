@@ -6,8 +6,8 @@
   <a href="/" style="position: absolute; top: 0px; left: 0px;">Home</a>
   <link rel="shortcut icon" href="/favicon.ico" />
   <title>Magia Record Character List</title>
-  <!-- <link href="style/login.css" rel="stylesheet" type="text/css" /> -->
   <link href="style/main.css" rel="stylesheet" type="text/css" />
+  <link href="style/login.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
@@ -15,15 +15,20 @@
   <header>
     <h1>Magia Record Character List</h1>
   </header>
-  <form id="login_form">
-    <p>Email: <input type="text" name="email" id="email_text"></p>
-    <p>Password: <input type="password" name="password" id="password_text"></p>
-    <button type="submit" id="login_button">Login</button>
-    <button type="submit" id="signup_button">Sign Up</button>
-  </form>
 
-  <p class="error_text" id="login_error"></p>
+  <div class="horizontal-divider"></div>
 
+  <div id="login_content">
+    <label id="login_label">Sign In or Sign Up</label>
+    <form id="login_form">
+      <p><input type="email" class="login_field" id="email_text" name="email" placeholder="Email"></p>
+      <p><input type="password" class="login_field" id="password_text" name="password" placeholder="Password"></p>
+      <button type="submit" class="btn btnGray login_button" id="signin_button">Sign In</button>
+      <button type="input" class="btn btnGray login_button" id="signup_button">Sign Up</button>
+    </form>
+
+    <p class="error_text hidden" id="login_error"></p>
+  </div>
 
   </div>
   <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-app.js"></script>
