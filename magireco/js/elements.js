@@ -88,6 +88,12 @@ let elements = (() => {
   module.zoom_range = document.querySelector("#zoom_range");
   module.zoom_checkbox = document.querySelector("#zoom_checkbox");
 
+  module.list_filters = document.querySelector("#list_filters");
+  module.add_filter_button = document.querySelector("#add_filter_button");
+  module.apply_filter_button = document.querySelector("#apply_filter_button");
+  module.reset_filter_button = document.querySelector("#reset_filter_button");
+
+
 
   return module;
 });

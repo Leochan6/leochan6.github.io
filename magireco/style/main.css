@@ -1,14 +1,30 @@
 header {
   min-width: 300px;
+  margin: 10px;
+}
+
+.header_link {
+  color: black;
+  opacity: 0.9;
+  transition: all 0.3 ease 0s;
+  text-decoration: none;
+}
+
+.header_link:hover {
+  opacity: 1;
 }
 
 .hidden {
   display: none;
   visibility: hidden;
+  opacity: 0;
+}
+
+.collapse {
+  visibility: collapse;
 }
 
 .error_text {
-  min-height: 16px;
   width: 100%;
   color: red;
 }

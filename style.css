@@ -1,0 +1,21 @@
+.preview_image {
+  width: 50%;
+  transition: all 0.3s ease 0s;
+}
+
+.preview_image:active {
+  width: 100%;
+}
+
+.link {
+  color: rgb(14, 117, 165);
+  text-decoration: none;
+  font-size: 24px;
+  font-family: Arial, Helvetica, sans-serif;
+  opacity: 0.6;
+  transition: all 0.3s ease 0s;
+}
+
+.link:hover {
+  opacity: 1;
+}

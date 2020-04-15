@@ -3,6 +3,7 @@
 
   window.onload = () => {
 
+    // sign out button.
     signout_button.addEventListener("click", () => {
       database.signout();
     });
@@ -10,9 +11,17 @@
     // open the tab.
     document.querySelectorAll(".tablink").forEach(element => {
       element.addEventListener("click", event => {
-        // if (element.classList.contains("btnGray") && !storage_api.settings["show_all_menus"])
         if (element.classList.contains("btnGray"))
           utils.openTab(event, element.getAttribute("tab_name"));
+      });
+    });
+
+    // toggle visibility of the tab.
+    document.querySelectorAll(".tab_heading").forEach(element => {
+      element.addEventListener("click", () => {
+        let contents = element.parentElement.parentElement.querySelector(".tab_contents");
+        if (!contents.classList.contains("hidden")) contents.classList.add("hidden");
+        else if (contents.classList.contains("hidden")) contents.classList.remove("hidden");
       });
     });
 
@@ -56,10 +65,10 @@
     // update the list on sort form change.
     document.querySelectorAll(".sort_form").forEach(element => {
       element.addEventListener("change", () => {
-        character_api.sortOnFormUpdate();
-        if (character_api.getSelectedProfile() === "Default") character_api.changeToCustom();
-        character_api.updateList();
-        character_api.updateProfile();
+        list_api.sortOnFormUpdate();
+        if (profile_api.getSelectedProfile() === "Default") profile_api.changeToCustom();
+        list_api.updateList();
+        list_api.updateProfile();
       });
     });
 
@@ -72,18 +81,18 @@
         else if (element.classList.contains("descend")) {
           element.classList.replace("descend", "ascend");
         }
-        character_api.sortOnFormUpdate();
-        if (character_api.getSelectedProfile() === "Default") character_api.changeToCustom();
-        character_api.updateList();
-        character_api.updateProfile();
+        list_api.sortOnFormUpdate();
+        if (character_api.getSelectedProfile() === "Default") profile_api.changeToCustom();
+        list_api.updateList();
+        profile_api.updateProfile();
 
       });
     });
 
     // resort when character list changes.
     character_list_content.addEventListener("change", () => {
-      character_api.sortOnFormUpdate();
-      character_api.updateList();
+      list_api.sortOnFormUpdate();
+      list_api.updateList();
     });
 
     // deselect currently selected.
@@ -111,30 +120,30 @@
 
     // save the new sorting profile.
     save_profile_button.addEventListener("click", () => {
-      character_api.saveProfile();
+      profile_api.saveProfile();
     });
 
     // check the profile name on change.
     new_profile_field.addEventListener("change", () => {
-      character_api.checkProfile();
+      profile_api.checkProfile();
     });
 
     // delete the selected profile.
     delete_profile_button.addEventListener("click", () => {
-      character_api.deleteProfile();
+      profile_api.deleteProfile();
     });
 
     // check set the profile properties on change.
     profile_select.addEventListener("change", () => {
       if (profile_select.value == "Custom") return;
-      character_api.setProfile();
-      character_api.sortOnFormUpdate();
-      character_api.updateList();
+      profile_api.setProfile();
+      list_api.sortOnFormUpdate();
+      characlist_apiter_api.updateList();
     });
 
     // reset the profiles to default.
     reset_profiles_button.addEventListener("click", () => {
-      character_api.resetProfiles();
+      profile_api.resetProfiles();
     });
 
     // show or hidthe create new list form.
@@ -151,12 +160,12 @@
 
     // create a new list.
     new_list_create_button.addEventListener("click", () => {
-      character_api.createList();
+      list_api.createList();
     });
 
     // check the list name on change.
     new_list_name_field.addEventListener("change", () => {
-      character_api.checkListName();
+      list_api.checkListName();
     });
 
     // show all menus checkbox.
@@ -183,6 +192,21 @@
       });
     });
 
+    // add new filter.
+    add_filter_button.addEventListener("click", () => {
+      list_api.createFilter();
+    });
+
+    // apply the filters.
+    apply_filter_button.addEventListener("click", () => {
+      list_api.applyFilters();
+    });
+
+    // reset the filters.
+    reset_filter_button.addEventListener("click", () => {
+      list_api.resetFilters();
+    });
+
     // zoom range slider.
     zoom_field.addEventListener("change", () => {
       let value = zoom_field.value;
@@ -190,29 +214,29 @@
       else if (value < 1) value = 1;
       if (value !== zoom_field.value) zoom_field.value = value;
       zoom_range.value = zoom_field.value;
-      character_api.changeZoom(zoom_range.value);
+      list_api.changeZoom(zoom_range.value);
     });
     zoom_field.addEventListener("input", () => {
       zoom_range.value = zoom_field.value;
-      character_api.changeZoom(zoom_range.value);
+      list_api.changeZoom(zoom_range.value);
     });
     zoom_range.addEventListener("change", () => {
       zoom_field.value = zoom_range.value;
-      character_api.changeZoom(zoom_range.value);
+      list_api.changeZoom(zoom_range.value);
     });
     zoom_range.addEventListener("input", () => {
       zoom_field.value = zoom_range.value;
-      character_api.changeZoom(zoom_range.value);
+      list_api.changeZoom(zoom_range.value);
     });
 
     // check auto zoom.
     zoom_checkbox.addEventListener("change", () => {
-      if (zoom_checkbox.checked) character_api.zoom_fit();
+      if (zoom_checkbox.checked) list_api.zoom_fit();
     });
 
     // zoom to fix if window size changes.
     window.addEventListener("resize", () => {
-      if (zoom_checkbox.checked) character_api.zoom_fit();
+      if (zoom_checkbox.checked) list_api.zoom_fit();
     });
 
   };

@@ -1,16 +1,17 @@
 body {
   min-width: 800px;
   min-height: 500px;
-  /* overflow: hidden; */
-  margin: 0px;
+  overflow: inherit;
+  margin: 10px;
+  border: solid black 1px;
+  max-width: fit-content;
+  max-height: fit-content;
 }
 
 hr {
   display: block;
   height: 1px;
   border: 0;
-  border-top: 1px solid #ccc;
-  margin: 1em 0;
   padding: 0;
 }
 
@@ -25,12 +26,17 @@ hr {
   position: relative;
   display: flex;
   flex-direction: row;
-  width: fit-content;
+  width: 100%;
   height: 100%;
 }
 
 #main {
-  min-width: 500px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
 }
 
 #left_bar {
@@ -42,6 +48,10 @@ hr {
   position: absolute;
   right: 10px;
   top: 25px;
+}
+
+#name_heading {
+  margin: 10px;
 }
 
 #tabs {
@@ -57,6 +67,28 @@ hr {
 
 .tab_hidden {
   display: none;
+}
+
+.tab_header {
+  display: flex;
+  align-items: center;
+}
+
+.tab_heading {
+  margin: 0px;
+  cursor: pointer;
+  user-select: none;
+  color: rgb(17, 0, 255);
+  opacity: 0.6;
+  transition: all 0.3s ease 0s;
+}
+
+.tab_heading:hover {
+  opacity: 1;
+}
+
+.tab_contents {
+  transition: all 0.5s ease 0s;
 }
 
 #new_profile_field {
@@ -83,13 +115,66 @@ hr {
   background-color: #FFFFFF;
 }
 
+#main_header {
+  display: flex;
+  flex-direction: column;
+}
+
+#name_and_zoom {
+  min-height: 47px;
+  margin: 0px 10px;
+  display: inline-flex;
+  align-items: center;
+}
+
+#zoom_tools {
+  padding-left: 50px;
+}
+
+.filter_row {
+  display: flex;
+  margin: 5px;
+  width: fit-content;
+}
+
+.filter_row>.delete {
+  margin-left: 10px;
+}
+
+.filter_type {
+  height: 21px;
+}
+
+.filter_type>* {
+  width: 60px;
+  margin-right: 0px;
+}
+
+.filter_field {
+  height: 21px;
+  margin-left: 10px;
+}
+
+.level_input {
+  height: 17px;
+  width: 56px;
+  padding: 0px;
+}
+
+#add_list_filters {
+  margin: 10px;
+}
+
 #list_filter_title {
   margin: 0px;
 }
 
 #list_filters {
-  padding-bottom: 5px;
   vertical-align: middle;
+}
+
+#export_button {
+  margin: 0px 20px;
 }
 
 #zoom_range {
@@ -107,6 +192,25 @@ hr {
   margin-bottom: 10px;
 }
 
+#character_list_container {
+  box-sizing: inherit;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin: 10px;
+  max-height: 100%;
+}
+
+#character_list_content {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow-x: auto;
+  overflow-y: auto;
+  margin: 10px;
+  width: 100%;
+}
+
 .character_list_entry {
   border: black solid 1px;
   border-radius: 10px;
@@ -116,7 +220,6 @@ hr {
   user-select: none;
   text-align: center;
   width: 100%;
-  max-width: 200px;
   cursor: pointer;
   outline: none;
 }

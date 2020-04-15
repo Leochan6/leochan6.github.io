@@ -24,7 +24,11 @@ let character_api = (() => {
     }
   }
 
-  // get the list of names.
+  /**
+   * get the list of names.
+   * 
+   * @param {Function} callback
+   */
   module.getNames = (callback) => {
     let names = collection.map(character => { return { id: character.id, name: character.name } });
     names = [...new Set(names)];
@@ -32,7 +36,12 @@ let character_api = (() => {
     callback(names);
   };
 
-  // get the attribute and rank for the character.
+  /**
+   * get the attribute and rank for the character.
+   * 
+   * @param {String} id 
+   * @param {Function} callback 
+   */
   const getCharacter = (id, callback) => {
     let character_list = collection.filter(character => character.id === id);
     let name = character_list[0].name
@@ -46,12 +55,22 @@ let character_api = (() => {
     callback(character);
   };
 
-  // gets the basic display for the character.
+  /**
+   * gets the basic display for the character.
+   * 
+   * @param {module.Character} character 
+   */
   const getBasicCharacterDisplay = (character) => {
     return new module.Display(character.id, character.name, character.ranks.indexOf(true) + 1, character.attribute, "1", "0", "1", "1");
   };
 
-  // check if disaply is valid.
+  /**
+   * check if disaply is valid.
+   * 
+   * @param {String} character_id 
+   * @param {module.Display} display 
+   * @param {Function} callback 
+   */
   const isValidCharacterDisplay = (character_id, display, callback) => {
     getCharacter(character_id, character => {
       let err = [];
@@ -81,7 +100,7 @@ let character_api = (() => {
   /**
    * get Display from the form.
    * 
-   * @return {Display}
+   * @return {module.Display}
    */
   const getFormDisplay = () => {
     let display = new character_api.Display(
@@ -97,27 +116,13 @@ let character_api = (() => {
     return display;
   };
 
-  const getSortProperties = () => {
-    let properties = {
-      group_by: group_by_select.value,
-      group_dir: group_dir_select.classList.contains("ascend") ? 1 : -1,
-      sort_by_1: sort_by_1_select.value,
-      sort_dir_1: sort_dir_1_select.classList.contains("ascend") ? 1 : -1,
-      sort_by_2: sort_by_2_select.value,
-      sort_dir_2: sort_dir_2_select.classList.contains("ascend") ? 1 : -1,
-      sort_id_dir: sort_id_dir_select.classList.contains("ascend") ? 1 : -1,
-      displays_per_row: parseInt(displays_per_row.value)
-    }
-    return properties;
-  };
-
   /**
    * get Display from character display.
    * 
    * @param {HTMLDivElement} character_display
    * @return {Display}
    */
-  const getCharacterDisplay = (character_display) => {
+  module.getCharacterDisplay = (character_display) => {
     let display = new character_api.Display(
       character_display.getAttribute("character_id"),
       character_display.getAttribute("name"),
@@ -136,7 +141,7 @@ let character_api = (() => {
    * @param {Display} display
    * @return {HTMLDivElement}
    */
-  const createDisplay = (display, listener) => {
+  module.createDisplay = (display, listener) => {
     let character_display = document.createElement("div");
     character_display.classList.add("character_display");
     character_display.setAttribute("character_id", display.id);
@@ -179,7 +184,7 @@ let character_api = (() => {
    * @param {HTMLDivElement} display
    */
   const updatePreviewDisplay = (display) => {
-    let character_display = createDisplay(display);
+    let character_display = module.createDisplay(display);
     character_display.classList.add("preview");
     display_preview.innerHTML = "";
     display_preview.appendChild(character_display);
@@ -221,99 +226,31 @@ let character_api = (() => {
     }
   };
 
-  const sortList = (properties) => {
-    // get the Display of every character display in the list.
-    let character_displays = [];
-    document.querySelectorAll(".character_display:not(.preview)").forEach(child => {
-      character_displays.push(getCharacterDisplay(child));
-    });
-
-    // add each display_property to the corresponding group.
-    let display_groups = group_properties(character_displays, properties.group_by, properties.group_dir);
-
-    // sort each group by the specified property.
-    var sortBy = [];
-    if (properties.sort_by_1 != "none") {
-      sortBy.push({ prop: properties.sort_by_1, direction: properties.sort_dir_1, isString: false });
-    }
-    if (properties.sort_by_2 != "none") {
-      sortBy.push({ prop: properties.sort_by_2, direction: properties.sort_dir_2, isString: false });
-    }
-    sortBy.push({ prop: "id", direction: properties.sort_id_dir, isString: false });
-
-    for (var group in display_groups) {
-      display_groups[group] = display_groups[group].sort((a, b) => utils.sortArrayBy(a, b, sortBy));
-    }
-    // placeCharacterDisplays(display_groups, num_per_row);
-    return display_groups;
-  };
-
-  const NUM_TO_WORD = { "0": "zero", "1": "one", "2": "two", "3": "three", "4": "four", "5": "five" };
-
-  // adds each display_property to the corresponding group.
-  const group_properties = (display_properties, group_by, group_dir) => {
-    let display_groups = {};
-    if (group_by == "attribute") {
-      if (group_dir == 1) display_groups = { "fire": [], "water": [], "forest": [], "light": [], "dark": [], "void": [] };
-      if (group_dir == -1) display_groups = { "void": [], "dark": [], "light": [], "forest": [], "water": [], "fire": [] };
-      display_properties.forEach(properties => {
-        display_groups[properties["attribute"]].push(properties);
-      });
-    } else if (group_by == "rank") {
-      if (group_dir == 1) display_groups = { "one": [], "two": [], "three": [], "four": [], "five": [] };
-      if (group_dir == -1) display_groups = { "five": [], "four": [], "three": [], "two": [], "one": [] };
-      display_properties.forEach(properties => {
-        display_groups[NUM_TO_WORD[properties["rank"]]].push(properties);
-      });
-    } else if (group_by == "magic") {
-      if (group_dir == 1) display_groups = { "zero": [], "one": [], "two": [], "three": [] };
-      if (group_dir == -1) display_groups = { "three": [], "two": [], "one": [], "zero": [] };
-      display_properties.forEach(properties => {
-        display_groups[NUM_TO_WORD[properties["magic"]]].push(properties);
-      });
-    } else if (group_by == "magia") {
-      if (group_dir == 1) display_groups = { "one": [], "two": [], "three": [], "four": [], "five": [] };
-      if (group_dir == -1) display_groups = { "five": [], "four": [], "three": [], "two": [], "one": [] };
-      display_properties.forEach(properties => {
-        display_groups[NUM_TO_WORD[properties["magia"]]].push(properties);
-      });
-    } else if (group_by == "episode") {
-      if (group_dir == 1) display_groups = { "one": [], "two": [], "three": [], "four": [], "five": [] };
-      if (group_dir == -1) display_groups = { "five": [], "four": [], "three": [], "two": [], "one": [] };
-      display_properties.forEach(properties => {
-        display_groups[NUM_TO_WORD[properties["episode"]]].push(properties);
-      });
-    } else if (group_by == "none") {
-      display_groups = { "none": [] };
-      display_properties.forEach(properties => {
-        display_groups["none"].push(properties);
-      });
-    }
-    return display_groups;
-  }
-
+  /**
+   * gets the standard display given the display.
+   * 
+   * @param {Character} character 
+   * @param {*} display 
+   */
   const updateCharacterWithDisplay = (character, display) => {
     // return the default display.
     if (!display) return getBasicCharacterDisplay(character);
     return new module.Display(character.id, character.name, display.rank, character.attribute, display.level, display.magic, display.magia, display.episode);
   }
 
-  const loadCharacterList = (character_list) => {
-    character_list_content.innerHTML = "";
-    character_list = character_list !== true ? character_list : [];
-    character_list.forEach(display => {
-      character_list_content.append(createDisplay(display));
-    })
-    // character_list_content.dispatchEvent(new Event("change"));
-  };
-
-  module.startUp = (listener) => {
+  /**
+   * starts up the list.
+   */
+  module.startUp = () => {
     getCharacter("1001", character => {
       updateFormEnabled(character);
       updatePreviewDisplay(getBasicCharacterDisplay(character));
     });
   };
 
+  /**
+   * updates the form fields with the selected character.
+   */
   module.updateFieldsOnName = () => {
     getCharacter(name_select.value, character => {
       updateFormEnabled(character);
@@ -323,6 +260,9 @@ let character_api = (() => {
     });
   };
 
+  /**
+   * adds a new character display to the list.
+   */
   module.createAddDisplay = () => {
     let display = getFormDisplay();
     let character_display = createDisplay(display, true);
@@ -330,6 +270,9 @@ let character_api = (() => {
     character_list_content.dispatchEvent(new Event("change"));
   };
 
+  /**
+   * updates the selected character display with the contents of the form.
+   */
   module.updateSelectedDisplay = () => {
     let character_display = Array.from(document.querySelectorAll(".character_display:not(.preview)")).find(child => child.classList.contains("selected"));
     character_display.remove()
@@ -340,6 +283,9 @@ let character_api = (() => {
     character_list_content.dispatchEvent(new Event("change"));
   };
 
+  /**
+   * copies the contents of the selected display to the form.
+   */
   module.copyDisplay = () => {
     let character_display = Array.from(document.querySelectorAll(".character_display:not(.preview)")).find(child => child.classList.contains("selected"));
     let display = getCharacterDisplay(character_display);
@@ -348,6 +294,9 @@ let character_api = (() => {
     updatePreviewDisplay(display);
   };
 
+  /**
+   * updates the preview character display with the contents of the form.
+   */
   module.updatePreviewOnForm = () => {
     let display = getFormDisplay();
     character_error_text.innerHTML = '';
@@ -361,162 +310,6 @@ let character_api = (() => {
         console.log(error);
       }
     });
-  };
-
-  module.sortOnFormUpdate = () => {
-    let properties = getSortProperties();
-    let display_groups = sortList(properties);
-    character_list_content.innerHTML = '';
-    for (var group in display_groups) {
-      if (display_groups[group].length == 0) continue;
-      let group_row = document.createElement("div");
-      group_row.classList.add("character_row");
-      group_row.style.width = `${properties.displays_per_row * 122}px`;
-      group_row.setAttribute("group", group);
-      display_groups[group].forEach((display) => {
-        let character_display = createDisplay(display, true);
-        group_row.appendChild(character_display);
-      });
-      character_list_content.appendChild(group_row);
-    }
-  };
-
-  module.updateList = (createdName = null) => {
-    let listName = module.getListName();
-    let character_list = module.getCharacterList();
-    let selectedProfile = module.getSelectedProfile();
-    if (!listName) return;
-    storage_api.updateList(listName, character_list, selectedProfile, createdName);
-  }
-
-  module.saveProfile = () => {
-    let profileName = new_profile_field.value;
-    if (storage_api.profileExists(profileName)) {
-      profile_error_text.innerHTML = `The sorting profile ${profileName} already exists.`;
-      return;
-    }
-    new_profile_field.value = "";
-    let properties = getSortProperties();
-    storage_api.updateProfile(profileName, properties);
-    new_profile_row.style.visibility = "collapse"
-  };
-
-  module.updateProfile = () => {
-    let profileName = module.getSelectedProfile();
-    let properties = getSortProperties();
-    storage_api.updateProfile(profileName, properties);
-    new_profile_row.style.visibility = "collapse"
-  };
-
-  module.checkProfile = () => {
-    let profileName = new_profile_field.value;
-    if (storage_api.profileExists(profileName)) profile_error_text.innerHTML = `The sorting profile ${profileName} already exists.`;
-    else profile_error_text.innerHTML = "";
-  };
-
-  module.deleteProfile = () => {
-    let profileName = module.getSelectedProfile();
-    if (profileName !== "Default" && profileName !== "Custom") {
-      storage_api.deleteProfile(profileName);
-      let listName = module.getSelectedList();
-      if (listName) storage_api.updateList(listName, storage_api.lists[listName].characterList, "Default");
-    }
-  };
-
-  module.setProfile = () => {
-    let profileName = profile_select.value;
-    storage_api.setProfileFields(storage_api.profiles[profileName]);
-  };
-
-  module.getSelectedProfile = () => {
-    return profile_select.value;
-  };
-
-  module.getSelectedList = () => {
-    for (let element of document.querySelectorAll(".character_list_entry")) {
-      if (element.classList.contains("selectedList")) return element.innerHTML;
-    }
-    return null;
-  };
-
-  module.getListName = () => {
-    return list_name_title.innerText;
-  };
-
-  module.getCharacterList = () => {
-    let character_list = [];
-    document.querySelectorAll(".character_display:not(.preview)").forEach(child => {
-      character_list.push(getCharacterDisplay(child));
-    });
-    return character_list;
-  };
-
-  module.changeToCustom = () => {
-    profile_select.value = "Custom";
-  };
-
-  module.resetProfiles = () => {
-    if (window.confirm("Are you sure you want to reset the profiles?")) {
-      storage_api.resetSorting();
-    }
-  };
-
-  module.checkListName = () => {
-    let listName = new_list_name_field.value;
-    if (storage_api.listExists(listName)) home_error_text.innerHTML = `The list name ${listName} already exists.`;
-    else home_error_text.innerHTML = "";
-  }
-
-  module.createList = () => {
-    let listName = new_list_name_field.value;
-    if (storage_api.listExists(listName)) {
-      home_error_text.innerHTML = `The list name ${listName} already exists.`;
-      return;
-    }
-    new_list_name_field.value = "";
-    new_list_button.classList.replace("minus", "add");
-    new_list_table.style.visibility = "collapse"
-    list_name_title.innerHTML = listName;
-    profile_select.value = "Default";
-    character_list_content.innerHTML = "";
-    module.updateList(listName);
-  };
-
-  module.selectList = (name, list) => {
-    for (let element of document.querySelectorAll(".character_list_entry")) {
-      // element already selected.
-      if (element.innerHTML === name) {
-        if (element.classList.contains("selectedList")) return;
-        else element.classList.add("selectedList");
-      }
-      else if (element.classList.contains("selectedList")) element.classList.remove("selectedList");
-    }
-    list_name_title.innerHTML = name;
-    loadCharacterList(list.characterList);
-    profile_select.value = list.selectedProfile;
-    character_api.setProfile();
-    module.sortOnFormUpdate();
-  };
-
-  module.deleteList = (name, list) => {
-    storage_api.deleteList(name)
-  };
-
-  module.changeZoom = (zoom) => {
-    character_list_content.style.zoom = zoom / 100;
-  };
-
-  module.zoom_fit = () => {
-    if (character_list_content.innerHTML) {
-      let widthRatio = Math.max((document.querySelector("body").clientWidth - left_bar.clientWidth - left_main_divider.clientWidth - 10), 500) / character_list_content.clientWidth
-      let heightRatio = Math.max((document.querySelector("body").clientHeight - main_header.clientHeight - header_content_divider.clientHeight - main_header.clientHeight - 10), 300) / character_list_content.clientHeight
-      console.log(character_list_content.clientWidth, widthRatio, heightRatio);
-      let zoom = Math.min(widthRatio, heightRatio);
-      zoom = zoom < 1 ? zoom : 1;
-      character_list_content.style.zoom = zoom
-      zoom_range.value = Math.round(zoom * 100);
-      zoom_field.value = Math.round(zoom * 100);
-    }
   };
 
   return module;

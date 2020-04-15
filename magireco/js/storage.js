@@ -47,9 +47,7 @@ let storage_api = (() => {
     loadProfiles();
   }
 
-  let num = 0
   module.setProfileFields = (profile) => {
-    console.log(profile, num++);
     setSelectedText(group_by_select, profile.group_by);
     setSelectedDirection(group_dir_select, profile.group_dir);
     setSelectedText(sort_by_1_select, profile.sort_by_1);
@@ -81,7 +79,7 @@ let storage_api = (() => {
 
   const loadProfiles = (reload = false) => {
     // get the previous profile.
-    let previous = character_api.getSelectedProfile();
+    let previous = profile_api.getSelectedProfile();
     // get the settings.
     database.getProfiles(userId).then(snapshot => {
       module.profiles = snapshot.val();
@@ -103,7 +101,7 @@ let storage_api = (() => {
     database.getLists(userId).then(snapshot => {
       module.lists = snapshot.val() ? snapshot.val() : {};
       // get the previously selected list.
-      let previous = character_api.getSelectedList();
+      let previous = list_api.getSelectedList();
       saved_character_lists.innerHTML = "";
       for (let [name, list] of Object.entries(module.lists)) {
         let div = document.createElement("div");
@@ -112,22 +110,23 @@ let storage_api = (() => {
         entry.classList.add("character_list_entry");
         entry.innerHTML = name;
         entry.addEventListener("click", () => {
-          character_api.selectList(name, list);
+          list_api.selectList(name, list);
         });
         let deleteButton = document.createElement("button");
         deleteButton.className = "small_btn delete";
         deleteButton.addEventListener("click", () => {
-          character_api.deleteList(name, list);
+          let res = confirm(`Are you sure you want to delete the list ${name}?`);
+          if (res) list_api.deleteList(name, list);
         })
         div.append(entry);
         div.append(deleteButton);
         saved_character_lists.append(div);
       }
       if (created) {
-        if (module.lists[created]) return character_api.selectList(created, module.lists[created]);
+        if (module.lists[created]) return list_api.selectList(created, module.lists[created]);
       }
       if (reload) {
-        if (module.lists[previous]) return character_api.selectList(previous, module.lists[previous]);
+        if (module.lists[previous]) return list_api.selectList(previous, module.lists[previous]);
         else {
           character_list_content.innerHTML = "";
           list_name_title.innerHTML = "";
@@ -135,7 +134,7 @@ let storage_api = (() => {
       }
       if (Object.entries(module.lists).length > 0) {
         let first = Object.entries(module.lists)[0][0];
-        return character_api.selectList(first, module.lists[first]);
+        return list_api.selectList(first, module.lists[first]);
       }
     });
   };
