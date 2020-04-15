@@ -24,6 +24,39 @@ let character_api = (() => {
     }
   }
 
+  // get the collection.
+  module.collection = [];
+  var curr_id = "1001";
+  var curr_char = [];
+  collection.forEach((next) => {
+    if (next["id"] == curr_id) {
+      curr_char.push(next);
+    }
+    else {
+      module.collection.push(curr_char);
+      curr_char = [next];
+      curr_id = next["id"];
+    }
+    console.log();
+  });
+  if (curr_char.length > 0) module.collection.push(curr_char);
+
+  // get the characters.
+  module.characters = module.collection.map((char) => {
+    return {
+      id: char[0]["id"],
+      name: char[0]["name"],
+      attribute: char[0]["attribute"],
+      ranks: {
+        "1": char.filter(e => e["rank"] == "1").length > 0,
+        "2": char.filter(e => e["rank"] == "2").length > 0,
+        "3": char.filter(e => e["rank"] == "3").length > 0,
+        "4": char.filter(e => e["rank"] == "4").length > 0,
+        "5": char.filter(e => e["rank"] == "5").length > 0,
+      }
+    };
+  });
+
   /**
    * get the list of names.
    * 
@@ -265,7 +298,7 @@ let character_api = (() => {
    */
   module.createAddDisplay = () => {
     let display = getFormDisplay();
-    let character_display = createDisplay(display, true);
+    let character_display = module.createDisplay(display, true);
     character_list_content.appendChild(character_display);
     character_list_content.dispatchEvent(new Event("change"));
   };
@@ -278,7 +311,7 @@ let character_api = (() => {
     character_display.remove()
 
     let display = getFormDisplay();
-    character_display = createDisplay(display, true);
+    character_display = module.createDisplay(display, true);
     character_list_content.appendChild(character_display);
     character_list_content.dispatchEvent(new Event("change"));
   };
@@ -309,6 +342,37 @@ let character_api = (() => {
         character_error_text.innerHTML = error.toString();
         console.log(error);
       }
+    });
+  };
+
+  /**
+   * opens the modal dialog for character selection user interface.
+   */
+  module.openCharacterSelect = () => {
+    characterSelectModalList.innerHTML = "";
+    module.characters.forEach(character => {
+      let star = 1;
+      for (let [key, value] of Object.entries(character.ranks)) {
+        if (value) {
+          star = key;
+          break;
+        }
+      }
+      let container = document.createElement("div");
+      container.classList.add("chararacter_image_preview");
+      container.setAttribute("id", character.id);
+      let image = document.createElement("img");
+      image.src = `/magireco/assets/image/card_${character.id}${star}_d.png`
+      let name = document.createElement("span");
+      // name.innerHTML = character.name;
+      container.append(image);
+      container.append(name);
+      container.addEventListener("click", () => {
+        name_select.value = character.id;
+        name_select.dispatchEvent(new Event("change"));
+        characterSelectModal.style.display = "none";
+      })
+      characterSelectModalList.append(container);
     });
   };
 

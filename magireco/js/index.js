@@ -40,6 +40,31 @@
       });
     });
 
+    // open modal
+    name_modal_open_button.addEventListener("click", () => {
+      character_api.openCharacterSelect();
+      characterSelectModal.style.display = "block";
+    });
+
+    // hide modal
+    characterSelectModalClose.addEventListener("click", () => {
+      characterSelectModal.style.display = "none";
+    });
+
+    // hide modal
+    window.addEventListener("click", (event) => {
+      if (event.target == characterSelectModal) {
+        if (characterSelectModal.style.display === "block") {
+          characterSelectModal.style.display = "none";
+        }
+      }
+    });
+
+    // filter modal
+    characterSelectModalName.addEventListener("keyup", () => {
+
+    });
+
     // add new character display to list.
     create_button.addEventListener("click", () => {
       character_api.createAddDisplay();
@@ -68,7 +93,7 @@
         list_api.sortOnFormUpdate();
         if (profile_api.getSelectedProfile() === "Default") profile_api.changeToCustom();
         list_api.updateList();
-        list_api.updateProfile();
+        profile_api.updateProfile();
       });
     });
 
@@ -138,7 +163,7 @@
       if (profile_select.value == "Custom") return;
       profile_api.setProfile();
       list_api.sortOnFormUpdate();
-      characlist_apiter_api.updateList();
+      list_api.updateList();
     });
 
     // reset the profiles to default.

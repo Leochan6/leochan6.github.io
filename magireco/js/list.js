@@ -129,7 +129,7 @@ let list_api = (function () {
   module.updateList = (createdName = null) => {
     let listName = module.getListName();
     let character_list = module.getCharacterList();
-    let selectedProfile = module.getSelectedProfile();
+    let selectedProfile = profile_api.getSelectedProfile();
     if (!listName) return;
     storage_api.updateList(listName, character_list, selectedProfile, createdName);
   }
@@ -147,7 +147,7 @@ let list_api = (function () {
   module.getCharacterList = () => {
     let character_list = [];
     document.querySelectorAll(".character_display:not(.preview)").forEach(child => {
-      character_list.push(getCharacterDisplay(child));
+      character_list.push(character_api.getCharacterDisplay(child));
     });
     return character_list;
   };

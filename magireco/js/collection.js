@@ -391,13 +391,13 @@ const collection = [
   },
   {
     "attribute": "Light",
-    "rank": "3",
+    "rank": "4",
     "name": "Iroha-chan",
     "id": "1201"
   },
   {
     "attribute": "Light",
-    "rank": "4",
+    "rank": "5",
     "name": "Iroha-chan",
     "id": "1201"
   },

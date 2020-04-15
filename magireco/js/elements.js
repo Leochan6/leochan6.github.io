@@ -43,6 +43,13 @@ let elements = (() => {
   // Character Preview
   module.display_preview = document.querySelector("#display_preview");
 
+  // Modal
+  module.name_modal_open_button = document.querySelector("#name_modal_open_button");
+  module.characterSelectModal = document.querySelector("#characterSelectModal");
+  module.characterSelectModalClose = document.querySelector("#name_modal_close_button");
+  module.characterSelectModalName = document.querySelector("#characterSelectModalName");
+  module.characterSelectModalList = document.querySelector("#characterSelectModalList");
+
   // Sorting Profiles
   module.profile_select = document.querySelector("#profile_select");
   module.new_profile_button = document.querySelector("#new_profile_button");

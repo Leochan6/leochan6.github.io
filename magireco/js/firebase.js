@@ -23,9 +23,9 @@ let database = (() => {
       .catch(error => errorHandler(error.message));
   };
 
-  module.signup = (email, password, loginHandler, errorHandler) => {
+  module.signup = (name, email, password, loginHandler, errorHandler) => {
     firebase.auth().createUserWithEmailAndPassword(email, password)
-      .then(userCreds => loginHandler(userCreds))
+      .then(userCreds => loginHandler(userCreds, name))
       .catch(error => errorHandler(error.message));
   };
 
@@ -41,8 +41,8 @@ let database = (() => {
 
   // ---------- users ---------- //
 
-  module.createUser = (userId) => {
-    users.set({ [userId]: { name: "dummy name" } }).key;
+  module.createUser = (userId, name) => {
+    users.set({ [userId]: { name: name } });
     lists.set({ [userId]: true });
     profiles.set({ [userId]: { "Default": defaultProfile, "Custom": customProfile } });
     settings.set({ [userId]: defaultSettings });

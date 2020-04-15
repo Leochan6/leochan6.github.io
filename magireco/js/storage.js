@@ -88,7 +88,7 @@ let storage_api = (() => {
       for (let [name, profile] of Object.entries(module.profiles)) {
         profile_select.options.add(new Option(name, name, false));
       }
-      if (reload) profile_select.value = previous;
+      if (reload && previous) profile_select.value = previous;
       else {
         // set sort settings with default if no list selected.
         profile_select.value = "Default";

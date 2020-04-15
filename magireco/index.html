@@ -18,15 +18,32 @@
   <div class="horizontal-divider"></div>
 
   <div id="login_content">
-    <label id="login_label">Sign In or Sign Up</label>
+    <label id="login_label">Sign In</label>
     <form id="login_form">
-      <p><input type="email" class="login_field" id="email_text" name="email" placeholder="Email"></p>
-      <p><input type="password" class="login_field" id="password_text" name="password" placeholder="Password"></p>
-      <button type="submit" class="btn btnGray login_button" id="signin_button">Sign In</button>
-      <button type="input" class="btn btnGray login_button" id="signup_button">Sign Up</button>
+      <input type="email" class="login_field" id="email_text" name="email" placeholder="Email">
+      <input type="password" class="login_field" id="password_text" name="password" placeholder="Password">
+      <div id="login_buttons">
+        <button type="submit" class="btn btnGray login_button" id="signin_button">Sign In</button>
+        <button type="input" class="btn btnGray login_button" id="open_signup_button">Sign Up</button>
+      </div>
     </form>
-
     <p class="error_text hidden" id="login_error"></p>
+  </div>
+
+  <div class="hidden" id="signup_content">
+    <div id="signup_label">Sign Up</div>
+    <form id="signup_form">
+      <input type="text" class="login_field" id="signup_name_text" name="name" placeholder="Name">
+      <input type="email" class="login_field" id="signup_email_text" name="email" placeholder="Email">
+      <input type="password" class="login_field" id="signup_password_text" name="password" placeholder="Password">
+      <input type="password" class="login_field" id="signup_password_confirm_text" name="confirm"
+        placeholder="Confirm Password">
+      <div id="signup_buttons">
+        <button type="submit" class="btn btnGray login_button" id="signup_button">Sign Up</button>
+        <button type="input" class="btn btnGray login_button" id="cancel_signup_button">Cancel</button>
+      </div>
+    </form>
+    <p class="error_text hidden" id="signup_error"></p>
   </div>
 
   </div>

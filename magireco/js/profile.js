@@ -23,14 +23,14 @@ let profile_api = (function () {
       return;
     }
     new_profile_field.value = "";
-    let properties = getSortProperties();
+    let properties = module.getSortProperties();
     storage_api.updateProfile(profileName, properties);
     new_profile_row.style.visibility = "collapse"
   };
 
   module.updateProfile = () => {
     let profileName = module.getSelectedProfile();
-    let properties = getSortProperties();
+    let properties = module.getSortProperties();
     storage_api.updateProfile(profileName, properties);
     new_profile_row.style.visibility = "collapse"
   };

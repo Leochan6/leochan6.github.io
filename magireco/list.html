@@ -58,6 +58,7 @@
                 <tr title="Name of the Character.">
                   <td>Name:</td>
                   <td><select id="name_select" style="width:140px"></select></td>
+                  <td><button id="name_modal_open_button">+</td>
                 </tr>
                 <tr title="Attribute of the Character.">
                   <td>Attribute:
@@ -252,6 +253,17 @@
       <div id="character_list_container">
         <div id="character_list_content"></div>
       </div>
+    </div>
+
+    <!-- The Modal -->
+    <div id="characterSelectModal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <input type="text" id="characterSelectModalName" placeholder="Search">
+        <span class="close" id="characterSelectModalClose">&times;</span>
+        <div id="characterSelectModalList"></div>
+      </div>
+
     </div>
   </div>
   <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-app.js"></script>

@@ -1,4 +1,4 @@
-#login_content {
+#login_content, #signup_content {
   border: black solid 1px;
   border-radius: 25px;
   margin: 20px;
@@ -6,20 +6,31 @@
   width: fit-content;
 }
 
-#login_label {
+#login_label, #signup_label {
   font-size: 24px;
   font-family: Arial, Helvetica, sans-serif;
   margin: 5px;
 }
 
+form {
+  display: flex;
+  flex-direction: column;
+}
+
 .login_field {
   width: 250px;
   padding: 5px;
-  margin: 0px 5px;
+  margin: 5px 5px;
+}
+
+#login_buttons, #signup_buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .login_button {
   width: 100px;
   padding: 5px;
-  margin: 0px 5px;
+  margin: 5px 5px;
 }
