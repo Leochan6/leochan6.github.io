@@ -53,7 +53,8 @@ let character_api = (() => {
         "3": char.filter(e => e["rank"] == "3").length > 0,
         "4": char.filter(e => e["rank"] == "4").length > 0,
         "5": char.filter(e => e["rank"] == "5").length > 0,
-      }
+      },
+      obtainability: char[0]["obtainability"]
     };
   });
 
@@ -153,7 +154,7 @@ let character_api = (() => {
    * get Display from character display.
    * 
    * @param {HTMLDivElement} character_display
-   * @return {Display}
+   * @return {module.Display}
    */
   module.getCharacterDisplay = (character_display) => {
     let display = new character_api.Display(
@@ -321,7 +322,7 @@ let character_api = (() => {
    */
   module.copyDisplay = () => {
     let character_display = Array.from(document.querySelectorAll(".character_display:not(.preview)")).find(child => child.classList.contains("selected"));
-    let display = getCharacterDisplay(character_display);
+    let display = module.getCharacterDisplay(character_display);
     getCharacter(character_display.getAttribute("character_id"), character => updateFormEnabled(character));
     updateForm(display);
     updatePreviewDisplay(display);

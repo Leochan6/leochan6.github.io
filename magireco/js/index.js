@@ -193,6 +193,17 @@
       list_api.checkListName();
     });
 
+    // set the background.
+    background_select.addEventListener("change", () => {
+      background_api.setBackground(background_select.value);
+    });
+
+    // remove the background.
+    remove_background_button.addEventListener("click", () => {
+      background_api.removeBackground();
+    });
+
+
     // show all menus checkbox.
     show_all_menus_checkbox.addEventListener("click", () => {
       if (show_all_menus_checkbox.checked) {
@@ -225,6 +236,7 @@
     // apply the filters.
     apply_filter_button.addEventListener("click", () => {
       list_api.applyFilters();
+      list_api.getStats();
     });
 
     // reset the filters.
@@ -286,6 +298,9 @@
 
   // update form and preview display on startup.
   character_api.startUp();
+
+  // update the background form.
+  background_api.startUp();
 
   // load the settings, profiles, and character lists from storage.
   database.onAuthStateChanged(user => {

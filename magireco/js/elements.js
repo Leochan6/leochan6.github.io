@@ -86,11 +86,6 @@ let elements = (() => {
   module.export_button = document.querySelector("#export_button");
 
   // Filters
-  module.attribute_filter = document.querySelector("#attribute_filter");
-  module.rank_filter = document.querySelector("#rank_filter");
-  module.level_is_filter = document.querySelector("#level_is_filter");
-  module.level_min_filter = document.querySelector("#level_min_filter");
-  module.level_max_filter = document.querySelector("#level_max_filter");
   module.zoom_field = document.querySelector("#zoom_label");
   module.zoom_range = document.querySelector("#zoom_range");
   module.zoom_checkbox = document.querySelector("#zoom_checkbox");
@@ -100,6 +95,8 @@ let elements = (() => {
   module.apply_filter_button = document.querySelector("#apply_filter_button");
   module.reset_filter_button = document.querySelector("#reset_filter_button");
 
+  // Stats
+  module.list_stats_list = document.querySelector("#list_stats_list");
 
 
   return module;

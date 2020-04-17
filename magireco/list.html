@@ -24,6 +24,7 @@
         <button id="home_btn" class="tablink btn btnBlue" tab_name="home_tab">Home</button>
         <button id="char_btn" class="tablink btn btnGray" tab_name="char_tab">Character</button>
         <button id="sort_btn" class="tablink btn btnGray" tab_name="sort_tab">Sort</button>
+        <button id="background_btn" class="tablink btn btnGray" tab_name="background_tab">Background</button>
         <button id="setting_btn" class="tablink btn btnGray" tab_name="setting_tab">Setting</button>
       </div>
       <div class="hidden left" id="collapse_sidebar_button"></div>
@@ -211,6 +212,21 @@
           </div>
         </div>
         <div class="horizontal-divider"></div>
+        <div id="background_tab" class="tab">
+          <div class="tab_header">
+            <h2 class="tab_heading" id="background_heading">Background</h2>
+          </div>
+          <div class="tab_contents hidden">
+            <table id="background_table">
+              <tr>
+                <td>Background:</td>
+                <td><select id="background_select"></select></td>
+              </tr>
+            </table>
+            <button id="remove_background_button">Remove</button></tr>
+          </div>
+        </div>
+        <div class="horizontal-divider"></div>
         <div id="setting_tab" class="tab hidden">
           <div class="tab_header">
             <h2 class="tab_heading" id="setting_heading">Settings</h2>
@@ -233,19 +249,24 @@
       <div id="main_header">
         <div id="name_and_zoom">
           <h2 id="list_name_title"></h2>
-          <button class="" id="export_button">Export</button>
           <div id="zoom_tools">
             Zoom: <input type="number" id="zoom_field" value=100 maxlength="3" size=3 min=30 max=300
               style="width: 40px;">
             <input type="range" min="30" max="300" value="100" id="zoom_range">
             Auto: <input type="checkbox" id="zoom_checkbox">
           </div>
+          <button class="" id="export_button">Export</button>
         </div>
         <div class="horizontal-divider"></div>
-        <div class="" id="add_list_filters">
-          Filters: <button id="add_filter_button">New</button>
-          <button id="apply_filter_button">Apply</button>
-          <button id="reset_filter_button">Reset</button>
+        <div id="filters_buttons_and_stats">
+          <div class="" id="add_list_filters">
+            Filters: <button id="add_filter_button">New</button>
+            <button id="apply_filter_button">Apply</button>
+            <button id="reset_filter_button">Reset</button>
+          </div>
+          <div class="" id="list_stats">
+            Stats: <label id="list_stats_list"></label>
+          </div>
         </div>
         <div class="" id="list_filters"></div>
       </div>
@@ -263,7 +284,6 @@
         <span class="close" id="characterSelectModalClose">&times;</span>
         <div id="characterSelectModalList"></div>
       </div>
-
     </div>
   </div>
   <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-app.js"></script>
@@ -272,11 +292,13 @@
   <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-database.js"></script>
   <script src="js/firebase.js"></script>
   <script src="js/collection.js"></script>
+  <script src="js/background_collection.js"></script>
   <script src="js/elements.js"></script>
   <script src="js/canvas2image.js"></script>
   <script src="js/html2canvas.js"></script>
   <script src="js/storage.js"></script>
   <script src="js/utils.js"></script>
+  <script src="js/background.js"></script>
   <script src="js/profile.js"></script>
   <script src="js/list.js"></script>
   <script src="js/character.js"></script>

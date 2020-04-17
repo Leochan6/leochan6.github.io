@@ -4,8 +4,8 @@ body {
   overflow: inherit;
   margin: 10px;
   border: solid black 1px;
-  max-width: fit-content;
-  max-height: fit-content;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 hr {
@@ -52,16 +52,17 @@ hr {
 
 #name_heading {
   margin: 10px;
+  width: max-content;
 }
 
 #tabs {
-  width: max-content;
+  width: 100%;
 }
 
 .tab {
   margin: 5px;
   padding: 5px;
-  width: fit-content;
+  width: max-content;
   max-width: 300px;
 }
 
@@ -106,6 +107,14 @@ hr {
   margin-top: 10px;
 }
 
+#auto_row_checkbox {
+  margin: 0px;
+}
+
+#background_select {
+  width: 200px;
+}
+
 .selectedList {
   border: black solid 2px;
 }
@@ -125,10 +134,11 @@ hr {
   margin: 0px 10px;
   display: inline-flex;
   align-items: center;
+  justify-content: space-between;
 }
 
 #zoom_tools {
-  padding-left: 50px;
+  margin: 10px;
 }
 
 .filter_row {
@@ -155,6 +165,10 @@ hr {
   margin-left: 10px;
 }
 
+.filter_field.obtainability_select {
+  width: 80px;
+}
+
 .level_input {
   height: 17px;
   width: 56px;
@@ -173,8 +187,17 @@ hr {
   vertical-align: middle;
 }
 
+#filters_buttons_and_stats {
+  display: flex;
+  justify-content: space-between;
+}
+
+#list_stats {
+  margin: 10px;
+}
+
 #export_button {
-  margin: 0px 20px;
+  margin: 10px
 }
 
 #zoom_range {
@@ -207,8 +230,10 @@ hr {
   position: relative;
   overflow-x: auto;
   overflow-y: auto;
-  margin: 10px;
+  /* margin: 10px; */
   width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .character_list_entry {

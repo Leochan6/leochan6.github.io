@@ -206,6 +206,7 @@ let list_api = (function () {
     profile_select.value = list.selectedProfile;
     profile_api.setProfile();
     module.sortOnFormUpdate();
+    list_api.getStats();
   };
 
   /**
@@ -246,13 +247,13 @@ let list_api = (function () {
         <option value="or">Or</option>
       </select>
       <select class="type_select">
-        <option value="" selected></option>
         <option value="attribute">Attribute</option>
         <option value="rank">Rank</option>
         <option value="level">Level</option>
         <option value="magic">Magic</option>
         <option value="magia">Magia</option>
         <option value="episode">Episode</option>
+        <option value="obtainability">Obtainability</option>
       </select>
       <div class="filter_type attribute_filter hidden">
         <select class="filter_field equality">
@@ -346,9 +347,22 @@ let list_api = (function () {
           <option value="5">5</option>
         </select>
       </div>
+      <div class="filter_type obtainability_filter hidden">
+        <select class="filter_field equality">
+          <option value="eq">=</option>
+          <option value="neq">=/=</option>
+        </select>
+        <select class="filter_field obtainability_select">
+          <option value="unlimited">Unlimited</option>
+          <option value="limited">Limited</option>
+        </select>
+      </div>
       <button class="create">+</button>
       <button class="delete"></button>
     `
+
+    new_filter.querySelector(".type_select").selectedIndex = -1;
+
     new_filter.querySelector(".type_select").addEventListener("change", () => {
       let type = new_filter.querySelector(".type_select").value;
       new_filter.querySelectorAll(".filter_type").forEach(filter => {
@@ -356,12 +370,6 @@ let list_api = (function () {
       });
       let filter_type = new_filter.querySelector(`.${type}_filter`);
       filter_type.classList.remove("hidden");
-      console.log(module.getFilters());
-    });
-
-    new_filter.querySelector(".state_select").addEventListener("change", () => {
-      console.log(module.getFilters());
-
     });
 
     new_filter.querySelector(".create").addEventListener("click", () => {
@@ -376,10 +384,6 @@ let list_api = (function () {
       }
       module.getFilters();
     });
-
-    new_filter.querySelectorAll(".filter_field").forEach(filter_field => filter_field.addEventListener("change", () => {
-      console.log(module.getFilters());
-    }));
 
     if (list_filters.children.length > 0) new_filter.querySelector(".state_select").classList.remove("collapse");
     if (next != null) {
@@ -411,7 +415,6 @@ let list_api = (function () {
   };
 
   module.applyFilters = (filters = module.getFilters()) => {
-    console.log(filters);
     // if no filters, then show everything.
     if (filters.length == 0) {
       Array.from(character_list_content.children).forEach(character_row => {
@@ -462,7 +465,6 @@ let list_api = (function () {
     let matches = Array(filters.length).fill(true);
     filters.forEach((filter, i) => {
       matches[i] = matchesFilter(character_display, filter.value);
-      if (filter.state === "and") console.log(`if (${i} > 0 && ${filter.state} === "and") matches[i] = ${matches[i - 1]} && ${matches[i]};`);
       if (i > 0 && filter.state === "and") {
         let and = matches[i - 1] && matches[i];
         matches[i] = and;
@@ -474,11 +476,17 @@ let list_api = (function () {
   };
 
   const matchesFilter = (character_display, filter) => {
-    console.log(character_display, filter[1].param, character_display[filter[1].param], filter[1].value);
     if (filter[0].param === "equality") {
-      if (filter[0].value === "eq" && character_display[filter[1].param] === filter[1].value) return true;
-      else if (filter[0].value === "neq" && character_display[filter[1].param] !== filter[1].value) return true;
-      else return false;
+      if (filter[1].param === "obtainability") {
+        let obtainability = character_api.characters.find(character => character_display.id == character.id).obtainability;
+        if (filter[0].value === "eq" && obtainability === filter[1].value) return true;
+        else if (filter[0].value === "neq" && obtainability !== filter[1].value) return true;
+        else return false;
+      } else {
+        if (filter[0].value === "eq" && character_display[filter[1].param] === filter[1].value) return true;
+        else if (filter[0].value === "neq" && character_display[filter[1].param] !== filter[1].value) return true;
+        else return false;
+      }
     } else {
       if (filter[0].value === "eq" && parseInt(character_display[filter[1].param]) === parseInt(filter[1].value)) return true;
       else if (filter[0].value === "neq" && parseInt(character_display[filter[1].param]) !== parseInt(filter[1].value)) return true;
@@ -504,6 +512,47 @@ let list_api = (function () {
       }
     });
     list_filters.innerHTML = "";
+  };
+
+  module.getStats = () => {
+    let result = {
+      totalCharacters: 0,
+      totalVisible: 0,
+      limited: 0,
+      maxLevel: 0,
+      maxRank: 0,
+      maxMagic: 0,
+      maxMagia: 0,
+      maxEpisode: 0
+    };
+
+    Array.from(character_list_content.children).forEach(character_row => {
+      Array.from(character_row.children).forEach(character_display_element => {
+        result.totalCharacters++;
+        if (!character_display_element.classList.contains("hidden")) {
+          result.totalVisible++;
+          let character_display = character_api.getCharacterDisplay(character_display_element);
+          if (character_api.characters.find(character => character_display.id == character.id).obtainability == "limited") result.limited++;
+          if (character_display.rank == 1 && character_display.level == 40) result.maxLevel++;
+          else if (character_display.rank == 2 && character_display.level == 50) result.maxLevel++;
+          else if (character_display.rank == 3 && character_display.level == 60) result.maxLevel++;
+          else if (character_display.rank == 4 && character_display.level == 80) result.maxLevel++;
+          else if (character_display.rank == 5 && character_display.level == 100) result.maxLevel++;
+          let character = character_api.characters.find(character => character.id == character_display.id);
+          let maxRank = "1";
+          Object.entries(character.ranks).forEach(([rank, value]) => maxRank = value ? rank : maxRank);
+          if (character_display.rank == maxRank) result.maxRank++;
+          if (character_display.magic == "3") result.maxMagic++;
+          if (character_display.magia == "5") result.maxMagia++;
+          if (character_display.episode == "5") result.maxEpisode++;
+        }
+      });
+    });
+
+    list_stats_list.innerHTML = `Max Level: ${result.maxLevel}, Max Rank: ${result.maxRank}, Max Magic: ${result.maxMagic}, 
+      Max Magia: ${result.maxMagia}, Max Episode: ${result.maxEpisode}, Limited: ${result.limited}, Visible: ${result.totalVisible}/${result.totalCharacters}`
+
+    return result;
   };
 
   return module;
