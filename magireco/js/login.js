@@ -6,10 +6,14 @@
     database.onAuthStateChanged(user => {
       if (user) {
         document.querySelector("#login_content").classList.add("hidden");
+        document.querySelector("#anonymous_content").classList.add("hidden");
         document.querySelector("#signout_button").classList.remove("hidden");
+        document.querySelector("#enter_button").classList.remove("hidden");
       } else {
         document.querySelector("#login_content").classList.remove("hidden");
+        document.querySelector("#anonymous_content").classList.remove("hidden");
         document.querySelector("#signout_button").classList.add("hidden");
+        document.querySelector("#enter_button").classList.add("hidden");
       }
     });
 
@@ -51,6 +55,9 @@
       database.signout();
     });
 
+    document.querySelector("#enter_button").addEventListener("click", () => {
+      window.location.href = "list.html";
+    });
   };
 
   const loginHandler = (userCred, name) => {

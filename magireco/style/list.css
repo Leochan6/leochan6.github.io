@@ -252,10 +252,6 @@ hr {
   background-size: cover;
 }
 
-.character_list_row {
-  width: 15vw;
-}
-
 .character_list_entry {
   border: black solid 1px;
   border-radius: 10px;

@@ -39,3 +39,8 @@ form {
   width: fit-content;
   height: 50px;
 }
+
+#enter_button {
+  width: 200px;
+  height: 100px;
+}
