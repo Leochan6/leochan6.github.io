@@ -29,8 +29,21 @@ let database = (() => {
       .catch(error => errorHandler(error.message));
   };
 
+  module.signInAnonymously = (loginHandler, errorHandler) => {
+    firebase.auth().signInAnonymously()
+      .then(userCreds => loginHandler(userCreds))
+      .catch(error => errorHandler(error));
+  };
+
   module.signout = () => {
-    firebase.auth().signOut().then(() => { window.location.href = "index.html"; }).catch((error) => { console.error(error) });
+    let user = firebase.auth().currentUser;
+    /* if (signout.isAnonymous) {
+      users.child(user.userId).remove();
+      lists.child(user.userId).remove();
+      profiles.child(user.userId).remove();
+      settings.child(user.userId).remove();
+    } */
+    firebase.auth().signOut().then(() => { window.location.href = "index.html"; }).catch((error) => { console.error(error); });
   };
 
   module.onAuthStateChanged = (callback) => {
@@ -42,10 +55,10 @@ let database = (() => {
   // ---------- users ---------- //
 
   module.createUser = (userId, name) => {
-    users.set({ [userId]: { name: name } });
-    lists.set({ [userId]: true });
-    profiles.set({ [userId]: { "Default": defaultProfile, "Custom": customProfile } });
-    settings.set({ [userId]: defaultSettings });
+    users.update({ [userId]: { name: name } });
+    lists.update({ [userId]: true });
+    profiles.update({ [userId]: { "Default": defaultProfile, "Custom": customProfile } });
+    settings.update({ [userId]: defaultSettings });
   };
 
   module.deleteUser = (userId) => {
@@ -65,16 +78,38 @@ let database = (() => {
     return lists.child(userId).once('value');
   };
 
-  module.updateList = (userId, listName, content) => {
-    // console.log("updateList", userId, listName, content);
-    return lists.child(`${userId}/${listName}`).set(content);
+  module.createList = (userId, content) => {
+    return lists.child(userId).push(content);
   };
 
-  module.deleteList = (userId, listName) => {
-    return lists.child(`${userId}/${listName}`).remove();
+  module.updateList = (userId, listId, content) => {
+    return lists.child(`${userId}/${listId}`).set(content);
   };
 
-  // ---------- Profiles profiles ---------- //
+  module.deleteList = (userId, listId) => {
+    return lists.child(`${userId}/${listId}`).remove();
+  };
+
+  module.onListUpdate = (userId, callback) => {
+    lists.child(userId).on('value', (snapshot) => {
+      // console.log("value", snapshot.key, snapshot.val());
+      callback(snapshot);
+    });
+    lists.child(userId).on('child_added', (snapshot) => {
+      // console.log("add", snapshot.key, snapshot.val());
+      // callback(snapshot, "add");
+    });
+    lists.child(userId).on('child_removed', (snapshot) => {
+      // console.log("remove", snapshot.key, snapshot.val());
+      // callback(snapshot, "remove");
+    });
+    lists.child(userId).on('child_changed', (snapshot) => {
+      // console.log("change", snapshot.key, snapshot.val());
+      // callback(snapshot, "change");
+    });
+  };
+
+  // ---------- profiles ---------- //
 
   const defaultProfile = {
     group_by: "attribute",
@@ -94,7 +129,6 @@ let database = (() => {
   };
 
   module.updateProfile = (userId, profileName, content) => {
-    // console.log("updateProfile", userId, profileName, content);
     return profiles.child(`${userId}/${profileName}`).set(content);
   };
 
@@ -102,12 +136,18 @@ let database = (() => {
     return profiles.child(`${userId}/${profileName}`).remove();
   };
 
+  module.onProfileUpdate = (userId, callback) => {
+    profiles.child(userId).once('value', (snapshot) => {
+      callback(snapshot);
+    });
+  };
+
   // ---------- settings ---------- //
 
   const defaultSettings = {
     show_all_menus: true,
     valid_characters: true
-  }
+  };
 
   module.updateSettings = (userId, content) => {
     return settings.child(userId).child("lists").set(content);
@@ -115,6 +155,12 @@ let database = (() => {
 
   module.getSettings = (userId) => {
     return settings.child(userId).once('value');
+  };
+
+  module.onSettingUpdate = (userId, callback) => {
+    settings.child(userId).once('value', (snapshot) => {
+      callback(snapshot);
+    });
   };
 
   return module;

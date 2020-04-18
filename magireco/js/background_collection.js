@@ -2279,4 +2279,4 @@ let background_collections = {
       "name": "KamiFest"
     },
   ]
-}
+};

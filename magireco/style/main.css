@@ -113,3 +113,10 @@ header {
 .margin-right-10 {
   margin-right: 10px;
 }
+
+#signout_button {
+  position: absolute;
+  left: auto;
+  right: 20px;
+  top: 20px;
+}

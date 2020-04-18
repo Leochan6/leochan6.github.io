@@ -13,7 +13,7 @@ let character_api = (() => {
       this.magia = magia;
       this.episode = episode;
     }
-  }
+  };
 
   module.Character = class Character {
     constructor(id, name, attribute, ranks) {
@@ -22,20 +22,20 @@ let character_api = (() => {
       this.attribute = attribute;
       this.ranks = ranks;
     }
-  }
+  };
 
   // get the collection.
   module.collection = [];
   var curr_id = "1001";
   var curr_char = [];
   collection.forEach((next) => {
-    if (next["id"] == curr_id) {
+    if (next.id == curr_id) {
       curr_char.push(next);
     }
     else {
       module.collection.push(curr_char);
       curr_char = [next];
-      curr_id = next["id"];
+      curr_id = next.id;
     }
     console.log();
   });
@@ -44,17 +44,17 @@ let character_api = (() => {
   // get the characters.
   module.characters = module.collection.map((char) => {
     return {
-      id: char[0]["id"],
-      name: char[0]["name"],
-      attribute: char[0]["attribute"],
+      id: char[0].id,
+      name: char[0].name,
+      attribute: char[0].attribute,
       ranks: {
-        "1": char.filter(e => e["rank"] == "1").length > 0,
-        "2": char.filter(e => e["rank"] == "2").length > 0,
-        "3": char.filter(e => e["rank"] == "3").length > 0,
-        "4": char.filter(e => e["rank"] == "4").length > 0,
-        "5": char.filter(e => e["rank"] == "5").length > 0,
+        "1": char.filter(e => e.rank == "1").length > 0,
+        "2": char.filter(e => e.rank == "2").length > 0,
+        "3": char.filter(e => e.rank == "3").length > 0,
+        "4": char.filter(e => e.rank == "4").length > 0,
+        "5": char.filter(e => e.rank == "5").length > 0,
       },
-      obtainability: char[0]["obtainability"]
+      obtainability: char[0].obtainability
     };
   });
 
@@ -63,11 +63,13 @@ let character_api = (() => {
    * 
    * @param {Function} callback
    */
-  module.getNames = (callback) => {
-    let names = collection.map(character => { return { id: character.id, name: character.name } });
+  module.getNames = () => {
+    let names = collection.map(character => {
+      return { id: character.id, name: character.name };
+    });
     names = [...new Set(names)];
     names = names.sort((a, b) => a.name > b.name ? 1 : -1);
-    callback(names);
+    return names;
   };
 
   /**
@@ -78,7 +80,7 @@ let character_api = (() => {
    */
   const getCharacter = (id, callback) => {
     let character_list = collection.filter(character => character.id === id);
-    let name = character_list[0].name
+    let name = character_list[0].name;
     let attribute = character_list[0].attribute.toLowerCase();
     let rank_list = character_list.map((character) => character.rank);
     let ranks = Array(5).fill(false);
@@ -113,7 +115,7 @@ let character_api = (() => {
       // check name.
       if (display.name !== character.name) err.push(`Display Name ${display.name} does not match Character Name ${character.Name}.`);
       // check rank.
-      if (!character.ranks[display.rank - 1]) err.push(`Display Rank ${display.rank} does not match Character Ranks ${character.ranks}`)
+      if (!character.ranks[display.rank - 1]) err.push(`Display Rank ${display.rank} does not match Character Ranks ${character.ranks}`);
       // check level.
       if (display.rank == "1" && (display.level < 1 || display.level > 40)) err.push(`Display Level ${display.level} for Display Rank ${display.rank} must be between 1 and 40.`);
       else if (display.rank == "2" && (display.level < 1 || display.level > 50)) err.push(`Display Level ${display.level} for Display Rank ${display.rank} must be between 1 and 50.`);
@@ -210,7 +212,7 @@ let character_api = (() => {
       });
     }
     return character_display;
-  }
+  };
 
   /**
    * updates the display preview with Display.
@@ -270,12 +272,29 @@ let character_api = (() => {
     // return the default display.
     if (!display) return getBasicCharacterDisplay(character);
     return new module.Display(character.id, character.name, display.rank, character.attribute, display.level, display.magic, display.magia, display.episode);
-  }
+  };
 
   /**
    * starts up the list.
    */
   module.startUp = () => {
+    // initilize name field.
+    let names = module.getNames();
+    let prev_id = null;
+    let characters = [];
+    names.forEach((character) => {
+      if (character.id !== prev_id) {
+        characters.push(character);
+        prev_id = character.id;
+      }
+    });
+    characters.forEach((character) => {
+      name_select.options.add(new Option(character.name, character.id, false));
+    });
+    // name_select.selectedIndex = 0;
+    name_select.value = 1001;
+    name_select.dispatchEvent(new Event("change"));
+
     getCharacter("1001", character => {
       updateFormEnabled(character);
       updatePreviewDisplay(getBasicCharacterDisplay(character));
@@ -309,7 +328,7 @@ let character_api = (() => {
    */
   module.updateSelectedDisplay = () => {
     let character_display = Array.from(document.querySelectorAll(".character_display:not(.preview)")).find(child => child.classList.contains("selected"));
-    character_display.remove()
+    character_display.remove();
 
     let display = getFormDisplay();
     character_display = module.createDisplay(display, true);
@@ -350,6 +369,7 @@ let character_api = (() => {
    * opens the modal dialog for character selection user interface.
    */
   module.openCharacterSelect = () => {
+    characterSelectModal.style.display = "block";
     characterSelectModalList.innerHTML = "";
     module.characters.forEach(character => {
       let star = 1;
@@ -363,17 +383,41 @@ let character_api = (() => {
       container.classList.add("chararacter_image_preview");
       container.setAttribute("id", character.id);
       let image = document.createElement("img");
-      image.src = `/magireco/assets/image/card_${character.id}${star}_d.png`
-      let name = document.createElement("span");
-      // name.innerHTML = character.name;
+      image.src = `/magireco/assets/image/card_${character.id}${star}_d.png`;
+      image.title = character.name;
       container.append(image);
-      container.append(name);
       container.addEventListener("click", () => {
         name_select.value = character.id;
         name_select.dispatchEvent(new Event("change"));
         characterSelectModal.style.display = "none";
-      })
+      });
       characterSelectModalList.append(container);
+    });
+  };
+
+  module.filterCharacters = (search) => {
+    if (!search || search.length == 0) {
+      Array.from(characterSelectModalList.children).forEach(child => {
+        if (child.classList.contains("hidden")) {
+          child.classList.remove("hidden");
+          child.style.display = "inline-block";
+        }
+      });
+    }
+    search = search.toLowerCase();
+    Array.from(characterSelectModalList.children).forEach(child => {
+      let character = module.characters.find(char => child.getAttribute("id") === char.id);
+      if (character.id.includes(search)
+        || character.name.toLowerCase().includes(search)
+        || character.attribute.toLowerCase().includes(search)
+        || Object.entries(character.ranks).some(([rank, value]) => value && rank.includes(search))
+      ) {
+        child.classList.remove("hidden");
+        child.style.display = "inline-block";
+      } else {
+        child.classList.add("hidden");
+        child.style.display = "none";
+      }
     });
   };
 

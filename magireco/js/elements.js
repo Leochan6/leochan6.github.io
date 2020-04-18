@@ -19,6 +19,8 @@ let elements = (() => {
   module.setting_tab_button = document.querySelector("#setting_btn");
 
   // Home Buttons
+  module.list_create = document.querySelector("#list_create");
+  module.new_list_form = document.querySelector("#new_list_form");
   module.new_list_button = document.querySelector("#new_list_button");
   module.new_list_name_field = document.querySelector("#new_list_name_field");
   module.new_list_create_button = document.querySelector("#new_list_create_button");
@@ -43,13 +45,6 @@ let elements = (() => {
   // Character Preview
   module.display_preview = document.querySelector("#display_preview");
 
-  // Modal
-  module.name_modal_open_button = document.querySelector("#name_modal_open_button");
-  module.characterSelectModal = document.querySelector("#characterSelectModal");
-  module.characterSelectModalClose = document.querySelector("#name_modal_close_button");
-  module.characterSelectModalName = document.querySelector("#characterSelectModalName");
-  module.characterSelectModalList = document.querySelector("#characterSelectModalList");
-
   // Sorting Profiles
   module.profile_select = document.querySelector("#profile_select");
   module.new_profile_button = document.querySelector("#new_profile_button");
@@ -70,6 +65,10 @@ let elements = (() => {
   module.sort_id_dir_select = document.querySelector("#sort_id_dir_select");
   module.displays_per_row = document.querySelector("#displays_per_row");
 
+  // Background
+  module.background_select = document.querySelector("#background_select");
+  module.remove_background_button = document.querySelector("#remove_background_button");
+
   // Settings
   module.reset_profiles_button = document.querySelector("#reset_profiles_button");
   module.show_all_menus_checkbox = document.querySelector("#show_all_menus_checkbox");
@@ -83,7 +82,10 @@ let elements = (() => {
   module.left_bar = document.querySelector("#left_bar");
   module.left_main_divider = document.querySelector("#left_main_divider");
   module.main_header = document.querySelector("#main_header");
-  module.export_button = document.querySelector("#export_button");
+
+  // Export
+  module.export_image_button = document.querySelector("#export_image_button");
+  module.export_text_button = document.querySelector("#export_text_button");
 
   // Filters
   module.zoom_field = document.querySelector("#zoom_label");
@@ -97,6 +99,30 @@ let elements = (() => {
 
   // Stats
   module.list_stats_list = document.querySelector("#list_stats_list");
+  module.more_stats_button = document.querySelector("#more_stats_button");
+
+  // Message Modal
+  module.messageModal = document.querySelector("#messageModal");
+  module.messageModalTitle = document.querySelector("#messageModalTitle");
+  module.messageModalText = document.querySelector("#messageModalText");
+  module.messageModalCopy = document.querySelector("#messageModalCopy");
+  module.messageModalClose = document.querySelector("#messageModalClose");
+  module.messageModalContent = document.querySelector("#messageModalContent");
+
+
+  // Character Select Modal
+  module.characterSelectModalOpenButton = document.querySelector("#characterSelectModalOpenButton");
+  module.characterSelectModal = document.querySelector("#characterSelectModal");
+  module.characterSelectModalClose = document.querySelector("#name_modal_close_button");
+  module.characterSelectModalSearch = document.querySelector("#characterSelectModalSearch");
+  module.characterSelectModalList = document.querySelector("#characterSelectModalList");
+
+  // Background Select Modal
+  module.backgroundSelectModalOpenButton = document.querySelector("#backgroundSelectModalOpenButton");
+  module.backgroundSelectModal = document.querySelector("#backgroundSelectModal");
+  module.backgroundSelectModalClose = document.querySelector("#backgroundSelectModalClose");
+  module.backgroundSelectModalName = document.querySelector("#backgroundSelectModalName");
+  module.backgroundSelectModalList = document.querySelector("#backgroundSelectModalList");
 
 
   return module;

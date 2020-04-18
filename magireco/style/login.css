@@ -1,4 +1,4 @@
-#login_content, #signup_content {
+#login_content, #signup_content, #anonymous_content {
   border: black solid 1px;
   border-radius: 25px;
   margin: 20px;
@@ -6,7 +6,7 @@
   width: fit-content;
 }
 
-#login_label, #signup_label {
+#login_label, #signup_label, #signin_anonymous_label {
   font-size: 24px;
   font-family: Arial, Helvetica, sans-serif;
   margin: 5px;
@@ -33,4 +33,9 @@ form {
   width: 100px;
   padding: 5px;
   margin: 5px 5px;
+}
+
+#signin_anonymous_button {
+  width: fit-content;
+  height: 50px;
 }

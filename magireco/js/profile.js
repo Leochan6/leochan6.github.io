@@ -12,7 +12,7 @@ let profile_api = (function () {
       sort_dir_2: sort_dir_2_select.classList.contains("ascend") ? 1 : -1,
       sort_id_dir: sort_id_dir_select.classList.contains("ascend") ? 1 : -1,
       displays_per_row: parseInt(displays_per_row.value)
-    }
+    };
     return properties;
   };
 
@@ -25,14 +25,14 @@ let profile_api = (function () {
     new_profile_field.value = "";
     let properties = module.getSortProperties();
     storage_api.updateProfile(profileName, properties);
-    new_profile_row.style.visibility = "collapse"
+    new_profile_row.style.visibility = "collapse";
   };
 
   module.updateProfile = () => {
     let profileName = module.getSelectedProfile();
     let properties = module.getSortProperties();
     storage_api.updateProfile(profileName, properties);
-    new_profile_row.style.visibility = "collapse"
+    new_profile_row.style.visibility = "collapse";
   };
 
   module.checkProfile = () => {
@@ -52,7 +52,18 @@ let profile_api = (function () {
 
   module.setProfile = () => {
     let profileName = profile_select.value;
-    storage_api.setProfileFields(storage_api.profiles[profileName]);
+    module.setProfileFields(storage_api.profiles[profileName]);
+  };
+
+  module.setProfileFields = (profile) => {
+    setSelectedText(group_by_select, profile.group_by);
+    setSelectedDirection(group_dir_select, profile.group_dir);
+    setSelectedText(sort_by_1_select, profile.sort_by_1);
+    setSelectedDirection(sort_dir_1_select, profile.sort_dir_1);
+    setSelectedText(sort_by_2_select, profile.sort_by_2);
+    setSelectedDirection(sort_dir_2_select, profile.sort_dir_2);
+    setSelectedDirection(sort_id_dir_select, profile.sort_id_dir);
+    displays_per_row.value = profile.displays_per_row;
   };
 
   module.getSelectedProfile = () => {
@@ -66,6 +77,24 @@ let profile_api = (function () {
   module.resetProfiles = () => {
     if (window.confirm("Are you sure you want to reset the profiles?")) {
       storage_api.resetSorting();
+    }
+  };
+
+  const setSelectedText = (element, text) => {
+    for (let i = 0; i < element.options.length; i++) {
+      if (element.options[i].value === text) {
+        element.selectedIndex = i;
+        break;
+      }
+    }
+  };
+
+  const setSelectedDirection = (element, direction) => {
+    if (element.classList.contains("ascend") && direction === -1) {
+      element.classList.replace("ascend", "descend");
+    }
+    else if (element.classList.contains("descend") && direction === 1) {
+      element.classList.replace("descend", "ascend");
     }
   };
 

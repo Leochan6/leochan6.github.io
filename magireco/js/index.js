@@ -40,29 +40,9 @@
       });
     });
 
-    // open modal
-    name_modal_open_button.addEventListener("click", () => {
+    // open character select modal
+    characterSelectModalOpenButton.addEventListener("click", () => {
       character_api.openCharacterSelect();
-      characterSelectModal.style.display = "block";
-    });
-
-    // hide modal
-    characterSelectModalClose.addEventListener("click", () => {
-      characterSelectModal.style.display = "none";
-    });
-
-    // hide modal
-    window.addEventListener("click", (event) => {
-      if (event.target == characterSelectModal) {
-        if (characterSelectModal.style.display === "block") {
-          characterSelectModal.style.display = "none";
-        }
-      }
-    });
-
-    // filter modal
-    characterSelectModalName.addEventListener("keyup", () => {
-
     });
 
     // add new character display to list.
@@ -174,17 +154,21 @@
     // show or hidthe create new list form.
     new_list_button.addEventListener("click", () => {
       if (new_list_button.classList.contains("add")) {
-        new_list_table.style.visibility = "visible";
+        list_create.style.visibility = "visible";
+        list_create.style.display = "block";
         new_list_button.classList.replace("add", "minus");
+        new_list_name_field.focus();
       }
       else {
-        new_list_table.style.visibility = "collapse";
+        list_create.style.visibility = "collapse";
+        list_create.style.display = "none";
         new_list_button.classList.replace("minus", "add");
       }
     });
 
     // create a new list.
-    new_list_create_button.addEventListener("click", () => {
+    new_list_create_button.addEventListener("click", (e) => {
+      e.preventDefault();
       list_api.createList();
     });
 
@@ -196,11 +180,13 @@
     // set the background.
     background_select.addEventListener("change", () => {
       background_api.setBackground(background_select.value);
+      list_api.updateList();
     });
 
     // remove the background.
     remove_background_button.addEventListener("click", () => {
       background_api.removeBackground();
+      list_api.updateList();
     });
 
 
@@ -221,11 +207,16 @@
       }
     });
 
-    // export button.
-    export_button.addEventListener("click", () => {
+    // export image button.
+    export_image_button.addEventListener("click", () => {
       html2canvas(character_list_content).then(canvas => {
         Canvas2Image.saveAsImage(canvas);
       });
+    });
+
+    // export text button.
+    export_text_button.addEventListener("click", () => {
+      list_api.openExportModal();
     });
 
     // add new filter.
@@ -242,6 +233,11 @@
     // reset the filters.
     reset_filter_button.addEventListener("click", () => {
       list_api.resetFilters();
+    });
+
+    // get more stats button.
+    more_stats_button.addEventListener("click", () => {
+      list_api.openStatsModal();
     });
 
     // zoom range slider.
@@ -276,25 +272,58 @@
       if (zoom_checkbox.checked) list_api.zoom_fit();
     });
 
+
+    // hide modal dialogs
+    window.addEventListener("click", (event) => {
+      if (event.target == messageModal && messageModal.style.display === "block") closeMessageModal()
+      else if (event.target == characterSelectModal && characterSelectModal.style.display === "block") closeCharacterSelectModal();
+      else if (event.target == backgroundSelectModal && backgroundSelectModal.style.display === "block") closeBackgroundSelectModal();
+    });
+
+    // hide message modal dialog
+    messageModalClose.addEventListener("click", () => {
+      closeMessageModal();
+    });
+
+    // message modal dialog copy button.
+    messageModalCopy.addEventListener("click", () => {
+      navigator.clipboard.writeText(messageModalText.value);
+    });
+
+    // hide character select modal dialog
+    characterSelectModalClose.addEventListener("click", () => {
+      closeCharacterSelectModal();
+    });
+
+    // search change character select modal dialog.
+    characterSelectModalSearch.addEventListener("keyup", () => {
+      character_api.filterCharacters(characterSelectModalSearch.value);
+    });
+
+    // hide background select modal dialog
+    backgroundSelectModalClose.addEventListener("click", () => {
+      closeBackgroundSelectModal();
+    });
   };
 
-  // initilize name field.
-  character_api.getNames((collection) => {
-    let prev_id = null;
-    let characters = [];
-    collection.forEach((character) => {
-      if (character.id !== prev_id) {
-        characters.push(character);
-        prev_id = character.id;
-      }
-    })
-    characters.forEach((character) => {
-      name_select.options.add(new Option(character.name, character.id, false));
-    });
-    // name_select.selectedIndex = 0;
-    name_select.value = 1001;
-    name_select.dispatchEvent(new Event("change"));
-  });
+  const closeMessageModal = () => {
+    messageModal.style.display = "none";
+    messageModalTitle.innerHTML = "";
+    messageModalText.value = "";
+    messageModalText.scrollTo(0, 0);
+  };
+
+  const closeCharacterSelectModal = () => {
+    characterSelectModal.style.display = "none";
+    characterSelectModalSearch.value = "";
+    characterSelectModalList.scrollTo(0, 0);
+  };
+
+  const closeBackgroundSelectModal = () => {
+    backgroundSelectModal.style.display = "none";
+    backgroundSelectModalSearch.value = "";
+    backgroundSelectModalList.scrollTo(0, 0);
+  };
 
   // update form and preview display on startup.
   character_api.startUp();

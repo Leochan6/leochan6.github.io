@@ -15,13 +15,6 @@ hr {
   padding: 0;
 }
 
-#signout_button {
-  position: absolute;
-  left: auto;
-  right: 20px;
-  top: 20px;
-}
-
 #content {
   position: relative;
   display: flex;
@@ -53,6 +46,8 @@ hr {
 #name_heading {
   margin: 10px;
   width: max-content;
+  max-width: 20vw;
+  word-wrap: break-word;
 }
 
 #tabs {
@@ -92,8 +87,26 @@ hr {
   transition: all 0.5s ease 0s;
 }
 
+#new_list_name_field {
+  width: 100px;
+}
+
+#new_list_form {
+  padding: 10px;
+}
+
+.character_list_row {
+  display: flex;
+  flex-direction: row;
+}
+
 #new_profile_field {
   width: 100px;
+}
+
+#list_create {
+  visibility: collapse;
+  display: none;
 }
 
 #display_preview {
@@ -196,6 +209,10 @@ hr {
   margin: 10px;
 }
 
+#list_stats_list {
+  margin-right: 10px;
+}
+
 #export_button {
   margin: 10px
 }
@@ -230,10 +247,13 @@ hr {
   position: relative;
   overflow-x: auto;
   overflow-y: auto;
-  /* margin: 10px; */
   width: 100%;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.character_list_row {
+  width: 15vw;
 }
 
 .character_list_entry {
@@ -320,18 +340,32 @@ hr {
 /* Modal Content */
 
 .modal-content {
-  background-color: #fefefe;
   margin: auto;
   padding: 20px;
+  overflow: auto;
+  background-color: #fefefe;
   border: 1px solid #888;
+}
+
+.modal-large {
   width: 80%;
   height: 80%;
-  overflow-y: scroll;
+}
+
+.modal-medium {
+  width: 40%;
+  height: 40%;
+}
+
+.modal-small {
+  width: 40%;
+  height: 40%;
 }
 
 /* The Close Button */
 
 .close {
+  position: relative;
   color: #aaaaaa;
   float: right;
   font-size: 28px;
@@ -347,18 +381,30 @@ hr {
 .characterSelectModalList {
   display: flex;
   flex-direction: row;
-  /* align-content: center; */
 }
 
 .chararacter_image_preview {
-  /* display: flex;
-  flex-direction: column; */
   vertical-align: top;
   display: inline-block;
   text-align: center;
 }
 
 .chararacter_image_preview:hover {
-  /* border: solid black 1px; */
-  background-color: #2c2c2c;
+  background-color: #5a5a5a;
+}
+
+#characterSelectModalSearch {
+  margin: 10px;
+}
+
+#messageModalClose {
+  display: flex;
+  flex-direction: column;
+}
+
+#messageModalText {
+  align-self: center;
+  width: 80%;
+  height: 80%;
+  resize: none;
 }

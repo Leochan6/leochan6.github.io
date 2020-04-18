@@ -5,14 +5,19 @@ let background_api = (function () {
   module.getBackgrounds = () => {
     let backgrounds = background_collections["home screen"];
     return backgrounds;
-  }
+  };
 
   module.setBackground = (background_id) => {
-    character_list_content.style.backgroundImage = `url("/magireco/assets/bg/${background_id}.jpg")`;
+    if (background_id) character_list_content.style.backgroundImage = `url("/magireco/assets/bg/${background_id}.jpg")`;
   };
 
   module.removeBackground = () => {
     character_list_content.style.backgroundImage = "";
+    background_select.selectedIndex = -1;
+  };
+
+  module.getSelectedBackground = () => {
+    return background_select.value;
   };
 
   module.startUp = () => {

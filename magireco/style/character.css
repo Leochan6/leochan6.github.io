@@ -96,15 +96,8 @@
 
 /* Character List */
 
-#character_list_content {}
-
 #character_list_content .character_row {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-}
-
-.character_list_row {
-  display: flex;
-  flex-direction: row;
 }

@@ -31,18 +31,20 @@
       <div id="tabs">
         <div id="home_tab" class="tab">
           <div class="tab_header">
-            <h2 class="tab_heading" id="home_heading">My Lists </h2>
+            <h2 class="tab_heading" id="home_heading" title="Multiple Lists Work in Progress">My Lists </h2>
           </div>
           <div class="tab_contents hidden">
             <button id="new_list_button" class="small_btn add" title="Show/Hide New List Form"></button>
             <div id="list_create">
-              <table id="new_list_table" style="visibility: collapse;">
-                <tr>
-                  <td>List Name:</td>
-                  <td><input id="new_list_name_field" type="text"></td>
-                  <td><button id="new_list_create_button">Create</button></td>
-                </tr>
-              </table>
+              <form id="new_list_form">
+                <table id=" new_list_table">
+                  <tr>
+                    <td>List Name:</td>
+                    <td><input id="new_list_name_field" type="text"></td>
+                    <td><button id="new_list_create_button">Create</button></td>
+                  </tr>
+                </table>
+              </form>
             </div>
             <div id="saved_character_lists"></div>
             <p class="error_text" id="home_error_text"></p>
@@ -59,7 +61,7 @@
                 <tr title="Name of the Character.">
                   <td>Name:</td>
                   <td><select id="name_select" style="width:140px"></select></td>
-                  <td><button id="name_modal_open_button">+</td>
+                  <td><button id="characterSelectModalOpenButton">+</td>
                 </tr>
                 <tr title="Attribute of the Character.">
                   <td>Attribute:
@@ -247,7 +249,7 @@
     <div class="vertical-divider" id="left_main_divider"></div>
     <div id="main">
       <div id="main_header">
-        <div id="name_and_zoom">
+        <div id="name_and_zoom" title="Auto Zoom not Working">
           <h2 id="list_name_title"></h2>
           <div id="zoom_tools">
             Zoom: <input type="number" id="zoom_field" value=100 maxlength="3" size=3 min=30 max=300
@@ -255,7 +257,11 @@
             <input type="range" min="30" max="300" value="100" id="zoom_range">
             Auto: <input type="checkbox" id="zoom_checkbox">
           </div>
-          <button class="" id="export_button">Export</button>
+          <div id="export_options">
+            Export:
+            <button class="" id="export_image_button" title="Not Working 100%">Image</button>
+            <button class="" id="export_text_button">Text</button>
+          </div>
         </div>
         <div class="horizontal-divider"></div>
         <div id="filters_buttons_and_stats">
@@ -266,6 +272,7 @@
           </div>
           <div class="" id="list_stats">
             Stats: <label id="list_stats_list"></label>
+            <button id="more_stats_button">More Stats</button>
           </div>
         </div>
         <div class="" id="list_filters"></div>
@@ -276,13 +283,32 @@
       </div>
     </div>
 
-    <!-- The Modal -->
+    <!-- Character Select Modal Dialog -->
     <div id="characterSelectModal" class="modal">
-      <!-- Modal content -->
-      <div class="modal-content">
-        <input type="text" id="characterSelectModalName" placeholder="Search">
+      <div class="modal-content modal-large">
+        <input type="text" id="characterSelectModalSearch" placeholder="Search">
         <span class="close" id="characterSelectModalClose">&times;</span>
         <div id="characterSelectModalList"></div>
+      </div>
+    </div>
+
+    <!-- Background Select Modal Dialog -->
+    <div id="backgroundSelectModal" class="modal">
+      <div class="modal-content modal-large">
+        <input type="text" id="backgroundSelectModalSearch" placeholder="Search">
+        <span class="close" id="backgroundSelectModalClose">&times;</span>
+        <div id="backgroundSelectModalList"></div>
+      </div>
+    </div>
+
+    <!-- Message Modal Dialog -->
+    <div id="messageModal" class="modal">
+      <div class="modal-content modal-small" id="messageModalContent">
+        <span class="close" id="messageModalClose">&times;</span>
+        <h2 id="messageModalTitle"></h2>
+        <textarea id="messageModalText" readonly></textarea>
+        <button id="messageModalCopy">Copy</button>
+        <div id="messageModalContent"></div>
       </div>
     </div>
   </div>

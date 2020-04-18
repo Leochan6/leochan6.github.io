@@ -12,7 +12,7 @@ let list_api = (function () {
     character_list = character_list !== true ? character_list : [];
     character_list.forEach(display => {
       character_list_content.append(character_api.createDisplay(display));
-    })
+    });
   };
 
   /**
@@ -65,40 +65,40 @@ let list_api = (function () {
       if (group_dir == 1) display_groups = { "fire": [], "water": [], "forest": [], "light": [], "dark": [], "void": [] };
       if (group_dir == -1) display_groups = { "void": [], "dark": [], "light": [], "forest": [], "water": [], "fire": [] };
       display_properties.forEach(properties => {
-        display_groups[properties["attribute"]].push(properties);
+        display_groups[properties.attribute].push(properties);
       });
     } else if (group_by == "rank") {
       if (group_dir == 1) display_groups = { "one": [], "two": [], "three": [], "four": [], "five": [] };
       if (group_dir == -1) display_groups = { "five": [], "four": [], "three": [], "two": [], "one": [] };
       display_properties.forEach(properties => {
-        display_groups[NUM_TO_WORD[properties["rank"]]].push(properties);
+        display_groups[NUM_TO_WORD[properties.rank]].push(properties);
       });
     } else if (group_by == "magic") {
       if (group_dir == 1) display_groups = { "zero": [], "one": [], "two": [], "three": [] };
       if (group_dir == -1) display_groups = { "three": [], "two": [], "one": [], "zero": [] };
       display_properties.forEach(properties => {
-        display_groups[NUM_TO_WORD[properties["magic"]]].push(properties);
+        display_groups[NUM_TO_WORD[properties.magic]].push(properties);
       });
     } else if (group_by == "magia") {
       if (group_dir == 1) display_groups = { "one": [], "two": [], "three": [], "four": [], "five": [] };
       if (group_dir == -1) display_groups = { "five": [], "four": [], "three": [], "two": [], "one": [] };
       display_properties.forEach(properties => {
-        display_groups[NUM_TO_WORD[properties["magia"]]].push(properties);
+        display_groups[NUM_TO_WORD[properties.magia]].push(properties);
       });
     } else if (group_by == "episode") {
       if (group_dir == 1) display_groups = { "one": [], "two": [], "three": [], "four": [], "five": [] };
       if (group_dir == -1) display_groups = { "five": [], "four": [], "three": [], "two": [], "one": [] };
       display_properties.forEach(properties => {
-        display_groups[NUM_TO_WORD[properties["episode"]]].push(properties);
+        display_groups[NUM_TO_WORD[properties.episode]].push(properties);
       });
     } else if (group_by == "none") {
       display_groups = { "none": [] };
       display_properties.forEach(properties => {
-        display_groups["none"].push(properties);
+        display_groups.none.push(properties);
       });
     }
     return display_groups;
-  }
+  };
 
   /**
    * sorts the character list with the contents of the sorting profile form.
@@ -124,21 +124,30 @@ let list_api = (function () {
   /**
    * updates the list in the database with the list name, characters, and profile.
    * 
-   * @param {String} createdName
+   * @param {String} createdName optional
    */
-  module.updateList = (createdName = null) => {
+  module.updateList = () => {
+    let listId = module.getListId();
     let listName = module.getListName();
     let character_list = module.getCharacterList();
     let selectedProfile = profile_api.getSelectedProfile();
+    let selectedBackground = background_api.getSelectedBackground();
     if (!listName) return;
-    storage_api.updateList(listName, character_list, selectedProfile, createdName);
-  }
+    storage_api.updateList(listId, listName, character_list, selectedProfile, selectedBackground);
+  };
 
   /**
    * returns the list name.
    */
   module.getListName = () => {
     return list_name_title.innerText;
+  };
+
+  /**
+   * returns the list id.
+   */
+  module.getListId = () => {
+    return list_name_title.getAttribute("listId");
   };
 
   /**
@@ -159,24 +168,31 @@ let list_api = (function () {
     let listName = new_list_name_field.value;
     if (storage_api.listExists(listName)) home_error_text.innerHTML = `The list name ${listName} already exists.`;
     else home_error_text.innerHTML = "";
-  }
+  };
 
   /**
    * creates a new list.
    */
   module.createList = () => {
     let listName = new_list_name_field.value;
+    if (!listName) {
+      home_error_text.innerHTML = `The list name must not be empty.`;
+      return;
+    }
     if (storage_api.listExists(listName)) {
       home_error_text.innerHTML = `The list name ${listName} already exists.`;
       return;
     }
     new_list_name_field.value = "";
     new_list_button.classList.replace("minus", "add");
-    new_list_table.style.visibility = "collapse"
+    list_create.style.visibility = "collapse";
+    list_create.style.display = "none";
     list_name_title.innerHTML = listName;
     profile_select.value = "Default";
     character_list_content.innerHTML = "";
-    module.updateList(listName);
+
+    storage_api.createList(listName);
+    new_list_button.style.visibility = "hidden";
   };
 
   /** 
@@ -192,29 +208,61 @@ let list_api = (function () {
   /**
    * select the list of name and loads the character list list
    */
-  module.selectList = (name, list) => {
+  module.selectList = (listId, list) => {
     for (let element of document.querySelectorAll(".character_list_entry")) {
       // element already selected.
-      if (element.innerHTML === name) {
+      if (element.getAttribute("listId") === listId) {
         if (element.classList.contains("selectedList")) return;
         else element.classList.add("selectedList");
       }
       else if (element.classList.contains("selectedList")) element.classList.remove("selectedList");
     }
-    list_name_title.innerHTML = name;
+    list_name_title.innerHTML = list.name;
+    list_name_title.setAttribute("listId", listId);
     loadCharacterList(list.characterList);
     profile_select.value = list.selectedProfile;
     profile_api.setProfile();
     module.sortOnFormUpdate();
+    background_select.value = list.selectedBackground
+    background_api.setBackground(list.selectedBackground);
     list_api.getStats();
   };
 
   /**
    * deletes the list from the database.
    */
-  module.deleteList = (name, list) => {
-    storage_api.deleteList(name)
+  module.deleteList = (listId) => {
+    storage_api.deleteList(listId);
   };
+
+  module.setLists = (lists) => {
+    saved_character_lists.innerHTML = "";
+    for (let [listId, list] of Object.entries(lists)) {
+      let div = document.createElement("div");
+      div.classList.add("character_list_row");
+      let entry = document.createElement("div");
+      entry.classList.add("character_list_entry");
+      entry.setAttribute("listId", listId);
+      entry.innerHTML = list.name;
+      entry.addEventListener("click", () => {
+        list_api.selectList(listId, list);
+      });
+      let deleteButton = document.createElement("button");
+      deleteButton.className = "small_btn delete";
+      deleteButton.addEventListener("click", () => {
+        let res = confirm(`Are you sure you want to delete the list ${list.name}?`);
+        if (res) list_api.deleteList(listId, list);
+      });
+      div.append(entry);
+      div.append(deleteButton);
+      saved_character_lists.append(div);
+    }
+    if (Object.entries(lists).length == 1) new_list_button.style.visibility = "hidden";
+    if (Object.entries(lists).length > 0) {
+      let first = Object.entries(lists)[0][0];
+      return module.selectList(first, lists[first]);
+    }
+  }
 
   /**
    * sets the zoom of the character list.
@@ -228,13 +276,28 @@ let list_api = (function () {
    */
   module.zoom_fit = () => {
     if (character_list_content.innerHTML) {
-      let widthRatio = Math.max((document.querySelector("body").clientWidth - left_bar.clientWidth - left_main_divider.clientWidth - 10 - 10 - 20), 500) / character_list_content.clientWidth
-      let heightRatio = Math.max((document.querySelector("body").clientHeight - main_header.clientHeight - header_content_divider.clientHeight - main_header.clientHeight - 10 - 10 - 20), 300) / character_list_content.clientHeight
-      let zoom = Math.min(widthRatio, heightRatio);
-      zoom = zoom < 1 ? zoom : 1;
-      character_list_content.style.zoom = zoom
-      zoom_range.value = Math.round(zoom * 100);
-      zoom_field.value = Math.round(zoom * 100);
+      // let widthRatio = Math.max((document.querySelector("body").clientWidth - left_bar.clientWidth - left_main_divider.clientWidth - 10 - 10 - 20), 500) / character_list_content.clientWidth;
+      // let heightRatio = Math.max((document.querySelector("body").clientHeight - main_header.clientHeight - header_content_divider.clientHeight - main_header.clientHeight - 10 - 10 - 20), 300) / character_list_content.clientHeight;
+      // let zoom = Math.min(widthRatio, heightRatio);
+      // zoom = zoom < 1 ? zoom : 1;
+      // character_list_content.style.zoom = zoom;
+      // zoom_range.value = Math.round(zoom * 100);
+      // zoom_field.value = Math.round(zoom * 100);
+      let row = character_list_content.querySelector(".character_row")
+      let list_width = row.clientWidth;
+      let list_height = row.clientHeight * character_list_content.querySelectorAll(".character_row").length;
+      let container_width = character_list_content.clientWidth;
+      let container_height = character_list_content.clientHeight;
+      console.log(list_width);
+      console.log(container_width);
+      console.log(list_height);
+      console.log(container_height);
+      let ratio = Math.min((container_width - 40) / list_width, (container_height - 40) / list_height);
+      console.log(ratio);
+      ratio = ratio < 1 ? ratio : 1;
+      character_list_content.style.zoom = ratio;
+      zoom_range.value = Math.round(ratio * 100);
+      zoom_field.value = Math.round(ratio * 100);
     }
   };
 
@@ -359,7 +422,7 @@ let list_api = (function () {
       </div>
       <button class="create">+</button>
       <button class="delete"></button>
-    `
+    `;
 
     new_filter.querySelector(".type_select").selectedIndex = -1;
 
@@ -400,7 +463,7 @@ let list_api = (function () {
       let element = Array.from(list_filter_row.children).find(child => !child.classList.contains("hidden") && child.classList.contains("filter_type") ? 1 : 0);
       let state = list_filter_row.querySelector(".state_select").value;
       if (list_filter_row.querySelector(".state_select").classList.contains("collapse")) state = "none";
-      let filter = {}
+      let filter = {};
       try {
         filter = { type: element.classList[1], state: state, value: [] };
       } catch {
@@ -409,7 +472,7 @@ let list_api = (function () {
       Array.from(element.children).forEach(child => {
         filter.value.push({ param: child.classList[1].replace("_select", "").replace("_input", ""), value: child.value });
       });
-      filters.push(filter)
+      filters.push(filter);
     }
     return filters;
   };
@@ -550,9 +613,86 @@ let list_api = (function () {
     });
 
     list_stats_list.innerHTML = `Max Level: ${result.maxLevel}, Max Rank: ${result.maxRank}, Max Magic: ${result.maxMagic}, 
-      Max Magia: ${result.maxMagia}, Max Episode: ${result.maxEpisode}, Limited: ${result.limited}, Visible: ${result.totalVisible}/${result.totalCharacters}`
+      Max Magia: ${result.maxMagia}, Max Episode: ${result.maxEpisode}, Limited: ${result.limited}, Visible: ${result.totalVisible}/${result.totalCharacters}`;
 
     return result;
+  };
+
+  module.getMoreStats = () => {
+    let result = {
+      totalCharacters: 0,
+      totalVisible: 0,
+      limited: 0,
+      maxLevel: 0,
+      levels: {},
+      maxRank: 0,
+      ranks: {},
+      maxMagic: 0,
+      magics: {},
+      maxMagia: 0,
+      magias: {},
+      maxEpisode: 0,
+      episodes: {},
+      rankCopies: {}
+    };
+
+    Array.from(character_list_content.children).forEach(character_row => {
+      Array.from(character_row.children).forEach(character_display_element => {
+        result.totalCharacters++;
+        if (!character_display_element.classList.contains("hidden")) {
+          result.totalVisible++;
+          let character_display = character_api.getCharacterDisplay(character_display_element);
+          if (character_api.characters.find(character => character_display.id == character.id).obtainability == "limited") result.limited++;
+          if (character_display.rank == 1 && character_display.level == 40) result.maxLevel++;
+          else if (character_display.rank == 2 && character_display.level == 50) result.maxLevel++;
+          else if (character_display.rank == 3 && character_display.level == 60) result.maxLevel++;
+          else if (character_display.rank == 4 && character_display.level == 80) result.maxLevel++;
+          else if (character_display.rank == 5 && character_display.level == 100) result.maxLevel++;
+          let character = character_api.characters.find(character => character.id == character_display.id);
+          let maxRank = "1";
+          Object.entries(character.ranks).forEach(([rank, value]) => maxRank = value ? rank : maxRank);
+          if (character_display.rank == maxRank) result.maxRank++;
+          if (character_display.magic == "3") result.maxMagic++;
+          if (character_display.magia == "5") result.maxMagia++;
+          if (character_display.episode == "5") result.maxEpisode++;
+          result.ranks[character_display.rank] = result.ranks[character_display.rank] + 1 || 1;
+          result.levels[character_display.level] = result.levels[character_display.level] + 1 || 1;
+          result.magics[character_display.magic] = result.magics[character_display.magic] + 1 || 1;
+          result.magias[character_display.magia] = result.magias[character_display.magia] + 1 || 1;
+          result.episodes[character_display.episode] = result.ranks[character_display.episode] + 1 || 1;
+          let minRank = "5";
+          Object.entries(character.ranks).forEach(([rank, value]) => minRank = value && rank < minRank ? rank : minRank);
+          let totalCopies = 0;
+          if (minRank == 1) totalCopies = 10 * (parseInt(character_display.magic) + 1);
+          else if (minRank == 2) totalCopies = 10 * (parseInt(character_display.magic) + 1);
+          else if (minRank == 3) totalCopies = 3 * (parseInt(character_display.magic) + 1);
+          else if (minRank == 4) totalCopies = 1 * (parseInt(character_display.magic) + 1);
+          result.rankCopies[minRank] = result.rankCopies[minRank] ? result.rankCopies[minRank] + totalCopies : totalCopies;
+        }
+      });
+    });
+
+    return `Total Characters: ${result.totalCharacters}\nTotal Visible: ${result.totalVisible}\nLimited: ${result.limited}\nUnlimited: ${result.totalVisible - result.limited}
+      \nMax Level: ${result.maxLevel}\nMax Rank: ${result.maxRank}\nMax Magic: ${result.maxMagic}\nMax Magia: ${result.maxMagia}\nMax Episode: ${result.maxEpisode}
+      \nLevels:${Object.entries(result.levels).map(([level, count]) => ` ${level}: ${count}`).toString()}
+      \nRanks: ${Object.entries(result.ranks).map(([level, count]) => ` ${level}: ${count}`).toString()}
+      \nMagics: ${Object.entries(result.magics).map(([level, count]) => ` ${level}: ${count}`).toString()}
+      \nMagias: ${Object.entries(result.magias).map(([level, count]) => ` ${level}: ${count}`).toString()}
+      \nEpisodes: ${Object.entries(result.episodes).map(([level, count]) => ` ${level}: ${count}`).toString()}
+      \nRank Copies: ${Object.entries(result.rankCopies).map(([level, count]) => ` ${level}: ${count}`).toString()}`;
+  };
+
+  module.openExportModal = () => {
+    messageModal.style.display = "block";
+    messageModalText.value = JSON.stringify(module.getCharacterList());
+    messageModalTitle.innerHTML = `${list_api.getSelectedList()} Contents`;
+    messageModalContent.innerHTML = "";
+  };
+
+  module.openStatsModal = () => {
+    messageModal.style.display = "block";
+    messageModalText.value = module.getMoreStats();
+    messageModalTitle.innerHTML = `More ${list_api.getSelectedList()} Stats`;
   };
 
   return module;
