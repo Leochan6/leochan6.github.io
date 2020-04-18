@@ -101,7 +101,7 @@ let elements = (() => {
   module.messageModalText = document.querySelector("#messageModalText");
   module.messageModalCopy = document.querySelector("#messageModalCopy");
   module.messageModalClose = document.querySelector("#messageModalClose");
-  module.messageModalContent = document.querySelector("#messageModalContent");
+  module.messageModalList = document.querySelector("#messageModalList");
 
 
   // Character Select Modal

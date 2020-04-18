@@ -681,27 +681,27 @@ let list_api = (function () {
     });
 
     return `Total Characters: ${result.totalCharacters}\nTotal Visible: ${result.totalVisible}\nLimited: ${result.limited}\nUnlimited: ${result.totalVisible - result.limited}
-      \nMax Level: ${result.maxLevel}\nMax Rank: ${result.maxRank}\nMax Magic: ${result.maxMagic}\nMax Magia: ${result.maxMagia}\nMax Episode: ${result.maxEpisode}
-      \nLevels:${Object.entries(result.levels).map(([level, count]) => ` ${level}: ${count}`).toString()}
-      \nRanks: ${Object.entries(result.ranks).map(([level, count]) => ` ${level}: ${count}`).toString()}
-      \nMagics: ${Object.entries(result.magics).map(([level, count]) => ` ${level}: ${count}`).toString()}
-      \nMagias: ${Object.entries(result.magias).map(([level, count]) => ` ${level}: ${count}`).toString()}
-      \nEpisodes: ${Object.entries(result.episodes).map(([level, count]) => ` ${level}: ${count}`).toString()}
-      \nRank Copies: ${Object.entries(result.rankCopies).map(([level, count]) => ` ${level}: ${count}`).toString()}`;
+Max Level: ${result.maxLevel}\nMax Rank: ${result.maxRank}\nMax Magic: ${result.maxMagic}\nMax Magia: ${result.maxMagia}\nMax Episode: ${result.maxEpisode}
+Levels:${Object.entries(result.levels).map(([level, count]) => `\n  ${level}: ${count}`).toString()}
+Ranks:${Object.entries(result.ranks).map(([level, count]) => `\n  ${level}: ${count}`).toString()}
+Magic Levels:${Object.entries(result.magics).map(([level, count]) => `\n  ${level}: ${count}`).toString()}
+Magia Levels:${Object.entries(result.magias).map(([level, count]) => `\n  ${level}: ${count}`).toString()}
+Episode Levels:${Object.entries(result.episodes).map(([level, count]) => `\n  ${level}: ${count}`).toString()}
+Copies of Each Rank:${Object.entries(result.rankCopies).map(([level, count]) => `\n  ${level}: ${count}`).toString()}`;
   };
 
   module.openExportModal = () => {
     messageModal.style.display = "block";
     messageModalText.value = JSON.stringify(module.getCharacterList());
     messageModalTitle.innerHTML = `${list_api.getSelectedList()} Contents`;
-    messageModalContent.innerHTML = "";
+    messageModalList.innerHTML = "";
   };
 
   module.openStatsModal = () => {
     messageModal.style.display = "block";
     messageModalText.value = module.getMoreStats();
-    messageModalTitle.innerHTML = `More ${list_api.getSelectedList()} Stats`;
-    messageModalContent.innerHTML = "";
+    messageModalTitle.innerHTML = `More ${list_api.getListName()} Stats`;
+    messageModalList.innerHTML = "";
   };
 
   return module;

@@ -18,7 +18,7 @@
       messageModal.style.display = "block";
       messageModalText.value = `For assistance, support, or feedback, please contact Leo Chan on Discord (Leo_Chan#9150) or Reddit (u/Leochan6).`;
       messageModalTitle.innerHTML = `Contact / Support`;
-      messageModalContent.innerHTML = "";
+      messageModalList.innerHTML = "";
     });
 
     // toggle visibility of the tab.
@@ -336,6 +336,13 @@
     backgroundSelectModalSearch.addEventListener("keyup", () => {
       background_api.filterBackgrounds(backgroundSelectModalSearch.value);
     });
+  };
+
+  const closeMessageModal = () => {
+    messageModal.style.display = "none";
+    messageModalTitle.innerHTML = "";
+    messageModalText.value = "";
+    messageModalText.scrollTo(0, 0);
   };
 
   const closeCharacterSelectModal = () => {
