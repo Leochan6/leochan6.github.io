@@ -200,7 +200,7 @@ let list_api = (function () {
    */
   module.getSelectedList = () => {
     for (let element of document.querySelectorAll(".character_list_entry")) {
-      if (element.classList.contains("selectedList")) return element.innerHTML;
+      if (element.classList.contains("selectedList")) return element.getAttribute("listId");
     }
     return null;
   };

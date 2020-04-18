@@ -76,14 +76,14 @@
 .character_display .card_image {
   -webkit-mask-image: url(/magireco/assets/ui/frame_mask.png);
   -webkit-mask-position-x: +8px;
-  -webkit-mask-position-y: +16px;
+  -webkit-mask-position-y: +20px;
   -webkit-mask-repeat: no-repeat;
   mask-image: url(/magireco/assets/ui/frame_mask.png);
-  mask-position: -9px, -16px;
+  mask-position: 8px, 20px;
   mask-repeat: no-repeat;
   position: absolute;
-  left: -9px;
-  top: -16px;
+  left: -10px;
+  top: -18px;
 }
 
 .character_display .card_image {

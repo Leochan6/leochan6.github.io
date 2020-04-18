@@ -2,6 +2,8 @@ let profile_api = (function () {
 
   let module = {};
 
+  module.selectedProfile = null;
+
   module.getSortProperties = () => {
     let properties = {
       group_by: group_by_select.value,
@@ -26,6 +28,7 @@ let profile_api = (function () {
     let properties = module.getSortProperties();
     storage_api.updateProfile(profileName, properties);
     new_profile_row.style.visibility = "collapse";
+    module.selectedProfile = profileName;
   };
 
   module.updateProfile = () => {
@@ -43,10 +46,13 @@ let profile_api = (function () {
 
   module.deleteProfile = () => {
     let profileName = module.getSelectedProfile();
+    console.log("delete", profileName);
     if (profileName !== "Default" && profileName !== "Custom") {
       storage_api.deleteProfile(profileName);
-      let listName = module.getSelectedList();
-      if (listName) storage_api.updateList(listName, storage_api.lists[listName].characterList, "Default");
+      module.selectedProfile = "Default";
+      profile_select.value = "Default";
+      let listId = list_api.getListId();
+      if (listId) storage_api.updateList(listId, list_api.getListName(), storage_api.lists[listId].characterList, "Default", background_api.getSelectedBackground() || "");
     }
   };
 

@@ -99,7 +99,7 @@
           element.classList.replace("descend", "ascend");
         }
         list_api.sortOnFormUpdate();
-        if (character_api.getSelectedProfile() === "Default") profile_api.changeToCustom();
+        if (profile_api.getSelectedProfile() === "Default") profile_api.changeToCustom();
         list_api.updateList();
         profile_api.updateProfile();
 
@@ -133,6 +133,7 @@
     // show the save new profile form.
     new_profile_button.addEventListener("click", () => {
       new_profile_row.style.visibility = "visible";
+      new_profile_field.focus();
     });
 
     // hide the save new profile form.
@@ -289,7 +290,6 @@
       if (zoom_checkbox.checked) list_api.zoom_fit();
     });
 
-
     // hide modal dialogs
     window.addEventListener("click", (event) => {
       if (event.target == messageModal && messageModal.style.display === "block") closeMessageModal()
@@ -336,13 +336,6 @@
     backgroundSelectModalSearch.addEventListener("keyup", () => {
       background_api.filterBackgrounds(backgroundSelectModalSearch.value);
     });
-  };
-
-  const closeMessageModal = () => {
-    messageModal.style.display = "none";
-    messageModalTitle.innerHTML = "";
-    messageModalText.value = "";
-    messageModalText.scrollTo(0, 0);
   };
 
   const closeCharacterSelectModal = () => {

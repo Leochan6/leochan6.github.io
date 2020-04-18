@@ -4,6 +4,7 @@
   margin: 20px;
   padding: 20px;
   width: fit-content;
+  height: fit-content;
 }
 
 #login_label, #signup_label, #signin_anonymous_label {
@@ -23,6 +24,11 @@ form {
   margin: 5px 5px;
 }
 
+#content {
+  display: flex;
+  flex-direction: row;
+}
+
 #login_buttons, #signup_buttons {
   display: flex;
   flex-direction: row;
@@ -37,7 +43,6 @@ form {
 
 #signin_anonymous_button {
   width: fit-content;
-  height: 50px;
 }
 
 #enter_button {

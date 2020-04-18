@@ -13,8 +13,10 @@
 <body>
   <header>
     <h1><a class="header_link" href="/magireco/" title="Home">Magia Record Character List</a></h1>
-    <button id="signout_button">Sign Out</button>
-    <button id="contact_button">Contact/Support</button>
+    <div id="header_right">
+      <button id="contact_button">Contact/Support</button>
+      <button id="signout_button">Sign Out</button>
+    </div>
   </header>
   <div class="horizontal-divider" id="header_content_divider"></div>
   <div id="content">
@@ -133,7 +135,7 @@
           <div class="tab_header">
             <h2 class="tab_heading" id="sort_heading">Sorting Profile</h2>
           </div>
-          <div class="tab_contents hidden">
+          <div class="tab_contents">
             <div id="sorting_profiles">
               <table id="sorting_profile_table">
                 <tbody>
@@ -215,7 +217,7 @@
           <div class="tab_header">
             <h2 class="tab_heading" id="background_heading">Background</h2>
           </div>
-          <div class="tab_contents hidden">
+          <div class="tab_contents">
             <table id="background_table">
               <tr>
                 <td>Background:</td>
@@ -307,7 +309,7 @@
         <h2 id="messageModalTitle"></h2>
         <textarea id="messageModalText" readonly></textarea>
         <button id="messageModalCopy">Copy</button>
-        <div id="messageModalContent"></div>
+        <div id="messageModalList"></div>
       </div>
     </div>
   </div>

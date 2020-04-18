@@ -27,6 +27,8 @@ let storage_api = (() => {
 
   module.updateList = (listId, name, characterList, selectedProfile, selectedBackground) => {
     if (characterList.length == 0) characterList = true;
+    if (!selectedBackground) selectedBackground = true;
+    console.log(userId, listId, { name: name, characterList: characterList, selectedProfile: selectedProfile, selectedBackground: selectedBackground });
     database.updateList(userId, listId, { name: name, characterList: characterList, selectedProfile: selectedProfile, selectedBackground: selectedBackground });
   };
 
@@ -73,7 +75,8 @@ let storage_api = (() => {
     for (let [name, profile] of Object.entries(module.profiles)) {
       profile_select.options.add(new Option(name, name, false));
     }
-    if (previous !== "Default") profile_select.value = previous;
+    if (profile_api.selectedProfile !== null) profile_select.value = profile_api.selectedProfile;
+    else if (previous && previous !== "Default") profile_select.value = previous;
     else {
       // set sort settings with default if no list selected.
       profile_select.value = "Default";

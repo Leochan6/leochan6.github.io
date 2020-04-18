@@ -124,7 +124,7 @@ let database = (() => {
   };
 
   module.onProfileUpdate = (userId, callback) => {
-    profiles.child(userId).once('value', (snapshot) => {
+    profiles.child(userId).on('value', (snapshot) => {
       callback(snapshot);
     });
   };
