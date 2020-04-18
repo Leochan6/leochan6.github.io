@@ -45,6 +45,7 @@ header {
   margin: 2px 0px;
   border-radius: 3px;
   outline: none;
+  transition: all 0.3s ease 0s;
 }
 
 .btn:hover {
@@ -56,12 +57,16 @@ header {
 }
 
 .btnGray {
-  background: 2c2c2c;
+  background: #2c2c2c;
   cursor: pointer;
 }
 
 .btnGray:hover {
   background-color: #000000;
+}
+
+.btnDisabled {
+  background: #6e6e6e;
 }
 
 .small_btn {
@@ -119,4 +124,11 @@ header {
   left: auto;
   right: 20px;
   top: 20px;
+}
+
+#contact_button {
+  position: absolute;
+  left: auto;
+  right: 20px;
+  top: 50px;
 }

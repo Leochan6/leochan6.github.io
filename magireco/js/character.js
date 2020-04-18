@@ -2,6 +2,8 @@ let character_api = (() => {
 
   let module = {};
 
+  module.selectedCharacter = null;
+
   module.Display = class Display {
     constructor(id, name, rank, attribute, level, magic, magia, episode) {
       this.id = id;
@@ -78,7 +80,7 @@ let character_api = (() => {
    * @param {String} id 
    * @param {Function} callback 
    */
-  const getCharacter = (id, callback) => {
+  const getCharacter = (id) => {
     let character_list = collection.filter(character => character.id === id);
     let name = character_list[0].name;
     let attribute = character_list[0].attribute.toLowerCase();
@@ -88,7 +90,7 @@ let character_api = (() => {
       if (rank_list.indexOf((i + 1).toString(10)) != -1) ranks[i] = true;
     }
     let character = new module.Character(id, name, attribute, ranks);
-    callback(character);
+    return character;
   };
 
   /**
@@ -108,29 +110,28 @@ let character_api = (() => {
    * @param {Function} callback 
    */
   const isValidCharacterDisplay = (character_id, display, callback) => {
-    getCharacter(character_id, character => {
-      let err = [];
-      // check id.
-      if (display.id !== character.id) err.push(`Display Id ${display.id} does not match Character ID ${character.id}.`);
-      // check name.
-      if (display.name !== character.name) err.push(`Display Name ${display.name} does not match Character Name ${character.Name}.`);
-      // check rank.
-      if (!character.ranks[display.rank - 1]) err.push(`Display Rank ${display.rank} does not match Character Ranks ${character.ranks}`);
-      // check level.
-      if (display.rank == "1" && (display.level < 1 || display.level > 40)) err.push(`Display Level ${display.level} for Display Rank ${display.rank} must be between 1 and 40.`);
-      else if (display.rank == "2" && (display.level < 1 || display.level > 50)) err.push(`Display Level ${display.level} for Display Rank ${display.rank} must be between 1 and 50.`);
-      else if (display.rank == "3" && (display.level < 1 || display.level > 60)) err.push(`Display Level ${display.level} for Display Rank ${display.rank} must be between 1 and 60.`);
-      else if (display.rank == "4" && (display.level < 1 || display.level > 80)) err.push(`Display Level ${display.level} for Display Rank ${display.rank} must be between 1 and 80.`);
-      else if (display.rank == "5" && (display.level < 1 || display.level > 100)) err.push(`Display Level ${display.level} for Display Rank ${display.rank} must be between 1 and 100.`);
-      // check magic.
-      if (display.magic < 0 || display.magic > 3) err.push(`Display Magic ${display.magic} must be between 0 and 3.`);
-      // check magia.
-      if (display.magia < 1 || display.magia > 5) err.push(`Display Magia ${display.magia} must be between 1 and 5.`);
-      if (display.magia > display.episode) err.push(`Display Magia ${display.magia} must be less than or equal to Display Episode ${display.episode}.`);
-      // check episode.
-      if (display.episode < 1 || display.episode > 5) err.push(`Display Episode ${display.episode} must be between 1 and 5.`);
-      callback(err);
-    });
+    let character = getCharacter(character_id);
+    let err = [];
+    // check id.
+    if (display.id !== character.id) err.push(`Display Id ${display.id} does not match Character ID ${character.id}.`);
+    // check name.
+    if (display.name !== character.name) err.push(`Display Name ${display.name} does not match Character Name ${character.Name}.`);
+    // check rank.
+    if (!character.ranks[display.rank - 1]) err.push(`Display Rank ${display.rank} does not match Character Ranks ${character.ranks}`);
+    // check level.
+    if (display.rank == "1" && (display.level < 1 || display.level > 40)) err.push(`Display Level ${display.level} for Display Rank ${display.rank} must be between 1 and 40.`);
+    else if (display.rank == "2" && (display.level < 1 || display.level > 50)) err.push(`Display Level ${display.level} for Display Rank ${display.rank} must be between 1 and 50.`);
+    else if (display.rank == "3" && (display.level < 1 || display.level > 60)) err.push(`Display Level ${display.level} for Display Rank ${display.rank} must be between 1 and 60.`);
+    else if (display.rank == "4" && (display.level < 1 || display.level > 80)) err.push(`Display Level ${display.level} for Display Rank ${display.rank} must be between 1 and 80.`);
+    else if (display.rank == "5" && (display.level < 1 || display.level > 100)) err.push(`Display Level ${display.level} for Display Rank ${display.rank} must be between 1 and 100.`);
+    // check magic.
+    if (display.magic < 0 || display.magic > 3) err.push(`Display Magic ${display.magic} must be between 0 and 3.`);
+    // check magia.
+    if (display.magia < 1 || display.magia > 5) err.push(`Display Magia ${display.magia} must be between 1 and 5.`);
+    if (display.magia > display.episode) err.push(`Display Magia ${display.magia} must be less than or equal to Display Episode ${display.episode}.`);
+    // check episode.
+    if (display.episode < 1 || display.episode > 5) err.push(`Display Episode ${display.episode} must be between 1 and 5.`);
+    callback(err);
   };
 
   /**
@@ -209,9 +210,36 @@ let character_api = (() => {
           if (child.classList.contains("selected")) child.classList.remove("selected");
         });
         character_display.classList.add("selected");
+        module.selectedCharacter = { character_display_element: character_display, character_display: display };
+        module.enableButtons();
       });
     }
     return character_display;
+  };
+
+  const RANK_TO_LEVEL = { "1": "40", "2": "50", "3": "60", "4": "80", "5": "100" };
+
+  module.minimizeDisplay = () => {
+    let character_display = module.getCharacterDisplay(display_preview.children[0]);
+    let character = module.characters.find(char => char.id === character_display.id);
+    let minRank = "5";
+    Object.entries(character.ranks).reverse().forEach(([rank, value]) => minRank = value ? rank : minRank);
+    let attribute = character.attribute.toLowerCase();
+    let display = new module.Display(character.id, character.name, minRank, attribute, "1", "0", "1", "1");
+    updateForm(display);
+    updatePreviewDisplay(display);
+  };
+
+  module.maximizeDisplay = () => {
+    let character_display = module.getCharacterDisplay(display_preview.children[0]);
+    let character = module.characters.find(char => char.id === character_display.id);
+    let maxRank = "1";
+    Object.entries(character.ranks).forEach(([rank, value]) => maxRank = value ? rank : maxRank);
+    let level = RANK_TO_LEVEL[maxRank];
+    let attribute = character.attribute.toLowerCase();
+    let display = new module.Display(character.id, character.name, maxRank, attribute, level, "3", "5", "5");
+    updateForm(display);
+    updatePreviewDisplay(display);
   };
 
   /**
@@ -259,6 +287,8 @@ let character_api = (() => {
     // if the currently select rank is disabled, then select minimum available rank.
     if (!character.ranks[rank_select.selectedIndex]) {
       rank_select.selectedIndex = character.ranks.indexOf(true);
+      // update the level to match max rank.
+      level_select.value = RANK_TO_LEVEL[rank_select.value]
     }
   };
 
@@ -295,22 +325,20 @@ let character_api = (() => {
     name_select.value = 1001;
     name_select.dispatchEvent(new Event("change"));
 
-    getCharacter("1001", character => {
-      updateFormEnabled(character);
-      updatePreviewDisplay(getBasicCharacterDisplay(character));
-    });
+    let character = getCharacter("1001");
+    updateFormEnabled(character);
+    updatePreviewDisplay(getBasicCharacterDisplay(character));
   };
 
   /**
    * updates the form fields with the selected character.
    */
   module.updateFieldsOnName = () => {
-    getCharacter(name_select.value, character => {
-      updateFormEnabled(character);
-      character_preview = updateCharacterWithDisplay(character, getFormDisplay());
-      updateForm(character_preview);
-      updatePreviewDisplay(character_preview);
-    });
+    let character = getCharacter(name_select.value);
+    updateFormEnabled(character);
+    character_preview = updateCharacterWithDisplay(character, getFormDisplay());
+    updateForm(character_preview);
+    updatePreviewDisplay(character_preview);
   };
 
   /**
@@ -353,16 +381,87 @@ let character_api = (() => {
   module.updatePreviewOnForm = () => {
     let display = getFormDisplay();
     character_error_text.innerHTML = '';
-    isValidCharacterDisplay(name_select.value, display, error => {
-      if (error.length == 0) {
+    let error = isValidCharacterDisplay(name_select.value, display);
+    if (error.length == 0) {
+      create_button.disabled = false;
+      updatePreviewDisplay(display);
+    } else {
+      create_button.disabled = true;
+      character_error_text.innerHTML = error.toString();
+      console.log(error);
+    }
+  };
+
+  /**
+   * Enable and Disable the Character Buttons based on the current state.
+   */
+  module.enableButtons = () => {
+    if (list_api.selectedList && list_api.selectedList.listId) {
+      if (create_button.classList.contains("btnDisabled")) {
+        create_button.classList.replace("btnDisabled", "btnGray");
         create_button.disabled = false;
-        updatePreviewDisplay(display);
-      } else {
-        create_button.disabled = true;
-        character_error_text.innerHTML = error.toString();
-        console.log(error);
       }
-    });
+      if (min_all_button.classList.contains("btnDisabled")) {
+        min_all_button.classList.replace("btnDisabled", "btnGray");
+        min_all_button.disabled = false;
+      }
+      if (max_all_button.classList.contains("btnDisabled")) {
+        max_all_button.classList.replace("btnDisabled", "btnGray");
+        max_all_button.disabled = false;
+      }
+      if (module.selectedCharacter && module.selectedCharacter.character_display_element) {
+        if (update_button.classList.contains("btnDisabled")) {
+          update_button.classList.replace("btnDisabled", "btnGray");
+          update_button.disabled = false;
+        }
+        if (copy_button.classList.contains("btnDisabled")) {
+          copy_button.classList.replace("btnDisabled", "btnGray");
+          copy_button.disabled = false;
+        }
+        if (delete_button.classList.contains("btnDisabled")) {
+          delete_button.classList.replace("btnDisabled", "btnGray");
+          delete_button.disabled = false;
+        }
+      } else {
+        if (update_button.classList.contains("btnGray")) {
+          update_button.classList.replace("btnGray", "btnDisabled");
+          update_button.disabled = false;
+        }
+        if (copy_button.classList.contains("btnGray")) {
+          copy_button.classList.replace("btnGray", "btnDisabled");
+          copy_button.disabled = false;
+        }
+        if (delete_button.classList.contains("btnGray")) {
+          delete_button.classList.replace("btnGray", "btnDisabled");
+          delete_button.disabled = false;
+        }
+      }
+    } else {
+      if (create_button.classList.contains("btnGray")) {
+        create_button.classList.replace("btnGray", "btnDisabled");
+        create_button.disabled = true;
+      }
+      if (update_button.classList.contains("btnGray")) {
+        update_button.classList.replace("btnGray", "btnDisabled");
+        update_button.disabled = true;
+      }
+      if (copy_button.classList.contains("btnGray")) {
+        copy_button.classList.replace("btnGray", "btnDisabled");
+        copy_button.disabled = true;
+      }
+      if (delete_button.classList.contains("btnGray")) {
+        delete_button.classList.replace("btnGray", "btnDisabled");
+        delete_button.disabled = true;
+      }
+      if (min_all_button.classList.contains("btnGray")) {
+        min_all_button.classList.replace("btnGray", "btnDisabled");
+        min_all_button.disabled = true;
+      }
+      if (max_all_button.classList.contains("btnGray")) {
+        max_all_button.classList.replace("btnGray", "btnDisabled");
+        max_all_button.disabled = true;
+      }
+    }
   };
 
   /**

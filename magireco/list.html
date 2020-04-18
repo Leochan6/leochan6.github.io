@@ -14,19 +14,13 @@
   <header>
     <h1><a class="header_link" href="/magireco/" title="Home">Magia Record Character List</a></h1>
     <button id="signout_button">Sign Out</button>
+    <button id="contact_button">Contact/Support</button>
   </header>
   <div class="horizontal-divider" id="header_content_divider"></div>
   <div id="content">
     <div id="left_bar">
       <h2 class="" id="name_heading"></h2>
       <div class="horizontal-divider"></div>
-      <div id="tab_bar" class="tab_hidden">
-        <button id="home_btn" class="tablink btn btnBlue" tab_name="home_tab">Home</button>
-        <button id="char_btn" class="tablink btn btnGray" tab_name="char_tab">Character</button>
-        <button id="sort_btn" class="tablink btn btnGray" tab_name="sort_tab">Sort</button>
-        <button id="background_btn" class="tablink btn btnGray" tab_name="background_tab">Background</button>
-        <button id="setting_btn" class="tablink btn btnGray" tab_name="setting_tab">Setting</button>
-      </div>
       <div class="hidden left" id="collapse_sidebar_button"></div>
       <div id="tabs">
         <div id="home_tab" class="tab">
@@ -58,14 +52,14 @@
           <div class="tab_contents">
             <div id="char_fields">
               <table id="char_fields_table" width=100%>
-                <tr title="Name of the Character.">
+                <tr>
                   <td>Name:</td>
-                  <td><select id="name_select" style="width:140px"></select></td>
-                  <td><button id="characterSelectModalOpenButton">+</td>
+                  <td><select id="name_select" style="width:140px" title="Name of the Character."></select></td>
+                  <td><button id="characterSelectModalOpen">+</td>
                 </tr>
-                <tr title="Attribute of the Character.">
+                <tr>
                   <td>Attribute:
-                  <td><select id="attr_select" class="form">
+                  <td><select id="attr_select" class="form" title="Attribute of the Character.">
                       <option value="dark">Dark</option>
                       <option value="fire">Fire</option>
                       <option value="light">Light</option>
@@ -74,9 +68,9 @@
                       <option value="water">Water</option>
                     </select></td>
                 </tr>
-                <tr title="Rank of the Character (Stars/Rarity).">
+                <tr>
                   <td>Rank:</td>
-                  <td><select id="rank_select" class="form">
+                  <td><select id="rank_select" class="form" title="Rank of the Character (Stars/Rarity).">
                       <option value="1">1</option>
                       <option value="2">2</option>
                       <option value="3">3</option>
@@ -84,23 +78,24 @@
                       <option value="5">5</option>
                     </select></td>
                 </tr>
-                <tr title="Experience Level of the Character (Enhancement).">
+                <tr>
                   <td>Experience Level:</td>
                   <td><input id="level_select" class="form custom-input" type="number" value=1 maxlength="3" size=3
-                      min=1 max=100 border="2px solid black"></td>
+                      min=1 max=100 border="2px solid black" title="Experience Level of the Character (Enhancement).">
+                  </td>
                 </tr>
-                <tr title="Magic Level of the Character (Memoria Slots).">
+                <tr>
                   <td>Magic Level:</td>
-                  <td><select id="magic_select" class="form">
+                  <td><select id="magic_select" class="form" title="Magic Level of the Character (Memoria Slots).">
                       <option value="0">0</option>
                       <option value="1">1</option>
                       <option value="2">2</option>
                       <option value="3">3</option>
                     </select></td>
                 </tr>
-                <tr title="Magia Level of the Character.">
+                <tr>
                   <td>Magia Level:</td>
-                  <td><select id="magia_select" class="form">
+                  <td><select id="magia_select" class="form" title="Magia Level of the Character.">
                       <option value="1">1</option>
                       <option value="2">2</option>
                       <option value="3">3</option>
@@ -108,9 +103,9 @@
                       <option value="5">5</option>
                     </select></td>
                 </tr>
-                <tr title="Episode Level of the Character (Bond).">
+                <tr>
                   <td>Episode Level:</td>
-                  <td><select id="episode_select" class="form">
+                  <td><select id="episode_select" class="form" title="Episode Level of the Character (Bond).">
                       <option value="1">1</option>
                       <option value="2">2</option>
                       <option value="3">3</option>
@@ -121,10 +116,12 @@
               </table>
             </div>
             <div id="home_buttons" align="left">
-              <button id="create_button" class="btn btnGray" type="submit">Create</button>
-              <button id="update_button" class="btn btnGray">Update</button>
-              <button id="copy_button" class="btn btnGray">Copy</button>
-              <button id="delete_button" class="btn btnGray">Delete</button>
+              <button id="create_button" class="btn btnDisabled" type="submit" disabled>Create</button>
+              <button id="update_button" class="btn btnDisabled" disabled>Update</button>
+              <button id="copy_button" class="btn btnDisabled" disabled>Copy</button>
+              <button id="delete_button" class="btn btnDisabled" disabled>Delete</button>
+              <button id="min_all_button" class="btn btnDisabled">Min All</button>
+              <button id="max_all_button" class="btn btnDisabled">Max All</button>
             </div>
             <p class="error_text" id="character_error_text"></p>
             <h3 id="preview_text">Preview:</h3>
@@ -223,6 +220,7 @@
               <tr>
                 <td>Background:</td>
                 <td><select id="background_select"></select></td>
+                <td><button id="backgroundSelectModalOpen">+</button></td>
               </tr>
             </table>
             <button id="remove_background_button">Remove</button></tr>
@@ -249,17 +247,18 @@
     <div class="vertical-divider" id="left_main_divider"></div>
     <div id="main">
       <div id="main_header">
-        <div id="name_and_zoom" title="Auto Zoom not Working">
+        <div id="name_and_zoom">
           <h2 id="list_name_title"></h2>
-          <div id="zoom_tools">
+          <div id="zoom_tools" title="Auto Zoom not Working">
             Zoom: <input type="number" id="zoom_field" value=100 maxlength="3" size=3 min=30 max=300
               style="width: 40px;">
             <input type="range" min="30" max="300" value="100" id="zoom_range">
-            Auto: <input type="checkbox" id="zoom_checkbox">
+            Auto: <input type="checkbox" id="zoom_checkbox" disabled>
           </div>
           <div id="export_options">
             Export:
-            <button class="" id="export_image_button" title="Not Working 100%">Image</button>
+            <button class="" id="export_image_button"
+              title="Not Working. Please Zoom In/Out and take a screenshot instead." disabled>Image</button>
             <button class="" id="export_text_button">Text</button>
           </div>
         </div>

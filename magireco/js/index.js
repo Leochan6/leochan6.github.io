@@ -1,20 +1,24 @@
 (function () {
   "use strict";
 
+  window.setInterval(() => {
+
+  });
+
   window.onload = () => {
 
     // sign out button.
     signout_button.addEventListener("click", () => {
-      let res = prompt("Are you sure you want to Sign Out?");
+      let res = confirm("Are you sure you want to Sign Out?");
       if (res) database.signout();
     });
 
-    // open the tab.
-    document.querySelectorAll(".tablink").forEach(element => {
-      element.addEventListener("click", event => {
-        if (element.classList.contains("btnGray"))
-          utils.openTab(event, element.getAttribute("tab_name"));
-      });
+    // contact button.
+    contact_button.addEventListener("click", () => {
+      messageModal.style.display = "block";
+      messageModalText.value = `For assistance, support, or feedback, please contact Leo Chan on Discord (Leo_Chan#9150) or Reddit (u/Leochan6).`;
+      messageModalTitle.innerHTML = `Contact / Support`;
+      messageModalContent.innerHTML = "";
     });
 
     // toggle visibility of the tab.
@@ -41,11 +45,6 @@
       });
     });
 
-    // open character select modal
-    characterSelectModalOpenButton.addEventListener("click", () => {
-      character_api.openCharacterSelect();
-    });
-
     // add new character display to list.
     create_button.addEventListener("click", () => {
       character_api.createAddDisplay();
@@ -65,7 +64,19 @@
     delete_button.addEventListener("click", () => {
       let character_display = Array.from(document.querySelectorAll(".character_display:not(.preview)")).find(child => child.classList.contains("selected"));
       character_display.remove();
+      character_api.selectedCharacter = null;
+      character_api.enableButtons();
       character_list_content.dispatchEvent(new Event("change"));
+    });
+
+    // mines all the fields.
+    min_all_button.addEventListener("click", () => {
+      character_api.minimizeDisplay();
+    });
+
+    // maxes all the fields.
+    max_all_button.addEventListener("click", () => {
+      character_api.maximizeDisplay();
     });
 
     // update the list on sort form change.
@@ -106,11 +117,16 @@
       try {
         if (e.target.parentElement.className.indexOf("character_display") === -1 && e.target.parentElement.parentElement.className.indexOf("character_display") === -1) {
           document.querySelectorAll(".character_display:not(.preview)").forEach(child => {
-            if (child.classList.contains("selected")) child.classList.remove("selected");
+            if (child.classList.contains("selected")) {
+              child.classList.remove("selected");
+              character_api.selectedCharacter = null;
+              character_api.enableButtons();
+            }
           });
         }
       } catch (error) {
-        // type error
+        character_api.selectedCharacter = null;
+        character_api.enableButtons();
       }
     });
 
@@ -211,7 +227,7 @@
     // export image button.
     export_image_button.addEventListener("click", () => {
       html2canvas(character_list_content).then(canvas => {
-        Canvas2Image.saveAsImage(canvas);
+        Canvas2Image.saveAsImage(canvas, "list");
       });
     });
 
@@ -291,6 +307,11 @@
       navigator.clipboard.writeText(messageModalText.value);
     });
 
+    // open character select modal
+    characterSelectModalOpen.addEventListener("click", () => {
+      character_api.openCharacterSelect();
+    });
+
     // hide character select modal dialog
     characterSelectModalClose.addEventListener("click", () => {
       closeCharacterSelectModal();
@@ -301,9 +322,19 @@
       character_api.filterCharacters(characterSelectModalSearch.value);
     });
 
+    // open background select modal dialog
+    backgroundSelectModalOpen.addEventListener("click", () => {
+      background_api.openBackgroundSelect();
+    });
+
     // hide background select modal dialog
     backgroundSelectModalClose.addEventListener("click", () => {
       closeBackgroundSelectModal();
+    });
+
+    // search change character select modal dialog.
+    backgroundSelectModalSearch.addEventListener("keyup", () => {
+      background_api.filterBackgrounds(backgroundSelectModalSearch.value);
     });
   };
 

@@ -92,20 +92,7 @@ let database = (() => {
 
   module.onListUpdate = (userId, callback) => {
     lists.child(userId).on('value', (snapshot) => {
-      // console.log("value", snapshot.key, snapshot.val());
       callback(snapshot);
-    });
-    lists.child(userId).on('child_added', (snapshot) => {
-      // console.log("add", snapshot.key, snapshot.val());
-      // callback(snapshot, "add");
-    });
-    lists.child(userId).on('child_removed', (snapshot) => {
-      // console.log("remove", snapshot.key, snapshot.val());
-      // callback(snapshot, "remove");
-    });
-    lists.child(userId).on('child_changed', (snapshot) => {
-      // console.log("change", snapshot.key, snapshot.val());
-      // callback(snapshot, "change");
     });
   };
 

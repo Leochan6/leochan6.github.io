@@ -125,11 +125,32 @@ hr {
 }
 
 #background_select {
-  width: 200px;
+  width: 180px;
+}
+
+.character_list_entry {
+  border: black solid 1px;
+  border-radius: 10px;
+  margin: 5px;
+  padding: 5px;
+  cursor: pointer;
+  user-select: none;
+  text-align: center;
+  width: 100%;
+  cursor: pointer;
+  outline: none;
+  opacity: 0.8;
+  transition: all 0.3s ease 0s;
+}
+
+.character_list_entry:hover {
+  color: #FFFFFF;
+  background-color: #2c2c2c;
 }
 
 .selectedList {
   border: black solid 2px;
+  opacity: 1;
 }
 
 .selectedList:hover {
@@ -218,7 +239,7 @@ hr {
 }
 
 #zoom_range {
-  width: 100px;
+  width: 200px;
   vertical-align: middle;
 }
 
@@ -250,24 +271,6 @@ hr {
   width: 100%;
   background-repeat: no-repeat;
   background-size: cover;
-}
-
-.character_list_entry {
-  border: black solid 1px;
-  border-radius: 10px;
-  margin: 5px;
-  padding: 5px;
-  cursor: pointer;
-  user-select: none;
-  text-align: center;
-  width: 100%;
-  cursor: pointer;
-  outline: none;
-}
-
-.character_list_entry:hover {
-  color: #FFFFFF;
-  background-color: #2c2c2c;
 }
 
 .ascend, .descend {
@@ -403,4 +406,29 @@ hr {
   width: 80%;
   height: 80%;
   resize: none;
+}
+
+.characterSelectModalList {
+  display: flex;
+  flex-direction: row;
+}
+
+#backgroundSelectModalSearch {
+  margin: 10px;
+}
+
+.background_image_preview {
+  vertical-align: top;
+  display: inline-block;
+  text-align: center;
+  border: solid 1px white;
+}
+
+.background_image_preview:hover {
+  border: solid 1px black;
+}
+
+.background_image_preview>img {
+  width: 200px;
+  height: auto;
 }

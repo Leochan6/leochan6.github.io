@@ -11,13 +11,6 @@ let elements = (() => {
   // User Heading
   module.name_heading = document.querySelector("#name_heading");
 
-  // Tab Buttons
-  module.tab_bar = document.querySelector("#tab_bar");
-  module.home_tab_button = document.querySelector("#home_btn");
-  module.char_tab_button = document.querySelector("#char_btn");
-  module.sort_tab_button = document.querySelector("#sort_btn");
-  module.setting_tab_button = document.querySelector("#setting_btn");
-
   // Home Buttons
   module.list_create = document.querySelector("#list_create");
   module.new_list_form = document.querySelector("#new_list_form");
@@ -40,7 +33,8 @@ let elements = (() => {
   module.update_button = document.querySelector("#update_button");
   module.copy_button = document.querySelector("#copy_button");
   module.delete_button = document.querySelector("#delete_button");
-  module.clear_button = document.querySelector("#clear_button");
+  module.min_all_button = document.querySelector("#min_all_button");
+  module.max_all_button = document.querySelector("#max_all_button");
 
   // Character Preview
   module.display_preview = document.querySelector("#display_preview");
@@ -111,14 +105,14 @@ let elements = (() => {
 
 
   // Character Select Modal
-  module.characterSelectModalOpenButton = document.querySelector("#characterSelectModalOpenButton");
+  module.characterSelectModalOpen = document.querySelector("#characterSelectModalOpen");
   module.characterSelectModal = document.querySelector("#characterSelectModal");
   module.characterSelectModalClose = document.querySelector("#name_modal_close_button");
   module.characterSelectModalSearch = document.querySelector("#characterSelectModalSearch");
   module.characterSelectModalList = document.querySelector("#characterSelectModalList");
 
   // Background Select Modal
-  module.backgroundSelectModalOpenButton = document.querySelector("#backgroundSelectModalOpenButton");
+  module.backgroundSelectModalOpen = document.querySelector("#backgroundSelectModalOpen");
   module.backgroundSelectModal = document.querySelector("#backgroundSelectModal");
   module.backgroundSelectModalClose = document.querySelector("#backgroundSelectModalClose");
   module.backgroundSelectModalName = document.querySelector("#backgroundSelectModalName");

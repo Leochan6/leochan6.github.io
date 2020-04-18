@@ -2,6 +2,8 @@ let list_api = (function () {
 
   let module = {};
 
+  module.selectedList = null;
+
   /**
    * loads the character displays of the character_list.
    * 
@@ -190,9 +192,7 @@ let list_api = (function () {
     list_name_title.innerHTML = listName;
     profile_select.value = "Default";
     character_list_content.innerHTML = "";
-
     storage_api.createList(listName);
-    new_list_button.style.visibility = "hidden";
   };
 
   /** 
@@ -217,6 +217,7 @@ let list_api = (function () {
       }
       else if (element.classList.contains("selectedList")) element.classList.remove("selectedList");
     }
+    module.selectedList = { listId: listId, list: list };
     list_name_title.innerHTML = list.name;
     list_name_title.setAttribute("listId", listId);
     loadCharacterList(list.characterList);
@@ -226,16 +227,19 @@ let list_api = (function () {
     background_select.value = list.selectedBackground
     background_api.setBackground(list.selectedBackground);
     list_api.getStats();
+    character_api.enableButtons();
   };
 
   /**
    * deletes the list from the database.
    */
   module.deleteList = (listId) => {
+    module.selectedList = null;
     storage_api.deleteList(listId);
   };
 
   module.setLists = (lists) => {
+    module.selectedList = { listId: list_name_title.getAttribute("listId"), list: null };
     saved_character_lists.innerHTML = "";
     for (let [listId, list] of Object.entries(lists)) {
       let div = document.createElement("div");
@@ -257,10 +261,14 @@ let list_api = (function () {
       div.append(deleteButton);
       saved_character_lists.append(div);
     }
-    if (Object.entries(lists).length == 1) new_list_button.style.visibility = "hidden";
     if (Object.entries(lists).length > 0) {
-      let first = Object.entries(lists)[0][0];
-      return module.selectList(first, lists[first]);
+      if (module.selectedList && module.selectedList.listId && lists[module.selectedList.listId]) {
+        return module.selectList(module.selectedList.listId, lists[module.selectedList.listId]);
+      }
+      else {
+        let first = Object.entries(lists)[0][0];
+        return module.selectList(first, lists[first]);
+      }
     }
   }
 
@@ -693,6 +701,7 @@ let list_api = (function () {
     messageModal.style.display = "block";
     messageModalText.value = module.getMoreStats();
     messageModalTitle.innerHTML = `More ${list_api.getSelectedList()} Stats`;
+    messageModalContent.innerHTML = "";
   };
 
   return module;
