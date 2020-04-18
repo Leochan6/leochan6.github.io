@@ -5,7 +5,8 @@
 
     // sign out button.
     signout_button.addEventListener("click", () => {
-      database.signout();
+      let res = prompt("Are you sure you want to Sign Out?");
+      if (res) database.signout();
     });
 
     // open the tab.
