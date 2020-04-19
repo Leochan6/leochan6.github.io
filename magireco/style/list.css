@@ -110,11 +110,6 @@ hr {
   flex-wrap: wrap;
 }
 
-#sorting_fields {
-  padding-top: 10px;
-  margin-top: 10px;
-}
-
 #auto_row_checkbox {
   margin: 0px;
 }
@@ -312,6 +307,7 @@ hr {
 
 .delete::after {
   content: "×";
+  text-align: center;
 }
 
 .add::after {
@@ -320,6 +316,18 @@ hr {
 
 .minus::after {
   content: "-";
+}
+
+.duplicate {
+  background-image: url("../assets/icon/file_copy_black.png");
+  background-repeat: no-repeat;
+  background-size: 80%;
+  background-position: center;
+  padding: 10px;
+}
+
+.duplicate:hover {
+  background-image: url("../assets/icon/file_copy_white.png");
 }
 
 .characterSelectModalList {

@@ -8,7 +8,7 @@ let background_api = (function () {
   };
 
   module.setBackground = (background_id) => {
-    if (background_id) character_list_content.style.backgroundImage = `url("/magireco/assets/bg/${background_id}.jpg")`;
+    if (background_id && background_id !== true) character_list_content.style.backgroundImage = `url("/magireco/assets/bg/${background_id}.jpg")`;
   };
 
   module.removeBackground = () => {

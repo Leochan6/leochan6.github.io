@@ -25,8 +25,17 @@
     document.querySelectorAll(".tab_heading").forEach(element => {
       element.addEventListener("click", () => {
         let contents = element.parentElement.parentElement.querySelector(".tab_contents");
-        if (!contents.classList.contains("hidden")) contents.classList.add("hidden");
-        else if (contents.classList.contains("hidden")) contents.classList.remove("hidden");
+        let tab_name = element.getAttribute("tab_name")
+        if (!contents.classList.contains("hidden")) {
+          contents.classList.add("hidden");
+          // storage_api.settings.expanded_tabs[tab_name] = false;
+          storage_api.updateSettings(`expanded_tabs/${tab_name}`, false);
+        }
+        else if (contents.classList.contains("hidden")) {
+          contents.classList.remove("hidden");
+          // storage_api.settings.expanded_tabs[tab_name] = true;
+          storage_api.updateSettings(`expanded_tabs/${tab_name}`, true);
+        }
       });
     });
 
@@ -207,24 +216,6 @@
       list_api.updateList();
     });
 
-
-    // show all menus checkbox.
-    show_all_menus_checkbox.addEventListener("click", () => {
-      if (show_all_menus_checkbox.checked) {
-        tab_bar.classList.add("tab_hidden");
-        document.querySelectorAll(".tab").forEach(element => {
-          element.classList.remove("tab_hidden");
-        });
-      }
-      else {
-        tab_bar.classList.remove("tab_hidden");
-        document.querySelectorAll(".tab").forEach(element => {
-          if (element.id !== "setting_tab")
-            element.classList.add("tab_hidden");
-        });
-      }
-    });
-
     // export image button.
     export_image_button.addEventListener("click", () => {
       html2canvas(character_list_content).then(canvas => {
@@ -296,7 +287,6 @@
     });
 
     window.addEventListener("keydown", (event) => {
-      console.log(event);
       if (event.target == messageModal && event.keyCode == 27 && messageModal.style.display === "block") closeMessageModal()
       else if (event.target == characterSelectModal && event.keyCode == 27 && characterSelectModal.style.display === "block") closeCharacterSelectModal();
       else if (event.target == backgroundSelectModal && event.keyCode == 27 && backgroundSelectModal.style.display === "block") closeBackgroundSelectModal();

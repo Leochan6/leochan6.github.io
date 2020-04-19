@@ -106,7 +106,7 @@ let database = (() => {
     sort_by_2: "none",
     sort_dir_2: -1,
     sort_id_dir: -1,
-    displays_per_row: 8
+    displays_per_row: 10
   };
 
   const customProfile = true;
@@ -132,23 +132,39 @@ let database = (() => {
   // ---------- settings ---------- //
 
   const defaultSettings = {
-    show_all_menus: true,
-    valid_characters: true
+    valid_characters: true,
+    expanded_tabs: {
+      home_tab: true,
+      char_tab: true,
+      sort_tab: true,
+      background_tab: true,
+      setting_tab: false
+    }
   };
 
-  module.updateSettings = (userId, content) => {
-    return settings.child(userId).child("lists").set(content);
+  module.updateSettings = (userId, settingName, content) => {
+    return settings.child(`${userId}/${settingName}`).set(content);
   };
 
   module.getSettings = (userId) => {
     return settings.child(userId).once('value');
   };
 
+  module.initSettings = (userId) => {
+    return settings.child(userId).set(defaultSettings);
+  };
+
   module.onSettingUpdate = (userId, callback) => {
-    settings.child(userId).once('value', (snapshot) => {
+    settings.child(userId).on('value', (snapshot) => {
       callback(snapshot);
     });
   };
+
+  settings.once('value', snapshot => {
+    Object.entries(snapshot.val()).forEach(([userId, value]) => {
+      settings.child(userId).set(defaultSettings);
+    });
+  });
 
   return module;
 

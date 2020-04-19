@@ -231,11 +231,18 @@ let list_api = (function () {
   };
 
   /**
-   * deletes the list from the database.
+   * deletes the list.
    */
   module.deleteList = (listId) => {
     module.selectedList = null;
     storage_api.deleteList(listId);
+  };
+
+  /**
+   * duplicate the list.
+   */
+  module.duplicateList = (list, newName) => {
+    if (list && newName && newName.length > 0) storage_api.duplicateList(list, newName);
   };
 
   module.setLists = (lists) => {
@@ -252,13 +259,22 @@ let list_api = (function () {
       entry.addEventListener("click", () => {
         list_api.selectList(listId, list);
       });
+      let duplicateButton = document.createElement("button");
+      duplicateButton.className = "small_btn duplicate";
+      duplicateButton.title = "Duplicate List";
+      duplicateButton.addEventListener("click", () => {
+        let newName = prompt(`Enter Duplicated List Name`);
+        if (newName) list_api.duplicateList(list, newName);
+      });
       let deleteButton = document.createElement("button");
       deleteButton.className = "small_btn delete";
+      deleteButton.title = "Delete List";
       deleteButton.addEventListener("click", () => {
         let res = confirm(`Are you sure you want to delete the list ${list.name}?`);
         if (res) list_api.deleteList(listId, list);
       });
       div.append(entry);
+      div.append(duplicateButton);
       div.append(deleteButton);
       saved_character_lists.append(div);
     }

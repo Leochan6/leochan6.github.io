@@ -22,18 +22,23 @@ let storage_api = (() => {
   };
 
   module.createList = (name) => {
-    database.createList(userId, { name: name, characterList: true, selectedProfile: "Default", selectedBackground: "" });
+    database.createList(userId, { name: name, characterList: true, selectedProfile: "Default", selectedBackground: true });
   };
 
   module.updateList = (listId, name, characterList, selectedProfile, selectedBackground) => {
     if (characterList.length == 0) characterList = true;
     if (!selectedBackground) selectedBackground = true;
-    console.log(userId, listId, { name: name, characterList: characterList, selectedProfile: selectedProfile, selectedBackground: selectedBackground });
     database.updateList(userId, listId, { name: name, characterList: characterList, selectedProfile: selectedProfile, selectedBackground: selectedBackground });
   };
 
   module.deleteList = (listId) => {
     database.deleteList(userId, listId);
+  };
+
+  module.duplicateList = (list, newName) => {
+    let selectedProfile = profile_api.getSelectedProfile() || "Default";
+    let selectedBackground = background_api.getSelectedBackground() || true;
+    database.createList(userId, { name: newName, characterList: list.characterList, selectedProfile: selectedProfile, selectedBackground: selectedBackground });
   };
 
   module.updateProfile = (name, profile) => {
@@ -49,8 +54,8 @@ let storage_api = (() => {
     database.deleteProfile(userId, name);
   };
 
-  module.updateSettings = (newSettings) => {
-    database.updateSettings(userId, newSettings);
+  module.updateSettings = (settingName, newSettings) => {
+    database.updateSettings(userId, settingName, newSettings);
   };
 
   const loadUserName = () => {
@@ -62,7 +67,14 @@ let storage_api = (() => {
 
   const loadSettings = (snapshot) => {
     module.settings = snapshot.val() ? snapshot.val() : {};
-    show_all_menus_checkbox.checked = module.settings.show_all_menus;
+    // init expanded tabs
+    if (!module.settings.expanded_tabs) database.initSettings(userId);
+    // expand tabs
+    Object.entries(module.settings.expanded_tabs).forEach(([tab_id, expanded]) => {
+      let tab_contents = document.querySelector(`#${tab_id}`).querySelector(".tab_contents");
+      if (expanded && tab_contents.classList.contains("hidden")) tab_contents.classList.remove("hidden");
+      else if (!expanded && !tab_contents.classList.contains("hidden")) tab_contents.classList.add("hidden");
+    });
   };
 
   const loadProfiles = (snapshot) => {
