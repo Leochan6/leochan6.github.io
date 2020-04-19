@@ -237,6 +237,11 @@
       list_api.openExportModal();
     });
 
+    // import text button.
+    import_text_button.addEventListener("click", () => {
+      list_api.openImportModal();
+    });
+
     // add new filter.
     add_filter_button.addEventListener("click", () => {
       list_api.createFilter();
@@ -282,12 +287,19 @@
 
     // check auto zoom.
     zoom_checkbox.addEventListener("change", () => {
-      if (zoom_checkbox.checked) list_api.zoom_fit();
+      // if (zoom_checkbox.checked) list_api.zoom_fit();
     });
 
     // zoom to fix if window size changes.
     window.addEventListener("resize", () => {
-      if (zoom_checkbox.checked) list_api.zoom_fit();
+      // if (zoom_checkbox.checked) list_api.zoom_fit();
+    });
+
+    window.addEventListener("keydown", (event) => {
+      console.log(event);
+      if (event.target == messageModal && event.keyCode == 27 && messageModal.style.display === "block") closeMessageModal()
+      else if (event.target == characterSelectModal && event.keyCode == 27 && characterSelectModal.style.display === "block") closeCharacterSelectModal();
+      else if (event.target == backgroundSelectModal && event.keyCode == 27 && backgroundSelectModal.style.display === "block") closeBackgroundSelectModal();
     });
 
     // hide modal dialogs
@@ -318,8 +330,10 @@
     });
 
     // search change character select modal dialog.
-    characterSelectModalSearch.addEventListener("keyup", () => {
-      character_api.filterCharacters(characterSelectModalSearch.value);
+    ["keyup", "change", "search"].forEach(event => {
+      characterSelectModalSearch.addEventListener(event, () => {
+        character_api.filterCharacters(characterSelectModalSearch.value);
+      });
     });
 
     // open background select modal dialog
@@ -333,8 +347,10 @@
     });
 
     // search change character select modal dialog.
-    backgroundSelectModalSearch.addEventListener("keyup", () => {
-      background_api.filterBackgrounds(backgroundSelectModalSearch.value);
+    ["keyup", "change", "search"].forEach(event => {
+      backgroundSelectModalSearch.addEventListener(event, () => {
+        background_api.filterBackgrounds(backgroundSelectModalSearch.value);
+      });
     });
   };
 
@@ -342,6 +358,7 @@
     messageModal.style.display = "none";
     messageModalTitle.innerHTML = "";
     messageModalText.value = "";
+    messageModalText.readonly = true;
     messageModalText.scrollTo(0, 0);
   };
 
@@ -365,8 +382,14 @@
 
   // load the settings, profiles, and character lists from storage.
   database.onAuthStateChanged(user => {
-    if (user) storage_api.startUp(user.uid);
-    else window.location.href = "index.html";
+    if (user) {
+      header_username.innerHTML = `Welcome ${user.displayName || "Anonymous"}`;
+      storage_api.startUp(user.uid);
+    }
+    else {
+      header_username.innerHTML = "";
+      window.location.href = "index.html";
+    }
   });
 
 }());

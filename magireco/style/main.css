@@ -77,6 +77,8 @@ header {
   padding: 5px;
   min-width: 30px;
   min-height: 30px;
+  width: fit-content;
+  height: fit-content;
   cursor: pointer;
   user-select: none;
   text-align: center;
@@ -124,6 +126,20 @@ header {
   left: auto;
   right: 20px;
   top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+#header_right_upper {
+  margin-left: auto;
+  float: right;
+}
+
+#header_right_lower {
+  text-align: right;
+  font-weight: bold;
+  font-size: 24px;
+  padding-top: 5px;
 }
 
 #contact_button {
@@ -134,25 +150,17 @@ header {
 
 .modal {
   display: none;
-  /* Hidden by default */
   position: fixed;
-  /* Stay in place */
   z-index: 1;
-  /* Sit on top */
   padding-top: 100px;
-  /* Location of the box */
   left: 0;
   top: 0;
   width: 100%;
-  /* Full width */
   height: 100%;
-  /* Full height */
   overflow: auto;
-  /* Enable scroll if needed */
   background-color: rgb(0, 0, 0);
-  /* Fallback color */
   background-color: rgba(0, 0, 0, 0.4);
-  /* Black w/ opacity */
+  transition: all 0.9 ease 0s;
 }
 
 /* Modal Content */

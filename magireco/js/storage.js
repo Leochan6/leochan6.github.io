@@ -56,7 +56,7 @@ let storage_api = (() => {
   const loadUserName = () => {
     database.onAuthStateChanged(user => {
       let name = user && user.displayName ? user.displayName : "Anonymous";
-      name_heading.innerHTML = "Welcome " + name;
+      header_username.innerHTML = "Welcome " + name;
     });
   };
 

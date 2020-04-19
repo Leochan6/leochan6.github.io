@@ -7,7 +7,13 @@
   <title>Magia Record Character List</title>
   <meta property="og:title" content="Magia Record Character List" />
   <meta property="og:description" content="Create and share a list of your Magical Girls from the game Magia Record." />
+  <meta property="og:url" content="https://leo-chan.me/magireco/index.html">
+  <meta property="og:site_name" content="Leo Chan's Website">
+  <meta property="og:type" content="website">
   <meta property="og:image" content="https://leo-chan.me/assets/listpreview.png" />
+  <meta property="og:image:width" content="2560">
+  <meta property="og:image:height" content="1213">
+  <meta property="og:type" content="website">
   <link href="style/main.css" rel="stylesheet" type="text/css" />
   <link href="style/login.css" rel="stylesheet" type="text/css" />
 </head>
@@ -17,8 +23,13 @@
   <header>
     <h1>Magia Record Character List</h1>
     <div id="header_right">
-      <button id="contact_button">Contact/Support</button>
-      <button id="signout_button">Sign Out</button>
+      <div id="header_right_upper">
+        <button id="contact_button">Contact / Support</button>
+        <button id="signout_button">Sign Out</button>
+      </div>
+      <div id="header_right_lower">
+        <div id="header_username"></div>
+      </div>
     </div>
   </header>
 
@@ -26,11 +37,11 @@
 
   <div id="main">
     <div id="header_buttons">
-      <button class="btn btnGray login_button" id="enter_button">Create Your Lists Now</button>
+      <button class="btn btnGray login_button hidden" id="enter_button">Create Your Lists Now</button>
     </div>
 
     <div id="content">
-      <div id="login_content">
+      <div class="hidden" id="login_content">
         <label id="login_label">Sign In</label>
         <form id="login_form">
           <input type="email" class="login_field" id="email_text" name="email" placeholder="Email">
@@ -59,7 +70,7 @@
         <p class="error_text hidden" id="signup_error"></p>
       </div>
 
-      <div id="anonymous_content">
+      <div class="hidden" id="anonymous_content">
         <div id="signin_anonymous_label">Sign In Anonymously</div>
         <p>You will not be able keep your list after you log out.</p>
         <div id="signin_anonymous_buttons">

@@ -241,6 +241,7 @@ let list_api = (function () {
   module.setLists = (lists) => {
     module.selectedList = { listId: list_name_title.getAttribute("listId"), list: null };
     saved_character_lists.innerHTML = "";
+    list_name_title.innerHTML = "";
     for (let [listId, list] of Object.entries(lists)) {
       let div = document.createElement("div");
       div.classList.add("character_list_row");
@@ -693,7 +694,15 @@ Copies of Each Rank:${Object.entries(result.rankCopies).map(([level, count]) => 
   module.openExportModal = () => {
     messageModal.style.display = "block";
     messageModalText.value = JSON.stringify(module.getCharacterList());
-    messageModalTitle.innerHTML = `${list_api.getSelectedList()} Contents`;
+    messageModalTitle.innerHTML = `${list_api.selectedList.name} Contents`;
+    messageModalList.innerHTML = "";
+  };
+
+  module.openImportModal = () => {
+    messageModal.style.display = "block";
+    messageModalText.value = "";
+    messageModalText.readonly = false;
+    messageModalTitle.innerHTML = `Import List`;
     messageModalList.innerHTML = "";
   };
 

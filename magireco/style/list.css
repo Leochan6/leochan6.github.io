@@ -95,11 +95,6 @@ hr {
   padding: 10px;
 }
 
-.character_list_row {
-  display: flex;
-  flex-direction: row;
-}
-
 #new_profile_field {
   width: 100px;
 }
@@ -128,15 +123,26 @@ hr {
   width: 180px;
 }
 
+.character_list_row {
+  display: flex;
+  flex-direction: row;
+  width: max-content;
+  max-width: 80%;
+}
+
+.character_list_row>* {
+  vertical-align: middle;
+}
+
 .character_list_entry {
-  border: black solid 1px;
+  border: rgb(100, 100, 100) solid 1px;
   border-radius: 10px;
+  padding: 5px 20px;
   margin: 5px;
-  padding: 5px;
-  cursor: pointer;
   user-select: none;
   text-align: center;
-  width: 100%;
+  word-wrap: break-word;
+  min-width: fit-content;
   cursor: pointer;
   outline: none;
   opacity: 0.8;
@@ -149,7 +155,8 @@ hr {
 }
 
 .selectedList {
-  border: black solid 2px;
+  border: rgb(0, 0, 0) solid 1px;
+  cursor: default;
   opacity: 1;
 }
 
@@ -234,8 +241,12 @@ hr {
   margin-right: 10px;
 }
 
-#export_button {
-  margin: 10px
+#import_export {
+  display: flex;
+}
+
+#import_options {
+  margin-left: 10px
 }
 
 #zoom_range {

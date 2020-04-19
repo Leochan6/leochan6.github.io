@@ -5,6 +5,7 @@
   const contact_button = document.querySelector("#contact_button");
   const header_buttons = document.querySelector("#header_buttons");
   const enter_button = document.querySelector("#enter_button");
+  const header_username = document.querySelector("#header_username");
 
   const login_content = document.querySelector("#login_content");
   const email_text = document.querySelector("#email_text");
@@ -41,12 +42,14 @@
         signout_button.classList.remove("hidden");
         enter_button.classList.remove("hidden");
         header_buttons.classList.remove("hidden");
+        header_username.innerHTML = `Welcome ${user.displayName || "Anonymous"}`;
       } else {
         login_content.classList.remove("hidden");
         anonymous_content.classList.remove("hidden");
         signout_button.classList.add("hidden");
         enter_button.classList.add("hidden");
         header_buttons.classList.add("hidden");
+        header_username.innerHTML = "";
       }
     });
 

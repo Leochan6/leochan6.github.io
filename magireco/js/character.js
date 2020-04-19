@@ -470,6 +470,7 @@ let character_api = (() => {
   module.openCharacterSelect = () => {
     characterSelectModal.style.display = "block";
     characterSelectModalList.innerHTML = "";
+    characterSelectModalSearch.focus();
     module.characters.forEach(character => {
       let star = 1;
       for (let [key, value] of Object.entries(character.ranks)) {

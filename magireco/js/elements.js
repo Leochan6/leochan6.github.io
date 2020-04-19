@@ -1,15 +1,14 @@
 let elements = (() => {
   let module = {};
 
+  // Header
   module.signout_button = document.querySelector("#signout_button");
+  module.header_username = document.querySelector("#header_username");
 
   // Error Text
   module.home_error_text = document.querySelector("#home_error_text");
   module.character_error_text = document.querySelector("#character_error_text");
   module.profile_error_text = document.querySelector("#profile_error_text");
-
-  // User Heading
-  module.name_heading = document.querySelector("#name_heading");
 
   // Home Buttons
   module.list_create = document.querySelector("#list_create");

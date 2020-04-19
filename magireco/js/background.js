@@ -24,6 +24,7 @@ let background_api = (function () {
     let backgrounds = module.getBackgrounds();
     backgroundSelectModal.style.display = "block";
     backgroundSelectModalList.innerHTML = "";
+    backgroundSelectModalSearch.focus();
     backgrounds.forEach(background => {
       let container = document.createElement("div");
       container.classList.add("background_image_preview");

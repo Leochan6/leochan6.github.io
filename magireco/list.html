@@ -7,7 +7,12 @@
   <title>Magia Record Character List</title>
   <meta property="og:title" content="Magia Record Character List" />
   <meta property="og:description" content="Create and share a list of your Magical Girls from the game Magia Record." />
+  <meta property="og:url" content="https://leo-chan.me/magireco/list.html">
+  <meta property="og:site_name" content="Leo Chan's Website">
+  <meta property="og:type" content="website">
   <meta property="og:image" content="https://leo-chan.me/assets/listpreview.png" />
+  <meta property="og:image:width" content="2560">
+  <meta property="og:image:height" content="1213">
   <link href="style/main.css" rel="stylesheet" type="text/css" />
   <link href="style/list.css" rel="stylesheet" type="text/css" />
   <link href="style/character.css" rel="stylesheet" type="text/css" />
@@ -17,20 +22,22 @@
   <header>
     <h1><a class="header_link" href="/magireco/" title="Home">Magia Record Character List</a></h1>
     <div id="header_right">
-      <button id="contact_button">Contact/Support</button>
-      <button id="signout_button">Sign Out</button>
+      <div id="header_right_upper">
+        <button id="contact_button">Contact / Support</button>
+        <button id="signout_button">Sign Out</button>
+      </div>
+      <div id="header_right_lower">
+        <div id="header_username"></div>
+      </div>
     </div>
   </header>
   <div class="horizontal-divider" id="header_content_divider"></div>
   <div id="content">
     <div id="left_bar">
-      <h2 class="" id="name_heading"></h2>
-      <div class="horizontal-divider"></div>
-      <div class="hidden left" id="collapse_sidebar_button"></div>
       <div id="tabs">
         <div id="home_tab" class="tab">
           <div class="tab_header">
-            <h2 class="tab_heading" id="home_heading" title="Multiple Lists Work in Progress">My Lists </h2>
+            <h2 class="tab_heading" id="home_heading">My Lists </h2>
           </div>
           <div class="tab_contents">
             <button id="new_list_button" class="small_btn add" title="Show/Hide New List Form"></button>
@@ -260,11 +267,17 @@
             <input type="range" min="30" max="300" value="100" id="zoom_range">
             Auto: <input type="checkbox" id="zoom_checkbox" disabled>
           </div>
-          <div id="export_options">
-            Export:
-            <button class="" id="export_image_button"
-              title="Not Working. Please Zoom In/Out and take a screenshot instead." disabled>Image</button>
-            <button class="" id="export_text_button">Text</button>
+          <div id="import_export">
+            <div id="export_options">
+              Export:
+              <button class="" id="export_image_button"
+                title="Not Working. Please Zoom In/Out and take a screenshot instead." disabled>Image</button>
+              <button class="" id="export_text_button">Text</button>
+            </div>
+            <div id="import_options">
+              Import:
+              <button class="" id="import_text_button" title="Work In Progress." disabled>Text</button>
+            </div>
           </div>
         </div>
         <div class="horizontal-divider"></div>
@@ -290,7 +303,7 @@
     <!-- Character Select Modal Dialog -->
     <div id="characterSelectModal" class="modal">
       <div class="modal-content modal-large">
-        <input type="text" id="characterSelectModalSearch" placeholder="Search">
+        <input type="search" id="characterSelectModalSearch" placeholder="Search">
         <span class="close" id="characterSelectModalClose">&times;</span>
         <div id="characterSelectModalList"></div>
       </div>
@@ -299,7 +312,7 @@
     <!-- Background Select Modal Dialog -->
     <div id="backgroundSelectModal" class="modal">
       <div class="modal-content modal-large">
-        <input type="text" id="backgroundSelectModalSearch" placeholder="Search">
+        <input type="search" id="backgroundSelectModalSearch" placeholder="Search">
         <span class="close" id="backgroundSelectModalClose">&times;</span>
         <div id="backgroundSelectModalList"></div>
       </div>
