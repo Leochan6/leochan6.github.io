@@ -28,12 +28,12 @@
         let tab_name = element.getAttribute("tab_name")
         if (!contents.classList.contains("hidden")) {
           contents.classList.add("hidden");
-          // storage_api.settings.expanded_tabs[tab_name] = false;
+          storage_api.settings.expanded_tabs[tab_name] = false;
           storage_api.updateSettings(`expanded_tabs/${tab_name}`, false);
         }
         else if (contents.classList.contains("hidden")) {
           contents.classList.remove("hidden");
-          // storage_api.settings.expanded_tabs[tab_name] = true;
+          storage_api.settings.expanded_tabs[tab_name] = true;
           storage_api.updateSettings(`expanded_tabs/${tab_name}`, true);
         }
       });
@@ -46,11 +46,10 @@
 
     // update the preview display on form change.
     document.querySelectorAll(".form").forEach(element => {
-      element.addEventListener("change", () => {
-        character_api.updatePreviewOnForm();
-      });
-      element.addEventListener("keyup", () => {
-        character_api.updatePreviewOnForm();
+      ["change", "keyup"].forEach(event => {
+        element.addEventListener(event, () => {
+          character_api.updatePreviewOnForm();
+        });
       });
     });
 
@@ -202,6 +201,18 @@
     // check the list name on change.
     new_list_name_field.addEventListener("change", () => {
       list_api.checkListName();
+    });
+
+    display_alignment_select.addEventListener("change", () => {
+      list_api.changeAlignment(display_alignment_select.value);
+    })
+
+    display_padding_x_field.addEventListener("change", () => {
+      list_api.changePadding("x", display_padding_x_field.value);
+    });
+
+    display_padding_y_field.addEventListener("change", () => {
+      list_api.changePadding("y", display_padding_y_field.value);
     });
 
     // set the background.

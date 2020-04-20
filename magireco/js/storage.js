@@ -75,6 +75,12 @@ let storage_api = (() => {
       if (expanded && tab_contents.classList.contains("hidden")) tab_contents.classList.remove("hidden");
       else if (!expanded && !tab_contents.classList.contains("hidden")) tab_contents.classList.add("hidden");
     });
+    // display settings
+    character_list_content.style.padding = `${module.settings.padding_y}px ${module.settings.padding_x}px`;
+    document.querySelectorAll(".character_row").forEach(character_row => character_row.style.justifyContent = list_api.direction_to_flex[module.settings.display_alignment]);
+    display_alignment_select.value = module.settings.display_alignment;
+    display_padding_x_field.value = module.settings.padding_x;
+    display_padding_y_field.value = module.settings.padding_y;
   };
 
   const loadProfiles = (snapshot) => {

@@ -114,6 +114,10 @@ hr {
   margin: 0px;
 }
 
+#display_padding_x_field, #display_padding_y_field {
+  width: 50px;
+}
+
 #background_select {
   width: 180px;
 }

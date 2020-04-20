@@ -223,6 +223,32 @@
           </div>
         </div>
         <div class="horizontal-divider"></div>
+        <div id="display_tab" class="tab">
+          <div class="tab_header">
+            <h2 class="tab_heading" tab_name="display_tab">Display Settings</h2>
+          </div>
+          <div class="tab_contents hidden">
+            <table id="display_table">
+              <tr>
+                <td>Alignment:</td>
+                <td><select id="display_alignment_select">
+                    <option value="left">Left</option>
+                    <option value="center">Center</option>
+                    <option value="right">Right</option>
+                  </select></td>
+              </tr>
+              <tr class="hidden">
+                <td>Padding X:</td>
+                <td><input type="number" id="display_padding_x_field" min="0"></td>
+              </tr>
+              <tr class="hidden">
+                <td>Padding Y:</td>
+                <td><input type="number" id="display_padding_y_field" min="0"></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <div class="horizontal-divider"></div>
         <div id="background_tab" class="tab">
           <div class="tab_header">
             <h2 class="tab_heading" tab_name="background_tab">Background</h2>

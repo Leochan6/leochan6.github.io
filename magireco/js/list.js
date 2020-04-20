@@ -113,12 +113,13 @@ let list_api = (function () {
       if (display_groups[group].length == 0) continue;
       let group_row = document.createElement("div");
       group_row.classList.add("character_row");
-      group_row.style.width = `${properties.displays_per_row * 122}px`;
+      group_row.style.width = `${properties.displays_per_row * (122)}px`;
       group_row.setAttribute("group", group);
       display_groups[group].forEach((display) => {
         let character_display = character_api.createDisplay(display, true);
         group_row.appendChild(character_display);
       });
+      group_row.style.justifyContent = module.direction_to_flex[storage_api.settings.display_alignment];
       character_list_content.appendChild(group_row);
     }
   };
@@ -288,6 +289,23 @@ let list_api = (function () {
       }
     }
   }
+
+  module.direction_to_flex = { "left": "flex-start", "center": "center", "right": "flex-end" };
+
+  module.changeAlignment = (alignment) => {
+    storage_api.settings.display_alignment = alignment;
+    storage_api.updateSettings("display_alignment", alignment);
+    document.querySelectorAll(".character_row").forEach(character_row => {
+      character_row.style.justifyContent = module.direction_to_flex[alignment];
+    });
+  };
+
+  module.changePadding = (direction, padding) => {
+    console.log(padding);
+    storage_api.settings[`padding_${direction}`] = padding;
+    storage_api.updateSettings(`padding_${direction}`, padding);
+    character_list_content.style.padding = `${storage_api.settings.padding_y}px ${storage_api.settings.padding_x}px`;
+  };
 
   /**
    * sets the zoom of the character list.

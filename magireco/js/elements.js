@@ -58,6 +58,11 @@ let elements = (() => {
   module.sort_id_dir_select = document.querySelector("#sort_id_dir_select");
   module.displays_per_row = document.querySelector("#displays_per_row");
 
+  // Display Settings
+  module.display_alignment_select = document.querySelector("#display_alignment_select");
+  module.display_padding_x_field = document.querySelector("#display_padding_x_field");
+  module.display_padding_y_field = document.querySelector("#display_padding_y_field");
+
   // Background
   module.background_select = document.querySelector("#background_select");
   module.remove_background_button = document.querySelector("#remove_background_button");

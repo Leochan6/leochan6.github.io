@@ -137,9 +137,13 @@ let database = (() => {
       home_tab: true,
       char_tab: true,
       sort_tab: true,
+      display_tab: true,
       background_tab: true,
       setting_tab: false
-    }
+    },
+    display_alignment: "left",
+    padding_x: 0,
+    padding_y: 0
   };
 
   module.updateSettings = (userId, settingName, content) => {
