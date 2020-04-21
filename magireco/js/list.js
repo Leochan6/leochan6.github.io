@@ -272,13 +272,13 @@ let list_api = (function () {
         module.selectList(first, lists[first]);
       }
       // enable list duplicate and delete buttons
-      delete_list_button.disabled = true;
-      duplicate_list_form.disabled = true;
+      delete_list_button.disabled = false;
+      duplicate_list_form.disabled = false;
     }
     // disable list duplicate and delete buttons if no list
     else {
-      delete_list_button.disabled = false;
-      duplicate_list_form.disabled = false;
+      delete_list_button.disabled = true;
+      duplicate_list_form.disabled = true;
     }
   }
 

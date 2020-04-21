@@ -15,7 +15,7 @@ let elements = (() => {
   module.list_duplicate = document.querySelector("#list_duplicate");
   module.new_list_button = document.querySelector("#new_list_button");
   module.duplicate_list_button = document.querySelector("#duplicate_list_button");
-  module.delete_list_button = document.querySelector("#new_list_button");
+  module.delete_list_button = document.querySelector("#delete_list_button");
   module.duplicate_list_form = document.querySelector("#duplicate_list_form");
   module.duplicate_list_name_field = document.querySelector("#duplicate_list_name_field");
   module.duplicate_list_create_button = document.querySelector("#duplicate_list_create_button");

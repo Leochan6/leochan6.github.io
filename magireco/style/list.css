@@ -97,7 +97,7 @@ hr {
   border: rgb(100, 100, 100) solid 1px;
   border-radius: 10px;
   padding: 5px 20px;
-  margin: 5px;
+  margin: 5px 0px;
   user-select: none;
   font-size: 16px;
   font-family: 'Times New Roman', Times, serif;
@@ -111,7 +111,7 @@ hr {
 }
 
 #duplicate_list_name_field {
-  width: 120px;
+  width: 140px;
 }
 
 #new_list_create_button {}
