@@ -46,7 +46,7 @@
 
     // update the preview display on form change.
     document.querySelectorAll(".form").forEach(element => {
-      ["change", "keyup"].forEach(event => {
+      ["change", "keyup", "input"].forEach(event => {
         element.addEventListener(event, () => {
           character_api.updatePreviewOnForm();
         });

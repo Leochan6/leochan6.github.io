@@ -109,7 +109,7 @@ let character_api = (() => {
    * @param {module.Display} display 
    * @param {Function} callback 
    */
-  const isValidCharacterDisplay = (character_id, display, callback) => {
+  const isValidCharacterDisplay = (character_id, display) => {
     let character = getCharacter(character_id);
     let err = [];
     // check id.
@@ -131,7 +131,7 @@ let character_api = (() => {
     if (display.magia > display.episode) err.push(`Display Magia ${display.magia} must be less than or equal to Display Episode ${display.episode}.`);
     // check episode.
     if (display.episode < 1 || display.episode > 5) err.push(`Display Episode ${display.episode} must be between 1 and 5.`);
-    callback(err);
+    return err;
   };
 
   /**

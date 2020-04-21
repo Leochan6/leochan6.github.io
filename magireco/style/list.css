@@ -127,6 +127,21 @@ hr {
   display: none;
 }
 
+.grid_form {
+  /* border: rgb(100, 100, 100) solid 1px;
+  border-radius: 10px;
+  padding: 2px 10px;
+  font-size: 16px;
+  font-family: 'Times New Roman', Times, serif;
+  outline: none;
+  transition: all 0.3s ease 0s; */
+}
+
+.custom-input {
+  /* padding-left: 14px; */
+  padding-left: 3px;
+}
+
 #display_preview {
   display: flex;
   flex-direction: row;

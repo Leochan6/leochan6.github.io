@@ -25,7 +25,16 @@
 
 <body>
   <header>
-    <h1><a class="header_link" href="/magireco/" title="Home">Magia Record Character List</a></h1>
+    <div id="header_left">
+      <h1><a class="header_link" href="/magireco/" title="Home">Magia Record Character List</a></h1>
+    </div>
+    <div id="header_center">
+      <div id="nav_bar">
+        <button id="magical_girls_page_button" class="nav_button">Magical Girls</button>
+        <button id="memoria_page_button" class="nav_button">Memoria</button>
+        <button id="teams_page_button" class="nav_button">Teams</button>
+      </div>
+    </div>
     <div id="header_right">
       <div id="header_right_upper">
         <button id="contact_button">Contact / Support</button>
@@ -80,12 +89,13 @@
               <table id="char_fields_table" width=100%>
                 <tr>
                   <td>Name:</td>
-                  <td><select id="name_select" style="width:140px" title="Name of the Character."></select></td>
+                  <td><select id="name_select" class="grid_form" style="width:140px"
+                      title="Name of the Character."></select></td>
                   <td><button id="characterSelectModalOpen">+</td>
                 </tr>
                 <tr>
                   <td>Attribute:
-                  <td><select id="attr_select" class="form" title="Attribute of the Character.">
+                  <td><select id="attr_select" class="form grid_form" title="Attribute of the Character.">
                       <option value="dark">Dark</option>
                       <option value="fire">Fire</option>
                       <option value="light">Light</option>
@@ -96,7 +106,7 @@
                 </tr>
                 <tr>
                   <td>Rank:</td>
-                  <td><select id="rank_select" class="form" title="Rank of the Character (Stars/Rarity).">
+                  <td><select id="rank_select" class="form grid_form" title="Rank of the Character (Stars/Rarity).">
                       <option value="1">1</option>
                       <option value="2">2</option>
                       <option value="3">3</option>
@@ -106,13 +116,15 @@
                 </tr>
                 <tr>
                   <td>Experience Level:</td>
-                  <td><input id="level_select" class="form custom-input" type="number" value=1 maxlength="3" size=3
-                      min=1 max=100 border="2px solid black" title="Experience Level of the Character (Enhancement).">
+                  <td><input id="level_select" class="form custom-input grid_form" type="number" value=1 maxlength="3"
+                      size=3 min=1 max=100 border="2px solid black"
+                      title="Experience Level of the Character (Enhancement).">
                   </td>
                 </tr>
                 <tr>
                   <td>Magic Level:</td>
-                  <td><select id="magic_select" class="form" title="Magic Level of the Character (Memoria Slots).">
+                  <td><select id="magic_select" class="form grid_form"
+                      title="Magic Level of the Character (Memoria Slots).">
                       <option value="0">0</option>
                       <option value="1">1</option>
                       <option value="2">2</option>
@@ -121,7 +133,7 @@
                 </tr>
                 <tr>
                   <td>Magia Level:</td>
-                  <td><select id="magia_select" class="form" title="Magia Level of the Character.">
+                  <td><select id="magia_select" class="form grid_form" title="Magia Level of the Character.">
                       <option value="1">1</option>
                       <option value="2">2</option>
                       <option value="3">3</option>
@@ -131,7 +143,7 @@
                 </tr>
                 <tr>
                   <td>Episode Level:</td>
-                  <td><select id="episode_select" class="form" title="Episode Level of the Character (Bond).">
+                  <td><select id="episode_select" class="form grid_form" title="Episode Level of the Character (Bond).">
                       <option value="1">1</option>
                       <option value="2">2</option>
                       <option value="3">3</option>
