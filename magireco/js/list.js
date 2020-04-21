@@ -250,6 +250,7 @@ let list_api = (function () {
     module.selectedList = { listId: list_name_title.getAttribute("listId"), list: null };
     saved_character_lists.innerHTML = "";
     list_name_title.innerHTML = "";
+    list_stats_list.innerHTML = "";
     for (let [listId, list] of Object.entries(lists)) {
       let div = document.createElement("div");
       div.classList.add("character_list_row");
@@ -260,33 +261,24 @@ let list_api = (function () {
       entry.addEventListener("click", () => {
         list_api.selectList(listId, list);
       });
-      let duplicateButton = document.createElement("button");
-      duplicateButton.className = "small_btn duplicate";
-      duplicateButton.title = "Duplicate List";
-      duplicateButton.addEventListener("click", () => {
-        let newName = prompt(`Enter Duplicated List Name`);
-        if (newName) list_api.duplicateList(list, newName);
-      });
-      let deleteButton = document.createElement("button");
-      deleteButton.className = "small_btn delete";
-      deleteButton.title = "Delete List";
-      deleteButton.addEventListener("click", () => {
-        let res = confirm(`Are you sure you want to delete the list ${list.name}?`);
-        if (res) list_api.deleteList(listId, list);
-      });
       div.append(entry);
-      div.append(duplicateButton);
-      div.append(deleteButton);
       saved_character_lists.append(div);
     }
     if (Object.entries(lists).length > 0) {
       if (module.selectedList && module.selectedList.listId && lists[module.selectedList.listId]) {
-        return module.selectList(module.selectedList.listId, lists[module.selectedList.listId]);
-      }
-      else {
+        module.selectList(module.selectedList.listId, lists[module.selectedList.listId]);
+      } else {
         let first = Object.entries(lists)[0][0];
-        return module.selectList(first, lists[first]);
+        module.selectList(first, lists[first]);
       }
+      // enable list duplicate and delete buttons
+      delete_list_button.disabled = true;
+      duplicate_list_form.disabled = true;
+    }
+    // disable list duplicate and delete buttons if no list
+    else {
+      delete_list_button.disabled = false;
+      duplicate_list_form.disabled = false;
     }
   }
 

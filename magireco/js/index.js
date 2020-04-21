@@ -184,11 +184,30 @@
         list_create.style.display = "block";
         new_list_button.classList.replace("add", "minus");
         new_list_name_field.focus();
-      }
-      else {
+      } else {
         list_create.style.visibility = "collapse";
         list_create.style.display = "none";
         new_list_button.classList.replace("minus", "add");
+      }
+    });
+
+    duplicate_list_button.addEventListener("click", () => {
+      if (list_duplicate.style.display === "none") {
+        list_duplicate.style.visibility = "visible";
+        list_duplicate.style.display = "block";
+        duplicate_list_name_field.focus();
+      } else {
+        list_duplicate.style.visibility = "collapse";
+        list_duplicate.style.display = "none";
+        duplicate_list_name_field.value = "";
+      }
+    });
+
+    // delete the selected list.
+    delete_list_button.addEventListener("click", () => {
+      if (list_api.selectedList.listId) {
+        let res = confirm(`Are you sure you want to delete the list ${list_api.selectedList.list.name}?`);
+        if (res) list_api.deleteList(list_api.selectedList.listId);
       }
     });
 
@@ -197,6 +216,17 @@
       e.preventDefault();
       list_api.createList();
     });
+
+    // duplicate list.
+    duplicate_list_create_button.addEventListener("click", (e) => {
+      e.preventDefault();
+      let newName = duplicate_list_name_field.value;
+      duplicate_list_name_field.value = "";
+      if (newName && list_api.selectedList.listId) list_api.duplicateList(list_api.selectedList.list, newName);
+      list_duplicate.style.visibility = "collapse";
+      list_duplicate.style.display = "none";
+    });
+
 
     // check the list name on change.
     new_list_name_field.addEventListener("change", () => {

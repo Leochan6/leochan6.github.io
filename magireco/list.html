@@ -13,6 +13,11 @@
   <meta property="og:image" content="https://leo-chan.me/assets/listpreview.png" />
   <meta property="og:image:width" content="2560">
   <meta property="og:image:height" content="1213">
+  <meta name="twitter:title" content="Magia Record Character List" />
+  <meta name="twitter:description"
+    content="Create and share a list of your Magical Girls from the game Magia Record." />
+  <meta name="twitter:image" content="https://leo-chan.me/assets/listpreview.png" />
+  <meta name="twitter:card" content="summary_large_image" />
   <link href="style/main.css" rel="stylesheet" type="text/css" />
   <link href="style/list.css" rel="stylesheet" type="text/css" />
   <link href="style/character.css" rel="stylesheet" type="text/css" />
@@ -40,19 +45,28 @@
             <h2 class="tab_heading" tab_name="home_tab">My Lists </h2>
           </div>
           <div class="tab_contents hidden">
-            <button id="new_list_button" class="small_btn add" title="Show/Hide New List Form"></button>
-            <div id="list_create">
-              <form id="new_list_form">
-                <table id=" new_list_table">
-                  <tr>
-                    <td>List Name:</td>
-                    <td><input id="new_list_name_field" type="text"></td>
-                    <td><button id="new_list_create_button">Create</button></td>
-                  </tr>
-                </table>
-              </form>
+            <div id="list_buttons">
+              <button id="new_list_button" class="small_btn add" title="Create a New List"></button>
+              <button id="duplicate_list_button" class="small_btn duplicate"
+                title="Duplicate the Selected List"></button>
+              <button id="delete_list_button" class="small_btn delete" title="Delete the Selected List"></button>
             </div>
             <div id="saved_character_lists"></div>
+            <div id="list_create" style="display: none;">
+              <form id="new_list_form">
+                <input type="text" id="new_list_name_field" class="form_input" placeholder="New List Name"></td>
+                <button type="submit" id="new_list_create_button" class="small_btn"
+                  title="Create a New List">Create</button>
+              </form>
+            </div>
+            <div id="list_duplicate" style="display: none;">
+              <form id="duplicate_list_form">
+                <input type="text" id="duplicate_list_name_field" class="form_input" placeholder="Duplicate List Name">
+                </td>
+                <button type="submit" id="duplicate_list_create_button" class="small_btn"
+                  title="Duplicate the List">Duplicate</button>
+              </form>
+            </div>
             <p class="error_text" id="home_error_text"></p>
           </div>
         </div>
@@ -352,6 +366,7 @@
       </div>
     </div>
   </div>
+
   <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-firestore.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-auth.js"></script>

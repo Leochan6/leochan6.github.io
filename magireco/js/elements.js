@@ -12,8 +12,14 @@ let elements = (() => {
 
   // Home Buttons
   module.list_create = document.querySelector("#list_create");
-  module.new_list_form = document.querySelector("#new_list_form");
+  module.list_duplicate = document.querySelector("#list_duplicate");
   module.new_list_button = document.querySelector("#new_list_button");
+  module.duplicate_list_button = document.querySelector("#duplicate_list_button");
+  module.delete_list_button = document.querySelector("#new_list_button");
+  module.duplicate_list_form = document.querySelector("#duplicate_list_form");
+  module.duplicate_list_name_field = document.querySelector("#duplicate_list_name_field");
+  module.duplicate_list_create_button = document.querySelector("#duplicate_list_create_button");
+  module.new_list_form = document.querySelector("#new_list_form");
   module.new_list_name_field = document.querySelector("#new_list_name_field");
   module.new_list_create_button = document.querySelector("#new_list_create_button");
   module.saved_character_lists = document.querySelector("#saved_character_lists");

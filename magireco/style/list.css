@@ -1,11 +1,13 @@
 body {
   min-width: 800px;
   min-height: 500px;
-  overflow: inherit;
+  overflow: visible;
   margin: 10px;
   border: solid black 1px;
+  /* max-width: 100%;
+  max-height: 100%; */
   max-width: 100%;
-  max-height: 100%;
+  min-height: 100%;
 }
 
 hr {
@@ -35,12 +37,6 @@ hr {
 #left_bar {
   position: relative;
   border-top: none;
-}
-
-#collapse_sidebar_button {
-  position: absolute;
-  right: 10px;
-  top: 25px;
 }
 
 #name_heading {
@@ -87,19 +83,46 @@ hr {
   transition: all 0.5s ease 0s;
 }
 
-#new_list_name_field {
-  width: 100px;
+#list_buttons {
+  /* position: absolute; */
+  left: 110px;
+  top: 5px;
 }
 
-#new_list_form {
-  padding: 10px;
+#list_buttons>* {
+  margin: 5px 1px;
 }
+
+.form_input {
+  border: rgb(100, 100, 100) solid 1px;
+  border-radius: 10px;
+  padding: 5px 20px;
+  margin: 5px;
+  user-select: none;
+  font-size: 16px;
+  font-family: 'Times New Roman', Times, serif;
+  text-align: center;
+  outline: none;
+  transition: all 0.3s ease 0s;
+}
+
+#new_list_name_field {
+  width: 120px;
+}
+
+#duplicate_list_name_field {
+  width: 120px;
+}
+
+#new_list_create_button {}
+
+#new_list_form {}
 
 #new_profile_field {
   width: 100px;
 }
 
-#list_create {
+#list_create, #list_duplicate {
   visibility: collapse;
   display: none;
 }
@@ -122,26 +145,15 @@ hr {
   width: 180px;
 }
 
-.character_list_row {
-  display: flex;
-  flex-direction: row;
-  width: max-content;
-  max-width: 80%;
-}
-
-.character_list_row>* {
-  vertical-align: middle;
-}
-
 .character_list_entry {
   border: rgb(100, 100, 100) solid 1px;
   border-radius: 10px;
   padding: 5px 20px;
-  margin: 5px;
+  margin: 5px 0px;
   user-select: none;
   text-align: center;
   word-wrap: break-word;
-  min-width: fit-content;
+  width: fit-content;
   cursor: pointer;
   outline: none;
   opacity: 0.8;
@@ -268,6 +280,8 @@ hr {
   display: flex;
   flex-direction: column;
   position: relative;
+  overflow-x: auto;
+  overflow-y: auto;
   margin: 10px;
   max-height: 100%;
 }
@@ -276,9 +290,8 @@ hr {
   display: flex;
   flex-direction: column;
   position: relative;
-  overflow-x: auto;
-  overflow-y: auto;
-  width: 100%;
+  height: fit-content;
+  width: fit-content;
   background-repeat: no-repeat;
   background-size: cover;
 }
