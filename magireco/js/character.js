@@ -81,16 +81,20 @@ let character_api = (() => {
    * @param {Function} callback 
    */
   const getCharacter = (id) => {
-    let character_list = collection.filter(character => character.id === id);
-    let name = character_list[0].name;
-    let attribute = character_list[0].attribute.toLowerCase();
-    let rank_list = character_list.map((character) => character.rank);
-    let ranks = Array(5).fill(false);
-    for (let i = 0; i < 5; i++) {
-      if (rank_list.indexOf((i + 1).toString(10)) != -1) ranks[i] = true;
+    try {
+      let character_list = collection.filter(character => character.id === id);
+      let name = character_list[0].name;
+      let attribute = character_list[0].attribute.toLowerCase();
+      let rank_list = character_list.map((character) => character.rank);
+      let ranks = Array(5).fill(false);
+      for (let i = 0; i < 5; i++) {
+        if (rank_list.indexOf((i + 1).toString(10)) != -1) ranks[i] = true;
+      }
+      let character = new module.Character(id, name, attribute, ranks);
+      return character;
+    } catch (e) {
+      return null;
     }
-    let character = new module.Character(id, name, attribute, ranks);
-    return character;
   };
 
   /**
@@ -109,13 +113,14 @@ let character_api = (() => {
    * @param {module.Display} display 
    * @param {Function} callback 
    */
-  const isValidCharacterDisplay = (character_id, display) => {
+  module.isValidCharacterDisplay = (character_id, display, validName = true) => {
     let character = getCharacter(character_id);
+    if (!character) return ["Cannot get character."]
     let err = [];
     // check id.
     if (display.id !== character.id) err.push(`Display Id ${display.id} does not match Character ID ${character.id}.`);
     // check name.
-    if (display.name !== character.name) err.push(`Display Name ${display.name} does not match Character Name ${character.Name}.`);
+    if (display.name !== character.name && validName) err.push(`Display Name ${display.name} does not match Character Name ${character.name}.`);
     // check rank.
     if (!character.ranks[display.rank - 1]) err.push(`Display Rank ${display.rank} does not match Character Ranks ${character.ranks}`);
     // check level.
@@ -131,6 +136,7 @@ let character_api = (() => {
     if (display.magia > display.episode) err.push(`Display Magia ${display.magia} must be less than or equal to Display Episode ${display.episode}.`);
     // check episode.
     if (display.episode < 1 || display.episode > 5) err.push(`Display Episode ${display.episode} must be between 1 and 5.`);
+    if (err.length > 0) console.log(character, display);
     return err;
   };
 
@@ -381,7 +387,7 @@ let character_api = (() => {
   module.updatePreviewOnForm = () => {
     let display = getFormDisplay();
     character_error_text.innerHTML = '';
-    let error = isValidCharacterDisplay(name_select.value, display);
+    let error = module.isValidCharacterDisplay(name_select.value, display);
     if (error.length == 0) {
       create_button.disabled = false;
       updatePreviewDisplay(display);

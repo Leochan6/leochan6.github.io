@@ -311,7 +311,7 @@ let list_api = (function () {
    */
   module.zoom_fit = () => {
     if (character_list_content.innerHTML) {
-      // let widthRatio = Math.max((document.querySelector("body").clientWidth - left_bar.clientWidth - left_main_divider.clientWidth - 10 - 10 - 20), 500) / character_list_content.clientWidth;
+      // let widthRatio = Math.max((document.querySelector("body").clientWidth - menu_bar.clientWidth - left_main_divider.clientWidth - 10 - 10 - 20), 500) / character_list_content.clientWidth;
       // let heightRatio = Math.max((document.querySelector("body").clientHeight - main_header.clientHeight - header_content_divider.clientHeight - main_header.clientHeight - 10 - 10 - 20), 300) / character_list_content.clientHeight;
       // let zoom = Math.min(widthRatio, heightRatio);
       // zoom = zoom < 1 ? zoom : 1;
@@ -717,6 +717,13 @@ Episode Levels:${Object.entries(result.episodes).map(([level, count]) => `\n  ${
 Copies of Each Rank:${Object.entries(result.rankCopies).map(([level, count]) => `\n  ${level}: ${count}`).toString()}`;
   };
 
+  module.openStatsModal = () => {
+    messageModal.style.display = "block";
+    messageModalText.value = module.getMoreStats();
+    messageModalTitle.innerHTML = `More ${list_api.getListName()} Stats`;
+    messageModalList.innerHTML = "";
+  };
+
   module.openExportModal = () => {
     messageModal.style.display = "block";
     messageModalText.value = JSON.stringify(module.getCharacterList());
@@ -725,18 +732,57 @@ Copies of Each Rank:${Object.entries(result.rankCopies).map(([level, count]) => 
   };
 
   module.openImportModal = () => {
-    messageModal.style.display = "block";
-    messageModalText.value = "";
-    messageModalText.readonly = false;
-    messageModalTitle.innerHTML = `Import List`;
-    messageModalList.innerHTML = "";
+    importListModal.style.display = "block";
+    importListModalTitle.innerHTML = "Import List"
+    importListModalName.value = "";
+    importListModalText.innerHTML = "";
   };
 
-  module.openStatsModal = () => {
-    messageModal.style.display = "block";
-    messageModalText.value = module.getMoreStats();
-    messageModalTitle.innerHTML = `More ${list_api.getListName()} Stats`;
-    messageModalList.innerHTML = "";
+  module.importList = () => {
+    let data = importListModalText.value;
+    let listName = importListModalName.value;
+    if (!listName) {
+      importListModalError.innerHTML = `The list name must not be empty.`;
+      return;
+    }
+    if (storage_api.listExists(listName)) {
+      importListModalError.innerHTML = `The list name ${listName} already exists.`;
+      return;
+    }
+    importListModalError.innerHTML = "";
+    try {
+      let character_list = JSON.parse(data);
+      if (validateCharacterList(character_list)) {
+        list_name_title.innerHTML = listName;
+        profile_select.value = "Default";
+        character_list_content.innerHTML = "";
+        storage_api.manualCreateList(listName, character_list, "Default", true);
+        importListModal.style.display = "none";
+        importListModalName.value = "";
+        importListModalText.value = "";
+        importListModalText.scrollTo(0, 0);
+      } else {
+        importListModalError.innerHTML = "The format of the JSON is invalid. Please contact Leo Chan for details.";
+        return;
+      }
+    } catch (e) {
+      importListModalError.innerHTML = "The format of the JSON is invalid. Please contact Leo Chan for details. " + e;
+      return;
+    }
+  };
+
+  const validateCharacterList = (character_list) => {
+    try {
+      if (Array.from(character_list).every(character => {
+        let message = character_api.isValidCharacterDisplay(character.id, character, false);
+        if (message.length > 0) console.log(message);
+        return message.length === 0;
+      })) return true;
+    } catch (e) {
+      console.error(e);
+      return false;
+    }
+    return false;
   };
 
   return module;

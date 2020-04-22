@@ -28,13 +28,7 @@
     <div id="header_left">
       <h1><a class="header_link" href="/magireco/" title="Home">Magia Record Character List</a></h1>
     </div>
-    <div id="header_center">
-      <div id="nav_bar">
-        <button id="magical_girls_page_button" class="nav_button">Magical Girls</button>
-        <button id="memoria_page_button" class="nav_button">Memoria</button>
-        <button id="teams_page_button" class="nav_button">Teams</button>
-      </div>
-    </div>
+    <div id="header_center" class="hidden"></div>
     <div id="header_right">
       <div id="header_right_upper">
         <button id="contact_button">Contact / Support</button>
@@ -47,305 +41,389 @@
   </header>
   <div class="horizontal-divider" id="header_content_divider"></div>
   <div id="content">
-    <div id="left_bar">
+    <div id="nav_bar" class="hidden" style="display: none;">
+      <div id="magical_girl_nav" class="nav_button" style="content: url(./assets/icon/magical_girls.png);"
+        content_name="characters_page">
+      </div>
+      <div id="memoria_nav" class="nav_button" style="content: url(./assets/icon/memoria.png);"
+        content_name="memoria_page"></div>
+      <div id="team_nav" class="nav_button" style="content: url(./assets/icon/teams.png);" content_name="teams_page">
+      </div>
+    </div>
+    <div class="vertical-divider hidden" style="display: none;"></div>
+    <div id="menu_bar">
       <div id="tabs">
-        <div id="home_tab" class="tab">
-          <div class="tab_header">
-            <h2 class="tab_heading" tab_name="home_tab">My Lists </h2>
-          </div>
-          <div class="tab_contents hidden">
-            <div id="list_buttons">
-              <button id="new_list_button" class="small_btn add" title="Create a New List"></button>
-              <button id="duplicate_list_button" class="small_btn duplicate"
-                title="Duplicate the Selected List"></button>
-              <button id="delete_list_button" class="small_btn delete" title="Delete the Selected List"></button>
+        <div class="characters_page">
+          <div id="home_tab" class="tab">
+            <div class="tab_header">
+              <h2 class="tab_heading" tab_name="home_tab">My Lists </h2>
             </div>
-            <div id="saved_character_lists"></div>
-            <div id="list_create" style="display: none;">
-              <form id="new_list_form">
-                <input type="text" id="new_list_name_field" class="form_input" placeholder="New List Name"></td>
-                <button type="submit" id="new_list_create_button" class="small_btn"
-                  title="Create a New List">Create</button>
-              </form>
-            </div>
-            <div id="list_duplicate" style="display: none;">
-              <form id="duplicate_list_form">
-                <input type="text" id="duplicate_list_name_field" class="form_input" placeholder="Duplicate List Name">
-                </td>
-                <button type="submit" id="duplicate_list_create_button" class="small_btn"
-                  title="Duplicate the List">Duplicate</button>
-              </form>
-            </div>
-            <p class="error_text" id="home_error_text"></p>
-          </div>
-        </div>
-        <div class="horizontal-divider"></div>
-        <div id="char_tab" class="tab">
-          <div class="tab_header">
-            <h2 class="tab_heading" tab_name="char_tab">Character</h2>
-          </div>
-          <div class="tab_contents hidden">
-            <div id="char_fields">
-              <table id="char_fields_table" width=100%>
-                <tr>
-                  <td>Name:</td>
-                  <td><select id="name_select" class="grid_form" style="width:140px"
-                      title="Name of the Character."></select></td>
-                  <td><button id="characterSelectModalOpen">+</td>
-                </tr>
-                <tr>
-                  <td>Attribute:
-                  <td><select id="attr_select" class="form grid_form" title="Attribute of the Character.">
-                      <option value="dark">Dark</option>
-                      <option value="fire">Fire</option>
-                      <option value="light">Light</option>
-                      <option value="forest">Forest</option>
-                      <option value="void">Void</option>
-                      <option value="water">Water</option>
-                    </select></td>
-                </tr>
-                <tr>
-                  <td>Rank:</td>
-                  <td><select id="rank_select" class="form grid_form" title="Rank of the Character (Stars/Rarity).">
-                      <option value="1">1</option>
-                      <option value="2">2</option>
-                      <option value="3">3</option>
-                      <option value="4">4</option>
-                      <option value="5">5</option>
-                    </select></td>
-                </tr>
-                <tr>
-                  <td>Experience Level:</td>
-                  <td><input id="level_select" class="form custom-input grid_form" type="number" value=1 maxlength="3"
-                      size=3 min=1 max=100 border="2px solid black"
-                      title="Experience Level of the Character (Enhancement).">
+            <div class="tab_contents hidden">
+              <div id="list_buttons">
+                <button id="new_list_button" class="small_btn add" title="Create a New List"></button>
+                <button id="duplicate_list_button" class="small_btn duplicate"
+                  title="Duplicate the Selected List"></button>
+                <button id="delete_list_button" class="small_btn delete" title="Delete the Selected List"></button>
+              </div>
+              <div id="saved_character_lists"></div>
+              <div id="list_create" style="display: none;">
+                <form id="new_list_form">
+                  <input type="text" id="new_list_name_field" class="form_input" placeholder="New List Name"></td>
+                  <button type="submit" id="new_list_create_button" class="small_btn"
+                    title="Create a New List">Create</button>
+                </form>
+              </div>
+              <div id="list_duplicate" style="display: none;">
+                <form id="duplicate_list_form">
+                  <input type="text" id="duplicate_list_name_field" class="form_input"
+                    placeholder="Duplicate List Name">
                   </td>
-                </tr>
-                <tr>
-                  <td>Magic Level:</td>
-                  <td><select id="magic_select" class="form grid_form"
-                      title="Magic Level of the Character (Memoria Slots).">
-                      <option value="0">0</option>
-                      <option value="1">1</option>
-                      <option value="2">2</option>
-                      <option value="3">3</option>
-                    </select></td>
-                </tr>
-                <tr>
-                  <td>Magia Level:</td>
-                  <td><select id="magia_select" class="form grid_form" title="Magia Level of the Character.">
-                      <option value="1">1</option>
-                      <option value="2">2</option>
-                      <option value="3">3</option>
-                      <option value="4">4</option>
-                      <option value="5">5</option>
-                    </select></td>
-                </tr>
-                <tr>
-                  <td>Episode Level:</td>
-                  <td><select id="episode_select" class="form grid_form" title="Episode Level of the Character (Bond).">
-                      <option value="1">1</option>
-                      <option value="2">2</option>
-                      <option value="3">3</option>
-                      <option value="4">4</option>
-                      <option value="5">5</option>
-                    </select></td>
-                </tr>
-              </table>
+                  <button type="submit" id="duplicate_list_create_button" class="small_btn"
+                    title="Duplicate the List">Duplicate</button>
+                </form>
+              </div>
+              <p class="error_text" id="home_error_text"></p>
             </div>
-            <div id="home_buttons" align="left">
-              <button id="create_button" class="btn btnDisabled" type="submit" disabled>Create</button>
-              <button id="update_button" class="btn btnDisabled" disabled>Update</button>
-              <button id="copy_button" class="btn btnDisabled" disabled>Copy</button>
-              <button id="delete_button" class="btn btnDisabled" disabled>Delete</button>
-              <button id="min_all_button" class="btn btnDisabled">Min All</button>
-              <button id="max_all_button" class="btn btnDisabled">Max All</button>
+          </div>
+          <div class="horizontal-divider"></div>
+          <div id="char_tab" class="tab">
+            <div class="tab_header">
+              <h2 class="tab_heading" tab_name="char_tab">Character</h2>
             </div>
-            <p class="error_text" id="character_error_text"></p>
-            <h3 id="preview_text">Preview:</h3>
-            <div id="display_preview"></div>
-          </div>
-        </div>
-        <div class="horizontal-divider"></div>
-        <div id="sort_tab" class="tab">
-          <div class="tab_header">
-            <h2 class="tab_heading" tab_name="sort_tab">Sorting Profile</h2>
-          </div>
-          <div class="tab_contents hidden">
-            <div id="sorting_profiles">
-              <table id="sorting_profile_table">
-                <tbody>
+            <div class="tab_contents hidden">
+              <div id="char_fields">
+                <table id="char_fields_table" width=100%>
                   <tr>
-                    <td>Current Profile:</td>
-                    <td><select id="profile_select"></select></td>
-                    <td><button id="new_profile_button" title="Create a new profile">+</button></td>
-                    <td><button id="delete_profile_button" title="Delete">×</button></td>
+                    <td>Name:</td>
+                    <td><select id="name_select" class="grid_form" style="width:140px"
+                        title="Name of the Character."></select></td>
+                    <td><button id="characterSelectModalOpen">+</td>
                   </tr>
-                  <tr id="new_profile_row" style="visibility: collapse;">
-                    <td>Profile Name:</td>
-                    <td><input id="new_profile_field" type="text"></td>
-                    <td><button id="save_profile_button" title="Save this profile">Save</button></td>
-                    <td><button id="close_new_profile_button" title="Close">×</button></td>
+                  <tr>
+                    <td>Attribute:
+                    <td><select id="attr_select" class="form grid_form" title="Attribute of the Character.">
+                        <option value="dark">Dark</option>
+                        <option value="fire">Fire</option>
+                        <option value="light">Light</option>
+                        <option value="forest">Forest</option>
+                        <option value="void">Void</option>
+                        <option value="water">Water</option>
+                      </select></td>
                   </tr>
-                </tbody>
+                  <tr>
+                    <td>Rank:</td>
+                    <td><select id="rank_select" class="form grid_form" title="Rank of the Character (Stars/Rarity).">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                      </select></td>
+                  </tr>
+                  <tr>
+                    <td>Experience Level:</td>
+                    <td><input id="level_select" class="form custom-input grid_form" type="number" value=1 maxlength="3"
+                        size=3 min=1 max=100 border="2px solid black"
+                        title="Experience Level of the Character (Enhancement).">
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Magic Level:</td>
+                    <td><select id="magic_select" class="form grid_form"
+                        title="Magic Level of the Character (Memoria Slots).">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                      </select></td>
+                  </tr>
+                  <tr>
+                    <td>Magia Level:</td>
+                    <td><select id="magia_select" class="form grid_form" title="Magia Level of the Character.">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                      </select></td>
+                  </tr>
+                  <tr>
+                    <td>Episode Level:</td>
+                    <td><select id="episode_select" class="form grid_form"
+                        title="Episode Level of the Character (Bond).">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                      </select></td>
+                  </tr>
+                </table>
+              </div>
+              <div id="home_buttons" align="left">
+                <button id="create_button" class="btn btnDisabled" type="submit" disabled>Create</button>
+                <button id="update_button" class="btn btnDisabled" disabled>Update</button>
+                <button id="copy_button" class="btn btnDisabled" disabled>Copy</button>
+                <button id="delete_button" class="btn btnDisabled" disabled>Delete</button>
+                <button id="min_all_button" class="btn btnDisabled">Min All</button>
+                <button id="max_all_button" class="btn btnDisabled">Max All</button>
+              </div>
+              <p class="error_text" id="character_error_text"></p>
+              <h3 id="preview_text">Preview:</h3>
+              <div id="display_preview"></div>
+            </div>
+          </div>
+          <div class="horizontal-divider"></div>
+          <div id="sort_tab" class="tab">
+            <div class="tab_header">
+              <h2 class="tab_heading" tab_name="sort_tab">Sorting Profile</h2>
+            </div>
+            <div class="tab_contents hidden">
+              <div id="sorting_profiles">
+                <table id="sorting_profile_table">
+                  <tbody>
+                    <tr>
+                      <td>Current Profile:</td>
+                      <td><select id="profile_select"></select></td>
+                      <td><button id="new_profile_button" title="Create a new profile">+</button></td>
+                      <td><button id="delete_profile_button" title="Delete">×</button></td>
+                    </tr>
+                    <tr id="new_profile_row" style="visibility: collapse;">
+                      <td>Profile Name:</td>
+                      <td><input id="new_profile_field" type="text"></td>
+                      <td><button id="save_profile_button" title="Save this profile">Save</button></td>
+                      <td><button id="close_new_profile_button" title="Close">×</button></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div id="sorting_fields" align="left">
+                <table id="sorting_table">
+                  <tr>
+                    <td title="Group by this property.">Group By:</td>
+                    <td><select id="group_by_select" class="sort_form">
+                        <option value="attribute">Attribute</option>
+                        <option value="rank">Rank</option>
+                        <option value="magic">Magic</option>
+                        <option value="magia">Magia</option>
+                        <option value="episode">Episode</option>
+                        <option value="none">None</option>
+                      </select>
+                    </td>
+                    <td id="group_dir_select" class="sort_dir ascend"></td>
+                  </tr>
+                  <tr>
+                    <td title="Sort by this property first.">Sort By 1:</td>
+                    <td><select id="sort_by_1_select" class="sort_form">
+                        <option value="attribute">Attribute</option>
+                        <option value="rank">Rank</option>
+                        <option value="level">Level</option>
+                        <option value="magic">Magic</option>
+                        <option value="magia">Magia</option>
+                        <option value="episode">Episode</option>
+                        <option value="none">None</option>
+                      </select>
+                    </td>
+                    <td id="sort_dir_1_select" class="sort_dir descend"></td>
+                  </tr>
+                  <tr>
+                    <td title="Sort by this property second.">Sort By 2:</td>
+                    <td><select id="sort_by_2_select" class="sort_form">
+                        <option value="attribute">Attribute</option>
+                        <option value="rank">Rank</option>
+                        <option value="level">Level</option>
+                        <option value="magic">Magic</option>
+                        <option value="magia">Magia</option>
+                        <option value="episode">Episode</option>
+                        <option value="none">None</option>
+                      </select>
+                    </td>
+                    <td id="sort_dir_2_select" class="sort_dir descend"></td>
+                  </tr>
+                  <tr>
+                    <td title="Sort by the id of the character last.">ID Sort Direction:</td>
+                    <td></td>
+                    <td id="sort_id_dir_select" class="sort_dir descend"></td>
+                  </tr>
+                  <tr>
+                    <td>Displays Per Row:</td>
+                    <td><input id="displays_per_row" class="custom-input sort_form" type="number" value=8 maxlength="2"
+                        size=2 min=1 max=99 border="2px solid black"></td>
+                  </tr>
+                </table>
+              </div>
+              <p class="error_text" id="profile_error_text"></p>
+            </div>
+          </div>
+          <div class="horizontal-divider"></div>
+          <div id="display_tab" class="tab">
+            <div class="tab_header">
+              <h2 class="tab_heading" tab_name="display_tab">Display Settings</h2>
+            </div>
+            <div class="tab_contents hidden">
+              <table id="display_table">
+                <tr>
+                  <td>Alignment:</td>
+                  <td><select id="display_alignment_select">
+                      <option value="left">Left</option>
+                      <option value="center">Center</option>
+                      <option value="right">Right</option>
+                    </select></td>
+                </tr>
+                <tr class="hidden">
+                  <td>Padding X:</td>
+                  <td><input type="number" id="display_padding_x_field" min="0"></td>
+                </tr>
+                <tr class="hidden">
+                  <td>Padding Y:</td>
+                  <td><input type="number" id="display_padding_y_field" min="0"></td>
+                </tr>
               </table>
             </div>
-            <div id="sorting_fields" align="left">
-              <table id="sorting_table">
+          </div>
+          <div class="horizontal-divider"></div>
+          <div id="background_tab" class="tab">
+            <div class="tab_header">
+              <h2 class="tab_heading" tab_name="background_tab">Background</h2>
+            </div>
+            <div class="tab_contents hidden">
+              <table id="background_table">
                 <tr>
-                  <td title="Group by this property.">Group By:</td>
-                  <td><select id="group_by_select" class="sort_form">
-                      <option value="attribute">Attribute</option>
-                      <option value="rank">Rank</option>
-                      <option value="magic">Magic</option>
-                      <option value="magia">Magia</option>
-                      <option value="episode">Episode</option>
-                      <option value="none">None</option>
-                    </select>
-                  </td>
-                  <td id="group_dir_select" class="sort_dir ascend"></td>
+                  <td>Background:</td>
+                  <td><select id="background_select"></select></td>
+                  <td><button id="backgroundSelectModalOpen">+</button></td>
                 </tr>
+              </table>
+              <button id="remove_background_button">Remove</button></tr>
+            </div>
+          </div>
+          <div class="horizontal-divider"></div>
+          <div id="setting_tab" class="tab tab_hidden">
+            <div class="tab_header">
+              <h2 class="tab_heading" tab_name="setting_tab">Settings</h2>
+            </div>
+            <div class="tab_contents hidden">
+              <table id="settings_table" class="tab_hidden">
                 <tr>
-                  <td title="Sort by this property first.">Sort By 1:</td>
-                  <td><select id="sort_by_1_select" class="sort_form">
-                      <option value="attribute">Attribute</option>
-                      <option value="rank">Rank</option>
-                      <option value="level">Level</option>
-                      <option value="magic">Magic</option>
-                      <option value="magia">Magia</option>
-                      <option value="episode">Episode</option>
-                      <option value="none">None</option>
-                    </select>
-                  </td>
-                  <td id="sort_dir_1_select" class="sort_dir descend"></td>
-                </tr>
-                <tr>
-                  <td title="Sort by this property second.">Sort By 2:</td>
-                  <td><select id="sort_by_2_select" class="sort_form">
-                      <option value="attribute">Attribute</option>
-                      <option value="rank">Rank</option>
-                      <option value="level">Level</option>
-                      <option value="magic">Magic</option>
-                      <option value="magia">Magia</option>
-                      <option value="episode">Episode</option>
-                      <option value="none">None</option>
-                    </select>
-                  </td>
-                  <td id="sort_dir_2_select" class="sort_dir descend"></td>
-                </tr>
-                <tr>
-                  <td title="Sort by the id of the character last.">ID Sort Direction:</td>
-                  <td></td>
-                  <td id="sort_id_dir_select" class="sort_dir descend"></td>
-                </tr>
-                <tr>
-                  <td>Displays Per Row:</td>
-                  <td><input id="displays_per_row" class="custom-input sort_form" type="number" value=8 maxlength="2"
-                      size=2 min=1 max=99 border="2px solid black"></td>
+                  <td><button id="reset_profiles_button">Reset Profiles</button></td>
                 </tr>
               </table>
             </div>
-            <p class="error_text" id="profile_error_text"></p>
           </div>
         </div>
-        <div class="horizontal-divider"></div>
-        <div id="display_tab" class="tab">
-          <div class="tab_header">
-            <h2 class="tab_heading" tab_name="display_tab">Display Settings</h2>
+        <div class="memoria_page hidden">
+          <div id="memoria_home_tab" class="tab">
+            <div class="tab_header">
+              <h2 class="tab_heading" tab_name="memoria_create_tab">My Memoria Lists</h2>
+            </div>
+            <div class="tab_contents hidden">
+              <div id="list_buttons">
+                <button id="new_memoria_list_button" class="small_btn add" title="Create a New Memoria List"></button>
+                <button id="duplicate_memoria_list_button" class="small_btn duplicate"
+                  title="Duplicate the Selected Memoria List"></button>
+                <button id="delete_memoria_list_button" class="small_btn delete"
+                  title="Delete the Selected Memoria List"></button>
+              </div>
+              <div id="saved_memoria_lists"></div>
+              <div id="memoria_list_create" style="display: none;">
+                <form id="new_memoria_list_form">
+                  <input type="text" id="new_memoria_list_name_field" class="form_input"
+                    placeholder="New List Memoria Name"></td>
+                  <button type="submit" id="new_memoria_list_create_button" class="small_btn"
+                    title="Create a New Memoria List">Create</button>
+                </form>
+              </div>
+              <div id="memoria_list_duplicate" style="display: none;">
+                <form id="duplicate_memoria_list_form">
+                  <input type="text" id="duplicate_memoria_list_name_field" class="form_input"
+                    placeholder="Duplicate Memoria List Name">
+                  </td>
+                  <button type="submit" id="duplicate_memoria_list_create_button" class="small_btn"
+                    title="Duplicate the Memoria List">Duplicate</button>
+                </form>
+              </div>
+              <p class="error_text" id="memoria home_error_text"></p>
+            </div>
           </div>
-          <div class="tab_contents hidden">
-            <table id="display_table">
-              <tr>
-                <td>Alignment:</td>
-                <td><select id="display_alignment_select">
-                    <option value="left">Left</option>
-                    <option value="center">Center</option>
-                    <option value="right">Right</option>
-                  </select></td>
-              </tr>
-              <tr class="hidden">
-                <td>Padding X:</td>
-                <td><input type="number" id="display_padding_x_field" min="0"></td>
-              </tr>
-              <tr class="hidden">
-                <td>Padding Y:</td>
-                <td><input type="number" id="display_padding_y_field" min="0"></td>
-              </tr>
-            </table>
+          <div class="horizontal-divider"></div>
+          <div id="memoria_create_tab" class="tab">
+            <div class="tab_header">
+              <h2 class="tab_heading" tab_name="memoria_create_tab">Add Memoria</h2>
+            </div>
+            <div class="tab_contents hidden">
+
+            </div>
           </div>
+          <div class="horizontal-divider"></div>
+          <div id="memoria_sort_tab" class="tab">
+            <div class="tab_header">
+              <h2 class="tab_heading" tab_name="memoria_sort_tab">Sort Memoria</h2>
+            </div>
+            <div class="tab_contents hidden">
+
+            </div>
+          </div>
+          <div class="horizontal-divider"></div>
         </div>
-        <div class="horizontal-divider"></div>
-        <div id="background_tab" class="tab">
-          <div class="tab_header">
-            <h2 class="tab_heading" tab_name="background_tab">Background</h2>
-          </div>
-          <div class="tab_contents hidden">
-            <table id="background_table">
-              <tr>
-                <td>Background:</td>
-                <td><select id="background_select"></select></td>
-                <td><button id="backgroundSelectModalOpen">+</button></td>
-              </tr>
-            </table>
-            <button id="remove_background_button">Remove</button></tr>
-          </div>
-        </div>
-        <div class="horizontal-divider"></div>
-        <div id="setting_tab" class="tab tab_hidden">
-          <div class="tab_header">
-            <h2 class="tab_heading" tab_name="setting_tab">Settings</h2>
-          </div>
-          <div class="tab_contents hidden">
-            <table id="settings_table" class="tab_hidden">
-              <tr>
-                <td><button id="reset_profiles_button">Reset Profiles</button></td>
-              </tr>
-            </table>
+        <div class="teams_page hidden">
+          <div id="teams_home_tab" class="tab">
+            <div class="tab_header">
+              <h2 class="tab_heading" tab_name="teams_home_tab">My Teams</h2>
+            </div>
+            <div class="tab_contents hidden"></div>
           </div>
         </div>
       </div>
     </div>
     <div class="vertical-divider" id="left_main_divider"></div>
     <div id="main">
-      <div id="main_header">
-        <div id="name_and_zoom">
-          <h2 id="list_name_title"></h2>
-          <div id="zoom_tools" title="Auto Zoom not Working">
-            Zoom: <input type="number" id="zoom_field" value=100 maxlength="3" size=3 min=30 max=300
-              style="width: 40px;">
-            <input type="range" min="30" max="300" value="100" id="zoom_range">
-            Auto: <input type="checkbox" id="zoom_checkbox" disabled>
-          </div>
-          <div id="import_export">
-            <div id="export_options">
-              Export:
-              <button class="" id="export_image_button"
-                title="Not Working. Please Zoom In/Out and take a screenshot instead." disabled>Image</button>
-              <button class="" id="export_text_button">Text</button>
+      <div class="characters_page">
+        <div id="main_header">
+          <div id="name_and_zoom">
+            <h2 id="list_name_title"></h2>
+            <div id="zoom_tools" title="Auto Zoom not Working">
+              Zoom: <input type="number" id="zoom_field" value=100 maxlength="3" size=3 min=30 max=300
+                style="width: 40px;">
+              <input type="range" min="30" max="300" value="100" id="zoom_range">
+              Auto: <input type="checkbox" id="zoom_checkbox" disabled>
             </div>
-            <div id="import_options">
-              Import:
-              <button class="" id="import_text_button" title="Work In Progress." disabled>Text</button>
+            <div id="import_export">
+              <div id="export_options">
+                Export:
+                <button class="" id="export_image_button"
+                  title="Not Working. Please Zoom In/Out and take a screenshot instead." disabled>Image</button>
+                <button class="" id="export_text_button">Text</button>
+              </div>
+              <div id="import_options">
+                Import:
+                <button class="" id="import_text_button">Text</button>
+              </div>
             </div>
           </div>
+          <div class="horizontal-divider"></div>
+          <div id="filters_buttons_and_stats">
+            <div class="" id="add_list_filters">
+              Filters: <button id="add_filter_button">New</button>
+              <button id="apply_filter_button">Apply</button>
+              <button id="reset_filter_button">Reset</button>
+            </div>
+            <div class="" id="list_stats">
+              Stats: <label id="list_stats_list"></label>
+              <button id="more_stats_button">More Stats</button>
+            </div>
+          </div>
+          <div class="" id="list_filters"></div>
         </div>
         <div class="horizontal-divider"></div>
-        <div id="filters_buttons_and_stats">
-          <div class="" id="add_list_filters">
-            Filters: <button id="add_filter_button">New</button>
-            <button id="apply_filter_button">Apply</button>
-            <button id="reset_filter_button">Reset</button>
-          </div>
-          <div class="" id="list_stats">
-            Stats: <label id="list_stats_list"></label>
-            <button id="more_stats_button">More Stats</button>
-          </div>
+        <div id="character_list_container">
+          <div id="character_list_content"></div>
         </div>
-        <div class="" id="list_filters"></div>
       </div>
-      <div class="horizontal-divider"></div>
-      <div id="character_list_container">
-        <div id="character_list_content"></div>
+      <div class="memoria_page hidden">
+        <h1>Memoria List</h1>
+      </div>
+      <div class="teams_page hidden">
+        <h1>Team Display</h1>
       </div>
     </div>
 
@@ -375,6 +453,19 @@
         <textarea id="messageModalText" readonly></textarea>
         <button id="messageModalCopy">Copy</button>
         <div id="messageModalList"></div>
+      </div>
+    </div>
+
+    <!-- Import List Modal Dialog -->
+    <div id="importListModal" class="modal">
+      <div class="modal-content modal-small" id="importListModalContent">
+        <span class="close" id="importListModalClose">&times;</span>
+        <h2 id="importListModalTitle">Import List</h2>
+        <input type="text" id="importListModalName" placeholder="List Name"></textarea>
+        <textarea id="importListModalText" placeholder="JSON"></textarea>
+        <button id="importListModalImport">Import</button>
+        <div id="importListModalList"></div>
+        <p id="importListModalError" class="error_text"></p>
       </div>
     </div>
   </div>

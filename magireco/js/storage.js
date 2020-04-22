@@ -41,6 +41,10 @@ let storage_api = (() => {
     database.createList(userId, { name: newName, characterList: list.characterList, selectedProfile: selectedProfile, selectedBackground: selectedBackground });
   };
 
+  module.manualCreateList = (name, characterList, selectedProfile, selectedBackground) => {
+    database.createList(userId, { name: name, characterList: characterList, selectedProfile: selectedProfile, selectedBackground: selectedBackground });
+  }
+
   module.updateProfile = (name, profile) => {
     database.updateProfile(userId, name, profile);
   };

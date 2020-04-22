@@ -25,6 +25,25 @@ hr {
   height: 100%;
 }
 
+#nav_bar {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav_button {
+  width: 100px;
+  padding: 10px;
+  transition: all 0.5s ease 0s;
+}
+
+.nav_button.selected_nav {
+  background: rgb(100, 100, 100);
+}
+
+.nav_button:hover {
+  background: rgb(31, 31, 31);
+}
+
 #main {
   position: relative;
   display: flex;
@@ -34,7 +53,7 @@ hr {
   height: 100%;
 }
 
-#left_bar {
+#menu_bar {
   position: relative;
   border-top: none;
 }
@@ -404,4 +423,25 @@ hr {
 .background_image_preview>img {
   width: 200px;
   height: auto;
+}
+
+#importListModalContent {
+  display: block;
+}
+
+#importListModalName {
+  width: 200px;
+  margin-bottom: 10px;
+}
+
+#importListModalClose {
+  display: flex;
+  flex-direction: column;
+}
+
+#importListModalText {
+  align-self: center;
+  width: 80%;
+  height: 60%;
+  resize: none;
 }

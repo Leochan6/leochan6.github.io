@@ -83,7 +83,7 @@ let elements = (() => {
   module.header_content_divider = document.querySelector("#header_content_divider");
   module.content = document.querySelector("#content");
   module.main = document.querySelector("#main");
-  module.left_bar = document.querySelector("#left_bar");
+  module.menu_bar = document.querySelector("#menu_bar");
   module.left_main_divider = document.querySelector("#left_main_divider");
   module.main_header = document.querySelector("#main_header");
 
@@ -127,6 +127,16 @@ let elements = (() => {
   module.backgroundSelectModalClose = document.querySelector("#backgroundSelectModalClose");
   module.backgroundSelectModalName = document.querySelector("#backgroundSelectModalName");
   module.backgroundSelectModalList = document.querySelector("#backgroundSelectModalList");
+
+  // Message Modal
+  module.importListModal = document.querySelector("#importListModal");
+  module.importListModalTitle = document.querySelector("#importListModalTitle");
+  module.importListModalName = document.querySelector("#importListModalName");
+  module.importListModalText = document.querySelector("#importListModalText");
+  module.importListModalImport = document.querySelector("#importListModalImport");
+  module.importListModalClose = document.querySelector("#importListModalClose");
+  module.importListModalList = document.querySelector("#importListModalList");
+  module.importListModalError = document.querySelector("#importListModalError");
 
 
   return module;

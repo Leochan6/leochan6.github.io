@@ -1,9 +1,7 @@
 header {
   min-width: 300px;
   margin: 10px;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  height: fit-content;
 }
 
 .header_link {
@@ -18,21 +16,15 @@ header {
 }
 
 #header_left {
-  float: left;
+  display: inline-block;
 }
 
-#header_center {
-  display: flex;
-  align-items: center;
-  display: none;
-}
-
-#nav_bar {
-  display: flex;
+#header_left>h1 {
+  margin: 0.25em 0px;
 }
 
 #header_right {
-  float: right;
+  position: absolute;
   left: auto;
   right: 20px;
   top: 20px;

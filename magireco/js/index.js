@@ -21,6 +21,24 @@
       messageModalList.innerHTML = "";
     });
 
+    // nav bar items.
+    document.querySelectorAll(".nav_button").forEach(element => {
+      element.addEventListener("click", () => {
+        if (!element.classList.contains("selected_nav")) {
+          document.querySelectorAll(".nav_button").forEach(nav_item => {
+            nav_item.classList.remove("selected_nav");
+            document.querySelectorAll(`.${nav_item.getAttribute("content_name")}`).forEach(content => {
+              if (!content.classList.contains("hidden")) content.classList.add("hidden");
+            });
+          });
+          element.classList.add("selected_nav");
+          document.querySelectorAll(`.${element.getAttribute("content_name")}`).forEach(content => {
+            content.classList.remove("hidden");
+          });
+        }
+      });
+    });
+
     // toggle visibility of the tab.
     document.querySelectorAll(".tab_heading").forEach(element => {
       element.addEventListener("click", () => {
@@ -274,6 +292,20 @@
       list_api.openImportModal();
     });
 
+    importListModalImport.addEventListener("click", () => {
+      list_api.importList();
+      // let file = import_text_button.files.item(0);
+      // const reader = new FileReader();
+      // reader.readAsText(file);
+      // reader.onload = () => {
+      //   try {
+      //     list_api.importList(JSON.parse(reader.result));
+      //   } catch (e) {
+      //     console.log(e);
+      //   }
+      // };
+    })
+
     // add new filter.
     add_filter_button.addEventListener("click", () => {
       list_api.createFilter();
@@ -331,6 +363,7 @@
       if (event.target == messageModal && event.keyCode == 27 && messageModal.style.display === "block") closeMessageModal()
       else if (event.target == characterSelectModal && event.keyCode == 27 && characterSelectModal.style.display === "block") closeCharacterSelectModal();
       else if (event.target == backgroundSelectModal && event.keyCode == 27 && backgroundSelectModal.style.display === "block") closeBackgroundSelectModal();
+      else if (event.target == backgroundSelectModal && event.keyCode == 27 && backgroundSelectModal.style.display === "block") closeImportListModal();
     });
 
     // hide modal dialogs
@@ -338,6 +371,7 @@
       if (event.target == messageModal && messageModal.style.display === "block") closeMessageModal()
       else if (event.target == characterSelectModal && characterSelectModal.style.display === "block") closeCharacterSelectModal();
       else if (event.target == backgroundSelectModal && backgroundSelectModal.style.display === "block") closeBackgroundSelectModal();
+      else if (event.target == importListModal && importListModal.style.display === "block") closeImportListModal();
     });
 
     // hide message modal dialog
@@ -383,6 +417,11 @@
         background_api.filterBackgrounds(backgroundSelectModalSearch.value);
       });
     });
+
+    // hide import list modal dialog
+    importListModalClose.addEventListener("click", () => {
+      closeImportListModal();
+    });
   };
 
   const closeMessageModal = () => {
@@ -403,6 +442,13 @@
     backgroundSelectModal.style.display = "none";
     backgroundSelectModalSearch.value = "";
     backgroundSelectModalList.scrollTo(0, 0);
+  };
+
+  const closeImportListModal = () => {
+    importListModal.style.display = "none";
+    importListModalName.value = "";
+    importListModalText.value = "";
+    importListModalText.scrollTo(0, 0);
   };
 
   // update form and preview display on startup.
