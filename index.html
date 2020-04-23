@@ -3,30 +3,83 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Leo Chan</title>
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>Leo Chan's Homepage</title>
+  <meta property="og:title" content="Leo Chan's Homepage" />
+  <meta property="og:description" content="Home Page for Leo Chan including projects and contact information." />
+  <meta property="og:url" content="https://leo-chan.me" />
+  <meta property="og:site_name" content="Leo Chan's Homepage" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:title" content="Leo Chan's Homepage" />
+  <meta name="twitter:description" content="Home Page for Leo Chan including projects and contact information." />
   <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
-  <header>
-    <h1>Leo Chan's Website</h1>
-  </header>
-  <div>
-    <a class="link" href="/magireco/" target="_blank">Website Tool: Magia Record Character List</a></h2>
-    <p>
-      <img class="preview_image" src="/assets/listpreview.png">
-    </p>
-    <p>A web tool for creating a list of your Magical Girls.</p>
+
+  <div id="introduction_container">
+    <img src="assets/placeholder_profile.png" id="profile_picture" style="border-radius: 50%;">
+    <h1>Leo Chan</h1>
+    <p class="hidden">I am a computer science student attending the <a href="http://utsc.utoronto.ca">University of
+        Toronto
+        Scarborough</a>
+      in the final year of my Bachelor of Science Degree in the Software Engineering Stream of the <a
+        href="https://utsc.calendar.utoronto.ca/specialist-program-computer-science-science">Computer Science
+        Program.</a></p>
   </div>
-  <div>
-    <a class="link"
-      href="https://www.figma.com/c/plugin/764389386376321679/Magia-Record-Character-Grid-Creator-Interface"
-      target="_blank">Figma Plugin: Magia Record Character Grid Creator Interface</a></h2>
-    <p>
-      <img class="preview_image"
-        src="https://raw.githubusercontent.com/Leochan6/figma-magireco/master/readme/Banner.png">
-    </p>
-    <p>A Figma Plugin for creating a grid view of your Magical Girls.</p>
+
+  <div id="projects_container">
+    <h2>Projects</h2>
+    <div>
+      <a class="home_link" href="/magireco/" target="_blank">Website Tool: Magia Record Character List</a></h2>
+      <p>
+        <img class="preview_image" src="/assets/listpreview.png">
+      </p>
+      <p>A web tool for creating a list of your Magical Girls.</p>
+    </div>
+    <div>
+      <a class="home_link"
+        href="https://www.figma.com/c/plugin/764389386376321679/Magia-Record-Character-Grid-Creator-Interface"
+        target="_blank">Figma Plugin: Magia Record Character Grid Creator Interface</a></h2>
+      <p>
+        <img class="preview_image"
+          src="https://raw.githubusercontent.com/Leochan6/figma-magireco/master/readme/Banner.png">
+      </p>
+      <p>A Figma Plugin for creating a grid view of your Magical Girls.</p>
+    </div>
+  </div>
+
+  <div id="contact_container">
+    <div id="contact_header">
+      <h2>Contact Information</h2>
+    </div>
+    <div id="contact_contents">
+      <table class="contact_table">
+        <tbody class="contact_body">
+          <tr class="contact_row">
+            <td class="contact_cell">Website</td>
+            <td class="contact_cell"><a href="http://leo-chan.me" target="_blank" class="table_link">leo-chan.me</a>
+            </td>
+          </tr>
+          <tr class="contact_row">
+            <td class="contact_cell">GitHub</td>
+            <td class="contact_cell"><a href="http://github.com/Leochan6" target="_blank"
+                class="table_link">Leochan6</a></td>
+          </tr>
+          <tr class="contact_row">
+            <td class="contact_cell">Email</td>
+            <td class="contact_cell"><a href="mailto:admin@leo-chan.me" target="_blank"
+                class="table_link">admin@leo-chan.me</a></td>
+          </tr>
+          <tr class="contact_row">
+            <td class="contact_cell">Location</td>
+            <td class="contact_cell"><a href="https://www.google.com/maps/place/Richmond+Hill,+ON/" target="_blank"
+                class="table_link">Richmond Hill, Canada</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 
 </body>

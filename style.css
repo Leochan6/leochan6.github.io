@@ -1,14 +1,75 @@
+body {
+  display: flex;
+  flex-direction: column;
+  background-image: url("assets/white-sky.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  overflow-x: hidden;
+  align-content: center;
+  align-items: center;
+  color: rgb(255, 255, 255);
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 30px 30px 100px 30px;
+}
+
+body::-webkit-scrollbar {
+  width: 12px;
+  background-color: rgb(55, 55, 55);
+}
+
+body::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: rgb(0, 95, 139);
+}
+
+body::-webkit-scrollbar-track {
+  background-color: rgb(55, 55, 55);
+}
+
+#introduction_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 16px;
+  text-align: center;
+  width: 40%;
+}
+
+#introduction_container>p>a {
+  text-decoration: none;
+  color: #00a1d6;
+}
+
+#profile_picture {
+  width: 50%;
+  user-select: none;
+}
+
+#projects_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 40%;
+  text-align: center;
+}
+
 .preview_image {
   width: 50%;
   transition: all 0.3s ease 0s;
+  user-select: none;
+  position: relative;
+  z-index: 1;
 }
 
 .preview_image:active {
-  width: 100%;
+  /* width: 70vw; */
+  transform: scale(3);
+  z-index: 2;
 }
 
-.link {
-  color: rgb(14, 117, 165);
+.home_link {
+  color: #00a1d6;
   text-decoration: none;
   font-size: 24px;
   font-family: Arial, Helvetica, sans-serif;
@@ -16,6 +77,72 @@
   transition: all 0.3s ease 0s;
 }
 
-.link:hover {
-  opacity: 1;
+.home_link:hover {
+  color: #003749;
+}
+
+#projects_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#contact_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 40%;
+  text-align: center;
+  justify-content: center;
+}
+
+.contact_row {
+  width: 100%;
+  font-size: 24px;
+  align-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+.contact_cell {
+  text-align: left;
+  align-content: center;
+}
+
+.contact_table {
+  margin: 0 auto;
+  width: 40vw;
+  vertical-align: middle;
+}
+
+.table_link {
+  color: #00a1d6;
+  text-decoration: none;
+  transition: all 0.3s ease 0s;
+}
+
+.table_link:hover {
+  color: #003749;
+}
+
+h1, h2, h3 {
+  color: white;
+}
+
+h1 {
+  font-size: 48px;
+}
+
+h2 {
+  font-size: 36px;
+}
+
+.hidden {
+  display: none;
+  visibility: hidden;
+  opacity: 0;
+}
+
+::selection {
+  background: #7e7e7e;
 }

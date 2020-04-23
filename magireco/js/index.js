@@ -1,10 +1,6 @@
 (function () {
   "use strict";
 
-  window.setInterval(() => {
-
-  });
-
   window.onload = () => {
 
     // sign out button.
