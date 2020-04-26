@@ -51,8 +51,8 @@ let profile_api = (function () {
       storage_api.deleteProfile(profileName);
       module.selectedProfile = "Default";
       profile_select.value = "Default";
-      let listId = list_api.getListId();
-      if (listId) storage_api.updateList(listId, list_api.getListName(), storage_api.lists[listId].characterList, "Default", background_api.getSelectedBackground() || "");
+      let listId = character_list_api.getListId();
+      if (listId) storage_api.updateList(listId, character_list_api.getListName(), storage_api.lists[listId].characterList, "Default", background_api.getSelectedBackground() || "");
     }
   };
 

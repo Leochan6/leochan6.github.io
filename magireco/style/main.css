@@ -182,18 +182,27 @@ header {
   border: 1px solid #888;
 }
 
-.modal-large {
+.modal-large-width {
   width: 80%;
+}
+
+.modal-large-height {
   height: 80%;
 }
 
-.modal-medium {
+.modal-medium-width {
   width: 40%;
+}
+
+.modal-medium-height {
   height: 40%;
 }
 
-.modal-small {
+.modal-small-width {
   width: 40%;
+}
+
+.modal-small-height {
   height: 40%;
 }
 
@@ -220,7 +229,14 @@ header {
 
 #messageModalText {
   align-self: center;
-  width: 80%;
+  width: 90%;
   height: 80%;
   resize: none;
+  padding: 5px;
+}
+
+#messageModalCopy {
+  position: absolute;
+  top: 77.5%;
+  left: 30%;
 }

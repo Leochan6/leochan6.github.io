@@ -61,16 +61,18 @@
 .level .level_pre {
   position: relative;
   margin-top: 8px;
-  margin-right: 5px;
+  margin-right: 2px;
   font-size: 16px;
   color: #D8D58A;
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  font-weight: 600;
+  -webkit-text-stroke: 1px black;
 }
 
 .level .level_num {
   font-size: 24px;
   color: white;
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  font-weight: 600;
+  -webkit-text-stroke: 1px black;
 }
 
 .character_display .card_image {
@@ -90,8 +92,9 @@
   pointer-events: none;
 }
 
-.selected {
+.character_display.selected {
   outline: solid 2px black;
+  background-color: rgb(110, 110, 110);
 }
 
 /* Character List */

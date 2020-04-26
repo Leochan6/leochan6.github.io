@@ -4,6 +4,7 @@ let storage_api = (() => {
 
   module.profiles = {};
   module.lists = {};
+  module.memoria_lists = {};
   module.settings = {};
 
   let userId = null;
@@ -16,6 +17,12 @@ let storage_api = (() => {
     database.onListUpdate(userId, loadLists);
   };
 
+  module.startUpMemoria = (_userId) => {
+    userId = _userId;
+    loadUserName();
+    database.onListUpdate(userId, loadMemoriaLists);
+  };
+
   module.listExists = (name) => {
     if (Object.entries(module.lists).some((key, list) => list.name === name)) return true;
     return false;
@@ -25,10 +32,20 @@ let storage_api = (() => {
     database.createList(userId, { name: name, characterList: true, selectedProfile: "Default", selectedBackground: true });
   };
 
+  module.createMemoriaList = (name) => {
+    database.createList(userId, { name: name, memoriaList: true, selectedProfile: "Default", selectedBackground: true });
+  };
+
   module.updateList = (listId, name, characterList, selectedProfile, selectedBackground) => {
     if (characterList.length == 0) characterList = true;
     if (!selectedBackground) selectedBackground = true;
     database.updateList(userId, listId, { name: name, characterList: characterList, selectedProfile: selectedProfile, selectedBackground: selectedBackground });
+  };
+
+  module.updateMemoriaList = (listId, name, memoriaList, selectedProfile, selectedBackground) => {
+    if (memoriaList.length == 0) memoriaList = true;
+    if (!selectedBackground) selectedBackground = true;
+    database.updateList(userId, listId, { name: name, memoriaList: memoriaList, selectedProfile: selectedProfile, selectedBackground: selectedBackground });
   };
 
   module.deleteList = (listId) => {
@@ -39,6 +56,12 @@ let storage_api = (() => {
     let selectedProfile = profile_api.getSelectedProfile() || "Default";
     let selectedBackground = background_api.getSelectedBackground() || true;
     database.createList(userId, { name: newName, characterList: list.characterList, selectedProfile: selectedProfile, selectedBackground: selectedBackground });
+  };
+
+  module.duplicateMemoriaList = (list, newName) => {
+    let selectedProfile = profile_api.getSelectedProfile() || "Default";
+    let selectedBackground = background_api.getSelectedBackground() || true;
+    database.createList(userId, { name: newName, memoriaList: list.memoriaList, selectedProfile: selectedProfile, selectedBackground: selectedBackground });
   };
 
   module.manualCreateList = (name, characterList, selectedProfile, selectedBackground) => {
@@ -81,7 +104,7 @@ let storage_api = (() => {
     });
     // display settings
     character_list_content.style.padding = `${module.settings.padding_y}px ${module.settings.padding_x}px`;
-    document.querySelectorAll(".character_row").forEach(character_row => character_row.style.justifyContent = list_api.direction_to_flex[module.settings.display_alignment]);
+    document.querySelectorAll(".character_row").forEach(character_row => character_row.style.justifyContent = character_list_api.direction_to_flex[module.settings.display_alignment]);
     display_alignment_select.value = module.settings.display_alignment;
     display_padding_x_field.value = module.settings.padding_x;
     display_padding_y_field.value = module.settings.padding_y;
@@ -107,8 +130,31 @@ let storage_api = (() => {
   };
 
   const loadLists = (snapshot) => {
-    module.lists = snapshot.val() ? snapshot.val() : {};
-    list_api.setLists(module.lists);
+    let lists = snapshot.val() ? snapshot.val() : {};
+    const filtered = Object.keys(lists)
+      .filter(key => lists[key].characterList)
+      .reduce((obj, key) => {
+        return {
+          ...obj,
+          [key]: lists[key]
+        };
+      }, {});
+    module.lists = filtered;
+    character_list_api.setLists(module.lists);
+  };
+
+  const loadMemoriaLists = (snapshot) => {
+    let lists = snapshot.val() ? snapshot.val() : {};
+    const filtered = Object.keys(lists)
+      .filter(key => lists[key].memoriaList)
+      .reduce((obj, key) => {
+        return {
+          ...obj,
+          [key]: lists[key]
+        };
+      }, {});
+    module.memoria_lists = filtered;
+    memoria_list_api.setLists(module.memoria_lists);
   };
 
   return module;

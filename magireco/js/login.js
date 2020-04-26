@@ -99,7 +99,7 @@
     });
 
     enter_button.addEventListener("click", () => {
-      window.location.href = "list.html";
+      window.location.href = "character.html";
     });
 
     // hide modal dialogs
@@ -126,7 +126,7 @@
       userCred.user.updateProfile({ displayName: name });
       database.createUser(userCred.user.uid, name);
     }
-    window.location.href = "list.html";
+    window.location.href = "character.html";
   };
 
 

@@ -1,531 +1,474 @@
-let character_api = (() => {
+(function () {
+  "use strict";
 
-  let module = {};
+  window.onload = () => {
 
-  module.selectedCharacter = null;
+    // sign out button.
+    signout_button.addEventListener("click", () => {
+      let res = confirm("Are you sure you want to Sign Out?");
+      if (res) database.signout();
+    });
 
-  module.Display = class Display {
-    constructor(id, name, rank, attribute, level, magic, magia, episode) {
-      this.id = id;
-      this.name = name;
-      this.rank = rank;
-      this.attribute = attribute;
-      this.level = level;
-      this.magic = magic;
-      this.magia = magia;
-      this.episode = episode;
-    }
+    // contact button.
+    contact_button.addEventListener("click", () => {
+      messageModal.style.display = "block";
+      messageModalText.value = `For assistance, support, or feedback, please contact Leo Chan on Discord (Leo_Chan#9150) or Reddit (u/Leochan6).`;
+      messageModalTitle.innerHTML = `Contact / Support`;
+      messageModalList.innerHTML = "";
+    });
+
+    character_nav_button.addEventListener("cick", () => {
+      window.location.href = "character.html"
+    });
+    memoria_nav_button.addEventListener("click", () => {
+      window.location.href = "memoria.html"
+    });
+    team_nav_button.addEventListener("click", () => {
+      window.location.href = "team.html"
+    });
+
+    // toggle visibility of the tab.
+    document.querySelectorAll(".tab_heading").forEach(element => {
+      element.addEventListener("click", () => {
+        let contents = element.parentElement.parentElement.querySelector(".tab_contents");
+        let tab_name = element.getAttribute("tab_name")
+        if (!contents.classList.contains("hidden")) {
+          contents.classList.add("hidden");
+          storage_api.settings.expanded_tabs[tab_name] = false;
+          storage_api.updateSettings(`expanded_tabs/${tab_name}`, false);
+        }
+        else if (contents.classList.contains("hidden")) {
+          contents.classList.remove("hidden");
+          storage_api.settings.expanded_tabs[tab_name] = true;
+          storage_api.updateSettings(`expanded_tabs/${tab_name}`, true);
+        }
+      });
+    });
+
+    // update the available fields on name change and update preview display.
+    name_select.addEventListener("change", () => {
+      character_api.updateFieldsOnName();
+    });
+
+    // update the preview display on form change.
+    document.querySelectorAll(".form").forEach(element => {
+      ["change", "keyup", "input"].forEach(event => {
+        element.addEventListener(event, () => {
+          character_api.updatePreviewOnForm();
+        });
+      });
+    });
+
+    // add new character display to list.
+    create_button.addEventListener("click", () => {
+      character_api.createAddDisplay();
+    });
+
+    // updates the character display with the form.
+    update_button.addEventListener("click", () => {
+      character_api.updateSelectedDisplay();
+    });
+
+    // copies the character display to the form.
+    copy_button.addEventListener("click", () => {
+      character_api.copyDisplay();
+    });
+
+    // delete the selected character display from list.
+    delete_button.addEventListener("click", () => {
+      let character_display = Array.from(document.querySelectorAll(".character_display:not(.preview)")).find(child => child.classList.contains("selected"));
+      character_display.remove();
+      character_api.selectedCharacter = null;
+      character_api.enableButtons();
+      character_list_content.dispatchEvent(new Event("change"));
+    });
+
+    // mines all the fields.
+    min_all_button.addEventListener("click", () => {
+      character_api.minimizeDisplay();
+    });
+
+    // maxes all the fields.
+    max_all_button.addEventListener("click", () => {
+      character_api.maximizeDisplay();
+    });
+
+    // update the list on sort form change.
+    document.querySelectorAll(".sort_form").forEach(element => {
+      element.addEventListener("change", () => {
+        character_list_api.sortOnFormUpdate();
+        if (profile_api.getSelectedProfile() === "Default") profile_api.changeToCustom();
+        character_list_api.updateList();
+        profile_api.updateProfile();
+      });
+    });
+
+    // update the list on sort dir click.
+    document.querySelectorAll(".sort_dir").forEach(element => {
+      element.addEventListener("click", () => {
+        if (element.classList.contains("ascend")) {
+          element.classList.replace("ascend", "descend");
+        }
+        else if (element.classList.contains("descend")) {
+          element.classList.replace("descend", "ascend");
+        }
+        character_list_api.sortOnFormUpdate();
+        if (profile_api.getSelectedProfile() === "Default") profile_api.changeToCustom();
+        character_list_api.updateList();
+        profile_api.updateProfile();
+
+      });
+    });
+
+    // resort when character list changes.
+    character_list_content.addEventListener("change", () => {
+      character_list_api.sortOnFormUpdate();
+      character_list_api.updateList();
+    });
+
+    // deselect currently selected.
+    main.addEventListener("click", (e) => {
+      try {
+        if (e.target.parentElement.className.indexOf("character_display") === -1 && e.target.parentElement.parentElement.className.indexOf("character_display") === -1) {
+          document.querySelectorAll(".character_display:not(.preview)").forEach(child => {
+            if (child.classList.contains("selected")) {
+              child.classList.remove("selected");
+              character_api.selectedCharacter = null;
+              character_api.enableButtons();
+            }
+          });
+        }
+      } catch (error) {
+        character_api.selectedCharacter = null;
+        character_api.enableButtons();
+      }
+    });
+
+    // show the save new profile form.
+    new_profile_button.addEventListener("click", () => {
+      new_profile_row.style.visibility = "visible";
+      new_profile_field.focus();
+    });
+
+    // hide the save new profile form.
+    close_new_profile_button.addEventListener("click", () => {
+      new_profile_row.style.visibility = "collapse";
+    });
+
+    // save the new sorting profile.
+    save_profile_button.addEventListener("click", () => {
+      profile_api.saveProfile();
+    });
+
+    // check the profile name on change.
+    new_profile_field.addEventListener("change", () => {
+      profile_api.checkProfile();
+    });
+
+    // delete the selected profile.
+    delete_profile_button.addEventListener("click", () => {
+      profile_api.deleteProfile();
+    });
+
+    // check set the profile properties on change.
+    profile_select.addEventListener("change", () => {
+      if (profile_select.value == "Custom") return;
+      profile_api.setProfile();
+      character_list_api.sortOnFormUpdate();
+      character_list_api.updateList();
+    });
+
+    // reset the profiles to default.
+    reset_profiles_button.addEventListener("click", () => {
+      profile_api.resetProfiles();
+    });
+
+    // show or hide the create new list form.
+    new_list_button.addEventListener("click", () => {
+      if (new_list_button.classList.contains("add")) {
+        list_create.style.visibility = "visible";
+        list_create.style.display = "block";
+        new_list_button.classList.replace("add", "minus");
+        new_list_name_field.focus();
+      } else {
+        list_create.style.visibility = "collapse";
+        list_create.style.display = "none";
+        new_list_button.classList.replace("minus", "add");
+      }
+    });
+
+    duplicate_list_button.addEventListener("click", () => {
+      if (list_duplicate.style.display === "none") {
+        list_duplicate.style.visibility = "visible";
+        list_duplicate.style.display = "block";
+        duplicate_list_name_field.focus();
+      } else {
+        list_duplicate.style.visibility = "collapse";
+        list_duplicate.style.display = "none";
+        duplicate_list_name_field.value = "";
+      }
+    });
+
+    // delete the selected list.
+    delete_list_button.addEventListener("click", () => {
+      if (character_list_api.selectedList.listId) {
+        let res = confirm(`Are you sure you want to delete the list ${character_list_api.selectedList.list.name}?`);
+        if (res) character_list_api.deleteList(character_list_api.selectedList.listId);
+      }
+    });
+
+    // create a new list.
+    new_list_create_button.addEventListener("click", (e) => {
+      e.preventDefault();
+      character_list_api.createList();
+    });
+
+    // duplicate list.
+    duplicate_list_create_button.addEventListener("click", (e) => {
+      e.preventDefault();
+      let newName = duplicate_list_name_field.value;
+      duplicate_list_name_field.value = "";
+      if (newName && character_list_api.selectedList.listId) character_list_api.duplicateList(character_list_api.selectedList.list, newName);
+      list_duplicate.style.visibility = "collapse";
+      list_duplicate.style.display = "none";
+    });
+
+    // check the list name on change.
+    new_list_name_field.addEventListener("change", () => {
+      character_list_api.checkListName();
+    });
+
+    display_alignment_select.addEventListener("change", () => {
+      character_list_api.changeAlignment(display_alignment_select.value);
+    })
+
+    display_padding_x_field.addEventListener("change", () => {
+      character_list_api.changePadding("x", display_padding_x_field.value);
+    });
+
+    display_padding_y_field.addEventListener("change", () => {
+      character_list_api.changePadding("y", display_padding_y_field.value);
+    });
+
+    // set the background.
+    background_select.addEventListener("change", () => {
+      background_api.setBackground(background_select.value);
+      character_list_api.updateList();
+    });
+
+    // remove the background.
+    remove_background_button.addEventListener("click", () => {
+      background_api.removeBackground();
+      character_list_api.updateList();
+    });
+
+    // export image button.
+    export_image_button.addEventListener("click", () => {
+      html2canvas(character_list_content).then(canvas => {
+        Canvas2Image.saveAsImage(canvas, "list");
+      });
+    });
+
+    // export text button.
+    export_text_button.addEventListener("click", () => {
+      character_list_api.openExportModal();
+    });
+
+    // import text button.
+    import_text_button.addEventListener("click", () => {
+      character_list_api.openImportModal();
+    });
+
+    importListModalImport.addEventListener("click", () => {
+      character_list_api.importList();
+      // let file = import_text_button.files.item(0);
+      // const reader = new FileReader();
+      // reader.readAsText(file);
+      // reader.onload = () => {
+      //   try {
+      //     character_list_api.importList(JSON.parse(reader.result));
+      //   } catch (e) {
+      //     console.log(e);
+      //   }
+      // };
+    })
+
+    // add new filter.
+    add_filter_button.addEventListener("click", () => {
+      character_list_api.createFilter();
+    });
+
+    // apply the filters.
+    apply_filter_button.addEventListener("click", () => {
+      character_list_api.applyFilters();
+      character_list_api.getStats();
+    });
+
+    // reset the filters.
+    reset_filter_button.addEventListener("click", () => {
+      character_list_api.resetFilters();
+    });
+
+    // get more stats button.
+    more_stats_button.addEventListener("click", () => {
+      character_list_api.openStatsModal();
+    });
+
+    // zoom range slider.
+    zoom_field.addEventListener("change", () => {
+      let value = zoom_field.value;
+      if (value > 500) value = 500;
+      else if (value < 1) value = 1;
+      if (value !== zoom_field.value) zoom_field.value = value;
+      zoom_range.value = zoom_field.value;
+      character_list_api.changeZoom(zoom_range.value);
+    });
+    zoom_field.addEventListener("input", () => {
+      zoom_range.value = zoom_field.value;
+      character_list_api.changeZoom(zoom_range.value);
+    });
+    zoom_range.addEventListener("change", () => {
+      zoom_field.value = zoom_range.value;
+      character_list_api.changeZoom(zoom_range.value);
+    });
+    zoom_range.addEventListener("input", () => {
+      zoom_field.value = zoom_range.value;
+      character_list_api.changeZoom(zoom_range.value);
+    });
+
+    // check auto zoom.
+    zoom_checkbox.addEventListener("change", () => {
+      // if (zoom_checkbox.checked) character_list_api.zoom_fit();
+    });
+
+    // zoom to fix if window size changes.
+    window.addEventListener("resize", () => {
+      // if (zoom_checkbox.checked) character_list_api.zoom_fit();
+    });
+
+    window.addEventListener("keydown", (event) => {
+      if (event.target == messageModal && event.keyCode == 27 && messageModal.style.display === "block") closeMessageModal()
+      else if (event.target == characterSelectModal && event.keyCode == 27 && characterSelectModal.style.display === "block") closeCharacterSelectModal();
+      else if (event.target == backgroundSelectModal && event.keyCode == 27 && backgroundSelectModal.style.display === "block") closeBackgroundSelectModal();
+      else if (event.target == backgroundSelectModal && event.keyCode == 27 && backgroundSelectModal.style.display === "block") closeImportListModal();
+    });
+
+    // hide modal dialogs if not drag
+    let dragging = false;
+    window.addEventListener("mousedown", (event) => {
+      let x = event.x;
+      let y = event.y;
+      dragging = false;
+      window.addEventListener("mousemove", (event) => {
+        if (Math.abs(x - event.screenX) > 5 || Math.abs(y - event.screenY) > 5) {
+          dragging = true;
+        }
+      });
+    });
+
+    window.addEventListener("mouseup", (event) => {
+      if (!dragging) {
+        if (event.target == messageModal && messageModal.style.display === "block") closeMessageModal()
+        else if (event.target == characterSelectModal && characterSelectModal.style.display === "block") closeCharacterSelectModal();
+        else if (event.target == backgroundSelectModal && backgroundSelectModal.style.display === "block") closeBackgroundSelectModal();
+        else if (event.target == importListModal && importListModal.style.display === "block") closeImportListModal();
+      }
+    });
+
+    // hide message modal dialog
+    messageModalClose.addEventListener("click", () => {
+      closeMessageModal();
+    });
+
+    // message modal dialog copy button.
+    messageModalCopy.addEventListener("click", () => {
+      navigator.clipboard.writeText(messageModalText.value);
+    });
+
+    // open character select modal
+    characterSelectModalOpen.addEventListener("click", () => {
+      character_api.openCharacterSelect();
+    });
+
+    // hide character select modal dialog
+    characterSelectModalClose.addEventListener("click", () => {
+      closeCharacterSelectModal();
+    });
+
+    // search change character select modal dialog.
+    ["keyup", "change", "search"].forEach(event => {
+      characterSelectModalSearch.addEventListener(event, () => {
+        character_api.filterCharacters(characterSelectModalSearch.value);
+      });
+    });
+
+    // open background select modal dialog
+    backgroundSelectModalOpen.addEventListener("click", () => {
+      background_api.openBackgroundSelect();
+    });
+
+    // hide background select modal dialog
+    backgroundSelectModalClose.addEventListener("click", () => {
+      closeBackgroundSelectModal();
+    });
+
+    // search change background select modal dialog.
+    ["keyup", "change", "search"].forEach(event => {
+      backgroundSelectModalSearch.addEventListener(event, () => {
+        background_api.filterBackgrounds(backgroundSelectModalSearch.value);
+      });
+    });
+
+    // hide import list modal dialog
+    importListModalClose.addEventListener("click", () => {
+      closeImportListModal();
+    });
   };
 
-  module.Character = class Character {
-    constructor(id, name, attribute, ranks) {
-      this.id = id;
-      this.name = name;
-      this.attribute = attribute;
-      this.ranks = ranks;
-    }
+  const closeMessageModal = () => {
+    messageModal.style.display = "none";
+    messageModalTitle.innerHTML = "";
+    messageModalText.value = "";
+    messageModalText.readonly = true;
+    messageModalText.scrollTo(0, 0);
   };
 
-  // get the collection.
-  module.collection = [];
-  var curr_id = "1001";
-  var curr_char = [];
-  collection.forEach((next) => {
-    if (next.id == curr_id) {
-      curr_char.push(next);
+  const closeCharacterSelectModal = () => {
+    characterSelectModal.style.display = "none";
+    characterSelectModalSearch.value = "";
+    characterSelectModalList.scrollTo(0, 0);
+  };
+
+  const closeBackgroundSelectModal = () => {
+    backgroundSelectModal.style.display = "none";
+    backgroundSelectModalSearch.value = "";
+    backgroundSelectModalList.scrollTo(0, 0);
+  };
+
+  const closeImportListModal = () => {
+    importListModal.style.display = "none";
+    importListModalName.value = "";
+    importListModalText.value = "";
+    importListModalError.innerHTML = "";
+    importListModalText.scrollTo(0, 0);
+  };
+
+  // update form and preview display on startup.
+  character_api.startUp();
+
+  // update the background form.
+  background_api.startUp();
+
+  // load the settings, profiles, and character lists from storage.
+  database.onAuthStateChanged(user => {
+    if (user) {
+      header_username.innerHTML = `Welcome ${user.displayName || "Anonymous"}`;
+      storage_api.startUp(user.uid);
     }
     else {
-      module.collection.push(curr_char);
-      curr_char = [next];
-      curr_id = next.id;
+      header_username.innerHTML = "";
+      window.location.href = "index.html";
     }
-    console.log();
-  });
-  if (curr_char.length > 0) module.collection.push(curr_char);
-
-  // get the characters.
-  module.characters = module.collection.map((char) => {
-    return {
-      id: char[0].id,
-      name: char[0].name,
-      attribute: char[0].attribute,
-      ranks: {
-        "1": char.filter(e => e.rank == "1").length > 0,
-        "2": char.filter(e => e.rank == "2").length > 0,
-        "3": char.filter(e => e.rank == "3").length > 0,
-        "4": char.filter(e => e.rank == "4").length > 0,
-        "5": char.filter(e => e.rank == "5").length > 0,
-      },
-      obtainability: char[0].obtainability
-    };
   });
 
-  /**
-   * get the list of names.
-   * 
-   * @param {Function} callback
-   */
-  module.getNames = () => {
-    let names = collection.map(character => {
-      return { id: character.id, name: character.name };
-    });
-    names = [...new Set(names)];
-    names = names.sort((a, b) => a.name > b.name ? 1 : -1);
-    return names;
-  };
-
-  /**
-   * get the attribute and rank for the character.
-   * 
-   * @param {String} id 
-   * @param {Function} callback 
-   */
-  const getCharacter = (id) => {
-    try {
-      let character_list = collection.filter(character => character.id === id);
-      let name = character_list[0].name;
-      let attribute = character_list[0].attribute.toLowerCase();
-      let rank_list = character_list.map((character) => character.rank);
-      let ranks = Array(5).fill(false);
-      for (let i = 0; i < 5; i++) {
-        if (rank_list.indexOf((i + 1).toString(10)) != -1) ranks[i] = true;
-      }
-      let character = new module.Character(id, name, attribute, ranks);
-      return character;
-    } catch (e) {
-      return null;
-    }
-  };
-
-  /**
-   * gets the basic display for the character.
-   * 
-   * @param {module.Character} character 
-   */
-  const getBasicCharacterDisplay = (character) => {
-    return new module.Display(character.id, character.name, character.ranks.indexOf(true) + 1, character.attribute, "1", "0", "1", "1");
-  };
-
-  /**
-   * check if disaply is valid.
-   * 
-   * @param {String} character_id 
-   * @param {module.Display} display 
-   * @param {Function} callback 
-   */
-  module.isValidCharacterDisplay = (character_id, display, validName = true) => {
-    let character = getCharacter(character_id);
-    if (!character) return ["Cannot get character."]
-    let err = [];
-    // check id.
-    if (display.id !== character.id) err.push(`Display Id ${display.id} does not match Character ID ${character.id}.`);
-    // check name.
-    if (display.name !== character.name && validName) err.push(`Display Name ${display.name} does not match Character Name ${character.name}.`);
-    // check rank.
-    if (!character.ranks[display.rank - 1]) err.push(`Display Rank ${display.rank} does not match Character Ranks ${character.ranks}`);
-    // check level.
-    if (display.rank == "1" && (display.level < 1 || display.level > 40)) err.push(`Display Level ${display.level} for Display Rank ${display.rank} must be between 1 and 40.`);
-    else if (display.rank == "2" && (display.level < 1 || display.level > 50)) err.push(`Display Level ${display.level} for Display Rank ${display.rank} must be between 1 and 50.`);
-    else if (display.rank == "3" && (display.level < 1 || display.level > 60)) err.push(`Display Level ${display.level} for Display Rank ${display.rank} must be between 1 and 60.`);
-    else if (display.rank == "4" && (display.level < 1 || display.level > 80)) err.push(`Display Level ${display.level} for Display Rank ${display.rank} must be between 1 and 80.`);
-    else if (display.rank == "5" && (display.level < 1 || display.level > 100)) err.push(`Display Level ${display.level} for Display Rank ${display.rank} must be between 1 and 100.`);
-    // check magic.
-    if (display.magic < 0 || display.magic > 3) err.push(`Display Magic ${display.magic} must be between 0 and 3.`);
-    // check magia.
-    if (display.magia < 1 || display.magia > 5) err.push(`Display Magia ${display.magia} must be between 1 and 5.`);
-    if (display.magia > display.episode) err.push(`Display Magia ${display.magia} must be less than or equal to Display Episode ${display.episode}.`);
-    // check episode.
-    if (display.episode < 1 || display.episode > 5) err.push(`Display Episode ${display.episode} must be between 1 and 5.`);
-    if (err.length > 0) console.log(character, display);
-    return err;
-  };
-
-  /**
-   * get Display from the form.
-   * 
-   * @return {module.Display}
-   */
-  const getFormDisplay = () => {
-    let display = new character_api.Display(
-      name_select.value,
-      name_select[name_select.options.selectedIndex].text,
-      rank_select.value,
-      attr_select.value,
-      level_select.value,
-      magic_select.value,
-      magia_select.value,
-      episode_select.value);
-    character_preview = display;
-    return display;
-  };
-
-  /**
-   * get Display from character display.
-   * 
-   * @param {HTMLDivElement} character_display
-   * @return {module.Display}
-   */
-  module.getCharacterDisplay = (character_display) => {
-    let display = new character_api.Display(
-      character_display.getAttribute("character_id"),
-      character_display.getAttribute("name"),
-      character_display.getAttribute("rank"),
-      character_display.getAttribute("attribute"),
-      character_display.getAttribute("level"),
-      character_display.getAttribute("magic"),
-      character_display.getAttribute("magia"),
-      character_display.getAttribute("episode"));
-    return display;
-  };
-
-  /**
-   * create a character display element from Display.
-   * 
-   * @param {Display} display
-   * @return {HTMLDivElement}
-   */
-  module.createDisplay = (display, listener) => {
-    let character_display = document.createElement("div");
-    character_display.classList.add("character_display");
-    character_display.setAttribute("character_id", display.id);
-    character_display.setAttribute("name", display.name);
-    character_display.setAttribute("rank", display.rank);
-    character_display.setAttribute("attribute", display.attribute);
-    character_display.setAttribute("magic", display.magic);
-    character_display.setAttribute("magia", display.magia);
-    character_display.setAttribute("episode", display.episode);
-    character_display.setAttribute("level", display.level);
-    character_display.innerHTML = `
-    <img class="background" src="/magireco/assets/ui/bg/${display.attribute}.png">
-    <img class="card_image" src="/magireco/assets/image/card_${display.id}${display.rank}_d.png">
-    <img class="frame_rank" src="/magireco/assets/ui/frame/${display.rank}.png">
-    <img class="star_rank" src="/magireco/assets/ui/star/${display.rank}.png">
-    <img class="attribute" src="/magireco/assets/ui/attribute/${display.attribute}.png">
-    <img class="magic" src="/magireco/assets/ui/magic/${display.magic}.png">
-    <img class="magia" src="/magireco/assets/ui/magia/${display.magia}-${display.episode}.png">
-    <div class="level">
-      <div class="level_pre">Lvl.</div>
-      <div class="level_num">${display.level}</div>
-    </div>`;
-    if (listener) {
-      character_display.addEventListener("click", () => {
-        // return of already selected.
-        if (character_display.classList.contains("selected")) return;
-        // deselect all other character displays
-        document.querySelectorAll(".character_display:not(.preview)").forEach(child => {
-          if (child.classList.contains("selected")) child.classList.remove("selected");
-        });
-        character_display.classList.add("selected");
-        module.selectedCharacter = { character_display_element: character_display, character_display: display };
-        module.enableButtons();
-      });
-    }
-    return character_display;
-  };
-
-  const RANK_TO_LEVEL = { "1": "40", "2": "50", "3": "60", "4": "80", "5": "100" };
-
-  module.minimizeDisplay = () => {
-    let character_display = module.getCharacterDisplay(display_preview.children[0]);
-    let character = module.characters.find(char => char.id === character_display.id);
-    let minRank = "5";
-    Object.entries(character.ranks).reverse().forEach(([rank, value]) => minRank = value ? rank : minRank);
-    let attribute = character.attribute.toLowerCase();
-    let display = new module.Display(character.id, character.name, minRank, attribute, "1", "0", "1", "1");
-    updateForm(display);
-    updatePreviewDisplay(display);
-  };
-
-  module.maximizeDisplay = () => {
-    let character_display = module.getCharacterDisplay(display_preview.children[0]);
-    let character = module.characters.find(char => char.id === character_display.id);
-    let maxRank = "1";
-    Object.entries(character.ranks).forEach(([rank, value]) => maxRank = value ? rank : maxRank);
-    let level = RANK_TO_LEVEL[maxRank];
-    let attribute = character.attribute.toLowerCase();
-    let display = new module.Display(character.id, character.name, maxRank, attribute, level, "3", "5", "5");
-    updateForm(display);
-    updatePreviewDisplay(display);
-  };
-
-  /**
-   * updates the display preview with Display.
-   * 
-   * @param {HTMLDivElement} display
-   */
-  const updatePreviewDisplay = (display) => {
-    let character_display = module.createDisplay(display);
-    character_display.classList.add("preview");
-    display_preview.innerHTML = "";
-    display_preview.appendChild(character_display);
-  };
-
-  /**
-   * updates the form with Display.
-   * 
-   * @param {Display} display
-   */
-  const updateForm = (display) => {
-    name_select.value = display.id;
-    rank_select.value = display.rank;
-    attr_select.value = display.attribute;
-    level_select.value = display.level;
-    magic_select.value = display.magic;
-    magia_select.value = display.magia;
-    episode_select.value = display.episode;
-  };
-
-  /**
-   * updates the form with the available options and selects lowest.
-   * 
-   * @param {Character} character
-   */
-  const updateFormEnabled = (character) => {
-    // enable or disable the attribute select.
-    for (let i = 0; i < 6; i++) {
-      attr_select.options[i].disabled = attr_select.options[i].value != character.attribute;
-    }
-    attr_select.value = character.attribute;
-    // enable or disable the rank select.
-    for (let i = 0; i < 5; i++) {
-      rank_select.options[i].disabled = !character.ranks[i];
-    }
-    // if the currently select rank is disabled, then select minimum available rank.
-    if (!character.ranks[rank_select.selectedIndex]) {
-      rank_select.selectedIndex = character.ranks.indexOf(true);
-      // update the level to match max rank.
-      level_select.value = RANK_TO_LEVEL[rank_select.value]
-    }
-  };
-
-  /**
-   * gets the standard display given the display.
-   * 
-   * @param {Character} character 
-   * @param {*} display 
-   */
-  const updateCharacterWithDisplay = (character, display) => {
-    // return the default display.
-    if (!display) return getBasicCharacterDisplay(character);
-    return new module.Display(character.id, character.name, display.rank, character.attribute, display.level, display.magic, display.magia, display.episode);
-  };
-
-  /**
-   * starts up the list.
-   */
-  module.startUp = () => {
-    // initilize name field.
-    let names = module.getNames();
-    let prev_id = null;
-    let characters = [];
-    names.forEach((character) => {
-      if (character.id !== prev_id) {
-        characters.push(character);
-        prev_id = character.id;
-      }
-    });
-    characters.forEach((character) => {
-      name_select.options.add(new Option(character.name, character.id, false));
-    });
-    // name_select.selectedIndex = 0;
-    name_select.value = 1001;
-    name_select.dispatchEvent(new Event("change"));
-
-    let character = getCharacter("1001");
-    updateFormEnabled(character);
-    updatePreviewDisplay(getBasicCharacterDisplay(character));
-  };
-
-  /**
-   * updates the form fields with the selected character.
-   */
-  module.updateFieldsOnName = () => {
-    let character = getCharacter(name_select.value);
-    updateFormEnabled(character);
-    character_preview = updateCharacterWithDisplay(character, getFormDisplay());
-    updateForm(character_preview);
-    updatePreviewDisplay(character_preview);
-  };
-
-  /**
-   * adds a new character display to the list.
-   */
-  module.createAddDisplay = () => {
-    let display = getFormDisplay();
-    let character_display = module.createDisplay(display, true);
-    character_list_content.appendChild(character_display);
-    character_list_content.dispatchEvent(new Event("change"));
-  };
-
-  /**
-   * updates the selected character display with the contents of the form.
-   */
-  module.updateSelectedDisplay = () => {
-    let character_display = Array.from(document.querySelectorAll(".character_display:not(.preview)")).find(child => child.classList.contains("selected"));
-    character_display.remove();
-
-    let display = getFormDisplay();
-    character_display = module.createDisplay(display, true);
-    character_list_content.appendChild(character_display);
-    character_list_content.dispatchEvent(new Event("change"));
-  };
-
-  /**
-   * copies the contents of the selected display to the form.
-   */
-  module.copyDisplay = () => {
-    let character_display = Array.from(document.querySelectorAll(".character_display:not(.preview)")).find(child => child.classList.contains("selected"));
-    let display = module.getCharacterDisplay(character_display);
-    getCharacter(character_display.getAttribute("character_id"), character => updateFormEnabled(character));
-    updateForm(display);
-    updatePreviewDisplay(display);
-  };
-
-  /**
-   * updates the preview character display with the contents of the form.
-   */
-  module.updatePreviewOnForm = () => {
-    let display = getFormDisplay();
-    character_error_text.innerHTML = '';
-    let error = module.isValidCharacterDisplay(name_select.value, display);
-    if (error.length == 0) {
-      create_button.disabled = false;
-      updatePreviewDisplay(display);
-    } else {
-      create_button.disabled = true;
-      character_error_text.innerHTML = error.toString();
-      console.log(error);
-    }
-  };
-
-  /**
-   * Enable and Disable the Character Buttons based on the current state.
-   */
-  module.enableButtons = () => {
-    if (list_api.selectedList && list_api.selectedList.listId) {
-      if (create_button.classList.contains("btnDisabled")) {
-        create_button.classList.replace("btnDisabled", "btnGray");
-        create_button.disabled = false;
-      }
-      if (min_all_button.classList.contains("btnDisabled")) {
-        min_all_button.classList.replace("btnDisabled", "btnGray");
-        min_all_button.disabled = false;
-      }
-      if (max_all_button.classList.contains("btnDisabled")) {
-        max_all_button.classList.replace("btnDisabled", "btnGray");
-        max_all_button.disabled = false;
-      }
-      if (module.selectedCharacter && module.selectedCharacter.character_display_element) {
-        if (update_button.classList.contains("btnDisabled")) {
-          update_button.classList.replace("btnDisabled", "btnGray");
-          update_button.disabled = false;
-        }
-        if (copy_button.classList.contains("btnDisabled")) {
-          copy_button.classList.replace("btnDisabled", "btnGray");
-          copy_button.disabled = false;
-        }
-        if (delete_button.classList.contains("btnDisabled")) {
-          delete_button.classList.replace("btnDisabled", "btnGray");
-          delete_button.disabled = false;
-        }
-      } else {
-        if (update_button.classList.contains("btnGray")) {
-          update_button.classList.replace("btnGray", "btnDisabled");
-          update_button.disabled = false;
-        }
-        if (copy_button.classList.contains("btnGray")) {
-          copy_button.classList.replace("btnGray", "btnDisabled");
-          copy_button.disabled = false;
-        }
-        if (delete_button.classList.contains("btnGray")) {
-          delete_button.classList.replace("btnGray", "btnDisabled");
-          delete_button.disabled = false;
-        }
-      }
-    } else {
-      if (create_button.classList.contains("btnGray")) {
-        create_button.classList.replace("btnGray", "btnDisabled");
-        create_button.disabled = true;
-      }
-      if (update_button.classList.contains("btnGray")) {
-        update_button.classList.replace("btnGray", "btnDisabled");
-        update_button.disabled = true;
-      }
-      if (copy_button.classList.contains("btnGray")) {
-        copy_button.classList.replace("btnGray", "btnDisabled");
-        copy_button.disabled = true;
-      }
-      if (delete_button.classList.contains("btnGray")) {
-        delete_button.classList.replace("btnGray", "btnDisabled");
-        delete_button.disabled = true;
-      }
-      if (min_all_button.classList.contains("btnGray")) {
-        min_all_button.classList.replace("btnGray", "btnDisabled");
-        min_all_button.disabled = true;
-      }
-      if (max_all_button.classList.contains("btnGray")) {
-        max_all_button.classList.replace("btnGray", "btnDisabled");
-        max_all_button.disabled = true;
-      }
-    }
-  };
-
-  /**
-   * opens the modal dialog for character selection user interface.
-   */
-  module.openCharacterSelect = () => {
-    characterSelectModal.style.display = "block";
-    characterSelectModalList.innerHTML = "";
-    characterSelectModalSearch.focus();
-    module.characters.forEach(character => {
-      let star = 1;
-      for (let [key, value] of Object.entries(character.ranks)) {
-        if (value) {
-          star = key;
-          break;
-        }
-      }
-      let container = document.createElement("div");
-      container.classList.add("chararacter_image_preview");
-      container.setAttribute("id", character.id);
-      let image = document.createElement("img");
-      image.src = `/magireco/assets/image/card_${character.id}${star}_d.png`;
-      image.title = character.name;
-      container.append(image);
-      container.addEventListener("click", () => {
-        name_select.value = character.id;
-        name_select.dispatchEvent(new Event("change"));
-        characterSelectModal.style.display = "none";
-      });
-      characterSelectModalList.append(container);
-    });
-  };
-
-  module.filterCharacters = (search) => {
-    if (!search || search.length == 0) {
-      Array.from(characterSelectModalList.children).forEach(child => {
-        if (child.classList.contains("hidden")) {
-          child.classList.remove("hidden");
-          child.style.display = "inline-block";
-        }
-      });
-    }
-    search = search.toLowerCase();
-    Array.from(characterSelectModalList.children).forEach(child => {
-      let character = module.characters.find(char => child.getAttribute("id") === char.id);
-      if (character.id.includes(search)
-        || character.name.toLowerCase().includes(search)
-        || character.attribute.toLowerCase().includes(search)
-        || Object.entries(character.ranks).some(([rank, value]) => value && rank.includes(search))
-      ) {
-        child.classList.remove("hidden");
-        child.style.display = "inline-block";
-      } else {
-        child.classList.add("hidden");
-        child.style.display = "none";
-      }
-    });
-  };
-
-  return module;
-})();
+}());
