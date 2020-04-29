@@ -1,0 +1,77 @@
+/* Memoria Display */
+
+.memoria_display {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  height: 106px;
+  width: 84px;
+  box-sizing: border-box;
+  border: solid 1px transparent;
+  margin: 5px;
+  user-select: none;
+}
+
+.memoria_display:not(.selected):not(.preview):hover {
+  outline: 1px solid gray;
+  background-color: rgb(220, 220, 220);
+}
+
+.memoria_display :not(.card_image) {
+  position: relative;
+}
+
+.ascension_rank {
+  margin-top: 2px;
+  margin-left: 1px;
+  -webkit-user-drag: none;
+  width: fit-content;
+  align-self: center;
+}
+
+.level {
+  display: flex;
+  flex-direction: row;
+  margin-left: 6px;
+  margin-right: auto;
+  margin-top: -20px;
+  text-align: left;
+  font-family: Arial, Helvetica, sans-serif;
+  cursor: default;
+  user-select: none;
+}
+
+.level .level_pre {
+  position: relative;
+  margin-right: 2px;
+  font-size: 16px;
+  color: white;
+  font-weight: 600;
+  -webkit-text-stroke: 1px #5C504A;
+}
+
+.level .level_num {
+  font-size: 16px;
+  color: white;
+  font-weight: 600;
+  -webkit-text-stroke: 1px #5C504A;
+}
+
+.memoria_display .memoria_image {
+  position: relative;
+  width: 82px;
+  height: 82px;
+}
+
+.memoria_display.selected {
+  outline: solid 2px black;
+  background-color: rgb(110, 110, 110);
+}
+
+/* Memoria List */
+
+#memoria_list_content .memoria_row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}

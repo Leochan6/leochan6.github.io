@@ -1,7 +1,0 @@
-Once you try messing with Kuro's properties, then you get a message to change the level. I think the max button will help alleviate the bug a bit.
-
-Do you have to be signed in? I'm working on it as anonymous.
-
-and you wouldn't have to do that if there were no duplicates allowed
-
-is it supposed to support duplicate characters?

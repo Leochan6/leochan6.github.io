@@ -1,0 +1,55 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#login_content, #signup_content, #anonymous_content {
+  border: black solid 1px;
+  border-radius: 25px;
+  margin: 20px;
+  padding: 20px;
+  width: fit-content;
+  height: fit-content;
+}
+
+#login_label, #signup_label, #signin_anonymous_label {
+  font-size: 24px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 5px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login_field {
+  width: 250px;
+  padding: 5px;
+  margin: 5px 5px;
+}
+
+#content {
+  display: flex;
+  flex-direction: row;
+}
+
+#login_buttons, #signup_buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.login_button {
+  width: 100px;
+  padding: 5px;
+  margin: 5px 5px;
+}
+
+#signin_anonymous_button {
+  width: fit-content;
+}
+
+#enter_button {
+  width: 200px;
+  height: 100px;
+}

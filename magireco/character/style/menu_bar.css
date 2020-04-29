@@ -1,0 +1,122 @@
+#menu_bar {
+  position: relative;
+  border-top: none;
+}
+
+#name_heading {
+  margin: 10px;
+  width: max-content;
+  max-width: 20vw;
+  word-wrap: break-word;
+}
+
+#tabs {
+  width: 100%;
+}
+
+.tab {
+  margin: 5px;
+  padding: 5px;
+  width: max-content;
+  max-width: 300px;
+}
+
+.tab_hidden {
+  display: none;
+}
+
+.tab_header {
+  display: flex;
+  align-items: center;
+}
+
+.tab_heading {
+  margin: 0px;
+  cursor: pointer;
+  user-select: none;
+  color: rgb(17, 0, 255);
+  opacity: 0.6;
+  transition: all 0.3s ease 0s;
+}
+
+.tab_heading:hover {
+  opacity: 1;
+}
+
+.tab_contents {
+  transition: all 0.5s ease 0s;
+}
+
+#list_buttons {
+  /* position: absolute; */
+  left: 110px;
+  top: 5px;
+}
+
+#list_buttons>* {
+  margin: 5px 1px;
+}
+
+.form_input {
+  border: rgb(100, 100, 100) solid 1px;
+  border-radius: 10px;
+  padding: 5px 20px;
+  margin: 5px 0px;
+  user-select: none;
+  font-size: 16px;
+  font-family: 'Times New Roman', Times, serif;
+  text-align: center;
+  outline: none;
+  transition: all 0.3s ease 0s;
+}
+
+#new_list_name_field {
+  width: 120px;
+}
+
+#duplicate_list_name_field {
+  width: 140px;
+}
+
+#new_profile_field {
+  width: 100px;
+}
+
+#list_create, #list_duplicate {
+  visibility: collapse;
+  display: none;
+}
+
+.custom-input {
+  padding-left: 3px;
+}
+
+#preview_text {
+  margin: 5px 0px;
+}
+
+#display_preview {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+#display_padding_x_field, #display_padding_y_field {
+  width: 50px;
+}
+
+#background_select {
+  width: 180px;
+}
+
+.duplicate {
+  background-image: url("../../assets/icon/file_copy_black.png");
+  background-repeat: no-repeat;
+  background-size: 80%;
+  background-position: center;
+  padding: 10px;
+}
+
+.duplicate:hover {
+  background-image: url("../../assets/icon/file_copy_white.png");
+}
