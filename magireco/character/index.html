@@ -12,7 +12,7 @@
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://leo-chan.me/assets/listpreview.png" />
   <meta property="og:image:width" content="2560">
-  <meta property="og:image:height" content="1213">
+  <meta property="og:image:height" content="1440">
   <meta name="twitter:title" content="Magia Record Character List" />
   <meta name="twitter:description"
     content="Create and share a list of your Magical Girls from the game Magia Record." />
@@ -41,9 +41,7 @@
       </div>
     </div>
   </header>
-  <div class="horizontal-divider" id="header_content_divider"></div>
   <div id="content">
-    <div class="vertical-divider hidden" style="display: none;"></div>
     <!-- Left Menu Bar -->
     <div id="menu_bar">
       <div id="tabs">
@@ -81,7 +79,6 @@
             <p class="error_text" id="home_error_text"></p>
           </div>
         </div>
-        <div class="horizontal-divider"></div>
         <!-- Character Create Tab -->
         <div id="char_tab" class="tab">
           <div class="tab_header">
@@ -175,7 +172,6 @@
             <div id="display_preview"></div>
           </div>
         </div>
-        <div class="horizontal-divider"></div>
         <!-- Sort Properties Tab -->
         <div id="sort_tab" class="tab">
           <div class="tab_header">
@@ -188,17 +184,19 @@
                   <tr>
                     <td>Current Profile:</td>
                     <td><select id="profile_select"></select></td>
-                    <td><button id="new_profile_button" title="Create a new profile">+</button></td>
+                    <td><button id="new_profile_button" title="Create a New Profile">+</button></td>
                     <td><button id="delete_profile_button" title="Delete">×</button></td>
-                  </tr>
-                  <tr id="new_profile_row" style="visibility: collapse;">
-                    <td>Profile Name:</td>
-                    <td><input id="new_profile_field" type="text"></td>
-                    <td><button id="save_profile_button" title="Save this profile">Save</button></td>
-                    <td><button id="close_new_profile_button" title="Close">×</button></td>
                   </tr>
                 </tbody>
               </table>
+              <div id="new_profile_row" style="visibility: collapse;">
+                <form style="display: inline-flex;">
+                  <input id="new_profile_field" type="text" placeholder="Profile Name"
+                    style="width: 140px; margin-left: 5px;">
+                  <button type="submit" id="create_profile_button" title="Create this New Profile">Create</button>
+                </form>
+                <button id="close_new_profile_button" title="Close">×</button>
+              </div>
             </div>
             <div id="sorting_fields" align="left">
               <table id="sorting_table">
@@ -258,7 +256,6 @@
             <p class="error_text" id="profile_error_text"></p>
           </div>
         </div>
-        <div class="horizontal-divider"></div>
         <!-- Display Settings Tab -->
         <div id="display_tab" class="tab">
           <div class="tab_header">
@@ -285,7 +282,6 @@
             </table>
           </div>
         </div>
-        <div class="horizontal-divider"></div>
         <!-- Background Tab -->
         <div id="background_tab" class="tab">
           <div class="tab_header">
@@ -302,7 +298,6 @@
             <button id="remove_background_button">Remove</button></tr>
           </div>
         </div>
-        <div class="horizontal-divider"></div>
         <!-- Settings Tab -->
         <div id="setting_tab" class="tab tab_hidden">
           <div class="tab_header">
@@ -318,7 +313,6 @@
         </div>
       </div>
     </div>
-    <div class="vertical-divider" id="left_main_divider"></div>
     <!-- Main Content -->
     <div id="main">
       <div id="main_header">
@@ -342,7 +336,6 @@
             </div>
           </div>
         </div>
-        <div class="horizontal-divider"></div>
         <div id="filters_buttons_zoom_stats">
           <div class="" id="add_list_filters">
             Filters: <button id="add_filter_button" title="Add New Filter Below">New</button>
@@ -350,10 +343,9 @@
             <button id="reset_filter_button" title="Remove All Filters">Reset</button>
           </div>
           <div id="zoom_tools" title="Auto Zoom not Working">
-            Zoom: <input type="number" id="zoom_field" value=100 maxlength="3" size=3 min=30 max=300
+            Zoom: <input type="number" id="zoom_field" value=100 maxlength="3" size=3 min=1 max=500
               style="width: 40px;">
-            <input type="range" min="30" max="300" value="100" id="zoom_range">
-            Auto: <input type="checkbox" id="zoom_checkbox" disabled>
+            <input type="range" min="1" max="500" value="100" id="zoom_range">
           </div>
           <div class="" id="list_stats">
             <label id="list_stats_list"></label>
@@ -362,15 +354,8 @@
         </div>
         <div class="" id="list_filters"></div>
       </div>
-      <div class="horizontal-divider"></div>
       <div id="character_list_container">
         <div id="character_list_content"></div>
-      </div>
-      <div class="memoria_page hidden">
-        <h1>Memoria List</h1>
-      </div>
-      <div class="teams_page hidden">
-        <h1>Team Display</h1>
       </div>
     </div>
 
@@ -443,16 +428,17 @@
   <script src="../shared/libs/canvas2image.js"></script>
   <script src="../shared/libs/html2canvas.js"></script>
   <script src="../shared/js/database_api.js"></script>
+  <script src="../shared/js/utils.js"></script>
   <script src="../collection/character_collection.js"></script>
+  <script src="../collection/character_collection (1).js"></script>
   <script src="../collection/background_collection.js"></script>
   <script src="js/character_elements.js"></script>
   <script src="js/storage_api.js"></script>
-  <script src="js/utils.js"></script>
   <script src="js/background_api.js"></script>
   <script src="js/profile_api.js"></script>
   <script src="js/character_list_api.js"></script>
   <script src="js/character_api.js"></script>
-  <script src="js/character.js"></script>
+  <script src="js/index.js"></script>
 </body>
 
 </html>

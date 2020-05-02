@@ -84,6 +84,20 @@ const character_collection = [
     "url": "https://magireco.fandom.com/wiki/Azusa_Mifuyu"
   },
   {
+    "id": "1007",
+    "name": "Touka Satomi",
+    "attribute": "Fire",
+    "ranks": {
+      "1": false,
+      "2": false,
+      "3": false,
+      "4": true,
+      "5": true
+    },
+    "obtainability": "unlimited",
+    "url": "https://magireco.fandom.com/wiki/Satomi_Touka"
+  },
+  {
     "id": "1008",
     "name": "Alina Gray",
     "attribute": "Forest",
@@ -168,6 +182,34 @@ const character_collection = [
     "url": "https://magireco.fandom.com/wiki/Tatsuki_Asuka"
   },
   {
+    "id": "1014",
+    "name": "Nemu Hiiragi",
+    "attribute": "Forest",
+    "ranks": {
+      "1": false,
+      "2": false,
+      "3": false,
+      "4": true,
+      "5": true
+    },
+    "obtainability": "unlimited",
+    "url": "https://magireco.fandom.com/wiki/Hiiragi_Nemu"
+  },
+  {
+    "id": "1015",
+    "name": "Ui Tamaki",
+    "attribute": "Dark",
+    "ranks": {
+      "1": false,
+      "2": false,
+      "3": false,
+      "4": true,
+      "5": true
+    },
+    "obtainability": "unlimited",
+    "url": "https://magireco.fandom.com/wiki/Tamaki_Ui"
+  },
+  {
     "id": "1016",
     "name": "Kanagi Izumi",
     "attribute": "Light",
@@ -224,6 +266,20 @@ const character_collection = [
     "url": "https://magireco.fandom.com/wiki/Amane_Tsukasa"
   },
   {
+    "id": "1101",
+    "name": "Iroha Tamaki (Swimsuit)",
+    "attribute": "Water",
+    "ranks": {
+      "1": false,
+      "2": false,
+      "3": false,
+      "4": true,
+      "5": true
+    },
+    "obtainability": "limited",
+    "url": "https://magireco.fandom.com/wiki/Tamaki_Iroha_(Mizugi_ver.)"
+  },
+  {
     "id": "1103",
     "name": "Uwasa Tsuruno",
     "attribute": "Fire",
@@ -236,6 +292,20 @@ const character_collection = [
     },
     "obtainability": "limited",
     "url": "https://magireco.fandom.com/wiki/Rumor_Tsuruno"
+  },
+  {
+    "id": "1105",
+    "name": "Felicia-chan",
+    "attribute": "Dark",
+    "ranks": {
+      "1": false,
+      "2": false,
+      "3": true,
+      "4": true,
+      "5": false
+    },
+    "obtainability": "limited",
+    "url": "https://magireco.fandom.com/wiki/Felicia-chan"
   },
   {
     "id": "1108",
@@ -264,6 +334,34 @@ const character_collection = [
     },
     "obtainability": "unlimited",
     "url": "https://magireco.fandom.com/wiki/Yakumo_Mitama_(Haregi_ver.)"
+  },
+  {
+    "id": "1118",
+    "name": "Amane Sisters (Swimsuit)",
+    "attribute": "Water",
+    "ranks": {
+      "1": false,
+      "2": false,
+      "3": false,
+      "4": true,
+      "5": true
+    },
+    "obtainability": "limited",
+    "url": "https://magireco.fandom.com/wiki/Amane_Sisters_(Mizugi_ver.)"
+  },
+  {
+    "id": "1201",
+    "name": "Iroha-chan",
+    "attribute": "Light",
+    "ranks": {
+      "1": false,
+      "2": false,
+      "3": false,
+      "4": true,
+      "5": true
+    },
+    "obtainability": "limited",
+    "url": "https://magireco.fandom.com/wiki/Iroha-chan"
   },
   {
     "id": "2001",
@@ -403,6 +501,20 @@ const character_collection = [
     },
     "obtainability": "limited",
     "url": "https://magireco.fandom.com/wiki/Madoka-senpai"
+  },
+  {
+    "id": "2300",
+    "name": "Homura Akemi (Swimsuit)",
+    "attribute": "Light",
+    "ranks": {
+      "1": false,
+      "2": false,
+      "3": false,
+      "4": true,
+      "5": true
+    },
+    "obtainability": "limited",
+    "url": "https://magireco.fandom.com/wiki/Akemi_Homura_(Mizugi_ver.)"
   },
   {
     "id": "2500",
@@ -643,6 +755,20 @@ const character_collection = [
     "url": "https://magireco.fandom.com/wiki/Awane_Kokoro"
   },
   {
+    "id": "3018",
+    "name": "Hanna Sarasa",
+    "attribute": "Dark",
+    "ranks": {
+      "1": false,
+      "2": false,
+      "3": false,
+      "4": true,
+      "5": true
+    },
+    "obtainability": "unlimited",
+    "url": "https://magireco.fandom.com/wiki/Sarasa_Hanna"
+  },
+  {
     "id": "3019",
     "name": "Ayaka Mariko",
     "attribute": "Dark",
@@ -797,6 +923,20 @@ const character_collection = [
     "url": "https://magireco.fandom.com/wiki/Kozue_Mayu"
   },
   {
+    "id": "3033",
+    "name": "Sayuki Fumino",
+    "attribute": "Light",
+    "ranks": {
+      "1": false,
+      "2": false,
+      "3": false,
+      "4": true,
+      "5": true
+    },
+    "obtainability": "unlimited",
+    "url": "https://magireco.fandom.com/wiki/Fumino_Sayuki"
+  },
+  {
     "id": "3035",
     "name": "Riko Chiaki",
     "attribute": "Light",
@@ -823,6 +963,20 @@ const character_collection = [
     },
     "obtainability": "unlimited",
     "url": "https://magireco.fandom.com/wiki/Anna_Meru"
+  },
+  {
+    "id": "3043",
+    "name": "Uwasa of the Eternal Sakura",
+    "attribute": "Light",
+    "ranks": {
+      "1": false,
+      "2": false,
+      "3": false,
+      "4": true,
+      "5": true
+    },
+    "obtainability": "limited",
+    "url": "https://magireco.fandom.com/wiki/Rumor_of_the_Ten-Thousand-Year_Sakura"
   },
   {
     "id": "3046",

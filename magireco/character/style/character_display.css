@@ -78,20 +78,12 @@
 }
 
 .character_display .card_image {
-  -webkit-mask-image: url(../../assets/ui/frame_mask.png);
-  -webkit-mask-position-x: +8px;
-  -webkit-mask-position-y: +20px;
-  -webkit-mask-repeat: no-repeat;
-  mask-image: url(../../assets/ui/frame_mask.png);
-  mask-position: 8px, 20px;
-  mask-repeat: no-repeat;
   position: absolute;
-  left: -10px;
-  top: -18px;
-}
-
-.character_display .card_image {
-  pointer-events: none;
+  border-radius: 50%;
+  /* top: 2px;
+  left: 2px; */
+  margin: 3px;
+  width: 106px;
 }
 
 .character_display.selected {

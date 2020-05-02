@@ -5036,6 +5036,28 @@ let memoria_collection = [
     "url": "https://magireco.fandom.com/wiki/Their_Separate_Destinations"
   },
   {
+    "id": "1280",
+    "type": "SKILL",
+    "name": "That Which Connects Us",
+    "attributeId": "ALL",
+    "rank": "4",
+    "attack": "0",
+    "defense": "768",
+    "hp": "852",
+    "pieceSkill": {
+      "name": "Curse",
+      "shortDescription": "Curse (Target/1 Turn)",
+      "intervalTurn": "5"
+    },
+    "pieceSkill2": {
+      "name": "Curse",
+      "shortDescription": "Curse (Target/1 Turn)",
+      "intervalTurn": "4"
+    },
+    "description": "The fate of Magical Girls can consume them at any time. It can suppress them, drown them, or drag them down into an invisible pool of darkness... One of them panics alone, because she cannot clearly envision a place where she truly belongs.",
+    "url": "https://magireco.fandom.com/wiki/Their_Connected_Destination"
+  },
+  {
     "id": "1287",
     "type": "SKILL",
     "name": "Magical Girls VS Series? Round 2",

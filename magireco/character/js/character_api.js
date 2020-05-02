@@ -157,7 +157,7 @@ let character_api = (() => {
     character_display.setAttribute("level", display.level);
     character_display.innerHTML = `
     <img class="background" src="/magireco/assets/ui/bg/${display.attribute}.png">
-    <img class="card_image" src="/magireco/assets/image/card_${display.character_id}${display.rank}_d.png">
+    <img class="card_image" src="/magireco/assets/image/card_${display.character_id}${display.rank}_f.png">
     <img class="frame_rank" src="/magireco/assets/ui/frame/${display.rank}.png">
     <img class="star_rank" src="/magireco/assets/ui/star/${display.rank}.png">
     <img class="attribute" src="/magireco/assets/ui/attribute/${display.attribute}.png">
@@ -479,9 +479,9 @@ let character_api = (() => {
       }
       let container = document.createElement("div");
       container.classList.add("chararacter_image_preview");
-      container.setAttribute("character_id", character.character_id);
+      container.setAttribute("character_id", character.id);
       let image = document.createElement("img");
-      image.src = `/magireco/assets/image/card_${character.id}${star}_d.png`;
+      image.src = `/magireco/assets/image/card_${character.id}${star}_f.png`;
       image.title = character.name;
       container.append(image);
       container.addEventListener("click", () => {
@@ -489,6 +489,10 @@ let character_api = (() => {
         name_select.dispatchEvent(new Event("change"));
         characterSelectModal.style.display = "none";
         characterSelectModalSearch.value = "";
+      });
+      container.addEventListener("contextmenu", e => {
+        e.preventDefault();
+        module.openCharacterDialog(character);
       });
       characterSelectModalList.append(container);
     });
@@ -510,7 +514,7 @@ let character_api = (() => {
     }
     search = search.toLowerCase();
     Array.from(characterSelectModalList.children).forEach(child => {
-      let character = character_collection.find(char => child.getAttribute("id") === char.id);
+      let character = character_collection.find(char => child.getAttribute("character_id") === char.id);
       if (character.id.includes(search)
         || character.name.toLowerCase().includes(search)
         || character.attribute.toLowerCase().includes(search)

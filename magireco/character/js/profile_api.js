@@ -4,6 +4,22 @@ let profile_api = (function () {
 
   module.selectedProfile = null;
 
+  // loads, sets, and selects the profiles
+  module.setProfiles = (profiles, previous) => {
+    profile_select.innerHTML = "";
+    Object.entries(profiles).forEach(([id, profile]) => {
+      console.log();
+      profile_select.options.add(new Option(profile.name, id, false));
+    });
+    if (module.selectedProfile !== null) profile_select.value = module.selectedProfile;
+    else if (previous && previous !== "0") profile_select.value = previous;
+    else {
+      // set sort settings with default if no list selected.
+      profile_select.value = "0";
+      profile_api.setProfileFields(storage_api.profiles["0"].settings);
+    }
+  };
+
   module.getSortProperties = () => {
     let properties = {
       group_by: group_by_select.value,
@@ -26,15 +42,15 @@ let profile_api = (function () {
     }
     new_profile_field.value = "";
     let properties = module.getSortProperties();
-    storage_api.updateProfile(profileName, properties);
+    storage_api.createProfile(profileName, properties);
     new_profile_row.style.visibility = "collapse";
     module.selectedProfile = profileName;
   };
 
   module.updateProfile = () => {
-    let profileName = module.getSelectedProfile();
+    let profileId = module.getSelectedProfileId();
     let properties = module.getSortProperties();
-    storage_api.updateProfile(profileName, properties);
+    storage_api.updateProfile(profileId, properties);
     new_profile_row.style.visibility = "collapse";
   };
 
@@ -45,20 +61,19 @@ let profile_api = (function () {
   };
 
   module.deleteProfile = () => {
-    let profileName = module.getSelectedProfile();
-    console.log("delete", profileName);
-    if (profileName !== "Default" && profileName !== "Custom") {
-      storage_api.deleteProfile(profileName);
-      module.selectedProfile = "Default";
-      profile_select.value = "Default";
+    let profileId = module.getSelectedProfileId();
+    if (storage_api.profiles[profileId].name !== "Default" && storage_api.profiles[profileId].name !== "Custom") {
+      storage_api.deleteProfile(profileId);
+      module.selectedProfile = "0";
+      profile_select.value = "0";
       let listId = character_list_api.getListId();
-      if (listId) storage_api.updateList(listId, character_list_api.getListName(), storage_api.lists[listId].characterList, "Default", background_api.getSelectedBackground() || "");
+      if (listId) storage_api.updateList(listId, character_list_api.getListName(), storage_api.lists[listId].characterList, "0", background_api.getSelectedBackground() || "");
     }
   };
 
   module.setProfile = () => {
-    let profileName = profile_select.value;
-    module.setProfileFields(storage_api.profiles[profileName]);
+    let profileId = module.getSelectedProfileId();
+    if (storage_api.profiles[profileId].settings !== true) module.setProfileFields(storage_api.profiles[profileId].settings);
   };
 
   module.setProfileFields = (profile) => {
@@ -72,12 +87,16 @@ let profile_api = (function () {
     displays_per_row.value = profile.displays_per_row;
   };
 
-  module.getSelectedProfile = () => {
+  module.getSelectedProfileId = () => {
     return profile_select.value;
   };
 
+  module.getSelectedProfileName = () => {
+    return profile_select.options[profile_select.selectedIndex].text;
+  };
+
   module.changeToCustom = () => {
-    profile_select.value = "Custom";
+    profile_select.value = "1";
   };
 
   module.resetProfiles = () => {

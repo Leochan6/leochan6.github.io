@@ -1,7 +1,8 @@
 header {
-  min-width: 300px;
-  margin: 10px;
-  height: fit-content;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid black;
 }
 
 .header_link {
@@ -16,7 +17,8 @@ header {
 }
 
 #header_left {
-  display: inline-block;
+  position: flex;
+  align-items: flex-start;
 }
 
 #header_left>h1 {
@@ -24,7 +26,8 @@ header {
 }
 
 #header_right {
-  position: absolute;
+  position: flex;
+  align-items: flex-end;
   left: auto;
   right: 20px;
   top: 20px;

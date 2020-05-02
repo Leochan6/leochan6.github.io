@@ -5,11 +5,6 @@ let elements = (() => {
   module.signout_button = document.querySelector("#signout_button");
   module.header_username = document.querySelector("#header_username");
 
-  // Navigation
-  module.character_nav_button = document.querySelector("#character_nav_button");
-  module.memoria_nav_button = document.querySelector("#memoria_nav_button");
-  module.team_nav_button = document.querySelector("#team_nav_button");
-
   // Error Text
   module.home_error_text = document.querySelector("#home_error_text");
   module.character_error_text = document.querySelector("#character_error_text");
@@ -29,7 +24,7 @@ let elements = (() => {
   module.new_list_create_button = document.querySelector("#new_list_create_button");
   module.saved_character_lists = document.querySelector("#saved_character_lists");
 
-  // Character Fields
+  // Create Character Fields
   module.name_select = document.querySelector("#name_select");
   module.rank_select = document.querySelector("#rank_select");
   module.attr_select = document.querySelector("#attr_select");
@@ -38,7 +33,7 @@ let elements = (() => {
   module.magia_select = document.querySelector("#magia_select");
   module.episode_select = document.querySelector("#episode_select");
 
-  // Character Buttons
+  // Create Character Buttons
   module.create_button = document.querySelector("#create_button");
   module.update_button = document.querySelector("#update_button");
   module.copy_button = document.querySelector("#copy_button");
@@ -55,7 +50,7 @@ let elements = (() => {
   module.new_profile_row = document.querySelector("#new_profile_row");
   module.new_profile_field = document.querySelector("#new_profile_field");
   module.new_name_field = document.querySelector("#new_name_field");
-  module.save_profile_button = document.querySelector("#save_profile_button");
+  module.create_profile_button = document.querySelector("#create_profile_button");
   module.close_new_profile_button = document.querySelector("#close_new_profile_button");
   module.delete_profile_button = document.querySelector("#delete_profile_button");
 
@@ -99,7 +94,6 @@ let elements = (() => {
   // Filters
   module.zoom_field = document.querySelector("#zoom_label");
   module.zoom_range = document.querySelector("#zoom_range");
-  module.zoom_checkbox = document.querySelector("#zoom_checkbox");
 
   module.list_filters = document.querySelector("#list_filters");
   module.add_filter_button = document.querySelector("#add_filter_button");
@@ -117,7 +111,6 @@ let elements = (() => {
   module.messageModalCopy = document.querySelector("#messageModalCopy");
   module.messageModalClose = document.querySelector("#messageModalClose");
   module.messageModalList = document.querySelector("#messageModalList");
-
 
   // Character Select Modal
   module.characterSelectModalOpen = document.querySelector("#characterSelectModalOpen");

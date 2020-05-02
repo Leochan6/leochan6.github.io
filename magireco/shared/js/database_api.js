@@ -1,5 +1,4 @@
 let database = (() => {
-
   const config = {
     apiKey: "AIzaSyCDOhFHwY8BHUafRA4hvAT7GISB72bUrhQ",
     authDomain: "magia-record-25fb0.firebaseapp.com",
@@ -14,6 +13,7 @@ let database = (() => {
   const lists = db.child("lists");
   const profiles = db.child("profiles");
   const settings = db.child("settings");
+  const messages = db.child("messages");
 
   let module = {};
 
@@ -57,7 +57,7 @@ let database = (() => {
   module.createUser = (userId, name) => {
     users.update({ [userId]: { name: name } });
     lists.update({ [userId]: true });
-    profiles.update({ [userId]: { "Default": defaultProfile, "Custom": customProfile } });
+    profiles.update({ [userId]: { "0": defaultCharacterProfile, "1": customCharacterProfile, "10": defaultMemoriaProfile, "11": customMemoriaProfile } });
     settings.update({ [userId]: defaultSettings });
   };
 
@@ -98,29 +98,62 @@ let database = (() => {
 
   // ---------- profiles ---------- //
 
-  const defaultProfile = {
-    group_by: "attribute",
-    group_by_dir: 1,
-    sort_by_1: "level",
-    sort_dir_1: -1,
-    sort_by_2: "none",
-    sort_dir_2: -1,
-    sort_id_dir: -1,
-    displays_per_row: 10
+  const defaultCharacterProfile = {
+    name: "Default",
+    type: "character",
+    settings: {
+      group_by: "attribute",
+      group_by_dir: 1,
+      sort_by_1: "level",
+      sort_dir_1: -1,
+      sort_by_2: "none",
+      sort_dir_2: -1,
+      sort_id_dir: -1,
+      displays_per_row: 10
+    }
   };
 
-  const customProfile = true;
+  const customCharacterProfile = {
+    name: "Custom",
+    type: "character",
+    settings: true
+  };
+
+  const defaultMemoriaProfile = {
+    name: "Default",
+    type: "memoria",
+    settings: {
+      group_by: "none",
+      group_by_dir: 1,
+      sort_by_1: "rank",
+      sort_dir_1: -1,
+      sort_by_2: "ascension",
+      sort_dir_2: -1,
+      sort_id_dir: -1,
+      displays_per_row: 10
+    }
+  };
+
+  const customMemoriaProfile = {
+    name: "Custom",
+    type: "memoria",
+    settings: true
+  };
 
   module.getProfiles = (userId) => {
     return profiles.child(userId).once('value');
   };
 
-  module.updateProfile = (userId, profileName, content) => {
-    return profiles.child(`${userId}/${profileName}`).set(content);
+  module.createProfile = (userId, content) => {
+    return profiles.child(`${userId}`).push(content);
+  }
+
+  module.updateProfile = (userId, profileId, content) => {
+    return profiles.child(`${userId}/${profileId}`).set(content);
   };
 
-  module.deleteProfile = (userId, profileName) => {
-    return profiles.child(`${userId}/${profileName}`).remove();
+  module.deleteProfile = (userId, profileId) => {
+    return profiles.child(`${userId}/${profileId}`).remove();
   };
 
   module.onProfileUpdate = (userId, callback) => {
@@ -139,11 +172,16 @@ let database = (() => {
       sort_tab: true,
       display_tab: true,
       background_tab: true,
-      setting_tab: false
+      setting_tab: false,
+      memoria_background_tab: true,
+      memoria_create_tab: true,
+      memoria_home_tab: true,
+      memoria_sort_tab: true
     },
     display_alignment: "left",
     padding_x: 0,
-    padding_y: 0
+    padding_y: 0,
+    character_zoom: 100
   };
 
   module.updateSettings = (userId, settingName, content) => {
@@ -164,11 +202,13 @@ let database = (() => {
     });
   };
 
-  settings.once('value', snapshot => {
-    Object.entries(snapshot.val()).forEach(([userId, value]) => {
-      settings.child(userId).set(defaultSettings);
+  module.onMessageUpdate = (userId, callback) => {
+    messages.on('value', snapshot => {
+      let val = snapshot.val();
+      if (userId != val.userId && val.message) callback(val.message);
+      else callback(false);
     });
-  });
+  };
 
   return module;
 

@@ -11,9 +11,18 @@ let storage_api = (() => {
   module.startUp = (_userId) => {
     userId = _userId;
     loadUserName();
-    database.onSettingUpdate(userId, loadSettings);
-    database.onProfileUpdate(userId, loadProfiles);
-    database.onListUpdate(userId, loadLists);
+    database.onMessageUpdate(userId, message => {
+      if (message) {
+        messageModal.style.display = "block";
+        messageModalText.value = message;
+        messageModalTitle.innerHTML = `Message`;
+        messageModalList.innerHTML = "";
+      } else {
+        database.onSettingUpdate(userId, loadSettings);
+        database.onProfileUpdate(userId, loadProfiles);
+        database.onListUpdate(userId, loadLists);
+      }
+    });
   };
 
   module.listExists = (name) => {
@@ -36,7 +45,7 @@ let storage_api = (() => {
   };
 
   module.duplicateList = (list, newName) => {
-    let selectedProfile = profile_api.getSelectedProfile() || "Default";
+    let selectedProfile = profile_api.getSelectedProfileName() || "Default";
     let selectedBackground = background_api.getSelectedBackground() || true;
     database.createList(userId, { name: newName, characterList: list.characterList, selectedProfile: selectedProfile, selectedBackground: selectedBackground });
   };
@@ -45,17 +54,24 @@ let storage_api = (() => {
     database.createList(userId, { name: name, characterList: characterList, selectedProfile: selectedProfile, selectedBackground: selectedBackground });
   }
 
-  module.updateProfile = (name, profile) => {
-    database.updateProfile(userId, name, profile);
+  module.createProfile = (name, profile) => {
+    database.createProfile(userId, { name: name, type: "character", settings: profile });
+  };
+
+  module.updateProfile = (profileId, settings) => {
+    database.updateProfile(userId, profileId, { name: module.profiles[profileId].name, type: "character", settings: settings });
   };
 
   module.profileExists = (name) => {
-    if (module.profiles[name]) return true;
+    if (Object.values(module.profiles).some(profile => profile.name === name)) return true;
     return false;
   };
 
-  module.deleteProfile = (name) => {
-    database.deleteProfile(userId, name);
+  module.deleteProfile = (id) => {
+    database.deleteProfile(userId, id);
+    Object.entries(module.lists).forEach(([id, list]) => {
+      if (list.selectedProfile === id) database.updateListProfile(id, "0");
+    });
   };
 
   module.updateSettings = (settingName, newSettings) => {
@@ -84,6 +100,9 @@ let storage_api = (() => {
     });
     // display settings
     if (typeof character_list_content !== 'undefined') {
+      character_list_content.style.zoom = module.settings.character_zoom / 100;
+      zoom_range.value = module.settings.character_zoom;
+      zoom_field.value = module.settings.character_zoom;
       character_list_content.style.padding = `${module.settings.padding_y}px ${module.settings.padding_x}px`;
       document.querySelectorAll(".character_row").forEach(character_row => character_row.style.justifyContent = character_list_api.direction_to_flex[module.settings.display_alignment]);
       display_alignment_select.value = module.settings.display_alignment;
@@ -94,21 +113,20 @@ let storage_api = (() => {
 
   const loadProfiles = (snapshot) => {
     // get the previous profile.
-    let previous = profile_api.getSelectedProfile();
+    let previous = profile_api.getSelectedProfileId();
     // get the settings.
-    module.profiles = snapshot.val();
+    let profiles = snapshot.val();
+    let filtered = Object.keys(profiles)
+      .filter(key => profiles[key].type == "character")
+      .reduce((obj, key) => {
+        return {
+          ...obj,
+          [key]: profiles[key]
+        };
+      }, {});
+    module.profiles = filtered;
     // update the profile select.
-    profile_select.innerHTML = "";
-    for (let [name, profile] of Object.entries(module.profiles)) {
-      profile_select.options.add(new Option(name, name, false));
-    }
-    if (profile_api.selectedProfile !== null) profile_select.value = profile_api.selectedProfile;
-    else if (previous && previous !== "Default") profile_select.value = previous;
-    else {
-      // set sort settings with default if no list selected.
-      profile_select.value = "Default";
-      profile_api.setProfileFields(module.profiles.Default);
-    }
+    profile_api.setProfiles(module.profiles, previous);
   };
 
   const loadLists = (snapshot) => {

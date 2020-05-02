@@ -19,6 +19,12 @@ let character_list_api = (function () {
   };
 
   /**
+   * mapping of attribute to numbers.
+   */
+  const ATT_TO_NUM = { "fire": "1", "water": "2", "forest": "3", "light": "4", "dark": "5", "void": "6" };
+  const NUM_TO_ATT = { "1": "fire", "2": "water", "3": "forest", "4": "light", "5": "dark", "6": "void" };
+
+  /**
    * sort the character list with the given properties.
    * 
    * @param {Object} properties
@@ -30,8 +36,11 @@ let character_list_api = (function () {
       character_displays.push(character_api.getCharacterDisplay(child));
     });
 
+
     // add each display_property to the corresponding group.
     let display_groups = group_properties(character_displays, properties.group_by, properties.group_dir);
+
+    character_displays.forEach(display => display.attribute = ATT_TO_NUM[display.attribute]);
 
     // sort each group by the specified property.
     var sortBy = [];
@@ -46,7 +55,9 @@ let character_list_api = (function () {
     for (var group in display_groups) {
       display_groups[group] = display_groups[group].sort((a, b) => utils.sortArrayBy(a, b, sortBy));
     }
-    // placeCharacterDisplays(display_groups, num_per_row);
+
+    character_displays.forEach(display => display.attribute = NUM_TO_ATT[display.attribute]);
+
     return display_groups;
   };
 
@@ -134,7 +145,7 @@ let character_list_api = (function () {
     let listId = module.getListId();
     let listName = module.getListName();
     let character_list = module.getCharacterList(false);
-    let selectedProfile = profile_api.getSelectedProfile();
+    let selectedProfile = profile_api.getSelectedProfileId();
     let selectedBackground = background_api.getSelectedBackground();
     if (!listName) return;
     storage_api.updateList(listId, listName, character_list, selectedProfile, selectedBackground);
@@ -304,9 +315,7 @@ let character_list_api = (function () {
   };
 
   module.changePadding = (direction, padding) => {
-    console.log(padding);
     storage_api.settings[`padding_${direction}`] = padding;
-    storage_api.updateSettings(`padding_${direction}`, padding);
     character_list_content.style.padding = `${storage_api.settings.padding_y}px ${storage_api.settings.padding_x}px`;
   };
 
@@ -314,6 +323,7 @@ let character_list_api = (function () {
    * sets the zoom of the character list.
    */
   module.changeZoom = (zoom) => {
+    storage_api.updateSettings("character_zoom", zoom);
     character_list_content.style.zoom = zoom / 100;
   };
 

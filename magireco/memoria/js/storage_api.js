@@ -4,7 +4,7 @@ let storage_api = (() => {
 
   module.profiles = {};
   module.lists = {};
-  module.memoria_lists = {};
+  module.lists = {};
   module.settings = {};
 
   let userId = null;
@@ -12,16 +12,18 @@ let storage_api = (() => {
   module.startUp = (_userId) => {
     userId = _userId;
     loadUserName();
-    database.onSettingUpdate(userId, loadSettings);
-    database.onProfileUpdate(userId, loadProfiles);
-    database.onListUpdate(userId, loadLists);
-  };
-
-  module.startUpMemoria = (_userId) => {
-    userId = _userId;
-    loadUserName();
-    database.onSettingUpdate(userId, loadSettings);
-    database.onListUpdate(userId, loadMemoriaLists);
+    database.onMessageUpdate(userId, message => {
+      if (message) {
+        messageModal.style.display = "block";
+        messageModalText.value = message;
+        messageModalTitle.innerHTML = `Message`;
+        messageModalList.innerHTML = "";
+      } else {
+        database.onSettingUpdate(userId, loadSettings);
+        database.onProfileUpdate(userId, loadProfiles);
+        database.onListUpdate(userId, loadLists);
+      }
+    });
   };
 
   module.listExists = (name) => {
@@ -30,20 +32,10 @@ let storage_api = (() => {
   };
 
   module.createList = (name) => {
-    database.createList(userId, { name: name, characterList: true, selectedProfile: "Default", selectedBackground: true });
-  };
-
-  module.createMemoriaList = (name) => {
     database.createList(userId, { name: name, memoriaList: true, selectedProfile: "Default", selectedBackground: true });
   };
 
-  module.updateList = (listId, name, characterList, selectedProfile, selectedBackground) => {
-    if (characterList.length == 0) characterList = true;
-    if (!selectedBackground) selectedBackground = true;
-    database.updateList(userId, listId, { name: name, characterList: characterList, selectedProfile: selectedProfile, selectedBackground: selectedBackground });
-  };
-
-  module.updateMemoriaList = (listId, name, memoriaList, selectedProfile, selectedBackground) => {
+  module.updateList = (listId, name, memoriaList, selectedProfile, selectedBackground) => {
     if (memoriaList.length == 0) memoriaList = true;
     if (!selectedBackground) selectedBackground = true;
     database.updateList(userId, listId, { name: name, memoriaList: memoriaList, selectedProfile: selectedProfile, selectedBackground: selectedBackground });
@@ -56,17 +48,11 @@ let storage_api = (() => {
   module.duplicateList = (list, newName) => {
     let selectedProfile = profile_api.getSelectedProfile() || "Default";
     let selectedBackground = background_api.getSelectedBackground() || true;
-    database.createList(userId, { name: newName, characterList: list.characterList, selectedProfile: selectedProfile, selectedBackground: selectedBackground });
-  };
-
-  module.duplicateMemoriaList = (list, newName) => {
-    let selectedProfile = "Default";
-    let selectedBackground = background_api.getSelectedBackground() || true;
     database.createList(userId, { name: newName, memoriaList: list.memoriaList, selectedProfile: selectedProfile, selectedBackground: selectedBackground });
   };
 
-  module.manualCreateList = (name, characterList, selectedProfile, selectedBackground) => {
-    database.createList(userId, { name: name, characterList: characterList, selectedProfile: selectedProfile, selectedBackground: selectedBackground });
+  module.manualCreateList = (name, memoriaList, selectedProfile, selectedBackground) => {
+    database.createList(userId, { name: name, memoriaList: memoriaList, selectedProfile: selectedProfile, selectedBackground: selectedBackground });
   }
 
   module.updateProfile = (name, profile) => {
@@ -78,8 +64,11 @@ let storage_api = (() => {
     return false;
   };
 
-  module.deleteProfile = (name) => {
-    database.deleteProfile(userId, name);
+  module.deleteProfile = (id) => {
+    database.deleteProfile(userId, id);
+    Object.entries(module.lists).forEach(([id, list]) => {
+      if (list.selectedProfile === id) database.updateListProfile(id, "10");
+    });
   };
 
   module.updateSettings = (settingName, newSettings) => {
@@ -120,38 +109,23 @@ let storage_api = (() => {
     // get the previous profile.
     let previous = profile_api.getSelectedProfile();
     // get the settings.
-    module.profiles = snapshot.val();
+    let profiles = snapshot.val();
+    let filtered = Object.keys(profiles)
+      .filter(key => profiles[key].type == "memoria")
+      .reduce((obj, key) => {
+        return {
+          ...obj,
+          [key]: profiles[key]
+        };
+      }, {});
+    module.profiles = filtered;
     // update the profile select.
-    profile_select.innerHTML = "";
-    for (let [name, profile] of Object.entries(module.profiles)) {
-      profile_select.options.add(new Option(name, name, false));
-    }
-    if (profile_api.selectedProfile !== null) profile_select.value = profile_api.selectedProfile;
-    else if (previous && previous !== "Default") profile_select.value = previous;
-    else {
-      // set sort settings with default if no list selected.
-      profile_select.value = "Default";
-      profile_api.setProfileFields(module.profiles.Default);
-    }
+    profile_api.setProfiles(module.profiles, previous);
   };
 
   const loadLists = (snapshot) => {
     let lists = snapshot.val() ? snapshot.val() : {};
-    const filtered = Object.keys(lists)
-      .filter(key => lists[key].characterList)
-      .reduce((obj, key) => {
-        return {
-          ...obj,
-          [key]: lists[key]
-        };
-      }, {});
-    module.lists = filtered;
-    character_list_api.setLists(module.lists);
-  };
-
-  const loadMemoriaLists = (snapshot) => {
-    let lists = snapshot.val() ? snapshot.val() : {};
-    const filtered = Object.keys(lists)
+    let filtered = Object.keys(lists)
       .filter(key => lists[key].memoriaList)
       .reduce((obj, key) => {
         return {

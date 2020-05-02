@@ -4,6 +4,22 @@ let profile_api = (function () {
 
   module.selectedProfile = null;
 
+  // loads, sets, and selects the profiles
+  module.setProfiles = (profiles, previous) => {
+    profile_select.innerHTML = "";
+    for (let [id, profile] of Object.entries(profiles)) {
+      profile_select.options.add(new Option(profile.name, id, false));
+    }
+    if (module.selectedProfile !== null) profile_select.value = module.selectedProfile;
+    else if (previous && previous !== "10") profile_select.value = previous;
+    else {
+      // set sort settings with default if no list selected.
+      profile_select.value = "10";
+      console.log(storage_api.profiles);
+      profile_api.setProfileFields(storage_api.profiles["10"]);
+    }
+  };
+
   module.getSortProperties = () => {
     let properties = {
       group_by: group_by_select.value,
@@ -72,12 +88,16 @@ let profile_api = (function () {
     displays_per_row.value = profile.displays_per_row;
   };
 
-  module.getSelectedProfile = () => {
+  module.getSelectedProfileId = () => {
     return profile_select.value;
   };
 
+  module.getSelectedProfileName = () => {
+    return profile_select.options[profile_select.selectedIndex];
+  };
+
   module.changeToCustom = () => {
-    profile_select.value = "Custom";
+    profile_select.value = "11";
   };
 
   module.resetProfiles = () => {

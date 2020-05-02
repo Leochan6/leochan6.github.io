@@ -8,6 +8,7 @@ let elements = (() => {
   // Error Text
   module.home_error_text = document.querySelector("#home_error_text");
   module.memoria_error_text = document.querySelector("#memoria_error_text");
+  module.profile_error_text = document.querySelector("#profile_error_text");
 
   // Home Buttons
   module.list_create = document.querySelector("#list_create");
@@ -23,16 +24,38 @@ let elements = (() => {
   module.new_list_create_button = document.querySelector("#new_list_create_button");
   module.saved_memoria_lists = document.querySelector("#saved_memoria_lists");
 
-  // Create Fields
+  // Create Memoria Fields
   module.name_select = document.querySelector("#name_select");
   module.rank_select = document.querySelector("#rank_select");
   module.ascension_select = document.querySelector("#ascension_select");
   module.level_select = document.querySelector("#level_select");
 
-  // Navigation
-  module.character_nav_button = document.querySelector("#character_nav_button");
-  module.memoria_nav_button = document.querySelector("#memoria_nav_button");
-  module.team_nav_button = document.querySelector("#team_nav_button");
+  // Character Preview
+  module.display_preview = document.querySelector("#display_preview");
+
+  // Sorting Profiles
+  module.profile_select = document.querySelector("#profile_select");
+  module.new_profile_button = document.querySelector("#new_profile_button");
+  module.new_profile_row = document.querySelector("#new_profile_row");
+  module.new_profile_field = document.querySelector("#new_profile_field");
+  module.new_name_field = document.querySelector("#new_name_field");
+  module.create_profile_button = document.querySelector("#create_profile_button");
+  module.close_new_profile_button = document.querySelector("#close_new_profile_button");
+  module.delete_profile_button = document.querySelector("#delete_profile_button");
+
+  // Sorting Fields
+  module.group_by_select = document.querySelector("#group_by_select");
+  module.group_dir_select = document.querySelector("#group_dir_select");
+  module.sort_by_1_select = document.querySelector("#sort_by_1_select");
+  module.sort_dir_1_select = document.querySelector("#sort_dir_1_select");
+  module.sort_by_2_select = document.querySelector("#sort_by_2_select");
+  module.sort_dir_2_select = document.querySelector("#sort_dir_2_select");
+  module.sort_id_dir_select = document.querySelector("#sort_id_dir_select");
+  module.displays_per_row = document.querySelector("#displays_per_row");
+
+  // Background
+  module.background_select = document.querySelector("#background_select");
+  module.remove_background_button = document.querySelector("#remove_background_button");
 
   // Body
   module.list_name_title = document.querySelector("#list_name_title");
@@ -51,7 +74,6 @@ let elements = (() => {
   // Filters
   module.zoom_field = document.querySelector("#zoom_label");
   module.zoom_range = document.querySelector("#zoom_range");
-  module.zoom_checkbox = document.querySelector("#zoom_checkbox");
 
   module.list_filters = document.querySelector("#list_filters");
   module.add_filter_button = document.querySelector("#add_filter_button");
@@ -70,8 +92,7 @@ let elements = (() => {
   module.messageModalClose = document.querySelector("#messageModalClose");
   module.messageModalList = document.querySelector("#messageModalList");
 
-
-  // Character Select Modal
+  // Memoria Select Modal
   module.memoriaSelectModalOpen = document.querySelector("#memoriaSelectModalOpen");
   module.memoriaSelectModal = document.querySelector("#memoriaSelectModal");
   module.memoriaSelectModalClose = document.querySelector("#name_modal_close_button");
