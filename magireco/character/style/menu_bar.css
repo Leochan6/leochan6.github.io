@@ -13,8 +13,8 @@
 
 #tabs {
   width: 100%;
-  overflow: auto;
   height: 100%;
+  overflow: auto;
 }
 
 .tab {
@@ -24,7 +24,6 @@
   min-width: fit-content;
   max-width: 300px;
   padding: 10px;
-  border-bottom: 1px solid black;
 }
 
 .tab_hidden {

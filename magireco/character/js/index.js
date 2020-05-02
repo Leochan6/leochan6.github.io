@@ -275,7 +275,6 @@
         if (profile_api.getSelectedProfileName() === "Default") profile_api.changeToCustom();
         character_list_api.updateList();
         profile_api.updateProfile();
-        console.log(1);
       });
     });
 

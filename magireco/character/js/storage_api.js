@@ -45,7 +45,7 @@ let storage_api = (() => {
   };
 
   module.duplicateList = (list, newName) => {
-    let selectedProfile = profile_api.getSelectedProfileName() || "Default";
+    let selectedProfile = profile_api.getSelectedProfileId() || "0";
     let selectedBackground = background_api.getSelectedBackground() || true;
     database.createList(userId, { name: newName, characterList: list.characterList, selectedProfile: selectedProfile, selectedBackground: selectedBackground });
   };

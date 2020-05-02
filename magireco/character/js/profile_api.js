@@ -17,6 +17,7 @@ let profile_api = (function () {
       // set sort settings with default if no list selected.
       profile_select.value = "0";
       profile_api.setProfileFields(storage_api.profiles["0"].settings);
+      console.log(1);
     }
   };
 
@@ -88,11 +89,15 @@ let profile_api = (function () {
   };
 
   module.getSelectedProfileId = () => {
-    return profile_select.value;
+    if (profile_select.selectedIndex > -1)
+      return profile_select.value;
+    else return "0";
   };
 
   module.getSelectedProfileName = () => {
-    return profile_select.options[profile_select.selectedIndex].text;
+    if (profile_select.options[profile_select.selectedIndex])
+      return profile_select.options[profile_select.selectedIndex].text;
+    else return "Default";
   };
 
   module.changeToCustom = () => {

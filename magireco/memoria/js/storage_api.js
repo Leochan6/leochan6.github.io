@@ -46,7 +46,7 @@ let storage_api = (() => {
   };
 
   module.duplicateList = (list, newName) => {
-    let selectedProfile = profile_api.getSelectedProfile() || "Default";
+    let selectedProfile = profile_api.getSelectedProfileId() || "0";
     let selectedBackground = background_api.getSelectedBackground() || true;
     database.createList(userId, { name: newName, memoriaList: list.memoriaList, selectedProfile: selectedProfile, selectedBackground: selectedBackground });
   };
@@ -55,7 +55,7 @@ let storage_api = (() => {
     database.createList(userId, { name: name, memoriaList: memoriaList, selectedProfile: selectedProfile, selectedBackground: selectedBackground });
   }
 
-  module.updateProfile = (name, profile) => {
+  module.updateProfile = (profileId, se) => {
     database.updateProfile(userId, name, profile);
   };
 
