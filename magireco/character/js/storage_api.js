@@ -62,15 +62,11 @@ let storage_api = (() => {
     database.updateProfile(userId, profileId, { name: module.profiles[profileId].name, type: "character", settings: settings });
   };
 
-  module.profileExists = (name) => {
-    if (Object.values(module.profiles).some(profile => profile.name === name)) return true;
-    return false;
-  };
-
-  module.deleteProfile = (id) => {
-    database.deleteProfile(userId, id);
+  module.deleteProfile = (profileId) => {
+    database.deleteProfile(userId, profileId);
     Object.entries(module.lists).forEach(([id, list]) => {
-      if (list.selectedProfile === id) database.updateListProfile(id, "0");
+      console.log("update list", id, "with profile", list.selectedProfile, "on delete profile", profileId);
+      if (list.selectedProfile === profileId) database.updateListProfile(id, "0");
     });
   };
 
@@ -99,16 +95,14 @@ let storage_api = (() => {
       }
     });
     // display settings
-    if (typeof character_list_content !== 'undefined') {
-      character_list_content.style.zoom = module.settings.character_zoom / 100;
-      zoom_range.value = module.settings.character_zoom;
-      zoom_field.value = module.settings.character_zoom;
-      character_list_content.style.padding = `${module.settings.padding_y}px ${module.settings.padding_x}px`;
-      document.querySelectorAll(".character_row").forEach(character_row => character_row.style.justifyContent = character_list_api.direction_to_flex[module.settings.display_alignment]);
-      display_alignment_select.value = module.settings.display_alignment;
-      display_padding_x_field.value = module.settings.padding_x;
-      display_padding_y_field.value = module.settings.padding_y;
-    }
+    character_list_content.style.zoom = module.settings.character_zoom / 100;
+    zoom_range.value = module.settings.character_zoom;
+    zoom_field.value = module.settings.character_zoom;
+    document.querySelectorAll(".character_row").forEach(character_row => character_row.style.justifyContent = character_list_api.direction_to_flex[module.settings.display_alignment]);
+    character_list_content.style.padding = `${module.settings.padding_y}px ${module.settings.padding_x}px`;
+    display_alignment_select.value = module.settings.display_alignment;
+    display_padding_x_field.value = module.settings.padding_x;
+    display_padding_y_field.value = module.settings.padding_y;
   };
 
   const loadProfiles = (snapshot) => {

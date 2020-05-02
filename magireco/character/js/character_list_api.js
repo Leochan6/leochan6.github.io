@@ -16,6 +16,7 @@ let character_list_api = (function () {
       display._id = key;
       character_list_content.append(character_api.createDisplay(display));
     });
+    module.setPadding(storage_api.settings.padding_x, storage_api.settings.padding_y);
   };
 
   /**
@@ -207,6 +208,7 @@ let character_list_api = (function () {
     list_create.style.display = "none";
     list_name_title.innerHTML = listName;
     profile_select.value = "Default";
+    console.log(profile_select.value);
     character_list_content.innerHTML = "";
     storage_api.createList(listName);
   };
@@ -237,10 +239,8 @@ let character_list_api = (function () {
     list_name_title.innerHTML = list.name;
     list_name_title.setAttribute("listId", listId);
     loadCharacterList(list.characterList);
-    profile_select.value = list.selectedProfile;
-    profile_api.setProfile();
+    profile_api.setProfile(list.selectedProfile);
     module.sortOnFormUpdate();
-    background_select.value = list.selectedBackground
     background_api.setBackground(list.selectedBackground);
     character_list_api.getStats();
     character_api.enableButtons();
@@ -315,9 +315,14 @@ let character_list_api = (function () {
   };
 
   module.changePadding = (direction, padding) => {
+    console.error();
     storage_api.settings[`padding_${direction}`] = padding;
-    character_list_content.style.padding = `${storage_api.settings.padding_y}px ${storage_api.settings.padding_x}px`;
+    module.setPadding(storage_api.settings.padding_x, storage_api.settings.padding_y);
   };
+
+  module.setPadding = (x, y) => {
+    character_list_content.style.padding = `${y}px ${x}px`;
+  }
 
   /**
    * sets the zoom of the character list.
@@ -781,7 +786,7 @@ Copies of Each Rank:${Object.entries(result.rankCopies).map(([level, count]) => 
   module.openStatsModal = () => {
     messageModal.style.display = "block";
     messageModalText.value = module.getMoreStats();
-    messageModalTitle.innerHTML = `More ${character_list_api.getListName()} Stats`;
+    messageModalTitle.innerHTML = `Stats of "${character_list_api.getListName()}"`;
     messageModalList.innerHTML = "";
   };
 
@@ -817,6 +822,7 @@ Copies of Each Rank:${Object.entries(result.rankCopies).map(([level, count]) => 
       if (validateCharacterList(character_list)) {
         list_name_title.innerHTML = listName;
         profile_select.value = "Default";
+        console.log(profile_select.value);
         character_list_content.innerHTML = "";
         storage_api.manualCreateList(listName, character_list, "Default", true);
         importListModal.style.display = "none";

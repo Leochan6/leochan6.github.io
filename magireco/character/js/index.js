@@ -280,7 +280,7 @@
 
     // check set the profile properties on change.
     profile_select.addEventListener("change", () => {
-      profile_api.setProfile();
+      profile_api.setProfile(profile_select.value);
       character_list_api.sortOnFormUpdate();
       character_list_api.updateList();
     });
@@ -417,8 +417,11 @@
     });
 
     // zoom range slider.
-    ["input", "change"].forEach(event => {
-      zoom_range.addEventListener(event, () => {
+    ["input", "change", "wheel"].forEach(event => {
+      zoom_range.addEventListener(event, (e) => {
+        if (event === "wheel") {
+          zoom_range.value = parseInt(zoom_range.value) - (e.deltaY / 100) * (e.shiftKey ? 50 : 1);
+        }
         zoom_field.value = zoom_range.value;
         character_list_api.changeZoom(zoom_range.value);
         if (event === "change") storage_api.updateSettings("character_zoom", zoom_range.value);
@@ -456,6 +459,7 @@
 
     // resort when character list changes.
     character_list_content.addEventListener("change", () => {
+      console.log(1);
       character_list_api.sortOnFormUpdate();
       character_list_api.updateList();
     });
