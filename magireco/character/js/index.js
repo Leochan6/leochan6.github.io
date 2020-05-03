@@ -218,36 +218,38 @@
 
     // add new character display to list.
     create_button.addEventListener("click", () => {
-      character_api.createAddDisplay();
+      if (character_list_api.getListName()) character_api.createAddDisplay();
     });
 
     // updates the character display with the form.
     update_button.addEventListener("click", () => {
-      character_api.updateSelectedDisplay();
+      if (character_list_api.getListName()) character_api.updateSelectedDisplay();
     });
 
     // copies the character display to the form.
     copy_button.addEventListener("click", () => {
-      character_api.copyDisplay();
+      if (character_list_api.getListName()) character_api.copyDisplay();
     });
 
     // delete the selected character display from list.
     delete_button.addEventListener("click", () => {
-      let character_display = Array.from(document.querySelectorAll(".character_display:not(.preview)")).find(child => child.classList.contains("selected"));
-      character_display.remove();
-      character_api.selectedCharacter = null;
-      character_api.enableButtons();
-      character_list_content.dispatchEvent(new Event("change"));
+      if (character_list_api.getListName()) {
+        let character_display = Array.from(document.querySelectorAll(".character_display:not(.preview)")).find(child => child.classList.contains("selected"));
+        character_display.remove();
+        character_api.selectedCharacter = null;
+        character_api.enableButtons();
+        character_list_content.dispatchEvent(new Event("change"));
+      }
     });
 
     // mines all the fields.
     min_all_button.addEventListener("click", () => {
-      character_api.minimizeDisplay();
+      if (!min_all_button.disabled) character_api.minimizeDisplay();
     });
 
     // maxes all the fields.
     max_all_button.addEventListener("click", () => {
-      character_api.maximizeDisplay();
+      if (!max_all_button.disabled) character_api.maximizeDisplay();
     });
 
     /* ------------------------------ Sorting Profile Tab ------------------------------ */
@@ -362,19 +364,7 @@
 
     // export text button.
     export_text_button.addEventListener("click", () => {
-
-      navigator.mediaDevices.getDisplayMedia()
-        .then(mediaStream => {
-          const video = document.querySelector('#character_list_content');
-          video.srcObject = mediaStream;
-          video.onloadedmetadata = e => {
-            video.play();
-            video.pause();
-          };
-        })
-        .catch(err => console.log(`${err.name}: ${err.message}`));
-
-      // character_list_api.openExportModal();
+      character_list_api.openExportModal();
     });
 
     // import text button.
