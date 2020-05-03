@@ -16,16 +16,16 @@ body {
   height: 90%
 }
 
-.ascend, .descend {
+.up, .down {
   font-size: 12px;
   color: #18a0fb;
 }
 
-.ascend::after {
+.up::after {
   content: "▲";
 }
 
-.descend::after {
+.down::after {
   content: "▼";
 }
 

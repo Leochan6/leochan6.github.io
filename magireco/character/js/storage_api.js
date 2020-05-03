@@ -90,8 +90,14 @@ let storage_api = (() => {
       let tab = document.querySelector(`#${tab_id}`);
       if (tab) {
         let tab_contents = tab.querySelector(".tab_contents");
-        if (expanded && tab_contents.classList.contains("hidden")) tab_contents.classList.remove("hidden");
-        else if (!expanded && !tab_contents.classList.contains("hidden")) tab_contents.classList.add("hidden");
+        let tab_toggle = tab.querySelector(".tab_toggle");
+        if (expanded) {
+          if (tab_contents.classList.contains("hidden")) tab_contents.classList.remove("hidden");
+          if (tab_toggle.classList.contains("right")) tab_toggle.classList.replace("right", "down");
+        } else if (!expanded) {
+          if (!tab_contents.classList.contains("hidden")) tab_contents.classList.add("hidden");
+          if (tab_toggle.classList.contains("down")) tab_toggle.classList.replace("down", "right");
+        }
       }
     });
     // display settings

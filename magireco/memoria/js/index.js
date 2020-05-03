@@ -251,11 +251,11 @@
     // update the list on sort dir click.
     document.querySelectorAll(".sort_dir").forEach(element => {
       element.addEventListener("click", () => {
-        if (element.classList.contains("ascend")) {
-          element.classList.replace("ascend", "descend");
+        if (element.classList.contains("up")) {
+          element.classList.replace("up", "down");
         }
-        else if (element.classList.contains("descend")) {
-          element.classList.replace("descend", "ascend");
+        else if (element.classList.contains("down")) {
+          element.classList.replace("down", "up");
         }
         memoria_list_api.sortOnFormUpdate();
         if (profile_api.getSelectedProfileName() === "Default") profile_api.changeToCustom();

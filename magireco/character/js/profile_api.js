@@ -25,12 +25,12 @@ let profile_api = (function () {
   module.getSortProperties = () => {
     let properties = {
       group_by: group_by_select.value,
-      group_dir: group_dir_select.classList.contains("ascend") ? 1 : -1,
+      group_dir: group_dir_select.classList.contains("up") ? 1 : -1,
       sort_by_1: sort_by_1_select.value,
-      sort_dir_1: sort_dir_1_select.classList.contains("ascend") ? 1 : -1,
+      sort_dir_1: sort_dir_1_select.classList.contains("up") ? 1 : -1,
       sort_by_2: sort_by_2_select.value,
-      sort_dir_2: sort_dir_2_select.classList.contains("ascend") ? 1 : -1,
-      sort_id_dir: sort_id_dir_select.classList.contains("ascend") ? 1 : -1,
+      sort_dir_2: sort_dir_2_select.classList.contains("up") ? 1 : -1,
+      sort_id_dir: sort_id_dir_select.classList.contains("up") ? 1 : -1,
       displays_per_row: parseInt(displays_per_row.value)
     };
     return properties;
@@ -125,11 +125,11 @@ let profile_api = (function () {
   };
 
   const setSelectedDirection = (element, direction) => {
-    if (element.classList.contains("ascend") && direction === -1) {
-      element.classList.replace("ascend", "descend");
+    if (element.classList.contains("up") && direction === -1) {
+      element.classList.replace("up", "down");
     }
-    else if (element.classList.contains("descend") && direction === 1) {
-      element.classList.replace("descend", "ascend");
+    else if (element.classList.contains("down") && direction === 1) {
+      element.classList.replace("down", "up");
     }
   };
 

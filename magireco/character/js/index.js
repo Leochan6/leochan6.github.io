@@ -111,17 +111,20 @@
     /* ------------------------------ Tabs ------------------------------ */
 
     // toggle visibility of the tab when heading clicked.
-    document.querySelectorAll(".tab_heading").forEach(element => {
+    document.querySelectorAll(".tab_header").forEach(element => {
       element.addEventListener("click", () => {
-        let contents = element.parentElement.parentElement.querySelector(".tab_contents");
-        let tab_name = element.getAttribute("tab_name");
+        let contents = element.parentElement.querySelector(".tab_contents");
+        let toggle = element.querySelector(".tab_toggle");
+        let tab_name = element.querySelector(".tab_heading").getAttribute("tab_name");
         if (!contents.classList.contains("hidden")) {
           contents.classList.add("hidden");
+          toggle.classList.replace("down", "right");
           storage_api.settings.expanded_tabs[tab_name] = false;
           storage_api.updateSettings(`expanded_tabs/${tab_name}`, false);
         }
         else if (contents.classList.contains("hidden")) {
           contents.classList.remove("hidden");
+          toggle.classList.replace("right", "down");
           storage_api.settings.expanded_tabs[tab_name] = true;
           storage_api.updateSettings(`expanded_tabs/${tab_name}`, true);
         }
@@ -267,11 +270,11 @@
     // update the list on sort dir click.
     document.querySelectorAll(".sort_dir").forEach(element => {
       element.addEventListener("click", () => {
-        if (element.classList.contains("ascend")) {
-          element.classList.replace("ascend", "descend");
+        if (element.classList.contains("up")) {
+          element.classList.replace("up", "down");
         }
-        else if (element.classList.contains("descend")) {
-          element.classList.replace("descend", "ascend");
+        else if (element.classList.contains("down")) {
+          element.classList.replace("down", "up");
         }
         character_list_api.sortOnFormUpdate();
         if (profile_api.getSelectedProfileName() === "Default") profile_api.changeToCustom();

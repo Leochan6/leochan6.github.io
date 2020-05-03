@@ -32,9 +32,6 @@
 .tab_header {
   display: flex;
   align-items: center;
-}
-
-.tab_heading {
   margin: 0px;
   cursor: pointer;
   user-select: none;
@@ -43,8 +40,22 @@
   transition: all 0.3s ease 0s;
 }
 
-.tab_heading:hover {
+.tab_header:hover {
   opacity: 1;
+}
+
+.tab_heading {
+  margin: 0px;
+  color: rgb(17, 0, 255);
+}
+
+.tab_toggle {
+  margin-right: 5px;
+  color: rgb(17, 0, 255);
+}
+
+.tab_toggle::after {
+  font-size: 24px;
 }
 
 .tab_contents {
