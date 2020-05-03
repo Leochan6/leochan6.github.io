@@ -7,17 +7,19 @@ let profile_api = (function () {
   // loads, sets, and selects the profiles
   module.setProfiles = (profiles, previous) => {
     profile_select.innerHTML = "";
-    for (let [id, profile] of Object.entries(profiles)) {
+    Object.entries(profiles).forEach(([id, profile]) => {
       profile_select.options.add(new Option(profile.name, id, false));
+    });
+    if (module.selectedProfile !== null) {
+      profile_select.value = module.getProfileId(module.selectedProfile.name);
     }
-    if (module.selectedProfile !== null) profile_select.value = module.selectedProfile;
-    else if (previous && previous !== "10") profile_select.value = previous;
+    else if (previous && Array.from(profile_select.options).some(option => option.value === previous)) {
+      profile_select.value = previous;
+    }
     else {
-      // set sort settings with default if no list selected.
       profile_select.value = "10";
-      console.log(storage_api.profiles);
-      profile_api.setProfileFields(storage_api.profiles["10"]);
     }
+    profile_api.setProfileFields(storage_api.profiles[profile_select.value].settings);
   };
 
   module.getSortProperties = () => {
@@ -36,45 +38,43 @@ let profile_api = (function () {
 
   module.saveProfile = () => {
     let profileName = new_profile_field.value;
-    if (storage_api.profileExists(profileName)) {
+    if (Object.values(storage_api.profiles).some(profile => profile.name === profileName)) {
       profile_error_text.innerHTML = `The sorting profile ${profileName} already exists.`;
       return;
     }
     new_profile_field.value = "";
     let properties = module.getSortProperties();
-    storage_api.updateProfile(profileName, properties);
+    module.selectedProfile = { name: profileName, id: null };
+    storage_api.createProfile(profileName, properties);
     new_profile_row.style.visibility = "collapse";
-    module.selectedProfile = profileName;
   };
 
   module.updateProfile = () => {
-    let profileName = module.getSelectedProfile();
+    let profileId = module.getSelectedProfileId();
     let properties = module.getSortProperties();
-    storage_api.updateProfile(profileName, properties);
+    storage_api.updateProfile(profileId, properties);
     new_profile_row.style.visibility = "collapse";
   };
 
-  module.checkProfile = () => {
-    let profileName = new_profile_field.value;
-    if (storage_api.profileExists(profileName)) profile_error_text.innerHTML = `The sorting profile ${profileName} already exists.`;
+  module.checkProfile = (profileName) => {
+    if (Object.values(storage_api.profiles).some(profile => profile.name === profileName)) profile_error_text.innerHTML = `The sorting profile ${profileName} already exists.`;
     else profile_error_text.innerHTML = "";
   };
 
   module.deleteProfile = () => {
-    let profileName = module.getSelectedProfile();
-    console.log("delete", profileName);
-    if (profileName !== "Default" && profileName !== "Custom") {
-      storage_api.deleteProfile(profileName);
-      module.selectedProfile = "Default";
-      profile_select.value = "Default";
-      let listId = character_list_api.getListId();
-      if (listId) storage_api.updateList(listId, character_list_api.getListName(), storage_api.lists[listId].characterList, "Default", background_api.getSelectedBackground() || "");
+    let profileId = module.getSelectedProfileId();
+    if (storage_api.profiles[profileId].name !== "Default" && storage_api.profiles[profileId].name !== "Custom") {
+      storage_api.deleteProfile(profileId);
+      module.selectedProfile = { name: "Default", id: "0" };
+      profile_select.value = "0";
+      let listId = memoria_list_api.getListId();
+      if (listId) storage_api.updateList(listId, memoria_list_api.getListName(), storage_api.lists[listId].memoriaList, "0", background_api.getSelectedBackground() || "");
     }
   };
 
-  module.setProfile = () => {
-    let profileName = profile_select.value;
-    module.setProfileFields(storage_api.profiles[profileName]);
+  module.setProfile = (profileId) => {
+    profile_select.value = profileId;
+    if (storage_api.profiles[profileId].settings !== true) module.setProfileFields(storage_api.profiles[profileId].settings);
   };
 
   module.setProfileFields = (profile) => {
@@ -89,11 +89,20 @@ let profile_api = (function () {
   };
 
   module.getSelectedProfileId = () => {
-    return profile_select.value;
+    if (profile_select.selectedIndex > -1)
+      return profile_select.value;
+    else return "10";
   };
 
   module.getSelectedProfileName = () => {
-    return profile_select.options[profile_select.selectedIndex];
+    if (profile_select.options[profile_select.selectedIndex])
+      return profile_select.options[profile_select.selectedIndex].text;
+    else return "Default";
+  };
+
+  module.getProfileId = (profileName) => {
+    let profile = Object.entries(storage_api.profiles).find(([id, profile]) => profile.name === profileName);
+    return profile[0];
   };
 
   module.changeToCustom = () => {

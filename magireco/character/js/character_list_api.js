@@ -4,6 +4,54 @@ let character_list_api = (function () {
 
   module.selectedList = null;
 
+  /* ------------------------------ Constants and Mappings ------------------------------ */
+
+  module.DIR_TO_FLEX = { "left": "flex-start", "center": "center", "right": "flex-end" };
+  const ATT_TO_NUM = { "fire": "1", "water": "2", "forest": "3", "light": "4", "dark": "5", "void": "6" };
+  const NUM_TO_ATT = { "1": "fire", "2": "water", "3": "forest", "4": "light", "5": "dark", "6": "void" };
+  const NUM_TO_WORD = { "0": "zero", "1": "one", "2": "two", "3": "three", "4": "four", "5": "five" };
+
+  /* ------------------------------ Load and Select Lists ------------------------------ */
+
+  /**
+   * Loads all the lists.
+   */
+  module.setLists = (lists) => {
+    module.selectedList = { listId: list_name_title.getAttribute("listId"), list: null };
+    saved_character_lists.innerHTML = "";
+    list_name_title.innerHTML = "";
+    list_stats_list.innerHTML = "";
+    for (let [listId, list] of Object.entries(lists)) {
+      let div = document.createElement("div");
+      div.classList.add("character_list_row");
+      let entry = document.createElement("div");
+      entry.classList.add("character_list_entry");
+      entry.setAttribute("listId", listId);
+      entry.innerHTML = list.name;
+      entry.addEventListener("click", () => {
+        character_list_api.selectList(listId, list);
+      });
+      div.append(entry);
+      saved_character_lists.append(div);
+    }
+    if (Object.entries(lists).length > 0) {
+      if (module.selectedList && module.selectedList.listId && lists[module.selectedList.listId]) {
+        module.selectList(module.selectedList.listId, lists[module.selectedList.listId]);
+      } else {
+        let first = Object.entries(lists)[0][0];
+        module.selectList(first, lists[first]);
+      }
+      // enable list duplicate and delete buttons
+      delete_list_button.disabled = false;
+      duplicate_list_form.disabled = false;
+    }
+    // disable list duplicate and delete buttons if no list
+    else {
+      delete_list_button.disabled = true;
+      duplicate_list_form.disabled = true;
+    }
+  };
+
   /**
    * loads the character displays of the character_list.
    * 
@@ -20,10 +68,164 @@ let character_list_api = (function () {
   };
 
   /**
-   * mapping of attribute to numbers.
+   * select the list of name and loads the character list list
    */
-  const ATT_TO_NUM = { "fire": "1", "water": "2", "forest": "3", "light": "4", "dark": "5", "void": "6" };
-  const NUM_TO_ATT = { "1": "fire", "2": "water", "3": "forest", "4": "light", "5": "dark", "6": "void" };
+  module.selectList = (listId, list) => {
+    for (let element of document.querySelectorAll(".character_list_entry")) {
+      // element already selected.
+      if (element.getAttribute("listId") === listId) {
+        if (element.classList.contains("selectedList")) return;
+        else element.classList.add("selectedList");
+      }
+      else if (element.classList.contains("selectedList")) element.classList.remove("selectedList");
+    }
+    module.selectedList = { listId: listId, list: list };
+    list_name_title.innerHTML = list.name;
+    list_name_title.setAttribute("listId", listId);
+    loadCharacterList(list.characterList);
+    profile_api.setProfile(list.selectedProfile);
+    module.sortOnFormUpdate();
+    background_api.setBackground(list.selectedBackground);
+    character_list_api.getStats();
+    character_api.enableButtons();
+  };
+
+  /* ------------------------------ Create and Delete List ------------------------------ */
+
+  /**
+   * creates a new list.
+   */
+  module.createList = () => {
+    let listName = new_list_name_field.value;
+    if (!listName) {
+      home_error_text.innerHTML = `The list name must not be empty.`;
+      return;
+    }
+    if (storage_api.listExists(listName)) {
+      home_error_text.innerHTML = `The list name ${listName} already exists.`;
+      return;
+    }
+    new_list_name_field.value = "";
+    new_list_button.classList.replace("minus", "add");
+    list_create.style.visibility = "collapse";
+    list_create.style.display = "none";
+    list_name_title.innerHTML = listName;
+    profile_select.value = "0";
+    console.log(profile_select.value);
+    character_list_content.innerHTML = "";
+    storage_api.createList(listName);
+  };
+
+  /**
+   * deletes the list.
+   */
+  module.deleteList = (listId) => {
+    module.selectedList = null;
+    storage_api.deleteList(listId);
+  };
+
+  /**
+   * duplicate the list.
+   */
+  module.duplicateList = (list, newName) => {
+    if (list && newName && newName.length > 0) {
+      let newCharacterList = {};
+      Object.entries(list.characterList).forEach(([key, value]) => {
+        newCharacterList[generatePushID()] = value;
+      });
+      list.characterList = newCharacterList;
+      storage_api.duplicateList(list, newName);
+    }
+  };
+
+  /**
+   * updates the list in the database with the list name, characters, and profile.
+   * 
+   * @param {String} createdName optional
+   */
+  module.updateList = () => {
+    let listId = module.getListId();
+    let listName = module.getListName();
+    let character_list = module.getCharacterList(false);
+    let selectedProfile = profile_api.getSelectedProfileId();
+    let selectedBackground = background_api.getSelectedBackground();
+    if (!listName) return;
+    storage_api.updateList(listId, listName, character_list, selectedProfile, selectedBackground);
+  };
+  /* ------------------------------ Get the Selected List ------------------------------ */
+
+
+  /**
+   * returns the list name.
+   */
+  module.getListName = () => {
+    return list_name_title.innerText;
+  };
+
+  /**
+   * returns the list id.
+   */
+  module.getListId = () => {
+    return list_name_title.getAttribute("listId");
+  };
+
+  /**
+   * returns all the character displays in a list.
+   */
+  module.getCharacterList = (keep_id = true) => {
+    let characterList = {};
+    document.querySelectorAll(".character_display:not(.preview)").forEach(child => {
+      let id = child.getAttribute("_id") !== "undefined" ? child.getAttribute("_id") : child.getAttribute("character_id");
+      characterList[id] = character_api.getCharacterDisplay(child);
+      if (!keep_id) delete characterList[id]._id;
+    });
+    if (Object.keys(characterList).length == 0) characterList = true;
+    return characterList;
+  };
+
+  /**
+   * checks if the list name exists.
+   */
+  module.checkListName = () => {
+    let listName = new_list_name_field.value;
+    if (storage_api.listExists(listName)) home_error_text.innerHTML = `The list name ${listName} already exists.`;
+    else home_error_text.innerHTML = "";
+  };
+
+  /** 
+   * returns the selected list.
+   */
+  module.getSelectedList = () => {
+    for (let element of document.querySelectorAll(".character_list_entry")) {
+      if (element.classList.contains("selectedList")) return element.getAttribute("listId");
+    }
+    return null;
+  };
+
+
+  /* ------------------------------ Sort Current List ------------------------------ */
+
+  /**
+   * sorts the character list with the contents of the sorting profile form.
+   */
+  module.sortOnFormUpdate = () => {
+    let properties = profile_api.getSortProperties();
+    let display_groups = sortList(properties);
+    character_list_content.innerHTML = '';
+    for (var group in display_groups) {
+      if (display_groups[group].length == 0) continue;
+      let group_row = document.createElement("div");
+      group_row.classList.add("character_row");
+      group_row.style.width = `${properties.displays_per_row * (122)}px`;
+      group_row.setAttribute("group", group);
+      display_groups[group].forEach((display) => {
+        let character_display = character_api.createDisplay(display, true);
+        group_row.appendChild(character_display);
+      });
+      group_row.style.justifyContent = module.DIR_TO_FLEX[storage_api.settings.display_alignment];
+      character_list_content.appendChild(group_row);
+    }
+  };
 
   /**
    * sort the character list with the given properties.
@@ -36,7 +238,6 @@ let character_list_api = (function () {
     document.querySelectorAll(".character_display:not(.preview)").forEach(child => {
       character_displays.push(character_api.getCharacterDisplay(child));
     });
-
 
     // add each display_property to the corresponding group.
     let display_groups = group_properties(character_displays, properties.group_by, properties.group_dir);
@@ -61,11 +262,6 @@ let character_list_api = (function () {
 
     return display_groups;
   };
-
-  /**
-   * mapping of numbers to numbers.
-   */
-  const NUM_TO_WORD = { "0": "zero", "1": "one", "2": "two", "3": "three", "4": "four", "5": "five" };
 
   /**
    * adds each display_property to the corresponding group.
@@ -115,214 +311,35 @@ let character_list_api = (function () {
     return display_groups;
   };
 
-  /**
-   * sorts the character list with the contents of the sorting profile form.
-   */
-  module.sortOnFormUpdate = () => {
-    let properties = profile_api.getSortProperties();
-    let display_groups = sortList(properties);
-    character_list_content.innerHTML = '';
-    for (var group in display_groups) {
-      if (display_groups[group].length == 0) continue;
-      let group_row = document.createElement("div");
-      group_row.classList.add("character_row");
-      group_row.style.width = `${properties.displays_per_row * (122)}px`;
-      group_row.setAttribute("group", group);
-      display_groups[group].forEach((display) => {
-        let character_display = character_api.createDisplay(display, true);
-        group_row.appendChild(character_display);
-      });
-      group_row.style.justifyContent = module.direction_to_flex[storage_api.settings.display_alignment];
-      character_list_content.appendChild(group_row);
-    }
-  };
+  /* ------------------------------ List Alignment and Padding ------------------------------ */
 
   /**
-   * updates the list in the database with the list name, characters, and profile.
-   * 
-   * @param {String} createdName optional
+   * Sets the alignment of the character rows.
    */
-  module.updateList = () => {
-    let listId = module.getListId();
-    let listName = module.getListName();
-    let character_list = module.getCharacterList(false);
-    let selectedProfile = profile_api.getSelectedProfileId();
-    let selectedBackground = background_api.getSelectedBackground();
-    if (!listName) return;
-    storage_api.updateList(listId, listName, character_list, selectedProfile, selectedBackground);
-  };
-
-  /**
-   * returns the list name.
-   */
-  module.getListName = () => {
-    return list_name_title.innerText;
-  };
-
-  /**
-   * returns the list id.
-   */
-  module.getListId = () => {
-    return list_name_title.getAttribute("listId");
-  };
-
-  /**
-   * returns all the character displays in a list.
-   */
-  module.getCharacterList = (keep_id = true) => {
-    let characterList = {};
-    document.querySelectorAll(".character_display:not(.preview)").forEach(child => {
-      let id = child.getAttribute("_id") !== "undefined" ? child.getAttribute("_id") : child.getAttribute("character_id");
-      characterList[id] = character_api.getCharacterDisplay(child);
-      if (!keep_id) delete characterList[id]._id;
-    });
-    if (Object.keys(characterList).length == 0) characterList = true;
-    return characterList;
-  };
-
-  /**
-   * checks if the list name exists.
-   */
-  module.checkListName = () => {
-    let listName = new_list_name_field.value;
-    if (storage_api.listExists(listName)) home_error_text.innerHTML = `The list name ${listName} already exists.`;
-    else home_error_text.innerHTML = "";
-  };
-
-  /**
-   * creates a new list.
-   */
-  module.createList = () => {
-    let listName = new_list_name_field.value;
-    if (!listName) {
-      home_error_text.innerHTML = `The list name must not be empty.`;
-      return;
-    }
-    if (storage_api.listExists(listName)) {
-      home_error_text.innerHTML = `The list name ${listName} already exists.`;
-      return;
-    }
-    new_list_name_field.value = "";
-    new_list_button.classList.replace("minus", "add");
-    list_create.style.visibility = "collapse";
-    list_create.style.display = "none";
-    list_name_title.innerHTML = listName;
-    profile_select.value = "Default";
-    console.log(profile_select.value);
-    character_list_content.innerHTML = "";
-    storage_api.createList(listName);
-  };
-
-  /** 
-   * returns the selected list.
-   */
-  module.getSelectedList = () => {
-    for (let element of document.querySelectorAll(".character_list_entry")) {
-      if (element.classList.contains("selectedList")) return element.getAttribute("listId");
-    }
-    return null;
-  };
-
-  /**
-   * select the list of name and loads the character list list
-   */
-  module.selectList = (listId, list) => {
-    for (let element of document.querySelectorAll(".character_list_entry")) {
-      // element already selected.
-      if (element.getAttribute("listId") === listId) {
-        if (element.classList.contains("selectedList")) return;
-        else element.classList.add("selectedList");
-      }
-      else if (element.classList.contains("selectedList")) element.classList.remove("selectedList");
-    }
-    module.selectedList = { listId: listId, list: list };
-    list_name_title.innerHTML = list.name;
-    list_name_title.setAttribute("listId", listId);
-    loadCharacterList(list.characterList);
-    profile_api.setProfile(list.selectedProfile);
-    module.sortOnFormUpdate();
-    background_api.setBackground(list.selectedBackground);
-    character_list_api.getStats();
-    character_api.enableButtons();
-  };
-
-  /**
-   * deletes the list.
-   */
-  module.deleteList = (listId) => {
-    module.selectedList = null;
-    storage_api.deleteList(listId);
-  };
-
-  /**
-   * duplicate the list.
-   */
-  module.duplicateList = (list, newName) => {
-    if (list && newName && newName.length > 0) {
-      let newCharacterList = {};
-      Object.entries(list.characterList).forEach(([key, value]) => {
-        newCharacterList[generatePushID()] = value;
-      });
-      list.characterList = newCharacterList;
-      storage_api.duplicateList(list, newName);
-    }
-  };
-
-  module.setLists = (lists) => {
-    module.selectedList = { listId: list_name_title.getAttribute("listId"), list: null };
-    saved_character_lists.innerHTML = "";
-    list_name_title.innerHTML = "";
-    list_stats_list.innerHTML = "";
-    for (let [listId, list] of Object.entries(lists)) {
-      let div = document.createElement("div");
-      div.classList.add("character_list_row");
-      let entry = document.createElement("div");
-      entry.classList.add("character_list_entry");
-      entry.setAttribute("listId", listId);
-      entry.innerHTML = list.name;
-      entry.addEventListener("click", () => {
-        character_list_api.selectList(listId, list);
-      });
-      div.append(entry);
-      saved_character_lists.append(div);
-    }
-    if (Object.entries(lists).length > 0) {
-      if (module.selectedList && module.selectedList.listId && lists[module.selectedList.listId]) {
-        module.selectList(module.selectedList.listId, lists[module.selectedList.listId]);
-      } else {
-        let first = Object.entries(lists)[0][0];
-        module.selectList(first, lists[first]);
-      }
-      // enable list duplicate and delete buttons
-      delete_list_button.disabled = false;
-      duplicate_list_form.disabled = false;
-    }
-    // disable list duplicate and delete buttons if no list
-    else {
-      delete_list_button.disabled = true;
-      duplicate_list_form.disabled = true;
-    }
-  }
-
-  module.direction_to_flex = { "left": "flex-start", "center": "center", "right": "flex-end" };
-
   module.changeAlignment = (alignment) => {
     storage_api.settings.display_alignment = alignment;
     storage_api.updateSettings("display_alignment", alignment);
     document.querySelectorAll(".character_row").forEach(character_row => {
-      character_row.style.justifyContent = module.direction_to_flex[alignment];
+      character_row.style.justifyContent = module.DIR_TO_FLEX[alignment];
     });
   };
 
+  /**
+   * Changes the padding in the direction.
+   */
   module.changePadding = (direction, padding) => {
-    console.error();
     storage_api.settings[`padding_${direction}`] = padding;
     module.setPadding(storage_api.settings.padding_x, storage_api.settings.padding_y);
   };
 
+  /**
+   * Sets the padding of the list.
+   */
   module.setPadding = (x, y) => {
     character_list_content.style.padding = `${y}px ${x}px`;
   }
+
+  /* ------------------------------ List Zoom ------------------------------ */
 
   /**
    * sets the zoom of the character list.
@@ -337,22 +354,11 @@ let character_list_api = (function () {
    */
   module.zoom_fit = () => {
     if (character_list_content.innerHTML) {
-      // let widthRatio = Math.max((document.querySelector("body").clientWidth - menu_bar.clientWidth - left_main_divider.clientWidth - 10 - 10 - 20), 500) / character_list_content.clientWidth;
-      // let heightRatio = Math.max((document.querySelector("body").clientHeight - main_header.clientHeight - header_content_divider.clientHeight - main_header.clientHeight - 10 - 10 - 20), 300) / character_list_content.clientHeight;
-      // let zoom = Math.min(widthRatio, heightRatio);
-      // zoom = zoom < 1 ? zoom : 1;
-      // character_list_content.style.zoom = zoom;
-      // zoom_range.value = Math.round(zoom * 100);
-      // zoom_field.value = Math.round(zoom * 100);
       let row = character_list_content.querySelector(".character_row")
       let list_width = row.clientWidth;
       let list_height = row.clientHeight * character_list_content.querySelectorAll(".character_row").length;
       let container_width = character_list_content.clientWidth;
       let container_height = character_list_content.clientHeight;
-      console.log(list_width);
-      console.log(container_width);
-      console.log(list_height);
-      console.log(container_height);
       let ratio = Math.min((container_width - 40) / list_width, (container_height - 40) / list_height);
       console.log(ratio);
       ratio = ratio < 1 ? ratio : 1;
@@ -362,6 +368,11 @@ let character_list_api = (function () {
     }
   };
 
+  /* ------------------------------ List Filters ------------------------------ */
+
+  /**
+   * Creates a new filter.
+   */
   module.createFilter = (next = null) => {
     let new_filter = document.createElement("div");
     new_filter.classList.add("filter_row");
@@ -554,6 +565,9 @@ let character_list_api = (function () {
     else list_filters.append(new_filter);
   };
 
+  /**
+   * Returns the filters.
+   */
   module.getFilters = () => {
     let filters = [];
     for (let list_filter_row of Array.from(list_filters.children)) {
@@ -574,6 +588,9 @@ let character_list_api = (function () {
     return filters;
   };
 
+  /**
+   * Applies the filters.
+   */
   module.applyFilters = (filters = module.getFilters()) => {
     // if no filters, then show everything.
     if (filters.length == 0) {
@@ -621,6 +638,9 @@ let character_list_api = (function () {
     });
   };
 
+  /**
+   * Check if character display matches all the filters.
+   */
   const matchesAllFilters = (character_display, filters) => {
     let matches = Array(filters.length).fill(true);
     filters.forEach((filter, i) => {
@@ -635,6 +655,9 @@ let character_list_api = (function () {
     return matches.some(value => value);
   };
 
+  /**
+   * Check if the character diaplay matches the filter.
+   */
   const matchesFilter = (character_display, filter) => {
     if (filter[0].param === "equality") {
       if (filter[1].param === "obtainability") {
@@ -666,6 +689,9 @@ let character_list_api = (function () {
     }
   };
 
+  /**
+   * Removes all the filters.
+   */
   module.resetFilters = () => {
     Array.from(character_list_content.children).forEach(character_row => {
       Array.from(character_row.children).forEach(character_display_element => {
@@ -682,6 +708,11 @@ let character_list_api = (function () {
     list_filters.innerHTML = "";
   };
 
+  /* ------------------------------ List Stats ------------------------------ */
+
+  /**
+   * Returns the simple stats of the list.
+   */
   module.getStats = () => {
     let result = {
       totalCharacters: 0,
@@ -715,12 +746,13 @@ let character_list_api = (function () {
         }
       });
     });
-
     list_stats_list.innerHTML = `Visible: ${result.totalVisible}/${result.totalCharacters}`;
-
     return result;
   };
 
+  /**
+   * Returns all the stats of the list.
+   */
   module.getMoreStats = () => {
     let result = {
       totalCharacters: 0,
@@ -773,14 +805,14 @@ let character_list_api = (function () {
       });
     });
 
-    return `Total Characters: ${result.totalCharacters}\nTotal Visible: ${result.totalVisible}\nLimited: ${result.limited}\nUnlimited: ${result.totalVisible - result.limited}
-Max Level: ${result.maxLevel}\nMax Rank: ${result.maxRank}\nMax Magic: ${result.maxMagic}\nMax Magia: ${result.maxMagia}\nMax Episode: ${result.maxEpisode}
-Levels:${Object.entries(result.levels).map(([level, count]) => `\n  ${level}: ${count}`).toString()}
-Ranks:${Object.entries(result.ranks).map(([level, count]) => `\n  ${level}: ${count}`).toString()}
-Magic Levels:${Object.entries(result.magics).map(([level, count]) => `\n  ${level}: ${count}`).toString()}
-Magia Levels:${Object.entries(result.magias).map(([level, count]) => `\n  ${level}: ${count}`).toString()}
-Episode Levels:${Object.entries(result.episodes).map(([level, count]) => `\n  ${level}: ${count}`).toString()}
-Copies of Each Rank:${Object.entries(result.rankCopies).map(([level, count]) => `\n  ${level}: ${count}`).toString()}`;
+    return `Total Characters: ${result.totalCharacters}\nTotal Visible: ${result.totalVisible}\nLimited: ${result.limited}\nUnlimited: ${result.totalVisible - result.limited}\
+      \nMax Level: ${result.maxLevel}\nMax Rank: ${result.maxRank}\nMax Magic: ${result.maxMagic}\nMax Magia: ${result.maxMagia}\nMax Episode: ${result.maxEpisode}\
+      \nLevels:${Object.entries(result.levels).map(([level, count]) => `\n  ${level}: ${count}`).toString()}\
+      \nRanks:${Object.entries(result.ranks).map(([level, count]) => `\n  ${level}: ${count}`).toString()}\
+      \nMagic Levels:${Object.entries(result.magics).map(([level, count]) => `\n  ${level}: ${count}`).toString()}\
+      \nMagia Levels:${Object.entries(result.magias).map(([level, count]) => `\n  ${level}: ${count}`).toString()}\
+      \nEpisode Levels:${Object.entries(result.episodes).map(([level, count]) => `\n  ${level}: ${count}`).toString()}\
+      \nCopies of Each Rank:${Object.entries(result.rankCopies).map(([level, count]) => `\n  ${level}: ${count}`).toString()}`;
   };
 
   module.openStatsModal = () => {
@@ -790,6 +822,11 @@ Copies of Each Rank:${Object.entries(result.rankCopies).map(([level, count]) => 
     messageModalList.innerHTML = "";
   };
 
+  /* ------------------------------ Import and Export ------------------------------ */
+
+  /**
+   * Opens the Export Modal Dialog.
+   */
   module.openExportModal = () => {
     messageModal.style.display = "block";
     let list = Object.entries(module.getCharacterList(false)).map(([key, value]) => value);
@@ -798,6 +835,9 @@ Copies of Each Rank:${Object.entries(result.rankCopies).map(([level, count]) => 
     messageModalList.innerHTML = "";
   };
 
+  /**
+   * Opens the Export Modal Dialog.
+   */
   module.openImportModal = () => {
     importListModal.style.display = "block";
     importListModalTitle.innerHTML = "Import List"
@@ -805,6 +845,9 @@ Copies of Each Rank:${Object.entries(result.rankCopies).map(([level, count]) => 
     importListModalText.innerHTML = "";
   };
 
+  /**
+   * Imports the list.
+   */
   module.importList = () => {
     let data = importListModalText.value;
     let listName = importListModalName.value;
@@ -822,7 +865,6 @@ Copies of Each Rank:${Object.entries(result.rankCopies).map(([level, count]) => 
       if (validateCharacterList(character_list)) {
         list_name_title.innerHTML = listName;
         profile_select.value = "Default";
-        console.log(profile_select.value);
         character_list_content.innerHTML = "";
         storage_api.manualCreateList(listName, character_list, "Default", true);
         importListModal.style.display = "none";
@@ -839,15 +881,15 @@ Copies of Each Rank:${Object.entries(result.rankCopies).map(([level, count]) => 
     }
   };
 
+  /**
+   * Checks if the character list is valid.
+   */
   const validateCharacterList = (character_list) => {
     try {
       if (Array.from(character_list).every(character => {
-        let message = character_api.isValidCharacterDisplay(character.character_id, character, false);
-        if (message.length > 0) console.log(message);
-        return message.length === 0;
+        character_api.isValidCharacterDisplay(character.character_id, character, false).length === 0
       })) return true;
     } catch (e) {
-      console.error(e);
       return false;
     }
     return false;

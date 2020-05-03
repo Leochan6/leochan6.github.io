@@ -4,7 +4,6 @@ let storage_api = (() => {
 
   module.profiles = {};
   module.lists = {};
-  module.lists = {};
   module.settings = {};
 
   let userId = null;
@@ -32,7 +31,7 @@ let storage_api = (() => {
   };
 
   module.createList = (name) => {
-    database.createList(userId, { name: name, memoriaList: true, selectedProfile: "Default", selectedBackground: true });
+    database.createList(userId, { name: name, memoriaList: true, selectedProfile: "10", selectedBackground: true });
   };
 
   module.updateList = (listId, name, memoriaList, selectedProfile, selectedBackground) => {
@@ -46,7 +45,7 @@ let storage_api = (() => {
   };
 
   module.duplicateList = (list, newName) => {
-    let selectedProfile = profile_api.getSelectedProfileId() || "0";
+    let selectedProfile = profile_api.getSelectedProfileId() || "10";
     let selectedBackground = background_api.getSelectedBackground() || true;
     database.createList(userId, { name: newName, memoriaList: list.memoriaList, selectedProfile: selectedProfile, selectedBackground: selectedBackground });
   };
@@ -55,8 +54,12 @@ let storage_api = (() => {
     database.createList(userId, { name: name, memoriaList: memoriaList, selectedProfile: selectedProfile, selectedBackground: selectedBackground });
   }
 
-  module.updateProfile = (profileId, se) => {
-    database.updateProfile(userId, name, profile);
+  module.createProfile = (name, settings) => {
+    database.createProfile(userId, { name: name, type: "memoria", settings: settings });
+  };
+
+  module.updateProfile = (profileId, settings) => {
+    database.updateProfile(userId, profileId, { name: module.profiles[profileId].name, type: "memoria", settings: settings });
   };
 
   module.profileExists = (name) => {
@@ -96,18 +99,14 @@ let storage_api = (() => {
       }
     });
     // display settings
-    if (typeof character_list_content !== 'undefined') {
-      character_list_content.style.padding = `${module.settings.padding_y}px ${module.settings.padding_x}px`;
-      document.querySelectorAll(".character_row").forEach(character_row => character_row.style.justifyContent = character_list_api.direction_to_flex[module.settings.display_alignment]);
-      display_alignment_select.value = module.settings.display_alignment;
-      display_padding_x_field.value = module.settings.padding_x;
-      display_padding_y_field.value = module.settings.padding_y;
-    }
+    memoria_list_content.style.zoom = module.settings.memoria_zoom / 100;
+    zoom_range.value = module.settings.memoria_zoom;
+    zoom_field.value = module.settings.memoria_zoom;
   };
 
   const loadProfiles = (snapshot) => {
     // get the previous profile.
-    let previous = profile_api.getSelectedProfile();
+    let previous = profile_api.getSelectedProfileId();
     // get the settings.
     let profiles = snapshot.val();
     let filtered = Object.keys(profiles)

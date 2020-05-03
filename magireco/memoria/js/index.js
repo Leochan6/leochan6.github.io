@@ -61,7 +61,7 @@
 
     // hide memoria select modal dialog
     memoriaSelectModalClose.addEventListener("click", () => {
-      closeCharacterSelectModal();
+      closeMemoriaSelectModal();
     });
 
     // search change memoria select modal dialog.
@@ -99,7 +99,7 @@
 
     // import the text as a new list.
     importListModalImport.addEventListener("click", () => {
-      character_list_api.importList();
+      memoria_list_api.importList();
     });
 
     /* ============================== Menu Bar ============================== */
@@ -188,6 +188,11 @@
       memoria_api.updateFieldsOnName();
     });
 
+    // open memoria select modal
+    memoriaSelectModalOpen.addEventListener("click", () => {
+      memoria_api.openMemoriaSelect();
+    });
+
     // update the preview display on form change.
     document.querySelectorAll(".form").forEach(element => {
       ["change", "keyup", "input"].forEach(event => {
@@ -233,10 +238,64 @@
 
     /* ------------------------------ Sorting Profile Tab ------------------------------ */
 
-    // resort when character list changes.
-    memoria_list_content.addEventListener("change", () => {
-      // memoria_list_api.sortOnFormUpdate();
+    // update the list on sort form change.
+    document.querySelectorAll(".sort_form").forEach(element => {
+      element.addEventListener("change", () => {
+        memoria_list_api.sortOnFormUpdate();
+        if (profile_api.getSelectedProfileName() === "Default") profile_api.changeToCustom();
+        memoria_list_api.updateList();
+        profile_api.updateProfile();
+      });
+    });
+
+    // update the list on sort dir click.
+    document.querySelectorAll(".sort_dir").forEach(element => {
+      element.addEventListener("click", () => {
+        if (element.classList.contains("ascend")) {
+          element.classList.replace("ascend", "descend");
+        }
+        else if (element.classList.contains("descend")) {
+          element.classList.replace("descend", "ascend");
+        }
+        memoria_list_api.sortOnFormUpdate();
+        if (profile_api.getSelectedProfileName() === "Default") profile_api.changeToCustom();
+        memoria_list_api.updateList();
+        profile_api.updateProfile();
+      });
+    });
+
+    // check set the profile properties on change.
+    profile_select.addEventListener("change", () => {
+      profile_api.setProfile(profile_select.value);
+      memoria_list_api.sortOnFormUpdate();
       memoria_list_api.updateList();
+    });
+
+    // show the save new profile form.
+    new_profile_button.addEventListener("click", () => {
+      new_profile_row.style.visibility = "visible";
+      new_profile_field.focus();
+    });
+
+    // hide the save new profile form.
+    close_new_profile_button.addEventListener("click", () => {
+      new_profile_row.style.visibility = "collapse";
+    });
+
+    // save the new sorting profile.
+    create_profile_button.addEventListener("click", (e) => {
+      e.preventDefault();
+      profile_api.saveProfile();
+    });
+
+    // check the profile name on change.
+    new_profile_field.addEventListener("change", () => {
+      profile_api.checkProfile(new_profile_field.value);
+    });
+
+    // delete the selected profile.
+    delete_profile_button.addEventListener("click", () => {
+      profile_api.deleteProfile();
     });
 
     /* ------------------------------ Background Tab ------------------------------ */
@@ -307,8 +366,11 @@
     });
 
     // zoom range slider.
-    ["input", "change"].forEach(event => {
-      zoom_range.addEventListener(event, () => {
+    ["input", "change", "wheel"].forEach(event => {
+      zoom_range.addEventListener(event, (e) => {
+        if (event === "wheel") {
+          zoom_range.value = parseInt(zoom_range.value) - (e.deltaY / 100) * (e.shiftKey ? 50 : 1);
+        }
         zoom_field.value = zoom_range.value;
         memoria_list_api.changeZoom(zoom_range.value);
       });
@@ -346,6 +408,11 @@
     // resort when memoria list changes.
     memoria_list_content.addEventListener("change", () => {
       memoria_list_api.sortOnFormUpdate();
+      memoria_list_api.updateList();
+    });
+    // resort when memoria list changes.
+    memoria_list_content.addEventListener("change", () => {
+      // memoria_list_api.sortOnFormUpdate();
       memoria_list_api.updateList();
     });
   }
@@ -386,7 +453,7 @@
   // update the background form.
   background_api.startUp();
 
-  // load the settings, profiles, and character lists from storage.
+  // load the settings, profiles, and memoria lists from storage.
   database.onAuthStateChanged(user => {
     if (user) {
       header_username.innerHTML = `Welcome ${user.displayName || "Anonymous"}`;

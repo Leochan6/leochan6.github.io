@@ -6,13 +6,13 @@
   height: calc(100% - 3px);
 }
 
-#auto_row_checkbox {
-  margin: 0px;
-}
-
 #main_header {
   display: flex;
   flex-direction: column;
+}
+
+#auto_row_checkbox {
+  margin: 0px;
 }
 
 /** Nav Bar **/

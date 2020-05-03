@@ -46,15 +46,13 @@
   margin-right: 2px;
   font-size: 16px;
   color: white;
-  font-weight: 600;
-  -webkit-text-stroke: 1px #5C504A;
+  text-shadow: -1px 0 #5C504A, 0 1px #5C504A, 1px 0 #5C504A, 0 -1px #5C504A;
 }
 
 .level .level_num {
   font-size: 16px;
   color: white;
-  font-weight: 600;
-  -webkit-text-stroke: 1px #5C504A;
+  text-shadow: -1px 0 #5C504A, 0 1px #5C504A, 1px 0 #5C504A, 0 -1px #5C504A;
 }
 
 .memoria_display .memoria_image {

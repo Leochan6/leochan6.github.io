@@ -31,7 +31,7 @@ let storage_api = (() => {
   };
 
   module.createList = (name) => {
-    database.createList(userId, { name: name, characterList: true, selectedProfile: "Default", selectedBackground: true });
+    database.createList(userId, { name: name, characterList: true, selectedProfile: "0", selectedBackground: true });
   };
 
   module.updateList = (listId, name, characterList, selectedProfile, selectedBackground) => {
@@ -54,8 +54,8 @@ let storage_api = (() => {
     database.createList(userId, { name: name, characterList: characterList, selectedProfile: selectedProfile, selectedBackground: selectedBackground });
   }
 
-  module.createProfile = (name, profile) => {
-    database.createProfile(userId, { name: name, type: "character", settings: profile });
+  module.createProfile = (name, settings) => {
+    database.createProfile(userId, { name: name, type: "character", settings: settings });
   };
 
   module.updateProfile = (profileId, settings) => {
@@ -98,7 +98,7 @@ let storage_api = (() => {
     character_list_content.style.zoom = module.settings.character_zoom / 100;
     zoom_range.value = module.settings.character_zoom;
     zoom_field.value = module.settings.character_zoom;
-    document.querySelectorAll(".character_row").forEach(character_row => character_row.style.justifyContent = character_list_api.direction_to_flex[module.settings.display_alignment]);
+    document.querySelectorAll(".character_row").forEach(character_row => character_row.style.justifyContent = character_list_api.DIR_TO_FLEX[module.settings.display_alignment]);
     character_list_content.style.padding = `${module.settings.padding_y}px ${module.settings.padding_x}px`;
     display_alignment_select.value = module.settings.display_alignment;
     display_padding_x_field.value = module.settings.padding_x;
@@ -135,20 +135,6 @@ let storage_api = (() => {
       }, {});
     module.lists = filtered;
     character_list_api.setLists(module.lists);
-  };
-
-  const loadMemoriaLists = (snapshot) => {
-    let lists = snapshot.val() ? snapshot.val() : {};
-    const filtered = Object.keys(lists)
-      .filter(key => lists[key].memoriaList)
-      .reduce((obj, key) => {
-        return {
-          ...obj,
-          [key]: lists[key]
-        };
-      }, {});
-    module.memoria_lists = filtered;
-    memoria_list_api.setLists(module.memoria_lists);
   };
 
   return module;

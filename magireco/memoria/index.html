@@ -95,6 +95,13 @@
                   <td><button id="memoriaSelectModalOpen">+</td>
                 </tr>
                 <tr>
+                  <td>Type:</td>
+                  <td><select id="type_select" class="form grid_form" title="Type of the Memoria.">
+                      <option value="ability">Ability</option>
+                      <option value="skill">Skill</option>
+                    </select></td>
+                </tr>
+                <tr>
                   <td>Rank:</td>
                   <td><select id="rank_select" class="form grid_form" title="Rank of the Memoria (Rarity/Stars).">
                       <option value="1">1</option>
@@ -251,8 +258,8 @@
           <div id="import_export">
             <div id="export_options">
               Export:
-              <button class="hidden" id="export_image_button"
-                title="Not Working. Please Zoom In/Out and take a screenshot instead." disabled>Image</button>
+              <button class="" id="export_image_button"
+                title="If this doesn't work, please take a screenshot instead.">Image</button>
               <button class="" id="export_text_button">Text</button>
             </div>
             <div id="import_options">

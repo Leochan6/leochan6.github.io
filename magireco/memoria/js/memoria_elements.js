@@ -26,6 +26,7 @@ let elements = (() => {
 
   // Create Memoria Fields
   module.name_select = document.querySelector("#name_select");
+  module.type_select = document.querySelector("#type_select");
   module.rank_select = document.querySelector("#rank_select");
   module.ascension_select = document.querySelector("#ascension_select");
   module.level_select = document.querySelector("#level_select");

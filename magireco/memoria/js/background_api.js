@@ -9,18 +9,18 @@ let background_api = (function () {
 
   module.setBackground = (background_id) => {
     if (background_id && background_id !== true) {
-      if (typeof character_list_content !== 'undefined') character_list_content.style.backgroundImage = `url("/magireco/assets/bg/${background_id}.jpg")`;
+      if (typeof memoria_list_content !== 'undefined') memoria_list_content.style.backgroundImage = `url("/magireco/assets/bg/${background_id}.jpg")`;
       else if (typeof memoria_list_content !== 'undefined') memoria_list_content.style.backgroundImage = `url("/magireco/assets/bg/${background_id}.jpg")`;
     }
     else {
-      if (typeof character_list_content !== 'undefined') character_list_content.style.backgroundImage = "";
+      if (typeof memoria_list_content !== 'undefined') memoria_list_content.style.backgroundImage = "";
       else if (typeof memoria_list_content !== 'undefined') memoria_list_content.style.backgroundImage = "";
       background_select.selectedIndex = -1;
     }
   };
 
   module.removeBackground = () => {
-    if (typeof character_list_content !== 'undefined') character_list_content.style.backgroundImage = "";
+    if (typeof memoria_list_content !== 'undefined') memoria_list_content.style.backgroundImage = "";
     else if (typeof memoria_list_content !== 'undefined') memoria_list_content.style.backgroundImage = "";
     background_select.selectedIndex = -1;
   };

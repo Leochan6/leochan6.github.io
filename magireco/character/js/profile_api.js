@@ -56,8 +56,7 @@ let profile_api = (function () {
     new_profile_row.style.visibility = "collapse";
   };
 
-  module.checkProfile = () => {
-    let profileName = new_profile_field.value;
+  module.checkProfile = (profileName) => {
     if (Object.values(storage_api.profiles).some(profile => profile.name === profileName)) profile_error_text.innerHTML = `The sorting profile ${profileName} already exists.`;
     else profile_error_text.innerHTML = "";
   };

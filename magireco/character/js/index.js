@@ -304,7 +304,7 @@
 
     // check the profile name on change.
     new_profile_field.addEventListener("change", () => {
-      profile_api.checkProfile();
+      profile_api.checkProfile(new_profile_field.value);
     });
 
     // delete the selected profile.
@@ -459,7 +459,6 @@
 
     // resort when character list changes.
     character_list_content.addEventListener("change", () => {
-      console.log(1);
       character_list_api.sortOnFormUpdate();
       character_list_api.updateList();
     });

@@ -5,17 +5,19 @@ let memoria_api = (function () {
   module.selectedMemoria = null;
 
   module.Display = class Display {
-    constructor(id, name, rank, ascension, level) {
-      if (rank === undefined) {
+    constructor(id, name, type, rank, ascension, level) {
+      if (type === undefined) {
         this._id = id;
         this.memoria_id = name.memoria_id;
         this.name = name.name;
+        this.type = name.type;
         this.rank = name.rank;
         this.ascension = name.ascension;
         this.level = name.level;
       } else {
         this.memoria_id = id;
         this.name = name;
+        this.type = type;
         this.rank = rank;
         this.ascension = ascension;
         this.level = level;
@@ -24,9 +26,10 @@ let memoria_api = (function () {
   };
 
   module.Memoria = class Memoria {
-    constructor(id, name, rank) {
+    constructor(id, name, type, rank) {
       this.id = id;
       this.name = name;
+      this.type = type;
       this.rank = rank;
     }
   };
@@ -51,7 +54,8 @@ let memoria_api = (function () {
       let memoria_elem = memoria_collection.find(elem => elem.id === id);
       let name = memoria_elem.name;
       let rank = memoria_elem.rank;
-      let memoria = new module.Memoria(id, name, rank);
+      let type = memoria_elem.type;
+      let memoria = new module.Memoria(id, name, type, rank);
       return memoria;
     } catch (e) {
       return null;
@@ -61,7 +65,7 @@ let memoria_api = (function () {
   module.minimizeDisplay = () => {
     let memoria_display = module.getMemoriaDisplay(display_preview.children[0]);
     let memoria = memoria_collection.find(elem => elem.id === memoria_display.memoria_id);
-    let display = new module.Display(memoria.id, memoria.name, memoria.rank, "0", "1");
+    let display = new module.Display(memoria.id, memoria.name, memoria.type, memoria.rank, "0", "1");
     updateForm(display);
     updatePreviewDisplay(display);
   };
@@ -69,7 +73,7 @@ let memoria_api = (function () {
   module.maximizeDisplay = () => {
     let memoria_display = module.getMemoriaDisplay(display_preview.children[0]);
     let memoria = memoria_collection.find(elem => elem.id === memoria_display.memoria_id);
-    let display = new module.Display(memoria.id, memoria.name, memoria.rank, "4", getMaxLevel("4", memoria.rank));
+    let display = new module.Display(memoria.id, memoria.name, memoria.type, memoria.rank, "4", module.getMaxLevel("4", memoria.rank));
     updateForm(display);
     updatePreviewDisplay(display);
   };
@@ -93,6 +97,7 @@ let memoria_api = (function () {
    */
   const updateForm = (display) => {
     name_select.value = display.memoria_id;
+    type_select.type = display.type;
     rank_select.value = display.rank;
     level_select.value = display.level;
     ascension_select.value = display.ascension;
@@ -109,6 +114,11 @@ let memoria_api = (function () {
       rank_select.options[i].disabled = rank_select.options[i].value != memoria.rank;
     }
     rank_select.value = memoria.rank;
+    // enable or disable the type select.
+    for (let i = 0; i < 2; i++) {
+      type_select.options[i].disabled = type_select.options[i].value != memoria.type;
+    }
+    type_select.value = memoria.type;
   };
 
   /**
@@ -120,16 +130,16 @@ let memoria_api = (function () {
   const updateMemoriaWithDisplay = (memoria, display) => {
     // return the default display.
     if (!display) return getBasicMemoriaDisplay(memoria);
-    return new module.Display(memoria.id, memoria.name, memoria.rank, display.ascension, display.level);
+    return new module.Display(memoria.id, memoria.name, memoria.type, memoria.rank, display.ascension, display.level);
   };
 
   /**
-   * gets the basic display for the character.
+   * gets the basic display for the memoria.
    * 
    * @param {module.Memoria} memoria 
    */
   const getBasicMemoriaDisplay = (memoria) => {
-    return new module.Display(memoria.id, memoria.name, memoria.rank, "0", "1");
+    return new module.Display(memoria.id, memoria.name, memoria.type, memoria.rank, "0", "1");
   };
 
   /**
@@ -146,11 +156,13 @@ let memoria_api = (function () {
     // check id.
     if (display.memoria_id !== memoria.id) err.push(`Display Id ${display.memoria_id} does not match Memoria ID ${memoria.id}.`);
     // check name.
-    if (display.name !== memoria.name && validName) err.push(`Display Name ${memoria.name} does not match Memoria Name ${memoria.name}.`);
+    if (display.name !== memoria.name && validName) err.push(`Display Name ${display.name} does not match Memoria Name ${memoria.name}.`);
+    // check type.
+    if (display.type !== memoria.type) err.push(`Display Type ${display.type} does not match Memoria Type ${memoria.type}.`);
     // check rank.
-    if (display.rank !== memoria.rank) err.push(`Display Rank ${display.rank} does not match Memoria Rank ${character.rank}`);
+    if (display.rank !== memoria.rank) err.push(`Display Rank ${display.rank} does not match Memoria Rank ${memoria.rank}`);
     // check level.
-    let maxLevel = getMaxLevel(display.ascension, display.rank);
+    let maxLevel = module.getMaxLevel(display.ascension, display.rank);
     if (parseInt(display.level) < 1 || parseInt(display.level) > maxLevel) err.push(`Display Level ${display.level} for Display Rank ${display.rank} and Display Ascension ${display.ascension} must be between 1 and ${maxLevel}.`);
     // check ascension.
     if (display.ascension < 0 || display.ascension > 4) err.push(`Display Magic ${display.ascension} must be between 0 and 4.`);
@@ -232,6 +244,7 @@ let memoria_api = (function () {
     let display = new memoria_api.Display(
       name_select.value,
       name_select[name_select.options.selectedIndex].text,
+      type_select.value,
       rank_select.value,
       ascension_select.value,
       level_select.value);
@@ -249,13 +262,15 @@ let memoria_api = (function () {
     let display = new memoria_api.Display(
       memoria_display.getAttribute("memoria_id"),
       memoria_display.getAttribute("name"),
+      memoria_display.getAttribute("type"),
       memoria_display.getAttribute("rank"),
       memoria_display.getAttribute("ascension"),
       memoria_display.getAttribute("level"));
+    display._id = memoria_display.getAttribute("_id");
     return display;
   };
 
-  const getMaxLevel = (ascension, rank) => {
+  module.getMaxLevel = (ascension, rank) => {
     if (rank == "1") return (10 + (5 * parseInt(ascension))).toString();
     else if (rank == "2") return (15 + (5 * parseInt(ascension))).toString();
     else if (rank == "3") return (20 + (5 * parseInt(ascension))).toString();
@@ -274,14 +289,15 @@ let memoria_api = (function () {
     memoria_display.setAttribute("_id", display._id);
     memoria_display.setAttribute("memoria_id", display.memoria_id);
     memoria_display.setAttribute("name", display.name);
-    memoria_display.setAttribute("rank", display.rank),
-      memoria_display.setAttribute("ascension", display.ascension);
+    memoria_display.setAttribute("type", display.type);
+    memoria_display.setAttribute("rank", display.rank);
+    memoria_display.setAttribute("ascension", display.ascension);
     memoria_display.setAttribute("level", display.level);
     memoria_display.innerHTML = `
     <img class="memoria_image" src="/magireco/assets/memoria/memoria_${display.memoria_id}_s.png">
     <div class="level">
       <div class="level_pre">Lvl.</div>
-      <div class="level_num">${display.level}/${getMaxLevel(display.ascension, display.rank)}</div>
+      <div class="level_num">${display.level}/${module.getMaxLevel(display.ascension, display.rank)}</div>
     </div>
     <img class="ascension_rank" src="/magireco/assets/ui/ascension/${display.ascension}.png">`;
     if (listener) {
@@ -378,16 +394,7 @@ let memoria_api = (function () {
 
   module.startUp = () => {
     // initilize name field.
-    let names = module.getNames();
-    let prev_id = null;
-    let memorias = [];
-    names.forEach((memoria) => {
-      if (memoria.id !== prev_id) {
-        memorias.push(memoria);
-        prev_id = memoria.id;
-      }
-    });
-    memorias.forEach((memoria) => {
+    [...memoria_collection].sort((a, b) => a.name > b.name ? 1 : -1).forEach((memoria) => {
       name_select.options.add(new Option(memoria.name, memoria.id, false));
     });
     name_select.value = 1001;

@@ -1,7 +1,7 @@
 let memoria_collection = [
   {
     "id": "1001",
-    "type": "SKILL",
+    "type": "skill",
     "name": "Rose Garden Witch Minion",
     "attributeId": "ALL",
     "rank": "1",
@@ -23,7 +23,7 @@ let memoria_collection = [
   },
   {
     "id": "1002",
-    "type": "SKILL",
+    "type": "skill",
     "name": "Rose Garden Witch Minion",
     "attributeId": "ALL",
     "rank": "1",
@@ -45,7 +45,7 @@ let memoria_collection = [
   },
   {
     "id": "1003",
-    "type": "SKILL",
+    "type": "skill",
     "name": "Darkness Witch Minion",
     "attributeId": "ALL",
     "rank": "1",
@@ -67,7 +67,7 @@ let memoria_collection = [
   },
   {
     "id": "1004",
-    "type": "SKILL",
+    "type": "skill",
     "name": "Candy Witch Minion",
     "attributeId": "ALL",
     "rank": "1",
@@ -89,7 +89,7 @@ let memoria_collection = [
   },
   {
     "id": "1005",
-    "type": "SKILL",
+    "type": "skill",
     "name": "Box Witch Minion",
     "attributeId": "ALL",
     "rank": "1",
@@ -111,7 +111,7 @@ let memoria_collection = [
   },
   {
     "id": "1006",
-    "type": "SKILL",
+    "type": "skill",
     "name": "Graffiti Witch Minion",
     "attributeId": "ALL",
     "rank": "1",
@@ -133,7 +133,7 @@ let memoria_collection = [
   },
   {
     "id": "1007",
-    "type": "SKILL",
+    "type": "skill",
     "name": "Silver Witch Minion",
     "attributeId": "ALL",
     "rank": "1",
@@ -155,7 +155,7 @@ let memoria_collection = [
   },
   {
     "id": "1008",
-    "type": "SKILL",
+    "type": "skill",
     "name": "Shadow Witch Minion",
     "attributeId": "ALL",
     "rank": "1",
@@ -177,7 +177,7 @@ let memoria_collection = [
   },
   {
     "id": "1009",
-    "type": "ABILITY",
+    "type": "ability",
     "name": "Dog Witch Minion",
     "attributeId": "ALL",
     "rank": "1",
@@ -197,7 +197,7 @@ let memoria_collection = [
   },
   {
     "id": "1010",
-    "type": "ABILITY",
+    "type": "ability",
     "name": "Artist Witch Minion",
     "attributeId": "ALL",
     "rank": "1",
@@ -217,7 +217,7 @@ let memoria_collection = [
   },
   {
     "id": "1011",
-    "type": "ABILITY",
+    "type": "ability",
     "name": "Rooftop Witch Minion",
     "attributeId": "ALL",
     "rank": "1",
@@ -237,7 +237,7 @@ let memoria_collection = [
   },
   {
     "id": "1013",
-    "type": "ABILITY",
+    "type": "ability",
     "name": "Sandbox Witch Minion",
     "attributeId": "ALL",
     "rank": "1",
@@ -257,7 +257,7 @@ let memoria_collection = [
   },
   {
     "id": "1014",
-    "type": "ABILITY",
+    "type": "ability",
     "name": "Symbol Witch Minion",
     "attributeId": "ALL",
     "rank": "1",
@@ -277,7 +277,7 @@ let memoria_collection = [
   },
   {
     "id": "1015",
-    "type": "ABILITY",
+    "type": "ability",
     "name": "Sheep Witch Minion",
     "attributeId": "ALL",
     "rank": "1",
@@ -297,7 +297,7 @@ let memoria_collection = [
   },
   {
     "id": "1016",
-    "type": "SKILL",
+    "type": "skill",
     "name": "That Which Divides",
     "attributeId": "ALL",
     "rank": "2",
@@ -319,7 +319,7 @@ let memoria_collection = [
   },
   {
     "id": "1017",
-    "type": "ABILITY",
+    "type": "ability",
     "name": "Warm Sunlight",
     "attributeId": "ALL",
     "rank": "2",
@@ -339,7 +339,7 @@ let memoria_collection = [
   },
   {
     "id": "1018",
-    "type": "SKILL",
+    "type": "skill",
     "name": "Protective Hearts",
     "attributeId": "ALL",
     "rank": "2",
@@ -361,7 +361,7 @@ let memoria_collection = [
   },
   {
     "id": "1019",
-    "type": "ABILITY",
+    "type": "ability",
     "name": "Time Traveler",
     "attributeId": "ALL",
     "rank": "2",
@@ -381,7 +381,7 @@ let memoria_collection = [
   },
   {
     "id": "1020",
-    "type": "SKILL",
+    "type": "skill",
     "name": "It's Not a Stuffed Animal, Is It?",
     "attributeId": "ALL",
     "rank": "2",
@@ -403,7 +403,7 @@ let memoria_collection = [
   },
   {
     "id": "1021",
-    "type": "ABILITY",
+    "type": "ability",
     "name": "Reliable Mami-Senpai!",
     "attributeId": "ALL",
     "rank": "2",
@@ -423,7 +423,7 @@ let memoria_collection = [
   },
   {
     "id": "1022",
-    "type": "SKILL",
+    "type": "skill",
     "name": "Just a Bite!",
     "attributeId": "ALL",
     "rank": "2",
@@ -445,7 +445,7 @@ let memoria_collection = [
   },
   {
     "id": "1023",
-    "type": "ABILITY",
+    "type": "ability",
     "name": "Seeking a Thread of Hope",
     "attributeId": "ALL",
     "rank": "2",
@@ -465,7 +465,7 @@ let memoria_collection = [
   },
   {
     "id": "1024",
-    "type": "SKILL",
+    "type": "skill",
     "name": "No Regrets",
     "attributeId": "ALL",
     "rank": "2",
@@ -487,7 +487,7 @@ let memoria_collection = [
   },
   {
     "id": "1025",
-    "type": "ABILITY",
+    "type": "ability",
     "name": "Different Story: Rookies",
     "attributeId": "ALL",
     "rank": "2",
@@ -507,7 +507,7 @@ let memoria_collection = [
   },
   {
     "id": "1026",
-    "type": "SKILL",
+    "type": "skill",
     "name": "Different Story: Mami and Kyoko",
     "attributeId": "ALL",
     "rank": "2",
@@ -529,7 +529,7 @@ let memoria_collection = [
   },
   {
     "id": "1027",
-    "type": "ABILITY",
+    "type": "ability",
     "name": "Runway to the World",
     "attributeId": "ALL",
     "rank": "2",
@@ -549,7 +549,7 @@ let memoria_collection = [
   },
   {
     "id": "1028",
-    "type": "SKILL",
+    "type": "skill",
     "name": "I'm With You!",
     "attributeId": "ALL",
     "rank": "2",
@@ -571,7 +571,7 @@ let memoria_collection = [
   },
   {
     "id": "1029",
-    "type": "ABILITY",
+    "type": "ability",
     "name": "Drunk on Science",
     "attributeId": "ALL",
     "rank": "2",
@@ -591,7 +591,7 @@ let memoria_collection = [
   },
   {
     "id": "1030",
-    "type": "SKILL",
+    "type": "skill",
     "name": "So Busy After School!",
     "attributeId": "ALL",
     "rank": "2",
@@ -613,7 +613,7 @@ let memoria_collection = [
   },
   {
     "id": "1031",
-    "type": "ABILITY",
+    "type": "ability",
     "name": "Hearts and Flowers",
     "attributeId": "ALL",
     "rank": "2",
@@ -633,7 +633,7 @@ let memoria_collection = [
   },
   {
     "id": "1032",
-    "type": "SKILL",
+    "type": "skill",
     "name": "Like, Those are Meant for Me!",
     "attributeId": "ALL",
     "rank": "2",
@@ -655,7 +655,7 @@ let memoria_collection = [
   },
   {
     "id": "1033",
-    "type": "ABILITY",
+    "type": "ability",
     "name": "A Foreign Land",
     "attributeId": "ALL",
     "rank": "2",
@@ -675,7 +675,7 @@ let memoria_collection = [
   },
   {
     "id": "1034",
-    "type": "SKILL",
+    "type": "skill",
     "name": "Akira's Lovely Room",
     "attributeId": "ALL",
     "rank": "2",
@@ -697,7 +697,7 @@ let memoria_collection = [
   },
   {
     "id": "1035",
-    "type": "ABILITY",
+    "type": "ability",
     "name": "Future 3 Star Chef",
     "attributeId": "ALL",
     "rank": "2",
@@ -717,7 +717,7 @@ let memoria_collection = [
   },
   {
     "id": "1037",
-    "type": "ABILITY",
+    "type": "ability",
     "name": "A World of Sheer Bliss",
     "attributeId": "ALL",
     "rank": "2",
@@ -737,7 +737,7 @@ let memoria_collection = [
   },
   {
     "id": "1038",
-    "type": "SKILL",
+    "type": "skill",
     "name": "Comforting Pillow",
     "attributeId": "ALL",
     "rank": "2",
@@ -759,7 +759,7 @@ let memoria_collection = [
   },
   {
     "id": "1039",
-    "type": "ABILITY",
+    "type": "ability",
     "name": "The Show of Her Life",
     "attributeId": "ALL",
     "rank": "2",
@@ -779,7 +779,7 @@ let memoria_collection = [
   },
   {
     "id": "1041",
-    "type": "ABILITY",
+    "type": "ability",
     "name": "A Once Empty World",
     "attributeId": "ALL",
     "rank": "2",
@@ -799,7 +799,7 @@ let memoria_collection = [
   },
   {
     "id": "1042",
-    "type": "SKILL",
+    "type": "skill",
     "name": "The Heart in the Bouquet",
     "attributeId": "ALL",
     "rank": "2",
@@ -821,7 +821,7 @@ let memoria_collection = [
   },
   {
     "id": "1043",
-    "type": "ABILITY",
+    "type": "ability",
     "name": "Love Smells Like This",
     "attributeId": "ALL",
     "rank": "2",
@@ -841,7 +841,7 @@ let memoria_collection = [
   },
   {
     "id": "1044",
-    "type": "SKILL",
+    "type": "skill",
     "name": "Sugar for Bitter Tea",
     "attributeId": "ALL",
     "rank": "2",
@@ -863,7 +863,7 @@ let memoria_collection = [
   },
   {
     "id": "1045",
-    "type": "ABILITY",
+    "type": "ability",
     "name": "May You Always Be Happy",
     "attributeId": "ALL",
     "rank": "2",
@@ -883,7 +883,7 @@ let memoria_collection = [
   },
   {
     "id": "1046",
-    "type": "SKILL",
+    "type": "skill",
     "name": "Blunt Savior",
     "attributeId": "ALL",
     "rank": "2",
@@ -905,7 +905,7 @@ let memoria_collection = [
   },
   {
     "id": "1047",
-    "type": "ABILITY",
+    "type": "ability",
     "name": "Turn Despair into Hope",
     "attributeId": "ALL",
     "rank": "2",
@@ -925,7 +925,7 @@ let memoria_collection = [
   },
   {
     "id": "1048",
-    "type": "SKILL",
+    "type": "skill",
     "name": "Beyond the End",
     "attributeId": "ALL",
     "rank": "2",
@@ -947,7 +947,7 @@ let memoria_collection = [
   },
   {
     "id": "1049",
-    "type": "SKILL",
+    "type": "skill",
     "name": "This'll Make Her Happy, Right?",
     "attributeId": "ALL",
     "rank": "3",
@@ -969,7 +969,7 @@ let memoria_collection = [
   },
   {
     "id": "1050",
-    "type": "ABILITY",
+    "type": "ability",
     "name": "As a Fashion Model",
     "attributeId": "ALL",
     "rank": "3",
@@ -989,7 +989,7 @@ let memoria_collection = [
   },
   {
     "id": "1051",
-    "type": "SKILL",
+    "type": "skill",
     "name": "I'm Even the Mightiest at Hoops!",
     "attributeId": "ALL",
     "rank": "3",
@@ -1011,7 +1011,7 @@ let memoria_collection = [
   },
   {
     "id": "1052",
-    "type": "ABILITY",
+    "type": "ability",
     "name": "It's Not Like I Was Waiting",
     "attributeId": "ALL",
     "rank": "3",
@@ -1031,7 +1031,7 @@ let memoria_collection = [
   },
   {
     "id": "1053",
-    "type": "SKILL",
+    "type": "skill",
     "name": "PPPH! Perfect Cheers!",
     "attributeId": "ALL",
     "rank": "3",
@@ -1053,7 +1053,7 @@ let memoria_collection = [
   },
   {
     "id": "1054",
-    "type": "ABILITY",
+    "type": "ability",
     "name": "Surrounded by White Wings",
     "attributeId": "ALL",
     "rank": "3",
@@ -1073,7 +1073,7 @@ let memoria_collection = [
   },
   {
     "id": "1055",
-    "type": "SKILL",
+    "type": "skill",
     "name": "Quiet Morning Practice",
     "attributeId": "ALL",
     "rank": "3",
@@ -1095,7 +1095,7 @@ let memoria_collection = [
   },
   {
     "id": "1056",
-    "type": "ABILITY",
+    "type": "ability",
     "name": "Teamwork on Our First Meeting",
     "attributeId": "ALL",
     "rank": "3",
@@ -1115,7 +1115,7 @@ let memoria_collection = [
   },
   {
     "id": "1057",
-    "type": "SKILL",
+    "type": "skill",
     "name": "Let's Eat Together!",
     "attributeId": "ALL",
     "rank": "3",
@@ -1137,7 +1137,7 @@ let memoria_collection = [
   },
   {
     "id": "1059",
-    "type": "ABILITY",
+    "type": "ability",
     "name": "Battle in Sync",
     "attributeId": "ALL",
     "rank": "3",
@@ -1157,7 +1157,7 @@ let memoria_collection = [
   },
   {
     "id": "1061",
-    "type": "SKILL",
+    "type": "skill",
     "name": "The Hunt Begins",
     "attributeId": "ALL",
     "rank": "3",
@@ -1179,7 +1179,7 @@ let memoria_collection = [
   },
   {
     "id": "1062",
-    "type": "ABILITY",
+    "type": "ability",
     "name": "Keep It Secret!",
     "attributeId": "ALL",
     "rank": "3",
@@ -1199,7 +1199,7 @@ let memoria_collection = [
   },
   {
     "id": "1063",
-    "type": "SKILL",
+    "type": "skill",
     "name": "The Glasses Girls' Night Out",
     "attributeId": "ALL",
     "rank": "3",
@@ -1221,7 +1221,7 @@ let memoria_collection = [
   },
   {
     "id": "1064",
-    "type": "ABILITY",
+    "type": "ability",
     "name": "Fates Entwined with Madoka",
     "attributeId": "ALL",
     "rank": "3",
@@ -1241,7 +1241,7 @@ let memoria_collection = [
   },
   {
     "id": "1065",
-    "type": "SKILL",
+    "type": "skill",
     "name": "Splash Party!",
     "attributeId": "ALL",
     "rank": "3",
@@ -1263,7 +1263,7 @@ let memoria_collection = [
   },
   {
     "id": "1066",
-    "type": "ABILITY",
+    "type": "ability",
     "name": "Holding Hopes and Dreams Tight",
     "attributeId": "ALL",
     "rank": "3",
@@ -1283,7 +1283,7 @@ let memoria_collection = [
   },
   {
     "id": "1067",
-    "type": "SKILL",
+    "type": "skill",
     "name": "I Won't Stray",
     "attributeId": "ALL",
     "rank": "4",
@@ -1305,7 +1305,7 @@ let memoria_collection = [
   },
   {
     "id": "1068",
-    "type": "SKILL",
+    "type": "skill",
     "name": "Past and Future",
     "attributeId": "ALL",
     "rank": "4",
@@ -1327,7 +1327,7 @@ let memoria_collection = [
   },
   {
     "id": "1069",
-    "type": "ABILITY",
+    "type": "ability",
     "name": "Onward to the Light!",
     "attributeId": "ALL",
     "rank": "4",
@@ -1347,7 +1347,7 @@ let memoria_collection = [
   },
   {
     "id": "1070",
-    "type": "ABILITY",
+    "type": "ability",
     "name": "Unwavering Light",
     "attributeId": "ALL",
     "rank": "4",
@@ -1367,7 +1367,7 @@ let memoria_collection = [
   },
   {
     "id": "1071",
-    "type": "SKILL",
+    "type": "skill",
     "name": "Sworn Promise",
     "attributeId": "ALL",
     "rank": "4",
@@ -1389,7 +1389,7 @@ let memoria_collection = [
   },
   {
     "id": "1072",
-    "type": "ABILITY",
+    "type": "ability",
     "name": "Victory Tea",
     "attributeId": "ALL",
     "rank": "4",
@@ -1409,7 +1409,7 @@ let memoria_collection = [
   },
   {
     "id": "1073",
-    "type": "SKILL",
+    "type": "skill",
     "name": "Detailed Recipe",
     "attributeId": "ALL",
     "rank": "3",
@@ -1437,7 +1437,7 @@ let memoria_collection = [
   },
   {
     "id": "1074",
-    "type": "SKILL",
+    "type": "skill",
     "name": "The Many Rumors in Kamihama",
     "attributeId": "ALL",
     "rank": "3",
@@ -1465,7 +1465,7 @@ let memoria_collection = [
   },
   {
     "id": "1075",
-    "type": "SKILL",
+    "type": "skill",
     "name": "How's It Taste?",
     "attributeId": "ALL",
     "rank": "3",
@@ -1493,7 +1493,7 @@ let memoria_collection = [
   },
   {
     "id": "1076",
-    "type": "SKILL",
+    "type": "skill",
     "name": "Antithetical Existence",
     "attributeId": "ALL",
     "rank": "3",
@@ -1521,7 +1521,7 @@ let memoria_collection = [
   },
   {
     "id": "1077",
-    "type": "SKILL",
+    "type": "skill",
     "name": "I'm a Girl, Too",
     "attributeId": "ALL",
     "rank": "3",
@@ -1549,7 +1549,7 @@ let memoria_collection = [
   },
   {
     "id": "1078",
-    "type": "SKILL",
+    "type": "skill",
     "name": "Animal Paradise",
     "attributeId": "ALL",
     "rank": "3",
@@ -1577,7 +1577,7 @@ let memoria_collection = [
   },
   {
     "id": "1079",
-    "type": "SKILL",
+    "type": "skill",
     "name": "Inherited Will",
     "attributeId": "ALL",
     "rank": "3",
@@ -1605,7 +1605,7 @@ let memoria_collection = [
   },
   {
     "id": "1080",
-    "type": "SKILL",
+    "type": "skill",
     "name": "Madoka's Notebook",
     "attributeId": "ALL",
     "rank": "3",
@@ -1633,7 +1633,7 @@ let memoria_collection = [
   },
   {
     "id": "1081",
-    "type": "SKILL",
+    "type": "skill",
     "name": "I Want to Be Able to Protect Her",
     "attributeId": "ALL",
     "rank": "3",
@@ -1661,7 +1661,7 @@ let memoria_collection = [
   },
   {
     "id": "1082",
-    "type": "SKILL",
+    "type": "skill",
     "name": "Ephemeral Rest",
     "attributeId": "ALL",
     "rank": "3",
@@ -1689,7 +1689,7 @@ let memoria_collection = [
   },
   {
     "id": "1083",
-    "type": "SKILL",
+    "type": "skill",
     "name": "Pushing Onwards",
     "attributeId": "ALL",
     "rank": "3",
@@ -1717,7 +1717,7 @@ let memoria_collection = [
   },
   {
     "id": "1084",
-    "type": "SKILL",
+    "type": "skill",
     "name": "Hearts as One!",
     "attributeId": "ALL",
     "rank": "3",
@@ -1745,7 +1745,7 @@ let memoria_collection = [
   },
   {
     "id": "1085",
-    "type": "SKILL",
+    "type": "skill",
     "name": "Love Science",
     "attributeId": "ALL",
     "rank": "3",
@@ -1773,7 +1773,7 @@ let memoria_collection = [
   },
   {
     "id": "1086",
-    "type": "SKILL",
+    "type": "skill",
     "name": "Following in Father's Footsteps",
     "attributeId": "ALL",
     "rank": "3",
@@ -1801,7 +1801,7 @@ let memoria_collection = [
   },
   {
     "id": "1087",
-    "type": "SKILL",
+    "type": "skill",
     "name": "Bearer of the Family Name",
     "attributeId": "ALL",
     "rank": "3",
@@ -1829,7 +1829,7 @@ let memoria_collection = [
   },
   {
     "id": "1088",
-    "type": "SKILL",
+    "type": "skill",
     "name": "Any Problem, Solved at Once!",
     "attributeId": "ALL",
     "rank": "3",
@@ -1857,7 +1857,7 @@ let memoria_collection = [
   },
   {
     "id": "1089",
-    "type": "SKILL",
+    "type": "skill",
     "name": "Behind the Gleam",
     "attributeId": "ALL",
     "rank": "3",
@@ -1885,7 +1885,7 @@ let memoria_collection = [
   },
   {
     "id": "1090",
-    "type": "SKILL",
+    "type": "skill",
     "name": "Gentle and Strong",
     "attributeId": "ALL",
     "rank": "3",
@@ -1909,11 +1909,11 @@ let memoria_collection = [
         "name": "Akira Shinobu"
       }
     ],
-    "url": "https://magireco.fandom.com/wiki/A_Gentle_Warrior"
+    "url": "https://magireco.fandom.com/wiki/Limited_Quantity!_Manaka%27s_Special_Bento_Box"
   },
   {
     "id": "1091",
-    "type": "SKILL",
+    "type": "skill",
     "name": "Manaka's Special Bento Box",
     "attributeId": "ALL",
     "rank": "3",
@@ -1941,7 +1941,7 @@ let memoria_collection = [
   },
   {
     "id": "1093",
-    "type": "SKILL",
+    "type": "skill",
     "name": "Living with Literature",
     "attributeId": "ALL",
     "rank": "3",
@@ -1969,7 +1969,7 @@ let memoria_collection = [
   },
   {
     "id": "1094",
-    "type": "SKILL",
+    "type": "skill",
     "name": "Well-Worn Wooden Dummy",
     "attributeId": "ALL",
     "rank": "3",
@@ -1997,7 +1997,7 @@ let memoria_collection = [
   },
   {
     "id": "1095",
-    "type": "SKILL",
+    "type": "skill",
     "name": "Smile and the World Smiles Too",
     "attributeId": "ALL",
     "rank": "3",
@@ -2025,7 +2025,7 @@ let memoria_collection = [
   },
   {
     "id": "1097",
-    "type": "SKILL",
+    "type": "skill",
     "name": "Deathly Dull",
     "attributeId": "ALL",
     "rank": "3",
@@ -2053,7 +2053,7 @@ let memoria_collection = [
   },
   {
     "id": "1098",
-    "type": "SKILL",
+    "type": "skill",
     "name": "Do You Speak Flower?",
     "attributeId": "ALL",
     "rank": "3",
@@ -2081,7 +2081,7 @@ let memoria_collection = [
   },
   {
     "id": "1099",
-    "type": "SKILL",
+    "type": "skill",
     "name": "Fashion at Full Speed!",
     "attributeId": "ALL",
     "rank": "3",
@@ -2109,7 +2109,7 @@ let memoria_collection = [
   },
   {
     "id": "1100",
-    "type": "SKILL",
+    "type": "skill",
     "name": "Crime and Punishment",
     "attributeId": "ALL",
     "rank": "3",
@@ -2137,7 +2137,7 @@ let memoria_collection = [
   },
   {
     "id": "1101",
-    "type": "SKILL",
+    "type": "skill",
     "name": "Bundle of Love",
     "attributeId": "ALL",
     "rank": "3",
@@ -2165,7 +2165,7 @@ let memoria_collection = [
   },
   {
     "id": "1102",
-    "type": "SKILL",
+    "type": "skill",
     "name": "Encounter with a Hero",
     "attributeId": "ALL",
     "rank": "3",
@@ -2193,7 +2193,7 @@ let memoria_collection = [
   },
   {
     "id": "1103",
-    "type": "ABILITY",
+    "type": "ability",
     "name": "It's a Holiday! Nap All You Like",
     "attributeId": "ALL",
     "rank": "2",
@@ -2213,7 +2213,7 @@ let memoria_collection = [
   },
   {
     "id": "1104",
-    "type": "SKILL",
+    "type": "skill",
     "name": "Memories from the Farm",
     "attributeId": "ALL",
     "rank": "3",
@@ -2241,7 +2241,7 @@ let memoria_collection = [
   },
   {
     "id": "1105",
-    "type": "SKILL",
+    "type": "skill",
     "name": "Clear Summer Colors",
     "attributeId": "ALL",
     "rank": "4",
@@ -2263,7 +2263,7 @@ let memoria_collection = [
   },
   {
     "id": "1106",
-    "type": "ABILITY",
+    "type": "ability",
     "kind": "EVENT",
     "name": "Nothing is Beautiful",
     "attributeId": "ALL",
@@ -2286,7 +2286,7 @@ let memoria_collection = [
   },
   {
     "id": "1107",
-    "type": "ABILITY",
+    "type": "ability",
     "kind": "EVENT",
     "name": "Here with You",
     "attributeId": "ALL",
@@ -2309,7 +2309,7 @@ let memoria_collection = [
   },
   {
     "id": "1109",
-    "type": "ABILITY",
+    "type": "ability",
     "name": "The First and Last Page",
     "attributeId": "ALL",
     "rank": "3",
@@ -2335,7 +2335,7 @@ let memoria_collection = [
   },
   {
     "id": "1110",
-    "type": "SKILL",
+    "type": "skill",
     "kind": "EVENT",
     "name": "Awake, but the Dream Continues",
     "attributeId": "ALL",
@@ -2360,7 +2360,7 @@ let memoria_collection = [
   },
   {
     "id": "1111",
-    "type": "SKILL",
+    "type": "skill",
     "name": "Common Things",
     "attributeId": "ALL",
     "rank": "3",
@@ -2388,7 +2388,7 @@ let memoria_collection = [
   },
   {
     "id": "1112",
-    "type": "ABILITY",
+    "type": "ability",
     "name": "My School Life",
     "attributeId": "ALL",
     "rank": "2",
@@ -2408,7 +2408,7 @@ let memoria_collection = [
   },
   {
     "id": "1113",
-    "type": "SKILL",
+    "type": "skill",
     "name": "Unfaltering Conviction",
     "attributeId": "ALL",
     "rank": "4",
@@ -2430,7 +2430,7 @@ let memoria_collection = [
   },
   {
     "id": "1114",
-    "type": "SKILL",
+    "type": "skill",
     "name": "A Home Covered in Blossoms",
     "attributeId": "ALL",
     "rank": "3",
@@ -2458,7 +2458,7 @@ let memoria_collection = [
   },
   {
     "id": "1115",
-    "type": "SKILL",
+    "type": "skill",
     "name": "Tea for Three",
     "attributeId": "ALL",
     "rank": "2",
@@ -2480,7 +2480,7 @@ let memoria_collection = [
   },
   {
     "id": "1116",
-    "type": "SKILL",
+    "type": "skill",
     "name": "Always-Busy Hazuki",
     "attributeId": "ALL",
     "rank": "3",
@@ -2504,11 +2504,11 @@ let memoria_collection = [
         "name": "Hazuki Yusa"
       }
     ],
-    "url": "https://magireco.fandom.com/wiki/Hazuki_Is_Always_Busy"
+    "url": "https://magireco.fandom.com/wiki/My_Dreams_Continue_After_I_Wake_Up"
   },
   {
     "id": "1117",
-    "type": "ABILITY",
+    "type": "ability",
     "name": "What's Right Before My Eyes...",
     "attributeId": "ALL",
     "rank": "2",
@@ -2528,7 +2528,7 @@ let memoria_collection = [
   },
   {
     "id": "1118",
-    "type": "SKILL",
+    "type": "skill",
     "name": "Ayame's Collection!",
     "attributeId": "ALL",
     "rank": "3",
@@ -2556,7 +2556,7 @@ let memoria_collection = [
   },
   {
     "id": "1119",
-    "type": "SKILL",
+    "type": "skill",
     "name": "I'm Upside Down!",
     "attributeId": "ALL",
     "rank": "2",
@@ -2578,7 +2578,7 @@ let memoria_collection = [
   },
   {
     "id": "1120",
-    "type": "ABILITY",
+    "type": "ability",
     "kind": "EVENT",
     "name": "Those Days are Gone",
     "attributeId": "ALL",
@@ -2601,7 +2601,7 @@ let memoria_collection = [
   },
   {
     "id": "1121",
-    "type": "SKILL",
+    "type": "skill",
     "kind": "EVENT",
     "name": "Dependable Negotiator",
     "attributeId": "ALL",
@@ -2626,7 +2626,7 @@ let memoria_collection = [
   },
   {
     "id": "1122",
-    "type": "ABILITY",
+    "type": "ability",
     "kind": "EVENT",
     "name": "I Made Friends!",
     "attributeId": "ALL",
@@ -2649,7 +2649,7 @@ let memoria_collection = [
   },
   {
     "id": "1123",
-    "type": "SKILL",
+    "type": "skill",
     "name": "50th Love Letter (Unfinished)",
     "attributeId": "ALL",
     "rank": "3",
@@ -2677,7 +2677,7 @@ let memoria_collection = [
   },
   {
     "id": "1124",
-    "type": "ABILITY",
+    "type": "ability",
     "name": "Daily Delusions",
     "attributeId": "ALL",
     "rank": "2",
@@ -2697,7 +2697,7 @@ let memoria_collection = [
   },
   {
     "id": "1125",
-    "type": "SKILL",
+    "type": "skill",
     "name": "Back Alley Pal",
     "attributeId": "ALL",
     "rank": "3",
@@ -2725,7 +2725,7 @@ let memoria_collection = [
   },
   {
     "id": "1126",
-    "type": "SKILL",
+    "type": "skill",
     "name": "Invisible Girl After School",
     "attributeId": "ALL",
     "rank": "2",
@@ -2747,7 +2747,7 @@ let memoria_collection = [
   },
   {
     "id": "1127",
-    "type": "ABILITY",
+    "type": "ability",
     "name": "A Wild Welcome in the Sewer",
     "attributeId": "ALL",
     "rank": "3",
@@ -2767,7 +2767,7 @@ let memoria_collection = [
   },
   {
     "id": "1128",
-    "type": "SKILL",
+    "type": "skill",
     "name": "Recovery and Resolve",
     "attributeId": "ALL",
     "rank": "4",
@@ -2789,7 +2789,7 @@ let memoria_collection = [
   },
   {
     "id": "1129",
-    "type": "SKILL",
+    "type": "skill",
     "name": "Phantom Thief Karin's Sly Plan",
     "attributeId": "ALL",
     "rank": "3",
@@ -2817,7 +2817,7 @@ let memoria_collection = [
   },
   {
     "id": "1130",
-    "type": "ABILITY",
+    "type": "ability",
     "name": "My Bible",
     "attributeId": "ALL",
     "rank": "4",
@@ -2837,7 +2837,7 @@ let memoria_collection = [
   },
   {
     "id": "1132",
-    "type": "SKILL",
+    "type": "skill",
     "name": "A Sweet Welcome",
     "attributeId": "ALL",
     "rank": "2",
@@ -2859,7 +2859,7 @@ let memoria_collection = [
   },
   {
     "id": "1133",
-    "type": "ABILITY",
+    "type": "ability",
     "name": "Rehearsal Continues",
     "attributeId": "ALL",
     "rank": "3",
@@ -2879,7 +2879,7 @@ let memoria_collection = [
   },
   {
     "id": "1134",
-    "type": "SKILL",
+    "type": "skill",
     "name": "Magical Halloween Theater",
     "attributeId": "ALL",
     "rank": "4",
@@ -2901,7 +2901,7 @@ let memoria_collection = [
   },
   {
     "id": "1135",
-    "type": "SKILL",
+    "type": "skill",
     "name": "The View in My Memory",
     "attributeId": "ALL",
     "rank": "3",
@@ -2929,7 +2929,7 @@ let memoria_collection = [
   },
   {
     "id": "1136",
-    "type": "ABILITY",
+    "type": "ability",
     "kind": "EVENT",
     "name": "An Average Day",
     "attributeId": "ALL",
@@ -2952,7 +2952,7 @@ let memoria_collection = [
   },
   {
     "id": "1137",
-    "type": "SKILL",
+    "type": "skill",
     "kind": "EVENT",
     "name": "An Unexpected Reaction",
     "attributeId": "ALL",
@@ -2977,7 +2977,7 @@ let memoria_collection = [
   },
   {
     "id": "1138",
-    "type": "ABILITY",
+    "type": "ability",
     "kind": "EVENT",
     "name": "Perfectly Imbalanced",
     "attributeId": "ALL",
@@ -3000,7 +3000,7 @@ let memoria_collection = [
   },
   {
     "id": "1139",
-    "type": "SKILL",
+    "type": "skill",
     "name": "Grandma's Strawberry Risotto",
     "attributeId": "ALL",
     "rank": "3",
@@ -3028,7 +3028,7 @@ let memoria_collection = [
   },
   {
     "id": "1141",
-    "type": "SKILL",
+    "type": "skill",
     "name": "The Sky with Seven Stars",
     "attributeId": "ALL",
     "rank": "3",
@@ -3056,7 +3056,7 @@ let memoria_collection = [
   },
   {
     "id": "1143",
-    "type": "SKILL",
+    "type": "skill",
     "name": "Wounds of the Body and Heart",
     "attributeId": "ALL",
     "rank": "3",
@@ -3084,7 +3084,7 @@ let memoria_collection = [
   },
   {
     "id": "1144",
-    "type": "ABILITY",
+    "type": "ability",
     "kind": "EVENT",
     "name": "Walking the Same Path",
     "attributeId": "ALL",
@@ -3105,7 +3105,7 @@ let memoria_collection = [
   },
   {
     "id": "1145",
-    "type": "ABILITY",
+    "type": "ability",
     "kind": "EVENT",
     "name": "The Flavor of Drama!",
     "attributeId": "ALL",
@@ -3128,7 +3128,7 @@ let memoria_collection = [
   },
   {
     "id": "1147",
-    "type": "ABILITY",
+    "type": "ability",
     "kind": "REINFORCEMENT",
     "name": "Memoria Circuit",
     "attributeId": "ALL",
@@ -3149,7 +3149,7 @@ let memoria_collection = [
   },
   {
     "id": "1148",
-    "type": "ABILITY",
+    "type": "ability",
     "kind": "REINFORCEMENT",
     "name": "Memoria Circuit Core",
     "attributeId": "ALL",
@@ -3170,7 +3170,7 @@ let memoria_collection = [
   },
   {
     "id": "1149",
-    "type": "SKILL",
+    "type": "skill",
     "name": "Tsukuyo's Treasure",
     "attributeId": "ALL",
     "rank": "3",
@@ -3198,7 +3198,7 @@ let memoria_collection = [
   },
   {
     "id": "1150",
-    "type": "SKILL",
+    "type": "skill",
     "name": "Tsukasa's Treasure",
     "attributeId": "ALL",
     "rank": "3",
@@ -3226,7 +3226,7 @@ let memoria_collection = [
   },
   {
     "id": "1151",
-    "type": "SKILL",
+    "type": "skill",
     "name": "Non-Stop Training",
     "attributeId": "ALL",
     "rank": "4",
@@ -3248,7 +3248,7 @@ let memoria_collection = [
   },
   {
     "id": "1152",
-    "type": "ABILITY",
+    "type": "ability",
     "name": "Our Story Starts Here",
     "attributeId": "ALL",
     "rank": "4",
@@ -3268,7 +3268,7 @@ let memoria_collection = [
   },
   {
     "id": "1153",
-    "type": "SKILL",
+    "type": "skill",
     "name": "Magical Girls VS Series?",
     "attributeId": "ALL",
     "rank": "3",
@@ -3296,7 +3296,7 @@ let memoria_collection = [
   },
   {
     "id": "1154",
-    "type": "ABILITY",
+    "type": "ability",
     "kind": "EVENT",
     "name": "A Shower of Light",
     "attributeId": "ALL",
@@ -3317,7 +3317,7 @@ let memoria_collection = [
   },
   {
     "id": "1155",
-    "type": "SKILL",
+    "type": "skill",
     "name": "Saintly Descent",
     "attributeId": "ALL",
     "rank": "3",
@@ -3339,7 +3339,7 @@ let memoria_collection = [
   },
   {
     "id": "1156",
-    "type": "ABILITY",
+    "type": "ability",
     "name": "A Warm Christmas",
     "attributeId": "ALL",
     "rank": "4",
@@ -3359,7 +3359,7 @@ let memoria_collection = [
   },
   {
     "id": "1159",
-    "type": "SKILL",
+    "type": "skill",
     "name": "New Year's Game",
     "attributeId": "ALL",
     "rank": "3",
@@ -3387,7 +3387,7 @@ let memoria_collection = [
   },
   {
     "id": "1163",
-    "type": "ABILITY",
+    "type": "ability",
     "name": "This Year's Fortune",
     "attributeId": "ALL",
     "rank": "2",
@@ -3407,7 +3407,7 @@ let memoria_collection = [
   },
   {
     "id": "1164",
-    "type": "SKILL",
+    "type": "skill",
     "name": "Two Shadows Approach Silently",
     "attributeId": "ALL",
     "rank": "3",
@@ -3429,7 +3429,7 @@ let memoria_collection = [
   },
   {
     "id": "1165",
-    "type": "SKILL",
+    "type": "skill",
     "name": "Moving Melody",
     "attributeId": "ALL",
     "rank": "3",
@@ -3457,7 +3457,7 @@ let memoria_collection = [
   },
   {
     "id": "1166",
-    "type": "ABILITY",
+    "type": "ability",
     "name": "A United Battlefront for Two",
     "attributeId": "ALL",
     "rank": "2",
@@ -3477,7 +3477,7 @@ let memoria_collection = [
   },
   {
     "id": "1167",
-    "type": "SKILL",
+    "type": "skill",
     "name": "For The Ones I Love",
     "attributeId": "ALL",
     "rank": "4",
@@ -3499,7 +3499,7 @@ let memoria_collection = [
   },
   {
     "id": "1169",
-    "type": "ABILITY",
+    "type": "ability",
     "kind": "EVENT",
     "name": "My First Homemade Chocolate",
     "attributeId": "ALL",
@@ -3522,7 +3522,7 @@ let memoria_collection = [
   },
   {
     "id": "1170",
-    "type": "SKILL",
+    "type": "skill",
     "name": "Épée de Clovis",
     "attributeId": "ALL",
     "rank": "3",
@@ -3550,7 +3550,7 @@ let memoria_collection = [
   },
   {
     "id": "1171",
-    "type": "ABILITY",
+    "type": "ability",
     "name": "The Maiden's Resolve",
     "attributeId": "ALL",
     "rank": "2",
@@ -3566,11 +3566,11 @@ let memoria_collection = [
       "shortDescription": "ATK UP [III]"
     },
     "description": "I don't want such a tragedy to ever happen again, to anyone. That is why...I will become a Magical Girl. Please bestow upon me the power to bring light to France!",
-    "url": "https://magireco.fandom.com/wiki/Determination_of_a_Maiden"
+    "url": "https://magireco.fandom.com/wiki/Reinforcements_That_Transcend_Time"
   },
   {
     "id": "1172",
-    "type": "SKILL",
+    "type": "skill",
     "name": "Two Oaths",
     "attributeId": "ALL",
     "rank": "3",
@@ -3598,7 +3598,7 @@ let memoria_collection = [
   },
   {
     "id": "1174",
-    "type": "ABILITY",
+    "type": "ability",
     "kind": "EVENT",
     "name": "Monsieur Angel's Banner",
     "attributeId": "ALL",
@@ -3621,7 +3621,7 @@ let memoria_collection = [
   },
   {
     "id": "1175",
-    "type": "ABILITY",
+    "type": "ability",
     "kind": "EVENT",
     "name": "Hope and Despair",
     "attributeId": "ALL",
@@ -3648,7 +3648,7 @@ let memoria_collection = [
   },
   {
     "id": "1177",
-    "type": "SKILL",
+    "type": "skill",
     "kind": "EVENT",
     "name": "Reinforcements from Another Time",
     "attributeId": "ALL",
@@ -3673,7 +3673,7 @@ let memoria_collection = [
   },
   {
     "id": "1178",
-    "type": "SKILL",
+    "type": "skill",
     "name": "Final Piece: Alina's Nine Phases",
     "attributeId": "ALL",
     "rank": "3",
@@ -3701,7 +3701,7 @@ let memoria_collection = [
   },
   {
     "id": "1179",
-    "type": "SKILL",
+    "type": "skill",
     "name": "The Calm After the Storm",
     "attributeId": "ALL",
     "rank": "3",
@@ -3723,7 +3723,7 @@ let memoria_collection = [
   },
   {
     "id": "1180",
-    "type": "ABILITY",
+    "type": "ability",
     "name": "Attitude Toward Art",
     "attributeId": "ALL",
     "rank": "4",
@@ -3743,7 +3743,7 @@ let memoria_collection = [
   },
   {
     "id": "1183",
-    "type": "SKILL",
+    "type": "skill",
     "name": "Leila's Key",
     "attributeId": "ALL",
     "rank": "3",
@@ -3771,7 +3771,7 @@ let memoria_collection = [
   },
   {
     "id": "1184",
-    "type": "SKILL",
+    "type": "skill",
     "name": "An Obsessive Secret Collection",
     "attributeId": "ALL",
     "rank": "3",
@@ -3799,7 +3799,7 @@ let memoria_collection = [
   },
   {
     "id": "1186",
-    "type": "SKILL",
+    "type": "skill",
     "name": "After the Rain - Leila",
     "attributeId": "ALL",
     "rank": "3",
@@ -3821,7 +3821,7 @@ let memoria_collection = [
   },
   {
     "id": "1187",
-    "type": "ABILITY",
+    "type": "ability",
     "name": "After the Rain - Seika",
     "attributeId": "ALL",
     "rank": "2",
@@ -3841,7 +3841,7 @@ let memoria_collection = [
   },
   {
     "id": "1188",
-    "type": "SKILL",
+    "type": "skill",
     "kind": "EVENT",
     "name": "After the Rain - Mito",
     "attributeId": "ALL",
@@ -3866,7 +3866,7 @@ let memoria_collection = [
   },
   {
     "id": "1189",
-    "type": "SKILL",
+    "type": "skill",
     "kind": "EVENT",
     "name": "Hello from the Stairwell",
     "attributeId": "ALL",
@@ -3891,7 +3891,7 @@ let memoria_collection = [
   },
   {
     "id": "1190",
-    "type": "ABILITY",
+    "type": "ability",
     "kind": "EVENT",
     "name": "Sunlight Shining Down",
     "attributeId": "ALL",
@@ -3914,7 +3914,7 @@ let memoria_collection = [
   },
   {
     "id": "1191",
-    "type": "SKILL",
+    "type": "skill",
     "name": "I Want to be an Art Restorationist",
     "attributeId": "ALL",
     "rank": "3",
@@ -3942,7 +3942,7 @@ let memoria_collection = [
   },
   {
     "id": "1192",
-    "type": "ABILITY",
+    "type": "ability",
     "name": "I Can Be Serious When I Want",
     "attributeId": "ALL",
     "rank": "4",
@@ -3962,7 +3962,7 @@ let memoria_collection = [
   },
   {
     "id": "1193",
-    "type": "SKILL",
+    "type": "skill",
     "name": "Part-Time Job at the Art Museum",
     "attributeId": "ALL",
     "rank": "3",
@@ -3984,7 +3984,7 @@ let memoria_collection = [
   },
   {
     "id": "1194",
-    "type": "ABILITY",
+    "type": "ability",
     "name": "The Sound of Happiness",
     "attributeId": "ALL",
     "rank": "3",
@@ -4010,7 +4010,7 @@ let memoria_collection = [
   },
   {
     "id": "1195",
-    "type": "ABILITY",
+    "type": "ability",
     "name": "The Mao Family Is As Rowdy As Ever",
     "attributeId": "ALL",
     "rank": "3",
@@ -4030,7 +4030,7 @@ let memoria_collection = [
   },
   {
     "id": "1196",
-    "type": "ABILITY",
+    "type": "ability",
     "kind": "EVENT",
     "name": "Starlight Power!",
     "attributeId": "ALL",
@@ -4053,7 +4053,7 @@ let memoria_collection = [
   },
   {
     "id": "1197",
-    "type": "SKILL",
+    "type": "skill",
     "kind": "EVENT",
     "name": "The Third Amane Sister",
     "attributeId": "ALL",
@@ -4078,7 +4078,7 @@ let memoria_collection = [
   },
   {
     "id": "1198",
-    "type": "ABILITY",
+    "type": "ability",
     "name": "Proof of Darkness",
     "attributeId": "ALL",
     "rank": "3",
@@ -4104,7 +4104,7 @@ let memoria_collection = [
   },
   {
     "id": "1199",
-    "type": "ABILITY",
+    "type": "ability",
     "name": "Shizuku's Next Destination",
     "attributeId": "ALL",
     "rank": "3",
@@ -4124,7 +4124,7 @@ let memoria_collection = [
   },
   {
     "id": "1200",
-    "type": "SKILL",
+    "type": "skill",
     "name": "My True Nature",
     "attributeId": "ALL",
     "rank": "4",
@@ -4146,7 +4146,7 @@ let memoria_collection = [
   },
   {
     "id": "1201",
-    "type": "ABILITY",
+    "type": "ability",
     "name": "Broken, But Still Beautiful",
     "attributeId": "ALL",
     "rank": "3",
@@ -4172,7 +4172,7 @@ let memoria_collection = [
   },
   {
     "id": "1202",
-    "type": "SKILL",
+    "type": "skill",
     "name": "All Eyes on Me",
     "attributeId": "ALL",
     "rank": "3",
@@ -4194,7 +4194,7 @@ let memoria_collection = [
   },
   {
     "id": "1203",
-    "type": "ABILITY",
+    "type": "ability",
     "name": "Ryushin-Ryu Assistant Instructor",
     "attributeId": "ALL",
     "rank": "4",
@@ -4214,7 +4214,7 @@ let memoria_collection = [
   },
   {
     "id": "1204",
-    "type": "SKILL",
+    "type": "skill",
     "name": "Good Luck Charm",
     "attributeId": "ALL",
     "rank": "3",
@@ -4242,7 +4242,7 @@ let memoria_collection = [
   },
   {
     "id": "1205",
-    "type": "SKILL",
+    "type": "skill",
     "name": "Seeking Unbeatable Strength",
     "attributeId": "ALL",
     "rank": "3",
@@ -4270,7 +4270,7 @@ let memoria_collection = [
   },
   {
     "id": "1206",
-    "type": "ABILITY",
+    "type": "ability",
     "name": "A Witch, a Wolf, and Villagers",
     "attributeId": "ALL",
     "rank": "3",
@@ -4296,7 +4296,7 @@ let memoria_collection = [
   },
   {
     "id": "1207",
-    "type": "ABILITY",
+    "type": "ability",
     "kind": "EVENT",
     "name": "The Hand Arisa Grasped",
     "attributeId": "ALL",
@@ -4317,7 +4317,7 @@ let memoria_collection = [
   },
   {
     "id": "1208",
-    "type": "SKILL",
+    "type": "skill",
     "name": "The Hand Chisato Grasped",
     "attributeId": "ALL",
     "rank": "3",
@@ -4339,7 +4339,7 @@ let memoria_collection = [
   },
   {
     "id": "1209",
-    "type": "ABILITY",
+    "type": "ability",
     "kind": "EVENT",
     "name": "A Sword Between Light and Dark",
     "attributeId": "ALL",
@@ -4362,7 +4362,7 @@ let memoria_collection = [
   },
   {
     "id": "1210",
-    "type": "ABILITY",
+    "type": "ability",
     "kind": "EVENT",
     "name": "When All's Said and Done",
     "attributeId": "ALL",
@@ -4385,7 +4385,7 @@ let memoria_collection = [
   },
   {
     "id": "1212",
-    "type": "SKILL",
+    "type": "skill",
     "name": "The Fortune-Telling Ban",
     "attributeId": "ALL",
     "rank": "3",
@@ -4413,7 +4413,7 @@ let memoria_collection = [
   },
   {
     "id": "1214",
-    "type": "SKILL",
+    "type": "skill",
     "kind": "EVENT",
     "name": "Fateful Mornings",
     "attributeId": "ALL",
@@ -4438,7 +4438,7 @@ let memoria_collection = [
   },
   {
     "id": "1215",
-    "type": "SKILL",
+    "type": "skill",
     "kind": "EVENT",
     "name": "Gentle Breeze",
     "attributeId": "ALL",
@@ -4463,7 +4463,7 @@ let memoria_collection = [
   },
   {
     "id": "1216",
-    "type": "ABILITY",
+    "type": "ability",
     "name": "Watching Over Them Together",
     "attributeId": "ALL",
     "rank": "3",
@@ -4483,7 +4483,7 @@ let memoria_collection = [
   },
   {
     "id": "1217",
-    "type": "ABILITY",
+    "type": "ability",
     "name": "A Symbol of Relaxation",
     "attributeId": "ALL",
     "rank": "3",
@@ -4509,7 +4509,7 @@ let memoria_collection = [
   },
   {
     "id": "1218",
-    "type": "SKILL",
+    "type": "skill",
     "name": "FUSION!",
     "attributeId": "ALL",
     "rank": "4",
@@ -4531,7 +4531,7 @@ let memoria_collection = [
   },
   {
     "id": "1220",
-    "type": "SKILL",
+    "type": "skill",
     "name": "Exchange of Wills",
     "attributeId": "ALL",
     "rank": "3",
@@ -4559,7 +4559,7 @@ let memoria_collection = [
   },
   {
     "id": "1221",
-    "type": "ABILITY",
+    "type": "ability",
     "name": "Cloaked in Guilt",
     "attributeId": "ALL",
     "rank": "4",
@@ -4579,7 +4579,7 @@ let memoria_collection = [
   },
   {
     "id": "1222",
-    "type": "SKILL",
+    "type": "skill",
     "name": "The Reason I Joined",
     "attributeId": "ALL",
     "rank": "3",
@@ -4601,7 +4601,7 @@ let memoria_collection = [
   },
   {
     "id": "1223",
-    "type": "ABILITY",
+    "type": "ability",
     "name": "East and West Tensions",
     "attributeId": "ALL",
     "rank": "2",
@@ -4621,7 +4621,7 @@ let memoria_collection = [
   },
   {
     "id": "1224",
-    "type": "SKILL",
+    "type": "skill",
     "name": "East and West Agreements",
     "attributeId": "ALL",
     "rank": "4",
@@ -4643,7 +4643,7 @@ let memoria_collection = [
   },
   {
     "id": "1230",
-    "type": "ABILITY",
+    "type": "ability",
     "kind": "EVENT",
     "name": "The Eccentric Maid",
     "attributeId": "ALL",
@@ -4662,11 +4662,11 @@ let memoria_collection = [
       "eventDescription": "and +1 to any 980-Yen-of-Love Parfait drop"
     },
     "description": "The rookie maid, Kanagi Izumi, clad in her brand new uniform. Her figure stands cool, her movement effortless, and her manner of speech can be mistaken for rudeness... Such an attitude is ill-fitting for a maid. Despite this, her unique aura seems to be the very reason she draws people in.",
-    "url": "https://magireco.fandom.com/wiki/An_Eccentric_Maid"
+    "url": "https://magireco.fandom.com/wiki/Special_Remnants"
   },
   {
     "id": "1231",
-    "type": "ABILITY",
+    "type": "ability",
     "name": "Let Nagitan Take Care of It",
     "attributeId": "ALL",
     "rank": "3",
@@ -4686,7 +4686,7 @@ let memoria_collection = [
   },
   {
     "id": "1232",
-    "type": "ABILITY",
+    "type": "ability",
     "name": "As Many Times As It Takes",
     "attributeId": "ALL",
     "rank": "4",
@@ -4705,8 +4705,59 @@ let memoria_collection = [
     "url": "https://magireco.fandom.com/wiki/I%27ll_Repeat_It_No_Matter_How_Many_Times_It_Takes"
   },
   {
+    "id": "1233",
+    "type": "skill",
+    "name": "The Rains Lift",
+    "attributeId": "ALL",
+    "rank": "3",
+    "attack": "0",
+    "defense": "441",
+    "hp": "483",
+    "pieceSkill": {
+      "name": "Monopolize Draw",
+      "shortDescription": "Draw this Magical Girl's Disks",
+      "intervalTurn": "10"
+    },
+    "pieceSkill2": {
+      "name": "Monopolize Draw",
+      "shortDescription": "Draw this Magical Girl's Disks",
+      "intervalTurn": "8"
+    },
+    "description": "Droplets roll down from the umbrella standing in the hall, a testament to the rain which ceased mere moments before. The post-rain scent mingles with fragrant night jasmine in her nose for a moment. A glint of sunset pierces her vision and bleaches the world white. It's bright enough to blur the border between real and unreal.",
+    "charaList": [
+      {
+        "charaId": 2300,
+        "name": "Homura Akemi Swimsuit"
+      }
+    ],
+    "url": "https://magireco.fandom.com/wiki/After_the_Rain"
+  },
+  {
+    "id": "1237",
+    "type": "ability",
+    "kind": "EVENT",
+    "name": "The Smash Hit of the Summer?!",
+    "attributeId": "ALL",
+    "rank": "3",
+    "attack": "539",
+    "defense": "0",
+    "hp": "660",
+    "pieceSkill": {
+      "name": "Berserk Adept [III]",
+      "shortDescription": "ATK UP [III] / DEF DOWN [V]",
+      "eventDescription": "and +1 to any Diary Page drop"
+    },
+    "pieceSkill2": {
+      "name": "Berserk Adept [IV]",
+      "shortDescription": "ATK UP [IV] / DEF DOWN [V]",
+      "eventDescription": "and +1 to any Diary Page drop"
+    },
+    "description": "Everyone can have fun with some beach volleyball! Well, that was the plan... As the game heated up, Mami got super serious and spiked the ball! Bam! And it...hit Homura square in the face?! Mami panicked! The others froze in shock! And Homura's glasses flew into the air, twinkling as they caught the summer sunlight...",
+    "url": "https://magireco.fandom.com/wiki/Summer_Impact!%3F"
+  },
+  {
     "id": "1245",
-    "type": "SKILL",
+    "type": "skill",
     "name": "A Fragment of True Hope",
     "attributeId": "ALL",
     "rank": "3",
@@ -4734,7 +4785,7 @@ let memoria_collection = [
   },
   {
     "id": "1246",
-    "type": "ABILITY",
+    "type": "ability",
     "name": "In the Light at its Birth",
     "attributeId": "ALL",
     "rank": "4",
@@ -4754,7 +4805,7 @@ let memoria_collection = [
   },
   {
     "id": "1247",
-    "type": "SKILL",
+    "type": "skill",
     "name": "Hope's Light, Free from Despair",
     "attributeId": "ALL",
     "rank": "4",
@@ -4776,7 +4827,7 @@ let memoria_collection = [
   },
   {
     "id": "1248",
-    "type": "SKILL",
+    "type": "skill",
     "name": "Towards Hope",
     "attributeId": "ALL",
     "rank": "3",
@@ -4798,7 +4849,7 @@ let memoria_collection = [
   },
   {
     "id": "1249",
-    "type": "ABILITY",
+    "type": "ability",
     "name": "The Warmth of Your Hand",
     "attributeId": "ALL",
     "rank": "4",
@@ -4818,7 +4869,7 @@ let memoria_collection = [
   },
   {
     "id": "1250",
-    "type": "SKILL",
+    "type": "skill",
     "name": "The Goddess Watches Quietly",
     "attributeId": "ALL",
     "rank": "4",
@@ -4840,7 +4891,7 @@ let memoria_collection = [
   },
   {
     "id": "1252",
-    "type": "ABILITY",
+    "type": "ability",
     "name": "There are Totally 4 of Me",
     "attributeId": "ALL",
     "rank": "4",
@@ -4860,7 +4911,7 @@ let memoria_collection = [
   },
   {
     "id": "1253",
-    "type": "SKILL",
+    "type": "skill",
     "name": "When She Was Copied",
     "attributeId": "ALL",
     "rank": "3",
@@ -4882,7 +4933,7 @@ let memoria_collection = [
   },
   {
     "id": "1263",
-    "type": "SKILL",
+    "type": "skill",
     "name": "Getting Help to Be My Best",
     "attributeId": "ALL",
     "rank": "3",
@@ -4910,7 +4961,7 @@ let memoria_collection = [
   },
   {
     "id": "1265",
-    "type": "ABILITY",
+    "type": "ability",
     "name": "Kosho Ward's Little Darling",
     "attributeId": "ALL",
     "rank": "3",
@@ -4930,7 +4981,7 @@ let memoria_collection = [
   },
   {
     "id": "1266",
-    "type": "SKILL",
+    "type": "skill",
     "name": "Inherited Bonds",
     "attributeId": "ALL",
     "rank": "2",
@@ -4952,7 +5003,7 @@ let memoria_collection = [
   },
   {
     "id": "1267",
-    "type": "ABILITY",
+    "type": "ability",
     "name": "Kyubey Knight Rides Forth",
     "attributeId": "ALL",
     "rank": "4",
@@ -4972,7 +5023,7 @@ let memoria_collection = [
   },
   {
     "id": "1268",
-    "type": "SKILL",
+    "type": "skill",
     "name": "A Comforting Place",
     "attributeId": "ALL",
     "rank": "3",
@@ -4994,7 +5045,7 @@ let memoria_collection = [
   },
   {
     "id": "1273",
-    "type": "ABILITY",
+    "type": "ability",
     "kind": "EVENT",
     "name": "Crossing the Line",
     "attributeId": "ALL",
@@ -5017,7 +5068,7 @@ let memoria_collection = [
   },
   {
     "id": "1279",
-    "type": "ABILITY",
+    "type": "ability",
     "name": "Parting Ways",
     "attributeId": "ALL",
     "rank": "4",
@@ -5037,7 +5088,7 @@ let memoria_collection = [
   },
   {
     "id": "1280",
-    "type": "SKILL",
+    "type": "skill",
     "name": "That Which Connects Us",
     "attributeId": "ALL",
     "rank": "4",
@@ -5059,7 +5110,7 @@ let memoria_collection = [
   },
   {
     "id": "1287",
-    "type": "SKILL",
+    "type": "skill",
     "name": "Magical Girls VS Series? Round 2",
     "attributeId": "ALL",
     "rank": "3",
@@ -5087,7 +5138,7 @@ let memoria_collection = [
   },
   {
     "id": "1288",
-    "type": "SKILL",
+    "type": "skill",
     "kind": "EVENT",
     "name": "Christmas Night Magic",
     "attributeId": "ALL",
@@ -5112,7 +5163,7 @@ let memoria_collection = [
   },
   {
     "id": "1289",
-    "type": "ABILITY",
+    "type": "ability",
     "name": "Memories of Miss Santa",
     "attributeId": "ALL",
     "rank": "3",
@@ -5132,7 +5183,7 @@ let memoria_collection = [
   },
   {
     "id": "1290",
-    "type": "ABILITY",
+    "type": "ability",
     "name": "I Will Protect This Perfect Body",
     "attributeId": "ALL",
     "rank": "4",
@@ -5152,7 +5203,7 @@ let memoria_collection = [
   },
   {
     "id": "1291",
-    "type": "SKILL",
+    "type": "skill",
     "kind": "EVENT",
     "name": "The Rumored Girl, Death Caribou",
     "attributeId": "ALL",
@@ -5177,7 +5228,7 @@ let memoria_collection = [
   },
   {
     "id": "1292",
-    "type": "SKILL",
+    "type": "skill",
     "name": "Mitama's Dream New Year's Feast",
     "attributeId": "ALL",
     "rank": "3",
@@ -5205,7 +5256,7 @@ let memoria_collection = [
   },
   {
     "id": "1295",
-    "type": "ABILITY",
+    "type": "ability",
     "name": "Let My Prayers Be Heard",
     "attributeId": "ALL",
     "rank": "3",
@@ -5225,7 +5276,7 @@ let memoria_collection = [
   },
   {
     "id": "1298",
-    "type": "SKILL",
+    "type": "skill",
     "kind": "LIMIT_BREAK",
     "name": "Limit Breaking Core",
     "attributeId": "ALL",
@@ -5248,7 +5299,7 @@ let memoria_collection = [
   },
   {
     "id": "1302",
-    "type": "ABILITY",
+    "type": "ability",
     "kind": "EVENT",
     "name": "The Struggle Against Fate",
     "attributeId": "ALL",
@@ -5271,7 +5322,7 @@ let memoria_collection = [
   },
   {
     "id": "1356",
-    "type": "SKILL",
+    "type": "skill",
     "name": "Standby, Ready",
     "attributeId": "ALL",
     "rank": "3",
@@ -5299,7 +5350,7 @@ let memoria_collection = [
   },
   {
     "id": "1357",
-    "type": "SKILL",
+    "type": "skill",
     "name": "Two Magical Lights",
     "attributeId": "ALL",
     "rank": "3",
@@ -5327,7 +5378,7 @@ let memoria_collection = [
   },
   {
     "id": "1358",
-    "type": "ABILITY",
+    "type": "ability",
     "name": "A Lone Treasure",
     "attributeId": "ALL",
     "rank": "3",
@@ -5353,7 +5404,7 @@ let memoria_collection = [
   },
   {
     "id": "1359",
-    "type": "SKILL",
+    "type": "skill",
     "kind": "EVENT",
     "name": "Gather, Shimmer of Stars...",
     "attributeId": "ALL",
@@ -5378,7 +5429,7 @@ let memoria_collection = [
   },
   {
     "id": "1360",
-    "type": "ABILITY",
+    "type": "ability",
     "name": "Our Magic",
     "attributeId": "ALL",
     "rank": "3",
@@ -5398,7 +5449,7 @@ let memoria_collection = [
   },
   {
     "id": "1361",
-    "type": "SKILL",
+    "type": "skill",
     "kind": "EVENT",
     "name": "Resound, Horn of the End",
     "attributeId": "ALL",
@@ -5423,7 +5474,7 @@ let memoria_collection = [
   },
   {
     "id": "1362",
-    "type": "ABILITY",
+    "type": "ability",
     "name": "A Light in the Darkness",
     "attributeId": "ALL",
     "rank": "3",
@@ -5443,7 +5494,7 @@ let memoria_collection = [
   },
   {
     "id": "1363",
-    "type": "SKILL",
+    "type": "skill",
     "name": "Mistress of the Night Sky",
     "attributeId": "ALL",
     "rank": "3",
@@ -5465,7 +5516,7 @@ let memoria_collection = [
   },
   {
     "id": "1364",
-    "type": "SKILL",
+    "type": "skill",
     "name": "Lightning Strike",
     "attributeId": "ALL",
     "rank": "4",
@@ -5487,7 +5538,7 @@ let memoria_collection = [
   },
   {
     "id": "1365",
-    "type": "ABILITY",
+    "type": "ability",
     "kind": "EVENT",
     "name": "Blessed Wind Returns",
     "attributeId": "ALL",
@@ -5510,7 +5561,7 @@ let memoria_collection = [
   },
   {
     "id": "9002",
-    "type": "SKILL",
+    "type": "skill",
     "name": "Kawaii Collection",
     "attributeId": "ALL",
     "rank": "4",
@@ -5532,7 +5583,7 @@ let memoria_collection = [
   },
   {
     "id": "9003",
-    "type": "SKILL",
+    "type": "skill",
     "name": "Kumanosuke's Kawaii Vid",
     "attributeId": "ALL",
     "rank": "3",
