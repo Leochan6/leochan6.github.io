@@ -62,6 +62,7 @@ let character_list_api = (function () {
     character_list = character_list !== true ? character_list : {};
     Object.entries(character_list).forEach(([key, display]) => {
       display._id = key;
+      if (!display.doppel) display.doppel = "locked";
       character_list_content.append(character_api.createDisplay(display));
     });
     module.setPadding(storage_api.settings.padding_x, storage_api.settings.padding_y);
@@ -175,7 +176,7 @@ let character_list_api = (function () {
   module.getCharacterList = (keep_id = true) => {
     let characterList = {};
     document.querySelectorAll(".character_display:not(.preview)").forEach(child => {
-      let id = child.getAttribute("_id") !== "undefined" ? child.getAttribute("_id") : child.getAttribute("character_id");
+      let id = child.getAttribute("_id") !== "undefined" ? child.getAttribute("_id") : generatePushID();
       characterList[id] = character_api.getCharacterDisplay(child);
       if (!keep_id) delete characterList[id]._id;
     });
@@ -390,6 +391,7 @@ let character_list_api = (function () {
         <option value="magic">Magic</option>
         <option value="magia">Magia</option>
         <option value="episode">Episode</option>
+        <option value="doppel">Doppel</option>
         <option value="obtainability">Obtainability</option>
       </select>
       <div class="filter_type attribute_filter hidden">
@@ -516,6 +518,16 @@ let character_list_api = (function () {
           <option value="3">3</option>
           <option value="4">4</option>
           <option value="5">5</option>
+        </select>
+      </div>
+      <div class="filter_type doppel_filter hidden">
+        <select class="filter_field equality">
+          <option value="eq">=</option>
+          <option value="neq">=/=</option>
+        </select>
+        <select class="filter_field doppel_select">
+          <option value="locked">Locked</option>
+          <option value="unlocked">Unlocked</option>
         </select>
       </div>
       <div class="filter_type obtainability_filter hidden">

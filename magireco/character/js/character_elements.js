@@ -32,6 +32,7 @@ let elements = (() => {
   module.magic_select = document.querySelector("#magic_select");
   module.magia_select = document.querySelector("#magia_select");
   module.episode_select = document.querySelector("#episode_select");
+  module.doppel_select = document.querySelector("#doppel_select");
 
   // Create Character Buttons
   module.create_button = document.querySelector("#create_button");

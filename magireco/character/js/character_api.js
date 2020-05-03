@@ -5,7 +5,7 @@ let character_api = (() => {
   module.selectedCharacter = null;
 
   module.Display = class Display {
-    constructor(id, name, rank, attribute, level, magic, magia, episode) {
+    constructor(id, name, rank, attribute, level, magic, magia, episode, doppel) {
       if (typeof rank !== undefined) {
         this.character_id = id;
         this.name = name;
@@ -15,6 +15,7 @@ let character_api = (() => {
         this.magic = magic;
         this.magia = magia;
         this.episode = episode;
+        this.doppel = doppel;
       } else {
         this._id = id;
         this.character_id = name.character_id;
@@ -25,6 +26,7 @@ let character_api = (() => {
         this.magic = name.magic;
         this.magia = name.magia;
         this.episode = name.episode;
+        this.doppel = name.doppel;
       }
     }
   };
@@ -62,7 +64,7 @@ let character_api = (() => {
    * @param {module.Character} character 
    */
   const getBasicCharacterDisplay = (character) => {
-    return new module.Display(character.id, character.name, module.getMinRank(character.ranks), character.attribute, "1", "0", "1", "1");
+    return new module.Display(character.id, character.name, module.getMinRank(character.ranks), character.attribute, "1", "0", "1", "1", "locked");
   };
 
   /**
@@ -70,7 +72,7 @@ let character_api = (() => {
    * 
    * @param {String} character_id 
    * @param {module.Display} display 
-   * @param {Function} callback 
+   * @param {boolean} validName 
    */
   module.isValidCharacterDisplay = (character_id, display, validName = true) => {
     let character = getCharacter(character_id);
@@ -83,11 +85,8 @@ let character_api = (() => {
     // check rank.
     if (!character.ranks[display.rank]) err.push(`Display Rank ${display.rank} does not match Character Ranks ${JSON.stringify(character.ranks)}`);
     // check level.
-    if (display.rank == "1" && (display.level < 1 || display.level > 40)) err.push(`Display Level ${display.level} for Display Rank ${display.rank} must be between 1 and 40.`);
-    else if (display.rank == "2" && (display.level < 1 || display.level > 50)) err.push(`Display Level ${display.level} for Display Rank ${display.rank} must be between 1 and 50.`);
-    else if (display.rank == "3" && (display.level < 1 || display.level > 60)) err.push(`Display Level ${display.level} for Display Rank ${display.rank} must be between 1 and 60.`);
-    else if (display.rank == "4" && (display.level < 1 || display.level > 80)) err.push(`Display Level ${display.level} for Display Rank ${display.rank} must be between 1 and 80.`);
-    else if (display.rank == "5" && (display.level < 1 || display.level > 100)) err.push(`Display Level ${display.level} for Display Rank ${display.rank} must be between 1 and 100.`);
+    let maxLevel = module.getMaxLevel(display.rank);
+    if (display.level < 1 || display.level > maxLevel) err.push(`Display Level ${display.level} for Display Rank ${display.rank} must be between 1 and ${maxLevel}.`);
     // check magic.
     if (display.magic < 0 || display.magic > 3) err.push(`Display Magic ${display.magic} must be between 0 and 3.`);
     // check magia.
@@ -95,6 +94,7 @@ let character_api = (() => {
     if (display.magia > display.episode) err.push(`Display Magia ${display.magia} must be less than or equal to Display Episode ${display.episode}.`);
     // check episode.
     if (display.episode < 1 || display.episode > 5) err.push(`Display Episode ${display.episode} must be between 1 and 5.`);
+    if (!(display.doppel === "locked" || display.doppel === "unlocked") || (display.doppel === "unlocked" && display.magia < 5)) err.push(`Display Doppel ${display.doppel} can only be unlocked if Magia 5.`);
     return err;
   };
 
@@ -112,7 +112,8 @@ let character_api = (() => {
       level_select.value,
       magic_select.value,
       magia_select.value,
-      episode_select.value);
+      episode_select.value,
+      doppel_select.value);
     character_preview = display;
     return display;
   };
@@ -132,7 +133,8 @@ let character_api = (() => {
       character_display.getAttribute("level"),
       character_display.getAttribute("magic"),
       character_display.getAttribute("magia"),
-      character_display.getAttribute("episode"));
+      character_display.getAttribute("episode"),
+      character_display.getAttribute("doppel"));
     display._id = character_display.getAttribute("_id");
     return display;
   };
@@ -155,6 +157,7 @@ let character_api = (() => {
     character_display.setAttribute("magia", display.magia);
     character_display.setAttribute("episode", display.episode);
     character_display.setAttribute("level", display.level);
+    character_display.setAttribute("doppel", display.doppel);
     character_display.innerHTML = `
     <img class="background" src="/magireco/assets/ui/bg/${display.attribute}.png">
     <img class="card_image" src="/magireco/assets/image/card_${display.character_id}${display.rank}_f.png">
@@ -166,7 +169,9 @@ let character_api = (() => {
     <div class="level">
       <div class="level_pre">Lvl.</div>
       <div class="level_num">${display.level}</div>
-    </div>`;
+    </div>
+    <img class="doppel" src="/magireco/assets/ui/doppel/${display.doppel}.png">`;
+
     if (listener) {
       character_display.addEventListener("click", () => {
         // return of already selected.
@@ -185,6 +190,14 @@ let character_api = (() => {
       module.openCharacterDialog(character_collection.find(elem => elem.id === display.character_id));
     });
     return character_display;
+  };
+
+  module.getMaxLevel = (rank) => {
+    if (rank == "1") return "40";
+    else if (rank == "2") return "50";
+    else if (rank == "3") return "60";
+    else if (rank == "4") return "80";
+    else if (rank == "5") return "100";
   };
 
   const RANK_TO_LEVEL = { "1": "40", "2": "50", "3": "60", "4": "80", "5": "100" };
@@ -206,7 +219,7 @@ let character_api = (() => {
     let character = character_collection.find(char => char.id === character_display.character_id);
     let minRank = module.getMinRank(character.ranks);
     let attribute = character.attribute.toLowerCase();
-    let display = new module.Display(character.id, character.name, minRank, attribute, "1", "0", "1", "1");
+    let display = new module.Display(character.id, character.name, minRank, attribute, "1", "0", "1", "1", "locked");
     updateForm(display);
     updatePreviewDisplay(display);
   };
@@ -217,7 +230,7 @@ let character_api = (() => {
     let maxRank = module.getMaxRank(character.ranks);
     let level = RANK_TO_LEVEL[maxRank];
     let attribute = character.attribute.toLowerCase();
-    let display = new module.Display(character.id, character.name, maxRank, attribute, level, "3", "5", "5");
+    let display = new module.Display(character.id, character.name, maxRank, attribute, level, "3", "5", "5", maxRank == "5" ? "unlocked" : "locked");
     updateForm(display);
     updatePreviewDisplay(display);
   };
@@ -247,6 +260,7 @@ let character_api = (() => {
     magic_select.value = display.magic;
     magia_select.value = display.magia;
     episode_select.value = display.episode;
+    doppel_select.value = display.doppel;
   };
 
   /**
@@ -270,6 +284,15 @@ let character_api = (() => {
       // update the level to match max rank.
       level_select.value = RANK_TO_LEVEL[rank_select.value]
     }
+    // enable or disable the doppel select.
+    if (module.getMaxRank(character.ranks) == "5") {
+      doppel_select.options[0].disabled = false;
+      doppel_select.options[1].disabled = false;
+      doppel_select.value = "locked";
+    } else {
+      doppel_select.options[0].disabled = false;
+      doppel_select.options[1].disabled = true;
+    }
   };
 
   /**
@@ -281,7 +304,7 @@ let character_api = (() => {
   const updateCharacterWithDisplay = (character, display) => {
     // return the default display.
     if (!display) return getBasicCharacterDisplay(character);
-    return new module.Display(character.id, character.name, display.rank, character.attribute, display.level, display.magic, display.magia, display.episode);
+    return new module.Display(character.id, character.name, display.rank, character.attribute, display.level, display.magic, display.magia, display.episode, display.doppel);
   };
 
   /**
@@ -370,6 +393,7 @@ let character_api = (() => {
     let character_display = Array.from(document.querySelectorAll(".character_display:not(.preview)")).find(child => child.classList.contains("selected"));
     let display = module.getCharacterDisplay(character_display);
     getCharacter(character_display.getAttribute("character_id"), character => updateFormEnabled(character));
+    updateFormEnabled(getCharacter(display.character_id));
     updateForm(display);
     updatePreviewDisplay(display);
   };

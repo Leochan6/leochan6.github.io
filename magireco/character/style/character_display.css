@@ -46,6 +46,13 @@
   -webkit-user-drag: none;
 }
 
+.doppel {
+  display: flex;
+  width: 43px;
+  margin-top: 5px;
+  margin-left: -5px;
+}
+
 .level {
   display: flex;
   flex-direction: row;
