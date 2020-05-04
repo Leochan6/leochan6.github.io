@@ -341,7 +341,7 @@
 
     // export image button.
     export_image_button.addEventListener("click", () => {
-      html2canvas(character_list_content).then(canvas => {
+      html2canvas(character_list_content, { backgroundColor: null }).then(canvas => {
         Canvas2Image.saveAsImage(canvas, "list");
       });
     });

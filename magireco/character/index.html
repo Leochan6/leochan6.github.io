@@ -169,19 +169,25 @@
                 </tr>
               </table>
             </div>
-            <div id="home_buttons" align="left">
-              <button id="create_button" class="btn" type="submit"
-                title="Create and Add a new Character to the Character List." disabled>Create</button>
-              <button id="update_button" class="btn" title="Update the Selected Character in the Character List."
-                disabled>Update</button>
-              <button id="copy_button" class="btn" title="Copy the Selected Character in the Character List."
-                disabled>Copy</button>
-              <button id="delete_button" class="btn" title="Delete the Selected Character in the Character List."
-                disabled>Delete</button>
-              <button id="min_all_button" class="btn" title="Minimize All Fields in the Character Form." disabled>Min
-                All</button>
-              <button id="max_all_button" class="btn" title="Maximize All Fields in the Character Form." disabled>Max
-                All</button>
+            <div id="home_buttons">
+              <div id="main_buttons">
+                <button id="create_button" class="small_btn" type="submit"
+                  title="Create and Add a new Character to the Character List." disabled>Create</button>
+                <button id="update_button" class="small_btn"
+                  title="Update the Selected Character in the Character List." disabled>Update</button>
+                <button id="copy_button" class="small_btn" title="Copy the Selected Character in the Character List."
+                  disabled>Copy</button>
+                <button id="delete_button" class="small_btn"
+                  title="Delete the Selected Character in the Character List." disabled>Delete</button>
+              </div>
+              <div id="other_buttons">
+                <button id="min_all_button" class="small_btn" title="Minimize All Fields in the Character Form."
+                  disabled>Min
+                  All</button>
+                <button id="max_all_button" class="small_btn" title="Maximize All Fields in the Character Form."
+                  disabled>Max
+                  All</button>
+              </div>
             </div>
             <p class="error_text" id="character_error_text"></p>
             <h3 id="preview_text">Preview:</h3>
@@ -262,7 +268,7 @@
               <tr>
                 <td>Background:</td>
                 <td><select id="background_select" class="background_field form_input"></select></td>
-                <td><button id="backgroundSelectModalOpen" class="background_field form_input"
+                <td><button id="backgroundSelectModalOpen" class="background_field small_btn"
                     title="Open the Character Select Dialog.">+</button></td>
               </tr>
             </table>

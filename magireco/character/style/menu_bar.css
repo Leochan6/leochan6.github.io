@@ -137,6 +137,16 @@
   padding: 0px 10px;
 }
 
+#home_buttons {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#home_buttons>div>* {
+  padding: 2px 8px;
+  margin: 2px 0px;
+}
+
 #preview_text {
   margin: 5px 0px;
 }
