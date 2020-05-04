@@ -82,26 +82,51 @@
   width: fit-content;
 }
 
-.filter_row>.delete {
-  margin-left: 10px;
+.filter_row>* {
+  height: 30px;
+  margin: 0;
+  padding: 0px 5px;
 }
 
-.filter_type {
-  height: 21px;
+.filter_row>div>input {
+  height: 28px;
+  margin: 0;
+  padding: 0px 10px;
+}
+
+.filter_row>select {
+  height: 28px;
+}
+
+.filter_row>*>select {
+  height: 28px;
+}
+
+.filter_row>.state_select {
+  margin-right: 5px;
+}
+
+.filter_row>.delete {
+  margin-left: 10px;
 }
 
 .filter_type>* {
   width: 60px;
   margin-right: 0px;
+  padding-left: 0px;
 }
 
 .filter_field {
-  height: 21px;
+  margin-left: 10px;
+}
+
+.filter_field.level_input {
+  width: 38px;
   margin-left: 10px;
 }
 
 .filter_field.obtainability_select {
-  width: 80px;
+  /* width: 80px; */
 }
 
 .level_input {

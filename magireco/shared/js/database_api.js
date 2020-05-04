@@ -90,6 +90,14 @@ let database = (() => {
     return lists.child(`${userId}/${listId}/selectedProfile`).set(content);
   };
 
+  module.updateListItem = (userId, listId, listProperty, content) => {
+    return lists.child(`${userId}/${listId}/${listProperty}`).update(content);
+  };
+
+  module.deleteListItem = (userId, listId, listProperty, content) => {
+    return lists.child(`${userId}/${listId}/${listProperty}/${content}`).remove();
+  };
+
   module.deleteList = (userId, listId) => {
     return lists.child(`${userId}/${listId}`).remove();
   };

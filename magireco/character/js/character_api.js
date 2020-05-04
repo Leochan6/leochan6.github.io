@@ -85,8 +85,8 @@ let character_api = (() => {
     // check rank.
     if (!character.ranks[display.rank]) err.push(`Display Rank ${display.rank} does not match Character Ranks ${JSON.stringify(character.ranks)}`);
     // check level.
-    let maxLevel = module.getMaxLevel(display.rank);
-    if (display.level < 1 || display.level > maxLevel) err.push(`Display Level ${display.level} for Display Rank ${display.rank} must be between 1 and ${maxLevel}.`);
+    let maxLevel = parseInt(module.getMaxLevel(display.rank));
+    if (parseInt(display.level) < 1 || parseInt(display.level) > maxLevel) err.push(`Display Level ${display.level} for Display Rank ${display.rank} must be between 1 and ${maxLevel}.`);
     // check magic.
     if (display.magic < 0 || display.magic > 3) err.push(`Display Magic ${display.magic} must be between 0 and 3.`);
     // check magia.
@@ -363,39 +363,41 @@ let character_api = (() => {
   /**
    * adds a new character display to the list.
    */
-  module.createAddDisplay = () => {
+  module.createCharacter = () => {
     let display = getFormDisplay();
-    display._id = generatePushID();
-    let character_display = module.createDisplay(display, true);
-    character_list_content.appendChild(character_display);
-    character_list_content.dispatchEvent(new Event("change"));
+    storage_api.addCharacterToList(character_list_api.getListId(), display);
   };
 
   /**
    * updates the selected character display with the contents of the form.
    */
-  module.updateSelectedDisplay = () => {
+  module.updateCharacter = () => {
     let character_display = Array.from(document.querySelectorAll(".character_display:not(.preview)")).find(child => child.classList.contains("selected"));
-    character_display.remove();
-
     let display = getFormDisplay();
-    character_display = module.createDisplay(display, true);
-    module.selectedCharacter = { character_display_element: character_display, character_display: display };
-    character_list_content.appendChild(character_display);
-    character_list_content.dispatchEvent(new Event("change"));
-    module.enableButtons();
+    module.selectedCharacter = { characterDisplayId: character_display.getAttribute("_id"), character_display: display };
+    storage_api.updateCharacterOfList(character_list_api.getListId(), character_display.getAttribute("_id"), display);
   };
 
   /**
    * copies the contents of the selected display to the form.
    */
-  module.copyDisplay = () => {
+  module.copyCharacter = () => {
     let character_display = Array.from(document.querySelectorAll(".character_display:not(.preview)")).find(child => child.classList.contains("selected"));
     let display = module.getCharacterDisplay(character_display);
     getCharacter(character_display.getAttribute("character_id"), character => updateFormEnabled(character));
     updateFormEnabled(getCharacter(display.character_id));
     updateForm(display);
     updatePreviewDisplay(display);
+  };
+
+  /**
+   * deletes the selected character display.
+   */
+  module.deleteCharacter = () => {
+    let character_display = Array.from(document.querySelectorAll(".character_display:not(.preview)")).find(child => child.classList.contains("selected"));
+    let display = module.getCharacterDisplay(character_display);
+    character_api.selectedCharacter = null;
+    storage_api.deleteCharacterOfList(character_list_api.getListId(), display._id);
   };
 
   /**
@@ -406,10 +408,11 @@ let character_api = (() => {
     character_error_text.innerHTML = '';
     let error = module.isValidCharacterDisplay(name_select.value, display);
     if (error.length == 0) {
-      create_button.disabled = false;
+      module.enableButtons();
       updatePreviewDisplay(display);
     } else {
       create_button.disabled = true;
+      update_button.disabled = true;
       character_error_text.innerHTML = error.toString();
     }
   };
@@ -419,70 +422,25 @@ let character_api = (() => {
    */
   module.enableButtons = () => {
     if (character_list_api.selectedList && character_list_api.selectedList.listId) {
-      if (create_button.classList.contains("btnDisabled")) {
-        create_button.classList.replace("btnDisabled", "btnGray");
-        create_button.disabled = false;
-      }
-      if (min_all_button.classList.contains("btnDisabled")) {
-        min_all_button.classList.replace("btnDisabled", "btnGray");
-        min_all_button.disabled = false;
-      }
-      if (max_all_button.classList.contains("btnDisabled")) {
-        max_all_button.classList.replace("btnDisabled", "btnGray");
-        max_all_button.disabled = false;
-      }
+      if (create_button.disabled) create_button.disabled = false;
+      if (min_all_button.disabled) min_all_button.disabled = false;
+      if (max_all_button.disabled) max_all_button.disabled = false;
       if (module.selectedCharacter && module.selectedCharacter.character_display_element) {
-        if (update_button.classList.contains("btnDisabled")) {
-          update_button.classList.replace("btnDisabled", "btnGray");
-          update_button.disabled = false;
-        }
-        if (copy_button.classList.contains("btnDisabled")) {
-          copy_button.classList.replace("btnDisabled", "btnGray");
-          copy_button.disabled = false;
-        }
-        if (delete_button.classList.contains("btnDisabled")) {
-          delete_button.classList.replace("btnDisabled", "btnGray");
-          delete_button.disabled = false;
-        }
+        if (update_button.disabled) update_button.disabled = false;
+        if (copy_button.disabled) copy_button.disabled = false;
+        if (delete_button.disabled) delete_button.disabled = false;
       } else {
-        if (update_button.classList.contains("btnGray")) {
-          update_button.classList.replace("btnGray", "btnDisabled");
-          update_button.disabled = false;
-        }
-        if (copy_button.classList.contains("btnGray")) {
-          copy_button.classList.replace("btnGray", "btnDisabled");
-          copy_button.disabled = false;
-        }
-        if (delete_button.classList.contains("btnGray")) {
-          delete_button.classList.replace("btnGray", "btnDisabled");
-          delete_button.disabled = false;
-        }
+        if (!update_button.disabled) update_button.disabled = true;
+        if (!copy_button.disabled) copy_button.disabled = true;
+        if (!delete_button.disabled) delete_button.disabled = true;
       }
     } else {
-      if (create_button.classList.contains("btnGray")) {
-        create_button.classList.replace("btnGray", "btnDisabled");
-        create_button.disabled = true;
-      }
-      if (update_button.classList.contains("btnGray")) {
-        update_button.classList.replace("btnGray", "btnDisabled");
-        update_button.disabled = true;
-      }
-      if (copy_button.classList.contains("btnGray")) {
-        copy_button.classList.replace("btnGray", "btnDisabled");
-        copy_button.disabled = true;
-      }
-      if (delete_button.classList.contains("btnGray")) {
-        delete_button.classList.replace("btnGray", "btnDisabled");
-        delete_button.disabled = true;
-      }
-      if (min_all_button.classList.contains("btnGray")) {
-        min_all_button.classList.replace("btnGray", "btnDisabled");
-        min_all_button.disabled = true;
-      }
-      if (max_all_button.classList.contains("btnGray")) {
-        max_all_button.classList.replace("btnGray", "btnDisabled");
-        max_all_button.disabled = true;
-      }
+      if (!create_button.disabled) create_button.disabled = true;
+      if (!update_button.disabled) update_button.disabled = true;
+      if (!copy_button.disabled) copy_button.disabled = true;
+      if (!delete_button.disabled) delete_button.disabled = true;
+      if (!min_all_button.disabled) min_all_button.disabled = true;
+      if (!max_all_button.disabled) max_all_button.disabled = true;
     }
   };
 

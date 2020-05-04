@@ -171,6 +171,23 @@ let storage_api = (() => {
     database.createList(userId, { name: name, characterList: characterList, selectedProfile: selectedProfile, selectedBackground: selectedBackground });
   }
 
+  module.addCharacterToList = (listId, character) => {
+    let newCharacter = { [generatePushID()]: character };
+    console.log(listId, newCharacter);
+    database.updateListItem(userId, listId, "characterList", newCharacter);
+  }
+
+  module.updateCharacterOfList = (listId, characterDisplayId, character) => {
+    let newCharacter = { [characterDisplayId]: character };
+    console.log(listId, newCharacter);
+    database.updateListItem(userId, listId, "characterList", newCharacter);
+  }
+
+  module.deleteCharacterOfList = (listId, characterDisplayId) => {
+    console.log(listId, characterDisplayId);
+    database.deleteListItem(userId, listId, "characterList", characterDisplayId);
+  }
+
   /* ------------------------------ Profiles ------------------------------ */
 
   /**

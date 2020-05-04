@@ -221,28 +221,22 @@
 
     // add new character display to list.
     create_button.addEventListener("click", () => {
-      if (character_list_api.getListName()) character_api.createAddDisplay();
+      if (!create_button.disabled) character_api.createCharacter();
     });
 
     // updates the character display with the form.
     update_button.addEventListener("click", () => {
-      if (character_list_api.getListName()) character_api.updateSelectedDisplay();
+      if (!create_button.disabled) character_api.updateCharacter();
     });
 
     // copies the character display to the form.
     copy_button.addEventListener("click", () => {
-      if (character_list_api.getListName()) character_api.copyDisplay();
+      if (!create_button.disabled) character_api.copyCharacter();
     });
 
     // delete the selected character display from list.
     delete_button.addEventListener("click", () => {
-      if (character_list_api.getListName()) {
-        let character_display = Array.from(document.querySelectorAll(".character_display:not(.preview)")).find(child => child.classList.contains("selected"));
-        character_display.remove();
-        character_api.selectedCharacter = null;
-        character_api.enableButtons();
-        character_list_content.dispatchEvent(new Event("change"));
-      }
+      if (!create_button.disabled) character_api.deleteCharacter();
     });
 
     // mines all the fields.
@@ -418,7 +412,7 @@
     /* ------------------------------ Character Display ------------------------------ */
 
     // deselect currently selected.
-    main.addEventListener("click", (e) => {
+    character_list_container.addEventListener("click", (e) => {
       try {
         if (e.target.parentElement.className.indexOf("character_display") === -1 && e.target.parentElement.parentElement.className.indexOf("character_display") === -1) {
           document.querySelectorAll(".character_display:not(.preview)").forEach(child => {

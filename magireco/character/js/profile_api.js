@@ -167,24 +167,30 @@ let profile_api = (function () {
     [state_select, type_select].forEach(element => {
       element.addEventListener("change", () => {
         if (module.getSelectedProfileName() === "Default") profile_api.changeToCustom();
-        character_list_api.updateList();
-        profile_api.updateProfile();
-        character_list_api.applyProfileToList(character_list_api.getListId(), module.getSelectedProfileId());
+        if (state_select.value && type_select.value) {
+          character_list_api.updateList();
+          profile_api.updateProfile();
+          character_list_api.applyProfileToList(character_list_api.getListId(), module.getSelectedProfileId());
+        }
       });
     });
 
     // disable group or id level.
     state_select.addEventListener("change", () => {
       if (state_select.value === "group") {
-        if (type_select.value === "id" || type_select.value === "level") {
+        if (type_select.value === "character_id" || type_select.value === "level") {
           type_select.selectedIndex = -1;
         }
+        type_select.options[2].disabled = true;
         type_select.options[8].disabled = true;
-      } else type_select.options[8].disabled = false;
+      } else {
+        type_select.options[2].disabled = false;
+        type_select.options[8].disabled = false;
+      }
     });
 
     type_select.addEventListener("change", () => {
-      if (type_select.value === "id" || type_select.value === "level") {
+      if (type_select.value === "character_id" || type_select.value === "level") {
         if (state_select.value === "group") {
           state_select.selectedIndex = -1;
         }
@@ -207,6 +213,24 @@ let profile_api = (function () {
     type_select.value = settings.type;
     if (settings.direction == 1 && sort_dir.classList.contains("down")) sort_dir.classList.replace("down", "up");
     else if (settings.direction == -1 && sort_dir.classList.contains("up")) sort_dir.classList.replace("up", "down");
+
+    if (state_select.value === "group") {
+      if (type_select.value === "character_id" || type_select.value === "level") {
+        type_select.selectedIndex = -1;
+      }
+      type_select.options[2].disabled = true;
+      type_select.options[8].disabled = true;
+    } else {
+      type_select.options[2].disabled = false;
+      type_select.options[8].disabled = false;
+    }
+
+    if (type_select.value === "character_id" || type_select.value === "level") {
+      if (state_select.value === "group") {
+        state_select.selectedIndex = -1;
+      }
+      state_select.options[1].disabled = true;
+    } else state_select.options[1].disabled = false;
   };
 
   module.loadsRules = (profileId) => {

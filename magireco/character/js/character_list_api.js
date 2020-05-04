@@ -148,6 +148,9 @@ let character_list_api = (function () {
     let listName = module.getListName();
     // let character_list = module.getCharacterList(false);
     let characterList = storage_api.lists[listId].characterList;
+    Object.values(characterList).forEach(value => {
+      if (value._id) delete value._id;
+    });
     let selectedProfile = profile_api.getSelectedProfileId();
     let selectedBackground = background_api.getSelectedBackground();
     if (!listName) return;
@@ -409,11 +412,11 @@ let character_list_api = (function () {
     let new_filter = document.createElement("div");
     new_filter.classList.add("filter_row");
     new_filter.innerHTML = `
-      <select class="state_select collapse">
+      <select class="form_input state_select collapse">
         <option value="and">And</option>
         <option value="or">Or</option>
       </select>
-      <select class="type_select">
+      <select class="form_input type_select">
         <option value="attribute">Attribute</option>
         <option value="rank">Rank</option>
         <option value="min_rank">Min Rank</option>
@@ -426,11 +429,11 @@ let character_list_api = (function () {
         <option value="obtainability">Obtainability</option>
       </select>
       <div class="filter_type attribute_filter hidden">
-        <select class="filter_field equality">
+        <select class="form_input filter_field equality">
           <option value="eq">=</option>
           <option value="neq">=/=</option>
         </select>
-        <select class="filter_field attribute_select">
+        <select class="form_input filter_field attribute_select">
           <option value="dark">Dark</option>
           <option value="fire">Fire</option>
           <option value="light">Light</option>
@@ -440,7 +443,7 @@ let character_list_api = (function () {
         </select>
       </div>
       <div class="filter_type rank_filter hidden">
-        <select class="filter_field inequality">
+        <select class="form_input filter_field inequality">
           <option value="eq">=</option>
           <option value="neq">=/=</option>
           <option value="lt">&lt</option>
@@ -448,7 +451,7 @@ let character_list_api = (function () {
           <option value="lte">&lt=</option>
           <option value="gte">&gt=</option>
         </select>
-        <select class="filter_field rank_select">
+        <select class="form_input filter_field rank_select">
           <option value="1">1</option>
           <option value="2">2</option>
           <option value="3">3</option>
@@ -457,7 +460,7 @@ let character_list_api = (function () {
         </select>
       </div>
       <div class="filter_type min_rank_filter hidden">
-        <select class="filter_field inequality">
+        <select class="form_input filter_field inequality">
           <option value="eq">=</option>
           <option value="neq">=/=</option>
           <option value="lt">&lt</option>
@@ -465,7 +468,7 @@ let character_list_api = (function () {
           <option value="lte">&lt=</option>
           <option value="gte">&gt=</option>
         </select>
-        <select class="filter_field min_rank_select">
+        <select class="form_input filter_field min_rank_select">
           <option value="1">1</option>
           <option value="2">2</option>
           <option value="3">3</option>
@@ -474,7 +477,7 @@ let character_list_api = (function () {
         </select>
       </div>
       <div class="filter_type max_rank_filter hidden">
-        <select class="filter_field inequality">
+        <select class="form_input filter_field inequality">
           <option value="eq">=</option>
           <option value="neq">=/=</option>
           <option value="lt">&lt</option>
@@ -482,7 +485,7 @@ let character_list_api = (function () {
           <option value="lte">&lt=</option>
           <option value="gte">&gt=</option>
         </select>
-        <select class="filter_field max_rank_select">
+        <select class="form_input filter_field max_rank_select">
           <option value="1">1</option>
           <option value="2">2</option>
           <option value="3">3</option>
@@ -491,7 +494,7 @@ let character_list_api = (function () {
         </select>
       </div>
       <div class="filter_type level_filter hidden">
-        <select class="filter_field inequality">
+        <select class="form_input filter_field inequality">
           <option value="eq">=</option>
           <option value="neq">=/=</option>
           <option value="lt">&lt</option>
@@ -499,10 +502,10 @@ let character_list_api = (function () {
           <option value="lte">&lt=</option>
           <option value="gte">&gt=</option>
         </select>
-        <input class="filter_field level_input" type="number" value=1 maxlength="3" size=3 min=1 max=100>
+        <input class="form_input filter_field level_input" type="number" value=1 maxlength="3" size=3 min=1 max=100>
       </div>
       <div class="filter_type magic_filter hidden">
-        <select class="filter_field inequality">
+        <select class="form_input filter_field inequality">
           <option value="eq">=</option>
           <option value="neq">=/=</option>
           <option value="lt">&lt</option>
@@ -510,7 +513,7 @@ let character_list_api = (function () {
           <option value="lte">&lt=</option>
           <option value="gte">&gt=</option>
         </select>
-        <select class="filter_field magic_select">
+        <select class="form_input filter_field magic_select">
           <option value="0">0</option>
           <option value="1">1</option>
           <option value="2">2</option>
@@ -518,7 +521,7 @@ let character_list_api = (function () {
         </select>
       </div>
       <div class="filter_type magia_filter hidden">
-        <select class="filter_field inequality">
+        <select class="form_input filter_field inequality">
           <option value="eq">=</option>
           <option value="neq">=/=</option>
           <option value="lt">&lt</option>
@@ -526,7 +529,7 @@ let character_list_api = (function () {
           <option value="lte">&lt=</option>
           <option value="gte">&gt=</option>
         </select>
-        <select class="filter_field magia_select">
+        <select class="form_input filter_field magia_select">
           <option value="1">1</option>
           <option value="2">2</option>
           <option value="3">3</option>
@@ -535,7 +538,7 @@ let character_list_api = (function () {
         </select>
       </div>
       <div class="filter_type episode_filter hidden">
-        <select class="filter_field inequality">
+        <select class="form_input filter_field inequality">
           <option value="eq">=</option>
           <option value="neq">=/=</option>
           <option value="lt">&lt</option>
@@ -543,7 +546,7 @@ let character_list_api = (function () {
           <option value="lte">&lt=</option>
           <option value="gte">&gt=</option>
         </select>
-        <select class="filter_field episode_select">
+        <select class="form_input filter_field episode_select">
           <option value="1">1</option>
           <option value="2">2</option>
           <option value="3">3</option>
@@ -552,27 +555,27 @@ let character_list_api = (function () {
         </select>
       </div>
       <div class="filter_type doppel_filter hidden">
-        <select class="filter_field equality">
+        <select class="form_input filter_field equality">
           <option value="eq">=</option>
           <option value="neq">=/=</option>
         </select>
-        <select class="filter_field doppel_select">
+        <select class="form_input filter_field doppel_select">
           <option value="locked">Locked</option>
           <option value="unlocked">Unlocked</option>
         </select>
       </div>
       <div class="filter_type obtainability_filter hidden">
-        <select class="filter_field equality">
+        <select class="form_input filter_field equality">
           <option value="eq">=</option>
           <option value="neq">=/=</option>
         </select>
-        <select class="filter_field obtainability_select">
+        <select class="form_input filter_field obtainability_select">
           <option value="unlimited">Unlimited</option>
           <option value="limited">Limited</option>
         </select>
       </div>
-      <button class="create" title="Add New Filter Above">+</button>
-      <button class="delete" title="Delete Filter"></button>
+      <button class="create small_btn" title="Add New Filter Above">+</button>
+      <button class="delete small_btn" title="Delete Filter"></button>
     `;
 
     new_filter.querySelector(".type_select").selectedIndex = -1;

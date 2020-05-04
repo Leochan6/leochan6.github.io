@@ -131,8 +131,10 @@
   background-color: #FFFFFF;
 }
 
-.custom-input {
-  padding-left: 3px;
+.create_field {
+  height: 30px;
+  margin: 0;
+  padding: 0px 10px;
 }
 
 #preview_text {
@@ -187,12 +189,24 @@
   margin: 2px 2px;
 }
 
+.display_field {
+  height: 30px;
+  margin: 0;
+  padding: 0px 10px;
+}
+
 #display_padding_x_field, #display_padding_y_field {
   width: 50px;
 }
 
 #background_select {
-  width: 140px;
+  width: 160px;
+}
+
+.background_field {
+  height: 30px;
+  margin: 0;
+  padding: 0px 10px;
 }
 
 .duplicate {
@@ -205,4 +219,10 @@
 
 .duplicate:hover {
   background-image: url("../../assets/icon/file_copy_white.png");
+}
+
+.custom-input {
+  padding-left: 0;
+  padding: 0px;
+  height: 28px;
 }

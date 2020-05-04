@@ -46,10 +46,6 @@ header {
   padding-top: 5px;
 }
 
-#contact_button {
-  margin-right: 10px;
-}
-
 .hidden {
   display: none !important;
   visibility: hidden;
@@ -86,6 +82,7 @@ header {
   border-radius: 3px;
   outline: none;
   transition: all 0.3s ease 0s;
+  cursor: pointer;
 }
 
 .btn:hover {
@@ -96,16 +93,11 @@ header {
   background: #18a0fb;
 }
 
-.btnGray {
-  background: #2c2c2c;
-  cursor: pointer;
-}
-
 .btnGray:hover {
   background-color: #000000;
 }
 
-.btnDisabled {
+.btn:disabled {
   background: #6e6e6e;
   pointer-events: none;
 }
