@@ -214,7 +214,6 @@ let character_list_api = (function () {
    */
   module.applyProfileToList = (listId, profileId) => {
     let characterList = storage_api.lists[listId].characterList;
-    // let rules = storage_api.profiles[profileId].rules;
     let rules = storage_api.profiles[profileId].rules;
     if (!rules) rules = profile_api.getSortSettings();
     let groups = module.createGroups(characterList, rules);
@@ -259,6 +258,7 @@ let character_list_api = (function () {
       }
     });
 
+    if (groups.length === 0) groups = [{ type: "none" }];
     let characterGroups = groupAndSort(Object.values(characterList), groups, sorts);
     return characterGroups;
   };
