@@ -32,7 +32,8 @@ let profile_api = (function () {
   module.getSortSettings = () => {
     let settings = {};
     Array.from(profile_rules.children).forEach(child => {
-      settings[child.getAttribute("ruleId")] = {
+      let ruleId = child.getAttribute("ruleId") ? child.getAttribute("ruleId") : generatePushID();
+      settings[ruleId] = {
         state: child.querySelector(".state_select").value,
         type: child.querySelector(".type_select").value,
         direction: child.querySelector(".sort_dir").classList.contains("up") ? 1 : -1,
