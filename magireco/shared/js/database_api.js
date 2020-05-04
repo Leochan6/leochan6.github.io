@@ -86,6 +86,10 @@ let database = (() => {
     return lists.child(`${userId}/${listId}`).set(content);
   };
 
+  module.updateListProfile = (userId, listId, content) => {
+    return lists.child(`${userId}/${listId}/selectedProfile`).set(content);
+  };
+
   module.deleteList = (userId, listId) => {
     return lists.child(`${userId}/${listId}`).remove();
   };
@@ -101,43 +105,57 @@ let database = (() => {
   const defaultCharacterProfile = {
     name: "Default",
     type: "character",
-    settings: {
-      group_by: "attribute",
-      group_by_dir: 1,
-      sort_by_1: "level",
-      sort_dir_1: -1,
-      sort_by_2: "none",
-      sort_dir_2: -1,
-      sort_id_dir: -1,
-      displays_per_row: 10
+    rules: {
+      "010": {
+        state: "group",
+        type: "attribute",
+        direction: -1
+      },
+      "011": {
+        state: "sort",
+        type: "level",
+        direction: -1
+      },
+      "012": {
+        state: "sort",
+        type: "magia",
+        direction: -1
+      },
     }
   };
 
   const customCharacterProfile = {
     name: "Custom",
     type: "character",
-    settings: true
+    settings: false
   };
 
   const defaultMemoriaProfile = {
     name: "Default",
     type: "memoria",
-    settings: {
-      group_by: "none",
-      group_by_dir: 1,
-      sort_by_1: "rank",
-      sort_dir_1: -1,
-      sort_by_2: "ascension",
-      sort_dir_2: -1,
-      sort_id_dir: -1,
-      displays_per_row: 10
+    rules: {
+      "01": {
+        state: "group",
+        type: "rank",
+        direction: -1
+      },
+      "012": {
+        state: "sort",
+        type: "memoria_id",
+        direction: -1
+      },
+      "013": {
+        state: "sort",
+        type: "ascension",
+        direction: -1
+      }
     }
-  };
+  }
 
   const customMemoriaProfile = {
     name: "Custom",
     type: "memoria",
-    settings: true
+    settings: false
   };
 
   module.getProfiles = (userId) => {
@@ -178,9 +196,10 @@ let database = (() => {
       memoria_home_tab: true,
       memoria_sort_tab: true
     },
+    displays_per_row: 10,
     display_alignment: "left",
-    padding_x: 0,
-    padding_y: 0,
+    padding_x: 20,
+    padding_y: 20,
     character_zoom: 100
   };
 

@@ -257,59 +257,38 @@
 
     /* ------------------------------ Sorting Profile Tab ------------------------------ */
 
-    // update the list on sort form change.
-    document.querySelectorAll(".sort_form").forEach(element => {
-      element.addEventListener("change", () => {
-        character_list_api.sortOnFormUpdate();
-        if (profile_api.getSelectedProfileName() === "Default") profile_api.changeToCustom();
-        character_list_api.updateList();
-        profile_api.updateProfile();
-      });
-    });
-
-    // update the list on sort dir click.
-    document.querySelectorAll(".sort_dir").forEach(element => {
-      element.addEventListener("click", () => {
-        if (element.classList.contains("up")) {
-          element.classList.replace("up", "down");
-        }
-        else if (element.classList.contains("down")) {
-          element.classList.replace("down", "up");
-        }
-        character_list_api.sortOnFormUpdate();
-        if (profile_api.getSelectedProfileName() === "Default") profile_api.changeToCustom();
-        character_list_api.updateList();
-        profile_api.updateProfile();
-      });
-    });
-
     // check set the profile properties on change.
     profile_select.addEventListener("change", () => {
-      profile_api.setProfile(profile_select.value);
-      character_list_api.sortOnFormUpdate();
+      let profileId = profile_select.value;
+      if (profileId === "0" || profileId === "1") delete_profile_button.disabled = true;
+      else delete_profile_button.disabled = false;
+      profile_api.setProfile(profileId);
+      character_list_api.applyProfileToList(character_list_api.getListId(), profileId);
       character_list_api.updateList();
     });
 
     // show the save new profile form.
     new_profile_button.addEventListener("click", () => {
-      new_profile_row.style.visibility = "visible";
-      new_profile_field.focus();
-    });
-
-    // hide the save new profile form.
-    close_new_profile_button.addEventListener("click", () => {
-      new_profile_row.style.visibility = "collapse";
-    });
-
-    // save the new sorting profile.
-    create_profile_button.addEventListener("click", (e) => {
-      e.preventDefault();
-      profile_api.saveProfile();
+      if (new_profile_button.classList.contains("add")) {
+        new_profile_button.classList.replace("add", "minus");
+        profile_create_block.classList.remove("hidden");
+        new_profile_field.focus();
+      }
+      else {
+        new_profile_button.classList.replace("minus", "add");
+        profile_create_block.classList.add("hidden");
+      }
     });
 
     // check the profile name on change.
     new_profile_field.addEventListener("change", () => {
       profile_api.checkProfile(new_profile_field.value);
+    });
+
+    // create a new profile.
+    create_profile_button.addEventListener("click", (e) => {
+      e.preventDefault();
+      profile_api.saveProfile();
     });
 
     // delete the selected profile.
@@ -318,6 +297,14 @@
     });
 
     /* ------------------------------ Display Settings Tab ------------------------------ */
+
+    // change the number of displays per row.
+    ["input", "change"].forEach(event => {
+      displays_per_row.addEventListener(event, () => {
+        character_list_api.changeDisplaysPerRow(displays_per_row.value);
+        if (event === "change") storage_api.updateSettings("displays_per_row", displays_per_row.value);
+      });
+    });
 
     // change the alignment of the list.
     display_alignment_select.addEventListener("change", () => {
@@ -452,7 +439,7 @@
 
     // resort when character list changes.
     character_list_content.addEventListener("change", () => {
-      character_list_api.sortOnFormUpdate();
+      character_list_api.applyProfileToList(character_list_api.getListId(), profile_api.getSelectedProfileId());
       character_list_api.updateList();
     });
 

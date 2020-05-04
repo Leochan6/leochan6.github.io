@@ -10,30 +10,35 @@ let profile_api = (function () {
     Object.entries(profiles).forEach(([id, profile]) => {
       profile_select.options.add(new Option(profile.name, id, false));
     });
-    if (module.selectedProfile !== null) {
-      profile_select.value = module.getProfileId(module.selectedProfile.name);
+    if (module.selectedProfile !== null && module.selectedProfile.name !== null) {
+      let profileId = module.getProfileId(module.selectedProfile.name)
+      profile_select.value = profileId;
+      let listId = character_list_api.getListId();
+      if (listId) storage_api.updateListProfile(listId, profileId);
     }
     else if (previous && Array.from(profile_select.options).some(option => option.value === previous)) {
       profile_select.value = previous;
+      let listId = character_list_api.getListId();
+      if (listId) storage_api.updateListProfile(listId, previous);
     }
     else {
       profile_select.value = "0";
+      let listId = character_list_api.getListId();
+      if (listId) storage_api.updateListProfile(listId, "0");
     }
-    profile_api.setProfileFields(storage_api.profiles[profile_select.value].settings);
+    module.loadsRules(profile_select.value);
   };
 
-  module.getSortProperties = () => {
-    let properties = {
-      group_by: group_by_select.value,
-      group_dir: group_dir_select.classList.contains("up") ? 1 : -1,
-      sort_by_1: sort_by_1_select.value,
-      sort_dir_1: sort_dir_1_select.classList.contains("up") ? 1 : -1,
-      sort_by_2: sort_by_2_select.value,
-      sort_dir_2: sort_dir_2_select.classList.contains("up") ? 1 : -1,
-      sort_id_dir: sort_id_dir_select.classList.contains("up") ? 1 : -1,
-      displays_per_row: parseInt(displays_per_row.value)
-    };
-    return properties;
+  module.getSortSettings = () => {
+    let settings = {};
+    Array.from(profile_rules.children).forEach(child => {
+      settings[child.getAttribute("ruleId")] = {
+        state: child.querySelector(".state_select").value,
+        type: child.querySelector(".type_select").value,
+        direction: child.querySelector(".sort_dir").classList.contains("up") ? 1 : -1,
+      }
+    });
+    return settings;
   };
 
   module.saveProfile = () => {
@@ -42,18 +47,22 @@ let profile_api = (function () {
       profile_error_text.innerHTML = `The sorting profile ${profileName} already exists.`;
       return;
     }
+    if (profileName.length === 0) {
+      profile_error_text.innerHTML = `The sorting profile name must not be empty.`;
+      return;
+    }
     new_profile_field.value = "";
-    let properties = module.getSortProperties();
+    let properties = module.getSortSettings();
     module.selectedProfile = { name: profileName, id: null };
     storage_api.createProfile(profileName, properties);
-    new_profile_row.style.visibility = "collapse";
+    if (!profile_create_block.classList.add("hidden")) profile_create_block.classList.add("hidden");
   };
 
   module.updateProfile = () => {
     let profileId = module.getSelectedProfileId();
-    let properties = module.getSortProperties();
+    let properties = module.getSortSettings();
     storage_api.updateProfile(profileId, properties);
-    new_profile_row.style.visibility = "collapse";
+    if (!profile_create_block.classList.add("hidden")) profile_create_block.classList.add("hidden");
   };
 
   module.checkProfile = (profileName) => {
@@ -74,18 +83,7 @@ let profile_api = (function () {
 
   module.setProfile = (profileId) => {
     profile_select.value = profileId;
-    if (storage_api.profiles[profileId].settings !== true) module.setProfileFields(storage_api.profiles[profileId].settings);
-  };
-
-  module.setProfileFields = (profile) => {
-    setSelectedText(group_by_select, profile.group_by);
-    setSelectedDirection(group_dir_select, profile.group_dir);
-    setSelectedText(sort_by_1_select, profile.sort_by_1);
-    setSelectedDirection(sort_dir_1_select, profile.sort_dir_1);
-    setSelectedText(sort_by_2_select, profile.sort_by_2);
-    setSelectedDirection(sort_dir_2_select, profile.sort_dir_2);
-    setSelectedDirection(sort_id_dir_select, profile.sort_id_dir);
-    displays_per_row.value = profile.displays_per_row;
+    if (storage_api.profiles[profileId].rules) module.loadsRules(profileId);
   };
 
   module.getSelectedProfileId = () => {
@@ -109,27 +107,117 @@ let profile_api = (function () {
     profile_select.value = "1";
   };
 
-  module.resetProfiles = () => {
-    if (window.confirm("Are you sure you want to reset the profiles?")) {
-      storage_api.resetSorting();
-    }
-  };
+  module.createProfileRule = (next = null) => {
+    let new_rule = document.createElement("div");
+    new_rule.classList.add("profile_rule");
+    new_rule.innerHTML = `
+      <select class="state_select form_input">
+        <option value="sort">Sort By</option>
+        <option value="group">Group By</option>
+      </select>
+      <select class="type_select form_input">
+        <option value="attribute">Attribute</option>
+        <option value="rank">Rank</option>
+        <option value="level">Level</option>
+        <option value="magic">Magic</option>
+        <option value="magia">Magia</option>
+        <option value="episode">Episode</option>
+        <option value="doppel">Doppel</option>
+        <option value="obtainability">Obtainability</option>
+        <option value="character_id">Character ID</option>
+      </select>
+      <div class="sort_dir down"></div>
+      <button class="create add small_btn" title="Add New Filter Below"></button>
+      <button class="delete small_btn" title="Delete Filter"></button>`;
 
-  const setSelectedText = (element, text) => {
-    for (let i = 0; i < element.options.length; i++) {
-      if (element.options[i].value === text) {
-        element.selectedIndex = i;
-        break;
+    let state_select = new_rule.querySelector(".state_select")
+    let type_select = new_rule.querySelector(".type_select")
+    let sort_dir = new_rule.querySelector(".sort_dir");
+    state_select.selectedIndex = -1;
+    type_select.selectedIndex = -1;
+
+    new_rule.querySelector(".create").addEventListener("click", () => {
+      module.createProfileRule(new_rule);
+    });
+    new_rule.querySelector(".delete").addEventListener("click", () => {
+      new_rule.remove();
+      let first_rule = profile_rules.children[0].querySelector(".delete");
+      if (profile_rules.children.length === 1 && !first_rule.disabled) first_rule.disabled = true;
+
+      if (module.getSelectedProfileName() === "Default") module.changeToCustom();
+      character_list_api.updateList();
+      module.updateProfile();
+      character_list_api.applyProfileToList(character_list_api.getListId(), module.getSelectedProfileId());
+    });
+
+    sort_dir.addEventListener("click", () => {
+      if (sort_dir.classList.contains("up")) {
+        sort_dir.classList.replace("up", "down");
       }
-    }
+      else if (sort_dir.classList.contains("down")) {
+        sort_dir.classList.replace("down", "up");
+      }
+      if (module.getSelectedProfileName() === "Default") module.changeToCustom();
+      character_list_api.updateList();
+      profile_api.updateProfile();
+      character_list_api.applyProfileToList(character_list_api.getListId(), module.getSelectedProfileId());
+    });
+
+    // update the list on sort form change.
+    [state_select, type_select].forEach(element => {
+      element.addEventListener("change", () => {
+        if (module.getSelectedProfileName() === "Default") profile_api.changeToCustom();
+        character_list_api.updateList();
+        profile_api.updateProfile();
+        character_list_api.applyProfileToList(character_list_api.getListId(), module.getSelectedProfileId());
+      });
+    });
+
+    // disable group or id level.
+    state_select.addEventListener("change", () => {
+      if (state_select.value === "group") {
+        if (type_select.value === "id" || type_select.value === "level") {
+          type_select.selectedIndex = -1;
+        }
+        type_select.options[8].disabled = true;
+      } else type_select.options[8].disabled = false;
+    });
+
+    type_select.addEventListener("change", () => {
+      if (type_select.value === "id" || type_select.value === "level") {
+        if (state_select.value === "group") {
+          state_select.selectedIndex = -1;
+        }
+        state_select.options[1].disabled = true;
+      } else state_select.options[1].disabled = false;
+    });
+
+    if (next !== null) next.after(new_rule);
+    else profile_rules.append(new_rule);
+    return new_rule;
   };
 
-  const setSelectedDirection = (element, direction) => {
-    if (element.classList.contains("up") && direction === -1) {
-      element.classList.replace("up", "down");
-    }
-    else if (element.classList.contains("down") && direction === 1) {
-      element.classList.replace("down", "up");
+  module.loadRule = (ruleId, settings) => {
+    let rule = module.createProfileRule();
+    let state_select = rule.querySelector(".state_select");
+    let type_select = rule.querySelector(".type_select");
+    let sort_dir = rule.querySelector(".sort_dir");
+    rule.setAttribute("ruleId", ruleId)
+    state_select.value = settings.state;
+    type_select.value = settings.type;
+    if (settings.direction == 1 && sort_dir.classList.contains("down")) sort_dir.classList.replace("down", "up");
+    else if (settings.direction == -1 && sort_dir.classList.contains("up")) sort_dir.classList.replace("up", "down");
+  };
+
+  module.loadsRules = (profileId) => {
+    if (!storage_api.profiles[profileId].rules) return;
+    profile_rules.innerHTML = "";
+    Object.entries(storage_api.profiles[profileId].rules).forEach(([ruleId, settings]) => {
+      module.loadRule(ruleId, settings);
+    });
+    if (profile_rules.children.length > 0) {
+      let first_rule = profile_rules.children[0].querySelector(".delete");
+      if (profile_rules.children.length === 1 && !first_rule.disabled) first_rule.disabled = true;
     }
   };
 

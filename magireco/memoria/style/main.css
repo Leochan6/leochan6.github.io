@@ -11,7 +11,7 @@
   flex-direction: column;
 }
 
-#name_nav_zoom {
+#name_nav_export {
   min-height: 47px;
   margin: 0px 10px;
   display: flex;
@@ -19,7 +19,7 @@
   justify-content: space-between;
 }
 
-#name_nav_zoom>* {
+#name_nav_export>* {
   display: flex;
   flex: 1;
 }

@@ -51,7 +51,7 @@ header {
 }
 
 .hidden {
-  display: none;
+  display: none !important;
   visibility: hidden;
   opacity: 0;
 }
@@ -63,6 +63,10 @@ header {
 .error_text {
   width: 100%;
   color: red;
+}
+
+.error_text:empty {
+  display: none;
 }
 
 .btn:disabled {
@@ -110,7 +114,7 @@ header {
   font-size: 16px;
   border: black solid 1px;
   border-radius: 10px;
-  margin: 5px;
+  margin: 2px;
   padding: 5px;
   min-width: 30px;
   min-height: 30px;
@@ -122,9 +126,14 @@ header {
   outline: none;
 }
 
-.small_btn:hover {
+.small_btn:not(:disabled):hover {
   color: #FFFFFF;
   background-color: #2c2c2c;
+}
+
+.small_btn:disabled {
+  opacity: 0.6;
+  cursor: default;
 }
 
 .large_btn {

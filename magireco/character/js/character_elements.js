@@ -48,24 +48,16 @@ let elements = (() => {
   // Sorting Profiles
   module.profile_select = document.querySelector("#profile_select");
   module.new_profile_button = document.querySelector("#new_profile_button");
-  module.new_profile_row = document.querySelector("#new_profile_row");
+  module.profile_create_block = document.querySelector("#profile_create_block");
   module.new_profile_field = document.querySelector("#new_profile_field");
   module.new_name_field = document.querySelector("#new_name_field");
   module.create_profile_button = document.querySelector("#create_profile_button");
   module.close_new_profile_button = document.querySelector("#close_new_profile_button");
   module.delete_profile_button = document.querySelector("#delete_profile_button");
-
-  // Sorting Fields
-  module.group_by_select = document.querySelector("#group_by_select");
-  module.group_dir_select = document.querySelector("#group_dir_select");
-  module.sort_by_1_select = document.querySelector("#sort_by_1_select");
-  module.sort_dir_1_select = document.querySelector("#sort_dir_1_select");
-  module.sort_by_2_select = document.querySelector("#sort_by_2_select");
-  module.sort_dir_2_select = document.querySelector("#sort_dir_2_select");
-  module.sort_id_dir_select = document.querySelector("#sort_id_dir_select");
-  module.displays_per_row = document.querySelector("#displays_per_row");
+  module.profile_rules = document.querySelector("#profile_rules");
 
   // Display Settings
+  module.displays_per_row = document.querySelector("#displays_per_row");
   module.display_alignment_select = document.querySelector("#display_alignment_select");
   module.display_padding_x_field = document.querySelector("#display_padding_x_field");
   module.display_padding_y_field = document.querySelector("#display_padding_y_field");

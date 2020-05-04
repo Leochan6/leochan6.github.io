@@ -59,7 +59,7 @@ let character_list_api = (function () {
    */
   const loadCharacterList = (character_list) => {
     character_list_content.innerHTML = "";
-    character_list = character_list !== true ? character_list : {};
+    character_list = !character_list ? character_list : {};
     Object.entries(character_list).forEach(([key, display]) => {
       display._id = key;
       if (!display.doppel) display.doppel = "locked";
@@ -83,9 +83,9 @@ let character_list_api = (function () {
     module.selectedList = { listId: listId, list: list };
     list_name_title.innerHTML = list.name;
     list_name_title.setAttribute("listId", listId);
-    loadCharacterList(list.characterList);
     profile_api.setProfile(list.selectedProfile);
-    module.sortOnFormUpdate();
+    module.applyProfileToList(listId, list.selectedProfile);
+    module.setPadding(storage_api.settings.padding_x, storage_api.settings.padding_y);
     background_api.setBackground(list.selectedBackground);
     character_list_api.getStats();
     character_api.enableButtons();
@@ -147,11 +147,12 @@ let character_list_api = (function () {
   module.updateList = () => {
     let listId = module.getListId();
     let listName = module.getListName();
-    let character_list = module.getCharacterList(false);
+    // let character_list = module.getCharacterList(false);
+    let characterList = storage_api.lists[listId].characterList;
     let selectedProfile = profile_api.getSelectedProfileId();
     let selectedBackground = background_api.getSelectedBackground();
     if (!listName) return;
-    storage_api.updateList(listId, listName, character_list, selectedProfile, selectedBackground);
+    storage_api.updateList(listId, listName, characterList, selectedProfile, selectedBackground);
   };
   /* ------------------------------ Get the Selected List ------------------------------ */
 
@@ -207,62 +208,71 @@ let character_list_api = (function () {
   /* ------------------------------ Sort Current List ------------------------------ */
 
   /**
-   * sorts the character list with the contents of the sorting profile form.
+   * Applied the profile profileId to list listId and displays the character list.
    */
-  module.sortOnFormUpdate = () => {
-    let properties = profile_api.getSortProperties();
-    let display_groups = sortList(properties);
+  module.applyProfileToList = (listId, profileId) => {
+    let characterList = storage_api.lists[listId].characterList;
+    // let rules = storage_api.profiles[profileId].rules;
+    let rules = storage_api.profiles[profileId].rules;
+    if (!rules) rules = profile_api.getSortSettings();
+    let groups = module.createGroups(characterList, rules);
     character_list_content.innerHTML = '';
-    for (var group in display_groups) {
-      if (display_groups[group].length == 0) continue;
+    module.displayGroups(character_list_content, groups);
+  };
+
+  module.displayGroups = (parent, groups) => {
+    Object.entries(groups).forEach(([key, group]) => {
       let group_row = document.createElement("div");
       group_row.classList.add("character_row");
-      group_row.style.width = `${properties.displays_per_row * (122)}px`;
-      group_row.setAttribute("group", group);
-      display_groups[group].forEach((display) => {
-        let character_display = character_api.createDisplay(display, true);
-        group_row.appendChild(character_display);
-      });
+      group_row.style.width = `${storage_api.settings.displays_per_row * (122)}px`;
+      group_row.setAttribute("group", key);
       group_row.style.justifyContent = module.DIR_TO_FLEX[storage_api.settings.display_alignment];
-      character_list_content.appendChild(group_row);
-    }
+
+      if (group instanceof Array) {
+        group.forEach((display) => {
+          let character_display = character_api.createDisplay(display, true);
+          group_row.appendChild(character_display);
+        });
+      } else {
+        module.displayGroups(group_row, group);
+      }
+      parent.appendChild(group_row);
+    });
   };
 
-  /**
-   * sort the character list with the given properties.
-   * 
-   * @param {Object} properties
-   */
-  const sortList = (properties) => {
-    // get the Display of every character display in the list.
-    let character_displays = [];
-    document.querySelectorAll(".character_display:not(.preview)").forEach(child => {
-      character_displays.push(character_api.getCharacterDisplay(child));
+  module.createGroups = (characterList, rules) => {
+    // modify the list.
+    Object.entries(characterList).forEach(([key, display]) => {
+      display._id = key;
     });
 
-    // add each display_property to the corresponding group.
-    let display_groups = group_properties(character_displays, properties.group_by, properties.group_dir);
+    let groups = []
+    let sorts = [];
+    // parse the rules;
+    Object.entries(rules).forEach(([ruleId, rule]) => {
+      if (rule.state === "group") {
+        groups.push(rule);
+      } else if (rule.state === "sort") {
+        sorts.push({ prop: rule.type, direction: rule.direction, isString: false });
+      }
+    });
 
-    character_displays.forEach(display => display.attribute = ATT_TO_NUM[display.attribute]);
-
-    // sort each group by the specified property.
-    var sortBy = [];
-    if (properties.sort_by_1 != "none") {
-      sortBy.push({ prop: properties.sort_by_1, direction: properties.sort_dir_1, isString: false });
-    }
-    if (properties.sort_by_2 != "none") {
-      sortBy.push({ prop: properties.sort_by_2, direction: properties.sort_dir_2, isString: false });
-    }
-    sortBy.push({ prop: "character_id", direction: properties.sort_id_dir, isString: false });
-
-    for (var group in display_groups) {
-      display_groups[group] = display_groups[group].sort((a, b) => utils.sortArrayBy(a, b, sortBy));
-    }
-
-    character_displays.forEach(display => display.attribute = NUM_TO_ATT[display.attribute]);
-
-    return display_groups;
+    let characterGroups = groupAndSort(Object.values(characterList), groups, sorts);
+    return characterGroups;
   };
+
+  const groupAndSort = (characterList, rules, sorts) => {
+    if (rules.length == 0) {
+      return characterList.sort((a, b) => utils.sortArrayBy(a, b, sorts));
+    } else {
+      let rule = rules[0];
+      let groups = group_properties(characterList, rule.type, rule.direction)
+      Object.entries(groups).forEach(([key, group]) => {
+        groups[key] = groupAndSort(group, rules.slice(1), sorts);
+      });
+      return groups;
+    }
+  }
 
   /**
    * adds each display_property to the corresponding group.
@@ -303,6 +313,18 @@ let character_list_api = (function () {
       display_properties.forEach(properties => {
         display_groups[NUM_TO_WORD[properties.episode]].push(properties);
       });
+    } else if (group_by == "doppel") {
+      if (group_dir == 1) display_groups = { "locked": [], "unlocked": [] };
+      if (group_dir == -1) display_groups = { "unlocked": [], "locked": [] };
+      display_properties.forEach(properties => {
+        display_groups[properties.doppel].push(properties);
+      });
+    } else if (group_by == "obtainability") {
+      if (group_dir == 1) display_groups = { "unlimited": [], "limited": [] };
+      if (group_dir == -1) display_groups = { "limited": [], "unlimited": [] };
+      display_properties.forEach(properties => {
+        display_groups[properties.doppel].push(properties);
+      });
     } else if (group_by == "none") {
       display_groups = { "none": [] };
       display_properties.forEach(properties => {
@@ -312,7 +334,17 @@ let character_list_api = (function () {
     return display_groups;
   };
 
-  /* ------------------------------ List Alignment and Padding ------------------------------ */
+  /* ------------------------------ Display Settings ------------------------------ */
+
+  /**
+   * Sets the displays per character row.
+   */
+  module.changeDisplaysPerRow = (displays) => {
+    storage_api.settings.displays_per_row = displays;
+    document.querySelectorAll(".character_row").forEach(character_row => {
+      character_row.style.width = `${displays * (122)}px`;
+    });
+  };
 
   /**
    * Sets the alignment of the character rows.
@@ -606,37 +638,37 @@ let character_list_api = (function () {
   module.applyFilters = (filters = module.getFilters()) => {
     // if no filters, then show everything.
     if (filters.length == 0) {
-      Array.from(character_list_content.children).forEach(character_row => {
-        Array.from(character_row.children).forEach(character_display_element => {
-          if (character_display_element.classList.contains("hidden")) {
-            character_display_element.classList.remove("hidden");
-            character_display_element.style.display = "flex";
-          }
-        });
+      Array.from(character_list_content.querySelectorAll(".character_row")).forEach(character_row => {
         if (character_row.classList.contains("hidden")) {
           character_row.classList.remove("hidden");
           character_row.style.display = "flex";
         }
       });
-      return;
-    }
-    Array.from(character_list_content.children).forEach(character_row => {
-      Array.from(character_row.children).forEach(character_display_element => {
-        let character_display = character_api.getCharacterDisplay(character_display_element);
-        if (matchesAllFilters(character_display, filters)) {
-          if (character_display_element.classList.contains("hidden")) {
-            character_display_element.classList.remove("hidden");
-            character_display_element.style.display = "flex";
-          }
-        } else {
-          if (!character_display_element.classList.contains("hidden")) {
-            character_display_element.classList.add("hidden");
-            character_display_element.style.display = "none";
-          }
+      Array.from(character_list_content.querySelectorAll(".character_display")).forEach(character_display_element => {
+        if (character_display_element.classList.contains("hidden")) {
+          character_display_element.classList.remove("hidden");
+          character_display_element.style.display = "flex";
         }
       });
+      return;
+    }
+    Array.from(character_list_content.querySelectorAll(".character_display")).forEach(character_display_element => {
+      let character_display = character_api.getCharacterDisplay(character_display_element);
+      if (matchesAllFilters(character_display, filters)) {
+        if (character_display_element.classList.contains("hidden")) {
+          character_display_element.classList.remove("hidden");
+          character_display_element.style.display = "flex";
+        }
+      } else {
+        if (!character_display_element.classList.contains("hidden")) {
+          character_display_element.classList.add("hidden");
+          character_display_element.style.display = "none";
+        }
+      }
+    });
+    Array.from(character_list_content.querySelectorAll(".character_row")).forEach(character_row => {
       // hide the row all children are hidden character_list.
-      if (Array.from(character_row.children).every(child => child.classList.contains("hidden"))) {
+      if (Array.from(character_row.querySelectorAll(".character_display")).every(child => child.classList.contains("hidden"))) {
         if (!character_row.classList.contains("hidden")) {
           character_row.classList.add("hidden");
           character_row.style.display = "none";
@@ -705,16 +737,16 @@ let character_list_api = (function () {
    * Removes all the filters.
    */
   module.resetFilters = () => {
-    Array.from(character_list_content.children).forEach(character_row => {
-      Array.from(character_row.children).forEach(character_display_element => {
-        if (character_display_element.classList.contains("hidden")) {
-          character_display_element.classList.remove("hidden");
-          character_display_element.style.display = "flex";
-        }
-      });
+    Array.from(character_list_content.querySelectorAll(".character_row")).forEach(character_row => {
       if (character_row.classList.contains("hidden")) {
         character_row.classList.remove("hidden");
         character_row.style.display = "flex";
+      }
+    });
+    Array.from(character_list_content.querySelectorAll(".character_display")).forEach(character_display_element => {
+      if (character_display_element.classList.contains("hidden")) {
+        character_display_element.classList.remove("hidden");
+        character_display_element.style.display = "flex";
       }
     });
     list_filters.innerHTML = "";
@@ -737,26 +769,24 @@ let character_list_api = (function () {
       maxEpisode: 0
     };
 
-    Array.from(character_list_content.children).forEach(character_row => {
-      Array.from(character_row.children).forEach(character_display_element => {
-        result.totalCharacters++;
-        if (!character_display_element.classList.contains("hidden")) {
-          result.totalVisible++;
-          let character_display = character_api.getCharacterDisplay(character_display_element);
-          let character = character_collection.find(character => character.id == character_display.character_id);
-          if (character.obtainability == "limited") result.limited++;
-          if (character_display.rank == 1 && character_display.level == 40) result.maxLevel++;
-          else if (character_display.rank == 2 && character_display.level == 50) result.maxLevel++;
-          else if (character_display.rank == 3 && character_display.level == 60) result.maxLevel++;
-          else if (character_display.rank == 4 && character_display.level == 80) result.maxLevel++;
-          else if (character_display.rank == 5 && character_display.level == 100) result.maxLevel++;
-          let maxRank = character_api.getMaxRank(character.ranks);
-          if (character_display.rank == maxRank) result.maxRank++;
-          if (character_display.magic == "3") result.maxMagic++;
-          if (character_display.magia == "5") result.maxMagia++;
-          if (character_display.episode == "5") result.maxEpisode++;
-        }
-      });
+    Array.from(character_list_content.querySelectorAll(".character_display")).forEach(character_display_element => {
+      result.totalCharacters++;
+      if (!character_display_element.classList.contains("hidden")) {
+        result.totalVisible++;
+        let character_display = character_api.getCharacterDisplay(character_display_element);
+        let character = character_collection.find(character => character.id == character_display.character_id);
+        if (character.obtainability == "limited") result.limited++;
+        if (character_display.rank == 1 && character_display.level == 40) result.maxLevel++;
+        else if (character_display.rank == 2 && character_display.level == 50) result.maxLevel++;
+        else if (character_display.rank == 3 && character_display.level == 60) result.maxLevel++;
+        else if (character_display.rank == 4 && character_display.level == 80) result.maxLevel++;
+        else if (character_display.rank == 5 && character_display.level == 100) result.maxLevel++;
+        let maxRank = character_api.getMaxRank(character.ranks);
+        if (character_display.rank == maxRank) result.maxRank++;
+        if (character_display.magic == "3") result.maxMagic++;
+        if (character_display.magia == "5") result.maxMagia++;
+        if (character_display.episode == "5") result.maxEpisode++;
+      }
     });
     list_stats_list.innerHTML = `Visible: ${result.totalVisible}/${result.totalCharacters}`;
     return result;
@@ -783,38 +813,36 @@ let character_list_api = (function () {
       rankCopies: {}
     };
 
-    Array.from(character_list_content.children).forEach(character_row => {
-      Array.from(character_row.children).forEach(character_display_element => {
-        result.totalCharacters++;
-        if (!character_display_element.classList.contains("hidden")) {
-          result.totalVisible++;
-          let character_display = character_api.getCharacterDisplay(character_display_element);
-          let character = character_collection.find(character => character_display.character_id == character.id)
-          if (character.obtainability == "limited") result.limited++;
-          if (character_display.rank == 1 && character_display.level == 40) result.maxLevel++;
-          else if (character_display.rank == 2 && character_display.level == 50) result.maxLevel++;
-          else if (character_display.rank == 3 && character_display.level == 60) result.maxLevel++;
-          else if (character_display.rank == 4 && character_display.level == 80) result.maxLevel++;
-          else if (character_display.rank == 5 && character_display.level == 100) result.maxLevel++;
-          let maxRank = character_api.getMaxRank(character.ranks);
-          if (character_display.rank == maxRank) result.maxRank++;
-          if (character_display.magic == "3") result.maxMagic++;
-          if (character_display.magia == "5") result.maxMagia++;
-          if (character_display.episode == "5") result.maxEpisode++;
-          result.ranks[character_display.rank] = result.ranks[character_display.rank] + 1 || 1;
-          result.levels[character_display.level] = result.levels[character_display.level] + 1 || 1;
-          result.magics[character_display.magic] = result.magics[character_display.magic] + 1 || 1;
-          result.magias[character_display.magia] = result.magias[character_display.magia] + 1 || 1;
-          result.episodes[character_display.episode] = result.episodes[character_display.episode] + 1 || 1;
-          let minRank = character_api.getMinRank(character.ranks);
-          let totalCopies = 0;
-          if (minRank == 1) totalCopies = 10 * (parseInt(character_display.magic)) + 1;
-          else if (minRank == 2) totalCopies = 10 * (parseInt(character_display.magic)) + 1;
-          else if (minRank == 3) totalCopies = 3 * (parseInt(character_display.magic)) + 1;
-          else if (minRank == 4) totalCopies = 1 * (parseInt(character_display.magic)) + 1;
-          result.rankCopies[minRank] = result.rankCopies[minRank] ? result.rankCopies[minRank] + totalCopies : totalCopies;
-        }
-      });
+    Array.from(character_list_content.querySelectorAll(".character_display")).forEach(character_display_element => {
+      result.totalCharacters++;
+      if (!character_display_element.classList.contains("hidden")) {
+        result.totalVisible++;
+        let character_display = character_api.getCharacterDisplay(character_display_element);
+        let character = character_collection.find(character => character_display.character_id == character.id)
+        if (character.obtainability == "limited") result.limited++;
+        if (character_display.rank == 1 && character_display.level == 40) result.maxLevel++;
+        else if (character_display.rank == 2 && character_display.level == 50) result.maxLevel++;
+        else if (character_display.rank == 3 && character_display.level == 60) result.maxLevel++;
+        else if (character_display.rank == 4 && character_display.level == 80) result.maxLevel++;
+        else if (character_display.rank == 5 && character_display.level == 100) result.maxLevel++;
+        let maxRank = character_api.getMaxRank(character.ranks);
+        if (character_display.rank == maxRank) result.maxRank++;
+        if (character_display.magic == "3") result.maxMagic++;
+        if (character_display.magia == "5") result.maxMagia++;
+        if (character_display.episode == "5") result.maxEpisode++;
+        result.ranks[character_display.rank] = result.ranks[character_display.rank] + 1 || 1;
+        result.levels[character_display.level] = result.levels[character_display.level] + 1 || 1;
+        result.magics[character_display.magic] = result.magics[character_display.magic] + 1 || 1;
+        result.magias[character_display.magia] = result.magias[character_display.magia] + 1 || 1;
+        result.episodes[character_display.episode] = result.episodes[character_display.episode] + 1 || 1;
+        let minRank = character_api.getMinRank(character.ranks);
+        let totalCopies = 0;
+        if (minRank == 1) totalCopies = 10 * (parseInt(character_display.magic)) + 1;
+        else if (minRank == 2) totalCopies = 10 * (parseInt(character_display.magic)) + 1;
+        else if (minRank == 3) totalCopies = 3 * (parseInt(character_display.magic)) + 1;
+        else if (minRank == 4) totalCopies = 1 * (parseInt(character_display.magic)) + 1;
+        result.rankCopies[minRank] = result.rankCopies[minRank] ? result.rankCopies[minRank] + totalCopies : totalCopies;
+      }
     });
 
     return `Total Characters: ${result.totalCharacters}\nTotal Visible: ${result.totalVisible}\nLimited: ${result.limited}\nUnlimited: ${result.totalVisible - result.limited}\
@@ -841,7 +869,8 @@ let character_list_api = (function () {
    */
   module.openExportModal = () => {
     messageModal.style.display = "block";
-    let list = Object.entries(module.getCharacterList(false)).map(([key, value]) => value);
+    let list = Object.entries(module.getCharacterList(false))
+      .map(([key, value]) => value).sort((a, b) => a.character_id > b.character_id ? 1 : -1);
     messageModalText.value = JSON.stringify(list, null, 1);
     messageModalTitle.innerHTML = `${character_list_api.selectedList.list.name} Contents`;
     messageModalList.innerHTML = "";

@@ -19,7 +19,7 @@
 
 .tab {
   margin: 5px;
-  width: max-content;
+  width: calc(100% - 30px);
   min-width: fit-content;
   max-width: 300px;
   padding: 10px;
@@ -33,6 +33,7 @@
   display: flex;
   align-items: center;
   margin: 0px;
+  width: fit-content;
   cursor: pointer;
   user-select: none;
   color: rgb(17, 0, 255);
@@ -59,11 +60,11 @@
 }
 
 .tab_contents {
+  margin-top: 5px;
   transition: all 0.5s ease 0s;
 }
 
 #list_buttons {
-  /* position: absolute; */
   left: 110px;
   top: 5px;
 }
@@ -75,26 +76,23 @@
 .form_input {
   border: rgb(100, 100, 100) solid 1px;
   border-radius: 10px;
-  padding: 5px 20px;
-  margin: 5px 0px;
   user-select: none;
   font-size: 16px;
-  font-family: 'Times New Roman', Times, serif;
   text-align: center;
   outline: none;
   transition: all 0.3s ease 0s;
 }
 
 #new_list_name_field {
-  width: 120px;
+  padding: 5px 20px;
+  margin: 2px 0px;
+  width: 160px;
 }
 
 #duplicate_list_name_field {
+  padding: 5px 20px;
+  margin: 2px 0px;
   width: 140px;
-}
-
-#new_profile_field {
-  width: 100px;
 }
 
 #list_create, #list_duplicate {
@@ -147,12 +145,54 @@
   flex-wrap: wrap;
 }
 
+#profile_select_block {
+  display: flex;
+  align-items: center;
+}
+
+#profile_select {
+  padding: 0px 2px;
+  height: 30px;
+  margin: 0px 2px;
+  flex: 1;
+}
+
+#profile_create_block {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#new_profile_field {
+  flex: 1;
+  height: 26px;
+  padding: 2px 5px;
+  margin-right: 2px;
+}
+
+.profile_rule {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.profile_rule>.state_select {
+  height: 30px;
+  padding: 0px 2px;
+  margin: 2px 2px 0px 2px;
+}
+
+.profile_rule>.type_select {
+  height: 30px;
+  padding: 0px 2px;
+  margin: 2px 2px;
+}
+
 #display_padding_x_field, #display_padding_y_field {
   width: 50px;
 }
 
 #background_select {
-  width: 150px;
+  width: 140px;
 }
 
 .duplicate {

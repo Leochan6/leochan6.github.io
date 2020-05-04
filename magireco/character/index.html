@@ -191,82 +191,22 @@
             <h2 class="tab_heading" tab_name="sort_tab">Sorting Profiles</h2>
           </div>
           <div class="tab_contents hidden">
-            <div id="sorting_profiles">
-              <table id="sorting_profile_table">
-                <tbody>
-                  <tr>
-                    <td>Current Profile:</td>
-                    <td><select id="profile_select"></select></td>
-                    <td><button id="new_profile_button" title="Create a New Profile">+</button></td>
-                    <td><button id="delete_profile_button" title="Delete">×</button></td>
-                  </tr>
-                </tbody>
-              </table>
-              <div id="new_profile_row" style="visibility: collapse;">
-                <form style="display: inline-flex;">
-                  <input id="new_profile_field" type="text" placeholder="Profile Name"
-                    style="width: 140px; margin-left: 5px;">
-                  <button type="submit" id="create_profile_button" title="Create this New Profile">Create</button>
-                </form>
-                <button id="close_new_profile_button" title="Close">×</button>
+            <div id="profile_select_create">
+              <div id="profile_select_block">
+                Profile:
+                <select id="profile_select" class="form_input"></select>
+                <button id="new_profile_button" class="add small_btn" title="Create a New Profile"></button>
+                <button id="delete_profile_button" class="small_btn" title="Delete Selected Profile">×</button>
               </div>
-            </div>
-            <div id="sorting_fields" align="left">
-              <table id="sorting_table">
-                <tr>
-                  <td title="Group by this property.">Group By:</td>
-                  <td><select id="group_by_select" class="sort_form">
-                      <option value="attribute">Attribute</option>
-                      <option value="rank">Rank</option>
-                      <option value="magic">Magic</option>
-                      <option value="magia">Magia</option>
-                      <option value="episode">Episode</option>
-                      <option value="none">None</option>
-                    </select>
-                  </td>
-                  <td id="group_dir_select" class="sort_dir up"></td>
-                </tr>
-                <tr>
-                  <td title="Sort by this property first.">Sort By 1:</td>
-                  <td><select id="sort_by_1_select" class="sort_form">
-                      <option value="attribute">Attribute</option>
-                      <option value="rank">Rank</option>
-                      <option value="level">Level</option>
-                      <option value="magic">Magic</option>
-                      <option value="magia">Magia</option>
-                      <option value="episode">Episode</option>
-                      <option value="none">None</option>
-                    </select>
-                  </td>
-                  <td id="sort_dir_1_select" class="sort_dir down"></td>
-                </tr>
-                <tr>
-                  <td title="Sort by this property second.">Sort By 2:</td>
-                  <td><select id="sort_by_2_select" class="sort_form">
-                      <option value="attribute">Attribute</option>
-                      <option value="rank">Rank</option>
-                      <option value="level">Level</option>
-                      <option value="magic">Magic</option>
-                      <option value="magia">Magia</option>
-                      <option value="episode">Episode</option>
-                      <option value="none">None</option>
-                    </select>
-                  </td>
-                  <td id="sort_dir_2_select" class="sort_dir down"></td>
-                </tr>
-                <tr>
-                  <td title="Sort by the id of the character last.">ID Sort Direction:</td>
-                  <td></td>
-                  <td id="sort_id_dir_select" class="sort_dir down"></td>
-                </tr>
-                <tr>
-                  <td>Displays Per Row:</td>
-                  <td><input id="displays_per_row" class="custom-input sort_form" type="number" value=8 maxlength="2"
-                      size=2 min=1 max=99 border="2px solid black"></td>
-                </tr>
-              </table>
+              <form id="profile_create_block" class="hidden">
+                <input id="new_profile_field" class="form_input" type="text" placeholder="New Profile Name">
+                <button type="submit" id="create_profile_button" class="small_btn"
+                  title="Create this New Profile">Create</button>
+              </form>
             </div>
             <p class="error_text" id="profile_error_text"></p>
+            <div id="profile_rules">
+            </div>
           </div>
         </div>
         <div class="horizontal-divider"></div>
@@ -279,6 +219,10 @@
           <div class="tab_contents hidden">
             <table id="display_table">
               <tr>
+                <td>Displays Per Row:</td>
+                <td><input type="number" id="displays_per_row" min="1" step="1" style="width: 50px;"></td>
+              </tr>
+              <tr>
                 <td>Alignment:</td>
                 <td><select id="display_alignment_select">
                     <option value="left">Left</option>
@@ -286,11 +230,11 @@
                     <option value="right">Right</option>
                   </select></td>
               </tr>
-              <tr class="">
+              <tr>
                 <td>Padding X:</td>
                 <td><input type="number" id="display_padding_x_field" min="0" step="10"></td>
               </tr>
-              <tr class="">
+              <tr>
                 <td>Padding Y:</td>
                 <td><input type="number" id="display_padding_y_field" min="0" step="10"></td>
               </tr>
@@ -336,7 +280,7 @@
     <!-- Main Content -->
     <div id="main">
       <div id="main_header">
-        <div id="name_nav_zoom">
+        <div id="name_nav_export">
           <h2 id="list_name_title"></h2>
           <div id="nav_bar" class="hidden">
             <a href="../character/" class="nav_item selected" id="character_nav_button">Character</a>
