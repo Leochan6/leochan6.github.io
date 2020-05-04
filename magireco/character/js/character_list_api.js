@@ -112,7 +112,6 @@ let character_list_api = (function () {
     list_create.style.display = "none";
     list_name_title.innerHTML = listName;
     profile_select.value = "0";
-    console.log(profile_select.value);
     character_list_content.innerHTML = "";
     storage_api.createList(listName);
   };

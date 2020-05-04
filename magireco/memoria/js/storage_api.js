@@ -125,7 +125,7 @@ let storage_api = (() => {
   const loadLists = (snapshot) => {
     let lists = snapshot.val() ? snapshot.val() : {};
     let filtered = Object.keys(lists)
-      .filter(key => lists[key].memoriaList)
+      .filter(key => typeof lists[key].memoriaList !== "undefined")
       .reduce((obj, key) => {
         return {
           ...obj,
