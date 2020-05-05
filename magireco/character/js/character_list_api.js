@@ -611,6 +611,11 @@ let character_list_api = (function () {
     if (toggle_filter_button.classList.contains("hidden")) {
       toggle_filter_button.classList.remove("hidden");
       toggle_filter_button.classList.add("minus");
+    } else {
+      if (toggle_filter_button.classList.contains("add")) {
+        toggle_filter_button.classList.replace("add", "minus");
+        if (list_filters.classList.contains("hidden")) list_filters.classList.remove("hidden");
+      }
     }
 
     if (list_filters.children.length > 0) new_filter.querySelector(".state_select").classList.remove("collapse");
