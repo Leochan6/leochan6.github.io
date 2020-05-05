@@ -459,6 +459,7 @@ let character_api = (() => {
           break;
         }
       }
+      let added = Object.values(storage_api.lists[character_list_api.getListId()].characterList).find(char => char.character_id === character.id);
       let container = document.createElement("div");
       container.classList.add("chararacter_image_preview");
       container.setAttribute("character_id", character.id);
@@ -466,6 +467,12 @@ let character_api = (() => {
       image.src = `/magireco/assets/image/card_${character.id}${star}_f.png`;
       image.title = character.name;
       container.append(image);
+      if (added) {
+        let text = document.createElement("label");
+        text.classList.add("character_label");
+        text.innerHTML = "✓";
+        container.append(text);
+      }
       container.addEventListener("click", () => {
         name_select.value = character.id;
         name_select.dispatchEvent(new Event("change"));
@@ -478,6 +485,7 @@ let character_api = (() => {
       });
       characterSelectModalList.append(container);
     });
+    module.toggleAdded(characterSelectModalAdded.checked);
   };
 
   /**
@@ -509,6 +517,19 @@ let character_api = (() => {
         child.style.display = "none";
       }
     });
+    module.toggleAdded(characterSelectModalAdded.checked);
+  };
+
+  module.toggleAdded = (value) => {
+    if (value) {
+      Array.from(characterSelectModalList.children).forEach(child => {
+        if (child.querySelector(".character_label")) child.classList.add("hidden");
+      });
+    } else {
+      Array.from(characterSelectModalList.children).forEach(child => {
+        if (child.classList.contains("hidden")) child.classList.remove("hidden");
+      });
+    }
   };
 
   module.openCharacterDialog = (character) => {

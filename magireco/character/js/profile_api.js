@@ -32,7 +32,8 @@ let profile_api = (function () {
   module.getSortSettings = () => {
     let settings = {};
     Array.from(profile_rules.children).forEach(child => {
-      let ruleId = child.getAttribute("ruleId") ? child.getAttribute("ruleId") : generatePushID();
+      let childRuleId = child.getAttribute("ruleId")
+      let ruleId = childRuleId && childRuleId.length > 3 ? childRuleId : generatePushID();
       settings[ruleId] = {
         state: child.querySelector(".state_select").value,
         type: child.querySelector(".type_select").value,

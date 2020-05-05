@@ -106,12 +106,16 @@
   margin-right: 5px;
 }
 
+.filter_row>.create {
+  margin-left: 10px;
+}
+
 .filter_row>.delete {
   margin-left: 10px;
 }
 
 .filter_type>* {
-  width: 60px;
+  width: fit-content;
   margin-right: 0px;
   padding-left: 0px;
 }
@@ -121,12 +125,9 @@
 }
 
 .filter_field.level_input {
-  width: 38px;
   margin-left: 10px;
-}
-
-.filter_field.obtainability_select {
-  /* width: 80px; */
+  text-align: left;
+  padding-left: 3px;
 }
 
 .level_input {

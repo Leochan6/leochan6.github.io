@@ -95,8 +95,8 @@
                   <td>Name:</td>
                   <td><select id="name_select" class="create_field form_input" style="width:145px"
                       title="Name of the Character."></select></td>
-                  <td><button id="characterSelectModalOpen" class="small_btn"
-                      title="Open the Character Select Dialog.">+</td>
+                  <td><button id="characterSelectModalOpen" class="" title="Open the Character Select Dialog.">
+                  </td>
                 </tr>
                 <tr>
                   <td>Attribute:
@@ -323,6 +323,8 @@
             Filters: <button id="add_filter_button" class="small_btn" title="Add New Filter Below">New</button>
             <button id="apply_filter_button" class="small_btn" title="Apply the Filters">Apply</button>
             <button id="reset_filter_button" class="small_btn" title="Remove All Filters">Reset</button>
+            <button id="toggle_filter_button" class="small_btn hidden"
+              title="Toggle Visibility All Filter Rules"></button>
           </div>
           <div id="zoom_tools" title="Auto Zoom not Working">
             Zoom: <input type="number" id="zoom_field" value=100 maxlength="3" size=3 min=1 max=500
@@ -351,6 +353,8 @@
             <span class="close" id="characterSelectModalClose">&times;</span>
           </div>
           <input type="search" id="characterSelectModalSearch" placeholder="Search">
+          <label id="characterSelectModalAddedLabel" for="characterSelectModalAdded">Hide Added:</label><input
+            type="checkbox" id="characterSelectModalAdded">
         </div>
         <div class="modal-body">
           <div id="characterSelectModalList"></div>

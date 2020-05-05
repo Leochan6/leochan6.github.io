@@ -75,6 +75,10 @@
       });
     });
 
+    characterSelectModalAdded.addEventListener("click", () => {
+      character_api.toggleAdded(characterSelectModalAdded.checked);
+    })
+
     /* ------------------------------ Background Select Modal Dialog ------------------------------ */
 
     // open background select modal dialog
@@ -372,6 +376,17 @@
     // reset the filters.
     reset_filter_button.addEventListener("click", () => {
       character_list_api.resetFilters();
+    });
+
+    toggle_filter_button.addEventListener("click", () => {
+      if (toggle_filter_button.classList.contains("add")) {
+        toggle_filter_button.classList.replace("add", "minus");
+        if (list_filters.classList.contains("hidden")) list_filters.classList.remove("hidden");
+      }
+      else if (toggle_filter_button.classList.contains("minus")) {
+        toggle_filter_button.classList.replace("minus", "add");
+        if (!list_filters.classList.contains("hidden")) list_filters.classList.add("hidden");
+      }
     });
 
 

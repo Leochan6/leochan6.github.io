@@ -61,7 +61,7 @@ body {
 }
 
 .chararacter_image_preview {
-  display: flex;
+  display: block;
   text-align: center;
   padding: 5px;
   width: 106px;
@@ -73,6 +73,10 @@ body {
 
 .chararacter_image_preview>img {
   width: 106px;
+}
+
+.character_label {
+  font-weight: bold;
 }
 
 .characterSelectModalContent {
@@ -94,6 +98,15 @@ body {
 #characterSelectModalSearch {
   padding: 5px;
   margin-bottom: 5px;
+}
+
+#characterSelectModalAddedLabel {
+  user-select: none;
+}
+
+#characterSelectModalAdded {
+  zoom: 1.5;
+  vertical-align: middle;
 }
 
 #characterSelectModalList {

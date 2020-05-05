@@ -92,6 +92,7 @@ let elements = (() => {
   module.add_filter_button = document.querySelector("#add_filter_button");
   module.apply_filter_button = document.querySelector("#apply_filter_button");
   module.reset_filter_button = document.querySelector("#reset_filter_button");
+  module.toggle_filter_button = document.querySelector("#toggle_filter_button");
 
   // Stats
   module.list_stats_list = document.querySelector("#list_stats_list");
@@ -110,6 +111,7 @@ let elements = (() => {
   module.characterSelectModal = document.querySelector("#characterSelectModal");
   module.characterSelectModalClose = document.querySelector("#name_modal_close_button");
   module.characterSelectModalSearch = document.querySelector("#characterSelectModalSearch");
+  module.characterSelectModalAdded = document.querySelector("#characterSelectModalAdded");
   module.characterSelectModalList = document.querySelector("#characterSelectModalList");
 
   // Background Select Modal
