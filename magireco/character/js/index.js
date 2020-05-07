@@ -25,6 +25,14 @@
       messageModalList.innerHTML = "";
     });
 
+    // theme toggle button.
+    theme_button.addEventListener("click", () => {
+      let theme = "light"
+      if (theme_button.classList.contains("dark")) theme = "dark";
+      else if (theme_button.classList.contains("light")) theme = "light";
+      storage_api.updateSettings("theme", theme);
+    });
+
     /* ------------------------------ General Modal Dialogs ------------------------------ */
 
     // hide modal dialogs if not drag
@@ -337,6 +345,31 @@
       character_list_api.updateList();
     });
 
+    // transparency field input.
+    ["input", "change"].forEach(event => {
+      background_transparency_field.addEventListener(event, () => {
+        let value = background_transparency_field.value;
+        if (value > 500) value = 500;
+        else if (value < 1) value = 1;
+        if (value !== background_transparency_field.value) background_transparency_field.value = value;
+        background_transparency_range.value = background_transparency_field.value;
+        background_api.changetransparency(background_transparency_range.value);
+        // if (event === "change") storage_api.updateSettings("background_transparency", background_transparency_field.value);
+      });
+    });
+
+    // transparency range slider.
+    ["input", "change", "wheel"].forEach(event => {
+      background_transparency_range.addEventListener(event, (e) => {
+        if (event === "wheel") {
+          background_transparency_range.value = parseInt(background_transparency_range.value) - (e.deltaY / 100) * (e.shiftKey ? 25 : 1);
+        }
+        background_transparency_field.value = background_transparency_range.value;
+        background_api.changetransparency(background_transparency_range.value);
+        // if (event === "change") storage_api.updateSettings("background_transparency", background_transparency_range.value);
+      });
+    });
+
     /* ------------------------------ Settings Tab ------------------------------ */
 
     /* ============================== Main ============================== */
@@ -344,9 +377,20 @@
     /* ------------------------------ Export and Import ------------------------------ */
 
     // export image button.
-    export_image_button.addEventListener("click", () => {
+    export_image_button.addEventListener("click", (e) => {
+      let date = new Date();
+      let time = `_${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}_${date.getHours()}_${date.getMinutes()}_${date.getSeconds()}`
+      let imageName = `${character_list_api.getListName() ? character_list_api.getListName().replace(" ", "_") : "list"}`
       html2canvas(character_list_content, { backgroundColor: null }).then(canvas => {
-        Canvas2Image.saveAsImage(canvas, "list");
+        if (e.ctrlKey) {
+          let w = window.open('about:blank');
+          let image = new Image();
+          image.src = canvas.toDataURL();
+          setTimeout(function () {
+            w.document.write(image.outerHTML);
+          }, 0);
+        }
+        else Canvas2Image.saveAsImage(canvas, imageName + time);
       });
     });
 
@@ -486,6 +530,8 @@
   };
 
   /* ------------------------------ Page Start Up ------------------------------ */
+
+  utils.detectColorScheme();
 
   // update form and preview display on startup.
   character_api.startUp();

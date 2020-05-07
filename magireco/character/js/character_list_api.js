@@ -24,8 +24,10 @@ let character_list_api = (function () {
     for (let [listId, list] of Object.entries(lists)) {
       let div = document.createElement("div");
       div.classList.add("character_list_row");
-      let entry = document.createElement("div");
+      let entry = document.createElement("button");
+      entry.classList.add("small_btn");
       entry.classList.add("character_list_entry");
+      // entry.classList.add("form_input");
       entry.setAttribute("listId", listId);
       entry.innerHTML = list.name;
       entry.addEventListener("click", () => {
@@ -49,6 +51,7 @@ let character_list_api = (function () {
     else {
       delete_list_button.disabled = true;
       duplicate_list_form.disabled = true;
+      character_list_content.innerHTML = "";
     }
   };
 
@@ -75,10 +78,16 @@ let character_list_api = (function () {
     for (let element of document.querySelectorAll(".character_list_entry")) {
       // element already selected.
       if (element.getAttribute("listId") === listId) {
-        if (element.classList.contains("selectedList")) return;
-        else element.classList.add("selectedList");
+        if (element.classList.contains("selected")) return;
+        else {
+          element.classList.add("selected");
+          element.disabled = true;
+        }
       }
-      else if (element.classList.contains("selectedList")) element.classList.remove("selectedList");
+      else if (element.classList.contains("selected")) {
+        element.classList.remove("selected");
+        element.disabled = false;
+      }
     }
     module.selectedList = { listId: listId, list: list };
     list_name_title.innerHTML = list.name;
@@ -265,7 +274,11 @@ let character_list_api = (function () {
 
   const groupAndSort = (characterList, rules, sorts) => {
     if (rules.length == 0) {
-      return characterList.sort((a, b) => utils.sortArrayBy(a, b, sorts));
+      let sorted = characterList;
+      sorted.forEach(char => char.attribute = ATT_TO_NUM[char.attribute]);
+      sorted.sort((a, b) => utils.sortArrayBy(a, b, sorts));
+      sorted.forEach(char => char.attribute = NUM_TO_ATT[char.attribute]);
+      return sorted;
     } else {
       let rule = rules[0];
       let groups = group_properties(characterList, rule.type, rule.direction)

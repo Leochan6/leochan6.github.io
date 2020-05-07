@@ -33,6 +33,7 @@
     <div id="header_center" class="hidden"></div>
     <div id="header_right">
       <div id="header_right_upper">
+        <button id="theme_button" class="small_btn"></button>
         <button id="contact_button" class="small_btn">Contact / Support</button>
         <button id="signout_button" class="small_btn">Sign Out</button>
       </div>
@@ -99,17 +100,6 @@
                   </td>
                 </tr>
                 <tr>
-                  <td>Attribute:
-                  <td><select id="attr_select" class="form create_field form_input" title="Attribute of the Character.">
-                      <option value="dark">Dark</option>
-                      <option value="fire">Fire</option>
-                      <option value="light">Light</option>
-                      <option value="forest">Forest</option>
-                      <option value="void">Void</option>
-                      <option value="water">Water</option>
-                    </select></td>
-                </tr>
-                <tr>
                   <td>Rank:</td>
                   <td><select id="rank_select" class="form create_field form_input"
                       title="Rank of the Character (Stars/Rarity).">
@@ -122,8 +112,8 @@
                 </tr>
                 <tr>
                   <td>Experience:</td>
-                  <td><input id="level_select" class="form custom-input create_field form_input" type="number" value=1
-                      maxlength="3" size=3 min=1 max=100 border="2px solid black"
+                  <td><input id="level_select" class="form create_field form_input" type="number" value=1 maxlength="3"
+                      size=3 min=1 max=100 border="2px solid black"
                       title="Experience Level of the Character (Enhancement/Experience).">
                   </td>
                 </tr>
@@ -231,8 +221,8 @@
             <table id="display_table">
               <tr>
                 <td>Displays Per Row:</td>
-                <td><input type="number" id="displays_per_row" class="display_field custom-input form_input" min="1"
-                    step="1" style="width: 50px;">
+                <td><input type="number" id="displays_per_row" class="display_field form_input" min="1" step="1"
+                    style="width: 50px;">
                 </td>
               </tr>
               <tr>
@@ -245,13 +235,13 @@
               </tr>
               <tr>
                 <td>Padding X:</td>
-                <td><input type="number" id="display_padding_x_field" class="display_field custom-input form_input"
-                    min="0" step="10"></td>
+                <td><input type="number" id="display_padding_x_field" class="display_field form_input" min="0"
+                    step="10"></td>
               </tr>
               <tr>
                 <td>Padding Y:</td>
-                <td><input type="number" id="display_padding_y_field" class="display_field custom-input form_input"
-                    min="0" step="10"></td>
+                <td><input type="number" id="display_padding_y_field" class="display_field form_input" min="0"
+                    step="10"></td>
               </tr>
             </table>
           </div>
@@ -264,16 +254,24 @@
             <h2 class="tab_heading" tab_name="background_tab">Background</h2>
           </div>
           <div class="tab_contents hidden">
-            <table id="background_table">
-              <tr>
-                <td>Background:</td>
-                <td><select id="background_select" class="background_field form_input"></select></td>
-                <td><button id="backgroundSelectModalOpen" class="background_field small_btn"
-                    title="Open the Character Select Dialog.">+</button></td>
-              </tr>
-            </table>
-            <button id="remove_background_button" class="small_btn"
-              title="Remove the selected background.">Remove</button></tr>
+            <div>
+              Background:
+              <select id="background_select" class="background_field form_input"></select>
+              <button id="backgroundSelectModalOpen" class="background_field small_btn"
+                title="Open the Character Select Dialog.">+</button>
+              <button id="remove_background_button" class="small_btn" title="Remove the selected background.">×</button>
+            </div>
+            <div>
+              Transparency:
+              <input type="number" id="background_transparency_field" class="form_input" min="0" max="100" step="1"
+                size="3" value="0" style="width: 50px;">
+              <input type="range" id="background_transparency_range" value="0">
+            </div>
+            <div>
+
+            </div>
+            *background transparency is not respected on export (except no background).
+            <br>*remove background and set transparency to 0 for transparent background.
           </div>
         </div>
         <div class="horizontal-divider"></div>
@@ -327,8 +325,8 @@
               title="Toggle Visibility All Filter Rules"></button>
           </div>
           <div id="zoom_tools" title="Auto Zoom not Working">
-            Zoom: <input type="number" id="zoom_field" value=100 maxlength="3" size=3 min=1 max=500
-              style="width: 40px;">
+            Zoom: <input type="number" id="zoom_field" class="form_input" value=100 maxlength="3" size=3 min=1 max=500
+              style="width: 45px;">
             <input type="range" min="1" max="500" value="100" id="zoom_range">
           </div>
           <div class="" id="list_stats">
@@ -352,7 +350,7 @@
             <h2 id="characterSelectModalTitle">Character Select</h2>
             <span class="close" id="characterSelectModalClose">&times;</span>
           </div>
-          <input type="search" id="characterSelectModalSearch" placeholder="Search">
+          <input type="search" id="characterSelectModalSearch" class="form_input" placeholder="Search">
           <label id="characterSelectModalAddedLabel" for="characterSelectModalAdded">Hide Added:</label><input
             type="checkbox" id="characterSelectModalAdded">
         </div>
@@ -370,7 +368,7 @@
             <h2 id="backgroundSelectModalTitle">Background Select</h2>
             <span class="close" id="backgroundSelectModalClose">&times;</span>
           </div>
-          <input type="search" id="backgroundSelectModalSearch" placeholder="Search">
+          <input type="search" id="backgroundSelectModalSearch" class="form_input" placeholder="Search">
         </div>
         <div class="modal-body">
           <div id="backgroundSelectModalList"></div>
@@ -386,7 +384,7 @@
           <span class="close" id="messageModalClose">&times;</span>
         </div>
         <textarea id="messageModalText" readonly></textarea>
-        <button id="messageModalCopy">Copy</button>
+        <button id="messageModalCopy" class="small_btn">Copy</button>
         <div id="messageModalList"></div>
       </div>
     </div>
@@ -398,9 +396,9 @@
           <h2 id="importListModalTitle">Import List</h2>
           <span class="close" id="importListModalClose">&times;</span>
         </div>
-        <input type="text" id="importListModalName" placeholder="List Name"></textarea>
-        <textarea id="importListModalText" placeholder="JSON"></textarea>
-        <button id="importListModalImport">Import</button>
+        <input type="text" id="importListModalName" class="form_input" placeholder="List Name"></textarea>
+        <textarea id="importListModalText" class="form_input" placeholder="JSON"></textarea>
+        <button id="importListModalImport" class="small_btn">Import</button>
         <div id="importListModalList"></div>
         <p id="importListModalError" class="error_text"></p>
       </div>
@@ -417,7 +415,6 @@
   <script src="../shared/js/database_api.js"></script>
   <script src="../shared/js/utils.js"></script>
   <script src="../collection/character_collection.js"></script>
-  <script src="../collection/character_collection (1).js"></script>
   <script src="../collection/background_collection.js"></script>
   <script src="js/character_elements.js"></script>
   <script src="js/storage_api.js"></script>

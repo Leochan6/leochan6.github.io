@@ -208,7 +208,7 @@ let database = (() => {
     display_alignment: "left",
     padding_x: 20,
     padding_y: 20,
-    character_zoom: 100
+    character_zoom: 100,
   };
 
   module.updateSettings = (userId, settingName, content) => {

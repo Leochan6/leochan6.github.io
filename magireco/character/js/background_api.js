@@ -17,6 +17,10 @@ let background_api = (function () {
     }
   };
 
+  module.changetransparency = (transparency) => {
+    character_list_content.style.backgroundColor = `rgba(255,255,255,${transparency / 100})`;
+  };
+
   module.removeBackground = () => {
     character_list_content.style.backgroundImage = "";
     background_select.selectedIndex = -1;

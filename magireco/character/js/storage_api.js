@@ -73,6 +73,7 @@ let storage_api = (() => {
     display_alignment_select.value = module.settings.display_alignment;
     display_padding_x_field.value = module.settings.padding_x;
     display_padding_y_field.value = module.settings.padding_y;
+    utils.setTheme(module.settings.theme);
   };
 
   /**

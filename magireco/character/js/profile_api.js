@@ -128,7 +128,7 @@ let profile_api = (function () {
         <option value="obtainability">Obtainability</option>
         <option value="character_id">Character ID</option>
       </select>
-      <div class="sort_dir down"></div>
+      <button class="sort_dir down small_btn"></button>
       <button class="create add small_btn" title="Add New Filter Below"></button>
       <button class="delete small_btn" title="Delete Filter"></button>`;
 

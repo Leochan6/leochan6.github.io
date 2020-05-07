@@ -33,6 +33,8 @@
   const messageModalContent = document.querySelector("#messageModalContent");
   const messageModalClose = document.querySelector("#messageModalClose");
 
+  let userId = null
+
   window.onload = () => {
 
     database.onAuthStateChanged(user => {
@@ -43,6 +45,7 @@
         enter_button.classList.remove("hidden");
         header_buttons.classList.remove("hidden");
         header_username.innerHTML = `Welcome ${user.displayName || "Anonymous"}`;
+        userId = user.uid;
       } else {
         login_content.classList.remove("hidden");
         anonymous_content.classList.remove("hidden");
@@ -50,6 +53,7 @@
         enter_button.classList.add("hidden");
         header_buttons.classList.add("hidden");
         header_username.innerHTML = "";
+        userId = null;
       }
     });
 
@@ -155,5 +159,7 @@
     anonymous_error.innerHTML = errorMsg;
     console.log(errorMsg);
   };
+
+  utils.detectColorScheme();
 
 })();

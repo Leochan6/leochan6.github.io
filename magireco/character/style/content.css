@@ -6,7 +6,8 @@ body {
   height: calc(100vh - 22px);
   margin: 10px;
   font-family: Arial, Helvetica, sans-serif;
-  border: 1px solid black;
+  border: 1px solid var(--divider-color);
+  background-color: var(--background-color);
 }
 
 #content {
@@ -16,35 +17,24 @@ body {
   height: 90%
 }
 
-.down {
-  line-height: 34px;
-  font-size: 24px;
-}
-
-.up {
-  line-height: 34px;
-  font-size: 24px;
-}
-
 .up::after {
   content: "▲";
+  text-align: center;
 }
 
 .down::after {
   content: "▼";
-}
-
-.left, .right {
-  font-size: 24px;
-  color: #000000;
+  text-align: center;
 }
 
 .left::after {
   content: "◄";
+  text-align: center;
 }
 
 .right::after {
   content: "►";
+  text-align: center;
 }
 
 .delete::after {
@@ -54,10 +44,12 @@ body {
 
 .add::after {
   content: "+";
+  text-align: center;
 }
 
 .minus::after {
   content: "-";
+  text-align: center;
 }
 
 .chararacter_image_preview {
@@ -98,6 +90,8 @@ body {
 #characterSelectModalSearch {
   padding: 5px;
   margin-bottom: 5px;
+  color: var(--text-color-standard);
+  background-color: var(--textarea-background-color);
 }
 
 #characterSelectModalAddedLabel {
@@ -130,19 +124,21 @@ body {
 #backgroundSelectModalSearch {
   padding: 5px;
   margin-bottom: 5px;
+  color: var(--text-color-standard);
+  background-color: var(--textarea-background-color);
 }
 
 .background_image_preview {
   vertical-align: top;
   display: inline-block;
   text-align: center;
-  border: solid 1px white;
+  border: solid 1px var(--border-color-none);
   width: 200px;
   height: 150px;
 }
 
 .background_image_preview:hover {
-  border: solid 1px black;
+  border: solid 1px var(--border-color-hover);
 }
 
 .background_image_preview>img {
@@ -170,6 +166,8 @@ body {
   user-select: none;
   padding: 5px;
   margin-bottom: 5px;
+  color: var(--text-color-standard);
+  background-color: var(--textarea-background-color);
 }
 
 #importListModalText {
@@ -177,6 +175,8 @@ body {
   resize: none;
   padding: 5px;
   margin-bottom: 5px;
+  color: var(--text-color-standard);
+  background-color: var(--textarea-background-color);
 }
 
 #importListModalImport {
@@ -202,6 +202,8 @@ body {
   height: 90%;
   resize: none;
   padding: 5px;
+  color: var(--text-color-standard);
+  background-color: var(--textarea-background-color);
 }
 
 #messageModalCopy {

@@ -108,7 +108,7 @@ let character_api = (() => {
       name_select.value,
       name_select[name_select.options.selectedIndex].text,
       rank_select.value,
-      attr_select.value,
+      character_collection.find(char => char.id === name_select.value).attribute.toLowerCase() || null,
       level_select.value,
       magic_select.value,
       magia_select.value,
@@ -255,7 +255,6 @@ let character_api = (() => {
   const updateForm = (display) => {
     name_select.value = display.character_id;
     rank_select.value = display.rank;
-    attr_select.value = display.attribute;
     level_select.value = display.level;
     magic_select.value = display.magic;
     magia_select.value = display.magia;
@@ -269,11 +268,6 @@ let character_api = (() => {
    * @param {Character} character
    */
   const updateFormEnabled = (character) => {
-    // enable or disable the attribute select.
-    for (let i = 0; i < 6; i++) {
-      attr_select.options[i].disabled = attr_select.options[i].value != character.attribute;
-    }
-    attr_select.value = character.attribute;
     // enable or disable the rank select.
     for (let i = 0; i < 5; i++) {
       rank_select.options[i].disabled = !character.ranks[i + 1];

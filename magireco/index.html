@@ -28,8 +28,8 @@
     <h1>Magia Record Character List</h1>
     <div id="header_right">
       <div id="header_right_upper">
-        <button id="contact_button">Contact / Support</button>
-        <button id="signout_button">Sign Out</button>
+        <button id="contact_button" class="small_btn">Contact / Support</button>
+        <button id="signout_button" class="small_btn">Sign Out</button>
       </div>
       <div id="header_right_lower">
         <div id="header_username"></div>
@@ -41,7 +41,7 @@
 
   <div id="main">
     <div id="header_buttons">
-      <button class="btn btnGray login_button hidden" id="enter_button">Create Your Lists Now</button>
+      <button class="small_btn  login_button hidden" id="enter_button">Create Your Lists Now</button>
     </div>
 
     <div id="content">
@@ -51,8 +51,8 @@
           <input type="email" class="login_field" id="email_text" name="email" placeholder="Email">
           <input type="password" class="login_field" id="password_text" name="password" placeholder="Password">
           <div id="login_buttons">
-            <button type="submit" class="btn btnGray login_button" id="signin_button">Sign In</button>
-            <button type="input" class="btn btnGray login_button" id="open_signup_button">Sign Up</button>
+            <button type="submit" class="small_btn  login_button" id="signin_button">Sign In</button>
+            <button type="input" class="small_btn  login_button" id="open_signup_button">Sign Up</button>
           </div>
         </form>
         <p class="error_text hidden" id="login_error"></p>
@@ -67,8 +67,8 @@
           <input type="password" class="login_field" id="signup_password_confirm_text" name="confirm"
             placeholder="Confirm Password">
           <div id="signup_buttons">
-            <button type="submit" class="btn btnGray login_button" id="signup_button">Sign Up</button>
-            <button type="input" class="btn btnGray login_button" id="cancel_signup_button">Cancel</button>
+            <button type="submit" class="small_btn  login_button" id="signup_button">Sign Up</button>
+            <button type="input" class="small_btn  login_button" id="cancel_signup_button">Cancel</button>
           </div>
         </form>
         <p class="error_text hidden" id="signup_error"></p>
@@ -78,7 +78,7 @@
         <div id="signin_anonymous_label">Sign In Anonymously</div>
         <p>You will not be able keep your list after you log out.</p>
         <div id="signin_anonymous_buttons">
-          <button type="input" class="btn btnGray login_button" id="signin_anonymous_button">Sign In
+          <button type="input" class="small_btn  login_button" id="signin_anonymous_button">Sign In
             Anonymously</button>
         </div>
         <p class="error_text hidden" id="anonymous_error"></p>
@@ -87,11 +87,13 @@
 
     <!-- Message Modal Dialog -->
     <div id="messageModal" class="modal">
-      <div class="modal-content modal-small" id="messageModalContent">
-        <span class="close" id="messageModalClose">&times;</span>
-        <h2 id="messageModalTitle"></h2>
+      <div class="modal-content modal-medium-width modal-large-height" id="messageModalContent">
+        <div id="messageModalHeader">
+          <h2 id="messageModalTitle"></h2>
+          <span class="close" id="messageModalClose">&times;</span>
+        </div>
         <textarea id="messageModalText" readonly></textarea>
-        <button id="messageModalCopy">Copy</button>
+        <button id="messageModalCopy" class="small_btn">Copy</button>
         <div id="messageModalList"></div>
       </div>
     </div>
@@ -103,6 +105,7 @@
   <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-database.js"></script>
   <script src="shared/js/database_api.js"></script>
+  <script src="shared/js/utils.js"></script>
   <script src="shared/libs/generate-pushid.js"></script>
   <script src="login/js/login.js"></script>
 </body>

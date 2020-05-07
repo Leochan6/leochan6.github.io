@@ -103,10 +103,6 @@
   background-image: url("../../assets/icon/file_copy_white.png");
 }
 
-.custom-input {
-  padding-left: 3px;
-}
-
 #display_preview {
   display: flex;
   flex-direction: row;

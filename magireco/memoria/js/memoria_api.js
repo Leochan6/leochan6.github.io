@@ -325,68 +325,68 @@ let memoria_api = (function () {
    */
   module.enableButtons = () => {
     if (memoria_list_api.selectedList && memoria_list_api.selectedList.listId) {
-      if (create_button.classList.contains("btnDisabled")) {
-        create_button.classList.replace("btnDisabled", "btnGray");
+      if (create_button.classList.contains("")) {
+        create_button.classList.replace("", "");
         create_button.disabled = false;
       }
-      if (min_all_button.classList.contains("btnDisabled")) {
-        min_all_button.classList.replace("btnDisabled", "btnGray");
+      if (min_all_button.classList.contains("")) {
+        min_all_button.classList.replace("", "");
         min_all_button.disabled = false;
       }
-      if (max_all_button.classList.contains("btnDisabled")) {
-        max_all_button.classList.replace("btnDisabled", "btnGray");
+      if (max_all_button.classList.contains("")) {
+        max_all_button.classList.replace("", "");
         max_all_button.disabled = false;
       }
       if (module.selectedMemoria && module.selectedMemoria.memoria_display_element) {
-        if (update_button.classList.contains("btnDisabled")) {
-          update_button.classList.replace("btnDisabled", "btnGray");
+        if (update_button.classList.contains("")) {
+          update_button.classList.replace("", "");
           update_button.disabled = false;
         }
-        if (copy_button.classList.contains("btnDisabled")) {
-          copy_button.classList.replace("btnDisabled", "btnGray");
+        if (copy_button.classList.contains("")) {
+          copy_button.classList.replace("", "");
           copy_button.disabled = false;
         }
-        if (delete_button.classList.contains("btnDisabled")) {
-          delete_button.classList.replace("btnDisabled", "btnGray");
+        if (delete_button.classList.contains("")) {
+          delete_button.classList.replace("", "");
           delete_button.disabled = false;
         }
       } else {
-        if (update_button.classList.contains("btnGray")) {
-          update_button.classList.replace("btnGray", "btnDisabled");
+        if (update_button.classList.contains("")) {
+          update_button.classList.replace("", "");
           update_button.disabled = false;
         }
-        if (copy_button.classList.contains("btnGray")) {
-          copy_button.classList.replace("btnGray", "btnDisabled");
+        if (copy_button.classList.contains("")) {
+          copy_button.classList.replace("", "");
           copy_button.disabled = false;
         }
-        if (delete_button.classList.contains("btnGray")) {
-          delete_button.classList.replace("btnGray", "btnDisabled");
+        if (delete_button.classList.contains("")) {
+          delete_button.classList.replace("", "");
           delete_button.disabled = false;
         }
       }
     } else {
-      if (create_button.classList.contains("btnGray")) {
-        create_button.classList.replace("btnGray", "btnDisabled");
+      if (create_button.classList.contains("")) {
+        create_button.classList.replace("", "");
         create_button.disabled = true;
       }
-      if (update_button.classList.contains("btnGray")) {
-        update_button.classList.replace("btnGray", "btnDisabled");
+      if (update_button.classList.contains("")) {
+        update_button.classList.replace("", "");
         update_button.disabled = true;
       }
-      if (copy_button.classList.contains("btnGray")) {
-        copy_button.classList.replace("btnGray", "btnDisabled");
+      if (copy_button.classList.contains("")) {
+        copy_button.classList.replace("", "");
         copy_button.disabled = true;
       }
-      if (delete_button.classList.contains("btnGray")) {
-        delete_button.classList.replace("btnGray", "btnDisabled");
+      if (delete_button.classList.contains("")) {
+        delete_button.classList.replace("", "");
         delete_button.disabled = true;
       }
-      if (min_all_button.classList.contains("btnGray")) {
-        min_all_button.classList.replace("btnGray", "btnDisabled");
+      if (min_all_button.classList.contains("")) {
+        min_all_button.classList.replace("", "");
         min_all_button.disabled = true;
       }
-      if (max_all_button.classList.contains("btnGray")) {
-        max_all_button.classList.replace("btnGray", "btnDisabled");
+      if (max_all_button.classList.contains("")) {
+        max_all_button.classList.replace("", "");
         max_all_button.disabled = true;
       }
     }

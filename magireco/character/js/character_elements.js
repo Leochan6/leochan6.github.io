@@ -2,6 +2,7 @@ let elements = (() => {
   let module = {};
 
   // Header
+  module.theme_button = document.querySelector("#theme_button");
   module.signout_button = document.querySelector("#signout_button");
   module.header_username = document.querySelector("#header_username");
 
@@ -27,7 +28,6 @@ let elements = (() => {
   // Create Character Fields
   module.name_select = document.querySelector("#name_select");
   module.rank_select = document.querySelector("#rank_select");
-  module.attr_select = document.querySelector("#attr_select");
   module.level_select = document.querySelector("#level_select");
   module.magic_select = document.querySelector("#magic_select");
   module.magia_select = document.querySelector("#magia_select");
@@ -65,6 +65,8 @@ let elements = (() => {
   // Background
   module.background_select = document.querySelector("#background_select");
   module.remove_background_button = document.querySelector("#remove_background_button");
+  module.background_transparency_field = document.querySelector("#background_transparency_field");
+  module.background_transparency_range = document.querySelector("#background_transparency_range");
 
   // Settings
   module.reset_profiles_button = document.querySelector("#reset_profiles_button");

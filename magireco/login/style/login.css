@@ -1,9 +1,12 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
+  height: calc(100vh - 22px);
+  border: 1px solid var(--divider-color);
+  background-color: var(--background-color);
 }
 
 #login_content, #signup_content, #anonymous_content {
-  border: black solid 1px;
+  border: 1px solid var(--border-color-standard);
   border-radius: 25px;
   margin: 20px;
   padding: 20px;
@@ -52,4 +55,32 @@ form {
 #enter_button {
   width: 200px;
   height: 100px;
+}
+
+#messageModalContent {
+  display: flex;
+  flex-direction: column;
+}
+
+#messageModalHeader {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#messageModalTitle {
+  margin: 0px;
+}
+
+#messageModalText {
+  height: 90%;
+  resize: none;
+  padding: 5px;
+  color: var(--text-color-standard);
+  background-color: var(--textarea-background-color);
+}
+
+#messageModalCopy {
+  margin-top: 5px;
+  width: fit-content;
 }

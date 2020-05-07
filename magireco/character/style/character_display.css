@@ -13,8 +13,8 @@
 }
 
 .character_display:not(.selected):not(.preview):hover {
-  outline: 1px solid gray;
-  background-color: rgb(220, 220, 220);
+  outline: 1px solid var(--display-outline-color);
+  background-color: var(--display-background-color);
 }
 
 .character_display :not(.card_image) {
@@ -83,13 +83,11 @@
 .character_display .card_image {
   position: absolute;
   border-radius: 50%;
-  /* top: 2px;
-  left: 2px; */
   margin: 3px;
   width: 106px;
 }
 
 .character_display.selected {
-  outline: solid 2px black;
-  background-color: rgb(110, 110, 110);
+  outline: solid 2px var(--display-selected-outline-color);
+  background-color: var(--display-selected-background-color);
 }

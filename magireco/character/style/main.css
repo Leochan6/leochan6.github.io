@@ -28,27 +28,27 @@
   height: 30px;
   margin: 0px;
   transition: all 0.5s ease 0s;
-  background-color: rgb(172, 172, 172);
-  border: black solid 1px;
+  background-color: var(--nav-item-background-color);
+  border: var(--nav-item-border-color) solid 1px;
   border: none;
+  color: var(--nav-item-text-color);
   outline: none;
   cursor: pointer;
   user-select: none;
   font-size: 16px;
   text-decoration: none;
-  color: black;
   text-align: center;
   line-height: 30px;
 }
 
 .nav_item:hover {
-  color: #FFFFFF;
-  background-color: #2c2c2c;
+  color: var(--nav-item-text-color-hover);
+  background-color: var(--nav-item-background-color-hover);
 }
 
 .nav_item.selected {
-  color: #FFFFFF;
-  background-color: rgb(29, 29, 29);
+  color: var(--nav-item-text-color-selected);
+  background-color: var(--nav-item-background-color-selected);
   cursor: default;
   pointer-events: none;
 }
@@ -213,6 +213,8 @@
   width: fit-content;
   background-repeat: no-repeat;
   background-size: cover;
+  background-blend-mode: lighten;
+  background-color: rgba(255, 255, 255, 0);
 }
 
 #character_list_content:empty {
