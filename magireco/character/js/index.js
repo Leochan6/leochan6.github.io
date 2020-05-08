@@ -543,7 +543,7 @@
   database.onAuthStateChanged(user => {
     if (user) {
       header_username.innerHTML = `Welcome ${user.displayName || "Anonymous"}`;
-      storage_api.startUp(user.uid);
+      storage_api.startUp(user);
     }
     else {
       header_username.innerHTML = "";

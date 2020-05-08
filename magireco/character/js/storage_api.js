@@ -13,8 +13,8 @@ let storage_api = (() => {
   /**
    * Sets the user id, then loads the message or loads everything else.
    */
-  module.startUp = (_userId) => {
-    userId = _userId;
+  module.startUp = (user) => {
+    userId = user.uid;
     loadUserName();
     database.onMessageUpdate(userId, message => {
       if (message) {

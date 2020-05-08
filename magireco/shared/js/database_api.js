@@ -19,46 +19,72 @@ let database = (() => {
 
   module.signin = (email, password, loginHandler, errorHandler) => {
     firebase.auth().signInWithEmailAndPassword(email, password)
-      .then(userCreds => loginHandler(userCreds))
+      .then(userCreds => {
+        module.updateUser(userCreds.user.uid, "activity", { signIn: { event: "Sign In", details: "Email", time: new Date().toString() } });
+        loginHandler(userCreds);
+      })
       .catch(error => errorHandler(error.message));
   };
 
   module.signup = (name, email, password, loginHandler, errorHandler) => {
     firebase.auth().createUserWithEmailAndPassword(email, password)
-      .then(userCreds => loginHandler(userCreds, name))
+      .then(userCreds => {
+        module.updateUser(userCreds.user.uid, "activity", { signUp: { event: "Sign Up", details: "Email", time: new Date().toString() } });
+        loginHandler(userCreds, name);
+      })
       .catch(error => errorHandler(error.message));
   };
 
   module.signInAnonymously = (loginHandler, errorHandler) => {
     firebase.auth().signInAnonymously()
-      .then(userCreds => loginHandler(userCreds))
+      .then(userCreds => {
+        console.log(JSON.stringify(userCreds, null, 2));
+        module.updateUser(userCreds.user.uid, "activity", { signIn: { event: "Sign In", details: "Anonymous", time: new Date().toString() } });
+        loginHandler(userCreds);
+      })
       .catch(error => errorHandler(error));
   };
 
-  module.signout = () => {
+  module.signout = (details) => {
     let user = firebase.auth().currentUser;
-    /* if (signout.isAnonymous) {
-      users.child(user.userId).remove();
-      lists.child(user.userId).remove();
-      profiles.child(user.userId).remove();
-      settings.child(user.userId).remove();
-    } */
+    module.updateUser(user.uid, "activity", { signOut: { event: "Sign Out", details: details ? details : "User", time: new Date().toString() } });
     firebase.auth().signOut().then(() => { window.location.href = "/magireco/"; }).catch((error) => { console.error(error); });
   };
 
   module.onAuthStateChanged = (callback) => {
     firebase.auth().onAuthStateChanged(user => {
+      module.sessionTimeout();
       callback(user);
     });
+  };
+
+  module.sessionTimeout = () => {
+    let user = firebase.auth().currentUser;
+    if (user) {
+      // https://stackoverflow.com/a/58899511/7627317
+      let userSessionTimeout = null;
+      if (user === null && userSessionTimeout) {
+        clearTimeout(userSessionTimeout);
+        userSessionTimeout = null;
+      } else {
+        user.getIdTokenResult().then((idTokenResult) => {
+          const authTime = idTokenResult.claims.auth_time * 1000;
+          const sessionDurationInMilliseconds = 60 * 60 * 1000; // 60 min
+          const expirationInMilliseconds = sessionDurationInMilliseconds - (Date.now() - authTime);
+          userSessionTimeout = setTimeout(() => module.signout("Session Timeout"), expirationInMilliseconds);
+        });
+      }
+    }
   };
 
   // ---------- users ---------- //
 
   module.createUser = (userId, name) => {
-    users.update({ [userId]: { name: name } });
-    lists.update({ [userId]: true });
-    profiles.update({ [userId]: { "0": defaultCharacterProfile, "1": customCharacterProfile, "10": defaultMemoriaProfile, "11": customMemoriaProfile } });
-    settings.update({ [userId]: defaultSettings });
+    users.child(userId).update({ name: name });
+    lists.child(userId).set(false);
+    profiles.child(userId).update({ "0": defaultCharacterProfile, "1": customCharacterProfile, "10": defaultMemoriaProfile, "11": customMemoriaProfile });
+    settings.child(userId).set(defaultSettings);
+    module.updateUser(userId, "activity", { createUser: { event: "Create User", time: (new Date).toString() } });
   };
 
   module.deleteUser = (userId) => {
@@ -71,6 +97,15 @@ let database = (() => {
   module.getUser = (userId) => {
     return users.child(userId).once('value');
   };
+
+  module.updateUser = (userId, userProperty, content) => {
+    return users.child(`${userId}/${userProperty}`).update(content);
+  };
+
+  module.appendUser = (userId, userProperty, content) => {
+    return users.child(`${userId}/${userProperty}`).push(content);
+  };
+
 
   // ---------- character lists ---------- //
 
