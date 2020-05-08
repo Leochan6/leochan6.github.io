@@ -38,7 +38,6 @@ let database = (() => {
   module.signInAnonymously = (loginHandler, errorHandler) => {
     firebase.auth().signInAnonymously()
       .then(userCreds => {
-        console.log(JSON.stringify(userCreds, null, 2));
         module.updateUser(userCreds.user.uid, "activity", { signIn: { event: "Sign In", details: "Anonymous", time: new Date().toString() } });
         loginHandler(userCreds);
       })
@@ -60,7 +59,8 @@ let database = (() => {
 
   module.sessionTimeout = () => {
     let user = firebase.auth().currentUser;
-    if (user) {
+    if (user && !user.isAnonymous) {
+      console.log(user.isAnonymous);
       // https://stackoverflow.com/a/58899511/7627317
       let userSessionTimeout = null;
       if (user === null && userSessionTimeout) {
