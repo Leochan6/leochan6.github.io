@@ -263,7 +263,7 @@
   padding: 10px;
 }
 
-.edit:hover {
+.edit:not(:disabled):hover {
   background-image: url("../../assets/icon/edit_white.png");
 }
 
@@ -275,6 +275,6 @@
   padding: 10px;
 }
 
-.duplicate:hover {
+.duplicate:not(:disabled):hover {
   background-image: url("../../assets/icon/file_copy_white.png");
 }

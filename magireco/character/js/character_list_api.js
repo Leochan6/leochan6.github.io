@@ -49,13 +49,14 @@ let character_list_api = (function () {
       }
       // enable list rename, duplicate and delete buttons
       rename_list_button.disabled = false;
-      delete_list_button.disabled = false;
       duplicate_list_button.disabled = false;
+      delete_list_button.disabled = false;
     }
     // disable list rename, duplicate and delete buttons if no list
     else {
-      delete_list_button.disabled = true;
+      rename_list_button.disabled = true;
       duplicate_list_button.disabled = true;
+      delete_list_button.disabled = true;
       character_list_content.innerHTML = "";
     }
   };
