@@ -55,28 +55,38 @@
           </div>
           <div class="tab_contents hidden">
             <div id="list_buttons">
-              <button id="new_list_button" class="small_btn add" title="Create a New Character List"></button>
-              <button id="duplicate_list_button" class="small_btn duplicate"
+              <button id="new_list_button" class="small_btn add" name="create"
+                title="Create a New Character List"></button>
+              <button id="rename_list_button" class="small_btn edit" name="rename"
+                title="Rename the Selected List"></button>
+              <button id="duplicate_list_button" class="small_btn duplicate" name="duplicate"
                 title="Duplicate the Selected List"></button>
               <button id="delete_list_button" class="small_btn delete"
                 title="Delete the Selected Character List"></button>
             </div>
             <div id="saved_character_lists"></div>
-            <div id="list_create" style="display: none;">
+            <div id="list_create" class="list_form" style="display: none;">
               <form id="new_list_form">
-                <input type="text" id="new_list_name_field" class="form_input" placeholder="New Character List Name">
+                <input type="text" id="create_list_name_field" class="form_input" placeholder="New List Name">
                 </td>
-                <button type="submit" id="new_list_create_button" class="small_btn"
+                <button type="submit" id="create_list_create_button" class="small_btn"
                   title="Create a New List">Create</button>
               </form>
             </div>
-            <div id="list_duplicate" style="display: none;">
+            <div id="list_duplicate" class="list_form" style="display: none;">
               <form id="duplicate_list_form">
-                <input type="text" id="duplicate_list_name_field" class="form_input"
-                  placeholder="Duplicate Character List Name">
+                <input type="text" id="duplicate_list_name_field" class="form_input" placeholder="Duplicate List Name">
                 </td>
                 <button type="submit" id="duplicate_list_create_button" class="small_btn"
                   title="Duplicate the Character List">Duplicate</button>
+              </form>
+            </div>
+            <div id="list_rename" class="list_form" style="display: none;">
+              <form id="rename_list_form">
+                <input type="text" id="rename_list_name_field" class="form_input" placeholder="Rename List Name">
+                </td>
+                <button type="submit" id="rename_list_create_button" class="small_btn"
+                  title="Rename the Character List">Rename</button>
               </form>
             </div>
             <p class="error_text" id="home_error_text"></p>
@@ -101,14 +111,23 @@
                 </tr>
                 <tr>
                   <td>Rank:</td>
-                  <td><select id="rank_select" class="form create_field form_input"
+                  <td>
+                    <select id="rank_select" class="form create_field form_input"
                       title="Rank of the Character (Stars/Rarity).">
                       <option value="1">1</option>
                       <option value="2">2</option>
                       <option value="3">3</option>
                       <option value="4">4</option>
                       <option value="5">5</option>
-                    </select></td>
+                    </select>
+                </tr>
+                <tr>
+                  <td>Post Awaken:</td>
+                  <td>
+                    <input type="checkbox" id="post_awaken_checkbox" class="form"
+                      title=" Post Awakening of the Character (Materials for Stats).">
+
+                  </td>
                 </tr>
                 <tr>
                   <td>Experience:</td>
@@ -163,14 +182,12 @@
               <div id="main_buttons">
                 <button id="create_button" class="small_btn" type="submit"
                   title="Create and Add a new Character to the Character List." disabled>Create</button>
-                <button id="update_button" class="small_btn"
+                <button id="update_button" class="small_btn hidden"
                   title="Update the Selected Character in the Character List." disabled>Update</button>
-                <button id="copy_button" class="small_btn" title="Copy the Selected Character in the Character List."
-                  disabled>Copy</button>
+                <button id="copy_button" class="small_btn hidden"
+                  title="Copy the Selected Character in the Character List." disabled>Copy</button>
                 <button id="delete_button" class="small_btn"
                   title="Delete the Selected Character in the Character List." disabled>Delete</button>
-              </div>
-              <div id="other_buttons">
                 <button id="min_all_button" class="small_btn" title="Minimize All Fields in the Character Form."
                   disabled>Min
                   All</button>
@@ -236,12 +253,14 @@
               <tr>
                 <td>Padding X:</td>
                 <td><input type="number" id="display_padding_x_field" class="display_field form_input" min="0"
-                    step="10"></td>
+                    step="10">
+                </td>
               </tr>
               <tr>
                 <td>Padding Y:</td>
                 <td><input type="number" id="display_padding_y_field" class="display_field form_input" min="0"
-                    step="10"></td>
+                    step="10">
+                </td>
               </tr>
             </table>
           </div>

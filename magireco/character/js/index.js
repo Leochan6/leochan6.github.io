@@ -145,30 +145,47 @@
 
     /* ------------------------------ My Character Lists Tab ------------------------------ */
 
-    // show or hide the create new list form.
-    new_list_button.addEventListener("click", () => {
-      if (new_list_button.classList.contains("add")) {
-        list_create.style.visibility = "visible";
-        list_create.style.display = "block";
-        new_list_button.classList.replace("add", "minus");
-        new_list_name_field.focus();
-      } else {
-        list_create.style.visibility = "collapse";
-        list_create.style.display = "none";
-        new_list_button.classList.replace("minus", "add");
-      }
+    // show or hide the create new list form, rename list form, and duplicate list form.
+    [new_list_button, rename_list_button, duplicate_list_button].forEach(button => {
+      button.addEventListener("click", () => {
+        let list_form = document.querySelector(`#list_${button.name}`);
+        document.querySelectorAll(".list_form").forEach(element => {
+          if (element !== list_form) {
+            if (element.style.visibility === "visible") element.style.visibility = "collapse";
+            if (element.style.display === "block") element.style.display = "none";
+          }
+        });
+        if (list_form.style.display === "none") {
+          list_form.style.visibility = "visible";
+          list_form.style.display = "block";
+          document.querySelector(`#${button.name}_list_name_field`).focus();
+        } else {
+          list_form.style.visibility = "collapse";
+          list_form.style.display = "none";
+        }
+      });
+    })
+
+    // create a new list.
+    create_list_create_button.addEventListener("click", (e) => {
+      e.preventDefault();
+      let newName = create_list_name_field.value;
+      if (character_list_api.checkListName(newName)) character_list_api.createList(newName);
     });
 
-    duplicate_list_button.addEventListener("click", () => {
-      if (list_duplicate.style.display === "none") {
-        list_duplicate.style.visibility = "visible";
-        list_duplicate.style.display = "block";
-        duplicate_list_name_field.focus();
-      } else {
-        list_duplicate.style.visibility = "collapse";
-        list_duplicate.style.display = "none";
-        duplicate_list_name_field.value = "";
-      }
+    // rename the selected list.
+    rename_list_create_button.addEventListener("click", (e) => {
+      e.preventDefault();
+      let newName = rename_list_name_field.value;
+      console.log(1);
+      if (character_list_api.checkListName(newName)) character_list_api.renameList(character_list_api.selectedList.listId, newName);
+    });
+
+    // duplicate list.
+    duplicate_list_create_button.addEventListener("click", (e) => {
+      e.preventDefault();
+      let newName = duplicate_list_name_field.value;
+      if (character_list_api.checkListName(newName)) character_list_api.duplicateList(character_list_api.selectedList.list, newName);
     });
 
     // delete the selected list.
@@ -177,27 +194,6 @@
         let res = confirm(`Are you sure you want to delete the list ${character_list_api.selectedList.list.name}?`);
         if (res) character_list_api.deleteList(character_list_api.selectedList.listId);
       }
-    });
-
-    // create a new list.
-    new_list_create_button.addEventListener("click", (e) => {
-      e.preventDefault();
-      character_list_api.createList();
-    });
-
-    // duplicate list.
-    duplicate_list_create_button.addEventListener("click", (e) => {
-      e.preventDefault();
-      let newName = duplicate_list_name_field.value;
-      duplicate_list_name_field.value = "";
-      if (newName && character_list_api.selectedList.listId) character_list_api.duplicateList(character_list_api.selectedList.list, newName);
-      list_duplicate.style.visibility = "collapse";
-      list_duplicate.style.display = "none";
-    });
-
-    // check the list name on change.
-    new_list_name_field.addEventListener("change", () => {
-      character_list_api.checkListName();
     });
 
     /* ------------------------------ Create Character Tab ------------------------------ */
@@ -253,12 +249,18 @@
 
     // mines all the fields.
     min_all_button.addEventListener("click", () => {
-      if (!min_all_button.disabled) character_api.minimizeDisplay();
+      if (!min_all_button.disabled) {
+        character_api.minimizeDisplay();
+        character_api.updateCharacter();
+      }
     });
 
     // maxes all the fields.
     max_all_button.addEventListener("click", () => {
-      if (!max_all_button.disabled) character_api.maximizeDisplay();
+      if (!max_all_button.disabled) {
+        character_api.maximizeDisplay();
+        character_api.updateCharacter();
+      }
     });
 
     /* ------------------------------ Sorting Profile Tab ------------------------------ */

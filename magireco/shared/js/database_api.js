@@ -60,7 +60,6 @@ let database = (() => {
   module.sessionTimeout = () => {
     let user = firebase.auth().currentUser;
     if (user && !user.isAnonymous) {
-      console.log(user.isAnonymous);
       // https://stackoverflow.com/a/58899511/7627317
       let userSessionTimeout = null;
       if (user === null && userSessionTimeout) {
@@ -69,7 +68,7 @@ let database = (() => {
       } else {
         user.getIdTokenResult().then((idTokenResult) => {
           const authTime = idTokenResult.claims.auth_time * 1000;
-          const sessionDurationInMilliseconds = 60 * 60 * 1000; // 60 min
+          const sessionDurationInMilliseconds = 3 * 60 * 60 * 1000; // 3 hours
           const expirationInMilliseconds = sessionDurationInMilliseconds - (Date.now() - authTime);
           userSessionTimeout = setTimeout(() => module.signout("Session Timeout"), expirationInMilliseconds);
         });
@@ -115,6 +114,10 @@ let database = (() => {
 
   module.createList = (userId, content) => {
     return lists.child(userId).push(content);
+  };
+
+  module.updateListName = (userId, listId, content) => {
+    return lists.child(`${userId}/${listId}/name`).set(content);
   };
 
   module.updateList = (userId, listId, content) => {

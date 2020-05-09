@@ -71,10 +71,16 @@
   margin: 5px 1px;
 }
 
-#new_list_name_field {
+#create_list_name_field {
   padding: 5px 20px;
   margin: 2px 0px;
-  width: 160px;
+  width: 140px;
+}
+
+#rename_list_name_field {
+  padding: 5px 20px;
+  margin: 2px 0px;
+  width: 140px;
 }
 
 #duplicate_list_name_field {
@@ -99,11 +105,6 @@
   transition: all 0.3s ease 0s;
 }
 
-/* .character_list_entry:hover {
-  color: var(--list-entry-text-color-hover);
-  background-color: var(--list-entry-background-color-hover);
-}*/
-
 .character_list_entry.selected {
   color: var(--list-entry-text-color-selected);
   background-color: var(--list-entry-background-color-selected);
@@ -111,12 +112,6 @@
   cursor: default;
   opacity: 1;
 }
-
-/*
-.character_list_entry.selected:hover {
-  color: var(--list-entry-text-color-selected-hover);
-  background-color: var(--list-entry-background-color-selected-hover);
-} */
 
 #characterSelectModalOpen {
   background-color: transparent;
@@ -145,11 +140,24 @@
 #level_select {
   text-align: left;
   padding-left: 14px;
+  height: 28px;
+  width: 50px;
+}
+
+#rank_group {
+  display: flex;
+  align-items: center;
+}
+
+#post_awaken_checkbox {
+  zoom: 1.5;
+  margin: 3px 0px;
 }
 
 #home_buttons {
   display: flex;
   flex-wrap: wrap;
+  padding-top: 5px;
 }
 
 #home_buttons>div>* {
@@ -245,6 +253,18 @@
 
 .background_transparency_range {
   width: 100%;
+}
+
+.edit {
+  background-image: url("../../assets/icon/edit_black.png");
+  background-repeat: no-repeat;
+  background-size: 80%;
+  background-position: center;
+  padding: 10px;
+}
+
+.edit:hover {
+  background-image: url("../../assets/icon/edit_white.png");
 }
 
 .duplicate {

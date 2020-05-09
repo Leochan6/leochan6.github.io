@@ -15,19 +15,24 @@ let elements = (() => {
   module.list_create = document.querySelector("#list_create");
   module.list_duplicate = document.querySelector("#list_duplicate");
   module.new_list_button = document.querySelector("#new_list_button");
+  module.rename_list_button = document.querySelector("#rename_list_button");
   module.duplicate_list_button = document.querySelector("#duplicate_list_button");
   module.delete_list_button = document.querySelector("#delete_list_button");
   module.duplicate_list_form = document.querySelector("#duplicate_list_form");
   module.duplicate_list_name_field = document.querySelector("#duplicate_list_name_field");
   module.duplicate_list_create_button = document.querySelector("#duplicate_list_create_button");
+  module.rename_list_form = document.querySelector("#rename_list_form");
+  module.rename_list_name_field = document.querySelector("#rename_list_name_field");
+  module.rename_list_create_button = document.querySelector("#rename_list_create_button");
   module.new_list_form = document.querySelector("#new_list_form");
-  module.new_list_name_field = document.querySelector("#new_list_name_field");
+  module.create_list_name_field = document.querySelector("#create_list_name_field");
   module.new_list_create_button = document.querySelector("#new_list_create_button");
   module.saved_character_lists = document.querySelector("#saved_character_lists");
 
   // Create Character Fields
   module.name_select = document.querySelector("#name_select");
   module.rank_select = document.querySelector("#rank_select");
+  module.post_awaken_checkbox = document.querySelector("#post_awaken_checkbox");
   module.level_select = document.querySelector("#level_select");
   module.magic_select = document.querySelector("#magic_select");
   module.magia_select = document.querySelector("#magia_select");

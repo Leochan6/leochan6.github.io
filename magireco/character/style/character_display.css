@@ -53,6 +53,14 @@
   margin-left: -5px;
 }
 
+.post_awaken {
+  display: flex;
+  width: 20px;
+  margin-top: -30px;
+  margin-right: 0px;
+  margin-left: auto;
+}
+
 .level {
   display: flex;
   flex-direction: row;

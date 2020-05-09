@@ -22,12 +22,16 @@ let character_list_api = (function () {
     list_name_title.innerHTML = "";
     list_stats_list.innerHTML = "";
     for (let [listId, list] of Object.entries(lists)) {
+      // update the fields of each character.
+      Object.entries(list.characterList).forEach(([key, display]) => {
+        display._id = key;
+        if (!display.post_awaken) display.post_awaken = false;
+      });
       let div = document.createElement("div");
       div.classList.add("character_list_row");
       let entry = document.createElement("button");
       entry.classList.add("small_btn");
       entry.classList.add("character_list_entry");
-      // entry.classList.add("form_input");
       entry.setAttribute("listId", listId);
       entry.innerHTML = list.name;
       entry.addEventListener("click", () => {
@@ -43,14 +47,15 @@ let character_list_api = (function () {
         let first = Object.entries(lists)[0][0];
         module.selectList(first, lists[first]);
       }
-      // enable list duplicate and delete buttons
+      // enable list rename, duplicate and delete buttons
+      rename_list_button.disabled = false;
       delete_list_button.disabled = false;
-      duplicate_list_form.disabled = false;
+      duplicate_list_button.disabled = false;
     }
-    // disable list duplicate and delete buttons if no list
+    // disable list rename, duplicate and delete buttons if no list
     else {
       delete_list_button.disabled = true;
-      duplicate_list_form.disabled = true;
+      duplicate_list_button.disabled = true;
       character_list_content.innerHTML = "";
     }
   };
@@ -63,11 +68,6 @@ let character_list_api = (function () {
   const loadCharacterList = (character_list) => {
     character_list_content.innerHTML = "";
     character_list = !character_list ? character_list : {};
-    Object.entries(character_list).forEach(([key, display]) => {
-      display._id = key;
-      if (!display.doppel) display.doppel = "locked";
-      character_list_content.append(character_api.createDisplay(display));
-    });
     module.setPadding(storage_api.settings.padding_x, storage_api.settings.padding_y);
   };
 
@@ -97,6 +97,7 @@ let character_list_api = (function () {
     module.setPadding(storage_api.settings.padding_x, storage_api.settings.padding_y);
     background_api.setBackground(list.selectedBackground);
     character_list_api.getStats();
+    character_api.findAndSelectDisplay();
     character_api.enableButtons();
   };
 
@@ -106,16 +107,12 @@ let character_list_api = (function () {
    * creates a new list.
    */
   module.createList = () => {
-    let listName = new_list_name_field.value;
+    let listName = create_list_name_field.value;
     if (!listName) {
       home_error_text.innerHTML = `The list name must not be empty.`;
       return;
     }
-    if (storage_api.listExists(listName)) {
-      home_error_text.innerHTML = `The list name ${listName} already exists.`;
-      return;
-    }
-    new_list_name_field.value = "";
+    create_list_name_field.value = "";
     new_list_button.classList.replace("minus", "add");
     list_create.style.visibility = "collapse";
     list_create.style.display = "none";
@@ -126,15 +123,20 @@ let character_list_api = (function () {
   };
 
   /**
-   * deletes the list.
+   * renames the list.
    */
-  module.deleteList = (listId) => {
-    module.selectedList = null;
-    storage_api.deleteList(listId);
+  module.renameList = (listId, newName) => {
+    if (listId && newName && newName.length > 0) {
+      storage_api.renameList(listId, newName);
+      rename_list_name_field.value = "";
+      list_rename.style.visibility = "collapse";
+      list_rename.style.display = "none";
+    }
   };
 
+
   /**
-   * duplicate the list.
+   * duplicates the list.
    */
   module.duplicateList = (list, newName) => {
     if (list && newName && newName.length > 0) {
@@ -144,7 +146,18 @@ let character_list_api = (function () {
       });
       list.characterList = newCharacterList;
       storage_api.duplicateList(list, newName);
+      duplicate_list_name_field.value = "";
+      list_duplicate.style.visibility = "collapse";
+      list_duplicate.style.display = "none";
     }
+  };
+
+  /**
+   * deletes the list.
+   */
+  module.deleteList = (listId) => {
+    module.selectedList = null;
+    storage_api.deleteList(listId);
   };
 
   /**
@@ -199,10 +212,14 @@ let character_list_api = (function () {
   /**
    * checks if the list name exists.
    */
-  module.checkListName = () => {
-    let listName = new_list_name_field.value;
-    if (storage_api.listExists(listName)) home_error_text.innerHTML = `The list name ${listName} already exists.`;
-    else home_error_text.innerHTML = "";
+  module.checkListName = (listName) => {
+    if (!listName || listName.length === 0) home_error_text.innerHTML = `The list name must not be empty.`;
+    else if (storage_api.listExists(listName)) home_error_text.innerHTML = `The list name ${listName} already exists.`;
+    else {
+      home_error_text.innerHTML = "";
+      return true;
+    }
+    return false;
   };
 
   /** 
@@ -918,6 +935,7 @@ let character_list_api = (function () {
     importListModal.style.display = "block";
     importListModalTitle.innerHTML = "Import List"
     importListModalName.value = "";
+    importListModalName.focus();
     importListModalText.innerHTML = "";
   };
 
@@ -937,12 +955,16 @@ let character_list_api = (function () {
     }
     importListModalError.innerHTML = "";
     try {
-      let character_list = JSON.parse(data);
-      if (validateCharacterList(character_list)) {
+      let characterList = JSON.parse(data);
+      if (validateCharacterList(characterList)) {
         list_name_title.innerHTML = listName;
         profile_select.value = "Default";
         character_list_content.innerHTML = "";
-        storage_api.manualCreateList(listName, character_list, "Default", true);
+        let newCharacterList = {}
+        Object.entries(characterList).forEach(([key, value]) => {
+          newCharacterList[generatePushID()] = value;
+        });
+        storage_api.manualCreateList(listName, newCharacterList, "0", false);
         importListModal.style.display = "none";
         importListModalName.value = "";
         importListModalText.value = "";
@@ -963,7 +985,8 @@ let character_list_api = (function () {
   const validateCharacterList = (character_list) => {
     try {
       if (Array.from(character_list).every(character => {
-        character_api.isValidCharacterDisplay(character.character_id, character, false).length === 0
+        let errors = character_api.isValidCharacterDisplay(character.character_id, character, false)
+        return errors.length === 0
       })) return true;
     } catch (e) {
       return false;

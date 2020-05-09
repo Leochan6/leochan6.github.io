@@ -134,6 +134,13 @@ let storage_api = (() => {
   };
 
   /**
+   * Rename the List listId with name name.
+   */
+  module.renameList = (listId, name) => {
+    database.updateListName(userId, listId, name);
+  };
+
+  /**
    * Update the list listId.
    */
   module.updateList = (listId, name, characterList, selectedProfile, selectedBackground) => {
@@ -173,19 +180,22 @@ let storage_api = (() => {
   }
 
   module.addCharacterToList = (listId, character) => {
-    let newCharacter = { [generatePushID()]: character };
-    console.log(listId, newCharacter);
+    let newCharacter = {};
+    if (character._id) {
+      newCharacter[character._id] = character;
+      delete character._id;
+    } else {
+      newCharacter[generatePushID()] = character;
+    }
     database.updateListItem(userId, listId, "characterList", newCharacter);
   }
 
   module.updateCharacterOfList = (listId, characterDisplayId, character) => {
     let newCharacter = { [characterDisplayId]: character };
-    console.log(listId, newCharacter);
     database.updateListItem(userId, listId, "characterList", newCharacter);
   }
 
   module.deleteCharacterOfList = (listId, characterDisplayId) => {
-    console.log(listId, characterDisplayId);
     database.deleteListItem(userId, listId, "characterList", characterDisplayId);
   }
 
@@ -211,7 +221,6 @@ let storage_api = (() => {
   module.deleteProfile = (profileId) => {
     database.deleteProfile(userId, profileId);
     Object.entries(module.lists).forEach(([listId, list]) => {
-      console.log("update list", listId, "with profile", list.selectedProfile, "on delete profile", profileId);
       if (list.selectedProfile === profileId) module.updateListProfile(listId, "0");
     });
   };

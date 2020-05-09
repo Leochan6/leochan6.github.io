@@ -5,11 +5,12 @@ let character_api = (() => {
   module.selectedCharacter = null;
 
   module.Display = class Display {
-    constructor(id, name, rank, attribute, level, magic, magia, episode, doppel) {
+    constructor(id, name, rank, post_awaken, attribute, level, magic, magia, episode, doppel) {
       if (typeof rank !== undefined) {
         this.character_id = id;
         this.name = name;
         this.rank = rank;
+        this.post_awaken = post_awaken;
         this.attribute = attribute;
         this.level = level;
         this.magic = magic;
@@ -21,6 +22,7 @@ let character_api = (() => {
         this.character_id = name.character_id;
         this.name = name.name;
         this.rank = name.rank;
+        this.post_awaken = name.post_awaken;
         this.attribute = name.attribute;
         this.level = name.level;
         this.magic = name.magic;
@@ -64,7 +66,7 @@ let character_api = (() => {
    * @param {module.Character} character 
    */
   const getBasicCharacterDisplay = (character) => {
-    return new module.Display(character.id, character.name, module.getMinRank(character.ranks), character.attribute, "1", "0", "1", "1", "locked");
+    return new module.Display(character.id, character.name, module.getMinRank(character.ranks), false, character.attribute, "1", "0", "1", "1", "locked");
   };
 
   /**
@@ -86,7 +88,7 @@ let character_api = (() => {
     if (!character.ranks[display.rank]) err.push(`Display Rank ${display.rank} does not match Character Ranks ${JSON.stringify(character.ranks)}`);
     // check level.
     let maxLevel = parseInt(module.getMaxLevel(display.rank));
-    if (parseInt(display.level) < 1 || parseInt(display.level) > maxLevel) err.push(`Display Level ${display.level} for Display Rank ${display.rank} must be between 1 and ${maxLevel}.`);
+    if (parseInt(display.level) < 1 || parseInt(display.level) > maxLevel || !display.level) err.push(`Display Level ${display.level} for Display Rank ${display.rank} must be between 1 and ${maxLevel}.`);
     // check magic.
     if (display.magic < 0 || display.magic > 3) err.push(`Display Magic ${display.magic} must be between 0 and 3.`);
     // check magia.
@@ -108,6 +110,7 @@ let character_api = (() => {
       name_select.value,
       name_select[name_select.options.selectedIndex].text,
       rank_select.value,
+      post_awaken_checkbox.checked,
       character_collection.find(char => char.id === name_select.value).attribute.toLowerCase() || null,
       level_select.value,
       magic_select.value,
@@ -129,6 +132,7 @@ let character_api = (() => {
       character_display.getAttribute("character_id"),
       character_display.getAttribute("name"),
       character_display.getAttribute("rank"),
+      character_display.getAttribute("post_awaken"),
       character_display.getAttribute("attribute"),
       character_display.getAttribute("level"),
       character_display.getAttribute("magic"),
@@ -152,6 +156,7 @@ let character_api = (() => {
     character_display.setAttribute("character_id", display.character_id || display.id);
     character_display.setAttribute("name", display.name);
     character_display.setAttribute("rank", display.rank);
+    character_display.setAttribute("post_awaken", display.post_awaken);
     character_display.setAttribute("attribute", display.attribute);
     character_display.setAttribute("magic", display.magic);
     character_display.setAttribute("magia", display.magia);
@@ -170,19 +175,12 @@ let character_api = (() => {
       <div class="level_pre">Lvl.</div>
       <div class="level_num">${display.level}</div>
     </div>
-    <img class="doppel" src="/magireco/assets/ui/doppel/${display.doppel}.png">`;
+    <img class="doppel" src="/magireco/assets/ui/doppel/${display.doppel}.png">
+    <img class="post_awaken" src="/magireco/assets/ui/gift/gift_${display.post_awaken}.png">`;
 
     if (listener) {
       character_display.addEventListener("click", () => {
-        // return of already selected.
-        if (character_display.classList.contains("selected")) return;
-        // deselect all other character displays
-        document.querySelectorAll(".character_display:not(.preview)").forEach(child => {
-          if (child.classList.contains("selected")) child.classList.remove("selected");
-        });
-        character_display.classList.add("selected");
-        module.selectedCharacter = { character_display_element: character_display, character_display: display };
-        module.enableButtons();
+        module.selectDisplay(character_display);
       });
     }
     character_display.addEventListener("contextmenu", e => {
@@ -219,7 +217,7 @@ let character_api = (() => {
     let character = character_collection.find(char => char.id === character_display.character_id);
     let minRank = module.getMinRank(character.ranks);
     let attribute = character.attribute.toLowerCase();
-    let display = new module.Display(character.id, character.name, minRank, attribute, "1", "0", "1", "1", "locked");
+    let display = new module.Display(character.id, character.name, minRank, false, attribute, "1", "0", "1", "1", "locked");
     updateForm(display);
     updatePreviewDisplay(display);
   };
@@ -230,7 +228,7 @@ let character_api = (() => {
     let maxRank = module.getMaxRank(character.ranks);
     let level = RANK_TO_LEVEL[maxRank];
     let attribute = character.attribute.toLowerCase();
-    let display = new module.Display(character.id, character.name, maxRank, attribute, level, "3", "5", "5", maxRank == "5" ? "unlocked" : "locked");
+    let display = new module.Display(character.id, character.name, maxRank, true, attribute, level, "3", "5", "5", maxRank == "5" ? "unlocked" : "locked");
     updateForm(display);
     updatePreviewDisplay(display);
   };
@@ -255,6 +253,7 @@ let character_api = (() => {
   const updateForm = (display) => {
     name_select.value = display.character_id;
     rank_select.value = display.rank;
+    post_awaken_checkbox.checked = display.post_awaken === "true" || display.post_awaken === true ? true : false;
     level_select.value = display.level;
     magic_select.value = display.magic;
     magia_select.value = display.magia;
@@ -298,7 +297,7 @@ let character_api = (() => {
   const updateCharacterWithDisplay = (character, display) => {
     // return the default display.
     if (!display) return getBasicCharacterDisplay(character);
-    return new module.Display(character.id, character.name, display.rank, character.attribute, display.level, display.magic, display.magia, display.episode, display.doppel);
+    return new module.Display(character.id, character.name, display.rank, display.post_awaken, character.attribute, display.level, display.magic, display.magia, display.episode, display.doppel);
   };
 
   /**
@@ -359,7 +358,10 @@ let character_api = (() => {
    */
   module.createCharacter = () => {
     let display = getFormDisplay();
-    storage_api.addCharacterToList(character_list_api.getListId(), display);
+    let listId = character_list_api.getListId();
+    display._id = generatePushID();
+    module.selectedCharacter = { characterDisplayId: display._id, character_display: display };
+    storage_api.addCharacterToList(listId, display);
   };
 
   /**
@@ -367,6 +369,7 @@ let character_api = (() => {
    */
   module.updateCharacter = () => {
     let character_display = Array.from(document.querySelectorAll(".character_display:not(.preview)")).find(child => child.classList.contains("selected"));
+    if (!character_display) return;
     let display = getFormDisplay();
     module.selectedCharacter = { characterDisplayId: character_display.getAttribute("_id"), character_display: display };
     storage_api.updateCharacterOfList(character_list_api.getListId(), character_display.getAttribute("_id"), display);
@@ -377,21 +380,61 @@ let character_api = (() => {
    */
   module.copyCharacter = () => {
     let character_display = Array.from(document.querySelectorAll(".character_display:not(.preview)")).find(child => child.classList.contains("selected"));
+    if (!character_display) return;
     let display = module.getCharacterDisplay(character_display);
     getCharacter(character_display.getAttribute("character_id"), character => updateFormEnabled(character));
     updateFormEnabled(getCharacter(display.character_id));
     updateForm(display);
     updatePreviewDisplay(display);
+    // }
   };
 
   /**
-   * deletes the selected character display.
+   * deletes the selected character display and finds the next display to be selected.
    */
   module.deleteCharacter = () => {
     let character_display = Array.from(document.querySelectorAll(".character_display:not(.preview)")).find(child => child.classList.contains("selected"));
+    if (!character_display) return;
     let display = module.getCharacterDisplay(character_display);
-    character_api.selectedCharacter = null;
+    if (character_display.nextElementSibling) {
+      character_api.selectedCharacter = { characterDisplayId: character_display.nextElementSibling.getAttribute("_id") };
+    } else if (character_display.previousElementSibling) {
+      character_api.selectedCharacter = { characterDisplayId: character_display.previousElementSibling.getAttribute("_id") };
+    } else {
+      character_api.selectedCharacter = null;
+    }
     storage_api.deleteCharacterOfList(character_list_api.getListId(), display._id);
+  };
+
+  /**
+   * selects the display element.
+   */
+  module.selectDisplay = (character_display) => {
+    // return of already selected.
+    if (character_display.classList.contains("selected")) return;
+    // deselect all other character displays
+    document.querySelectorAll(".character_display:not(.preview)").forEach(child => {
+      if (child.classList.contains("selected")) child.classList.remove("selected");
+    });
+    character_display.classList.add("selected");
+    module.selectedCharacter = { character_display_element: character_display };
+    module.enableButtons();
+    // update the form.
+    module.copyCharacter();
+  };
+
+  /**
+   * finds and select the display element.
+   */
+  module.findAndSelectDisplay = () => {
+    if (module.selectedCharacter) {
+      if (module.selectedCharacter.characterDisplayId) {
+        let character_display = document.querySelector(`.character_display[_id="${module.selectedCharacter.characterDisplayId}"]`);
+        if (character_display) module.selectDisplay(character_display);
+      } else if (module.selectedCharacter.character_display_element) {
+        module.selectDisplay(module.selectedCharacter.character_display_element);
+      }
+    }
   };
 
   /**
@@ -404,6 +447,7 @@ let character_api = (() => {
     if (error.length == 0) {
       module.enableButtons();
       updatePreviewDisplay(display);
+      module.updateCharacter();
     } else {
       create_button.disabled = true;
       update_button.disabled = true;
