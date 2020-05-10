@@ -20,7 +20,7 @@ let database = (() => {
   module.signin = (email, password, loginHandler, errorHandler) => {
     firebase.auth().signInWithEmailAndPassword(email, password)
       .then(userCreds => {
-        module.updateUser(userCreds.user.uid, "activity", { signIn: { event: "Sign In", details: "Email", time: new Date().toString() } });
+        module.appendUser(userCreds.user.uid, "activity", { signIn: { event: "Sign In", details: "Email", time: new Date().toString() } });
         loginHandler(userCreds);
       })
       .catch(error => errorHandler(error.message));
@@ -29,7 +29,7 @@ let database = (() => {
   module.signup = (name, email, password, loginHandler, errorHandler) => {
     firebase.auth().createUserWithEmailAndPassword(email, password)
       .then(userCreds => {
-        module.updateUser(userCreds.user.uid, "activity", { signUp: { event: "Sign Up", details: "Email", time: new Date().toString() } });
+        module.appendUser(userCreds.user.uid, "activity", { signUp: { event: "Sign Up", details: "Email", time: new Date().toString() } });
         loginHandler(userCreds, name);
       })
       .catch(error => errorHandler(error.message));
@@ -38,7 +38,7 @@ let database = (() => {
   module.signInAnonymously = (loginHandler, errorHandler) => {
     firebase.auth().signInAnonymously()
       .then(userCreds => {
-        module.updateUser(userCreds.user.uid, "activity", { signIn: { event: "Sign In", details: "Anonymous", time: new Date().toString() } });
+        module.appendUser(userCreds.user.uid, "activity", { signIn: { event: "Sign In", details: "Anonymous", time: new Date().toString() } });
         loginHandler(userCreds);
       })
       .catch(error => errorHandler(error));
@@ -46,7 +46,7 @@ let database = (() => {
 
   module.signout = (details) => {
     let user = firebase.auth().currentUser;
-    module.updateUser(user.uid, "activity", { signOut: { event: "Sign Out", details: details ? details : "User", time: new Date().toString() } });
+    module.appendUser(user.uid, "activity", { signOut: { event: "Sign Out", details: details ? details : "User", time: new Date().toString() } });
     firebase.auth().signOut().then(() => { window.location.href = "/magireco/"; }).catch((error) => { console.error(error); });
   };
 

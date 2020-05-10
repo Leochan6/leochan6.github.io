@@ -328,6 +328,12 @@ let character_list_api = (function () {
       display_properties.forEach(properties => {
         display_groups[NUM_TO_WORD[properties.rank]].push(properties);
       });
+    } else if (group_by == "post_awaken") {
+      if (group_dir == 1) display_groups = { false: [], true: [] };
+      if (group_dir == -1) display_groups = { true: [], false: [] };
+      display_properties.forEach(properties => {
+        display_groups[properties.post_awaken].push(properties);
+      });
     } else if (group_by == "magic") {
       if (group_dir == 1) display_groups = { "zero": [], "one": [], "two": [], "three": [] };
       if (group_dir == -1) display_groups = { "three": [], "two": [], "one": [], "zero": [] };
@@ -450,6 +456,7 @@ let character_list_api = (function () {
       <select class="type_select form_input">
         <option value="attribute">Attribute</option>
         <option value="rank">Rank</option>
+        <option value="post_awaken">Post Awaken</option>
         <option value="min_rank">Min Rank</option>
         <option value="max_rank">Max Rank</option>
         <option value="level">Level</option>
@@ -488,6 +495,16 @@ let character_list_api = (function () {
           <option value="3">3</option>
           <option value="4">4</option>
           <option value="5">5</option>
+        </select>
+      </div>
+      <div class="filter_type post_awaken_filter hidden">
+        <select class="filter_field equality form_input">
+          <option value="eq">=</option>
+          <option value="neq">=/=</option>
+        </select>
+        <select class="filter_field post_awaken_select form_input">
+          <option value="false">No</option>
+          <option value="true">Yes</option>
         </select>
       </div>
       <div class="filter_type min_rank_filter hidden">
@@ -750,7 +767,7 @@ let character_list_api = (function () {
   };
 
   /**
-   * Check if the character diaplay matches the filter.
+   * Check if the character display matches the filter.
    */
   const matchesFilter = (character_display, filter) => {
     if (filter[0].param === "equality") {

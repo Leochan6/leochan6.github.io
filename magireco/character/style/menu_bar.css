@@ -63,12 +63,15 @@
 }
 
 #list_buttons {
+  display: flex;
+  align-items: center;
   left: 110px;
   top: 5px;
 }
 
 #list_buttons>* {
-  margin: 5px 1px;
+  margin: 5px 0px;
+  margin-right: 3px;
 }
 
 #create_list_name_field {
@@ -178,6 +181,7 @@
 #profile_select_block {
   display: flex;
   align-items: center;
+  justify-content: flex-end;
 }
 
 #profile_select {
@@ -251,7 +255,7 @@
   padding: 0px 10px;
 }
 
-.background_transparency_range {
+#background_transparency_range {
   width: 100%;
 }
 

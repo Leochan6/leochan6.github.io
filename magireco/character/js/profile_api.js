@@ -120,6 +120,7 @@ let profile_api = (function () {
       <select class="type_select form_input">
         <option value="attribute">Attribute</option>
         <option value="rank">Rank</option>
+        <option value="post_awaken">Post Awaken</option>
         <option value="level">Level</option>
         <option value="magic">Magic</option>
         <option value="magia">Magia</option>
@@ -129,8 +130,8 @@ let profile_api = (function () {
         <option value="character_id">Character ID</option>
       </select>
       <button class="sort_dir down small_btn"></button>
-      <button class="create add small_btn" title="Add New Filter Below"></button>
-      <button class="delete small_btn" title="Delete Filter"></button>`;
+      <button class="create add small_btn" title="Add New Rule Below"></button>
+      <button class="delete small_btn" title="Delete Rule"></button>`;
 
     let state_select = new_rule.querySelector(".state_select")
     let type_select = new_rule.querySelector(".type_select")
@@ -183,11 +184,11 @@ let profile_api = (function () {
         if (type_select.value === "character_id" || type_select.value === "level") {
           type_select.selectedIndex = -1;
         }
-        type_select.options[2].disabled = true;
-        type_select.options[8].disabled = true;
+        type_select.options[3].disabled = true;
+        type_select.options[9].disabled = true;
       } else {
-        type_select.options[2].disabled = false;
-        type_select.options[8].disabled = false;
+        type_select.options[3].disabled = false;
+        type_select.options[9].disabled = false;
       }
     });
 
@@ -220,11 +221,11 @@ let profile_api = (function () {
       if (type_select.value === "character_id" || type_select.value === "level") {
         type_select.selectedIndex = -1;
       }
-      type_select.options[2].disabled = true;
-      type_select.options[8].disabled = true;
+      type_select.options[3].disabled = true;
+      type_select.options[9].disabled = true;
     } else {
-      type_select.options[2].disabled = false;
-      type_select.options[8].disabled = false;
+      type_select.options[3].disabled = false;
+      type_select.options[9].disabled = false;
     }
 
     if (type_select.value === "character_id" || type_select.value === "level") {

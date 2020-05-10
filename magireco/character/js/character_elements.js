@@ -87,9 +87,11 @@ let elements = (() => {
   module.left_main_divider = document.querySelector("#left_main_divider");
   module.main_header = document.querySelector("#main_header");
 
-  // Export
+  // Export and Import
   module.export_image_button = document.querySelector("#export_image_button");
+  module.export_open_button = document.querySelector("#export_open_button");
   module.export_text_button = document.querySelector("#export_text_button");
+  module.import_text_button = document.querySelector("#import_text_button");
 
   // Filters
   module.zoom_field = document.querySelector("#zoom_label");

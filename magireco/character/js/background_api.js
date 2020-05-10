@@ -17,7 +17,7 @@ let background_api = (function () {
     }
   };
 
-  module.changetransparency = (transparency) => {
+  module.changeTransparency = (transparency) => {
     character_list_content.style.backgroundColor = `rgba(255,255,255,${transparency / 100})`;
   };
 

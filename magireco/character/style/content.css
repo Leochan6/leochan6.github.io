@@ -52,18 +52,18 @@ body {
   text-align: center;
 }
 
-.chararacter_image_preview {
+.character_image_preview {
   display: block;
   text-align: center;
   padding: 5px;
   width: 106px;
 }
 
-.chararacter_image_preview:hover {
+.character_image_preview:hover {
   background-color: #5a5a5a;
 }
 
-.chararacter_image_preview>img {
+.character_image_preview>img {
   width: 106px;
 }
 

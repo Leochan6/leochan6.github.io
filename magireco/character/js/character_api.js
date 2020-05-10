@@ -70,7 +70,7 @@ let character_api = (() => {
   };
 
   /**
-   * check if disaply is valid.
+   * check if display is valid.
    * 
    * @param {String} character_id 
    * @param {module.Display} display 
@@ -304,7 +304,7 @@ let character_api = (() => {
    * starts up the list.
    */
   module.startUp = () => {
-    // initilize name field.
+    // initialize name field.
     [...character_collection].sort((a, b) => a.name > b.name ? 1 : -1).forEach((character) => {
       name_select.options.add(new Option(character.name, character.id, false));
     });
@@ -499,7 +499,7 @@ let character_api = (() => {
       }
       let added = Object.values(storage_api.lists[character_list_api.getListId()].characterList).find(char => char.character_id === character.id);
       let container = document.createElement("div");
-      container.classList.add("chararacter_image_preview");
+      container.classList.add("character_image_preview");
       container.setAttribute("character_id", character.id);
       let image = document.createElement("img");
       image.src = `/magireco/assets/image/card_${character.id}${star}_f.png`;
@@ -527,7 +527,7 @@ let character_api = (() => {
   };
 
   /**
-   * Filters the chararacter_image_preview's based on the search.
+   * Filters the character_image_preview's based on the search.
    * 
    * @param {String} search
    */

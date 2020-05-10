@@ -20,7 +20,7 @@
     // contact button.
     contact_button.addEventListener("click", () => {
       messageModal.style.display = "block";
-      messageModalText.value = `For assistance, support, or feedback, please contact Leo Chan on Discord (Leo_Chan#9150) or Reddit (u/Leochan6).`;
+      messageModalText.value = `For assistance, support, or feedback, please contact Leo Chan on Discord (Leo_Chan#9150) or Reddit (u/Leochan6). More Information at:\nhttps://github.com/Leochan6/leochan6.github.io/blob/master/magireco/README.md`;
       messageModalTitle.innerHTML = `Contact / Support`;
       messageModalList.innerHTML = "";
     });
@@ -301,7 +301,8 @@
 
     // delete the selected profile.
     delete_profile_button.addEventListener("click", () => {
-      profile_api.deleteProfile();
+      let res = confirm(`Are you sure you want to delete the sorting profile ${profile_api.getSelectedProfileName()}?`);
+      if (res) profile_api.deleteProfile();
     });
 
     /* ------------------------------ Display Settings Tab ------------------------------ */
@@ -355,7 +356,7 @@
         else if (value < 1) value = 1;
         if (value !== background_transparency_field.value) background_transparency_field.value = value;
         background_transparency_range.value = background_transparency_field.value;
-        background_api.changetransparency(background_transparency_range.value);
+        background_api.changeTransparency(background_transparency_range.value);
         // if (event === "change") storage_api.updateSettings("background_transparency", background_transparency_field.value);
       });
     });
@@ -367,7 +368,7 @@
           background_transparency_range.value = parseInt(background_transparency_range.value) - (e.deltaY / 100) * (e.shiftKey ? 25 : 1);
         }
         background_transparency_field.value = background_transparency_range.value;
-        background_api.changetransparency(background_transparency_range.value);
+        background_api.changeTransparency(background_transparency_range.value);
         // if (event === "change") storage_api.updateSettings("background_transparency", background_transparency_range.value);
       });
     });
@@ -379,20 +380,32 @@
     /* ------------------------------ Export and Import ------------------------------ */
 
     // export image button.
-    export_image_button.addEventListener("click", (e) => {
+    export_image_button.addEventListener("click", () => {
       let date = new Date();
       let time = `_${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}_${date.getHours()}_${date.getMinutes()}_${date.getSeconds()}`
       let imageName = `${character_list_api.getListName() ? character_list_api.getListName().replace(" ", "_") : "list"}`
       html2canvas(character_list_content, { backgroundColor: null }).then(canvas => {
-        if (e.ctrlKey) {
-          let w = window.open('about:blank');
-          let image = new Image();
-          image.src = canvas.toDataURL();
-          setTimeout(function () {
-            w.document.write(image.outerHTML);
-          }, 0);
-        }
-        else Canvas2Image.saveAsImage(canvas, imageName + time);
+        let data = canvas.toDataURL("image/png");
+        var a = document.createElement('a');
+        a.href = data;
+        a.download = imageName + time + ".png";
+        a.click();
+        a.remove();
+      });
+    });
+
+    export_open_button.addEventListener("click", () => {
+      let date = new Date();
+      let time = `_${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}_${date.getHours()}_${date.getMinutes()}_${date.getSeconds()}`
+      let imageName = `${character_list_api.getListName() ? character_list_api.getListName().replace(" ", "_") : "list"}`
+      html2canvas(character_list_content, { backgroundColor: null }).then(canvas => {
+        let data = canvas.toDataURL("image/png");
+        let w = window.open();
+        let image = new Image();
+        image.src = data;
+        image.name = imageName + time + ".png";
+        image.setAttribute("download", imageName + time + ".png")
+        w.document.write(image.outerHTML);
       });
     });
 
@@ -422,6 +435,7 @@
     // reset the filters.
     reset_filter_button.addEventListener("click", () => {
       character_list_api.resetFilters();
+      character_list_api.getStats();
     });
 
     toggle_filter_button.addEventListener("click", () => {

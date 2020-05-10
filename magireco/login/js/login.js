@@ -97,7 +97,7 @@
 
     contact_button.addEventListener("click", () => {
       messageModal.style.display = "block";
-      messageModalText.value = `For assistance, support, or feedback, please contact Leo Chan on Discord (Leo_Chan#9150) or Reddit (u/Leochan6).`;
+      messageModalText.value = `For assistance, support, or feedback, please contact Leo Chan on Discord (Leo_Chan#9150) or Reddit (u/Leochan6). More Information at:\nhttps://github.com/Leochan6/leochan6.github.io/blob/master/magireco/README.md`;
       messageModalTitle.innerHTML = `Contact / Support`;
       messageModalList.innerHTML = "";
     });
