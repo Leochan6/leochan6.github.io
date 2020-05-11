@@ -8,7 +8,7 @@ This project is the new version of a previous project, [Magia Record Character G
 
 For any feedback or questions, please contact me the locations listed above.
 
-![List Preview](https://raw.githubusercontent.com/Leochan6/leochan6.github.io/master/home/assets/listpreview.png)
+![List Preview](https://raw.githubusercontent.com/Leochan6/leochan6.github.io/master/magireco/assets/preview/list.png)
 
 ## Features
 
