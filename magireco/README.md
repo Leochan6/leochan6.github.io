@@ -218,3 +218,6 @@ Export Text
 
 ![Export Text Preview](https://raw.githubusercontent.com/Leochan6/leochan6.github.io/master/magireco/assets/preview/export_text.png)
 
+List Statistics
+
+![List Statistics Preview](https://raw.githubusercontent.com/Leochan6/leochan6.github.io/master/magireco/assets/preview/list_statistics.png)
