@@ -65,10 +65,24 @@
 
     window.addEventListener("mouseup", (event) => {
       if (!dragging) {
-        if (event.target == messageModal && messageModal.style.display === "block") closeMessageModal()
+        if (event.target == messageModal && messageModal.style.display === "block") closeMessageModal();
         else if (event.target == characterSelectModal && characterSelectModal.style.display === "block") closeCharacterSelectModal();
         else if (event.target == backgroundSelectModal && backgroundSelectModal.style.display === "block") closeBackgroundSelectModal();
         else if (event.target == importListModal && importListModal.style.display === "block") closeImportListModal();
+      }
+    });
+
+    window.addEventListener("keyup", e => {
+      if (e.key === "Escape") {
+        if (messageModal.style.display === "block") closeMessageModal();
+        else if (characterSelectModal.style.display === "block") closeCharacterSelectModal();
+        else if (backgroundSelectModal.style.display === "block") closeBackgroundSelectModal();
+        else if (importListModal.style.display === "block") closeImportListModal();
+        else if (character_api.selectedCharacter && character_api.selectedCharacter.character_display_element) {
+          character_api.selectedCharacter.character_display_element.classList.remove("selected");
+          character_api.selectedCharacter = null;
+          character_api.enableButtons();
+        }
       }
     });
 

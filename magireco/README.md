@@ -55,6 +55,10 @@ For any feedback or questions, please contact me the locations listed above.
 
     With a Character List selected, press on the Character in the list to select and the values in the `Create Character` tab's form will be updated with the properties of the selected character.
 
+- Deselect Character
+
+    With a Character List selected, click anywhere in the Character List to deselect the selected Character, or press the `Esc` key.
+
 - Update Character
 
     With a Character from a Character List selected, any valid changes to the form will automatically be updated to the Character in the list.
