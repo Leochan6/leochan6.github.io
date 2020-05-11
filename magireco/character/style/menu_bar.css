@@ -238,15 +238,15 @@
   margin: 2px 0px;
 }
 
-#background_tab>div>div>.form_input {
+#background_select {
   height: 30px;
-  margin: 0;
-  padding: 0px 10px;
-  text-align: left;
+  width: 160px;
+  margin: 0px 2px;
 }
 
-#background_select {
-  width: 160px;
+#background_transparency_field {
+  height: 30px;
+  margin: 0px 2px;
 }
 
 .background_field {

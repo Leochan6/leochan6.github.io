@@ -20,7 +20,7 @@ let database = (() => {
   module.signin = (email, password, loginHandler, errorHandler) => {
     firebase.auth().signInWithEmailAndPassword(email, password)
       .then(userCreds => {
-        module.appendUser(userCreds.user.uid, "activity", { signIn: { event: "Sign In", details: "Email", time: new Date().toString() } });
+        module.appendUser(userCreds.user.uid, "activity", { event: "Sign In", details: "Email", time: new Date().toString() });
         loginHandler(userCreds);
       })
       .catch(error => errorHandler(error.message));
@@ -38,7 +38,7 @@ let database = (() => {
   module.signInAnonymously = (loginHandler, errorHandler) => {
     firebase.auth().signInAnonymously()
       .then(userCreds => {
-        module.appendUser(userCreds.user.uid, "activity", { signIn: { event: "Sign In", details: "Anonymous", time: new Date().toString() } });
+        module.appendUser(userCreds.user.uid, "activity", { event: "Sign In", details: "Anonymous", time: new Date().toString() });
         loginHandler(userCreds);
       })
       .catch(error => errorHandler(error));
@@ -46,7 +46,7 @@ let database = (() => {
 
   module.signout = (details) => {
     let user = firebase.auth().currentUser;
-    module.appendUser(user.uid, "activity", { signOut: { event: "Sign Out", details: details ? details : "User", time: new Date().toString() } });
+    module.appendUser(user.uid, "activity", { event: "Sign Out", details: details ? details : "User", time: new Date().toString() });
     firebase.auth().signOut().then(() => { window.location.href = "/magireco/"; }).catch((error) => { console.error(error); });
   };
 
@@ -74,6 +74,20 @@ let database = (() => {
         });
       }
     }
+  };
+
+  module.resetPassword = (emailAddress, resolve, reject) => {
+    firebase.auth().sendPasswordResetEmail(emailAddress)
+      .then(resolve)
+      .catch(reject);
+  };
+
+  module.sendEmailVerification = (resolve, reject, details) => {
+    let user = firebase.auth().currentUser;
+    module.appendUser(user.uid, "activity", { event: "Send Email Verification", details: details ? details : "User", time: new Date().toString() });
+    user.sendEmailVerification()
+      .then(resolve)
+      .catch(reject);
   };
 
   // ---------- users ---------- //
@@ -164,7 +178,7 @@ let database = (() => {
       },
       "012": {
         state: "sort",
-        type: "magia",
+        type: "character_id",
         direction: -1
       },
     }

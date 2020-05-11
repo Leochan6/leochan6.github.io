@@ -33,6 +33,21 @@
       storage_api.updateSettings("theme", theme);
     });
 
+    // verify email button
+    verify_email_button.addEventListener("click", () => {
+      database.sendEmailVerification(() => {
+        verify_email_success.classList.remove("hidden");
+        verify_email_success.innerHTML = "A email verification email has been sent to your email. If you do not see an email, please check the Junk or Spam folder."
+      }, (errorMsg) => {
+        verify_email_error.classList.remove("hidden");
+        verify_email_error.innerHTML = errorMsg;
+      });
+    });
+
+    verify_email_close.addEventListener("click", () => {
+      verify_email.classList.add("hidden");
+    });
+
     /* ------------------------------ General Modal Dialogs ------------------------------ */
 
     // hide modal dialogs if not drag
@@ -560,6 +575,7 @@
     if (user) {
       header_username.innerHTML = `Welcome ${user.displayName || "Anonymous"}`;
       storage_api.startUp(user);
+      if (!user.isAnonymous && !user.emailVerified) verify_email.classList.remove("hidden");
     }
     else {
       header_username.innerHTML = "";

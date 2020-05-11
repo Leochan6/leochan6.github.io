@@ -755,14 +755,12 @@ let character_list_api = (function () {
     let matches = Array(filters.length).fill(true);
     filters.forEach((filter, i) => {
       matches[i] = matchesFilter(character_display, filter.value);
-      if (matches[i]) console.log(character_display, filter.value);
       if (i > 0 && filter.state === "and") {
         let and = matches[i - 1] && matches[i];
         matches[i] = and;
         matches[i - 1] = and;
       }
     });
-    // console.log(character_display, matches, matches.some(value => value));
     return matches.some(value => value);
   };
 

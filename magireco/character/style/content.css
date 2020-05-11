@@ -17,6 +17,13 @@ body {
   height: 90%
 }
 
+#verify_email {
+  width: fit-content;
+  max-width: 30vw;
+  background-color: var(--message-background-color);
+  padding: 5px;
+}
+
 .up::after {
   content: "▲";
   text-align: center;

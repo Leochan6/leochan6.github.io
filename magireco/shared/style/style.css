@@ -96,6 +96,11 @@ header {
   color: var(--error-text-color);
 }
 
+.success_text {
+  width: 100%;
+  color: var(--success-text-color);
+}
+
 .error_text:empty {
   display: none;
 }
@@ -258,6 +263,7 @@ header {
   --border-color-hover: #000000;
   --textarea-background-color: #ffffff;
   --error-text-color: #ff0000;
+  --success-text-color: #008800;
   --modal-background-color: #fefefe;
   --modal-border-color: #888888;
   --modal-close-button-color: #aaaaaa;
@@ -288,6 +294,7 @@ header {
   --nav-item-text-color-hover: #ffffff;
   --nav-item-background-color-selected: #1d1d1d;
   --nav-item-text-color-selected: #ffffff;
+  --message-background-color: #d1d1d1;
 }
 
 [data-theme="dark"] {
@@ -304,6 +311,7 @@ header {
   --border-color-hover: #ffffff;
   --textarea-background-color: #272727;
   --error-text-color: #ff0000;
+  --success-text-color: #008800;
   --modal-background-color: #000000;
   --modal-border-color: #888888;
   --modal-close-button-color: #808080;
@@ -334,4 +342,5 @@ header {
   --nav-item-text-color-hover: #000000;
   --nav-item-background-color-selected: #1d1d1d;
   --nav-item-text-color-selected: #000000;
+  --message-background-color: #272727;
 }

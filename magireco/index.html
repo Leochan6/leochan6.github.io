@@ -10,13 +10,13 @@
   <meta property="og:url" content="https://leo-chan.me/magireco/index.html" />
   <meta property="og:site_name" content="Leo Chan's Website" />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://leo-chan.me/home/assets/listpreview.png" />
+  <meta property="og:image" content="https://leo-chan.me/magireco/assets/preview/list_preview.png" />
   <meta property="og:image:width" content="2560" />
   <meta property="og:image:height" content="1440" />
   <meta name="twitter:title" content="Magia Record Character List" />
   <meta name="twitter:description"
     content="Create and share a list of your Magical Girls from the game Magia Record." />
-  <meta name="twitter:image" content="https://leo-chan.me/home/assets/listpreview.png" />
+  <meta name="twitter:image" content="https://leo-chan.me/magireco/assets/preview/list_preview.png" />
   <meta name="twitter:card" content="summary_large_image" />
   <link href="shared/style/style.css" rel="stylesheet" type="text/css" />
   <link href="login/style/login.css" rel="stylesheet" type="text/css" />
@@ -41,25 +41,26 @@
 
   <div id="main">
     <div id="header_buttons">
-      <button class="small_btn  login_button hidden" id="enter_button">Create Your Lists Now</button>
+      <button class="small_btn login_button hidden" id="enter_button">Create Your Lists Now</button>
     </div>
 
     <div id="content">
-      <div class="hidden" id="login_content">
-        <label id="login_label">Sign In</label>
+      <div class="hidden section" id="login_content">
+        <label class="header_label" id="login_label">Sign In</label>
         <form id="login_form">
           <input type="email" class="login_field" id="email_text" name="email" placeholder="Email">
           <input type="password" class="login_field" id="password_text" name="password" placeholder="Password">
+          <label id="forgot_password_open_label">Forgot your Password?</label>
           <div id="login_buttons">
             <button type="submit" class="small_btn  login_button" id="signin_button">Sign In</button>
             <button type="input" class="small_btn  login_button" id="open_signup_button">Sign Up</button>
           </div>
         </form>
-        <p class="error_text hidden" id="login_error"></p>
+        <p class="error_text message hidden" id="login_error"></p>
       </div>
 
-      <div class="hidden" id="signup_content">
-        <div id="signup_label">Sign Up</div>
+      <div class="hidden section" id="signup_content">
+        <div class="header_label" id="signup_label">Sign Up</div>
         <form id="signup_form">
           <input type="text" class="login_field" id="signup_name_text" name="name" placeholder="Name">
           <input type="email" class="login_field" id="signup_email_text" name="email" placeholder="Email">
@@ -67,21 +68,34 @@
           <input type="password" class="login_field" id="signup_password_confirm_text" name="confirm"
             placeholder="Confirm Password">
           <div id="signup_buttons">
-            <button type="submit" class="small_btn  login_button" id="signup_button">Sign Up</button>
-            <button type="input" class="small_btn  login_button" id="cancel_signup_button">Cancel</button>
+            <button type="submit" class="small_btn login_button" id="signup_button">Sign Up</button>
+            <button type="input" class="small_btn login_button" id="cancel_signup_button">Cancel</button>
           </div>
         </form>
-        <p class="error_text hidden" id="signup_error"></p>
+        <p class="error_text message hidden" id="signup_error"></p>
       </div>
 
-      <div class="hidden" id="anonymous_content">
-        <div id="signin_anonymous_label">Sign In Anonymously</div>
-        <p>You will not be able keep your list after you log out.</p>
+      <div class="hidden section" id="forgot_password_content">
+        <div class="header_label" id="forgot_password_label">Forgot Password</div>
+        <form id="forgot_password_form">
+          <input type="email" class="login_field" id="forgot_password_email" name="email" placeholder="Email">
+          <div id="forgot_password_buttons">
+            <button type="submit" class="small_btn login_button" id="forgot_password_send_button">Send</button>
+            <button type="input" class="small_btn login_button" id="forgot_password_cancel_button">Cancel</button>
+          </div>
+        </form>
+        <p class="success_text message hidden" id="reset_success"></p>
+        <p class="error_text message hidden" id="reset_error"></p>
+      </div>
+
+      <div class="hidden section" id="anonymous_content">
+        <div class="header_label" id="signin_anonymous_label">Sign In Anonymously</div>
+        <p id="anonymous_message">You will not be able keep your list after you sign out.</p>
         <div id="signin_anonymous_buttons">
-          <button type="input" class="small_btn  login_button" id="signin_anonymous_button">Sign In
+          <button type="input" class="small_btn login_button" id="signin_anonymous_button">Sign In
             Anonymously</button>
         </div>
-        <p class="error_text hidden" id="anonymous_error"></p>
+        <p class="error_text message hidden" id="anonymous_error"></p>
       </div>
     </div>
 

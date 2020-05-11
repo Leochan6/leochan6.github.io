@@ -10,6 +10,7 @@
   const login_content = document.querySelector("#login_content");
   const email_text = document.querySelector("#email_text");
   const password_text = document.querySelector("#password_text");
+  const forgot_password_open_label = document.querySelector("#forgot_password_open_label");
   const signin_button = document.querySelector("#signin_button");
   const open_signup_button = document.querySelector("#open_signup_button");
   const login_error = document.querySelector("#login_error");
@@ -26,6 +27,11 @@
   const anonymous_content = document.querySelector("#anonymous_content");
   const signin_anonymous_button = document.querySelector("#signin_anonymous_button");
   const anonymous_error = document.querySelector("#anonymous_error");
+
+  const forgot_password_content = document.querySelector("#forgot_password_content");
+  const forgot_password_email = document.querySelector("#forgot_password_email");
+  const forgot_password_send_button = document.querySelector("#forgot_password_send_button");
+  const forgot_password_cancel_button = document.querySelector("#forgot_password_cancel_button");
 
   const messageModal = document.querySelector("#messageModal");
   const messageModalText = document.querySelector("#messageModalText");
@@ -57,6 +63,12 @@
       }
     });
 
+    forgot_password_open_label.addEventListener("click", e => {
+      e.preventDefault();
+      login_content.classList.add("hidden");
+      forgot_password_content.classList.remove("hidden");
+    });
+
     signin_button.addEventListener("click", e => {
       e.preventDefault();
       let email = email_text.value;
@@ -82,9 +94,22 @@
       let email = signup_email_text.value;
       let password = signup_password_text.value;
       let confirm_password = signup_password_confirm_text.value;
+      if (!name || name.length == 0) return errorSignupHandler("You Name must not be empty.");
       if (password !== confirm_password) return errorSignupHandler("Your Password and Confirmation Password do not match.");
       database.signup(name, email, password, loginHandler, errorSignupHandler);
     });
+
+    forgot_password_send_button.addEventListener("click", e => {
+      e.preventDefault();
+      let email = forgot_password_email.value;
+      if (email) database.resetPassword(email, resetHandler, errorResetHandler);
+    });
+
+    forgot_password_cancel_button.addEventListener("click", e => {
+      e.preventDefault();
+      forgot_password_content.classList.add("hidden");
+      login_content.classList.remove("hidden");
+    })
 
     signin_anonymous_button.addEventListener("click", e => {
       e.preventDefault();
@@ -92,7 +117,8 @@
     });
 
     signout_button.addEventListener("click", () => {
-      database.signout();
+      let res = confirm("Are you sure you want to Sign Out?");
+      if (res) database.signout();
     });
 
     contact_button.addEventListener("click", () => {
@@ -108,7 +134,7 @@
 
     // hide modal dialogs
     window.addEventListener("click", (event) => {
-      if (event.target == messageModal && messageModal.style.display === "block") closeMessageModal()
+      if (event.target == messageModal && messageModal.style.display === "block") closeMessageModal();
     });
 
     // hide message modal dialog
@@ -126,6 +152,7 @@
 
   const loginHandler = (userCred, name) => {
     if (userCred.additionalUserInfo.isNewUser) {
+      if (name && name.length > 0) database.sendEmailVerification(() => { }, (errorMsg) => console.error(errorMsg), "Sign Up");
       name = name ? name : "Anonymous";
       userCred.user.updateProfile({ displayName: name });
       database.createUser(userCred.user.uid, name);
@@ -138,26 +165,36 @@
     email_text.value = "";
     password_text.value = "";
     login_error.classList.remove("hidden");
-    login_error.innerHTML = "";
     login_error.innerHTML = errorMsg;
-    console.log(errorMsg);
+    console.error(errorMsg);
   };
 
   const errorSignupHandler = (errorMsg) => {
+    signup_name_text.value = "";
     signup_email_text.value = "";
     signup_password_text.value = "";
     signup_password_confirm_text.value = "";
     signup_error.classList.remove("hidden");
-    signup_error.innerHTML = "";
     signup_error.innerHTML = errorMsg;
-    console.log(errorMsg);
+    console.error(errorMsg);
   };
 
   const errorAnonymousHandler = (errorMsg) => {
     anonymous_error.classList.remove("hidden");
-    anonymous_error.innerHTML = "";
     anonymous_error.innerHTML = errorMsg;
-    console.log(errorMsg);
+    console.error(errorMsg);
+  };
+
+  const resetHandler = () => {
+    reset_success.classList.remove("hidden");
+    reset_success.innerHTML = "A password reset email has been sent to the given email. If you do not see an email, please check the Junk or Spam folder.";
+  };
+
+  const errorResetHandler = (errorMsg) => {
+    forgot_password_email.value = "";
+    reset_error.classList.remove("hidden");
+    reset_error.innerHTML = errorMsg;
+    console.error(errorMsg);
   };
 
   utils.detectColorScheme();

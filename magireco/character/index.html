@@ -10,13 +10,13 @@
   <meta property="og:url" content="https://leo-chan.me/magireco/character/index.html">
   <meta property="og:site_name" content="Leo Chan's Website">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="https://leo-chan.me/home/assets/listpreview.png" />
+  <meta property="og:image" content="https://leo-chan.me/magireco/assets/preview/list_preview.png" />
   <meta property="og:image:width" content="2560">
   <meta property="og:image:height" content="1440">
   <meta name="twitter:title" content="Magia Record Character List" />
   <meta name="twitter:description"
     content="Create and share a list of your Magical Girls from the game Magia Record." />
-  <meta name="twitter:image" content="https://leo-chan.me/home/assets/listpreview.png" />
+  <meta name="twitter:image" content="https://leo-chan.me/magireco/assets/preview/list_preview.png" />
   <meta name="twitter:card" content="summary_large_image" />
   <link href="../shared/style/style.css" rel="stylesheet" type="text/css" />
   <link href="style/content.css" rel="stylesheet" type="text/css" />
@@ -30,7 +30,16 @@
     <div id="header_left">
       <h1><a class="header_link" href="/magireco/" title="Home">Magia Record Character List</a></h1>
     </div>
-    <div id="header_center" class="hidden"></div>
+    <div id="header_center">
+      <div id="verify_email" class="hidden">
+        <div id="verify_email_close" class="close">&times;</div>
+        <div>Your email address has not been verified.<button id="verify_email_button" class="small_btn">Send
+            Email</button></div>
+
+        <p id="verify_email_success" class="success_text hidden"></p>
+        <p id="verify_email_error" class="error_text hidden"></p>
+      </div>
+    </div>
     <div id="header_right">
       <div id="header_right_upper">
         <button id="theme_button" class="small_btn"></button>

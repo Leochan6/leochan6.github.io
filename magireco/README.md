@@ -1,12 +1,14 @@
 # Magia Record Character List
 
-[Homepage](https://leo-chan.me/magireco) | [GitHub](https://github.com/Leochan6/leochan6.github.io) | [Issues](https://github.com/Leochan6/leochan6.github.io/issues) | [Reddit](https://www.reddit.com/user/Leochan6/) | Discord: Leo_Chan#9150
+[Homepage](https://leo-chan.me/magireco) | [GitHub](https://github.com/Leochan6/leochan6.github.io/tree/master/magireco) | [Issues](https://github.com/Leochan6/leochan6.github.io/issues) | [Reddit](https://www.reddit.com/user/Leochan6/) | Discord: Leo_Chan#9150
 
 Magia Record Character List is a web tool for creating a list of Magical Girls and their upgrade status from the game [Magia Record: Puella Magi Madoka Magica Side Story](https://magiarecord-en.com/).
 
 This project is the new version of a previous project, [Magia Record Character Grid Creator Interface](https://www.figma.com/community/plugin/764389386376321679/Magia-Record-Character-Grid-Creator-Interface), an extension of the prototyping tool Figma.
 
 For any feedback or questions, please contact me the locations listed above.
+
+![List Preview](https://raw.githubusercontent.com/Leochan6/leochan6.github.io/master/home/assets/listpreview.png)
 
 ## Features
 
@@ -178,3 +180,32 @@ For any feedback or questions, please contact me the locations listed above.
 - More Statistics
 
     Press the `More Stats` button to open the Stats dialog, showing a detailed breakdown of the statistics of the characters in the Character List and other details.
+
+## Gallery
+List Preview Light
+![List Preview Light](https://raw.githubusercontent.com/Leochan6/leochan6.github.io/master/magireco/assets/preview/list.png)
+
+List Preview Dark
+![List Preview Dark](https://raw.githubusercontent.com/Leochan6/leochan6.github.io/master/magireco/assets/preview/list_dark.png)
+
+Export Image
+![Export Image Preview](https://raw.githubusercontent.com/Leochan6/leochan6.github.io/master/magireco/assets/preview/export_image.png)
+
+Export Image Transparent
+![Export Image Transparent Preview](https://raw.githubusercontent.com/Leochan6/leochan6.github.io/master/magireco/assets/preview/export_image_transparent.png)
+
+Create Character
+![Create Character Preview](https://raw.githubusercontent.com/Leochan6/leochan6.github.io/master/magireco/assets/preview/create_character.png)
+
+Character Select
+![Character Select Preview](https://raw.githubusercontent.com/Leochan6/leochan6.github.io/master/magireco/assets/preview/character_select.png)
+
+Background Select
+![Background Select Preview](https://raw.githubusercontent.com/Leochan6/leochan6.github.io/master/magireco/assets/preview/background_select.png)
+
+Filters
+![Filters Preview](https://raw.githubusercontent.com/Leochan6/leochan6.github.io/master/magireco/assets/preview/filters.png)
+
+Export Text
+![Export Text Preview](https://raw.githubusercontent.com/Leochan6/leochan6.github.io/master/magireco/assets/preview/export_text.png)
+

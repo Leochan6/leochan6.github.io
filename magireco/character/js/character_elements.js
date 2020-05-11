@@ -5,6 +5,10 @@ let elements = (() => {
   module.theme_button = document.querySelector("#theme_button");
   module.signout_button = document.querySelector("#signout_button");
   module.header_username = document.querySelector("#header_username");
+  module.verify_email = document.querySelector("#verify_email");
+  module.verify_email_button = document.querySelector("#verify_email_button");
+  module.verify_email_success = document.querySelector("#verify_email_success");
+  module.verify_email_error = document.querySelector("#verify_email_error");
 
   // Error Text
   module.home_error_text = document.querySelector("#home_error_text");
