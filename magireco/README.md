@@ -183,29 +183,38 @@ For any feedback or questions, please contact me the locations listed above.
 
 ## Gallery
 List Preview Light
+
 ![List Preview Light](https://raw.githubusercontent.com/Leochan6/leochan6.github.io/master/magireco/assets/preview/list.png)
 
 List Preview Dark
+
 ![List Preview Dark](https://raw.githubusercontent.com/Leochan6/leochan6.github.io/master/magireco/assets/preview/list_dark.png)
 
 Export Image
+
 ![Export Image Preview](https://raw.githubusercontent.com/Leochan6/leochan6.github.io/master/magireco/assets/preview/export_image.png)
 
 Export Image Transparent
+
 ![Export Image Transparent Preview](https://raw.githubusercontent.com/Leochan6/leochan6.github.io/master/magireco/assets/preview/export_image_transparent.png)
 
 Create Character
+
 ![Create Character Preview](https://raw.githubusercontent.com/Leochan6/leochan6.github.io/master/magireco/assets/preview/create_character.png)
 
 Character Select
+
 ![Character Select Preview](https://raw.githubusercontent.com/Leochan6/leochan6.github.io/master/magireco/assets/preview/character_select.png)
 
 Background Select
+
 ![Background Select Preview](https://raw.githubusercontent.com/Leochan6/leochan6.github.io/master/magireco/assets/preview/background_select.png)
 
 Filters
+
 ![Filters Preview](https://raw.githubusercontent.com/Leochan6/leochan6.github.io/master/magireco/assets/preview/filters.png)
 
 Export Text
+
 ![Export Text Preview](https://raw.githubusercontent.com/Leochan6/leochan6.github.io/master/magireco/assets/preview/export_text.png)
 
