@@ -1,4 +1,4 @@
-let background_collections = {
+export const background_collection = {
   "story": [
     {
       "id": "bg_adv_11011",
@@ -2036,15 +2036,15 @@ let background_collections = {
     },
     {
       "id": "New_West_Ward_(Midday)_Background",
-      "name": "New West Ward (Midday)"
+      "name": "Shinsei Ward Panorama (Day)"
     },
     {
       "id": "New_West_Ward_(Evening)_Background",
-      "name": "New West Ward (Evening)"
+      "name": "Shinsei Ward Panorama (Sunset)"
     },
     {
       "id": "New_West_Ward_(Night)_Background",
-      "name": "New West Ward (Night)"
+      "name": "Shinsei Ward Panorama (Night)"
     },
     {
       "id": "Magical_Halloween_Theater__A_Magical_Girl_Troupe_for_a_Day__Background",
@@ -2104,11 +2104,11 @@ let background_collections = {
     },
     {
       "id": "The_Ribbon_at_the_Beach_(1)_Background",
-      "name": "The_Ribbon_at_the_Beach_(1)"
+      "name": "Beachside Bonds Background 1"
     },
     {
       "id": "The_Ribbon_at_the_Beach_(2)_Background",
-      "name": "The_Ribbon_at_the_Beach_(2)"
+      "name": "Beachside Bonds Background 2"
     },
     {
       "id": "The_Crescent_Moon_Manor's_Summer_Vacation_Background",
@@ -2120,11 +2120,11 @@ let background_collections = {
     },
     {
       "id": "And_From_Here_On._(1)_Background",
-      "name": "Hereafter (1)"
+      "name": "Hereafter 1"
     },
     {
       "id": "And_From_Here_On._(2)_Background",
-      "name": "Hereafter (2)"
+      "name": "Hereafter 2"
     },
     {
       "id": "It's_Okay_to_Be_Clumsy_Background",

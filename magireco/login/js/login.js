@@ -1,43 +1,9 @@
+import { login_elements as elements, messageDialog } from './login_elements.js';
+import * as database from '../../shared/js/database_api.js';
+import * as utils from '../../shared/js/utils.js';
+
 (function () {
   "use strict";
-
-  const signout_button = document.querySelector("#signout_button");
-  const contact_button = document.querySelector("#contact_button");
-  const header_buttons = document.querySelector("#header_buttons");
-  const enter_button = document.querySelector("#enter_button");
-  const header_username = document.querySelector("#header_username");
-
-  const login_content = document.querySelector("#login_content");
-  const email_text = document.querySelector("#email_text");
-  const password_text = document.querySelector("#password_text");
-  const forgot_password_open_label = document.querySelector("#forgot_password_open_label");
-  const signin_button = document.querySelector("#signin_button");
-  const open_signup_button = document.querySelector("#open_signup_button");
-  const login_error = document.querySelector("#login_error");
-
-  const signup_content = document.querySelector("#signup_content");
-  const signup_name_text = document.querySelector("#signup_name_text");
-  const signup_email_text = document.querySelector("#signup_email_text");
-  const signup_password_text = document.querySelector("#signup_password_text");
-  const signup_password_confirm_text = document.querySelector("#signup_password_confirm_text");
-  const signup_button = document.querySelector("#signup_button");
-  const cancel_signup_button = document.querySelector("#cancel_signup_button");
-  const signup_error = document.querySelector("#signup_error");
-
-  const anonymous_content = document.querySelector("#anonymous_content");
-  const signin_anonymous_button = document.querySelector("#signin_anonymous_button");
-  const anonymous_error = document.querySelector("#anonymous_error");
-
-  const forgot_password_content = document.querySelector("#forgot_password_content");
-  const forgot_password_email = document.querySelector("#forgot_password_email");
-  const forgot_password_send_button = document.querySelector("#forgot_password_send_button");
-  const forgot_password_cancel_button = document.querySelector("#forgot_password_cancel_button");
-
-  const messageModal = document.querySelector("#messageModal");
-  const messageModalText = document.querySelector("#messageModalText");
-  const messageModalTitle = document.querySelector("#messageModalTitle");
-  const messageModalContent = document.querySelector("#messageModalContent");
-  const messageModalClose = document.querySelector("#messageModalClose");
 
   let userId = null
 
@@ -45,117 +11,107 @@
 
     database.onAuthStateChanged(user => {
       if (user) {
-        login_content.classList.add("hidden");
-        anonymous_content.classList.add("hidden");
-        signout_button.classList.remove("hidden");
-        enter_button.classList.remove("hidden");
-        header_buttons.classList.remove("hidden");
-        header_username.innerHTML = `Welcome ${user.displayName || "Anonymous"}`;
+        elements.login_content.classList.add("hidden");
+        elements.anonymous_content.classList.add("hidden");
+        elements.signout_button.classList.remove("hidden");
+        elements.enter_button.classList.remove("hidden");
+        elements.header_buttons.classList.remove("hidden");
+        elements.header_username.innerHTML = `Welcome ${user.displayName || "Anonymous"}`;
         userId = user.uid;
       } else {
-        login_content.classList.remove("hidden");
-        anonymous_content.classList.remove("hidden");
-        signout_button.classList.add("hidden");
-        enter_button.classList.add("hidden");
-        header_buttons.classList.add("hidden");
-        header_username.innerHTML = "";
+        elements.login_content.classList.remove("hidden");
+        elements.anonymous_content.classList.remove("hidden");
+        elements.signout_button.classList.add("hidden");
+        elements.enter_button.classList.add("hidden");
+        elements.header_buttons.classList.add("hidden");
+        elements.header_username.innerHTML = "";
         userId = null;
       }
     });
 
-    forgot_password_open_label.addEventListener("click", e => {
+    elements.forgot_password_open_label.addEventListener("click", e => {
       e.preventDefault();
-      login_content.classList.add("hidden");
-      forgot_password_content.classList.remove("hidden");
+      elements.login_content.classList.add("hidden");
+      elements.forgot_password_content.classList.remove("hidden");
       errorHandler("", false);
     });
 
-    signin_button.addEventListener("click", e => {
+    elements.signin_button.addEventListener("click", e => {
       e.preventDefault();
-      let email = email_text.value;
-      let password = password_text.value;
+      let email = elements.email_text.value;
+      let password = elements.password_text.value;
       if (!email) return errorHandler("Email must not be empty.");
       if (!password) return errorHandler("Password must not be empty.");
       database.signin(email, password, loginHandler, errorHandler);
     });
 
-    open_signup_button.addEventListener("click", e => {
+    elements.open_signup_button.addEventListener("click", e => {
       e.preventDefault();
-      login_content.classList.add("hidden");
-      signup_content.classList.remove("hidden");
+      elements.login_content.classList.add("hidden");
+      elements.signup_content.classList.remove("hidden");
       errorHandler("", false);
     });
 
-    cancel_signup_button.addEventListener("click", e => {
+    elements.cancel_signup_button.addEventListener("click", e => {
       e.preventDefault();
-      signup_content.classList.add("hidden");
-      login_content.classList.remove("hidden");
+      elements.signup_content.classList.add("hidden");
+      elements.login_content.classList.remove("hidden");
       errorSignupHandler("", false);
     });
 
     signup_button.addEventListener("click", e => {
       e.preventDefault();
-      let name = signup_name_text.value;
-      let email = signup_email_text.value;
-      let password = signup_password_text.value;
-      let confirm_password = signup_password_confirm_text.value;
+      let name = elements.signup_name_text.value;
+      let email = elements.signup_email_text.value;
+      let password = elements.signup_password_text.value;
+      let confirm_password = elements.signup_password_confirm_text.value;
       if (!name) return errorSignupHandler("Name must not be empty.");
       if (!password || !confirm_password) return errorSignupHandler("Password must not be empty.");
       if (password !== confirm_password) return errorSignupHandler("Your Password and Confirmation Password do not match.");
       database.signup(name, email, password, loginHandler, errorSignupHandler);
     });
 
-    forgot_password_send_button.addEventListener("click", e => {
+    elements.forgot_password_send_button.addEventListener("click", e => {
       e.preventDefault();
-      let email = forgot_password_email.value;
+      let email = elements.forgot_password_email.value;
       if (!email) errorResetHandler("Email must not be empty.");
       database.resetPassword(email, resetHandler, errorResetHandler);
     });
 
-    forgot_password_cancel_button.addEventListener("click", e => {
+    elements.forgot_password_cancel_button.addEventListener("click", e => {
       e.preventDefault();
-      forgot_password_content.classList.add("hidden");
-      login_content.classList.remove("hidden");
+      elements.forgot_password_content.classList.add("hidden");
+      elements.login_content.classList.remove("hidden");
       errorResetHandler("", false);
     })
 
-    signin_anonymous_button.addEventListener("click", e => {
+    elements.signin_anonymous_button.addEventListener("click", e => {
       e.preventDefault();
       database.signInAnonymously(loginHandler, errorAnonymousHandler);
     });
 
-    signout_button.addEventListener("click", () => {
+    elements.signout_button.addEventListener("click", () => {
       let res = confirm("Are you sure you want to Sign Out?");
       if (res) database.signout();
     });
 
-    contact_button.addEventListener("click", () => {
-      messageModal.style.display = "block";
-      messageModalText.value = `For assistance, support, or feedback, please contact Leo Chan on Discord (Leo_Chan#9150) or Reddit (u/Leochan6). More Information at:\nhttps://github.com/Leochan6/leochan6.github.io/blob/master/magireco/README.md`;
-      messageModalTitle.innerHTML = `Contact / Support`;
-      messageModalList.innerHTML = "";
+    elements.contact_button.addEventListener("click", () => {
+      messageDialog.open(`Contact / Support`, "For assistance, support, or feedback, please contact Leo Chan on Discord (Leo_Chan#9150) or Reddit (u/Leochan6). More Information at:\nhttps://github.com/Leochan6/leochan6.github.io/blob/master/magireco/README.md");
     });
 
-    enter_button.addEventListener("click", () => {
+    elements.enter_button.addEventListener("click", () => {
       window.location.href = "character";
     });
 
     // hide modal dialogs
     window.addEventListener("click", (event) => {
-      if (event.target == messageModal && messageModal.style.display === "block") closeMessageModal();
+      if (event.target == messageDialog.modal && messageDialog.isOpen()) messageDialog.close();
     });
 
     // hide message modal dialog
-    messageModalClose.addEventListener("click", () => {
-      closeMessageModal();
+    messageDialog.closeButton.addEventListener("click", () => {
+      messageDialog.close();
     });
-
-    const closeMessageModal = () => {
-      messageModal.style.display = "none";
-      messageModalTitle.innerHTML = "";
-      messageModalText.value = "";
-      messageModalText.scrollTo(0, 0);
-    };
   };
 
   const loginHandler = (userCred, name) => {
@@ -168,40 +124,39 @@
     window.location.href = "character";
   };
 
-
   const errorHandler = (errorMsg, log = true) => {
-    email_text.value = "";
-    password_text.value = "";
-    login_error.classList.remove("hidden");
-    login_error.innerHTML = errorMsg;
+    elements.email_text.value = "";
+    elements.password_text.value = "";
+    elements.login_error.classList.remove("hidden");
+    elements.login_error.innerHTML = errorMsg;
     if (log) console.error(errorMsg);
   };
 
   const errorSignupHandler = (errorMsg, log = true) => {
-    signup_name_text.value = "";
-    signup_email_text.value = "";
-    signup_password_text.value = "";
-    signup_password_confirm_text.value = "";
-    signup_error.classList.remove("hidden");
-    signup_error.innerHTML = errorMsg;
+    elements.signup_name_text.value = "";
+    elements.signup_email_text.value = "";
+    elements.signup_password_text.value = "";
+    elements.signup_password_confirm_text.value = "";
+    elements.signup_error.classList.remove("hidden");
+    elements.signup_error.innerHTML = errorMsg;
     if (log) console.error(errorMsg);
   };
 
   const errorAnonymousHandler = (errorMsg, log = true) => {
-    anonymous_error.classList.remove("hidden");
-    anonymous_error.innerHTML = errorMsg;
+    elements.anonymous_error.classList.remove("hidden");
+    elements.anonymous_error.innerHTML = errorMsg;
     if (log) console.error(errorMsg);
   };
 
   const resetHandler = () => {
-    reset_success.classList.remove("hidden");
-    reset_success.innerHTML = "A password reset email has been sent to the given email. If you do not see an email, please check the Junk or Spam folder.";
+    elements.reset_success.classList.remove("hidden");
+    elements.reset_success.innerHTML = "A password reset email has been sent to the given email. If you do not see an email, please check the Junk or Spam folder.";
   };
 
   const errorResetHandler = (errorMsg, log = true) => {
-    forgot_password_email.value = "";
-    reset_error.classList.remove("hidden");
-    reset_error.innerHTML = errorMsg;
+    elements.forgot_password_email.value = "";
+    elements.reset_error.classList.remove("hidden");
+    elements.reset_error.innerHTML = errorMsg;
     if (log) console.error(errorMsg);
   };
 

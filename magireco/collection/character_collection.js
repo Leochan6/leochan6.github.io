@@ -1,4 +1,4 @@
-const character_collection = [
+export const character_collection = [
   {
     "id": "1001",
     "name": "Iroha Tamaki",
@@ -402,6 +402,7 @@ const character_collection = [
       "4": true,
       "5": true
     },
+    "obtainability": "limited",
     "url": "https://magireco.fandom.com/wiki/Akemi_Homura_(Megane_ver.)"
   },
   {

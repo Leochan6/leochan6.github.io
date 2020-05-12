@@ -1,149 +1,224 @@
-let elements = (() => {
-  let module = {};
+export const character_elements = {
 
   // Header
-  module.theme_button = document.querySelector("#theme_button");
-  module.signout_button = document.querySelector("#signout_button");
-  module.header_username = document.querySelector("#header_username");
-  module.verify_email = document.querySelector("#verify_email");
-  module.verify_email_button = document.querySelector("#verify_email_button");
-  module.verify_email_success = document.querySelector("#verify_email_success");
-  module.verify_email_error = document.querySelector("#verify_email_error");
+  theme_button: document.querySelector("#theme_button"),
+  contact_button: document.querySelector("#contact_button"),
+  signout_button: document.querySelector("#signout_button"),
+  header_username: document.querySelector("#header_username"),
+  verify_email: document.querySelector("#verify_email"),
+  verify_email_close: document.querySelector("#verify_email_close"),
+  verify_email_button: document.querySelector("#verify_email_button"),
+  verify_email_success: document.querySelector("#verify_email_success"),
+  verify_email_error: document.querySelector("#verify_email_error"),
 
   // Error Text
-  module.home_error_text = document.querySelector("#home_error_text");
-  module.character_error_text = document.querySelector("#character_error_text");
-  module.profile_error_text = document.querySelector("#profile_error_text");
+  home_error_text: document.querySelector("#home_error_text"),
+  character_error_text: document.querySelector("#character_error_text"),
+  profile_error_text: document.querySelector("#profile_error_text"),
 
-  // Home Buttons
-  module.list_create = document.querySelector("#list_create");
-  module.list_duplicate = document.querySelector("#list_duplicate");
-  module.new_list_button = document.querySelector("#new_list_button");
-  module.rename_list_button = document.querySelector("#rename_list_button");
-  module.duplicate_list_button = document.querySelector("#duplicate_list_button");
-  module.delete_list_button = document.querySelector("#delete_list_button");
-  module.duplicate_list_form = document.querySelector("#duplicate_list_form");
-  module.duplicate_list_name_field = document.querySelector("#duplicate_list_name_field");
-  module.duplicate_list_create_button = document.querySelector("#duplicate_list_create_button");
-  module.rename_list_form = document.querySelector("#rename_list_form");
-  module.rename_list_name_field = document.querySelector("#rename_list_name_field");
-  module.rename_list_create_button = document.querySelector("#rename_list_create_button");
-  module.new_list_form = document.querySelector("#new_list_form");
-  module.create_list_name_field = document.querySelector("#create_list_name_field");
-  module.new_list_create_button = document.querySelector("#new_list_create_button");
-  module.saved_character_lists = document.querySelector("#saved_character_lists");
+  // My Character Lists
+  list_create: document.querySelector("#list_create"),
+  list_rename: document.querySelector("#list_rename"),
+  list_duplicate: document.querySelector("#list_duplicate"),
+  new_list_button: document.querySelector("#new_list_button"),
+  rename_list_button: document.querySelector("#rename_list_button"),
+  create_list_form: document.querySelector("#create_list_form"),
+  create_list_name_field: document.querySelector("#create_list_name_field"),
+  create_list_create_button: document.querySelector("#create_list_create_button"),
+  duplicate_list_button: document.querySelector("#duplicate_list_button"),
+  delete_list_button: document.querySelector("#delete_list_button"),
+  duplicate_list_form: document.querySelector("#duplicate_list_form"),
+  duplicate_list_name_field: document.querySelector("#duplicate_list_name_field"),
+  duplicate_list_create_button: document.querySelector("#duplicate_list_create_button"),
+  rename_list_form: document.querySelector("#rename_list_form"),
+  rename_list_name_field: document.querySelector("#rename_list_name_field"),
+  rename_list_create_button: document.querySelector("#rename_list_create_button"),
+  saved_character_lists: document.querySelector("#saved_character_lists"),
 
   // Create Character Fields
-  module.name_select = document.querySelector("#name_select");
-  module.rank_select = document.querySelector("#rank_select");
-  module.post_awaken_checkbox = document.querySelector("#post_awaken_checkbox");
-  module.level_select = document.querySelector("#level_select");
-  module.magic_select = document.querySelector("#magic_select");
-  module.magia_select = document.querySelector("#magia_select");
-  module.episode_select = document.querySelector("#episode_select");
-  module.doppel_select = document.querySelector("#doppel_select");
+  name_select: document.querySelector("#name_select"),
+  rank_select: document.querySelector("#rank_select"),
+  post_awaken_checkbox: document.querySelector("#post_awaken_checkbox"),
+  level_select: document.querySelector("#level_select"),
+  magic_select: document.querySelector("#magic_select"),
+  magia_select: document.querySelector("#magia_select"),
+  episode_select: document.querySelector("#episode_select"),
+  doppel_select: document.querySelector("#doppel_select"),
 
   // Create Character Buttons
-  module.create_button = document.querySelector("#create_button");
-  module.update_button = document.querySelector("#update_button");
-  module.copy_button = document.querySelector("#copy_button");
-  module.delete_button = document.querySelector("#delete_button");
-  module.min_all_button = document.querySelector("#min_all_button");
-  module.max_all_button = document.querySelector("#max_all_button");
+  characterSelectModalOpen: document.querySelector("#characterSelectModalOpen"),
+  create_button: document.querySelector("#create_button"),
+  update_button: document.querySelector("#update_button"),
+  copy_button: document.querySelector("#copy_button"),
+  delete_button: document.querySelector("#delete_button"),
+  min_all_button: document.querySelector("#min_all_button"),
+  max_all_button: document.querySelector("#max_all_button"),
 
   // Character Preview
-  module.display_preview = document.querySelector("#display_preview");
+  display_preview: document.querySelector("#display_preview"),
 
   // Sorting Profiles
-  module.profile_select = document.querySelector("#profile_select");
-  module.new_profile_button = document.querySelector("#new_profile_button");
-  module.profile_create_block = document.querySelector("#profile_create_block");
-  module.new_profile_field = document.querySelector("#new_profile_field");
-  module.new_name_field = document.querySelector("#new_name_field");
-  module.create_profile_button = document.querySelector("#create_profile_button");
-  module.close_new_profile_button = document.querySelector("#close_new_profile_button");
-  module.delete_profile_button = document.querySelector("#delete_profile_button");
-  module.profile_rules = document.querySelector("#profile_rules");
+  profile_select: document.querySelector("#profile_select"),
+  new_profile_button: document.querySelector("#new_profile_button"),
+  profile_create_block: document.querySelector("#profile_create_block"),
+  new_profile_field: document.querySelector("#new_profile_field"),
+  new_name_field: document.querySelector("#new_name_field"),
+  create_profile_button: document.querySelector("#create_profile_button"),
+  close_new_profile_button: document.querySelector("#close_new_profile_button"),
+  delete_profile_button: document.querySelector("#delete_profile_button"),
+  profile_rules: document.querySelector("#profile_rules"),
 
   // Display Settings
-  module.displays_per_row = document.querySelector("#displays_per_row");
-  module.display_alignment_select = document.querySelector("#display_alignment_select");
-  module.display_padding_x_field = document.querySelector("#display_padding_x_field");
-  module.display_padding_y_field = document.querySelector("#display_padding_y_field");
+  displays_per_row: document.querySelector("#displays_per_row"),
+  display_alignment_select: document.querySelector("#display_alignment_select"),
+  display_padding_x_field: document.querySelector("#display_padding_x_field"),
+  display_padding_y_field: document.querySelector("#display_padding_y_field"),
 
   // Background
-  module.background_select = document.querySelector("#background_select");
-  module.remove_background_button = document.querySelector("#remove_background_button");
-  module.background_transparency_field = document.querySelector("#background_transparency_field");
-  module.background_transparency_range = document.querySelector("#background_transparency_range");
+  backgroundSelectModalOpen: document.querySelector("#backgroundSelectModalOpen"),
+  background_select: document.querySelector("#background_select"),
+  remove_background_button: document.querySelector("#remove_background_button"),
+  background_transparency_field: document.querySelector("#background_transparency_field"),
+  background_transparency_range: document.querySelector("#background_transparency_range"),
 
   // Settings
-  module.reset_profiles_button = document.querySelector("#reset_profiles_button");
-  module.show_all_menus_checkbox = document.querySelector("#show_all_menus_checkbox");
+  reset_profiles_button: document.querySelector("#reset_profiles_button"),
+  show_all_menus_checkbox: document.querySelector("#show_all_menus_checkbox"),
 
   // Body
-  module.list_name_title = document.querySelector("#list_name_title");
-  module.character_list_content = document.querySelector("#character_list_content");
-  module.header_content_divider = document.querySelector("#header_content_divider");
-  module.content = document.querySelector("#content");
-  module.main = document.querySelector("#main");
-  module.menu_bar = document.querySelector("#menu_bar");
-  module.left_main_divider = document.querySelector("#left_main_divider");
-  module.main_header = document.querySelector("#main_header");
+  list_name_title: document.querySelector("#list_name_title"),
+  header_content_divider: document.querySelector("#header_content_divider"),
+  content: document.querySelector("#content"),
+  main: document.querySelector("#main"),
+  menu_bar: document.querySelector("#menu_bar"),
+  left_main_divider: document.querySelector("#left_main_divider"),
+  main_header: document.querySelector("#main_header"),
 
   // Export and Import
-  module.export_image_button = document.querySelector("#export_image_button");
-  module.export_open_button = document.querySelector("#export_open_button");
-  module.export_text_button = document.querySelector("#export_text_button");
-  module.import_text_button = document.querySelector("#import_text_button");
+  export_image_button: document.querySelector("#export_image_button"),
+  export_open_button: document.querySelector("#export_open_button"),
+  export_text_button: document.querySelector("#export_text_button"),
+  import_text_button: document.querySelector("#import_text_button"),
 
   // Filters
-  module.zoom_field = document.querySelector("#zoom_label");
-  module.zoom_range = document.querySelector("#zoom_range");
+  zoom_field: document.querySelector("#zoom_field"),
+  zoom_range: document.querySelector("#zoom_range"),
 
-  module.list_filters = document.querySelector("#list_filters");
-  module.add_filter_button = document.querySelector("#add_filter_button");
-  module.apply_filter_button = document.querySelector("#apply_filter_button");
-  module.reset_filter_button = document.querySelector("#reset_filter_button");
-  module.toggle_filter_button = document.querySelector("#toggle_filter_button");
+  list_filters: document.querySelector("#list_filters"),
+  add_filter_button: document.querySelector("#add_filter_button"),
+  apply_filter_button: document.querySelector("#apply_filter_button"),
+  reset_filter_button: document.querySelector("#reset_filter_button"),
+  toggle_filter_button: document.querySelector("#toggle_filter_button"),
 
   // Stats
-  module.list_stats_list = document.querySelector("#list_stats_list");
-  module.more_stats_button = document.querySelector("#more_stats_button");
+  list_stats_list: document.querySelector("#list_stats_list"),
+  more_stats_button: document.querySelector("#more_stats_button"),
+  
+  // Character List
+  character_list_container: document.querySelector("#character_list_container"),
+  character_list_content: document.querySelector("#character_list_content")
+}  
 
-  // Message Modal
-  module.messageModal = document.querySelector("#messageModal");
-  module.messageModalTitle = document.querySelector("#messageModalTitle");
-  module.messageModalText = document.querySelector("#messageModalText");
-  module.messageModalCopy = document.querySelector("#messageModalCopy");
-  module.messageModalClose = document.querySelector("#messageModalClose");
-  module.messageModalList = document.querySelector("#messageModalList");
+// Message Modal
+export const messageDialog = {
+  modal: document.querySelector("#messageModal"),
+  content: document.querySelector("#messageModalContent"),
+  title: document.querySelector("#messageModalTitle"),
+  text: document.querySelector("#messageModalText"),
+  closeButton: document.querySelector("#messageModalClose"),
+  copy: document.querySelector("#messageModalCopy"),
+  list: document.querySelector("#messageModalList"),
 
-  // Character Select Modal
-  module.characterSelectModalOpen = document.querySelector("#characterSelectModalOpen");
-  module.characterSelectModal = document.querySelector("#characterSelectModal");
-  module.characterSelectModalClose = document.querySelector("#name_modal_close_button");
-  module.characterSelectModalSearch = document.querySelector("#characterSelectModalSearch");
-  module.characterSelectModalAdded = document.querySelector("#characterSelectModalAdded");
-  module.characterSelectModalList = document.querySelector("#characterSelectModalList");
+  open: (title, text="", list="") => {
+    messageDialog.modal.style.display = "block";
+    messageDialog.title.innerHTML = title;
+    messageDialog.text.value = text;
+    messageDialog.list.innerHTML = list;
+  },
+  close: () => {
+    messageDialog.modal.style.display = "none";
+    messageDialog.title.innerHTML = "";
+    messageDialog.text.value = "";
+    messageDialog.text.scrollTo(0, 0);
+    messageDialog.list.innerHTML = "";
+  },
+  isOpen: () => {
+    return messageDialog.modal.style.display === "block";
+  }
+};
 
-  // Background Select Modal
-  module.backgroundSelectModalOpen = document.querySelector("#backgroundSelectModalOpen");
-  module.backgroundSelectModal = document.querySelector("#backgroundSelectModal");
-  module.backgroundSelectModalClose = document.querySelector("#backgroundSelectModalClose");
-  module.backgroundSelectModalName = document.querySelector("#backgroundSelectModalName");
-  module.backgroundSelectModalList = document.querySelector("#backgroundSelectModalList");
+// Character Select Modal
+export const characterSelectDialog = {
+  modal: document.querySelector("#characterSelectModal"),
+  content: document.querySelector("#characterSelectModalContent"),
+  search: document.querySelector("#characterSelectModalSearch"),
+  added: document.querySelector("#characterSelectModalAdded"),
+  closeButton: document.querySelector("#characterSelectModalClose"),
+  list: document.querySelector("#characterSelectModalList"),
 
-  // Message Modal
-  module.importListModal = document.querySelector("#importListModal");
-  module.importListModalTitle = document.querySelector("#importListModalTitle");
-  module.importListModalName = document.querySelector("#importListModalName");
-  module.importListModalText = document.querySelector("#importListModalText");
-  module.importListModalImport = document.querySelector("#importListModalImport");
-  module.importListModalClose = document.querySelector("#importListModalClose");
-  module.importListModalList = document.querySelector("#importListModalList");
-  module.importListModalError = document.querySelector("#importListModalError");
+  open: (loadPreviews) => {
+    characterSelectDialog.modal.style.display = "block";
+    characterSelectDialog.search.focus();
+    loadPreviews();
+  },
+  close: () => {
+    characterSelectDialog.modal.style.display = "none";
+    characterSelectDialog.search.value = "";
+    characterSelectDialog.list.innerHTML = "";
+    characterSelectDialog.list.scrollTo(0, 0);
+  },
+  isOpen: () => {
+    return characterSelectDialog.modal.style.display === "block";
+  }
+};
 
+// Background Select Modal
+export const backgroundSelectDialog = {
+  modal: document.querySelector("#backgroundSelectModal"),
+  closeButton: document.querySelector("#backgroundSelectModalClose"),
+  search: document.querySelector("#backgroundSelectModalSearch"),
+  list: document.querySelector("#backgroundSelectModalList"),
 
-  return module;
-});
+  open: (loadPreviews) => {
+    backgroundSelectDialog.modal.style.display = "block";
+    backgroundSelectDialog.search.focus();
+    loadPreviews();
+  },
+  close: () => {
+    backgroundSelectDialog.modal.style.display = "none";
+    backgroundSelectDialog.search.value = "";
+    backgroundSelectDialog.list.innerHTML = "";
+    backgroundSelectDialog.list.scrollTo(0, 0);
+  },
+  isOpen: () => {
+    return backgroundSelectDialog.modal.style.display === "block";
+  }
+};
+
+// Import List Modal
+export const importListDialog = {
+  modal: document.querySelector("#importListModal"),
+  content: document.querySelector("#importListModalContent"),
+  title: document.querySelector("#importListModalTitle"),
+  name: document.querySelector("#importListModalName"),
+  closeButton: document.querySelector("#importListModalClose"),
+  text: document.querySelector("#importListModalText"),
+  importButton: document.querySelector("#importListModalImport"),
+  list: document.querySelector("#importListModalList"),
+  error: document.querySelector("#importListModalError"),
+
+  open: () => {
+    importListDialog.modal.style.display = "block";
+    importListDialog.name.focus();
+  },
+  close: () => {
+    importListDialog.modal.style.display = "none";
+    importListDialog.name.value = "";
+    importListDialog.text.value = "";
+    importListDialog.list.innerHTML = "";
+    importListDialog.error.innerHTML = "";
+  },
+  isOpen: () => {
+    return importListDialog.modal.style.display === "block";
+  }
+};

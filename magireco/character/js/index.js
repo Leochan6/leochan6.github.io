@@ -2,6 +2,15 @@
  * Event Handlers for the Character Page.
  */
 
+import * as character_api from './character_api.js';
+import * as character_list_api from './character_list_api.js';
+import * as background_api from './background_api.js';
+import * as profile_api from './profile_api.js';
+import * as storage_api from './storage_api.js';
+import * as database_api from '../../shared/js/database_api.js';
+import * as utils from '../../shared/js/utils.js';
+import { character_elements as elements, messageDialog, characterSelectDialog, backgroundSelectDialog, importListDialog } from './character_elements.js';
+
 (function () {
   "use strict";
 
@@ -12,40 +21,37 @@
     /* ------------------------------ Header Buttons ------------------------------ */
 
     // sign out button.
-    signout_button.addEventListener("click", () => {
+    elements.signout_button.addEventListener("click", () => {
       let res = confirm("Are you sure you want to Sign Out?");
-      if (res) database.signout();
+      if (res) database_api.signout();
     });
 
     // contact button.
-    contact_button.addEventListener("click", () => {
-      messageModal.style.display = "block";
-      messageModalText.value = `For assistance, support, or feedback, please contact Leo Chan on Discord (Leo_Chan#9150) or Reddit (u/Leochan6). More Information at:\nhttps://github.com/Leochan6/leochan6.github.io/blob/master/magireco/README.md`;
-      messageModalTitle.innerHTML = `Contact / Support`;
-      messageModalList.innerHTML = "";
+    elements.contact_button.addEventListener("click", () => {
+      messageDialog.open(`Contact / Support`, `For assistance, support, or feedback, please contact Leo Chan on Discord (Leo_Chan#9150) or Reddit (u/Leochan6). More Information at:\nhttps://github.com/Leochan6/leochan6.github.io/blob/master/magireco/README.md`);
     });
 
     // theme toggle button.
-    theme_button.addEventListener("click", () => {
+    elements.theme_button.addEventListener("click", () => {
       let theme = "light"
-      if (theme_button.classList.contains("dark")) theme = "dark";
-      else if (theme_button.classList.contains("light")) theme = "light";
+      if (elements.theme_button.classList.contains("dark")) theme = "dark";
+      else if (elements.theme_button.classList.contains("light")) theme = "light";
       storage_api.updateSettings("theme", theme);
     });
 
     // verify email button
-    verify_email_button.addEventListener("click", () => {
-      database.sendEmailVerification(() => {
-        verify_email_success.classList.remove("hidden");
-        verify_email_success.innerHTML = "A email verification email has been sent to your email. If you do not see an email, please check the Junk or Spam folder."
+    elements.verify_email_button.addEventListener("click", () => {
+      database_api.sendEmailVerification(() => {
+        elements.verify_email_success.classList.remove("hidden");
+        elements.verify_email_success.innerHTML = "A email verification email has been sent to your email. If you do not see an email, please check the Junk or Spam folder."
       }, (errorMsg) => {
-        verify_email_error.classList.remove("hidden");
-        verify_email_error.innerHTML = errorMsg;
+        elements.verify_email_error.classList.remove("hidden");
+        elements.verify_email_error.innerHTML = errorMsg;
       });
     });
 
-    verify_email_close.addEventListener("click", () => {
-      verify_email.classList.add("hidden");
+    elements.verify_email_close.addEventListener("click", () => {
+      elements.verify_email.classList.add("hidden");
     });
 
     /* ------------------------------ General Modal Dialogs ------------------------------ */
@@ -65,23 +71,19 @@
 
     window.addEventListener("mouseup", (event) => {
       if (!dragging) {
-        if (event.target == messageModal && messageModal.style.display === "block") closeMessageModal();
-        else if (event.target == characterSelectModal && characterSelectModal.style.display === "block") closeCharacterSelectModal();
-        else if (event.target == backgroundSelectModal && backgroundSelectModal.style.display === "block") closeBackgroundSelectModal();
-        else if (event.target == importListModal && importListModal.style.display === "block") closeImportListModal();
+        [messageDialog, characterSelectDialog, backgroundSelectDialog, importListDialog].forEach(dialog => {
+          if (event.target == dialog.modal && dialog.isOpen()) dialog.close();
+        });
       }
     });
 
     window.addEventListener("keyup", e => {
       if (e.key === "Escape") {
-        if (messageModal.style.display === "block") closeMessageModal();
-        else if (characterSelectModal.style.display === "block") closeCharacterSelectModal();
-        else if (backgroundSelectModal.style.display === "block") closeBackgroundSelectModal();
-        else if (importListModal.style.display === "block") closeImportListModal();
-        else if (character_api.selectedCharacter && character_api.selectedCharacter.character_display_element) {
-          character_api.selectedCharacter.character_display_element.classList.remove("selected");
-          character_api.selectedCharacter = null;
-          character_api.enableButtons();
+        [messageDialog, characterSelectDialog, backgroundSelectDialog, importListDialog].forEach(dialog => {
+          if (event.target == dialog.modal && dialog.isOpen()) return dialog.close();
+        });
+        if (character_api.selectedCharacter && character_api.selectedCharacter.character_display_element) {
+          character_api.deselectDisplay();
         }
       }
     });
@@ -89,61 +91,56 @@
     /* ------------------------------ Message Modal Dialog ------------------------------ */
 
     // hide message modal dialog
-    messageModalClose.addEventListener("click", () => {
-      closeMessageModal();
+    messageDialog.closeButton.addEventListener("click", () => {
+      messageDialog.close();
     });
 
     // message modal dialog copy button.
-    messageModalCopy.addEventListener("click", () => {
-      navigator.clipboard.writeText(messageModalText.value);
+    messageDialog.copy.addEventListener("click", () => {
+      navigator.clipboard.writeText(messageDialog.text.value);
     });
 
     /* ------------------------------ Character Select Modal Dialog ------------------------------ */
 
     // hide character select modal dialog
-    characterSelectModalClose.addEventListener("click", () => {
-      closeCharacterSelectModal();
+    characterSelectDialog.closeButton.addEventListener("click", () => {
+      characterSelectDialog.close();
     });
 
     // search change character select modal dialog.
     ["keyup", "change", "search"].forEach(event => {
-      characterSelectModalSearch.addEventListener(event, () => {
-        character_api.filterCharacters(characterSelectModalSearch.value);
+      characterSelectDialog.search.addEventListener(event, () => {
+        character_api.filterCharacters(characterSelectDialog.search.value);
       });
     });
 
-    characterSelectModalAdded.addEventListener("click", () => {
-      character_api.toggleAdded(characterSelectModalAdded.checked);
+    characterSelectDialog.added.addEventListener("click", () => {
+      character_api.toggleAdded(characterSelectDialog.added.checked);
     })
 
     /* ------------------------------ Background Select Modal Dialog ------------------------------ */
 
-    // open background select modal dialog
-    backgroundSelectModalOpen.addEventListener("click", () => {
-      background_api.openBackgroundSelect();
-    });
-
     // hide background select modal dialog
-    backgroundSelectModalClose.addEventListener("click", () => {
-      closeBackgroundSelectModal();
+    backgroundSelectDialog.closeButton.addEventListener("click", () => {
+      backgroundSelectDialog.close();
     });
 
     // search change background select modal dialog.
     ["keyup", "change", "search"].forEach(event => {
-      backgroundSelectModalSearch.addEventListener(event, () => {
-        background_api.filterBackgrounds(backgroundSelectModalSearch.value);
+      backgroundSelectDialog.search.addEventListener(event, () => {
+        background_api.filterBackgrounds(backgroundSelectDialog.search.value);
       });
     });
 
     /* ------------------------------ Import List Modal Dialog ------------------------------ */
 
     // hide import list modal dialog
-    importListModalClose.addEventListener("click", () => {
-      closeImportListModal();
+    importListDialog.closeButton.addEventListener("click", () => {
+      importListDialog.close();
     });
 
     // import the text as a new list.
-    importListModalImport.addEventListener("click", () => {
+    importListDialog.importButton.addEventListener("click", () => {
       character_list_api.importList();
     });
 
@@ -175,7 +172,7 @@
     /* ------------------------------ My Character Lists Tab ------------------------------ */
 
     // show or hide the create new list form, rename list form, and duplicate list form.
-    [new_list_button, rename_list_button, duplicate_list_button].forEach(button => {
+    [elements.new_list_button, elements.rename_list_button, elements.duplicate_list_button].forEach(button => {
       button.addEventListener("click", () => {
         let list_form = document.querySelector(`#list_${button.name}`);
         document.querySelectorAll(".list_form").forEach(element => {
@@ -196,29 +193,28 @@
     })
 
     // create a new list.
-    create_list_create_button.addEventListener("click", (e) => {
+    elements.create_list_create_button.addEventListener("click", (e) => {
       e.preventDefault();
-      let newName = create_list_name_field.value;
+      let newName = elements.create_list_name_field.value;
       if (character_list_api.checkListName(newName)) character_list_api.createList(newName);
     });
 
     // rename the selected list.
-    rename_list_create_button.addEventListener("click", (e) => {
+    elements.rename_list_create_button.addEventListener("click", (e) => {
       e.preventDefault();
-      let newName = rename_list_name_field.value;
-      console.log(1);
+      let newName = elements.rename_list_name_field.value;
       if (character_list_api.checkListName(newName)) character_list_api.renameList(character_list_api.selectedList.listId, newName);
     });
 
     // duplicate list.
-    duplicate_list_create_button.addEventListener("click", (e) => {
+    elements.duplicate_list_create_button.addEventListener("click", (e) => {
       e.preventDefault();
-      let newName = duplicate_list_name_field.value;
+      let newName = elements.duplicate_list_name_field.value;
       if (character_list_api.checkListName(newName)) character_list_api.duplicateList(character_list_api.selectedList.list, newName);
     });
 
     // delete the selected list.
-    delete_list_button.addEventListener("click", () => {
+    elements.delete_list_button.addEventListener("click", () => {
       if (character_list_api.selectedList.listId) {
         let res = confirm(`Are you sure you want to delete the list ${character_list_api.selectedList.list.name}?`);
         if (res) character_list_api.deleteList(character_list_api.selectedList.listId);
@@ -228,23 +224,23 @@
     /* ------------------------------ Create Character Tab ------------------------------ */
 
     // update the available fields on name change and update preview display.
-    name_select.addEventListener("change", () => {
+    elements.name_select.addEventListener("change", () => {
       character_api.updateFieldsOnName();
     });
 
     // update the available fields on rank change and update preview display.
-    rank_select.addEventListener("change", () => {
+    elements.rank_select.addEventListener("change", () => {
       character_api.updateFieldsOnRank();
     });
 
     // update the available fields on magia change and update preview display.
-    magia_select.addEventListener("change", () => {
+    elements.magia_select.addEventListener("change", () => {
       character_api.updateFieldsOnMagia();
     });
 
     // open character select modal
-    characterSelectModalOpen.addEventListener("click", () => {
-      character_api.openCharacterSelect();
+    elements.characterSelectModalOpen.addEventListener("click", () => {
+      characterSelectDialog.open(character_api.loadCharacterSelectList);
     });
 
     // update the preview display on form change.
@@ -257,36 +253,36 @@
     });
 
     // add new character display to list.
-    create_button.addEventListener("click", () => {
-      if (!create_button.disabled) character_api.createCharacter();
+    elements.create_button.addEventListener("click", () => {
+      if (!elements.create_button.disabled) character_api.createCharacter();
     });
 
     // updates the character display with the form.
-    update_button.addEventListener("click", () => {
-      if (!create_button.disabled) character_api.updateCharacter();
+    elements.update_button.addEventListener("click", () => {
+      if (!elements.create_button.disabled) character_api.updateCharacter();
     });
 
     // copies the character display to the form.
-    copy_button.addEventListener("click", () => {
-      if (!create_button.disabled) character_api.copyCharacter();
+    elements.copy_button.addEventListener("click", () => {
+      if (!elements.create_button.disabled) character_api.copyCharacter();
     });
 
     // delete the selected character display from list.
-    delete_button.addEventListener("click", () => {
-      if (!create_button.disabled) character_api.deleteCharacter();
+    elements.delete_button.addEventListener("click", () => {
+      if (!elements.create_button.disabled) character_api.deleteCharacter();
     });
 
     // mines all the fields.
-    min_all_button.addEventListener("click", () => {
-      if (!min_all_button.disabled) {
+    elements.min_all_button.addEventListener("click", () => {
+      if (!elements.min_all_button.disabled) {
         character_api.minimizeDisplay();
         character_api.updateCharacter();
       }
     });
 
     // maxes all the fields.
-    max_all_button.addEventListener("click", () => {
-      if (!max_all_button.disabled) {
+    elements.max_all_button.addEventListener("click", () => {
+      if (!elements.max_all_button.disabled) {
         character_api.maximizeDisplay();
         character_api.updateCharacter();
       }
@@ -295,41 +291,41 @@
     /* ------------------------------ Sorting Profile Tab ------------------------------ */
 
     // check set the profile properties on change.
-    profile_select.addEventListener("change", () => {
-      let profileId = profile_select.value;
-      if (profileId === "0" || profileId === "1") delete_profile_button.disabled = true;
-      else delete_profile_button.disabled = false;
+    elements.profile_select.addEventListener("change", () => {
+      let profileId = elements.profile_select.value;
+      if (profileId === "0" || profileId === "1") elements.delete_profile_button.disabled = true;
+      else elements.delete_profile_button.disabled = false;
       profile_api.setProfile(profileId);
       character_list_api.applyProfileToList(character_list_api.getListId(), profileId);
       character_list_api.updateList();
     });
 
     // show the save new profile form.
-    new_profile_button.addEventListener("click", () => {
-      if (new_profile_button.classList.contains("add")) {
-        new_profile_button.classList.replace("add", "minus");
-        profile_create_block.classList.remove("hidden");
-        new_profile_field.focus();
+    elements.new_profile_button.addEventListener("click", () => {
+      if (elements.new_profile_button.classList.contains("add")) {
+        elements.new_profile_button.classList.replace("add", "minus");
+        elements.profile_create_block.classList.remove("hidden");
+        elements.new_profile_field.focus();
       }
       else {
-        new_profile_button.classList.replace("minus", "add");
-        profile_create_block.classList.add("hidden");
+        elements.new_profile_button.classList.replace("minus", "add");
+        elements.profile_create_block.classList.add("hidden");
       }
     });
 
     // check the profile name on change.
-    new_profile_field.addEventListener("change", () => {
-      profile_api.checkProfile(new_profile_field.value);
+    elements.new_profile_field.addEventListener("change", () => {
+      profile_api.checkProfile(elements.new_profile_field.value);
     });
 
     // create a new profile.
-    create_profile_button.addEventListener("click", (e) => {
+    elements.create_profile_button.addEventListener("click", (e) => {
       e.preventDefault();
       profile_api.saveProfile();
     });
 
     // delete the selected profile.
-    delete_profile_button.addEventListener("click", () => {
+    elements.delete_profile_button.addEventListener("click", () => {
       let res = confirm(`Are you sure you want to delete the sorting profile ${profile_api.getSelectedProfileName()}?`);
       if (res) profile_api.deleteProfile();
     });
@@ -338,67 +334,75 @@
 
     // change the number of displays per row.
     ["input", "change"].forEach(event => {
-      displays_per_row.addEventListener(event, () => {
-        character_list_api.changeDisplaysPerRow(displays_per_row.value);
-        if (event === "change") storage_api.updateSettings("displays_per_row", displays_per_row.value);
+      elements.displays_per_row.addEventListener(event, () => {
+        let value = elements.displays_per_row.value;
+        character_list_api.changeDisplaysPerRow(value);
+        if (event === "change") storage_api.updateSettings("displays_per_row", value);
       });
     });
 
     // change the alignment of the list.
-    display_alignment_select.addEventListener("change", () => {
-      character_list_api.changeAlignment(display_alignment_select.value);
+    elements.display_alignment_select.addEventListener("change", () => {
+      character_list_api.changeAlignment(elements.display_alignment_select.value);
     });
 
     ["input", "change"].forEach(event => {
       // change the padding of the list in the x direction.
-      display_padding_x_field.addEventListener(event, () => {
-        character_list_api.changePadding("x", display_padding_x_field.value);
-        if (event === "change") storage_api.updateSettings("padding_x", display_padding_x_field.value);
+      elements.display_padding_x_field.addEventListener(event, () => {
+        let value = elements.display_padding_x_field.value;
+        character_list_api.changePadding("x", value);
+        if (event === "change") storage_api.updateSettings("padding_x", value);
       });
 
       // change the padding of the list in the y direction.
-      display_padding_y_field.addEventListener(event, () => {
-        character_list_api.changePadding("y", display_padding_y_field.value);
-        if (event === "change") storage_api.updateSettings("padding_y", display_padding_y_field.value);
+      elements.display_padding_y_field.addEventListener(event, () => {
+        let value = elements.display_padding_y_field.value;
+        character_list_api.changePadding("y", value);
+        if (event === "change") storage_api.updateSettings("padding_y", value);
       });
     });
 
     /* ------------------------------ Background Tab ------------------------------ */
 
+    // open background select modal dialog
+    elements.backgroundSelectModalOpen.addEventListener("click", () => {
+      backgroundSelectDialog.open(background_api.loadBackgroundList);
+    });
+
     // set the background.
-    background_select.addEventListener("change", () => {
-      background_api.setBackground(background_select.value);
+    elements.background_select.addEventListener("change", () => {
+      background_api.setBackground(elements.background_select.value);
       character_list_api.updateList();
     });
 
     // remove the background.
-    remove_background_button.addEventListener("click", () => {
+    elements.remove_background_button.addEventListener("click", () => {
       background_api.removeBackground();
       character_list_api.updateList();
     });
 
     // transparency field input.
     ["input", "change"].forEach(event => {
-      background_transparency_field.addEventListener(event, () => {
-        let value = background_transparency_field.value;
+      elements.background_transparency_field.addEventListener(event, () => {
+        let value = elements.background_transparency_field.value;
         if (value > 500) value = 500;
         else if (value < 1) value = 1;
-        if (value !== background_transparency_field.value) background_transparency_field.value = value;
-        background_transparency_range.value = background_transparency_field.value;
-        background_api.changeTransparency(background_transparency_range.value);
-        // if (event === "change") storage_api.updateSettings("background_transparency", background_transparency_field.value);
+        if (value !== elements.background_transparency_field.value) elements.background_transparency_field.value = value;
+        elements.background_transparency_range.value = elements.background_transparency_field.value;
+        background_api.changeTransparency(elements.background_transparency_range.value);
+        if (event === "change") storage_api.updateSettings("background_transparency", background_transparency_field.value);
       });
     });
 
     // transparency range slider.
     ["input", "change", "wheel"].forEach(event => {
-      background_transparency_range.addEventListener(event, (e) => {
+      elements.background_transparency_range.addEventListener(event, (e) => {
         if (event === "wheel") {
-          background_transparency_range.value = parseInt(background_transparency_range.value) - (e.deltaY / 100) * (e.shiftKey ? 25 : 1);
+          elements.background_transparency_range.value = parseInt(elements.background_transparency_range.value) - (e.deltaY / 100) * (e.shiftKey ? 25 : 1);
         }
-        background_transparency_field.value = background_transparency_range.value;
-        background_api.changeTransparency(background_transparency_range.value);
-        // if (event === "change") storage_api.updateSettings("background_transparency", background_transparency_range.value);
+        elements.background_transparency_field.value = elements.background_transparency_range.value;
+        background_api.changeTransparency(elements.background_transparency_range.value);
+        if (event === "change") storage_api.updateSettings("background_transparency", background_transparency_range.value);
       });
     });
 
@@ -409,11 +413,11 @@
     /* ------------------------------ Export and Import ------------------------------ */
 
     // export image button.
-    export_image_button.addEventListener("click", () => {
+    elements.export_image_button.addEventListener("click", () => {
       let date = new Date();
       let time = `_${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}_${date.getHours()}_${date.getMinutes()}_${date.getSeconds()}`
       let imageName = `${character_list_api.getListName() ? character_list_api.getListName().replace(" ", "_") : "list"}`
-      html2canvas(character_list_content, { backgroundColor: null }).then(canvas => {
+      html2canvas(elements.character_list_content, { backgroundColor: null }).then(canvas => {
         let data = canvas.toDataURL("image/png");
         var a = document.createElement('a');
         a.href = data;
@@ -423,11 +427,11 @@
       });
     });
 
-    export_open_button.addEventListener("click", () => {
+    elements.export_open_button.addEventListener("click", () => {
       let date = new Date();
       let time = `_${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}_${date.getHours()}_${date.getMinutes()}_${date.getSeconds()}`
       let imageName = `${character_list_api.getListName() ? character_list_api.getListName().replace(" ", "_") : "list"}`
-      html2canvas(character_list_content, { backgroundColor: null }).then(canvas => {
+      html2canvas(elements.character_list_content, { backgroundColor: null }).then(canvas => {
         let data = canvas.toDataURL("image/png");
         let w = window.open();
         let image = new Image();
@@ -439,42 +443,42 @@
     });
 
     // export text button.
-    export_text_button.addEventListener("click", () => {
+    elements.export_text_button.addEventListener("click", () => {
       character_list_api.openExportModal();
     });
 
     // import text button.
-    import_text_button.addEventListener("click", () => {
-      character_list_api.openImportModal();
+    elements.import_text_button.addEventListener("click", () => {
+      importListDialog.open();
     });
 
     /* ------------------------------ Filters ------------------------------ */
 
     // add new filter.
-    add_filter_button.addEventListener("click", () => {
+    elements.add_filter_button.addEventListener("click", () => {
       character_list_api.createFilter();
     });
 
     // apply the filters.
-    apply_filter_button.addEventListener("click", () => {
+    elements.apply_filter_button.addEventListener("click", () => {
       character_list_api.applyFilters();
       character_list_api.getStats();
     });
 
     // reset the filters.
-    reset_filter_button.addEventListener("click", () => {
+    elements.reset_filter_button.addEventListener("click", () => {
       character_list_api.resetFilters();
       character_list_api.getStats();
     });
 
-    toggle_filter_button.addEventListener("click", () => {
-      if (toggle_filter_button.classList.contains("add")) {
-        toggle_filter_button.classList.replace("add", "minus");
-        if (list_filters.classList.contains("hidden")) list_filters.classList.remove("hidden");
+    elements.toggle_filter_button.addEventListener("click", () => {
+      if (elements.toggle_filter_button.classList.contains("add")) {
+        elements.toggle_filter_button.classList.replace("add", "minus");
+        if (elements.list_filters.classList.contains("hidden")) elements.list_filters.classList.remove("hidden");
       }
-      else if (toggle_filter_button.classList.contains("minus")) {
-        toggle_filter_button.classList.replace("minus", "add");
-        if (!list_filters.classList.contains("hidden")) list_filters.classList.add("hidden");
+      else if (elements.toggle_filter_button.classList.contains("minus")) {
+        elements.toggle_filter_button.classList.replace("minus", "add");
+        if (!elements.list_filters.classList.contains("hidden")) elements.list_filters.classList.add("hidden");
       }
     });
 
@@ -483,25 +487,25 @@
 
     // zoom field input.
     ["input", "change"].forEach(event => {
-      zoom_field.addEventListener(event, () => {
+      elements.zoom_field.addEventListener(event, () => {
         let value = zoom_field.value;
         if (value > 500) value = 500;
         else if (value < 1) value = 1;
-        if (value !== zoom_field.value) zoom_field.value = value;
-        zoom_range.value = zoom_field.value;
-        character_list_api.changeZoom(zoom_range.value);
-        if (event === "change") storage_api.updateSettings("character_zoom", zoom_field.value);
+        if (value !== elements.zoom_field.value) elements.zoom_field.value = value;
+        elements.zoom_range.value = elements.zoom_field.value;
+        character_list_api.changeZoom(elements.zoom_range.value);
+        if (event === "change") storage_api.updateSettings("character_zoom", elements.zoom_field.value);
       });
     });
 
     // zoom range slider.
     ["input", "change", "wheel"].forEach(event => {
-      zoom_range.addEventListener(event, (e) => {
+      elements.zoom_range.addEventListener(event, (e) => {
         if (event === "wheel") {
-          zoom_range.value = parseInt(zoom_range.value) - (e.deltaY / 100) * (e.shiftKey ? 50 : 1);
+          elements.zoom_range.value = parseInt(zoom_range.value) - (e.deltaY / 100) * (e.shiftKey ? 50 : 1);
         }
-        zoom_field.value = zoom_range.value;
-        character_list_api.changeZoom(zoom_range.value);
+        elements.zoom_field.value = elements.zoom_range.value;
+        character_list_api.changeZoom(elements.zoom_range.value);
         if (event === "change") storage_api.updateSettings("character_zoom", zoom_range.value);
       });
     });
@@ -509,70 +513,32 @@
     /* ------------------------------ Stats ------------------------------ */
 
     // get more stats button.
-    more_stats_button.addEventListener("click", () => {
+    elements.more_stats_button.addEventListener("click", () => {
       character_list_api.openStatsModal();
     });
 
     /* ------------------------------ Character Display ------------------------------ */
 
     // deselect currently selected.
-    character_list_container.addEventListener("click", (e) => {
+    elements.character_list_container.addEventListener("click", (e) => {
       try {
         if (e.target.parentElement.className.indexOf("character_display") === -1 && e.target.parentElement.parentElement.className.indexOf("character_display") === -1) {
-          document.querySelectorAll(".character_display:not(.preview)").forEach(child => {
-            if (child.classList.contains("selected")) {
-              child.classList.remove("selected");
-              character_api.selectedCharacter = null;
-              character_api.enableButtons();
-            }
-          });
+          character_api.deselectDisplay();
         }
       } catch (error) {
-        character_api.selectedCharacter = null;
-        character_api.enableButtons();
+        character_api.deselectDisplay();
       }
     });
 
     /* ------------------------------ Character List Content ------------------------------ */
 
     // resort when character list changes.
-    character_list_content.addEventListener("change", () => {
+    elements.character_list_content.addEventListener("change", () => {
       character_list_api.applyProfileToList(character_list_api.getListId(), profile_api.getSelectedProfileId());
       character_list_api.updateList();
     });
-
   };
 
-  /* ------------------------------ Close Modal Dialogs ------------------------------ */
-
-  const closeMessageModal = () => {
-    messageModal.style.display = "none";
-    messageModalTitle.innerHTML = "";
-    messageModalText.value = "";
-    messageModalText.readonly = true;
-    messageModalText.scrollTo(0, 0);
-  };
-
-  const closeCharacterSelectModal = () => {
-    characterSelectModal.style.display = "none";
-    characterSelectModalSearch.value = "";
-    characterSelectModalList.scrollTo(0, 0);
-  };
-
-  const closeBackgroundSelectModal = () => {
-    backgroundSelectModal.style.display = "none";
-    backgroundSelectModalSearch.value = "";
-    backgroundSelectModalList.innerHTML = "";
-    backgroundSelectModalList.scrollTo(0, 0);
-  };
-
-  const closeImportListModal = () => {
-    importListModal.style.display = "none";
-    importListModalName.value = "";
-    importListModalText.value = "";
-    importListModalError.innerHTML = "";
-    importListModalText.scrollTo(0, 0);
-  };
 
   /* ------------------------------ Page Start Up ------------------------------ */
 
@@ -585,14 +551,14 @@
   background_api.startUp();
 
   // load the settings, profiles, and character lists from storage.
-  database.onAuthStateChanged(user => {
+  database_api.onAuthStateChanged(user => {
     if (user) {
-      header_username.innerHTML = `Welcome ${user.displayName || "Anonymous"}`;
+      elements.header_username.innerHTML = `Welcome ${user.displayName || "Anonymous"}`;
       storage_api.startUp(user);
-      if (!user.isAnonymous && !user.emailVerified) verify_email.classList.remove("hidden");
+      if (!user.isAnonymous && !user.emailVerified) elements.verify_email.classList.remove("hidden");
     }
     else {
-      header_username.innerHTML = "";
+      elements.header_username.innerHTML = "";
       window.location.href = "../";
     }
   });

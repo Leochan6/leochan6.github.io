@@ -49,6 +49,7 @@ header {
   font-weight: bold;
   font-size: 24px;
   padding-top: 5px;
+  height: 28px;
 }
 
 #header_username {

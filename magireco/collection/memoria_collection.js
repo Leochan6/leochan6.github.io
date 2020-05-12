@@ -1,4 +1,4 @@
-let memoria_collection = [
+export const memoria_collection = [
   {
     "id": "1001",
     "type": "skill",

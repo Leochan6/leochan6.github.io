@@ -1,118 +1,119 @@
-let profile_api = (function () {
+import { character_elements as elements } from './character_elements.js';
+import * as character_list_api from './character_list_api.js';
+import * as storage_api from './storage_api.js';
 
-  let module = {};
+export let selectedProfile = null;
 
-  module.selectedProfile = null;
+// loads, sets, and selects the profiles
+export const setProfiles = (profiles, previous) => {
+  elements.profile_select.innerHTML = "";
+  Object.entries(profiles).forEach(([id, profile]) => {
+    elements.profile_select.options.add(new Option(profile.name, id, false));
+  });
+  if (selectedProfile !== null && selectedProfile.name !== null) {
+    let profileId = getProfileId(selectedProfile.name)
+    elements.profile_select.value = profileId;
+    let listId = character_list_api.getListId();
+    if (listId) storage_api.updateListProfile(listId, profileId);
+  }
+  else if (previous && Array.from(elements.profile_select.options).some(option => option.value === previous)) {
+    elements.profile_select.value = previous;
+    let listId = character_list_api.getListId();
+    if (listId) storage_api.updateListProfile(listId, previous);
+  }
+  else {
+    elements.profile_select.value = "0";
+    let listId = character_list_api.getListId();
+    if (listId) storage_api.updateListProfile(listId, "0");
+  }
+  loadsRules(elements.profile_select.value);
+};
 
-  // loads, sets, and selects the profiles
-  module.setProfiles = (profiles, previous) => {
-    profile_select.innerHTML = "";
-    Object.entries(profiles).forEach(([id, profile]) => {
-      profile_select.options.add(new Option(profile.name, id, false));
-    });
-    if (module.selectedProfile !== null && module.selectedProfile.name !== null) {
-      let profileId = module.getProfileId(module.selectedProfile.name)
-      profile_select.value = profileId;
-      let listId = character_list_api.getListId();
-      if (listId) storage_api.updateListProfile(listId, profileId);
+export const getSortSettings = () => {
+  let settings = {};
+  Array.from(profile_rules.children).forEach((child, index) => {
+    let childRuleId = child.getAttribute("ruleId")
+    let ruleId = childRuleId && childRuleId.length > 3 ? childRuleId : generatePushID();
+    settings[ruleId] = {
+      state: child.querySelector(".state_select").value,
+      type: child.querySelector(".type_select").value,
+      direction: child.querySelector(".sort_dir").classList.contains("up") ? 1 : -1,
+      index: index
     }
-    else if (previous && Array.from(profile_select.options).some(option => option.value === previous)) {
-      profile_select.value = previous;
-      let listId = character_list_api.getListId();
-      if (listId) storage_api.updateListProfile(listId, previous);
-    }
-    else {
-      profile_select.value = "0";
-      let listId = character_list_api.getListId();
-      if (listId) storage_api.updateListProfile(listId, "0");
-    }
-    module.loadsRules(profile_select.value);
-  };
+  });
+  return settings;
+};
 
-  module.getSortSettings = () => {
-    let settings = {};
-    Array.from(profile_rules.children).forEach(child => {
-      let childRuleId = child.getAttribute("ruleId")
-      let ruleId = childRuleId && childRuleId.length > 3 ? childRuleId : generatePushID();
-      settings[ruleId] = {
-        state: child.querySelector(".state_select").value,
-        type: child.querySelector(".type_select").value,
-        direction: child.querySelector(".sort_dir").classList.contains("up") ? 1 : -1,
-      }
-    });
-    return settings;
-  };
+export const saveProfile = () => {
+  let profileName = new_profile_field.value;
+  if (Object.values(storage_api.profiles).some(profile => profile.name === profileName)) {
+    profile_error_text.innerHTML = `The sorting profile ${profileName} already exists.`;
+    return;
+  }
+  if (profileName.length === 0) {
+    profile_error_text.innerHTML = `The sorting profile name must not be empty.`;
+    return;
+  }
+  new_profile_field.value = "";
+  let properties = getSortSettings();
+  selectedProfile = { name: profileName, id: null };
+  storage_api.createProfile(profileName, properties);
+  if (!profile_create_block.classList.add("hidden")) profile_create_block.classList.add("hidden");
+};
 
-  module.saveProfile = () => {
-    let profileName = new_profile_field.value;
-    if (Object.values(storage_api.profiles).some(profile => profile.name === profileName)) {
-      profile_error_text.innerHTML = `The sorting profile ${profileName} already exists.`;
-      return;
-    }
-    if (profileName.length === 0) {
-      profile_error_text.innerHTML = `The sorting profile name must not be empty.`;
-      return;
-    }
-    new_profile_field.value = "";
-    let properties = module.getSortSettings();
-    module.selectedProfile = { name: profileName, id: null };
-    storage_api.createProfile(profileName, properties);
-    if (!profile_create_block.classList.add("hidden")) profile_create_block.classList.add("hidden");
-  };
+export const updateProfile = () => {
+  let profileId = getSelectedProfileId();
+  let properties = getSortSettings();
+  storage_api.updateProfile(profileId, properties);
+  if (!profile_create_block.classList.add("hidden")) profile_create_block.classList.add("hidden");
+};
 
-  module.updateProfile = () => {
-    let profileId = module.getSelectedProfileId();
-    let properties = module.getSortSettings();
-    storage_api.updateProfile(profileId, properties);
-    if (!profile_create_block.classList.add("hidden")) profile_create_block.classList.add("hidden");
-  };
+export const checkProfile = (profileName) => {
+  if (Object.values(storage_api.profiles).some(profile => profile.name === profileName)) profile_error_text.innerHTML = `The sorting profile ${profileName} already exists.`;
+  else profile_error_text.innerHTML = "";
+};
 
-  module.checkProfile = (profileName) => {
-    if (Object.values(storage_api.profiles).some(profile => profile.name === profileName)) profile_error_text.innerHTML = `The sorting profile ${profileName} already exists.`;
-    else profile_error_text.innerHTML = "";
-  };
+export const deleteProfile = () => {
+  let profileId = getSelectedProfileId();
+  if (storage_api.profiles[profileId].name !== "Default" && storage_api.profiles[profileId].name !== "Custom") {
+    storage_api.deleteProfile(profileId);
+    selectedProfile = { name: "Default", id: "0" };
+    elements.profile_select.value = "0";
+    let listId = character_list_api.getListId();
+    if (listId) storage_api.updateList(listId, character_list_api.getListName(), storage_api.lists[listId].characterList, "0", background_api.getSelectedBackground() || "");
+  }
+};
 
-  module.deleteProfile = () => {
-    let profileId = module.getSelectedProfileId();
-    if (storage_api.profiles[profileId].name !== "Default" && storage_api.profiles[profileId].name !== "Custom") {
-      storage_api.deleteProfile(profileId);
-      module.selectedProfile = { name: "Default", id: "0" };
-      profile_select.value = "0";
-      let listId = character_list_api.getListId();
-      if (listId) storage_api.updateList(listId, character_list_api.getListName(), storage_api.lists[listId].characterList, "0", background_api.getSelectedBackground() || "");
-    }
-  };
+export const setProfile = (profileId) => {
+  elements.profile_select.value = profileId;
+  if (storage_api.profiles[profileId].rules) loadsRules(profileId);
+};
 
-  module.setProfile = (profileId) => {
-    profile_select.value = profileId;
-    if (storage_api.profiles[profileId].rules) module.loadsRules(profileId);
-  };
+export const getSelectedProfileId = () => {
+  if (elements.profile_select.selectedIndex > -1)
+    return elements.profile_select.value;
+  else return "0";
+};
 
-  module.getSelectedProfileId = () => {
-    if (profile_select.selectedIndex > -1)
-      return profile_select.value;
-    else return "0";
-  };
+export const getSelectedProfileName = () => {
+  if (elements.profile_select.options[elements.profile_select.selectedIndex])
+    return elements.profile_select.options[elements.profile_select.selectedIndex].text;
+  else return "Default";
+};
 
-  module.getSelectedProfileName = () => {
-    if (profile_select.options[profile_select.selectedIndex])
-      return profile_select.options[profile_select.selectedIndex].text;
-    else return "Default";
-  };
+export const getProfileId = (profileName) => {
+  let profile = Object.entries(storage_api.profiles).find(([id, profile]) => profile.name === profileName);
+  return profile[0];
+};
 
-  module.getProfileId = (profileName) => {
-    let profile = Object.entries(storage_api.profiles).find(([id, profile]) => profile.name === profileName);
-    return profile[0];
-  };
+export const changeToCustom = () => {
+  elements.profile_select.value = "1";
+};
 
-  module.changeToCustom = () => {
-    profile_select.value = "1";
-  };
-
-  module.createProfileRule = (next = null) => {
-    let new_rule = document.createElement("div");
-    new_rule.classList.add("profile_rule");
-    new_rule.innerHTML = `
+export const createProfileRule = (next = null) => {
+  let new_rule = document.createElement("div");
+  new_rule.classList.add("profile_rule");
+  new_rule.innerHTML = `
       <select class="state_select form_input">
         <option value="sort">Sort By</option>
         <option value="group">Group By</option>
@@ -133,90 +134,53 @@ let profile_api = (function () {
       <button class="create add small_btn" title="Add New Rule Below"></button>
       <button class="delete small_btn" title="Delete Rule"></button>`;
 
-    let state_select = new_rule.querySelector(".state_select")
-    let type_select = new_rule.querySelector(".type_select")
-    let sort_dir = new_rule.querySelector(".sort_dir");
-    state_select.selectedIndex = -1;
-    type_select.selectedIndex = -1;
+  let state_select = new_rule.querySelector(".state_select")
+  let type_select = new_rule.querySelector(".type_select")
+  let sort_dir = new_rule.querySelector(".sort_dir");
+  state_select.selectedIndex = -1;
+  type_select.selectedIndex = -1;
 
-    new_rule.querySelector(".create").addEventListener("click", () => {
-      module.createProfileRule(new_rule);
-    });
-    new_rule.querySelector(".delete").addEventListener("click", () => {
-      new_rule.remove();
-      let first_rule = profile_rules.children[0].querySelector(".delete");
-      if (profile_rules.children.length === 1 && !first_rule.disabled) first_rule.disabled = true;
+  new_rule.querySelector(".create").addEventListener("click", () => {
+    createProfileRule(new_rule);
+  });
+  new_rule.querySelector(".delete").addEventListener("click", () => {
+    new_rule.remove();
+    let first_rule = profile_rules.children[0].querySelector(".delete");
+    if (profile_rules.children.length === 1 && !first_rule.disabled) first_rule.disabled = true;
 
-      if (module.getSelectedProfileName() === "Default") module.changeToCustom();
-      character_list_api.updateList();
-      module.updateProfile();
-      character_list_api.applyProfileToList(character_list_api.getListId(), module.getSelectedProfileId());
-    });
+    if (getSelectedProfileName() === "Default") changeToCustom();
+    character_list_api.updateList();
+    updateProfile();
+    character_list_api.applyProfileToList(character_list_api.getListId(), getSelectedProfileId());
+  });
 
-    sort_dir.addEventListener("click", () => {
-      if (sort_dir.classList.contains("up")) {
-        sort_dir.classList.replace("up", "down");
-      }
-      else if (sort_dir.classList.contains("down")) {
-        sort_dir.classList.replace("down", "up");
-      }
-      if (module.getSelectedProfileName() === "Default") module.changeToCustom();
-      character_list_api.updateList();
-      profile_api.updateProfile();
-      character_list_api.applyProfileToList(character_list_api.getListId(), module.getSelectedProfileId());
-    });
+  sort_dir.addEventListener("click", () => {
+    if (sort_dir.classList.contains("up")) {
+      sort_dir.classList.replace("up", "down");
+    }
+    else if (sort_dir.classList.contains("down")) {
+      sort_dir.classList.replace("down", "up");
+    }
+    if (getSelectedProfileName() === "Default") changeToCustom();
+    character_list_api.updateList();
+    updateProfile();
+    character_list_api.applyProfileToList(character_list_api.getListId(), getSelectedProfileId());
+  });
 
-    // update the list on sort form change.
-    [state_select, type_select].forEach(element => {
-      element.addEventListener("change", () => {
-        if (module.getSelectedProfileName() === "Default") profile_api.changeToCustom();
-        if (state_select.value && type_select.value) {
-          character_list_api.updateList();
-          profile_api.updateProfile();
-          character_list_api.applyProfileToList(character_list_api.getListId(), module.getSelectedProfileId());
-        }
-      });
-    });
-
-    // disable group or id level.
-    state_select.addEventListener("change", () => {
-      if (state_select.value === "group") {
-        if (type_select.value === "character_id" || type_select.value === "level") {
-          type_select.selectedIndex = -1;
-        }
-        type_select.options[3].disabled = true;
-        type_select.options[9].disabled = true;
-      } else {
-        type_select.options[3].disabled = false;
-        type_select.options[9].disabled = false;
+  // update the list on sort form change.
+  [state_select, type_select].forEach(element => {
+    element.addEventListener("change", () => {
+      if (getSelectedProfileName() === "Default") changeToCustom();
+      if (state_select.value && type_select.value) {
+        character_list_api.updateList();
+        updateProfile();
+        character_list_api.applyProfileToList(character_list_api.getListId(), getSelectedProfileId());
       }
     });
+  });
 
-    type_select.addEventListener("change", () => {
-      if (type_select.value === "character_id" || type_select.value === "level") {
-        if (state_select.value === "group") {
-          state_select.selectedIndex = -1;
-        }
-        state_select.options[1].disabled = true;
-      } else state_select.options[1].disabled = false;
-    });
-
-    if (next !== null) next.after(new_rule);
-    else profile_rules.append(new_rule);
-    return new_rule;
-  };
-
-  module.loadRule = (ruleId, settings) => {
-    let rule = module.createProfileRule();
-    let state_select = rule.querySelector(".state_select");
-    let type_select = rule.querySelector(".type_select");
-    let sort_dir = rule.querySelector(".sort_dir");
-    rule.setAttribute("ruleId", ruleId)
-    state_select.value = settings.state;
-    type_select.value = settings.type;
-    if (settings.direction == 1 && sort_dir.classList.contains("down")) sort_dir.classList.replace("down", "up");
-    else if (settings.direction == -1 && sort_dir.classList.contains("up")) sort_dir.classList.replace("up", "down");
-
+  // disable group or id level.
+  state_select.addEventListener("change", () => {
     if (state_select.value === "group") {
       if (type_select.value === "character_id" || type_select.value === "level") {
         type_select.selectedIndex = -1;
@@ -227,26 +191,60 @@ let profile_api = (function () {
       type_select.options[3].disabled = false;
       type_select.options[9].disabled = false;
     }
+  });
 
+  type_select.addEventListener("change", () => {
     if (type_select.value === "character_id" || type_select.value === "level") {
       if (state_select.value === "group") {
         state_select.selectedIndex = -1;
       }
       state_select.options[1].disabled = true;
     } else state_select.options[1].disabled = false;
-  };
+  });
 
-  module.loadsRules = (profileId) => {
-    if (!storage_api.profiles[profileId].rules) return;
-    profile_rules.innerHTML = "";
-    Object.entries(storage_api.profiles[profileId].rules).forEach(([ruleId, settings]) => {
-      module.loadRule(ruleId, settings);
-    });
-    if (profile_rules.children.length > 0) {
-      let first_rule = profile_rules.children[0].querySelector(".delete");
-      if (profile_rules.children.length === 1 && !first_rule.disabled) first_rule.disabled = true;
+  if (next !== null) next.after(new_rule);
+  else profile_rules.append(new_rule);
+  return new_rule;
+};
+
+export const loadRule = (ruleId, settings) => {
+  let rule = createProfileRule();
+  let state_select = rule.querySelector(".state_select");
+  let type_select = rule.querySelector(".type_select");
+  let sort_dir = rule.querySelector(".sort_dir");
+  rule.setAttribute("ruleId", ruleId)
+  state_select.value = settings.state;
+  type_select.value = settings.type;
+  if (settings.direction == 1 && sort_dir.classList.contains("down")) sort_dir.classList.replace("down", "up");
+  else if (settings.direction == -1 && sort_dir.classList.contains("up")) sort_dir.classList.replace("up", "down");
+
+  if (state_select.value === "group") {
+    if (type_select.value === "character_id" || type_select.value === "level") {
+      type_select.selectedIndex = -1;
     }
-  };
+    type_select.options[3].disabled = true;
+    type_select.options[9].disabled = true;
+  } else {
+    type_select.options[3].disabled = false;
+    type_select.options[9].disabled = false;
+  }
 
-  return module;
-})();
+  if (type_select.value === "character_id" || type_select.value === "level") {
+    if (state_select.value === "group") {
+      state_select.selectedIndex = -1;
+    }
+    state_select.options[1].disabled = true;
+  } else state_select.options[1].disabled = false;
+};
+
+export const loadsRules = (profileId) => {
+  if (!storage_api.profiles[profileId].rules) return;
+  profile_rules.innerHTML = "";
+  Object.entries(storage_api.profiles[profileId].rules).sort((a, b) => a[1].index > b[1].index ? 1 : -1).forEach(([ruleId, settings]) => {
+    loadRule(ruleId, settings);
+  });
+  if (profile_rules.children.length > 0) {
+    let first_rule = profile_rules.children[0].querySelector(".delete");
+    if (profile_rules.children.length === 1 && !first_rule.disabled) first_rule.disabled = true;
+  }
+};

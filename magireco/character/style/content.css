@@ -135,6 +135,16 @@ body {
   background-color: var(--textarea-background-color);
 }
 
+#backgroundSelectModalStoryLabel {
+  user-select: none;
+}
+
+#backgroundSelectModalStoryCheck {
+  zoom: 1.5;
+  vertical-align: middle;
+}
+
+
 .background_image_preview {
   vertical-align: top;
   display: inline-block;
@@ -163,7 +173,6 @@ body {
   justify-content: space-between;
   margin-bottom: 5px;
 }
-
 #importListModalTitle {
   margin: 0px;
 }
