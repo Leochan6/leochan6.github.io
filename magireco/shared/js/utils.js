@@ -17,10 +17,6 @@ export const detectColorScheme = () => {
     if (window.localStorage.getItem("theme") == "dark") {
       theme = "dark";
     }
-  } else if (storage_api.settings.theme) {
-    if (storage_api.settings.theme == "dark") {
-      var theme = "dark";
-    }
   } else if (!window.matchMedia) {
     // matchMedia method not supported
     return false;
