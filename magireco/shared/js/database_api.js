@@ -281,10 +281,25 @@ let database = (() => {
     });
   };
 
-  module.onMessageUpdate = (userId, callback) => {
-    messages.on('value', snapshot => {
+  // ---------- messages ---------- //
+
+  module.onceMessageUpdate = (userId, callback) => {
+    messages.child("global").once('value', snapshot => {
       let val = snapshot.val();
-      if (userId != val.userId && val.message) callback(val.message);
+      if (val && val.message && !val.excludeUserIds.includes(userId)) callback(val.message, val.blocking);
+      else callback(false);
+    });
+  }
+
+  module.onMessageUpdate = (userId, callback) => {
+    messages.child("global").on('value', snapshot => {
+      let val = snapshot.val();
+      if (val && val.message && !val.excludeUserIds.includes(userId)) callback(val.message, val.blocking);
+      else callback(false);
+    });
+    messages.child(`userMessages/${userId}`).on('value', snapshot => {
+      let val = snapshot.val();
+      if (val && val.message) callback(val.message, val.blocking);
       else callback(false);
     });
   };

@@ -67,12 +67,15 @@
       e.preventDefault();
       login_content.classList.add("hidden");
       forgot_password_content.classList.remove("hidden");
+      errorHandler("", false);
     });
 
     signin_button.addEventListener("click", e => {
       e.preventDefault();
       let email = email_text.value;
       let password = password_text.value;
+      if (!email) return errorHandler("Email must not be empty.");
+      if (!password) return errorHandler("Password must not be empty.");
       database.signin(email, password, loginHandler, errorHandler);
     });
 
@@ -80,12 +83,14 @@
       e.preventDefault();
       login_content.classList.add("hidden");
       signup_content.classList.remove("hidden");
+      errorHandler("", false);
     });
 
     cancel_signup_button.addEventListener("click", e => {
       e.preventDefault();
       signup_content.classList.add("hidden");
       login_content.classList.remove("hidden");
+      errorSignupHandler("", false);
     });
 
     signup_button.addEventListener("click", e => {
@@ -94,7 +99,8 @@
       let email = signup_email_text.value;
       let password = signup_password_text.value;
       let confirm_password = signup_password_confirm_text.value;
-      if (!name || name.length == 0) return errorSignupHandler("You Name must not be empty.");
+      if (!name) return errorSignupHandler("Name must not be empty.");
+      if (!password || !confirm_password) return errorSignupHandler("Password must not be empty.");
       if (password !== confirm_password) return errorSignupHandler("Your Password and Confirmation Password do not match.");
       database.signup(name, email, password, loginHandler, errorSignupHandler);
     });
@@ -102,13 +108,15 @@
     forgot_password_send_button.addEventListener("click", e => {
       e.preventDefault();
       let email = forgot_password_email.value;
-      if (email) database.resetPassword(email, resetHandler, errorResetHandler);
+      if (!email) errorResetHandler("Email must not be empty.");
+      database.resetPassword(email, resetHandler, errorResetHandler);
     });
 
     forgot_password_cancel_button.addEventListener("click", e => {
       e.preventDefault();
       forgot_password_content.classList.add("hidden");
       login_content.classList.remove("hidden");
+      errorResetHandler("", false);
     })
 
     signin_anonymous_button.addEventListener("click", e => {
@@ -161,28 +169,28 @@
   };
 
 
-  const errorHandler = (errorMsg) => {
+  const errorHandler = (errorMsg, log = true) => {
     email_text.value = "";
     password_text.value = "";
     login_error.classList.remove("hidden");
     login_error.innerHTML = errorMsg;
-    console.error(errorMsg);
+    if (log) console.error(errorMsg);
   };
 
-  const errorSignupHandler = (errorMsg) => {
+  const errorSignupHandler = (errorMsg, log = true) => {
     signup_name_text.value = "";
     signup_email_text.value = "";
     signup_password_text.value = "";
     signup_password_confirm_text.value = "";
     signup_error.classList.remove("hidden");
     signup_error.innerHTML = errorMsg;
-    console.error(errorMsg);
+    if (log) console.error(errorMsg);
   };
 
-  const errorAnonymousHandler = (errorMsg) => {
+  const errorAnonymousHandler = (errorMsg, log = true) => {
     anonymous_error.classList.remove("hidden");
     anonymous_error.innerHTML = errorMsg;
-    console.error(errorMsg);
+    if (log) console.error(errorMsg);
   };
 
   const resetHandler = () => {
@@ -190,11 +198,11 @@
     reset_success.innerHTML = "A password reset email has been sent to the given email. If you do not see an email, please check the Junk or Spam folder.";
   };
 
-  const errorResetHandler = (errorMsg) => {
+  const errorResetHandler = (errorMsg, log = true) => {
     forgot_password_email.value = "";
     reset_error.classList.remove("hidden");
     reset_error.innerHTML = errorMsg;
-    console.error(errorMsg);
+    if (log) console.error(errorMsg);
   };
 
   utils.detectColorScheme();

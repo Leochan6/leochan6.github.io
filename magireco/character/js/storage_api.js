@@ -16,16 +16,14 @@ let storage_api = (() => {
   module.startUp = (user) => {
     userId = user.uid;
     loadUserName();
-    database.onMessageUpdate(userId, message => {
-      if (message) {
-        messageModal.style.display = "block";
-        messageModalText.value = message;
-        messageModalTitle.innerHTML = `Message`;
-        messageModalList.innerHTML = "";
+    database.onceMessageUpdate(userId, (message, blocking) => {
+      if (message && blocking) {
+        loadMessage(message);
       } else {
         database.onSettingUpdate(userId, loadSettings);
         database.onProfileUpdate(userId, loadProfiles);
         database.onListUpdate(userId, loadLists);
+        database.onMessageUpdate(userId, loadMessage);
       }
     });
   };
@@ -114,6 +112,18 @@ let storage_api = (() => {
       }, {});
     module.lists = filtered;
     character_list_api.setLists(module.lists);
+  };
+
+  /**
+   * Loads the message.
+   */
+  const loadMessage = (message) => {
+    if (message !== false) {
+      messageModal.style.display = "block";
+      messageModalText.value = message;
+      messageModalTitle.innerHTML = `Message`;
+      messageModalList.innerHTML = "";
+    }
   };
 
   /* ------------------------------ Lists ------------------------------ */

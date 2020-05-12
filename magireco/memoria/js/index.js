@@ -319,7 +319,6 @@
     // export image button.
     export_image_button.addEventListener("click", () => {
       html2canvas(memoria_list_content).then(canvas => {
-        Canvas2Image.saveAsImage(canvas, "list");
       });
     });
 
