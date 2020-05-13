@@ -99,9 +99,11 @@ const loadProfiles = (snapshot) => {
     }, {});
   // add index property if undefined.
   Object.values(filtered).forEach(profile => {
-    Object.values(profile.rules).forEach((rule, index) => {
-      if (!rule.index) rule.index = index;
-    });
+    if (profile.rules) {
+      Object.values(profile.rules).forEach((rule, index) => {
+        if (!rule.index) rule.index = index;
+      });
+    }
   });
   profiles = filtered;
   // update the profile select.

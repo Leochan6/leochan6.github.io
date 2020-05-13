@@ -58,14 +58,16 @@ export const saveProfile = () => {
   let properties = getSortSettings();
   selectedProfile = { name: profileName, id: null };
   storage_api.createProfile(profileName, properties);
-  if (!profile_create_block.classList.add("hidden")) profile_create_block.classList.add("hidden");
+  if (!profile_create_block.classList.contains("hidden")) profile_create_block.classList.add("hidden");
+  if (new_profile_button.classList.contains("minus")) new_profile_button.classList.replace("minus", "add");
 };
 
 export const updateProfile = () => {
   let profileId = getSelectedProfileId();
   let properties = getSortSettings();
   storage_api.updateProfile(profileId, properties);
-  if (!profile_create_block.classList.add("hidden")) profile_create_block.classList.add("hidden");
+  if (!profile_create_block.classList.contains("hidden")) profile_create_block.classList.add("hidden");
+  if (new_profile_button.classList.contains("minus")) new_profile_button.classList.replace("minus", "add");
 };
 
 export const checkProfile = (profileName) => {
@@ -87,6 +89,8 @@ export const deleteProfile = () => {
 export const setProfile = (profileId) => {
   elements.profile_select.value = profileId;
   if (storage_api.profiles[profileId].rules) loadsRules(profileId);
+  if (profileId === "0" || profileId === "1") elements.delete_profile_button.disabled = true;
+  else elements.delete_profile_button.disabled = false;
 };
 
 export const getSelectedProfileId = () => {

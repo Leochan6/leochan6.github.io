@@ -26,7 +26,7 @@ export const signin = (email, password, loginHandler, errorHandler) => {
 export const signup = (name, email, password, loginHandler, errorHandler) => {
   firebase.auth().createUserWithEmailAndPassword(email, password)
     .then(userCreds => {
-      appendUser(userCreds.user.uid, "activity", { signUp: { event: "Sign Up", details: "Email", time: new Date().toString() } });
+      appendUser(userCreds.user.uid, "activity", { event: "Sign Up", details: "Email", time: new Date().toString() } );
       loginHandler(userCreds, name);
     })
     .catch(error => errorHandler(error.message));
