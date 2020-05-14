@@ -66,18 +66,10 @@ export const setLists = (lists) => {
 };
 
 /**
- * loads the character displays of the character_list.
+ * Selects the list listId and applies the list.
  * 
- * @param {character_api.Display[]} character_list 
- */
-const loadCharacterList = (character_list) => {
-  elements.character_list_content.innerHTML = "";
-  character_list = !character_list ? character_list : {};
-  setPadding(storage_api.settings.padding_x, storage_api.settings.padding_y);
-};
-
-/**
- * select the list of name and loads the character list list
+ * @param {String} listId 
+ * @param {Object} list 
  */
 export const selectList = (listId, list) => {
   for (let element of document.querySelectorAll(".character_list_entry")) {
@@ -128,7 +120,10 @@ export const createList = () => {
 };
 
 /**
- * renames the list.
+ * Renames the list listId with name newName.
+ * 
+ * @param {String} listId 
+ * @param {String} newName 
  */
 export const renameList = (listId, newName) => {
   if (listId && newName && newName.length > 0) {
@@ -141,7 +136,10 @@ export const renameList = (listId, newName) => {
 
 
 /**
- * duplicates the list.
+ * Duplicates the list with name newName.
+ * 
+ * @param {Object} list 
+ * @param {String} newName 
  */
 export const duplicateList = (list, newName) => {
   if (list && newName && newName.length > 0) {
@@ -158,7 +156,9 @@ export const duplicateList = (list, newName) => {
 };
 
 /**
- * deletes the list.
+ * Deletes the list listId.
+ * 
+ * @param {String} listId 
  */
 export const deleteList = (listId) => {
   selectedList = null;
@@ -166,9 +166,7 @@ export const deleteList = (listId) => {
 };
 
 /**
- * updates the list in the database with the list name, characters, and profile.
- * 
- * @param {String} createdName optional
+ * Updates the list in the database with the list name, characters, and profile.
  */
 export const updateList = () => {
   let listId = getListId();
@@ -183,8 +181,8 @@ export const updateList = () => {
   if (!listName) return;
   storage_api.updateList(listId, listName, characterList, selectedProfile, selectedBackground);
 };
-/* ------------------------------ Get the Selected List ------------------------------ */
 
+/* ------------------------------ Get the Selected List ------------------------------ */
 
 /**
  * returns the list name.
@@ -202,6 +200,8 @@ export const getListId = () => {
 
 /**
  * returns all the character displays in a list.
+ * 
+ * @param {boolean} keep_id
  */
 export const getCharacterList = (keep_id = true) => {
   let characterList = {};
@@ -216,6 +216,8 @@ export const getCharacterList = (keep_id = true) => {
 
 /**
  * checks if the list name exists.
+ * 
+ * @param {String} listName
  */
 export const checkListName = (listName) => {
   if (!listName || listName.length === 0) elements.home_error_text.innerHTML = `The list name must not be empty.`;
@@ -242,6 +244,9 @@ export const getSelectedList = () => {
 
 /**
  * Applied the profile profileId to list listId and displays the character list.
+ * 
+ * @param {String} listId 
+ * @param {String} profileId 
  */
 export const applyProfileToList = (listId, profileId) => {
   let characterList = storage_api.lists[listId].characterList;
@@ -257,6 +262,12 @@ export const applyProfileToList = (listId, profileId) => {
   displayGroups(elements.character_list_content, groups);
 };
 
+/**
+ * Adds the groups to the parent element.
+ * 
+ * @param {HTMLDivElement} parent 
+ * @param {Object} groups 
+ */
 export const displayGroups = (parent, groups) => {
   Object.entries(groups).forEach(([key, group]) => {
     let group_row = document.createElement("div");
@@ -277,6 +288,14 @@ export const displayGroups = (parent, groups) => {
   });
 };
 
+/**
+ * Create the group and sort order for the characterList and rules.
+ * 
+ * @param {Object} characterList 
+ * @param {Object} rules 
+ * 
+ * @returns {Object}
+ */
 export const createGroups = (characterList, rules) => {
   let groups = []
   let sorts = [];
@@ -294,6 +313,15 @@ export const createGroups = (characterList, rules) => {
   return characterGroups;
 };
 
+/**
+ * Recursively groups the characterList into groups and then sorts.
+ * 
+ * @param {Array} characterList 
+ * @param {Array} rules 
+ * @param {Array} sorts 
+ * 
+ * @returns {Object}
+ */
 const groupAndSort = (characterList, rules, sorts) => {
   if (rules.length == 0) {
     let sorted = characterList;
@@ -314,9 +342,11 @@ const groupAndSort = (characterList, rules, sorts) => {
 /**
  * adds each display_property to the corresponding group.
  * 
- * @param {character_api.Display} display_properties
+ * @param {character_api.Display[]} display_properties
  * @param {String} group_by
  * @param {Number} group_dir
+ * 
+ * @returns {Object}
  */
 const group_properties = (display_properties, group_by, group_dir) => {
   let display_groups = {};
@@ -381,6 +411,8 @@ const group_properties = (display_properties, group_by, group_dir) => {
 
 /**
  * Sets the displays per character row.
+ * 
+ * @param {Number} displays 
  */
 export const changeDisplaysPerRow = (displays) => {
   storage_api.settings.displays_per_row = displays;
@@ -391,6 +423,8 @@ export const changeDisplaysPerRow = (displays) => {
 
 /**
  * Sets the alignment of the character rows.
+ * 
+ * @param {String} alignment 
  */
 export const changeAlignment = (alignment) => {
   storage_api.settings.display_alignment = alignment;
@@ -402,6 +436,9 @@ export const changeAlignment = (alignment) => {
 
 /**
  * Changes the padding in the direction.
+ * 
+ * @param {String} direction 
+ * @param {Number} padding 
  */
 export const changePadding = (direction, padding) => {
   storage_api.settings[`padding_${direction}`] = padding;
@@ -410,6 +447,9 @@ export const changePadding = (direction, padding) => {
 
 /**
  * Sets the padding of the list.
+ * 
+ * @param {Number} x 
+ * @param {Number} y 
  */
 export const setPadding = (x, y) => {
   elements.character_list_content.style.padding = `${y}px ${x}px`;
@@ -419,6 +459,8 @@ export const setPadding = (x, y) => {
 
 /**
  * sets the zoom of the character list.
+ * 
+ * @param {Number} zoom 
  */
 export const changeZoom = (zoom) => {
   storage_api.updateSettings("character_zoom", zoom);
@@ -448,6 +490,8 @@ export const zoom_fit = () => {
 
 /**
  * Creates a new filter.
+ * 
+ * @param {HTMLDivElement} next optional 
  */
 export const createFilter = (next = null) => {
   let new_filter = document.createElement("div");
@@ -681,6 +725,8 @@ export const createFilter = (next = null) => {
 
 /**
  * Returns the filters.
+ * 
+ * @returns {Array}
  */
 export const getFilters = () => {
   let filters = [];
@@ -704,6 +750,8 @@ export const getFilters = () => {
 
 /**
  * Applies the filters.
+ * 
+ * @param {Array} filters 
  */
 export const applyFilters = (filters = getFilters()) => {
   // if no filters, then show everything.
@@ -754,6 +802,11 @@ export const applyFilters = (filters = getFilters()) => {
 
 /**
  * Check if character display matches all the filters.
+ * 
+ * @param {character_api.Display} character_display
+ * @param {Array} filters
+ * 
+ * @returns {boolean}
  */
 const matchesAllFilters = (character_display, filters) => {
   let matches = Array(filters.length).fill(true);
@@ -770,6 +823,9 @@ const matchesAllFilters = (character_display, filters) => {
 
 /**
  * Check if the character display matches the filter.
+ * 
+ * @param {character_api.Display} character_display 
+ * @param {Array} filter 
  */
 const matchesFilter = (character_display, filter) => {
   if (filter[0].param === "equality") {
@@ -828,6 +884,8 @@ export const resetFilters = () => {
 
 /**
  * Returns the simple stats of the list.
+ * 
+ * @returns {Object}
  */
 export const getStats = () => {
   let result = {
@@ -866,6 +924,8 @@ export const getStats = () => {
 
 /**
  * Returns all the stats of the list.
+ * 
+ * @returns {Object}
  */
 export const getMoreStats = () => {
   let result = {
@@ -927,6 +987,9 @@ export const getMoreStats = () => {
       \nCopies of Each Rank:${Object.entries(result.rankCopies).map(([level, count]) => `\n  ${level}: ${count}`).toString()}`;
 };
 
+/**
+ * Opens the Message Dialog with the list stats.
+ */
 export const openStatsModal = () => {
   messageDialog.open(`Stats of "${getListName()}"`, getMoreStats());
 };
@@ -981,6 +1044,10 @@ export const importList = () => {
 
 /**
  * Checks if the character list is valid.
+ * 
+ * @param {HTMLDivElement[]} character_list
+ * 
+ * @returns {boolean}
  */
 const validateCharacterList = (character_list) => {
   try {

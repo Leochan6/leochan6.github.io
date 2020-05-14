@@ -80,9 +80,9 @@ import { character_elements as elements, messageDialog, characterSelectDialog, b
     window.addEventListener("keyup", e => {
       if (e.key === "Escape") {
         [messageDialog, characterSelectDialog, backgroundSelectDialog, importListDialog].forEach(dialog => {
-          if (event.target == dialog.modal && dialog.isOpen()) return dialog.close();
+          if (e.target == dialog.modal && dialog.isOpen()) return dialog.close();
         });
-        if (character_api.selectedCharacter && character_api.selectedCharacter.character_display_element) {
+        if (character_api.selectedCharacter) {
           character_api.deselectDisplay();
         }
       }
@@ -521,12 +521,14 @@ import { character_elements as elements, messageDialog, characterSelectDialog, b
 
     // deselect currently selected.
     elements.character_list_container.addEventListener("click", (e) => {
-      try {
-        if (e.target.parentElement.className.indexOf("character_display") === -1 && e.target.parentElement.parentElement.className.indexOf("character_display") === -1) {
+      if (character_api.selectedCharacter) {
+        try {
+          if (e.target.parentElement.className.indexOf("character_display") === -1 && e.target.parentElement.parentElement.className.indexOf("character_display") === -1) {
+            character_api.deselectDisplay();
+          }
+        } catch (error) {
           character_api.deselectDisplay();
         }
-      } catch (error) {
-        character_api.deselectDisplay();
       }
     });
 

@@ -47,7 +47,6 @@ export class Character {
  * get the attribute and rank for the character.
  * 
  * @param {String} id 
- * @param {Function} callback 
  */
 const getCharacter = (id) => {
   try {
@@ -185,11 +184,16 @@ export const createDisplay = (display, listener = false) => {
   }
   character_display.addEventListener("contextmenu", e => {
     e.preventDefault();
-    openCharacterDialog(character_collection.find(elem => elem.id === display.character_id));
+    openCharacterDialog(character_collection.find(elem => elem.id === display.character_id), [display]);
   });
   return character_display;
 };
 
+/**
+ * Gets the maximum level for the rank
+ * 
+ * @param {String} rank 
+ */
 export const getMaxLevel = (rank) => {
   if (rank == "1") return "40";
   else if (rank == "2") return "50";
@@ -200,18 +204,31 @@ export const getMaxLevel = (rank) => {
 
 const RANK_TO_LEVEL = { "1": "40", "2": "50", "3": "60", "4": "80", "5": "100" };
 
+/**
+ * Gets the minimum (natural) rank from the character ranks object.
+ * 
+ * @param {Object} ranks 
+ */
 export const getMinRank = (ranks) => {
   let minRank = "5";
   Object.entries(ranks).reverse().forEach(([rank, value]) => minRank = value ? rank : minRank);
   return minRank;
 };
 
+/**
+ * Gets the maximum rank from the character ranks object.
+ * 
+ * @param {Object} ranks 
+ */
 export const getMaxRank = (ranks) => {
   let maxRank = "1";
   Object.entries(ranks).forEach(([rank, value]) => maxRank = value ? rank : maxRank);
   return maxRank;
 };
 
+/**
+ * Minimizes all the fields of the preview Character Display.
+ */
 export const minimizeDisplay = () => {
   let character_display = getCharacterDisplay(display_preview.children[0]);
   let character = character_collection.find(char => char.id === character_display.character_id);
@@ -222,6 +239,9 @@ export const minimizeDisplay = () => {
   updatePreviewDisplay(display);
 };
 
+/**
+ * Maximizes all the fields of the preview Character Display.
+ */
 export const maximizeDisplay = () => {
   let character_display = getCharacterDisplay(display_preview.children[0]);
   let character = character_collection.find(char => char.id === character_display.character_id);
@@ -417,7 +437,7 @@ export const selectDisplay = (character_display) => {
     if (child.classList.contains("selected")) child.classList.remove("selected");
   });
   character_display.classList.add("selected");
-  selectedCharacter = { character_display_element: character_display };
+  selectedCharacter = { characterDisplayId: character_display.getAttribute("_id") };
   enableButtons();
   // update the form.
   copyCharacter();
@@ -427,13 +447,9 @@ export const selectDisplay = (character_display) => {
  * finds and select the display element.
  */
 export const findAndSelectDisplay = () => {
-  if (selectedCharacter) {
-    if (selectedCharacter.characterDisplayId) {
-      let character_display = document.querySelector(`.character_display[_id="${selectedCharacter.characterDisplayId}"]`);
-      if (character_display) selectDisplay(character_display);
-    } else if (selectedCharacter.character_display_element) {
-      selectDisplay(selectedCharacter.character_display_element);
-    }
+  if (selectedCharacter && selectedCharacter.characterDisplayId) {
+    let character_display = document.querySelector(`.character_display:not(.preview)[_id="${selectedCharacter.characterDisplayId}"]`);
+    if (character_display) selectDisplay(character_display);
   }
 };
 
@@ -459,8 +475,9 @@ export const updatePreviewOnForm = () => {
  * deselects the select character display.
  */
 export const deselectDisplay = () => {
-  if (selectedCharacter && selectedCharacter.character_display_element) {
-    selectedCharacter.character_display_element.classList.remove("selected");
+  if (selectedCharacter && selectedCharacter.characterDisplayId) {
+    let character_display = document.querySelector(`.character_display:not(.preview)[_id="${selectedCharacter.characterDisplayId}"]`);
+    if (character_display) character_display.classList.remove("selected");
     selectedCharacter = null;
     enableButtons();
   }
@@ -474,7 +491,7 @@ export const enableButtons = () => {
     if (elements.create_button.disabled) elements.create_button.disabled = false;
     if (elements.min_all_button.disabled) elements.min_all_button.disabled = false;
     if (elements.max_all_button.disabled) elements.max_all_button.disabled = false;
-    if (elements.selectedCharacter && selectedCharacter.elements.character_display_element) {
+    if (selectedCharacter && selectedCharacter.characterDisplayId) {
       if (elements.update_button.disabled) elements.update_button.disabled = false;
       if (elements.copy_button.disabled) elements.copy_button.disabled = false;
       if (elements.delete_button.disabled) elements.delete_button.disabled = false;
@@ -499,14 +516,8 @@ export const enableButtons = () => {
 export const loadCharacterSelectList = () => {
   characterSelectDialog.list.innerHTML = "";
   character_collection.forEach(character => {
-    let star = 1;
-    for (let [key, value] of Object.entries(character.ranks)) {
-      if (value) {
-        star = key;
-        break;
-      }
-    }
-    let added = Object.values(storage_api.lists[character_list_api.getListId()].characterList).find(char => char.character_id === character.id);
+    let star = Object.entries(character.ranks).find(([, val]) => val === true)[0][0];
+    let added = Object.values(storage_api.lists[character_list_api.getListId()].characterList).filter(char => char.character_id === character.id);
     let container = document.createElement("div");
     container.classList.add("character_image_preview");
     container.setAttribute("character_id", character.id);
@@ -514,7 +525,7 @@ export const loadCharacterSelectList = () => {
     image.src = `/magireco/assets/image/card_${character.id}${star}_f.png`;
     image.title = character.name;
     container.append(image);
-    if (added) {
+    if (added.length > 0) {
       let text = document.createElement("label");
       text.classList.add("character_label");
       text.innerHTML = "✓";
@@ -528,7 +539,7 @@ export const loadCharacterSelectList = () => {
     });
     container.addEventListener("contextmenu", e => {
       e.preventDefault();
-      openCharacterDialog(character);
+      openCharacterDialog(character, added);
     });
     characterSelectDialog.list.append(container);
   });
@@ -567,6 +578,11 @@ export const filterCharacters = (search) => {
   toggleAdded(characterSelectDialog.added.checked);
 };
 
+/**
+ * Toggles the visibility of the character previews of added.
+ * 
+ * @param {boolean} value 
+ */
 export const toggleAdded = (value) => {
   if (value) {
     Array.from(characterSelectDialog.list.children).forEach(child => {
@@ -579,9 +595,28 @@ export const toggleAdded = (value) => {
   }
 };
 
-export const openCharacterDialog = (character) => {
-  messageDialog.open(`${character.name} Details`, `Attribute: ${character.attribute}\
+/**
+ * Opens the Message Dialog with the Character Info.
+ * 
+ * @param {Character} character 
+ * @param {Display} displays 
+ */
+export const openCharacterDialog = (character, displays) => {
+  let text = `Attribute: ${character.attribute}\
   \nRanks: ${Object.keys(character.ranks).filter(key => character.ranks[key])}\
   \nObtainability: ${character.obtainability}\
-  \nFandom Wiki Link:\n${character.url}`);
+  \nFandom Wiki Link:\n${character.url}`;
+
+  if (displays.length > 0) text += `\n\nYour Character${displays.length > 1 ? "s" : ""}:`;
+  displays.forEach(display => {
+    text += `\nRank: ${display.rank}\
+    \nPost Awaken: ${display.post_awaken}\
+    \nLevel: ${display.level}\
+    \nMagic: ${display.magic}\
+    \nMagia: ${display.magia}\
+    \nEpisode: ${display.episode}\
+    \nDoppel: ${display.doppel}\n`;
+  });
+
+  messageDialog.open(`${character.name} Details`, text);
 };

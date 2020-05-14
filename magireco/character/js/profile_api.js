@@ -4,7 +4,11 @@ import * as storage_api from './storage_api.js';
 
 export let selectedProfile = null;
 
-// loads, sets, and selects the profiles
+/**
+ * Sets the profiles in the profile_select and loads the profile.
+ * @param {Object} profiles 
+ * @param {String} previous 
+ */
 export const setProfiles = (profiles, previous) => {
   elements.profile_select.innerHTML = "";
   Object.entries(profiles).forEach(([id, profile]) => {
@@ -29,6 +33,11 @@ export const setProfiles = (profiles, previous) => {
   loadsRules(elements.profile_select.value);
 };
 
+/**
+ * Gets the Sorting Settings from the Profile Rules.
+ * 
+ * @returns {Object}
+ */
 export const getSortSettings = () => {
   let settings = {};
   Array.from(profile_rules.children).forEach((child, index) => {
@@ -44,6 +53,9 @@ export const getSortSettings = () => {
   return settings;
 };
 
+/**
+ * Saves a new profile.
+ */
 export const saveProfile = () => {
   let profileName = new_profile_field.value;
   if (Object.values(storage_api.profiles).some(profile => profile.name === profileName)) {
@@ -62,6 +74,9 @@ export const saveProfile = () => {
   if (new_profile_button.classList.contains("minus")) new_profile_button.classList.replace("minus", "add");
 };
 
+/**
+ * Updates the selected profile.
+ */
 export const updateProfile = () => {
   let profileId = getSelectedProfileId();
   let properties = getSortSettings();
@@ -70,11 +85,19 @@ export const updateProfile = () => {
   if (new_profile_button.classList.contains("minus")) new_profile_button.classList.replace("minus", "add");
 };
 
+/**
+ * Check if the profile name exists.
+ * 
+ * @param {String} profileName 
+ */
 export const checkProfile = (profileName) => {
   if (Object.values(storage_api.profiles).some(profile => profile.name === profileName)) profile_error_text.innerHTML = `The sorting profile ${profileName} already exists.`;
   else profile_error_text.innerHTML = "";
 };
 
+/**
+ * Deletes the selected profile.
+ */
 export const deleteProfile = () => {
   let profileId = getSelectedProfileId();
   if (storage_api.profiles[profileId].name !== "Default" && storage_api.profiles[profileId].name !== "Custom") {
@@ -86,6 +109,11 @@ export const deleteProfile = () => {
   }
 };
 
+/**
+ * Sets the profile and loads the rules.
+ * 
+ * @param {String} profileId 
+ */
 export const setProfile = (profileId) => {
   elements.profile_select.value = profileId;
   if (storage_api.profiles[profileId].rules) loadsRules(profileId);
@@ -93,27 +121,47 @@ export const setProfile = (profileId) => {
   else elements.delete_profile_button.disabled = false;
 };
 
+/**
+ * Returns the selected profile id.
+ */
 export const getSelectedProfileId = () => {
   if (elements.profile_select.selectedIndex > -1)
     return elements.profile_select.value;
   else return "0";
 };
 
+/**
+ * returns the selected profile name.
+ */
 export const getSelectedProfileName = () => {
   if (elements.profile_select.options[elements.profile_select.selectedIndex])
     return elements.profile_select.options[elements.profile_select.selectedIndex].text;
   else return "Default";
 };
 
+
+/**
+ * Returns the profile id of profileName.
+ * 
+ * @param {String} profileName 
+ */
 export const getProfileId = (profileName) => {
   let profile = Object.entries(storage_api.profiles).find(([id, profile]) => profile.name === profileName);
   return profile[0];
 };
 
+/**
+ * Changes the profile_select to Custom.
+ */
 export const changeToCustom = () => {
   elements.profile_select.value = "1";
 };
 
+/**
+ * Create a new sorting profile rule.
+ * 
+ * @param {HTMLDivElement} next optional.
+ */
 export const createProfileRule = (next = null) => {
   let new_rule = document.createElement("div");
   new_rule.classList.add("profile_rule");
@@ -211,6 +259,12 @@ export const createProfileRule = (next = null) => {
   return new_rule;
 };
 
+/**
+ * Loads the rule with the settings.
+ * 
+ * @param {String} ruleId 
+ * @param {Object} settings 
+ */
 export const loadRule = (ruleId, settings) => {
   let rule = createProfileRule();
   let state_select = rule.querySelector(".state_select");
@@ -241,6 +295,11 @@ export const loadRule = (ruleId, settings) => {
   } else state_select.options[1].disabled = false;
 };
 
+/**
+ * Loads all the rules for the profile.
+ * 
+ * @param {String} profileId 
+ */
 export const loadsRules = (profileId) => {
   if (!storage_api.profiles[profileId].rules) return;
   profile_rules.innerHTML = "";
