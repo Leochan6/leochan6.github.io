@@ -596,7 +596,7 @@ export const character_collection = [
       "2": false,
       "3": true,
       "4": true,
-      "5": false
+      "5": true
     },
     "obtainability": "unlimited",
     "url": "https://magireco.fandom.com/wiki/Tokiwa_Nanaka"
