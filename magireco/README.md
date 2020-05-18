@@ -181,9 +181,9 @@ For any feedback or questions, please contact me the locations listed above.
 
     In the Top Right of the screen, there is a count showing the number of characters that are visible in the list based on the current `Filters`.
 
-- More Statistics
+- Statistics
 
-    Press the `More Stats` button to open the Stats dialog, showing a detailed breakdown of the statistics of the characters in the Character List and other details.
+    Press the `Stats` button to open the Stats dialog, showing a detailed breakdown of the statistics of the characters in the Character List and other details.
 
 ## Gallery
 List Preview Light

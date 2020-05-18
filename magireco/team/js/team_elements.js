@@ -1,7 +1,4 @@
-/**
- * Elements for the Character Page.
- */
-export const character_elements = {
+export const team_elements = {
 
   // Header
   theme_button: document.querySelector("#theme_button"),
@@ -16,10 +13,10 @@ export const character_elements = {
 
   // Error Text
   home_error_text: document.querySelector("#home_error_text"),
-  character_error_text: document.querySelector("#character_error_text"),
+  memoria_error_text: document.querySelector("#memoria_error_text"),
   profile_error_text: document.querySelector("#profile_error_text"),
 
-  // My Character Lists
+  // Home Buttons
   list_create: document.querySelector("#list_create"),
   list_rename: document.querySelector("#list_rename"),
   list_duplicate: document.querySelector("#list_duplicate"),
@@ -36,20 +33,17 @@ export const character_elements = {
   rename_list_form: document.querySelector("#rename_list_form"),
   rename_list_name_field: document.querySelector("#rename_list_name_field"),
   rename_list_create_button: document.querySelector("#rename_list_create_button"),
-  saved_character_lists: document.querySelector("#saved_character_lists"),
+  saved_memoria_lists: document.querySelector("#saved_memoria_lists"),
 
-  // Create Character Fields
+  // Create Memoria Fields
   name_select: document.querySelector("#name_select"),
+  type_select: document.querySelector("#type_select"),
   rank_select: document.querySelector("#rank_select"),
-  post_awaken_checkbox: document.querySelector("#post_awaken_checkbox"),
+  ascension_select: document.querySelector("#ascension_select"),
   level_select: document.querySelector("#level_select"),
-  magic_select: document.querySelector("#magic_select"),
-  magia_select: document.querySelector("#magia_select"),
-  episode_select: document.querySelector("#episode_select"),
-  doppel_select: document.querySelector("#doppel_select"),
 
-  // Create Character Buttons
-  characterSelectModalOpen: document.querySelector("#characterSelectModalOpen"),
+  // Create Memoria Buttons
+  memoriaSelectModalOpen: document.querySelector("#memoriaSelectModalOpen"),
   create_button: document.querySelector("#create_button"),
   update_button: document.querySelector("#update_button"),
   copy_button: document.querySelector("#copy_button"),
@@ -71,6 +65,16 @@ export const character_elements = {
   delete_profile_button: document.querySelector("#delete_profile_button"),
   profile_rules: document.querySelector("#profile_rules"),
 
+  // Sorting Fields
+  group_by_select: document.querySelector("#group_by_select"),
+  group_dir_select: document.querySelector("#group_dir_select"),
+  sort_by_1_select: document.querySelector("#sort_by_1_select"),
+  sort_dir_1_select: document.querySelector("#sort_dir_1_select"),
+  sort_by_2_select: document.querySelector("#sort_by_2_select"),
+  sort_dir_2_select: document.querySelector("#sort_dir_2_select"),
+  sort_id_dir_select: document.querySelector("#sort_id_dir_select"),
+  displays_per_row: document.querySelector("#displays_per_row"),
+
   // Display Settings
   displays_per_row: document.querySelector("#displays_per_row"),
   display_alignment_select: document.querySelector("#display_alignment_select"),
@@ -84,10 +88,6 @@ export const character_elements = {
   background_transparency_field: document.querySelector("#background_transparency_field"),
   background_transparency_range: document.querySelector("#background_transparency_range"),
 
-  // Settings
-  reset_profiles_button: document.querySelector("#reset_profiles_button"),
-  show_all_menus_checkbox: document.querySelector("#show_all_menus_checkbox"),
-
   // Body
   list_name_title: document.querySelector("#list_name_title"),
   header_content_divider: document.querySelector("#header_content_divider"),
@@ -97,7 +97,7 @@ export const character_elements = {
   left_main_divider: document.querySelector("#left_main_divider"),
   main_header: document.querySelector("#main_header"),
 
-  // Export and Import
+  // Export
   export_image_button: document.querySelector("#export_image_button"),
   export_open_button: document.querySelector("#export_open_button"),
   export_text_button: document.querySelector("#export_text_button"),
@@ -116,11 +116,12 @@ export const character_elements = {
   // Stats
   list_stats_list: document.querySelector("#list_stats_list"),
   more_stats_button: document.querySelector("#more_stats_button"),
-  
-  // Character List
-  character_list_container: document.querySelector("#character_list_container"),
-  character_list_content: document.querySelector("#character_list_content")
-}  
+
+  // Memoria List
+  memoria_list_container: document.querySelector("#memoria_list_container"),
+  memoria_list_content: document.querySelector("#memoria_list_content"),
+
+}
 
 // Message Modal
 export const messageDialog = {
@@ -150,28 +151,28 @@ export const messageDialog = {
   }
 };
 
-// Character Select Modal
-export const characterSelectDialog = {
-  modal: document.querySelector("#characterSelectModal"),
-  content: document.querySelector("#characterSelectModalContent"),
-  search: document.querySelector("#characterSelectModalSearch"),
-  added: document.querySelector("#characterSelectModalAdded"),
-  closeButton: document.querySelector("#characterSelectModalClose"),
-  list: document.querySelector("#characterSelectModalList"),
+// Memoria Select Modal
+export const memoriaSelectDialog = {
+  modal: document.querySelector("#memoriaSelectModal"),
+  content: document.querySelector("#memoriaSelectModalContent"),
+  search: document.querySelector("#memoriaSelectModalSearch"),
+  added: document.querySelector("#memoriaSelectModalAdded"),
+  closeButton: document.querySelector("#memoriaSelectModalClose"),
+  list: document.querySelector("#memoriaSelectModalList"),
 
   open: (loadPreviews) => {
-    characterSelectDialog.modal.style.display = "block";
-    characterSelectDialog.search.focus();
+    memoriaSelectDialog.modal.style.display = "block";
+    memoriaSelectDialog.search.focus();
     loadPreviews();
   },
   close: () => {
-    characterSelectDialog.modal.style.display = "none";
-    characterSelectDialog.search.value = "";
-    characterSelectDialog.list.innerHTML = "";
-    characterSelectDialog.list.scrollTo(0, 0);
+    memoriaSelectDialog.modal.style.display = "none";
+    memoriaSelectDialog.search.value = "";
+    memoriaSelectDialog.list.innerHTML = "";
+    memoriaSelectDialog.list.scrollTo(0, 0);
   },
   isOpen: () => {
-    return characterSelectDialog.modal.style.display === "block";
+    return memoriaSelectDialog.modal.style.display === "block";
   }
 };
 

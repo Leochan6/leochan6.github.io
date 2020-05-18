@@ -6,6 +6,10 @@ import * as profile_api from './profile_api.js';
 import * as storage_api from './storage_api.js';
 import * as utils from '../../shared/js/utils.js';
 
+/**
+ * Character List API for the Character Page.
+ */
+
 export let selectedList = null;
 
 /* ------------------------------ Constants and Mappings ------------------------------ */
@@ -29,7 +33,6 @@ export const setLists = (lists) => {
     // update the fields of each character.
     Object.entries(list.characterList).forEach(([key, display]) => {
       display._id = key;
-      if (!display.post_awaken) display.post_awaken = false;
     });
     let div = document.createElement("div");
     div.classList.add("character_list_row");
@@ -134,7 +137,6 @@ export const renameList = (listId, newName) => {
   }
 };
 
-
 /**
  * Duplicates the list with name newName.
  * 
@@ -171,7 +173,6 @@ export const deleteList = (listId) => {
 export const updateList = () => {
   let listId = getListId();
   let listName = getListName();
-  // let character_list = getCharacterList(false);
   let characterList = storage_api.lists[listId].characterList;
   Object.values(characterList).forEach(value => {
     if (value._id) delete value._id;
@@ -253,7 +254,9 @@ export const applyProfileToList = (listId, profileId) => {
   // modify the list.
   Object.entries(characterList).forEach(([key, display]) => {
     display._id = key;
-    display.obtainability = character_collection.find(character => display.character_id == character.id).obtainability;
+    let character = character_collection.find(character => display.character_id == character.id);
+    display.attribute = character.attribute.toLowerCase();
+    display.obtainability = character.obtainability;
   });
   let rules = storage_api.profiles[profileId].rules;
   if (!rules) rules = profile_api.getSortSettings();
@@ -337,7 +340,7 @@ const groupAndSort = (characterList, rules, sorts) => {
     });
     return groups;
   }
-}
+};
 
 /**
  * adds each display_property to the corresponding group.

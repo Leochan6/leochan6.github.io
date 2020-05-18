@@ -1,0 +1,159 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#DeckFormation {
+  display: flex;
+  background: url(../../assets/bg/Another_Daze_Background.jpg);
+  background-color: rgba(255, 255, 255, 0.6);
+  background-blend-mode: lighten;
+  width: fit-content;
+}
+
+.deckFormationPart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0px 2px;
+}
+
+.deckPartsWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 142px;
+  border: 2px solid #53476d;
+  border-radius: 5px;
+}
+
+.formationHead .head {
+  width: 142px;
+  height: 78px;
+  background: url("http://android.magica-us.com/magica/resource/image_web/page/formation/bg_deck_formation.png") left bottom no-repeat;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.formationMiniMap {
+  width: 50px;
+  height: 50px;
+  background: url("http://android.magica-us.com/magica/resource/image_web/page/formation/bg_formation_s.png") left bottom no-repeat;
+  position: relative;
+}
+
+.formationMiniMap span {
+  width: 10px;
+  height: 10px;
+  background: url("http://android.magica-us.com/magica/resource/image_web/page/formation/bg_formation_s_off.png") left bottom no-repeat;
+  display: block;
+  position: absolute;
+}
+
+.formationMiniMap span.on {
+  background: url("http://android.magica-us.com/magica/resource/image_web/page/formation/bg_formation_s_on.png") left bottom no-repeat;
+}
+
+.formationMiniMap .pos_1 {
+  top: 32px;
+  left: 8px;
+}
+
+.formationMiniMap .pos_2 {
+  top: 20px;
+  left: 8px;
+}
+
+.formationMiniMap .pos_3 {
+  top: 8px;
+  left: 8px;
+}
+
+.formationMiniMap .pos_4 {
+  top: 32px;
+  left: 20px;
+}
+
+.formationMiniMap .pos_5 {
+  top: 20px;
+  left: 20px;
+}
+
+.formationMiniMap .pos_6 {
+  top: 8px;
+  left: 20px;
+}
+
+.formationMiniMap .pos_7 {
+  top: 32px;
+  left: 32px;
+}
+
+.formationMiniMap .pos_8 {
+  top: 20px;
+  left: 32px;
+}
+
+.formationMiniMap .pos_9 {
+  top: 8px;
+  left: 32px;
+}
+
+.formationEffect {
+  display: flex;
+  align-items: center;
+}
+
+.attIcon {
+  height: 20px;
+  margin-right: 4px;
+}
+
+.effText {
+  height: 15px;
+}
+
+.charaStatus tr td:first-child {
+  width: 40px;
+}
+
+.charaStatus tr td:last-child {
+  width: 58px;
+  text-align: right;
+}
+
+.memoriaList {
+  display: flex;
+  zoom: 0.3;
+}
+
+.character {  
+  height: 156px;
+  width: 112px;
+  margin: 5px;
+}
+
+.noCharacter {
+  background: url("../../assets/image/card_xxxxx_f.png") left top no-repeat;
+  background-size: 100% 100%;
+  border: 0;
+  height: 106px;
+  width: 106px;
+}
+
+.canEquip {
+  background: url("http://android.magica-us.com/magica/resource/image_web/page/formation/btn_memoria_equip.png") left top no-repeat;
+  background-size: 100% 100%;
+  border: 0;
+}
+
+.cannotEquip {
+  background: url("http://android.magica-us.com/magica/resource/image_web/page/formation_2/bg_memoria_none.png") left top no-repeat;
+  background-size: 100% 100%;
+  border: 0;
+}
+
+.noSlot {
+  opacity: 0.3;
+}

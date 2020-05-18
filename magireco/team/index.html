@@ -18,7 +18,32 @@
     content="Create and share a list of your Magical Girls from the game Magia Record." />
   <meta name="twitter:image" content="https://leo-chan.me/assets/listpreview.png" />
   <meta name="twitter:card" content="summary_large_image" />
-  <link href="../shared/style/main.css" rel="stylesheet" type="text/css" />
+  <link href="../shared/style/style.css" rel="stylesheet" type="text/css" />
+  <link href="../character/style/character_display.css" rel="stylesheet" type="text/css" />
+  <link href="../memoria/style/memoria_display.css" rel="stylesheet" type="text/css" />
+  <link href="style/content.css" rel="stylesheet" type="text/css" />
+  <link href="style/formation.css" rel="stylesheet" type="text/css" />
 </head>
+  <div id="DeckFormation"></div>
 
+  <!-- Message Modal Dialog -->
+  <div id="messageModal" class="modal">
+    <div class="modal-content modal-medium-width modal-large-height" id="messageModalContent">
+      <div id="messageModalHeader">
+        <h2 id="messageModalTitle"></h2>
+        <span class="close" id="messageModalClose">&times;</span>
+      </div>
+      <textarea id="messageModalText" readonly></textarea>
+      <button id="messageModalCopy" class="small_btn">Copy</button>
+      <div id="messageModalList"></div>
+    </div>
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-database.js"></script>
+  <script src="../shared/libs/generate-pushid.js"></script>
+  <script type="module" src="js/formation_api.js"></script>
+  <script type="module" src="js/index.js"></script>
 <body>

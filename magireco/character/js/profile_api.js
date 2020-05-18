@@ -2,6 +2,10 @@ import { character_elements as elements } from './character_elements.js';
 import * as character_list_api from './character_list_api.js';
 import * as storage_api from './storage_api.js';
 
+/**
+ * Profile API for the Character Page.
+ */
+
 export let selectedProfile = null;
 
 /**

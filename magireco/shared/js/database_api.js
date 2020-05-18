@@ -135,6 +135,10 @@ export const updateList = (userId, listId, content) => {
   return lists.child(`${userId}/${listId}`).set(content);
 };
 
+export const updateListList = (userId, listId, listType, content) => {
+  return lists.child(`${userId}/${listId}/${listType}`).set(content);
+};
+
 export const updateListProfile = (userId, listId, content) => {
   return lists.child(`${userId}/${listId}/selectedProfile`).set(content);
 };

@@ -5,6 +5,10 @@ import * as database_api from '../../shared/js/database_api.js';
 import * as profile_api from './profile_api.js';
 import * as utils from '../../shared/js/utils.js';
 
+/**
+ * Storage API for the Character Page.
+ */
+
 export let profiles = {};
 export let lists = {};
 export let settings = {};
@@ -70,6 +74,7 @@ const loadSettings = (snapshot) => {
   elements.zoom_range.value = settings.character_zoom;
   elements.zoom_field.value = settings.character_zoom;
   elements.displays_per_row.value = settings.displays_per_row;
+  character_list_api.changeDisplaysPerRow(settings.displays_per_row);
   document.querySelectorAll(".character_row").forEach(character_row => character_row.style.justifyContent = character_list_api.DIR_TO_FLEX[settings.display_alignment]);
   elements.character_list_content.style.padding = `${settings.padding_y}px ${settings.padding_x}px`;
   elements.display_alignment_select.value = settings.display_alignment;
@@ -167,7 +172,25 @@ export const renameList = (listId, name) => {
 export const updateList = (listId, name, characterList, selectedProfile, selectedBackground) => {
   if (characterList.length == 0) characterList = false;
   if (!selectedBackground) selectedBackground = false;
+
+  if (characterList) {
+    Object.values(characterList).forEach(character => {
+      if (character._id) delete character._id;
+      if (character.name) delete character.name;
+      if (character.attribute) delete character.attribute;
+      if (character.obtainability) delete character.obtainability;
+    });
+  }
+  console.log((userId, listId, { name: name, characterList: characterList, selectedProfile: selectedProfile, selectedBackground: selectedBackground }));
+
   database_api.updateList(userId, listId, { name: name, characterList: characterList, selectedProfile: selectedProfile, selectedBackground: selectedBackground });
+};
+
+/**
+ * Updates the characterList of list listId with content.
+ */
+export const updateListList = (listId, content) => {
+  database_api.updateListList(userId, listId, "characterList", content);
 };
 
 /**
@@ -205,6 +228,9 @@ export const manualCreateList = (name, characterList, selectedProfile, selectedB
  */
 export const addCharacterToList = (listId, character) => {
   let newCharacter = {};
+  if (character.name) delete character.name;
+  if (character.attribute) delete character.attribute;
+  if (character.obtainability) delete character.obtainability;
   if (character._id) {
     newCharacter[character._id] = character;
     delete character._id;

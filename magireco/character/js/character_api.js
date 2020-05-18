@@ -44,11 +44,27 @@ export class Character {
 };
 
 /**
+ * starts up the list.
+ */
+export const startUp = () => {
+  // initialize name field.
+  [...character_collection].sort((a, b) => a.name > b.name ? 1 : -1).forEach((character) => {
+    elements.name_select.options.add(new Option(character.name, character.id, false));
+  });
+  elements.name_select.value = 1001;
+  elements.name_select.dispatchEvent(new Event("change"));
+
+  let character = getCharacter("1001");
+  updateFormEnabled(character);
+  updatePreviewDisplay(getBasicCharacterDisplay(character));
+};
+
+/**
  * get the attribute and rank for the character.
  * 
  * @param {String} id 
  */
-const getCharacter = (id) => {
+export const getCharacter = (id) => {
   try {
     let character = character_collection.find(character => character.id === id);
     let name = character.name;
@@ -65,7 +81,7 @@ const getCharacter = (id) => {
  * 
  * @param {Character} character 
  */
-const getBasicCharacterDisplay = (character) => {
+export const getBasicCharacterDisplay = (character) => {
   return new Display(character.id, character.name, getMinRank(character.ranks), false, character.attribute, "1", "0", "1", "1", "locked");
 };
 
@@ -96,7 +112,7 @@ export const isValidCharacterDisplay = (character_id, display, validName = true)
   if (display.magia > display.episode) err.push(`Display Magia ${display.magia} must be less than or equal to Display Episode ${display.episode}.`);
   // check episode.
   if (display.episode < 1 || display.episode > 5) err.push(`Display Episode ${display.episode} must be between 1 and 5.`);
-  if (!(display.doppel === "locked" || display.doppel === "unlocked") || (display.doppel === "unlocked" && display.magia < 5)) err.push(`Display Doppel ${display.doppel} can only be unlocked if Magia 5.`);
+  if (!(display.doppel === "locked" || display.doppel === "unlocked") || (display.doppel === "unlocked" && (display.magia < 5 || display.rank < 5))) err.push(`Display Doppel ${display.doppel} can only be unlocked if Magia 5 and Rank 5.`);
   return err;
 };
 
@@ -301,10 +317,10 @@ const updateFormEnabled = (character) => {
   if (getMaxRank(character.ranks) == "5") {
     elements.doppel_select.options[0].disabled = false;
     elements.doppel_select.options[1].disabled = false;
-    elements.doppel_select.value = "locked";
   } else {
     elements.doppel_select.options[0].disabled = false;
     elements.doppel_select.options[1].disabled = true;
+    elements.doppel_select.value = "locked";
   }
 };
 
@@ -318,23 +334,6 @@ const updateCharacterWithDisplay = (character, display) => {
   // return the default display.
   if (!display) return getBasicCharacterDisplay(character);
   return new Display(character.id, character.name, display.rank, display.post_awaken, character.attribute, display.level, display.magic, display.magia, display.episode, display.doppel);
-};
-
-/**
- * starts up the list.
- */
-export const startUp = () => {
-  // initialize name field.
-  [...character_collection].sort((a, b) => a.name > b.name ? 1 : -1).forEach((character) => {
-    elements.name_select.options.add(new Option(character.name, character.id, false));
-  });
-  // name_select.selectedIndex = 0;
-  elements.name_select.value = 1001;
-  elements.name_select.dispatchEvent(new Event("change"));
-
-  let character = getCharacter("1001");
-  updateFormEnabled(character);
-  updatePreviewDisplay(getBasicCharacterDisplay(character));
 };
 
 /**
@@ -380,7 +379,7 @@ export const createCharacter = () => {
   let display = getFormDisplay();
   let listId = character_list_api.getListId();
   display._id = generatePushID();
-  selectedCharacter = { characterDisplayId: display._id, character_display: display };
+  selectedCharacter = { characterDisplayId: display._id };
   storage_api.addCharacterToList(listId, display);
 };
 
@@ -391,8 +390,8 @@ export const updateCharacter = () => {
   let character_display = Array.from(document.querySelectorAll(".character_display:not(.preview)")).find(child => child.classList.contains("selected"));
   if (!character_display) return;
   let display = getFormDisplay();
-  selectedCharacter = { characterDisplayId: character_display.getAttribute("_id"), character_display: display };
-  storage_api.updateCharacterOfList(character_list_api.getListId(), character_display.getAttribute("_id"), display);
+  selectedCharacter = { characterDisplayId: display._id };
+  storage_api.updateCharacterOfList(character_list_api.getListId(), display._id, display);
 };
 
 /**
@@ -406,7 +405,7 @@ export const copyCharacter = () => {
   updateFormEnabled(getCharacter(display.character_id));
   updateForm(display);
   updatePreviewDisplay(display);
-  // }
+  elements.character_error_text.innerHTML = "";
 };
 
 /**
@@ -423,7 +422,12 @@ export const deleteCharacter = () => {
   } else {
     selectedCharacter = null;
   }
-  storage_api.deleteCharacterOfList(character_list_api.getListId(), display._id);
+  let characterListId = character_list_api.getListId()
+  if (Object.keys(storage_api.lists[characterListId].characterList).length === 1) {
+    storage_api.updateListList(characterListId, false);
+  } else {
+    storage_api.deleteCharacterOfList(characterListId, display._id);
+  }
 };
 
 /**
@@ -444,6 +448,18 @@ export const selectDisplay = (character_display) => {
 };
 
 /**
+ * deselects the select character display.
+ */
+export const deselectDisplay = () => {
+  if (selectedCharacter && selectedCharacter.characterDisplayId) {
+    let character_display = document.querySelector(`.character_display:not(.preview)[_id="${selectedCharacter.characterDisplayId}"]`);
+    if (character_display) character_display.classList.remove("selected");
+    selectedCharacter = null;
+    enableButtons();
+  }
+};
+
+/**
  * finds and select the display element.
  */
 export const findAndSelectDisplay = () => {
@@ -460,28 +476,18 @@ export const updatePreviewOnForm = () => {
   let display = getFormDisplay();
   character_error_text.innerHTML = '';
   let error = isValidCharacterDisplay(name_select.value, display);
+  console.trace(error);
   if (error.length == 0) {
     enableButtons();
     updatePreviewDisplay(display);
     updateCharacter();
+    elements.character_error_text.innerHTML = "";
   } else {
     create_button.disabled = true;
     update_button.disabled = true;
-    character_error_text.innerHTML = error.toString();
+    elements.character_error_text.innerHTML = error.toString();
   }
 };
-
-/**
- * deselects the select character display.
- */
-export const deselectDisplay = () => {
-  if (selectedCharacter && selectedCharacter.characterDisplayId) {
-    let character_display = document.querySelector(`.character_display:not(.preview)[_id="${selectedCharacter.characterDisplayId}"]`);
-    if (character_display) character_display.classList.remove("selected");
-    selectedCharacter = null;
-    enableButtons();
-  }
-}
 
 /**
  * Enable and Disable the Character Buttons based on the current state.
@@ -534,8 +540,7 @@ export const loadCharacterSelectList = () => {
     container.addEventListener("click", () => {
       name_select.value = character.id;
       name_select.dispatchEvent(new Event("change"));
-      characterSelectModal.style.display = "none";
-      characterSelectModalSearch.value = "";
+      characterSelectDialog.close();
     });
     container.addEventListener("contextmenu", e => {
       e.preventDefault();

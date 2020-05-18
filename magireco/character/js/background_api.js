@@ -3,6 +3,11 @@ import { background_collection } from '../../collection/background_collection.js
 import * as storage_api from './storage_api.js';
 
 /**
+ * Background API for the Character Page.
+ */
+
+
+/**
  * Gets all the Home Screen Backgrounds.
  */
 export const getBackgrounds = () => {

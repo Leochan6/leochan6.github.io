@@ -1,7 +1,3 @@
-/**
- * Event Handlers for the Character Page.
- */
-
 import * as character_api from './character_api.js';
 import * as character_list_api from './character_list_api.js';
 import * as background_api from './background_api.js';
@@ -11,6 +7,9 @@ import * as database_api from '../../shared/js/database_api.js';
 import * as utils from '../../shared/js/utils.js';
 import { character_elements as elements, messageDialog, characterSelectDialog, backgroundSelectDialog, importListDialog } from './character_elements.js';
 
+/**
+ * Event Handlers for the Character Page.
+ */
 (function () {
   "use strict";
 
@@ -157,13 +156,11 @@ import { character_elements as elements, messageDialog, characterSelectDialog, b
         if (!contents.classList.contains("hidden")) {
           contents.classList.add("hidden");
           toggle.classList.replace("down", "right");
-          storage_api.settings.expanded_tabs[tab_name] = false;
           storage_api.updateSettings(`expanded_tabs/${tab_name}`, false);
         }
         else if (contents.classList.contains("hidden")) {
           contents.classList.remove("hidden");
           toggle.classList.replace("right", "down");
-          storage_api.settings.expanded_tabs[tab_name] = true;
           storage_api.updateSettings(`expanded_tabs/${tab_name}`, true);
         }
       });
@@ -482,7 +479,6 @@ import { character_elements as elements, messageDialog, characterSelectDialog, b
       }
     });
 
-
     /* ------------------------------ Zoom ------------------------------ */
 
     // zoom field input.
@@ -540,7 +536,6 @@ import { character_elements as elements, messageDialog, characterSelectDialog, b
       character_list_api.updateList();
     });
   };
-
 
   /* ------------------------------ Page Start Up ------------------------------ */
 

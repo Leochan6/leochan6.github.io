@@ -4,8 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <link rel="shortcut icon" href="favicon.ico" />
-  <title>Magia Record Character List | Memoria</title>
-  <meta property="og:title" content="Magia Record Character List | Memoria" />
+  <title>Magia Record Memoria List | Memoria</title>
+  <meta property="og:title" content="Magia Record Memoria List | Memoria" />
   <meta property="og:description" content="Create and share a list of your Memoria from the game Magia Record." />
   <meta property="og:url" content="https://leo-chan.me/magireco/memoria/index.html">
   <meta property="og:site_name" content="Leo Chan's Website">
@@ -13,7 +13,7 @@
   <meta property="og:image" content="https://leo-chan.me/home/assets/listpreview.png" />
   <meta property="og:image:width" content="2560">
   <meta property="og:image:height" content="1440">
-  <meta name="twitter:title" content="Magia Record Character List | Memoria" />
+  <meta name="twitter:title" content="Magia Record Memoria List | Memoria" />
   <meta name="twitter:description"
     content="Create and share a list of your Magical Girls from the game Magia Record." />
   <meta name="twitter:image" content="https://leo-chan.me/home/assets/listpreview.png" />
@@ -28,13 +28,23 @@
 <body>
   <header>
     <div id="header_left">
-      <h1><a class="header_link" href="/magireco/" title="Home">Magia Record Character List</a></h1>
+      <h1><a class="header_link" href="/magireco/" title="Home">Magia Record Memoria List</a></h1>
     </div>
-    <div id="header_center" class="hidden"></div>
+    <div id="header_center">
+      <div id="verify_email" class="hidden">
+        <div id="verify_email_close" class="close">&times;</div>
+        <div>Your email address has not been verified.<button id="verify_email_button" class="small_btn">Send
+            Email</button></div>
+
+        <p id="verify_email_success" class="success_text hidden"></p>
+        <p id="verify_email_error" class="error_text hidden"></p>
+      </div>
+    </div>
     <div id="header_right">
       <div id="header_right_upper">
-        <button id="contact_button">Contact / Support</button>
-        <button id="signout_button">Sign Out</button>
+        <button id="theme_button" class="small_btn"></button>
+        <button id="contact_button" class="small_btn">Contact / Support</button>
+        <button id="signout_button" class="small_btn">Sign Out</button>
       </div>
       <div id="header_right_lower">
         <div id="header_username"></div>
@@ -43,37 +53,49 @@
   </header>
   <div class="horizontal-divider" id="header_content_divider"></div>
   <div id="content">
-    <div class="vertical-divider hidden" style="display: none;"></div>
+    <!-- Left Menu Bar -->
     <div id="menu_bar">
       <div id="tabs">
         <!-- Memoria Home Tab -->
         <div id="memoria_home_tab" class="tab">
           <div class="tab_header">
+            <div class="tab_toggle right"></div>
             <h2 class="tab_heading" tab_name="memoria_home_tab">My Memoria Lists </h2>
           </div>
           <div class="tab_contents hidden">
             <div id="list_buttons">
-              <button id="new_list_button" class="small_btn add" title="Create a New Memoria List"></button>
-              <button id="duplicate_list_button" class="small_btn duplicate"
-                title="Duplicate the Selected Memoria List"></button>
+              <button id="new_list_button" class="small_btn add" name="create"
+                title="Create a New Memoria List"></button>
+              <button id="rename_list_button" class="small_btn edit" name="rename"
+                title="Rename the Selected List"></button>
+              <button id="duplicate_list_button" class="small_btn duplicate" name="duplicate"
+                title="Duplicate the Selected List"></button>
               <button id="delete_list_button" class="small_btn delete"
                 title="Delete the Selected Memoria List"></button>
             </div>
             <div id="saved_memoria_lists"></div>
-            <div id="list_create" style="display: none;">
+            <div id="list_create" class="list_form" style="display: none;">
               <form id="new_list_form">
-                <input type="text" id="new_list_name_field" class="form_input" placeholder="New Memoria List Name"></td>
-                <button type="submit" id="new_list_create_button" class="small_btn"
-                  title="Create a New Memoria List">Create</button>
+                <input type="text" id="create_list_name_field" class="form_input" placeholder="New List Name">
+                </td>
+                <button type="submit" id="create_list_create_button" class="small_btn"
+                  title="Create a New List">Create</button>
               </form>
             </div>
-            <div id="list_duplicate" style="display: none;">
+            <div id="list_duplicate" class="list_form" style="display: none;">
               <form id="duplicate_list_form">
-                <input type="text" id="duplicate_list_name_field" class="form_input"
-                  placeholder="Duplicate Memoria List Name">
+                <input type="text" id="duplicate_list_name_field" class="form_input" placeholder="Duplicate List Name">
                 </td>
                 <button type="submit" id="duplicate_list_create_button" class="small_btn"
                   title="Duplicate the Memoria List">Duplicate</button>
+              </form>
+            </div>
+            <div id="list_rename" class="list_form" style="display: none;">
+              <form id="rename_list_form">
+                <input type="text" id="rename_list_name_field" class="form_input" placeholder="Rename List Name">
+                </td>
+                <button type="submit" id="rename_list_create_button" class="small_btn"
+                  title="Rename the Memoria List">Rename</button>
               </form>
             </div>
             <p class="error_text" id="home_error_text"></p>
@@ -83,6 +105,7 @@
         <!-- Memoria Create Tab -->
         <div id="memoria_create_tab" class="tab">
           <div class="tab_header">
+            <div class="tab_toggle right"></div>
             <h2 class="tab_heading" tab_name="memoria_create_tab">Create Memoria</h2>
           </div>
           <div class="tab_contents hidden">
@@ -90,29 +113,13 @@
               <table id="memoria_fields_table" width=100%>
                 <tr>
                   <td>Name:</td>
-                  <td><select id="name_select" class="grid_form" style="width:140px"
+                  <td><select id="name_select" class="create_field form_input" style="width:140px"
                       title="Name of the Memoria."></select></td>
-                  <td><button id="memoriaSelectModalOpen">+</td>
-                </tr>
-                <tr>
-                  <td>Type:</td>
-                  <td><select id="type_select" class="form grid_form" title="Type of the Memoria.">
-                      <option value="ability">Ability</option>
-                      <option value="skill">Skill</option>
-                    </select></td>
-                </tr>
-                <tr>
-                  <td>Rank:</td>
-                  <td><select id="rank_select" class="form grid_form" title="Rank of the Memoria (Rarity/Stars).">
-                      <option value="1">1</option>
-                      <option value="2">2</option>
-                      <option value="3">3</option>
-                      <option value="4">4</option>
-                    </select></td>
+                  <td><button id="memoriaSelectModalOpen"></td>
                 </tr>
                 <tr>
                   <td>Ascension:</td>
-                  <td><select id="ascension_select" class="form grid_form"
+                  <td><select id="ascension_select" class="form create_field form_input"
                       title="Ascension of the Memoria (Limit Break Count).">
                       <option value="0">0</option>
                       <option value="1">1</option>
@@ -123,25 +130,29 @@
                 </tr>
                 <tr>
                   <td>Level:</td>
-                  <td><input id="level_select" class="form grid_form" type="number" value=1 maxlength="2" size=2 min=1
+                  <td><input id="level_select" class="form create_field form_input" type="number" value=1 maxlength="2" size=2 min=1
                       max=50 border="2px solid black" title="Enhancement Level of the Memoria.">
                   </td>
                 </tr>
               </table>
             </div>
             <div id="home_buttons" align="left">
-              <button id="create_button" class="small_btn " type="submit"
-                title="Create and Add a new Memoria to the Memoria List." disabled>Create</button>
-              <button id="update_button" class="small_btn " title="Update the Selected Memoria in the Memoria List."
-                disabled>Update</button>
-              <button id="copy_button" class="small_btn " title="Copy the Selected Memoria in the Memoria List."
-                disabled>Copy</button>
-              <button id="delete_button" class="small_btn " title="Delete the Selected Memoria in the Memoria List."
-                disabled>Delete</button>
-              <button id="min_all_button" class="small_btn " title="Minimize All Fields in the Memoria Form.">Min
-                All</button>
-              <button id="max_all_button" class="small_btn " title="Maximize All Fields in the Memoria Form.">Max
-                All</button>
+              <div id="main_buttons">
+                <button id="create_button" class="small_btn" type="submit"
+                  title="Create and Add a new Memoria to the Memoria List." disabled>Create</button>
+                <button id="update_button" class="small_btn hidden"
+                  title="Update the Selected Memoria in the Memoria List." disabled>Update</button>
+                <button id="copy_button" class="small_btn hidden" title="Copy the Selected Memoria in the Memoria List."
+                  disabled>Copy</button>
+                <button id="delete_button" class="small_btn" title="Delete the Selected Memoria in the Memoria List."
+                  disabled>Delete</button>
+                <button id="min_all_button" class="small_btn" title="Minimize All Fields in the Memoria Form."
+                  disabled>Min
+                  All</button>
+                <button id="max_all_button" class="small_btn" title="Maximize All Fields in the Memoria Form."
+                  disabled>Max
+                  All</button>
+              </div>
             </div>
             <p class="error_text" id="memoria_error_text"></p>
             <h3 id="preview_text">Preview:</h3>
@@ -152,100 +163,96 @@
         <!-- Sort Properties Tab -->
         <div id="memoria_sort_tab" class="tab">
           <div class="tab_header">
+            <div class="tab_toggle right"></div>
             <h2 class="tab_heading" tab_name="memoria_sort_tab">Sorting Profiles</h2>
           </div>
           <div class="tab_contents hidden">
             <div id="sorting_profiles">
-              <table id="sorting_profile_table">
-                <tbody>
-                  <tr>
-                    <td>Current Profile:</td>
-                    <td><select id="profile_select"></select></td>
-                    <td><button id="new_profile_button" title="Create a new profile">+</button></td>
-                    <td><button id="delete_profile_button" title="Delete">×</button></td>
-                  </tr>
-                  <tr id="new_profile_row" style="visibility: collapse;">
-                    <td>Profile Name:</td>
-                    <td><input id="new_profile_field" type="text"></td>
-                    <td><button id="create_profile_button" title="Save this profile">Save</button></td>
-                    <td><button id="close_new_profile_button" title="Close">×</button></td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <div id="sorting_fields" align="left">
-              <table id="sorting_table">
-                <tr>
-                  <td title="Group by this property.">Group By:</td>
-                  <td><select id="group_by_select" class="sort_form">
-                      <option value="type">Type</option>
-                      <option value="rank">Rank</option>
-                      <option value="ascension">Ascension</option>
-                      <option value="none">None</option>
-                    </select>
-                  </td>
-                  <td id="group_dir_select" class="sort_dir up"></td>
-                </tr>
-                <tr>
-                  <td title="Sort by this property first.">Sort By 1:</td>
-                  <td><select id="sort_by_1_select" class="sort_form">
-                      <option value="type">Type</option>
-                      <option value="rank">Rank</option>
-                      <option value="ascension">Ascension</option>
-                      <option value="level">Level</option>
-                      <option value="none">None</option>
-                    </select>
-                  </td>
-                  <td id="sort_dir_1_select" class="sort_dir down"></td>
-                </tr>
-                <tr>
-                  <td title="Sort by this property second.">Sort By 2:</td>
-                  <td><select id="sort_by_2_select" class="sort_form">
-                      <option value="type">Type</option>
-                      <option value="rank">Rank</option>
-                      <option value="ascension">Ascension</option>
-                      <option value="level">Level</option>
-                      <option value="none">None</option>
-                    </select>
-                  </td>
-                  <td id="sort_dir_2_select" class="sort_dir down"></td>
-                </tr>
-                <tr>
-                  <td title="Sort by the id of the character last.">ID Sort Direction:</td>
-                  <td></td>
-                  <td id="sort_id_dir_select" class="sort_dir down"></td>
-                </tr>
-                <tr>
-                  <td>Displays Per Row:</td>
-                  <td><input id="displays_per_row" class="sort_form" type="number" value=8 maxlength="2" size=2 min=1
-                      max=99 border="2px solid black"></td>
-                </tr>
-              </table>
+              <div id="profile_select_create">
+                <div id="profile_select_block">
+                  Profile:
+                  <select id="profile_select" class="form_input"></select>
+                  <button id="new_profile_button" class="add small_btn" title="Create a New Profile"></button>
+                  <button id="delete_profile_button" class="small_btn" title="Delete Selected Profile">×</button>
+                </div>
+                <form id="profile_create_block" class="hidden">
+                  <input id="new_profile_field" class="form_input" type="text" placeholder="New Profile Name">
+                  <button type="submit" id="create_profile_button" class="small_btn"
+                    title="Create this New Profile">Create</button>
+                </form>
+              </div>
             </div>
             <p class="error_text" id="profile_error_text"></p>
+            <div id="profile_rules">
+            </div>
+          </div>
+        </div>
+        <div class="horizontal-divider"></div>
+        <!-- Display Settings Tab -->
+        <div id="display_tab" class="tab">
+          <div class="tab_header">
+            <div class="tab_toggle right"></div>
+            <h2 class="tab_heading" tab_name="display_tab">Display Settings</h2>
+          </div>
+          <div class="tab_contents hidden">
+            <table id="display_table">
+              <tr>
+                <td>Displays Per Row:</td>
+                <td><input type="number" id="displays_per_row" class="display_field form_input" min="1" step="1"
+                    style="width: 50px;">
+                </td>
+              </tr>
+              <tr>
+                <td>Alignment:</td>
+                <td><select id="display_alignment_select" class="display_field form_input">
+                    <option value="left">Left</option>
+                    <option value="center">Center</option>
+                    <option value="right">Right</option>
+                  </select></td>
+              </tr>
+              <tr>
+                <td>Padding X:</td>
+                <td><input type="number" id="display_padding_x_field" class="display_field form_input" min="0"
+                    step="10">
+                </td>
+              </tr>
+              <tr>
+                <td>Padding Y:</td>
+                <td><input type="number" id="display_padding_y_field" class="display_field form_input" min="0"
+                    step="10">
+                </td>
+              </tr>
+            </table>
           </div>
         </div>
         <div class="horizontal-divider"></div>
         <!-- Background Tab -->
-        <div id="memoria_background_tab" class="tab">
+        <div id="background_tab" class="tab">
           <div class="tab_header">
-            <h2 class="tab_heading" tab_name="memoria_background_tab">Background</h2>
+            <div class="tab_toggle right"></div>
+            <h2 class="tab_heading" tab_name="background_tab">Background</h2>
           </div>
           <div class="tab_contents hidden">
-            <table id="memoria_background_tab">
-              <tr>
-                <td>Background:</td>
-                <td><select id="background_select"></select></td>
-                <td><button id="backgroundSelectModalOpen">+</button></td>
-              </tr>
-            </table>
-            <button id="remove_background_button">Remove</button></tr>
+            <div>
+              Background:
+              <select id="background_select" class="background_field form_input"></select>
+              <button id="backgroundSelectModalOpen" class="background_field small_btn"
+                title="Open the Character Select Dialog.">+</button>
+              <button id="remove_background_button" class="small_btn" title="Remove the selected background.">×</button>
+            </div>
+            <div>
+              Transparency:
+              <input type="number" id="background_transparency_field" class="form_input" min="0" max="100" step="1"
+                size="3" value="0" style="width: 50px;">
+              <input type="range" id="background_transparency_range" value="0">
+            </div>
           </div>
         </div>
         <div class="horizontal-divider"></div>
       </div>
     </div>
     <div class="vertical-divider" id="left_main_divider"></div>
+    <!-- Main Content -->
     <div id="main">
       <div id="main_header">
         <div id="name_nav_export">
@@ -258,31 +265,33 @@
           <div id="import_export">
             <div id="export_options">
               Export:
-              <button class="" id="export_image_button"
-                title="If this doesn't work, please take a screenshot instead.">Image</button>
-              <button class="" id="export_text_button">Text</button>
+              <button class="small_btn" id="export_image_button" title="Save the Image to File.">Save</button>
+              <button class="small_btn" id="export_open_button" title="Open Image in New Tab.">View</button>
+              <button class="small_btn" id="export_text_button" title="Export Image as JSON.">Text</button>
             </div>
             <div id="import_options">
               Import:
-              <button class="" id="import_text_button">Text</button>
+              <button class="small_btn" id="import_text_button">Text</button>
             </div>
           </div>
         </div>
         <div class="horizontal-divider"></div>
         <div id="filters_buttons_zoom_stats">
           <div class="" id="add_list_filters">
-            Filters: <button id="add_filter_button">New</button>
-            <button id="apply_filter_button">Apply</button>
-            <button id="reset_filter_button">Reset</button>
+            Filters: <button id="add_filter_button" class="small_btn">New</button>
+            <button id="apply_filter_button" class="small_btn">Apply</button>
+            <button id="reset_filter_button" class="small_btn">Reset</button>
+            <button id="toggle_filter_button" class="small_btn hidden"
+              title="Toggle Visibility All Filter Rules"></button>
           </div>
-          <div id="zoom_tools" title="Auto Zoom not Working">
-            Zoom: <input type="number" id="zoom_field" value=100 maxlength="3" size=3 min=30 max=300
-              style="width: 40px;">
-            <input type="range" min="30" max="300" value="100" id="zoom_range">
+          <div id="zoom_tools">
+            Zoom: <input type="number" id="zoom_field" class="form_input" value=100 maxlength="3" size=3 min=1 max=500
+              style="width: 45px;">
+            <input type="range" min="1" max="500" value="100" id="zoom_range">
           </div>
           <div class="" id="list_stats">
             <label id="list_stats_list"></label>
-            <button id="more_stats_button">More Stats</button>
+            <button id="more_stats_button" class="small_btn">Stats</button>
           </div>
         </div>
         <div class="" id="list_filters"></div>
@@ -301,7 +310,9 @@
             <h2 id="memoriaSelectModalTitle">Memoria Select</h2>
             <span class="close" id="memoriaSelectModalClose">&times;</span>
           </div>
-          <input type="search" id="memoriaSelectModalSearch" placeholder="Search">
+          <input type="search" id="memoriaSelectModalSearch" class="form_input" placeholder="Search">
+          <label id="memoriaSelectModalAddedLabel" for="memoriaSelectModalAdded">Hide Added:</label><input
+            type="checkbox" id="memoriaSelectModalAdded">
         </div>
         <div class="modal-body">
           <div id="memoriaSelectModalList"></div>
@@ -317,7 +328,7 @@
             <h2 id="backgroundSelectModalTitle">Background Select</h2>
             <span class="close" id="backgroundSelectModalClose">&times;</span>
           </div>
-          <input type="search" id="backgroundSelectModalSearch" placeholder="Search">
+          <input type="search" id="backgroundSelectModalSearch" class="form_input" placeholder="Search">
         </div>
         <div class="modal-body">
           <div id="backgroundSelectModalList"></div>
@@ -333,7 +344,7 @@
           <span class="close" id="messageModalClose">&times;</span>
         </div>
         <textarea id="messageModalText" readonly></textarea>
-        <button id="messageModalCopy">Copy</button>
+        <button id="messageModalCopy" class="small_btn">Copy</button>
         <div id="messageModalList"></div>
       </div>
     </div>
@@ -345,9 +356,9 @@
           <h2 id="importListModalTitle">Import List</h2>
           <span class="close" id="importListModalClose">&times;</span>
         </div>
-        <input type="text" id="importListModalName" placeholder="List Name"></textarea>
-        <textarea id="importListModalText" placeholder="JSON"></textarea>
-        <button id="importListModalImport">Import</button>
+        <input type="text" id="importListModalName" class="form_input" placeholder="List Name"></textarea>
+        <textarea id="importListModalText" class="form_input" placeholder="JSON"></textarea>
+        <button id="importListModalImport" class="small_btn">Import</button>
         <div id="importListModalList"></div>
         <p id="importListModalError" class="error_text"></p>
       </div>
@@ -360,17 +371,7 @@
   <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-database.js"></script>
   <script src="../shared/libs/generate-pushid.js"></script>
   <script src="../shared/libs/html2canvas.js"></script>
-  <script src="../shared/js/database_api.js"></script>
-  <script src="../collection/memoria_collection.js"></script>
-  <script src="../collection/background_collection.js"></script>
-  <script src="js/memoria_elements.js"></script>
-  <script src="js/storage_api.js"></script>
-  <script src="js/utils.js"></script>
-  <script src="js/background_api.js"></script>
-  <script src="js/profile_api.js"></script>
-  <script src="js/memoria_list_api.js"></script>
-  <script src="js/memoria_api.js"></script>
-  <script src="js/index.js"></script>
+  <script type="module" src="js/index.js"></script>
 </body>
 
 </html>
