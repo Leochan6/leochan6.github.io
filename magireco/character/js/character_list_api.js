@@ -1003,8 +1003,13 @@ export const openStatsModal = () => {
  * Opens the Export Modal Dialog.
  */
 export const openExportModal = () => {
-  let list = Object.entries(getCharacterList(false))
-    .map(([key, value]) => value).sort((a, b) => a.character_id > b.character_id ? 1 : -1);
+  let list = Object.values(storage_api.lists[getListId()].characterList).sort((a, b) => a.character_id > b.character_id ? 1 : -1);
+  list.forEach(character => {
+    if (character._id) delete character._id;
+    if (character.attribute) delete character.attribute;
+    if (character.obtainability) delete character.obtainability;
+  })
+  console.log(list);
   messageDialog.open(`${selectedList.list.name} Contents`, JSON.stringify(list, null, 1));
 };
 
