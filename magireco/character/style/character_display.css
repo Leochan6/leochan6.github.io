@@ -79,13 +79,13 @@
   margin-right: 2px;
   font-size: 16px;
   color: #D8D58A;
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  text-shadow: -1px -1px black, -1px 0px black, -1px 1px black, 0px -1px black, 0px 1px black, 1px -1px black, 1px 0px black, 1px 1px black;
 }
 
 .character_display .level .level_num {
   font-size: 24px;
   color: white;
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  text-shadow: -1px -1px black, -1px 0px black, -1px 1px black, 0px -1px black, 0px 1px black, 1px -1px black, 1px 0px black, 1px 1px black;
 }
 
 .character_display .card_image {

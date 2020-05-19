@@ -46,13 +46,13 @@
   margin-right: 2px;
   font-size: 16px;
   color: white;
-  text-shadow: -1px 0 #5C504A, 0 1px #5C504A, 1px 0 #5C504A, 0 -1px #5C504A;
+  text-shadow: -1px -1px #5C504A, -1px 0px #5C504A, -1px 1px #5C504A, 0px -1px #5C504A, 0px 1px #5C504A, 1px -1px #5C504A, 1px 0px #5C504A, 1px 1px #5C504A;
 }
 
 .memoria_display .level .level_num {
   font-size: 16px;
   color: white;
-  text-shadow: -1px 0 #5C504A, 0 1px #5C504A, 1px 0 #5C504A, 0 -1px #5C504A;
+  text-shadow: -1px -1px #5C504A, -1px 0px #5C504A, -1px 1px #5C504A, 0px -1px #5C504A, 0px 1px #5C504A, 1px -1px #5C504A, 1px 0px #5C504A, 1px 1px #5C504A;
 }
 
 .memoria_display .memoria_image {
