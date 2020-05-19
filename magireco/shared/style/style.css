@@ -246,6 +246,11 @@ header {
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--scrollbar-thumb-background-color-hover);
+  /* cursor: pointer; */
+}
+
+textarea {
+  cursor: auto;
 }
 
 /* Colors */

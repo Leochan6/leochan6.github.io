@@ -70,7 +70,7 @@ const loadSettings = (snapshot) => {
   });
   if (!settings.background_transparency) settings.background_transparency = 0;
   // display settings
-  elements.character_list_content.style.zoom = settings.character_zoom / 100;
+  character_list_api.setZoom(settings.character_zoom);
   elements.zoom_range.value = settings.character_zoom;
   elements.zoom_field.value = settings.character_zoom;
   elements.displays_per_row.value = settings.displays_per_row;

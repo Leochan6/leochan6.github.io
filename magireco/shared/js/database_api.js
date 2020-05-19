@@ -41,9 +41,10 @@ export const signInAnonymously = (loginHandler, errorHandler) => {
     .catch(error => errorHandler(error));
 };
 
-export const signout = (details) => {
+export const signout = (details, userId) => {
   let user = firebase.auth().currentUser;
-  appendUser(user.uid, "activity", { event: "Sign Out", details: details ? details : "User", time: new Date().toString() });
+  if (user && user.uid) appendUser(user.uid, "activity", { event: "Sign Out", details: details ? details : "User", time: new Date().toString() });
+  else if (userId) appendUser(userId, "activity", { event: "Sign Out", details: details ? details : "User", time: new Date().toString() });
   firebase.auth().signOut().then(() => { window.location.href = "/magireco/"; }).catch((error) => { console.error(error); });
 };
 
@@ -67,7 +68,7 @@ export const sessionTimeout = () => {
         const authTime = idTokenResult.claims.auth_time * 1000;
         const sessionDurationInMilliseconds = 3 * 60 * 60 * 1000; // 3 hours
         const expirationInMilliseconds = sessionDurationInMilliseconds - (Date.now() - authTime);
-        userSessionTimeout = setTimeout(() => signout("Session Timeout"), expirationInMilliseconds);
+        userSessionTimeout = setTimeout(() => signout("Session Timeout", user.uid), expirationInMilliseconds);
       });
     }
   }

@@ -95,6 +95,7 @@ export const selectList = (listId, list) => {
   profile_api.setProfile(list.selectedProfile);
   applyProfileToList(listId, list.selectedProfile);
   setPadding(storage_api.settings.padding_x, storage_api.settings.padding_y);
+  applyFilters();
   background_api.setBackground(list.selectedBackground);
   getStats();
   character_api.findAndSelectDisplay();
@@ -461,14 +462,23 @@ export const setPadding = (x, y) => {
 /* ------------------------------ List Zoom ------------------------------ */
 
 /**
- * sets the zoom of the character list.
+ * changes the zoom of the character list.
  * 
  * @param {Number} zoom 
  */
 export const changeZoom = (zoom) => {
   storage_api.updateSettings("character_zoom", zoom);
-  elements.character_list_content.style.zoom = zoom / 100;
+  setZoom(zoom);
 };
+
+/**
+ * sets the zoom of the character list.
+ * 
+ * @param {Number} zoom 
+ */
+export const setZoom = (zoom) => {
+  elements.character_list_content.style.zoom = zoom / 100;
+}
 
 /**
  * sets the zoom of the character list to fit.
@@ -801,6 +811,11 @@ export const applyFilters = (filters = getFilters()) => {
       }
     }
   });
+  if (Array.from(character_list_content.querySelectorAll(".character_display")).every(child => child.classList.contains("hidden"))) {
+    if (!elements.character_list_content.classList.contains("hidden")) elements.character_list_content.classList.add("hidden");
+  } else {
+    if (elements.character_list_content.classList.contains("hidden")) elements.character_list_content.classList.remove("hidden");
+  }
 };
 
 /**
@@ -877,6 +892,7 @@ export const resetFilters = () => {
       character_display_element.style.display = "flex";
     }
   });
+  if (elements.character_list_content.classList.contains("hidden")) elements.character_list_content.classList.remove("hidden");
   elements.list_filters.innerHTML = "";
   if (elements.toggle_filter_button.classList.contains("add")) elements.toggle_filter_button.classList.remove("add");
   if (elements.toggle_filter_button.classList.contains("minus")) elements.toggle_filter_button.classList.remove("minus");
@@ -1009,8 +1025,7 @@ export const openExportModal = () => {
     if (character.attribute) delete character.attribute;
     if (character.obtainability) delete character.obtainability;
   })
-  console.log(list);
-  messageDialog.open(`${selectedList.list.name} Contents`, JSON.stringify(list, null, 1));
+  messageDialog.open(`"${selectedList.list.name}" Export as Text`, JSON.stringify(list, null, 2));
 };
 
 /**

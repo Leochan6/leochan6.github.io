@@ -476,7 +476,6 @@ export const updatePreviewOnForm = () => {
   let display = getFormDisplay();
   character_error_text.innerHTML = '';
   let error = isValidCharacterDisplay(name_select.value, display);
-  console.trace(error);
   if (error.length == 0) {
     enableButtons();
     updatePreviewDisplay(display);
