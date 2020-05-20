@@ -77,6 +77,11 @@ export const setLists = (lists) => {
  * @param {Object} list 
  */
 export const selectList = (listId, list) => {
+  if (!listId || !list) {
+    let first = Object.entries(storage_api.lists)[0][0];
+    listId = first;
+    list = storage_api.lists[first];
+  }
   for (let element of document.querySelectorAll(".character_list_entry")) {
     // element already selected.
     if (element.getAttribute("listId") === listId) {
@@ -153,6 +158,7 @@ export const duplicateList = (list, newName) => {
     Object.entries(list.characterList).forEach(([key, value]) => {
       newCharacterList[generatePushID()] = value;
     });
+    if (Object.keys(newCharacterList).length === 0) newCharacterList = false;
     list.characterList = newCharacterList;
     storage_api.duplicateList(list, newName);
     elements.duplicate_list_name_field.value = "";
