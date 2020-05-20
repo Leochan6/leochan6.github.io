@@ -390,6 +390,7 @@ export const updateCharacter = () => {
   let character_display = Array.from(document.querySelectorAll(".character_display:not(.preview)")).find(child => child.classList.contains("selected"));
   if (!character_display) return;
   let display = getFormDisplay();
+  display._id = character_display.getAttribute("_id");
   selectedCharacter = { characterDisplayId: display._id };
   storage_api.updateCharacterOfList(character_list_api.getListId(), display._id, display);
 };

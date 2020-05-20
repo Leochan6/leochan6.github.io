@@ -181,8 +181,6 @@ export const updateList = (listId, name, characterList, selectedProfile, selecte
       if (character.obtainability) delete character.obtainability;
     });
   }
-  console.log((userId, listId, { name: name, characterList: characterList, selectedProfile: selectedProfile, selectedBackground: selectedBackground }));
-
   database_api.updateList(userId, listId, { name: name, characterList: characterList, selectedProfile: selectedProfile, selectedBackground: selectedBackground });
 };
 

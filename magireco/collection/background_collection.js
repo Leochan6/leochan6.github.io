@@ -2132,7 +2132,7 @@ export const background_collection = {
     },
     {
       "id": "Whereabouts_of_the_Feather_Background",
-      "name": "Whereabouts_of_the_Feather"
+      "name": "Wings in the Wind"
     },
     {
       "id": "Alina_Is_Coming_to_Town_(1)_Background",
@@ -2168,11 +2168,11 @@ export const background_collection = {
     },
     {
       "id": "Sayuki_Steps_Up!_(1)_Background",
-      "name": "Sayuki_Steps_Up!_(1)"
+      "name": "Sayuki Steps Up! 1"
     },
     {
       "id": "Sayuki_Steps_Up!_(2)_Background",
-      "name": "Sayuki_Steps_Up!_(2)"
+      "name": "Sayuki Steps Up! 2"
     },
     {
       "id": "The_Ephemeral_Summer_Night_Background",

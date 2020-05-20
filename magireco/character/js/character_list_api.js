@@ -50,6 +50,8 @@ export const setLists = (lists) => {
   if (Object.entries(lists).length > 0) {
     if (selectedList && selectedList.listId && lists[selectedList.listId]) {
       selectList(selectedList.listId, lists[selectedList.listId]);
+    } else if (storage_api.settings.selected_character_list) {
+      selectList(storage_api.settings.selected_character_list, lists[storage_api.settings.selected_character_list]);
     } else {
       let first = Object.entries(lists)[0][0];
       selectList(first, lists[first]);
@@ -100,6 +102,7 @@ export const selectList = (listId, list) => {
   getStats();
   character_api.findAndSelectDisplay();
   character_api.enableButtons();
+  storage_api.updateSettings("selected_character_list", listId);
 };
 
 /* ------------------------------ Create and Delete List ------------------------------ */
@@ -165,6 +168,7 @@ export const duplicateList = (list, newName) => {
  */
 export const deleteList = (listId) => {
   selectedList = null;
+  storage_api.updateSettings("selected_character_list", false);
   storage_api.deleteList(listId);
 };
 
@@ -1022,6 +1026,7 @@ export const openExportModal = () => {
   let list = Object.values(storage_api.lists[getListId()].characterList).sort((a, b) => a.character_id > b.character_id ? 1 : -1);
   list.forEach(character => {
     if (character._id) delete character._id;
+    if (character.name) delete character.name;
     if (character.attribute) delete character.attribute;
     if (character.obtainability) delete character.obtainability;
   })
