@@ -14,6 +14,7 @@ export let lists = {};
 export let settings = {};
 
 let userId = null;
+let prevCharacter = null;
 
 /* ------------------------------ Start Up ------------------------------ */
 
@@ -242,6 +243,12 @@ export const addCharacterToList = (listId, character) => {
  * Updates the character characterDisplayId with character character of list listId.
  */
 export const updateCharacterOfList = (listId, characterDisplayId, character) => {
+  if (character._id) delete character._id;
+  if (character.name) delete character.name;
+  if (character.attribute) delete character.attribute;
+  if (character.obtainability) delete character.obtainability;
+  if (JSON.stringify(character) === JSON.stringify(prevCharacter)) return;
+  else prevCharacter = character;
   let newCharacter = { [characterDisplayId]: character };
   database_api.updateListItem(userId, listId, "characterList", newCharacter);
 }
