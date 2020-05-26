@@ -22,6 +22,21 @@ body {
   margin: 5px;
 }
 
+#header_buttons {
+  display: flex;
+  height: 100px;
+  align-items: center;
+}
+
+#header_buttons .nav_item {
+  height: 50px;
+  width: fit-content;
+  margin: 10px;
+  padding: 10px 20px;
+  line-height: 50px;
+  border-radius: 10px;
+}
+
 .message {
   word-wrap: break-word;
 }

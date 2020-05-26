@@ -2,7 +2,9 @@ export const login_elements = {
   signout_button: document.querySelector("#signout_button"),
   contact_button: document.querySelector("#contact_button"),
   header_buttons: document.querySelector("#header_buttons"),
-  enter_button: document.querySelector("#enter_button"),
+  enter_character_link: document.querySelector("#enter_character_link"),
+  enter_memoria_link: document.querySelector("#enter_memoria_link"),
+  enter_teams_link: document.querySelector("#enter_teams_link"),
   header_username: document.querySelector("#header_username"),
 
   login_content: document.querySelector("#login_content"),

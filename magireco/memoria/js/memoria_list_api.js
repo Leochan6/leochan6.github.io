@@ -50,6 +50,8 @@ export const setLists = (lists) => {
   if (Object.entries(lists).length > 0) {
     if (selectedList && selectedList.listId && lists[selectedList.listId]) {
       selectList(selectedList.listId, lists[selectedList.listId]);
+    } else if (storage_api.settings.selected_memoria_list) {
+      selectList(storage_api.settings.selected_memoria_list, lists[storage_api.settings.selected_memoria_list]);
     } else {
       let first = Object.entries(lists)[0][0];
       selectList(first, lists[first]);
@@ -75,6 +77,11 @@ export const setLists = (lists) => {
  * @param {Object} list 
  */
 export const selectList = (listId, list) => {
+  if (!listId || !list) {
+    let first = Object.entries(storage_api.lists)[0][0];
+    listId = first;
+    list = storage_api.lists[first];
+  }
   for (let element of document.querySelectorAll(".memoria_list_entry")) {
     // element already selected.
     if (element.getAttribute("listId") === listId) {
@@ -95,10 +102,12 @@ export const selectList = (listId, list) => {
   profile_api.setProfile(list.selectedProfile);
   applyProfileToList(listId, list.selectedProfile);
   setPadding(storage_api.settings.padding_x, storage_api.settings.padding_y);
+  applyFilters();
   background_api.setBackground(list.selectedBackground);
   getStats();
   memoria_api.findAndSelectDisplay();
   memoria_api.enableButtons();
+  storage_api.updateSettings("selected_memoria_list", listId);
 };
 
 /* ------------------------------ Create and Delete List ------------------------------ */
@@ -162,6 +171,7 @@ export const duplicateList = (list, newName) => {
  */
 export const deleteList = (listId) => {
   selectedList = null;
+  storage_api.updateSettings("selected_memoria_list", false);
   storage_api.deleteList(listId);
 };
 

@@ -28,7 +28,7 @@ import { memoria_elements as elements, messageDialog, memoriaSelectDialog, backg
     // contact button.
     contact_button.addEventListener("click", () => {
       messageDialog.modal.style.display = "block";
-      messageDialog.text.value = `For assistance, support, or feedback, please contact Leo Chan on Discord (Leo_Chan#9150) or Reddit (u/Leochan6).`;
+      messageDialog.text.value = `For assistance, support, or feedback, please contact Leo Chan on Discord (Leo_Chan#9150) or Reddit (u/Leochan6). More Information and how to use at:\nhttps://github.com/Leochan6/leochan6.github.io/blob/master/magireco/README.md;
       messageDialog.title.innerHTML = `Contact / Support`;
       messageDialog.list.innerHTML = "";
     });

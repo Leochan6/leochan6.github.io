@@ -14,7 +14,6 @@ import * as utils from '../../shared/js/utils.js';
         elements.login_content.classList.add("hidden");
         elements.anonymous_content.classList.add("hidden");
         elements.signout_button.classList.remove("hidden");
-        elements.enter_button.classList.remove("hidden");
         elements.header_buttons.classList.remove("hidden");
         elements.header_username.innerHTML = `Welcome ${user.displayName || "Anonymous"}`;
         userId = user.uid;
@@ -22,7 +21,6 @@ import * as utils from '../../shared/js/utils.js';
         elements.login_content.classList.remove("hidden");
         elements.anonymous_content.classList.remove("hidden");
         elements.signout_button.classList.add("hidden");
-        elements.enter_button.classList.add("hidden");
         elements.header_buttons.classList.add("hidden");
         elements.header_username.innerHTML = "";
         userId = null;
@@ -96,11 +94,7 @@ import * as utils from '../../shared/js/utils.js';
     });
 
     elements.contact_button.addEventListener("click", () => {
-      messageDialog.open(`Contact / Support`, "For assistance, support, or feedback, please contact Leo Chan on Discord (Leo_Chan#9150) or Reddit (u/Leochan6). More Information at:\nhttps://github.com/Leochan6/leochan6.github.io/blob/master/magireco/README.md");
-    });
-
-    elements.enter_button.addEventListener("click", () => {
-      window.location.href = "character";
+      messageDialog.open(`Contact / Support`, "For assistance, support, or feedback, please contact Leo Chan on Discord (Leo_Chan#9150) or Reddit (u/Leochan6). More Information and how to use at:\nhttps://github.com/Leochan6/leochan6.github.io/blob/master/magireco/README.md");
     });
 
     // hide modal dialogs
@@ -121,7 +115,6 @@ import * as utils from '../../shared/js/utils.js';
       userCred.user.updateProfile({ displayName: name });
       database.createUser(userCred.user.uid, name);
     }
-    window.location.href = "character";
   };
 
   const errorHandler = (errorMsg, log = true) => {

@@ -56,6 +56,42 @@ header {
   color: var(--text-color-standard);
 }
 
+/** Nav Bar **/
+
+#nav_bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.nav_item {
+  width: 100px;
+  height: 30px;
+  margin: 0px;
+  transition: all 0.5s ease 0s;
+  background-color: var(--nav-item-background-color);
+  border: var(--nav-item-border-color) solid 1px;
+  color: var(--nav-item-text-color);
+  cursor: pointer;
+  user-select: none;
+  font-size: 16px;
+  text-decoration: none;
+  text-align: center;
+  line-height: 30px;
+}
+
+.nav_item:hover {
+  color: var(--nav-item-text-color-hover);
+  background-color: var(--nav-item-background-color-hover);
+}
+
+.nav_item.selected {
+  color: var(--nav-item-text-color-selected);
+  background-color: var(--nav-item-background-color-selected);
+  cursor: default;
+  pointer-events: none;
+}
+
 .light {
   background-image: url("../../assets/icon/theme_light_black.png");
   background-repeat: no-repeat;

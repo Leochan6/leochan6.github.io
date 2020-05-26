@@ -93,7 +93,7 @@ export const isValidMemoriaDisplay = (memoria_id, display, validName = true) => 
   // check id.
   if (display.memoria_id !== memoria.id) err.push(`Display Id ${display.memoria_id} does not match Memoria ID ${memoria.id}.`);
   // check name.
-  if (display.name !== memoria.naname && validName) err.push(`Display Name ${display.name} does not match Memoria Name ${memoria.naname}.`);
+  if (display.name !== memoria.name && validName) err.push(`Display Name ${display.name} does not match Memoria Name ${memoria.name}.`);
   // check type.
   if (display.type !== memoria.type) err.push(`Display Type ${display.type} does not match Memoria Type ${memoria.type}.`);
   // check rank.
@@ -283,6 +283,7 @@ export const updateMemoria = () => {
   let memoria_display = Array.from(document.querySelectorAll(".memoria_display:not(.preview)")).find(child => child.classList.contains("selected"));
   if (!memoria_display) return;
   let display = getFormDisplay();
+  display._id = memoria_display.getAttribute("_id");
   selectedMemoria = { memoriaDisplayId: display._id };
   storage_api.updateMemoriaOfList(memoria_list_api.getListId(), display._id, display);
 };

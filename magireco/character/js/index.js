@@ -27,7 +27,7 @@ import { character_elements as elements, messageDialog, characterSelectDialog, b
 
     // contact button.
     elements.contact_button.addEventListener("click", () => {
-      messageDialog.open(`Contact / Support`, `For assistance, support, or feedback, please contact Leo Chan on Discord (Leo_Chan#9150) or Reddit (u/Leochan6). More Information at:\nhttps://github.com/Leochan6/leochan6.github.io/blob/master/magireco/README.md`);
+      messageDialog.open(`Contact / Support`, `For assistance, support, or feedback, please contact Leo Chan on Discord (Leo_Chan#9150) or Reddit (u/Leochan6). More Information and how to use at:\nhttps://github.com/Leochan6/leochan6.github.io/blob/master/magireco/README.md`);
     });
 
     // theme toggle button.
