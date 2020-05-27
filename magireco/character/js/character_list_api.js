@@ -156,6 +156,10 @@ export const duplicateList = (list, newName) => {
   if (list && newName && newName.length > 0) {
     let newCharacterList = {};
     Object.entries(list.characterList).forEach(([key, value]) => {
+      if (value._id) delete value._id;
+      if (value.name) delete value.name;
+      if (value.attribute) delete value.attribute;
+      if (value.obtainability) delete value.obtainability;
       newCharacterList[generatePushID()] = value;
     });
     if (Object.keys(newCharacterList).length === 0) newCharacterList = false;
@@ -1062,6 +1066,10 @@ export const importList = () => {
       elements.character_list_content.innerHTML = "";
       let newCharacterList = {}
       Object.entries(characterList).forEach(([key, value]) => {
+        if (value._id) delete character._id;
+        if (value.name) delete character.name;
+        if (value.attribute) delete character.attribute;
+        if (value.obtainability) delete character.obtainability;
         newCharacterList[generatePushID()] = value;
       });
       storage_api.manualCreateList(listName, newCharacterList, "0", false);
