@@ -400,10 +400,10 @@ const group_properties = (display_properties, group_by, group_dir) => {
  * @param {Number} displays 
  */
 export const changeDisplaysPerRow = (displays) => {
+  storage_api.settings.memoria_displays_per_row = displays;
   document.querySelectorAll(".memoria_row").forEach(memoria_row => {
     memoria_row.style.width = `${displays * (94)}px`;
   });
-  storage_api.updateSettings("memoria_displays_per_row", displays);
 };
 
 /**

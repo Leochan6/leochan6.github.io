@@ -54,6 +54,7 @@ const loadSettings = (snapshot) => {
   settings = snapshot.val() ? snapshot.val() : {};
   // init expanded tabs
   if (!settings.expanded_tabs) database_api.initSettings(userId);
+  if (!settings.memoria_displays_per_row) settings.memoria_displays_per_row = 16;
   // expand tabs
   Object.entries(settings.expanded_tabs).forEach(([tab_id, expanded]) => {
     let tab = document.querySelector(`#${tab_id}`);
