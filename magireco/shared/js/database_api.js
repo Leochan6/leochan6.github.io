@@ -237,7 +237,6 @@ export const onProfileUpdate = (userId, callback) => {
 // ---------- settings ---------- //
 
 const defaultSettings = {
-  valid_characters: true,
   expanded_tabs: {
     home_tab: true,
     char_tab: true,
@@ -251,10 +250,12 @@ const defaultSettings = {
     memoria_sort_tab: true
   },
   displays_per_row: 10,
+  memoria_displays_per_row: 16,
   display_alignment: "left",
   padding_x: 20,
   padding_y: 20,
   character_zoom: 100,
+  memoria_zoom: 100,
   background_transparency: 0,
 };
 

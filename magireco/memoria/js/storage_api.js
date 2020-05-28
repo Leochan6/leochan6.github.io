@@ -1,5 +1,6 @@
 import { memoria_elements as elements, messageDialog } from "./memoria_elements.js";
 import * as background_api from './background_api.js';
+import * as memoria_api from "./memoria_api.js";
 import * as memoria_list_api from "./memoria_list_api.js";
 import * as database_api from '../../shared/js/database_api.js';
 import * as profile_api from './profile_api.js';
@@ -170,32 +171,33 @@ export const renameList = (listId, name) => {
  * Update the list listId.
  */
 export const updateList = (listId, name, memoriaList, selectedProfile, selectedBackground) => {
-  if (memoriaList.length == 0) memoriaList = false;
-  if (!selectedBackground) selectedBackground = false;
-
-  if (memoriaList) {
-    Object.values(memoriaList).forEach(memoria => {
-      if (memoria._id) delete memoria._id;
-      if (memoria.name) delete memoria.name;
-      if (memoria.type) delete memoria.type;
-      if (memoria.obtainability || typeof memoria.obtainability === 'undefined') delete memoria.obtainability;
-    });
+  if (memoriaList && Object.keys(memoriaList).length > 0) {
+    Object.entries(memoriaList).forEach(([key, value]) => memoriaList[key] = memoria_api.sanitizeMemoria(value));
   }
+  else memoriaList = false;
+  if (!selectedBackground) selectedBackground = false;
   database_api.updateList(userId, listId, { name: name, memoriaList: memoriaList, selectedProfile: selectedProfile, selectedBackground: selectedBackground });
 };
 
 /**
- * Updates the characterList of list listId with content.
+ * Updates the memoriaList of list listId with content.
  */
 export const updateListList = (listId, content) => {
-  database_api.updateListList(userId, listId, "memoriaList", content);
+  database_api.setListProperty(userId, listId, "memoriaList", content);
 };
 
 /**
  * Updates the profile of list listId with profile profileId.
  */
 export const updateListProfile = (listId, profileId) => {
-  if (lists[listId].selectedProfile != profileId) database_api.updateListProfile(userId, listId, profileId);
+  if (lists[listId].selectedProfile != profileId) database_api.setListProperty(userId, listId, "selectedProfile", profileId);
+};
+
+/**
+ * Updates the background of list listId with background backgroundId.
+ */
+export const updateListBackground = (listId, backgroundId) => {
+  if (lists[listId].selectedBackground != backgroundId) database_api.setListProperty(userId, listId, "selectedBackground", backgroundId);
 };
 
 /**
@@ -235,7 +237,7 @@ export const addMemoriaToList = (listId, memoria) => {
   } else {
     newMemoria[generatePushID()] = memoria;
   }
-  database_api.updateListItem(userId, listId, "memoriaList", newMemoria);
+  database_api.updateListProperty(userId, listId, "memoriaList", newMemoria);
 }
 
 /**
@@ -243,7 +245,7 @@ export const addMemoriaToList = (listId, memoria) => {
  */
 export const updateMemoriaOfList = (listId, memoriaDisplayId, memoria) => {
   let newMemoria = { [memoriaDisplayId]: memoria };
-  database_api.updateListItem(userId, listId, "memoriaList", newMemoria);
+  database_api.updateListProperty(userId, listId, "memoriaList", newMemoria);
 }
 
 /**

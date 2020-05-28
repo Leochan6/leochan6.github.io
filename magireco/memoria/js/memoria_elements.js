@@ -44,6 +44,8 @@
   rank_select: document.querySelector("#rank_select"),
   ascension_select: document.querySelector("#ascension_select"),
   level_select: document.querySelector("#level_select"),
+  archive_checkbox: document.querySelector("#archive_checkbox"),
+  protect_checkbox: document.querySelector("#protect_checkbox"),
 
   // Create Memoria Buttons
   memoriaSelectModalOpen: document.querySelector("#memoriaSelectModalOpen"),

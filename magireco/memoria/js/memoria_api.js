@@ -133,8 +133,8 @@ const getFormDisplay = () => {
     memoria.rank,
     elements.ascension_select.value,
     elements.level_select.value,
-    elements.archive_select.checked,
-    elements.protect_select.checked);
+    elements.archive_checkbox.checked,
+    elements.protect_checkbox.checked);
   return display;
 };
 
@@ -215,7 +215,7 @@ export const getMaxLevel = (ascension, rank) => {
 export const minimizeDisplay = () => {
   let memoria_display = getMemoriaDisplay(display_preview.children[0]);
   let memoria = memoria_collection.find(elem => elem.id === memoria_display.memoria_id);
-  let display = new Display(memoria.id, memoria.naname, memoria.type, memoria.rank, "0", "1");
+  let display = new Display(memoria.id, memoria.naname, memoria.type, memoria.rank, "0", "1", elements.archive_checkbox.checked, elements.protect_checkbox.checked);
   updateForm(display);
   updatePreviewDisplay(display);
 };
@@ -226,7 +226,7 @@ export const minimizeDisplay = () => {
 export const maximizeDisplay = () => {
   let memoria_display = getMemoriaDisplay(display_preview.children[0]);
   let memoria = memoria_collection.find(elem => elem.id === memoria_display.memoria_id);
-  let display = new Display(memoria.id, memoria.naname, memoria.type, memoria.rank, "4", getMaxLevel("4", memoria.rank));
+  let display = new Display(memoria.id, memoria.naname, memoria.type, memoria.rank, "4", getMaxLevel("4", memoria.rank), elements.archive_checkbox.checked, elements.protect_checkbox.checked);
   updateForm(display);
   updatePreviewDisplay(display);
 };
@@ -271,7 +271,7 @@ const updateFormEnabled = (memoria) => {
 const updateMemoriaWithDisplay = (memoria, display) => {
   // return the default display.
   if (!display) return getBasicMemoriaDisplay(memoria);
-  return new Display(memoria.id, memoria.naname, memoria.type, memoria.rank, display.ascension, display.level);
+  return new Display(memoria.id, memoria.naname, memoria.type, memoria.rank, display.ascension, display.level, display.archive, display.protect);
 };
 
 /**

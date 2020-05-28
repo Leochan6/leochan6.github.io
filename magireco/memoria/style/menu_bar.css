@@ -147,6 +147,11 @@
   width: 50px;
 }
 
+#protect_checkbox, #archive_checkbox {
+  zoom: 1.5;
+  margin: 3px 0px;
+}
+
 #home_buttons {
   display: flex;
   flex-wrap: wrap;
