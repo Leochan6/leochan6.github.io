@@ -27,10 +27,15 @@ import { memoria_elements as elements, messageDialog, memoriaSelectDialog, backg
 
     // contact button.
     contact_button.addEventListener("click", () => {
-      messageDialog.modal.style.display = "block";
-      messageDialog.text.value = `For assistance, support, or feedback, please contact Leo Chan on Discord (Leo_Chan#9150) or Reddit (u/Leochan6). More Information and how to use at:\nhttps://github.com/Leochan6/leochan6.github.io/blob/master/magireco/README.md;
-      messageDialog.title.innerHTML = `Contact / Support`;
-      messageDialog.list.innerHTML = "";
+      messageDialog.open(`Contact / Support`, `For assistance, support, or feedback, please contact Leo Chan on Discord (Leo_Chan#9150) or Reddit (u/Leochan6). More Information and how to use at:\nhttps://github.com/Leochan6/leochan6.github.io/blob/master/magireco/README.md`);
+    });
+
+    // theme toggle button.
+    elements.theme_button.addEventListener("click", () => {
+      let theme = "light"
+      if (elements.theme_button.classList.contains("dark")) theme = "dark";
+      else if (elements.theme_button.classList.contains("light")) theme = "light";
+      storage_api.updateSettings("theme", theme);
     });
 
     /* ------------------------------ General Modal Dialogs ------------------------------ */

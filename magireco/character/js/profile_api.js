@@ -109,7 +109,7 @@ export const deleteProfile = () => {
     selectedProfile = { name: "Default", id: "0" };
     elements.profile_select.value = "0";
     let listId = character_list_api.getListId();
-    if (listId) storage_api.updateList(listId, character_list_api.getListName(), storage_api.lists[listId].characterList, "0", background_api.getSelectedBackground() || "");
+    if (listId) storage_api.updateListProfile(listId, "0");
   }
 };
 
@@ -203,9 +203,7 @@ export const createProfileRule = (next = null) => {
     new_rule.remove();
     let first_rule = profile_rules.children[0].querySelector(".delete");
     if (profile_rules.children.length === 1 && !first_rule.disabled) first_rule.disabled = true;
-
     if (getSelectedProfileName() === "Default") changeToCustom();
-    character_list_api.updateList();
     updateProfile();
     character_list_api.applyProfileToList(character_list_api.getListId(), getSelectedProfileId());
   });
@@ -218,7 +216,6 @@ export const createProfileRule = (next = null) => {
       sort_dir.classList.replace("down", "up");
     }
     if (getSelectedProfileName() === "Default") changeToCustom();
-    character_list_api.updateList();
     updateProfile();
     character_list_api.applyProfileToList(character_list_api.getListId(), getSelectedProfileId());
   });
@@ -228,7 +225,6 @@ export const createProfileRule = (next = null) => {
     element.addEventListener("change", () => {
       if (getSelectedProfileName() === "Default") changeToCustom();
       if (state_select.value && type_select.value) {
-        character_list_api.updateList();
         updateProfile();
         character_list_api.applyProfileToList(character_list_api.getListId(), getSelectedProfileId());
       }

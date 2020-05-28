@@ -155,13 +155,10 @@ export const renameList = (listId, newName) => {
 export const duplicateList = (list, newName) => {
   if (list && newName && newName.length > 0) {
     let newCharacterList = {};
-    Object.entries(list.characterList).forEach(([key, value]) => {
-      if (value._id) delete value._id;
-      if (value.name) delete value.name;
-      if (value.attribute) delete value.attribute;
-      if (value.obtainability) delete value.obtainability;
-      newCharacterList[generatePushID()] = value;
+    Object.values(list.characterList).forEach(value => {
+      newCharacterList[generatePushID()] = character_api.sanitizeCharacter(value);
     });
+    console.log(newCharacterList);
     if (Object.keys(newCharacterList).length === 0) newCharacterList = false;
     list.characterList = newCharacterList;
     storage_api.duplicateList(list, newName);
@@ -188,10 +185,9 @@ export const deleteList = (listId) => {
 export const updateList = () => {
   let listId = getListId();
   let listName = getListName();
-  let characterList = storage_api.lists[listId].characterList;
-  Object.values(characterList).forEach(value => {
-    if (value._id) delete value._id;
-  });
+  let characterList = {};
+  Object.entries(storage_api.lists[listId].characterList)
+    .forEach(([key, value]) => characterList[key] = character_api.sanitizeCharacter(value));
   let selectedProfile = profile_api.getSelectedProfileId();
   let selectedBackground = background_api.getSelectedBackground();
   if (!listName) return;
@@ -1033,13 +1029,9 @@ export const openStatsModal = () => {
  * Opens the Export Modal Dialog.
  */
 export const openExportModal = () => {
-  let list = Object.values(storage_api.lists[getListId()].characterList).sort((a, b) => a.character_id > b.character_id ? 1 : -1);
-  list.forEach(character => {
-    if (character._id) delete character._id;
-    if (character.name) delete character.name;
-    if (character.attribute) delete character.attribute;
-    if (character.obtainability) delete character.obtainability;
-  })
+  let list = Object.values(storage_api.lists[getListId()].characterList)
+    .map(value => character_api.sanitizeCharacter(value))
+    .sort((a, b) => a.character_id > b.character_id ? 1 : -1);
   messageDialog.open(`"${selectedList.list.name}" Export as Text`, JSON.stringify(list, null, 2));
 };
 
@@ -1064,14 +1056,9 @@ export const importList = () => {
       elements.list_name_title.innerHTML = listName;
       elements.profile_select.value = "Default";
       elements.character_list_content.innerHTML = "";
-      let newCharacterList = {}
-      Object.entries(characterList).forEach(([key, value]) => {
-        if (value._id) delete character._id;
-        if (value.name) delete character.name;
-        if (value.attribute) delete character.attribute;
-        if (value.obtainability) delete character.obtainability;
-        newCharacterList[generatePushID()] = value;
-      });
+      let newCharacterList = {};
+      Object.entries(characterList).forEach(([key, value]) =>
+        newCharacterList[generatePushID()] = character_api.sanitizeCharacter(value));
       storage_api.manualCreateList(listName, newCharacterList, "0", false);
       importListDialog.close();
     } else {

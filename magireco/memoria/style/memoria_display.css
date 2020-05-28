@@ -32,9 +32,9 @@
 .memoria_display .level {
   display: flex;
   flex-direction: row;
-  margin-left: 6px;
+  margin-left: 2px;
   margin-right: auto;
-  margin-top: -20px;
+  margin-top: -12px;
   text-align: left;
   font-family: Arial, Helvetica, sans-serif;
   cursor: default;
@@ -44,15 +44,30 @@
 .memoria_display .level .level_pre {
   position: relative;
   margin-right: 2px;
-  font-size: 16px;
+  font-size: 12px;
   color: white;
   text-shadow: -1px -1px #5C504A, -1px 0px #5C504A, -1px 1px #5C504A, 0px -1px #5C504A, 0px 1px #5C504A, 1px -1px #5C504A, 1px 0px #5C504A, 1px 1px #5C504A;
 }
 
 .memoria_display .level .level_num {
-  font-size: 16px;
+  font-size: 12px;
   color: white;
   text-shadow: -1px -1px #5C504A, -1px 0px #5C504A, -1px 1px #5C504A, 0px -1px #5C504A, 0px 1px #5C504A, 1px -1px #5C504A, 1px 0px #5C504A, 1px 1px #5C504A;
+}
+
+.memoria_display .archive {
+  display: flex;
+  width: 20px;
+  margin-top: -56px;
+  margin-left: 2px;
+}
+
+.memoria_display .protect {
+  display: flex;
+  width: 20px;
+  margin-top: 5px;
+  margin-left: auto;
+  margin-right: 2px;
 }
 
 .memoria_display .memoria_image {

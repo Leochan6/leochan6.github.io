@@ -77,6 +77,20 @@ export const getCharacter = (id) => {
 };
 
 /**
+ * removes the extra properties of the character.
+ * 
+ * @param {Character} character 
+ */
+export const sanitizeCharacter = (character, removeId = true) => {
+  let newCharacter = { ...character };
+  if (removeId && newCharacter._id) delete newCharacter._id;
+  if (newCharacter.name) delete newCharacter.name;
+  if (newCharacter.attribute) delete newCharacter.attribute;
+  if (newCharacter.obtainability) delete newCharacter.obtainability;
+  return newCharacter;
+};
+
+/**
  * gets the basic display for the character.
  * 
  * @param {Character} character 

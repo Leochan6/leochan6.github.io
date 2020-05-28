@@ -128,24 +128,16 @@ export const createList = (userId, content) => {
   return lists.child(userId).push(content);
 };
 
-export const updateListName = (userId, listId, content) => {
-  return lists.child(`${userId}/${listId}/name`).set(content);
-};
-
 export const updateList = (userId, listId, content) => {
   return lists.child(`${userId}/${listId}`).set(content);
 };
 
-export const updateListList = (userId, listId, listType, content) => {
-  return lists.child(`${userId}/${listId}/${listType}`).set(content);
+export const setListProperty = (userId, listId, propertyName, content) => {
+  return lists.child(`${userId}/${listId}/${propertyName}`).set(content);
 };
 
-export const updateListProfile = (userId, listId, content) => {
-  return lists.child(`${userId}/${listId}/selectedProfile`).set(content);
-};
-
-export const updateListItem = (userId, listId, listProperty, content) => {
-  return lists.child(`${userId}/${listId}/${listProperty}`).update(content);
+export const updateListProperty = (userId, listId, propertyName, content) => {
+  return lists.child(`${userId}/${listId}/${propertyName}`).update(content);
 };
 
 export const deleteListItem = (userId, listId, listProperty, content) => {

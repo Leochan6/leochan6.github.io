@@ -116,12 +116,12 @@ export const selectList = (listId, list) => {
  * creates a new list.
  */
 export const createList = () => {
-  let listName = new_list_name_field.value;
+  let listName = elements.create_list_name_field.value;
   if (!listName) {
     elements.home_error_text.innerHTML = `The list name must not be empty.`;
     return;
   }
-  elements.new_list_name_field.value = "";
+  elements.create_list_name_field.value = "";
   elements.new_list_button.classList.replace("minus", "add");
   elements.list_create.style.visibility = "collapse";
   elements.list_create.style.display = "none";
@@ -804,6 +804,8 @@ export const getMoreStats = () => {
   let result = {
     totalMemoria: 0,
     totalVisible: 0,
+    archive: 0,
+    protect: 0,
     limited: 0,
     maxLevel: 0,
     levels: {},
@@ -823,6 +825,8 @@ export const getMoreStats = () => {
         if (memoria.obtainability == "limited") result.limited++;
         if (memoria_api.getMaxLevel(memoria.ascension, memoria.rank) == memoria_display.level) result.maxLevel++;
         if (memoria.ascension == 4) result.maxAscension++;
+        if (memoria.archive) result.archive++;
+        if (memoria.protect) result.protect++;
         result.ranks[memoria_display.rank] = result.ranks[memoria_display.rank] + 1 || 1;
         result.ascensions[memoria_display.ascension] = result.ascensions[memoria_display.ascension] + 1 || 1;
         result.levels[memoria_display.level] = result.levels[memoria_display.level] + 1 || 1;
@@ -833,6 +837,8 @@ export const getMoreStats = () => {
   });
 
   return `Total Memoria: ${result.totalMemoria}\nTotal Visible: ${result.totalVisible}\nLimited: ${result.limited}\nUnlimited: ${result.totalVisible - result.limited}\
+      \nArchive: ${result.archive}\
+      \nLocked: ${result.protect}\
       \nMax Level: ${result.maxLevel}\nMax Ascension: ${result.maxAscension}\
       \nLevels:${Object.entries(result.levels).map(([level, count]) => `\n  ${level}: ${count}`).toString()}\
       \nRanks:${Object.entries(result.ranks).map(([level, count]) => `\n  ${level}: ${count}`).toString()}\
@@ -853,8 +859,9 @@ export const openStatsModal = () => {
  * Opens the Export Modal Dialog.
  */
 export const openExportModal = () => {
-  let list = Object.entries(getMemoriaList(false))
-    .map(([key, value]) => value).sort((a, b) => a.memoria_id > b.memoria_id ? 1 : -1);
+  let list = Object.values(getMemoriaList(false))
+    .map(value => memoria_api.sanitizeMemoria(value))
+    .sort((a, b) => a.memoria_id > b.memoria_id ? 1 : -1);
   messageDialog.open(`${selectedList.list.name} Contents`, JSON.stringify(list, null, 1));
 };
 
@@ -881,7 +888,7 @@ export const importList = () => {
       elements.profile_select.value = "Default";
       elements.memoria_list_content.innerHTML = "";
       let newMemoriaList = {}
-      Object.entries(memoriaList).forEach(([key, value]) => {
+      Object.entries(memoria_list).forEach(([key, value]) => {
         newMemoriaList[generatePushID()] = value;
       });
       storage_api.manualCreateList(listName, newMemoriaList, "10", false);
@@ -907,6 +914,7 @@ const validateMemoriaList = (memoria_list) => {
   try {
     if (Array.from(memoria_list).every(memoria => {
       let errors = memoria_api.isValidMemoriaDisplay(memoria.memoria_id, memoria, false);
+      if (errors.length > 0) console.log(memoria, errors);
       return errors.length === 0
     })) return true;
   } catch (e) {

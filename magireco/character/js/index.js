@@ -293,8 +293,9 @@ import { character_elements as elements, messageDialog, characterSelectDialog, b
       if (profileId === "0" || profileId === "1") elements.delete_profile_button.disabled = true;
       else elements.delete_profile_button.disabled = false;
       profile_api.setProfile(profileId);
-      character_list_api.applyProfileToList(character_list_api.getListId(), profileId);
-      character_list_api.updateList();
+      let listId = character_list_api.getListId();
+      character_list_api.applyProfileToList(listId, profileId);
+      storage_api.updateListProfile(listId, profileId);
     });
 
     // show the save new profile form.
@@ -368,14 +369,15 @@ import { character_elements as elements, messageDialog, characterSelectDialog, b
 
     // set the background.
     elements.background_select.addEventListener("change", () => {
-      background_api.setBackground(elements.background_select.value);
-      character_list_api.updateList();
+      let backgroundId = elements.background_select.value;
+      background_api.setBackground(backgroundId);
+      storage_api.updateListBackground(character_list_api.getListId(), backgroundId);
     });
 
     // remove the background.
     elements.remove_background_button.addEventListener("click", () => {
       background_api.removeBackground();
-      character_list_api.updateList();
+      storage_api.updateListBackground(character_list_api.getListId(), false);
     });
 
     // transparency field input.
@@ -532,6 +534,7 @@ import { character_elements as elements, messageDialog, characterSelectDialog, b
 
     // resort when character list changes.
     elements.character_list_content.addEventListener("change", () => {
+      console.error(1);
       character_list_api.applyProfileToList(character_list_api.getListId(), profile_api.getSelectedProfileId());
       character_list_api.updateList();
     });

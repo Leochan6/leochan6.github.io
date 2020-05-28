@@ -1000,6 +1000,26 @@ export const memoria_collection = [
     "url": "https://magireco.fandom.com/wiki/PPPH!_Perfect_Callout!"
   },
   {
+    "id": "1054",
+    "name": "Surrounded by White Wings",
+    "naname": "Surrounded by White Wings",
+    "type": "ability",
+    "rank": "3",
+    "min_hp": "600",
+    "min_atk": "0",
+    "min_def": "600",
+    "max_hp": "1500",
+    "max_atk": "0",
+    "max_def": "1500",
+    "effect1": "Blast Damage Up [III / 25%]",
+    "effect2": "Blast Damage Up [IV / 30%]",
+    "cooldown1": "",
+    "cooldown2": "",
+    "chara": "All",
+    "obtainability": "unlimited",
+    "url": "https://magireco.fandom.com/wiki/Surrounded_by_White_Wings"
+  },
+  {
     "id": "1055",
     "name": "Tranquil Morning Practice",
     "naname": "Quiet Morning Practice",
@@ -3998,7 +4018,7 @@ export const memoria_collection = [
   {
     "id": "1212",
     "name": "Divination Ban",
-    "naname": "",
+    "naname": "The Fortune-Telling Ban",
     "type": "skill",
     "rank": "3",
     "min_hp": "430",
@@ -4011,7 +4031,7 @@ export const memoria_collection = [
     "effect2": "Status Ailment Resistance Down [III / 10%] (All / 1 Turn)",
     "cooldown1": "6",
     "cooldown2": "5",
-    "chara": "Anna Meru",
+    "chara": "Anna Mel",
     "obtainability": "unlimited",
     "url": "https://magireco.fandom.com/wiki/Divination_Ban"
   },

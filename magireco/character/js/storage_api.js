@@ -1,5 +1,6 @@
 import { character_elements as elements, messageDialog } from "./character_elements.js";
 import * as background_api from './background_api.js';
+import * as character_api from "./character_api.js";
 import * as character_list_api from "./character_list_api.js";
 import * as database_api from '../../shared/js/database_api.js';
 import * as profile_api from './profile_api.js';
@@ -164,24 +165,18 @@ export const createList = (name) => {
  * Rename the List listId with name name.
  */
 export const renameList = (listId, name) => {
-  database_api.updateListName(userId, listId, name);
+  if (lists[listId].name != name) database_api.setListProperty(userId, listId, "name", name);
 };
 
 /**
  * Update the list listId.
  */
 export const updateList = (listId, name, characterList, selectedProfile, selectedBackground) => {
-  if (characterList.length == 0) characterList = false;
-  if (!selectedBackground) selectedBackground = false;
-
-  if (characterList) {
-    Object.values(characterList).forEach(character => {
-      if (character._id) delete character._id;
-      if (character.name) delete character.name;
-      if (character.attribute) delete character.attribute;
-      if (character.obtainability) delete character.obtainability;
-    });
+  if (characterList && Object.keys(characterList).length > 0) {
+    Object.entries(characterList).forEach(([key, value]) => characterList[key] = character_api.sanitizeCharacter(value));
   }
+  else characterList = false;
+  if (!selectedBackground) selectedBackground = false;
   database_api.updateList(userId, listId, { name: name, characterList: characterList, selectedProfile: selectedProfile, selectedBackground: selectedBackground });
 };
 
@@ -189,14 +184,21 @@ export const updateList = (listId, name, characterList, selectedProfile, selecte
  * Updates the characterList of list listId with content.
  */
 export const updateListList = (listId, content) => {
-  database_api.updateListList(userId, listId, "characterList", content);
+  database_api.setListProperty(userId, listId, "characterList", content);
 };
 
 /**
  * Updates the profile of list listId with profile profileId.
  */
 export const updateListProfile = (listId, profileId) => {
-  if (lists[listId].selectedProfile != profileId) database_api.updateListProfile(userId, listId, profileId);
+  if (lists[listId].selectedProfile != profileId) database_api.setListProperty(userId, listId, "selectedProfile", profileId);
+}
+
+/**
+ * Updates the profile of list listId with profile profileId.
+ */
+export const updateListBackground = (listId, backgroundId) => {
+  if (lists[listId].selectedBackground != backgroundId) database_api.setListProperty(userId, listId, "selectedBackground", backgroundId);
 }
 
 /**
@@ -227,30 +229,20 @@ export const manualCreateList = (name, characterList, selectedProfile, selectedB
  */
 export const addCharacterToList = (listId, character) => {
   let newCharacter = {};
-  if (character.name) delete character.name;
-  if (character.attribute) delete character.attribute;
-  if (character.obtainability) delete character.obtainability;
-  if (character._id) {
-    newCharacter[character._id] = character;
-    delete character._id;
-  } else {
-    newCharacter[generatePushID()] = character;
-  }
-  database_api.updateListItem(userId, listId, "characterList", newCharacter);
+  if (character._id) newCharacter[character._id] = character_api.sanitizeCharacter({ ...character});
+  else newCharacter[generatePushID()] = character_api.sanitizeCharacter({ ...character});
+  database_api.updateListProperty(userId, listId, "characterList", newCharacter);
 }
 
 /**
  * Updates the character characterDisplayId with character character of list listId.
  */
 export const updateCharacterOfList = (listId, characterDisplayId, character) => {
-  if (character._id) delete character._id;
-  if (character.name) delete character.name;
-  if (character.attribute) delete character.attribute;
-  if (character.obtainability) delete character.obtainability;
+  character = character_api.sanitizeCharacter(character);
   if (JSON.stringify(character) === JSON.stringify(prevCharacter)) return;
   else prevCharacter = character;
   let newCharacter = { [characterDisplayId]: character };
-  database_api.updateListItem(userId, listId, "characterList", newCharacter);
+  database_api.updateListProperty(userId, listId, "characterList", newCharacter);
 }
 
 /**

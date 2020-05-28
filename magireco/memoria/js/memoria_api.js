@@ -10,7 +10,7 @@ import * as storage_api from './storage_api.js';
 export let selectedMemoria = null;
 
 export class Display {
-  constructor(id, name, type, rank, ascension, level) {
+  constructor(id, name, type, rank, ascension, level, archive, protect) {
     if (typeof type !== undefined) {
       this.memoria_id = id;
       this.name = name;
@@ -18,6 +18,8 @@ export class Display {
       this.rank = rank;
       this.ascension = ascension;
       this.level = level;
+      this.archive = archive;
+      this.protect = protect;
     } else {
       this._id = id;
       this.memoria_id = name.memoria_id;
@@ -26,6 +28,8 @@ export class Display {
       this.rank = name.rank;
       this.ascension = name.ascension;
       this.level = name.level;
+      this.archive = name.archive;
+      this.protect = name.protect;
     }
   }
 };
@@ -71,12 +75,27 @@ export const getMemoria = (id) => {
 };
 
 /**
+ * removes the extra properties of the memoria.
+ * 
+ * @param {Display} memoria 
+ */
+export const sanitizeMemoria = (memoria, removeId = true) => {
+  let newMemoria = { ...memoria };
+  if (removeId && newMemoria._id) delete newMemoria._id;
+  if (newMemoria.name) delete newMemoria.name;
+  if (newMemoria.type) delete newMemoria.type;
+  if (newMemoria.rank) delete newMemoria.rank;
+  if (newMemoria.obtainability) delete newMemoria.obtainability;
+  return newMemoria;
+};
+
+/**
  * gets the basic display for the memoria.
  * 
  * @param {Memoria} memoria 
  */
 export const getBasicMemoriaDisplay = (memoria) => {
-  return new Display(memoria.id, memoria.naname, memoria.type, memoria.rank, "0", "1");
+  return new Display(memoria.id, memoria.naname, memoria.type, memoria.rank, "0", "1", false, false);
 };
 
 /**
@@ -92,12 +111,6 @@ export const isValidMemoriaDisplay = (memoria_id, display, validName = true) => 
   let err = [];
   // check id.
   if (display.memoria_id !== memoria.id) err.push(`Display Id ${display.memoria_id} does not match Memoria ID ${memoria.id}.`);
-  // check name.
-  if (display.name !== memoria.name && validName) err.push(`Display Name ${display.name} does not match Memoria Name ${memoria.name}.`);
-  // check type.
-  if (display.type !== memoria.type) err.push(`Display Type ${display.type} does not match Memoria Type ${memoria.type}.`);
-  // check rank.
-  if (display.rank !== memoria.rank) err.push(`Display Rank ${display.rank} does not match Memoria Rank ${memoria.rank}`);
   // check level.
   let maxLevel = getMaxLevel(display.ascension, display.rank);
   if (parseInt(display.level) < 1 || parseInt(display.level) > maxLevel || !display.level) err.push(`Display Level ${display.level} for Display Rank ${display.rank} and Display Ascension ${display.ascension} must be between 1 and ${maxLevel}.`);
@@ -119,7 +132,9 @@ const getFormDisplay = () => {
     memoria.type.toLowerCase(),
     memoria.rank,
     elements.ascension_select.value,
-    elements.level_select.value);
+    elements.level_select.value,
+    elements.archive_select.checked,
+    elements.protect_select.checked);
   return display;
 };
 
@@ -136,7 +151,9 @@ export const getMemoriaDisplay = (memoria_display) => {
     memoria_display.getAttribute("type"),
     memoria_display.getAttribute("rank"),
     memoria_display.getAttribute("ascension"),
-    memoria_display.getAttribute("level"));
+    memoria_display.getAttribute("level"),
+    memoria_display.getAttribute("archive"),
+    memoria_display.getAttribute("protect"));
   display._id = memoria_display.getAttribute("_id");
   return display;
 };
@@ -157,8 +174,12 @@ export const createDisplay = (display, listener) => {
   memoria_display.setAttribute("rank", display.rank);
   memoria_display.setAttribute("ascension", display.ascension);
   memoria_display.setAttribute("level", display.level);
+  memoria_display.setAttribute("archive", display.archive);
+  memoria_display.setAttribute("protect", display.protect);
   memoria_display.innerHTML = `
     <img class="memoria_image" src="/magireco/assets/memoria/memoria_${display.memoria_id}_s.png">
+    <img class="archive" src="/magireco/assets/ui/archive/${display.archive}.png">
+    <img class="protect" src="/magireco/assets/ui/protect/${display.protect}.png">
     <div class="level">
       <div class="level_pre">Lvl.</div>
       <div class="level_num">${display.level}/${getMaxLevel(display.ascension, display.rank)}</div>
@@ -509,7 +530,9 @@ export const openMemoriaDialog = (memoria, displays) => {
   if (displays.length > 0) text += `\n\nYour Memoria${displays.length > 1 ? "s" : ""}:`;
   displays.forEach(display => {
     text += `\nAscension: ${display.ascension}\
-    \nLevel: ${display.level}\n`;
+    \nLevel: ${display.level}\
+    \nArchive: ${display.archive}\
+    \nLocked: ${display.protect}\n`;
   });
 
   messageDialog.open(`${memoria.naname} Details`, text);
