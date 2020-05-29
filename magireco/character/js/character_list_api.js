@@ -29,6 +29,7 @@ export const setLists = (lists) => {
   elements.saved_character_lists.innerHTML = "";
   elements.list_name_title.innerHTML = "";
   elements.list_stats_list.innerHTML = "";
+  elements.public_list_select.innerHTML = "";
   for (let [listId, list] of Object.entries(lists)) {
     // update the fields of each character.
     Object.entries(list.characterList).forEach(([key, display]) => {
@@ -46,7 +47,12 @@ export const setLists = (lists) => {
     });
     div.append(entry);
     elements.saved_character_lists.append(div);
+    elements.public_list_select.options.add(new Option(list.name, listId, false));
   }
+  
+  if (storage_api.user.publicListId) elements.public_list_select.value = storage_api.user.publicListId;
+  else elements.public_list_select.selectedIndex = -1;
+
   if (Object.entries(lists).length > 0) {
     if (selectedList && selectedList.listId && lists[selectedList.listId]) {
       selectList(selectedList.listId, lists[selectedList.listId]);

@@ -825,8 +825,8 @@ export const getMoreStats = () => {
         if (memoria.obtainability == "limited") result.limited++;
         if (memoria_api.getMaxLevel(memoria.ascension, memoria.rank) == memoria_display.level) result.maxLevel++;
         if (memoria.ascension == 4) result.maxAscension++;
-        if (memoria.archive) result.archive++;
-        if (memoria.protect) result.protect++;
+        if (memoria_display.archive) result.archive++;
+        if (memoria_display.protect) result.protect++;
         result.ranks[memoria_display.rank] = result.ranks[memoria_display.rank] + 1 || 1;
         result.ascensions[memoria_display.ascension] = result.ascensions[memoria_display.ascension] + 1 || 1;
         result.levels[memoria_display.level] = result.levels[memoria_display.level] + 1 || 1;

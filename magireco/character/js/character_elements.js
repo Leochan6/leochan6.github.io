@@ -85,8 +85,12 @@ export const character_elements = {
   background_transparency_range: document.querySelector("#background_transparency_range"),
 
   // Settings
-  reset_profiles_button: document.querySelector("#reset_profiles_button"),
-  show_all_menus_checkbox: document.querySelector("#show_all_menus_checkbox"),
+  player_name_field: document.querySelector("#player_name_field"),
+  player_id_field: document.querySelector("#player_id_field"),
+  public_list_select: document.querySelector("#public_list_select"),
+  update_user_button: document.querySelector("#update_user_button"),
+  remove_id_button: document.querySelector("#remove_id_button"),
+  link_link_button: document.querySelector("#link_link_button"),
 
   // Body
   list_name_title: document.querySelector("#list_name_title"),

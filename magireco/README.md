@@ -17,6 +17,7 @@ For any feedback or questions, please contact me the locations listed above.
 - [Sorting Profiles](#Sorting-Profiles)
 - [Display Settings](#Display-Settings)
 - [Background](#Background)
+- [User](#User)
 - [Import and Export](#Import-and-Export)
 - [Filters](#Filters)
 - [Statistics](#Statistics)
@@ -128,6 +129,20 @@ For any feedback or questions, please contact me the locations listed above.
 - Background Transparency
 
     Under the `Background` tab, change the `Transparency` field or slider to change the transparency of the selected background. **Currently, the transparency of the background is not support on Image Export.** For a transparent background, removed the background and set the transparency to `0`.
+
+### User
+
+- Edit User Name
+
+    Under the `User Settings` tab, change the `Name` field and press `Save` to change the user name.
+
+- Edit Player ID
+
+    Under the `User Settings` tab, change the `Player ID` field and press `Save`. If the Player ID is already in use, then this operation will fail. If this is believed to be a mistake and someone else has taken your Player ID, please contact Leo Chan.
+
+- Edit Public List
+
+    Under the `User Settings` tab, change the `Public List` dropdown and press `Save`.
 
 ### Import and Export
 

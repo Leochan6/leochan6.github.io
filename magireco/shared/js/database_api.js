@@ -1,6 +1,7 @@
 const config = {
   apiKey: "AIzaSyCDOhFHwY8BHUafRA4hvAT7GISB72bUrhQ",
   authDomain: "magia-record-25fb0.firebaseapp.com",
+  projectId: "magia-record-25fb0",
   databaseURL: "https://magia-record-25fb0.firebaseio.com",
   storageBucket: "magia-record-25fb0.appspot.com"
 };
@@ -115,6 +116,20 @@ export const updateUser = (userId, userProperty, content) => {
 
 export const appendUser = (userId, userProperty, content) => {
   return users.child(`${userId}/${userProperty}`).push(content);
+};
+
+export const setUserProperty = (userId, userProperty, content) => {
+  return users.child(`${userId}/${userProperty}`).set(content);
+};
+
+export const removeUserProperty = (userId, userProperty) => {
+  return users.child(`${userId}/${userProperty}`).remove();
+};
+
+export const onUserUpdate = (userId, callback) => {
+  users.child(userId).on('value', (snapshot) => {
+    callback(snapshot);
+  });
 };
 
 

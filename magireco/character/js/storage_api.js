@@ -13,6 +13,7 @@ import * as utils from '../../shared/js/utils.js';
 export let profiles = {};
 export let lists = {};
 export let settings = {};
+export let user = {};
 
 let userId = null;
 let prevCharacter = null;
@@ -29,6 +30,7 @@ export const startUp = (user) => {
     if (message && blocking) {
       loadMessage(message);
     } else {
+      database_api.onUserUpdate(userId, loadUser);
       database_api.onSettingUpdate(userId, loadSettings);
       database_api.onProfileUpdate(userId, loadProfiles);
       database_api.onListUpdate(userId, loadLists);
@@ -45,6 +47,20 @@ const loadUserName = () => {
     let name = user && user.displayName ? user.displayName : "Anonymous";
     elements.header_username.innerHTML = "Welcome " + name;
   });
+};
+
+/**
+ * Loads the user.
+ * 
+ */
+const loadUser = (snapshot) => {
+  user = snapshot.val() ? snapshot.val() : {};
+  if (user.name !== undefined) elements.player_name_field.value = user.name;
+  else elements.player_name_field.value = "";
+  if (user.playerId !== undefined) elements.player_id_field.value = user.playerId;
+  else elements.player_id_field.value = "";
+  if (user.publicListId !== undefined) elements.public_list_select.value = user.publicListId;
+  else elements.public_list_select.selectedIndex = -1;
 };
 
 /**
@@ -285,4 +301,20 @@ export const deleteProfile = (profileId) => {
  */
 export const updateSettings = (settingName, newSettings) => {
   database_api.updateSettings(userId, settingName, newSettings);
+};
+
+/* ------------------------------ User ------------------------------ */
+
+/**
+ * Sets the user property settingsName with settings newSettings.
+ */
+export const setUserProperty = (settingName, newSettings) => {
+  database_api.setUserProperty(userId, settingName, newSettings);
+};
+
+/**
+ * Removes the user property settingsName with settings newSettings.
+ */
+export const removeUserProperty = (settingName) => {
+  database_api.removeUserProperty(userId, settingName);
 };

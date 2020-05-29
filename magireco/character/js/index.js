@@ -5,6 +5,7 @@ import * as profile_api from './profile_api.js';
 import * as storage_api from './storage_api.js';
 import * as database_api from '../../shared/js/database_api.js';
 import * as utils from '../../shared/js/utils.js';
+import * as functions from '../../shared/js/functions.js';
 import { character_elements as elements, messageDialog, characterSelectDialog, backgroundSelectDialog, importListDialog } from './character_elements.js';
 
 /**
@@ -407,6 +408,41 @@ import { character_elements as elements, messageDialog, characterSelectDialog, b
 
     /* ------------------------------ Settings Tab ------------------------------ */
 
+    // update user button.
+    elements.update_user_button.addEventListener("click", () => {
+      let name = elements.player_name_field.value;
+      let playerId = elements.player_id_field.value;
+      let listId = elements.public_list_select.value;
+      if (name && name !== storage_api.user.name) storage_api.setUserProperty("name", name);
+      if (playerId && playerId.length == 8 && playerId !== storage_api.user.playerId) {
+        functions.validPlayerID({ playerId: playerId }).then(result => {
+          if (result.data) storage_api.setUserProperty("playerId", playerId);
+          else {
+            alert(`Player ID "${playerId}" already in use. If this is a mistake, please contact Leo Chan.`);
+            elements.player_id_field.value = "";
+          }
+        }).catch(error => {
+          alert(error);
+        });
+      } else if (playerId && playerId.length != 8) alert("Player ID must be 8 alphanumeric characters long (case sensitive).");
+      if (listId && listId !== storage_api.user.publicListId) storage_api.setUserProperty("publicListId", listId);
+    });
+
+    // remove id button.
+    elements.remove_id_button.addEventListener("click", () => {
+      storage_api.removeUserProperty("playerId");
+      storage_api.removeUserProperty("publicListId");
+    });
+
+    // list link button.
+    elements.link_link_button.addEventListener("click", () => {
+      if (storage_api.user.playerId && storage_api.user.publicListId) {
+        window.open(`../friend/?playerId=${storage_api.user.playerId}`);
+      } else {
+        alert("Please set a Player ID and Public List before link is available.")
+      }
+    });
+
     /* ============================== Main ============================== */
 
     /* ------------------------------ Export and Import ------------------------------ */
@@ -534,7 +570,6 @@ import { character_elements as elements, messageDialog, characterSelectDialog, b
 
     // resort when character list changes.
     elements.character_list_content.addEventListener("change", () => {
-      console.error(1);
       character_list_api.applyProfileToList(character_list_api.getListId(), profile_api.getSelectedProfileId());
       character_list_api.updateList();
     });

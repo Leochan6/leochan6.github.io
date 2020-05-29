@@ -298,17 +298,29 @@
         </div>
         <div class="horizontal-divider"></div>
         <!-- Settings Tab -->
-        <div id="setting_tab" class="tab tab_hidden">
+        <div id="setting_tab" class="tab">
           <div class="tab_header">
             <div class="tab_toggle right"></div>
-            <h2 class="tab_heading" tab_name="setting_tab">Settings</h2>
+            <h2 class="tab_heading" tab_name="setting_tab">User Settings</h2>
           </div>
           <div class="tab_contents hidden">
-            <table id="settings_table" class="tab_hidden">
+            <table id="settings_table" class="">
               <tr>
-                <td><button id="reset_profiles_button">Reset Profiles</button></td>
+                <td>Name:</td>
+                <td><input id="player_name_field" class="form_input setting_field" style="width: 100px;"></td>
+              </tr>
+              <tr>
+                <td>Player ID:</td>
+                <td><input id="player_id_field" class="form_input setting_field" size="8"></td>
+              </tr>
+              <tr>
+                <td>Public List:</td>
+                <td><select id="public_list_select" class="form_input setting_field"></select></td>
               </tr>
             </table>
+            <button id="update_user_button" class="small_btn">Save</button>
+            <button id="remove_id_button" class="small_btn">Remove ID</button>
+            <button id="link_link_button" class="small_btn">Open Link</button>
           </div>
         </div>
       </div>
@@ -428,7 +440,7 @@
   </div>
 
   <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-functions.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-database.js"></script>
   <script src="../shared/libs/generate-pushid.js"></script>

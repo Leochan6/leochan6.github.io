@@ -259,6 +259,12 @@
   width: 100%;
 }
 
+.setting_field {
+  height: 30px;
+  margin: 0;
+  padding: 0px 10px;
+}
+
 .edit {
   background-image: url("../../assets/icon/edit_black.png");
   background-repeat: no-repeat;

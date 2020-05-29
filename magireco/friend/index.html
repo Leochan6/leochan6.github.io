@@ -1,0 +1,48 @@
+<head>
+  <meta charset="UTF-8">
+  <link rel="shortcut icon" href="favicon.ico" />
+  <title>Magia Record Character List</title>
+  <meta property="og:title" content="Magia Record Character List" />
+  <meta property="og:description" content="Create and share a list of your Magical Girls from the game Magia Record." />
+  <meta property="og:url" content="https://leo-chan.me/magireco/friend/index.html" />
+  <meta property="og:site_name" content="Leo Chan's Website" />
+  <meta property="og:type" content="website" />
+  <!-- <meta property="og:image" content="https://leo-chan.me/magireco/assets/preview/list.png" /> -->
+  <!-- <meta property="og:image:width" content="2560" /> -->
+  <!-- <meta property="og:image:height" content="1440" /> -->
+  <meta name="twitter:title" content="Magia Record Character List" />
+  <meta name="twitter:description"
+    content="Create and share a list of your Magical Girls from the game Magia Record." />
+  <!-- <meta name="twitter:image" content="https://leo-chan.me/magireco/assets/preview/list.png" /> -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <link href="../character/style/character_display.css" rel="stylesheet" type="text/css" />
+  <link href="style/friend.css" rel="stylesheet" type="text/css" />
+  <link href="../shared/style/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <div id="info" class="hidden">
+    <table>
+      <tr>
+        <td>Player Name:</td>
+        <td id="playerNameText">xxxx</td>
+      </tr>
+      <tr>
+        <td>Player ID:</td>
+        <td id="playerIdText">xxxxxxxx</td>
+      </tr>
+    </table>
+    <div class="horizontal-divider"></div>
+  </div>
+  <div id="content">
+    <p class="error_text hidden" id="error_text"></p>
+    <div id="character_list_container">
+      <div id="character_list_content"></div>
+    </div>
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-functions.js"></script>
+  <script type="module" src="js/friend.js"></script>
+</body>
