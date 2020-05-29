@@ -1,5 +1,7 @@
 import * as character_api from '../../character/js/character_api.js';
 import * as functions from '../../shared/js/functions.js';
+import * as utils from '../../shared/js/utils.js';
+import { ATT_TO_NUM, NUM_TO_ATT } from '../../character/js/character_list_api.js'
 
 /* Elements */
 const error_text = document.querySelector("#error_text");
@@ -26,17 +28,27 @@ window.addEventListener("load", () => {
       }
       else if (result.data.list && result.data.list.characterList) {
         character_list_content.innerHTML = "";
-        Object.entries(result.data.list.characterList).forEach(([id, display]) => {
-          display._id = id;
-          let character = character_api.getCharacter(display.character_id);
-          display.name = character.name;
-          display.attribute = character.attribute;
+        let sorts = [
+          { prop: "level", direction: "-1", isString: false },
+          { prop: "attribute", direction: "1", isString: false },
+          { prop: "character_id", direction: "-1", isString: false }
+        ];
+        let list = Object.values(result.data.list.characterList);
+        list.forEach(element => {
+          let character = character_api.getCharacter(element.character_id);
+          element.name = character.name;
+          element.attribute = character.attribute;
+        });
+        list.forEach(char => char.attribute = ATT_TO_NUM[char.attribute]);
+        list.sort((a, b) => utils.sortArrayBy(a, b, sorts));
+        list.forEach(char => char.attribute = NUM_TO_ATT[char.attribute]);
+        list.forEach(display => {
           let element = character_api.createDisplay(display);
           element.classList.add("preview");
           element.style.pointerEvents = "none";
           character_list_content.appendChild(element);
         });
-      } 
+      }
       else {
         return showError("some error.");
       }

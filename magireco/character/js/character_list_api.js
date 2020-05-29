@@ -15,9 +15,9 @@ export let selectedList = null;
 /* ------------------------------ Constants and Mappings ------------------------------ */
 
 export const DIR_TO_FLEX = { "left": "flex-start", "center": "center", "right": "flex-end" };
-const ATT_TO_NUM = { "fire": "1", "water": "2", "forest": "3", "light": "4", "dark": "5", "void": "6" };
-const NUM_TO_ATT = { "1": "fire", "2": "water", "3": "forest", "4": "light", "5": "dark", "6": "void" };
-const NUM_TO_WORD = { "0": "zero", "1": "one", "2": "two", "3": "three", "4": "four", "5": "five" };
+export const ATT_TO_NUM = { "fire": "1", "water": "2", "forest": "3", "light": "4", "dark": "5", "void": "6" };
+export const NUM_TO_ATT = { "1": "fire", "2": "water", "3": "forest", "4": "light", "5": "dark", "6": "void" };
+export const NUM_TO_WORD = { "0": "zero", "1": "one", "2": "two", "3": "three", "4": "four", "5": "five" };
 
 /* ------------------------------ Load and Select Lists ------------------------------ */
 
