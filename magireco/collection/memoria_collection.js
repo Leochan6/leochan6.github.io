@@ -4549,7 +4549,7 @@ export const memoria_collection = [
   {
     "id": "1239",
     "name": "Iroha of the Midsummer Beach",
-    "naname": "",
+    "naname": "Iroha Hits the Beach",
     "type": "ability",
     "rank": "4",
     "min_hp": "804",
@@ -4569,7 +4569,7 @@ export const memoria_collection = [
   {
     "id": "1240",
     "name": "Learning by Imitation...?",
-    "naname": "",
+    "naname": "Learn by Copying?",
     "type": "skill",
     "rank": "3",
     "min_hp": "574",
@@ -6710,7 +6710,7 @@ export const memoria_collection = [
   {
     "id": "1352",
     "name": "Messages from Precious Friends",
-    "naname": "",
+    "naname": "Letters From Dear Friends",
     "type": "skill",
     "rank": "3",
     "min_hp": "510",
@@ -6730,7 +6730,7 @@ export const memoria_collection = [
   {
     "id": "1353",
     "name": "Cause I'm an Idol and a Magical Girl",
-    "naname": "",
+    "naname": "Since I'm a Magical Girl Idol",
     "type": "skill",
     "rank": "4",
     "min_hp": "850",
@@ -6748,7 +6748,7 @@ export const memoria_collection = [
   {
     "id": "1354",
     "name": "To Museums on the Weekends",
-    "naname": "",
+    "naname": "Days Off Are for the Art Museum",
     "type": "skill",
     "rank": "3",
     "min_hp": "604",
@@ -6768,7 +6768,7 @@ export const memoria_collection = [
   {
     "id": "1355",
     "name": "Place Where You Can Meet Everyone",
-    "naname": "",
+    "naname": "Where I Can See Everyone",
     "type": "ability",
     "rank": "4",
     "min_hp": "800",
