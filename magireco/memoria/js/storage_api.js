@@ -165,7 +165,7 @@ export const createList = (name) => {
  * Rename the List listId with name name.
  */
 export const renameList = (listId, name) => {
-  database_api.updateListName(userId, listId, name);
+  if (lists[listId].name != name) database_api.setListProperty(userId, listId, "name", name);
 };
 
 /**

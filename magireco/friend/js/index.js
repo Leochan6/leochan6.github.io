@@ -6,6 +6,7 @@ import { ATT_TO_NUM, NUM_TO_ATT } from '../../character/js/character_list_api.js
 /* Elements */
 const error_text = document.querySelector("#error_text");
 const character_list_content = document.querySelector("#character_list_content");
+const loading = document.querySelector("#loading");
 const info = document.querySelector("#info");
 const playerNameText = document.querySelector("#playerNameText");
 const playerIdText = document.querySelector("#playerIdText");
@@ -16,8 +17,10 @@ window.addEventListener("load", () => {
   if (!playerId) return showError("No Player Id.");
   else if (playerId.length != 8) return showError("Invalid Player Id.");
   else clearError();
+  loading.classList.remove("hidden");
   functions.getPlayerList({ playerId: playerId }).then(result => {
     if (result && result.data) {
+      loading.classList.add("hidden");
       if (result.data.playerId && result.data.playerName) {
         info.classList.remove("hidden");
         playerIdText.innerHTML = result.data.playerId;
@@ -54,6 +57,7 @@ window.addEventListener("load", () => {
       }
     }
   }).catch(error => {
+    loading.classList.add("hidden");
     return showError(error);
   });
 });

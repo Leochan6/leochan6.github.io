@@ -1,3 +1,11 @@
+#loading {
+  display: flex;
+  justify-content: center;
+}
+
+#info {
+  
+}
 
 #character_list_container {
   display: flex;

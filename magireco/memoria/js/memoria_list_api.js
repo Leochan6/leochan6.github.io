@@ -726,14 +726,7 @@ const matchesFilter = (memoria_display, filter) => {
       else return false;
     }
   } else {
-    let param = 1;
-    if (filter[1].param === "max_rank") {
-      param = parseInt(memoria_api.getMaxRank(memoria_collection.find(memoria => memoria_display.memoria_id == memoria.id).ranks))
-    } else if (filter[1].param === "min_rank") {
-      param = parseInt(memoria_api.getMinRank(memoria_collection.find(memoria => memoria_display.memoria_id == memoria.id).ranks))
-    } else {
-      param = parseInt(memoria_display[filter[1].param]);
-    }
+    let param = parseInt(memoria_display[filter[1].param]);
     if (filter[0].value === "eq" && param === parseInt(filter[1].value)) return true;
     else if (filter[0].value === "neq" && param !== parseInt(filter[1].value)) return true;
     else if (filter[0].value === "lt" && param < parseInt(filter[1].value)) return true;

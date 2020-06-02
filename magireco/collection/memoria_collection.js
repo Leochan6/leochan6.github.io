@@ -4444,7 +4444,7 @@ export const memoria_collection = [
     "effect2": "Monopolize Draw",
     "cooldown1": "10",
     "cooldown2": "8",
-    "chara": "Akemi Homura (Mizugi ver.)",
+    "chara": "Homura Akemi (Swimsuit)",
     "obtainability": "unlimited",
     "url": "https://magireco.fandom.com/wiki/After_the_Rain"
   },
@@ -4529,7 +4529,7 @@ export const memoria_collection = [
   {
     "id": "1238",
     "name": "A Pleasant Time",
-    "naname": "",
+    "naname": "Time for Relaxation",
     "type": "skill",
     "rank": "3",
     "min_hp": "504",
@@ -4542,7 +4542,7 @@ export const memoria_collection = [
     "effect2": "HP Restore [IV / 37.5%] &amp; MP Restore [I / 10 MP] (Self)",
     "cooldown1": "9",
     "cooldown2": "8",
-    "chara": "Tamaki Iroha (Mizugi ver.)",
+    "chara": "Iroha Tamaki (Swimsuit)",
     "obtainability": "unlimited",
     "url": "https://magireco.fandom.com/wiki/A_Pleasant_Time"
   },
@@ -4589,7 +4589,7 @@ export const memoria_collection = [
   {
     "id": "1241",
     "name": "The Treasure Is Here",
-    "naname": "",
+    "naname": "The Treasure's Right Here",
     "type": "skill",
     "rank": "3",
     "min_hp": "636",
@@ -4609,7 +4609,7 @@ export const memoria_collection = [
   {
     "id": "1243",
     "name": "A Short Rest (Madoka, Homura)",
-    "naname": "",
+    "naname": "Madoka & Homura's Brief Respite",
     "type": "skill",
     "rank": "4",
     "max_hp": "2220",
@@ -4624,7 +4624,7 @@ export const memoria_collection = [
   {
     "id": "1244",
     "name": "A Short Rest (Iroha, Yachiyo)",
-    "naname": "",
+    "naname": "Iroha & Yachiyo's Brief Respite",
     "type": "skill",
     "rank": "4",
     "max_hp": "2217",
