@@ -45,7 +45,7 @@ export class Memoria {
 
 export const startUp = () => {
   // initialize name field.
-  [...memoria_collection].sort((a, b) => a.name > b.name ? 1 : -1).forEach((memoria) => {
+  [...memoria_collection].filter(memoria => memoria.naname).sort((a, b) => a.naname > b.naname ? 1 : -1).forEach((memoria) => {
     elements.name_select.options.add(new Option(memoria.naname, memoria.id, false));
   });
   elements.name_select.value = 1001;
