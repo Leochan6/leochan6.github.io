@@ -81,6 +81,9 @@ import * as utils from '../../shared/js/utils.js';
       elements.forgot_password_content.classList.add("hidden");
       elements.login_content.classList.remove("hidden");
       errorResetHandler("", false);
+      elements.reset_error.classList.add("hidden");
+      elements.reset_success.innerHTML = "";
+      elements.reset_success.classList.add("hidden");
     })
 
     elements.signin_anonymous_button.addEventListener("click", e => {

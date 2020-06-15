@@ -32,6 +32,7 @@ export const login_elements = {
   forgot_password_email: document.querySelector("#forgot_password_email"),
   forgot_password_send_button: document.querySelector("#forgot_password_send_button"),
   forgot_password_cancel_button: document.querySelector("#forgot_password_cancel_button"),
+  reset_success: document.querySelector("#reset_success"),
   reset_error: document.querySelector("#reset_error"),
 
 }
