@@ -5978,7 +5978,7 @@ export const memoria_collection = [
   {
     "id": "1315",
     "name": "A Freedom for Just Me",
-    "naname": "",
+    "naname": "My Own Freedom",
     "type": "skill",
     "rank": "3",
     "min_hp": "500",
@@ -5998,7 +5998,7 @@ export const memoria_collection = [
   {
     "id": "1316",
     "name": "What Flavor Is Break Time (Alina)",
-    "naname": "",
+    "naname": "The Flavor of Break Time: Alina",
     "type": "ability",
     "rank": "3",
     "min_hp": "573",
@@ -6018,7 +6018,7 @@ export const memoria_collection = [
   {
     "id": "1317",
     "name": "What Flavor Is Break Time (Touka)",
-    "naname": "",
+    "naname": "The Flavor of Break Time: Touka",
     "type": "skill",
     "rank": "4",
     "min_hp": "806",
@@ -6038,7 +6038,7 @@ export const memoria_collection = [
   {
     "id": "1318",
     "name": "What Flavor Is Break Time (Nemu)",
-    "naname": "",
+    "naname": "The Flavor of Break Time: Nemu",
     "type": "skill",
     "rank": "3",
     "min_hp": "633",
@@ -6098,7 +6098,7 @@ export const memoria_collection = [
   {
     "id": "1321",
     "name": "Peace to this Battered, Dead Land",
-    "naname": "",
+    "naname": "Tranquility in a Wasteland",
     "type": "skill",
     "rank": "4",
     "min_hp": "880",
@@ -6118,7 +6118,7 @@ export const memoria_collection = [
   {
     "id": "1322",
     "name": "Three Geniuses",
-    "naname": "",
+    "naname": "Three Geniuses",
     "type": "skill",
     "rank": "3",
     "min_hp": "573",

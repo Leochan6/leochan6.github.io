@@ -125,7 +125,7 @@ body {
 
 .memoriaList {
   display: flex;
-  zoom: 0.3;
+  flex-direction: column;
 }
 
 .character {  

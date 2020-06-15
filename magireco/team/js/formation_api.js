@@ -21,6 +21,7 @@ let memorias = [
   ["1070", "1122", "9002", "1151"]
 ].map(row => row.map(id => memoria_api.getBasicMemoriaDisplay(memoria_api.getMemoria(id))));
 memorias[0][0].ascension = 4;
+memorias[0][0].level = 50;
 const deckFormation = document.querySelector("#DeckFormation");
 
 let charaIndex = 0;
@@ -42,15 +43,15 @@ for (let myPos = 1; myPos <= 9; myPos++) {
       <table class="charaStatus">
         <tr>
           <td class="statusName">HP</td>
-          <td class="statusValue">1</td>
+          <td class="statusValue statusHP">1</td>
         </tr>
         <tr>
           <td class="statusName">ATK</td>
-          <td class="statusValue">2</td>
+          <td class="statusValue statusATK">2</td>
         </tr>
         <tr>
           <td class="statusName">DEF</td>
-          <td class="statusValue">3</td>
+          <td class="statusValue statusDEF">3</td>
         </tr>
       </table>
       <div class="memoriaList"></div>
