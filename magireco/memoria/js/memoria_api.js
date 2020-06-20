@@ -459,6 +459,7 @@ export const loadMemoriaSelectList = () => {
     });
     memoriaSelectDialog.list.append(container);
   });
+  toggleAdded(memoriaSelectDialog.added.checked);
 };
 
 /**
@@ -495,6 +496,7 @@ export const filterMemoria = (search) => {
       child.style.display = "none";
     }
   });
+  toggleAdded(memoriaSelectDialog.added.checked);
 };
 
 /**

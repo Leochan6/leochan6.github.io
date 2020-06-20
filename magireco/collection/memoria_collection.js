@@ -6058,7 +6058,7 @@ export const memoria_collection = [
   {
     "id": "1319",
     "name": "An Unobtainable Thing",
-    "naname": "",
+    "naname": "Beyond My Reach",
     "type": "skill",
     "rank": "3",
     "min_hp": "420",
@@ -6078,7 +6078,7 @@ export const memoria_collection = [
   {
     "id": "1320",
     "name": "A Longing for the Beyond",
-    "naname": "",
+    "naname": "Admiring the Beyond",
     "type": "ability",
     "rank": "4",
     "min_hp": "803",
