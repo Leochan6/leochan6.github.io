@@ -7548,7 +7548,7 @@ export const memoria_collection = [
   {
     "id": "1397",
     "name": "Like This, For Now",
-    "naname": "",
+    "naname": "As It Is Now",
     "type": "ability",
     "rank": "4",
     "min_hp": "850",
