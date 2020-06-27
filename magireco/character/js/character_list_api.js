@@ -844,15 +844,16 @@ export const applyFilters = (filters = getFilters()) => {
  */
 const matchesAllFilters = (character_display, filters) => {
   let matches = Array(filters.length).fill(true);
+  let result = [];
   filters.forEach((filter, i) => {
     matches[i] = matchesFilter(character_display, filter.value);
-    if (i > 0 && filter.state === "and") {
-      let and = matches[i - 1] && matches[i];
-      matches[i] = and;
-      matches[i - 1] = and;
+    if (i == 0 || filter.state === "or") result.push(matches[i]);
+    else if (filter.state === "and") {
+      let prev = result.pop();
+      result.push(prev && matches[i]);
     }
   });
-  return matches.some(value => value);
+  return result.some(value => value);
 };
 
 /**

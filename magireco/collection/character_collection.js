@@ -967,7 +967,7 @@ export const character_collection = [
   },
   {
     "id": "3043",
-    "name": "Uwasa of the Eternal Sakura",
+    "name": "Eternal Sakura",
     "attribute": "Light",
     "ranks": {
       "1": false,

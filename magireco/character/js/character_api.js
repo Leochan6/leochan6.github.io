@@ -194,7 +194,7 @@ export const createDisplay = (display, listener = false) => {
   character_display.setAttribute("doppel", display.doppel);
   character_display.innerHTML = `
   <img class="background" src="/magireco/assets/ui/bg/${display.attribute}.png">
-  <img class="card_image" src="/magireco/assets/image/card_${display.character_id}${display.rank}_f.png">
+  <img class="card_image" src="http://android.magica-us.com/magica/resource/download/asset/master/resource/image_native/card/image/card_${display.character_id}${display.rank}_f.png">
   <img class="frame_rank" src="/magireco/assets/ui/frame/${display.rank}.png">
   <img class="star_rank" src="/magireco/assets/ui/star/${display.rank}.png">
   <img class="attribute" src="/magireco/assets/ui/attribute/${display.attribute}.png">
@@ -542,7 +542,7 @@ export const loadCharacterSelectList = () => {
     container.classList.add("character_image_preview");
     container.setAttribute("character_id", character.id);
     let image = document.createElement("img");
-    image.src = `/magireco/assets/image/card_${character.id}${star}_f.png`;
+    image.src = `http://android.magica-us.com/magica/resource/download/asset/master/resource/image_native/card/image/card_${character.id}${star}_f.png`;
     image.title = character.name;
     container.append(image);
     if (added.length > 0) {

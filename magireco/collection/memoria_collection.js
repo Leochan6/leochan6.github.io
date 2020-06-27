@@ -6195,7 +6195,7 @@ export const memoria_collection = [
   {
     "id": "1326",
     "name": "Image Training in the Server",
-    "naname": "",
+    "naname": "Training in the Server",
     "type": "skill",
     "rank": "4",
     "min_hp": "810",
@@ -6215,7 +6215,7 @@ export const memoria_collection = [
   {
     "id": "1327",
     "name": "Relaxing in the Park",
-    "naname": "",
+    "naname": "Relaxing in the Park",
     "type": "ability",
     "rank": "3",
     "min_hp": "665",

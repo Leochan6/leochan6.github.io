@@ -180,6 +180,8 @@ export const createProfileRule = (next = null) => {
         <option value="ascension">Ascension</option>
         <option value="level">Level</option>
         <option value="obtainability">Obtainability</option>
+        <option value="archive">Vault</option>
+        <option value="protect">Locked</option>
         <option value="memoria_id">Memoria ID</option>
       </select>
       <button class="sort_dir down small_btn"></button>
@@ -238,10 +240,10 @@ export const createProfileRule = (next = null) => {
         type_select.selectedIndex = -1;
       }
       type_select.options[3].disabled = true;
-      type_select.options[5].disabled = true;
+      type_select.options[7].disabled = true;
     } else {
       type_select.options[3].disabled = false;
-      type_select.options[5].disabled = false;
+      type_select.options[7].disabled = false;
     }
   });
 
@@ -281,10 +283,10 @@ export const loadRule = (ruleId, settings) => {
       type_select.selectedIndex = -1;
     }
     type_select.options[3].disabled = true;
-    type_select.options[5].disabled = true;
+    type_select.options[7].disabled = true;
   } else {
     type_select.options[3].disabled = false;
-    type_select.options[5].disabled = false;
+    type_select.options[7].disabled = false;
   }
 
   if (type_select.value === "memoria_id" || type_select.value === "level") {

@@ -383,6 +383,24 @@ const group_properties = (display_properties, group_by, group_dir) => {
     display_properties.forEach(properties => {
       display_groups[NUM_TO_WORD[properties.ascension]].push(properties);
     });
+  } else if (group_by == "obtainability") {
+    if (group_dir == 1) display_groups = { "unlimited": [], "limited": [] };
+    if (group_dir == -1) display_groups = { "limited": [], "unlimited": [] };
+    display_properties.forEach(properties => {
+      display_groups[properties.obtainability].push(properties);
+    });
+  } else if (group_by == "archive") {
+    if (group_dir == 1) display_groups = { "true": [], "false": [] };
+    if (group_dir == -1) display_groups = { "false": [], "true": [] };
+    display_properties.forEach(properties => {
+      display_groups[properties.archive].push(properties);
+    });
+  } else if (group_by == "protect") {
+    if (group_dir == 1) display_groups = { "true": [], "false": [] };
+    if (group_dir == -1) display_groups = { "false": [], "true": [] };
+    display_properties.forEach(properties => {
+      display_groups[properties.protect].push(properties);
+    });
   } else if (group_by == "none") {
     display_groups = { "none": [] };
     display_properties.forEach(properties => {
@@ -488,6 +506,8 @@ export const createFilter = (next = null) => {
         <option value="ascension">Ascension</option>
         <option value="level">Level</option>
         <option value="obtainability">Obtainability</option>
+        <option value="archive">Vault</option>
+        <option value="protect">Locked</option>
       </select>
       <div class="filter_type type_filter hidden">
         <select class="filter_field equality form_input">
@@ -551,6 +571,26 @@ export const createFilter = (next = null) => {
         <select class="filter_field obtainability_select form_input">
           <option value="unlimited">Unlimited</option>
           <option value="limited">Limited</option>
+        </select>
+      </div>
+      <div class="filter_type archive_filter hidden">
+        <select class="filter_field equality form_input">
+          <option value="eq">=</option>
+          <option value="neq">=/=</option>
+        </select>
+        <select class="filter_field archive_select form_input">
+          <option value="true">Yes</option>
+          <option value="false">No</option>
+        </select>
+      </div>
+      <div class="filter_type protect_filter hidden">
+        <select class="filter_field equality form_input">
+          <option value="eq">=</option>
+          <option value="neq">=/=</option>
+        </select>
+        <select class="filter_field protect_select form_input">
+          <option value="true">Yes</option>
+          <option value="false">No</option>
         </select>
       </div>
       <button class="create small_btn" title="Add New Filter Above">+</button>
@@ -691,15 +731,16 @@ export const applyFilters = (filters = getFilters()) => {
  */
 const matchesAllFilters = (memoria_display, filters) => {
   let matches = Array(filters.length).fill(true);
+  let result = [];
   filters.forEach((filter, i) => {
     matches[i] = matchesFilter(memoria_display, filter.value);
-    if (i > 0 && filter.state === "and") {
-      let and = matches[i - 1] && matches[i];
-      matches[i] = and;
-      matches[i - 1] = and;
+    if (i == 0 || filter.state === "or") result.push(matches[i]);
+    else if (filter.state === "and") {
+      let prev = result.pop();
+      result.push(prev && matches[i]);
     }
   });
-  return matches.some(value => value);
+  return result.some(value => value);
 };
 
 /**
