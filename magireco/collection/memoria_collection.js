@@ -6175,7 +6175,7 @@ export const memoria_collection = [
   {
     "id": "1325",
     "name": "Don't Touch",
-    "naname": "",
+    "naname": "No Touching",
     "type": "skill",
     "rank": "3",
     "min_hp": "464",
@@ -6235,7 +6235,7 @@ export const memoria_collection = [
   {
     "id": "1328",
     "name": "The Stories (Rumors) Also Know",
-    "naname": "",
+    "naname": "Even the Uwasa Know It",
     "type": "skill",
     "rank": "4",
     "min_hp": "880",
@@ -6253,7 +6253,7 @@ export const memoria_collection = [
   {
     "id": "1329",
     "name": "Look There",
-    "naname": "",
+    "naname": "Look Over There",
     "type": "skill",
     "rank": "3",
     "min_hp": "600",
@@ -6273,7 +6273,7 @@ export const memoria_collection = [
   {
     "id": "1330",
     "name": "A Meddlesome Timing",
-    "naname": "",
+    "naname": "Terrible Timing",
     "type": "ability",
     "rank": "4",
     "min_hp": "732",
