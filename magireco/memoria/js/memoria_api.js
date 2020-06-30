@@ -177,7 +177,7 @@ export const createDisplay = (display, listener) => {
   memoria_display.setAttribute("archive", display.archive);
   memoria_display.setAttribute("protect", display.protect);
   memoria_display.innerHTML = `
-    <img class="memoria_image" src="http://android.magica-us.com/magica/resource/download/asset/master/resource/image_native/memoria/memoria_${display.memoria_id}_s.png">
+    <img class="memoria_image" src="/magireco/assets/memoria/memoria_${display.memoria_id}_s.png">
     <img class="archive" src="/magireco/assets/ui/archive/${display.archive}.png">
     <img class="protect" src="/magireco/assets/ui/protect/${display.protect}.png">
     <div class="level">
@@ -439,7 +439,7 @@ export const loadMemoriaSelectList = () => {
     container.classList.add("memoria_image_preview");
     container.setAttribute("id", memoria.id);
     let image = document.createElement("img");
-    image.src = `http://android.magica-us.com/magica/resource/download/asset/master/resource/image_native/memoria/memoria_${memoria.id}_s.png`;
+    image.src = `/magireco/assets/memoria/memoria_${memoria.id}_s.png`;
     image.title = memoria.naname;
     container.append(image);
     if (added.length > 0) {
