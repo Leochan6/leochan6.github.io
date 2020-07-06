@@ -6430,7 +6430,7 @@ export const memoria_collection = [
   {
     "id": "1338",
     "name": "Future Planning Survey",
-    "naname": "",
+    "naname": "Career Path Questionnaire",
     "type": "skill",
     "rank": "3",
     "min_hp": "501",
@@ -6450,7 +6450,7 @@ export const memoria_collection = [
   {
     "id": "1339",
     "name": "Because the World Is Full of Wishes",
-    "naname": "",
+    "naname": "The World is Full of Wishes",
     "type": "ability",
     "rank": "4",
     "min_hp": "840",
@@ -6470,7 +6470,7 @@ export const memoria_collection = [
   {
     "id": "1340",
     "name": "What Kind of Person Will I Become?",
-    "naname": "",
+    "naname": "I Wonder What I'll Become",
     "type": "skill",
     "rank": "4",
     "min_hp": "802",
@@ -6490,7 +6490,7 @@ export const memoria_collection = [
   {
     "id": "1341",
     "name": "Because She Shines Too Brightly",
-    "naname": "",
+    "naname": "Is She an Angel?",
     "type": "skill",
     "rank": "4",
     "min_hp": "880",
@@ -6510,7 +6510,7 @@ export const memoria_collection = [
   {
     "id": "1342",
     "name": "Determination for the Future",
-    "naname": "",
+    "naname": "Determination for the Future",
     "type": "ability",
     "rank": "3",
     "min_hp": "602",
