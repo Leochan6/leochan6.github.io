@@ -293,7 +293,6 @@ export const createMemoria = () => {
   let display = getFormDisplay();
   let listId = memoria_list_api.getListId();
   display._id = generatePushID();
-  if (false) selectedMemoria = { memoriaDisplayId: display._id };
   storage_api.addMemoriaToList(listId, display);
 };
 

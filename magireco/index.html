@@ -29,7 +29,7 @@
     <div id="header_right">
       <div id="header_right_upper">
         <button id="contact_button" class="small_btn">Contact / Support</button>
-        <button id="signout_button" class="small_btn">Sign Out</button>
+        <button id="signout_button" class="hidden small_btn">Sign Out</button>
       </div>
       <div id="header_right_lower">
         <div id="header_username"></div>
@@ -38,12 +38,11 @@
   </header>
 
   <div class="horizontal-divider"></div>
-
-  <div id="main">
-    <div id="header_buttons">
+  <main>
+    <div id="header_buttons" class="hidden">
       <a href="character/" class="nav_item home_link" id="enter_character_link">Character Lists</a>
       <a href="memoria/" class="nav_item home_link" id="enter_memoria_link">Memoria Lists</a>
-      <a href="team/" class="nav_item home_link hidden" id="enter_teams_link">Teams</a>
+      <a href="team/" class="hidden nav_item home_link" id="enter_teams_link">Teams</a>
     </div>
 
     <div id="content">
@@ -115,7 +114,7 @@
         <div id="messageModalList"></div>
       </div>
     </div>
-  </div>
+  </main>
 
   </div>
   <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-app.js"></script>

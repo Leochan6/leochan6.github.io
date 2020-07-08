@@ -393,7 +393,6 @@ export const createCharacter = () => {
   let display = getFormDisplay();
   let listId = character_list_api.getListId();
   display._id = generatePushID();
-  selectedCharacter = { characterDisplayId: display._id };
   storage_api.addCharacterToList(listId, display);
 };
 
