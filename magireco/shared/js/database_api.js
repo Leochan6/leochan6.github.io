@@ -10,6 +10,7 @@ firebase.initializeApp(config);
 // Get a reference to the database service
 const db = firebase.database().ref();
 const users = db.child("users");
+const userDetails = db.child("userDetails");
 const lists = db.child("lists");
 const profiles = db.child("profiles");
 const settings = db.child("settings");
@@ -18,7 +19,7 @@ const messages = db.child("messages");
 export const signin = (email, password, loginHandler, errorHandler) => {
   firebase.auth().signInWithEmailAndPassword(email, password)
     .then(userCreds => {
-      appendUser(userCreds.user.uid, "activity", { event: "Sign In", details: "Email", time: new Date().toString() });
+      updateUserLastSignIn(userCreds.user.uid);
       loginHandler(userCreds);
     })
     .catch(error => errorHandler(error.message));
@@ -27,7 +28,7 @@ export const signin = (email, password, loginHandler, errorHandler) => {
 export const signup = (name, email, password, loginHandler, errorHandler) => {
   firebase.auth().createUserWithEmailAndPassword(email, password)
     .then(userCreds => {
-      appendUser(userCreds.user.uid, "activity", { event: "Sign Up", details: "Email", time: new Date().toString() } );
+      updateUserSignUp(userCreds.user.uid, "Email");
       loginHandler(userCreds, name);
     })
     .catch(error => errorHandler(error.message));
@@ -36,7 +37,7 @@ export const signup = (name, email, password, loginHandler, errorHandler) => {
 export const signInAnonymously = (loginHandler, errorHandler) => {
   firebase.auth().signInAnonymously()
     .then(userCreds => {
-      appendUser(userCreds.user.uid, "activity", { event: "Sign In", details: "Anonymous", time: new Date().toString() });
+      updateUserSignUp(userCreds.user.uid, "Anonymous");
       loginHandler(userCreds);
     })
     .catch(error => errorHandler(error));
@@ -44,8 +45,12 @@ export const signInAnonymously = (loginHandler, errorHandler) => {
 
 export const signout = (details, userId) => {
   let user = firebase.auth().currentUser;
-  if (user && user.uid) appendUser(user.uid, "activity", { event: "Sign Out", details: details ? details : "User", time: new Date().toString() });
-  else if (userId) appendUser(userId, "activity", { event: "Sign Out", details: details ? details : "User", time: new Date().toString() });
+  if (!details) details = "User"
+  if (user && user.uid) updateUserLastSignOut(user.uid, details, signOutRedirect);
+  else if (userId) updateUserLastSignOut(userId, details, signOutRedirect);
+};
+
+const signOutRedirect = () => {
   firebase.auth().signOut().then(() => { window.location.href = "/magireco/"; }).catch((error) => { console.error(error); });
 };
 
@@ -93,8 +98,8 @@ export const sendEmailVerification = (resolve, reject, details) => {
 
 export const createUser = (userId, name) => {
   users.child(userId).update({ name: name });
-  lists.child(userId).set(false);
-  profiles.child(userId).update({ "0": defaultCharacterProfile, "1": customCharacterProfile, "10": defaultMemoriaProfile, "11": customMemoriaProfile });
+  lists.child(userId).set(defaultLists);
+  profiles.child(userId).update(defaultProfiles);
   settings.child(userId).set(defaultSettings);
   updateUser(userId, "activity", { createUser: { event: "Create User", time: (new Date).toString() } });
 };
@@ -132,8 +137,78 @@ export const onUserUpdate = (userId, callback) => {
   });
 };
 
+export const updateUserSignUp = (userId, details) => {
+  let activity = { details: details, event: "Sign Up", time: new Date().toString() };
+  userDetails.child(`${userId}/signUp`).set(activity);
+  updateUserRecentActivity(userId, activity);
+};
+
+export const updateUserLastSignIn = (userId) => {
+  let activity = { details: "Email", event: "Sign In", time: new Date().toString() };
+  userDetails.child(`${userId}/lastSignIn`).set(activity);
+  updateUserRecentActivity(userId, activity);
+  updateUserSignInCount(userId);
+};
+
+export const updateUserLastSignOut = (userId, details, callback) => {
+  let activity = { details: details, event: "Sign Out", time: new Date().toString() };
+  userDetails.child(`${userId}/lastSignOut`).set(activity);
+  updateUserRecentActivity(userId, activity, callback);
+}
+
+export const updateUserSignInCount = (userId) => {
+  userDetails.child(`${userId}/signInCount`).once('value', (snapshot) => {
+    let count = snapshot.val();
+    if (count || count === 0) userDetails.child(`${userId}/signInCount`).set(count + 1);
+    else userDetails.child(`${userId}/signInCount`).set(1);
+  });
+};
+
+export const updateUserRecentActivity = (userId, newActivity, callback) => {
+  console.log(1);
+  userDetails.child(`${userId}/recentActivity`).once('value', (snapshot) => {
+    let activity = snapshot.val();
+    console.log(activity);
+    if (activity && activity.length >= 5) {
+      activity.shift();
+      activity.push(newActivity);
+    } else if (activity && activity.length < 5) {
+      activity.push(newActivity);
+    } else {
+      activity = [newActivity];
+    }
+    userDetails.child(`${userId}/recentActivity`).set(activity);
+    if (callback) callback();
+  });
+};
 
 // ---------- character lists ---------- //
+
+const defaultLists = {};
+let listId = generatePushID();
+let charId = generatePushID();
+defaultLists[listId] = {
+  characterList: {},
+  name: "Magical Girls",
+  selectedBackground: false,
+  selectedProfile: "0"
+};
+defaultLists[listId].characterList[charId] = {
+  character_id: "1001",
+  doppel: "locked",
+  episode: "1",
+  level: "1",
+  magia: "1",
+  magic: "0",
+  post_awaken: false,
+  rank: "1"
+};
+defaultLists[generatePushID()] = {
+  memoriaList: false,
+  name: "Memoria",
+  selectedBackground: false,
+  selectedProfile: "10"
+};
 
 export const getLists = (userId) => {
   return lists.child(userId).once('value');
@@ -171,60 +246,59 @@ export const onListUpdate = (userId, callback) => {
 
 // ---------- profiles ---------- //
 
-const defaultCharacterProfile = {
-  name: "Default",
-  type: "character",
-  rules: {
-    "010": {
-      state: "group",
-      type: "attribute",
-      direction: -1
-    },
-    "011": {
-      state: "sort",
-      type: "level",
-      direction: -1
-    },
-    "012": {
-      state: "sort",
-      type: "character_id",
-      direction: -1
-    },
-  }
-};
-
-const customCharacterProfile = {
-  name: "Custom",
-  type: "character",
-  settings: false
-};
-
-const defaultMemoriaProfile = {
-  name: "Default",
-  type: "memoria",
-  rules: {
-    "01": {
-      state: "group",
-      type: "rank",
-      direction: -1
-    },
-    "012": {
-      state: "sort",
-      type: "memoria_id",
-      direction: -1
-    },
-    "013": {
-      state: "sort",
-      type: "ascension",
-      direction: -1
+const defaultProfiles = {
+  "0": {
+    name: "Default",
+    type: "character",
+    rules: {
+      "010": {
+        state: "group",
+        type: "attribute",
+        direction: -1
+      },
+      "011": {
+        state: "sort",
+        type: "level",
+        direction: -1
+      },
+      "012": {
+        state: "sort",
+        type: "character_id",
+        direction: -1
+      },
     }
+  },
+  "1": {
+    name: "Custom",
+    type: "character",
+    settings: false
+  },
+  "10": {
+    name: "Default",
+    type: "memoria",
+    rules: {
+      "01": {
+        state: "group",
+        type: "rank",
+        direction: -1
+      },
+      "012": {
+        state: "sort",
+        type: "memoria_id",
+        direction: -1
+      },
+      "013": {
+        state: "sort",
+        type: "ascension",
+        direction: -1
+      }
+    }
+  },
+  "11": {
+    name: "Custom",
+    type: "memoria",
+    settings: false
   }
-}
-
-const customMemoriaProfile = {
-  name: "Custom",
-  type: "memoria",
-  settings: false
 };
 
 export const getProfiles = (userId) => {
@@ -258,7 +332,7 @@ const defaultSettings = {
     sort_tab: true,
     display_tab: true,
     background_tab: true,
-    setting_tab: false,
+    setting_tab: true,
     memoria_background_tab: true,
     memoria_create_tab: true,
     memoria_home_tab: true,

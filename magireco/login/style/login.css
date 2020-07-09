@@ -99,6 +99,7 @@ form {
 
 #anonymous_message {
   padding: 0px 5px;
+  width: 300px;
 }
 
 #signin_anonymous_button {
