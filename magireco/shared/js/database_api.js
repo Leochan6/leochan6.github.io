@@ -88,7 +88,8 @@ export const resetPassword = (emailAddress, resolve, reject) => {
 
 export const sendEmailVerification = (resolve, reject, details) => {
   let user = firebase.auth().currentUser;
-  appendUser(user.uid, "activity", { event: "Send Email Verification", details: details ? details : "User", time: new Date().toString() });
+  details = details ? details : "User"
+  updateUserEmailVerification(user.uid, details);
   user.sendEmailVerification()
     .then(resolve)
     .catch(reject);
@@ -154,7 +155,13 @@ export const updateUserLastSignOut = (userId, details, callback) => {
   let activity = { details: details, event: "Sign Out", time: new Date().toString() };
   userDetails.child(`${userId}/lastSignOut`).set(activity);
   updateUserRecentActivity(userId, activity, callback);
-}
+};
+
+export const updateUserEmailVerification = (userId, details) => {
+  let activity = { details: details, event: "Send Email Verification", time: new Date().toString() };
+  userDetails.child(`${userId}/sendEmailVerification`).set(activity);
+  updateUserRecentActivity(userId, activity);
+};
 
 export const updateUserSignInCount = (userId) => {
   userDetails.child(`${userId}/signInCount`).once('value', (snapshot) => {
@@ -165,10 +172,8 @@ export const updateUserSignInCount = (userId) => {
 };
 
 export const updateUserRecentActivity = (userId, newActivity, callback) => {
-  console.log(1);
   userDetails.child(`${userId}/recentActivity`).once('value', (snapshot) => {
     let activity = snapshot.val();
-    console.log(activity);
     if (activity && activity.length >= 5) {
       activity.shift();
       activity.push(newActivity);

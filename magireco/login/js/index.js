@@ -6,6 +6,7 @@ import * as utils from '../../shared/js/utils.js';
   "use strict";
 
   let userId = null
+  let userName = null;
 
   window.onload = () => {
 
@@ -15,7 +16,7 @@ import * as utils from '../../shared/js/utils.js';
         elements.anonymous_content.classList.add("hidden");
         elements.signout_button.classList.remove("hidden");
         elements.header_buttons.classList.remove("hidden");
-        elements.header_username.innerHTML = `Welcome ${user.displayName || "Anonymous"}`;
+        elements.header_username.innerHTML = `Welcome ${user.displayName || userName || "Anonymous"}`;
         userId = user.uid;
       } else {
         elements.login_content.classList.remove("hidden");
@@ -66,6 +67,7 @@ import * as utils from '../../shared/js/utils.js';
       if (!name) return errorSignupHandler("Name must not be empty.");
       if (!password || !confirm_password) return errorSignupHandler("Password must not be empty.");
       if (password !== confirm_password) return errorSignupHandler("Your Password and Confirmation Password do not match.");
+      userName = name;
       database.signup(name, email, password, loginHandler, errorSignupHandler);
     });
 
@@ -117,6 +119,10 @@ import * as utils from '../../shared/js/utils.js';
       name = name ? name : "Anonymous";
       userCred.user.updateProfile({ displayName: name });
       database.createUser(userCred.user.uid, name);
+      elements.header_username.innerHTML = `Welcome ${name}`;
+      elements.signup_content.classList.add("hidden");
+      elements.login_content.classList.remove("hidden");
+      errorSignupHandler("", false);
     }
   };
 
