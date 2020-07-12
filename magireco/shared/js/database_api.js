@@ -19,7 +19,7 @@ const messages = db.child("messages");
 export const signin = (email, password, loginHandler, errorHandler) => {
   firebase.auth().signInWithEmailAndPassword(email, password)
     .then(userCreds => {
-      updateUserLastSignIn(userCreds.user.uid);
+      updateUserDetails(userCreds.user.uid, "lastSignIn", "User");
       loginHandler(userCreds);
     })
     .catch(error => errorHandler(error.message));
@@ -28,7 +28,7 @@ export const signin = (email, password, loginHandler, errorHandler) => {
 export const signup = (name, email, password, loginHandler, errorHandler) => {
   firebase.auth().createUserWithEmailAndPassword(email, password)
     .then(userCreds => {
-      updateUserSignUp(userCreds.user.uid, "Email");
+      updateUserDetails(userCreds.user.uid, "signUp", "Email");
       loginHandler(userCreds, name);
     })
     .catch(error => errorHandler(error.message));
@@ -37,7 +37,7 @@ export const signup = (name, email, password, loginHandler, errorHandler) => {
 export const signInAnonymously = (loginHandler, errorHandler) => {
   firebase.auth().signInAnonymously()
     .then(userCreds => {
-      updateUserSignUp(userCreds.user.uid, "Anonymous");
+      updateUserDetails(userCreds.user.uid, "signUp", "Anonymous");
       loginHandler(userCreds);
     })
     .catch(error => errorHandler(error));
@@ -46,8 +46,8 @@ export const signInAnonymously = (loginHandler, errorHandler) => {
 export const signout = (details, userId) => {
   let user = firebase.auth().currentUser;
   if (!details) details = "User"
-  if (user && user.uid) updateUserLastSignOut(user.uid, details, signOutRedirect);
-  else if (userId) updateUserLastSignOut(userId, details, signOutRedirect);
+  if (user && user.uid) updateUserDetails(user.uid, "lastSignOut", details, signOutRedirect);
+  else if (userId) updateUserDetails(userId, "lastSignOut", details, signOutRedirect);
 };
 
 const signOutRedirect = () => {
@@ -89,7 +89,7 @@ export const resetPassword = (emailAddress, resolve, reject) => {
 export const sendEmailVerification = (resolve, reject, details) => {
   let user = firebase.auth().currentUser;
   details = details ? details : "User"
-  updateUserEmailVerification(user.uid, details);
+  updateUserDetails(user.uid, "sendEmailVerification", details);
   user.sendEmailVerification()
     .then(resolve)
     .catch(reject);
@@ -102,7 +102,6 @@ export const createUser = (userId, name) => {
   lists.child(userId).set(defaultLists);
   profiles.child(userId).update(defaultProfiles);
   settings.child(userId).set(defaultSettings);
-  updateUser(userId, "activity", { createUser: { event: "Create User", time: (new Date).toString() } });
 };
 
 export const deleteUser = (userId) => {
@@ -138,29 +137,13 @@ export const onUserUpdate = (userId, callback) => {
   });
 };
 
-export const updateUserSignUp = (userId, details) => {
-  let activity = { details: details, event: "Sign Up", time: new Date().toString() };
-  userDetails.child(`${userId}/signUp`).set(activity);
-  updateUserRecentActivity(userId, activity);
-};
+const typeToEvent = { signUp: "Sign Up", lastSignIn: "Sign In", lastSignOut: "Sign Out", sendEmailVerification: "Send Email Verification" };
 
-export const updateUserLastSignIn = (userId) => {
-  let activity = { details: "Email", event: "Sign In", time: new Date().toString() };
-  userDetails.child(`${userId}/lastSignIn`).set(activity);
-  updateUserRecentActivity(userId, activity);
-  updateUserSignInCount(userId);
-};
-
-export const updateUserLastSignOut = (userId, details, callback) => {
-  let activity = { details: details, event: "Sign Out", time: new Date().toString() };
-  userDetails.child(`${userId}/lastSignOut`).set(activity);
+export const updateUserDetails = (userId, type, details, callback) => {
+  let activity = { details: details, event: typeToEvent[type], time: new Date().toString() };
+  userDetails.child(`${userId}/${type}`).set(activity);
   updateUserRecentActivity(userId, activity, callback);
-};
-
-export const updateUserEmailVerification = (userId, details) => {
-  let activity = { details: details, event: "Send Email Verification", time: new Date().toString() };
-  userDetails.child(`${userId}/sendEmailVerification`).set(activity);
-  updateUserRecentActivity(userId, activity);
+  if (type === "lastSignIn") updateUserSignInCount(userId);
 };
 
 export const updateUserSignInCount = (userId) => {
