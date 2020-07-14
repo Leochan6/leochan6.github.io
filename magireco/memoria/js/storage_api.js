@@ -70,7 +70,6 @@ const loadSettings = (snapshot) => {
       }
     }
   });
-  if (!settings.background_transparency) settings.background_transparency = 0;
   // display settings
   elements.memoria_list_content.style.zoom = settings.memoria_zoom / 100;
   elements.zoom_range.value = settings.memoria_zoom;
@@ -78,12 +77,19 @@ const loadSettings = (snapshot) => {
   elements.displays_per_row.value = settings.memoria_displays_per_row;
   memoria_list_api.changeDisplaysPerRow(settings.memoria_displays_per_row);
   document.querySelectorAll(".memoria_row").forEach(memoria_row => memoria_row.style.justifyContent = memoria_list_api.DIR_TO_FLEX[settings.display_alignment]);
-  elements.memoria_list_content.style.padding = `${settings.padding_y}px ${settings.padding_x}px`;
   elements.display_alignment_select.value = settings.display_alignment;
-  elements.display_padding_x_field.value = settings.padding_x;
-  elements.display_padding_y_field.value = settings.padding_y;
+  memoria_list_api.setPadding(settings.padding_top, settings.padding_left, settings.padding_right, settings.padding_bottom);
+  elements.display_padding_top_field.value = settings.padding_top;
+  elements.display_padding_left_field.value = settings.padding_left;
+  elements.display_padding_right_field.value = settings.padding_right;
+  elements.display_padding_bottom_field.value = settings.padding_bottom;
+
+  // background settings
+  if (!settings.background_transparency) settings.background_transparency = 0;
   elements.background_transparency_range.value = settings.background_transparency;
   elements.background_transparency_field.value = settings.background_transparency;
+
+  // theme
   utils.setTheme(settings.theme);
 };
 

@@ -318,18 +318,32 @@ import { memoria_elements as elements, messageDialog, memoriaSelectDialog, backg
     });
 
     ["input", "change"].forEach(event => {
-      // change the padding of the list in the x direction.
-      elements.display_padding_x_field.addEventListener(event, () => {
-        let value = elements.display_padding_x_field.value;
-        memoria_list_api.changePadding("x", value);
-        if (event === "change") storage_api.updateSettings("padding_x", value);
+      // change the padding of the list in the top direction.
+      elements.display_padding_top_field.addEventListener(event, () => {
+        let value = elements.display_padding_top_field.value;
+        memoria_list_api.changePadding("top", value);
+        if (event === "change") storage_api.updateSettings("padding_top", value);
       });
 
-      // change the padding of the list in the y direction.
-      elements.display_padding_y_field.addEventListener(event, () => {
-        let value = elements.display_padding_y_field.value;
-        memoria_list_api.changePadding("y", value);
-        if (event === "change") storage_api.updateSettings("padding_y", value);
+      // change the padding of the list in the left direction.
+      elements.display_padding_left_field.addEventListener(event, () => {
+        let value = elements.display_padding_left_field.value;
+        memoria_list_api.changePadding("left", value);
+        if (event === "change") storage_api.updateSettings("padding_left", value);
+      });
+
+      // change the padding of the list in the right direction.
+      elements.display_padding_right_field.addEventListener(event, () => {
+        let value = elements.display_padding_right_field.value;
+        memoria_list_api.changePadding("right", value);
+        if (event === "change") storage_api.updateSettings("padding_right", value);
+      });
+
+      // change the padding of the list in the bottom direction.
+      elements.display_padding_bottom_field.addEventListener(event, () => {
+        let value = elements.display_padding_bottom_field.value;
+        memoria_list_api.changePadding("bottom", value);
+        if (event === "change") storage_api.updateSettings("padding_bottom", value);
       });
     });
 

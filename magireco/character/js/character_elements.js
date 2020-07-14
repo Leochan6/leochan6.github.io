@@ -74,8 +74,10 @@ export const character_elements = {
   // Display Settings
   displays_per_row: document.querySelector("#displays_per_row"),
   display_alignment_select: document.querySelector("#display_alignment_select"),
-  display_padding_x_field: document.querySelector("#display_padding_x_field"),
-  display_padding_y_field: document.querySelector("#display_padding_y_field"),
+  display_padding_top_field: document.querySelector("#display_padding_top_field"),
+  display_padding_left_field: document.querySelector("#display_padding_left_field"),
+  display_padding_right_field: document.querySelector("#display_padding_right_field"),
+  display_padding_bottom_field: document.querySelector("#display_padding_bottom_field"),
 
   // Background
   backgroundSelectModalOpen: document.querySelector("#backgroundSelectModalOpen"),

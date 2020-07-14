@@ -227,7 +227,7 @@
   padding: 0px 10px;
 }
 
-#display_padding_x_field, #display_padding_y_field {
+#display_padding_top_field, #display_padding_left_field, #display_padding_right_field, #display_padding_bottom_field {
   width: 50px;
 }
 

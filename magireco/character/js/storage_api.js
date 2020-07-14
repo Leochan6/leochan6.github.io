@@ -69,8 +69,6 @@ const loadUser = (snapshot) => {
  */
 const loadSettings = (snapshot) => {
   settings = snapshot.val() ? snapshot.val() : {};
-  // init expanded tabs
-  if (!settings.expanded_tabs) database_api.initSettings(userId);
   // expand tabs
   Object.entries(settings.expanded_tabs).forEach(([tab_id, expanded]) => {
     let tab = document.querySelector(`#${tab_id}`);
@@ -86,7 +84,7 @@ const loadSettings = (snapshot) => {
       }
     }
   });
-  if (!settings.background_transparency) settings.background_transparency = 0;
+
   // display settings
   character_list_api.setZoom(settings.character_zoom);
   elements.zoom_range.value = settings.character_zoom;
@@ -94,12 +92,19 @@ const loadSettings = (snapshot) => {
   elements.displays_per_row.value = settings.displays_per_row;
   character_list_api.changeDisplaysPerRow(settings.displays_per_row);
   document.querySelectorAll(".character_row").forEach(character_row => character_row.style.justifyContent = character_list_api.DIR_TO_FLEX[settings.display_alignment]);
-  elements.character_list_content.style.padding = `${settings.padding_y}px ${settings.padding_x}px`;
   elements.display_alignment_select.value = settings.display_alignment;
-  elements.display_padding_x_field.value = settings.padding_x;
-  elements.display_padding_y_field.value = settings.padding_y;
+  character_list_api.setPadding(settings.padding_top, settings.padding_left, settings.padding_right, settings.padding_bottom);
+  elements.display_padding_top_field.value = settings.padding_top;
+  elements.display_padding_left_field.value = settings.padding_left;
+  elements.display_padding_right_field.value = settings.padding_right;
+  elements.display_padding_bottom_field.value = settings.padding_bottom;
+
+  // background settings
+  if (!settings.background_transparency) settings.background_transparency = 0;
   elements.background_transparency_range.value = settings.background_transparency;
   elements.background_transparency_field.value = settings.background_transparency;
+
+  // theme
   utils.setTheme(settings.theme);
 };
 

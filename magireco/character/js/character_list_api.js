@@ -107,7 +107,7 @@ export const selectList = (listId, list) => {
   elements.list_name_title.setAttribute("listId", listId);
   profile_api.setProfile(list.selectedProfile);
   applyProfileToList(listId, list.selectedProfile);
-  setPadding(storage_api.settings.padding_x, storage_api.settings.padding_y);
+  setPadding(storage_api.settings.padding_top, storage_api.settings.padding_left, storage_api.settings.padding_right, storage_api.settings.padding_bottom);
   applyFilters();
   background_api.setBackground(list.selectedBackground);
   getStats();
@@ -462,17 +462,19 @@ export const changeAlignment = (alignment) => {
  */
 export const changePadding = (direction, padding) => {
   storage_api.settings[`padding_${direction}`] = padding;
-  setPadding(storage_api.settings.padding_x, storage_api.settings.padding_y);
+  setPadding(storage_api.settings.padding_top, storage_api.settings.padding_left, storage_api.settings.padding_right, storage_api.settings.padding_bottom);
 };
 
 /**
  * Sets the padding of the list.
  * 
- * @param {Number} x 
- * @param {Number} y 
+ * @param {Number} top 
+ * @param {Number} left 
+ * @param {Number} right 
+ * @param {Number} bottom 
  */
-export const setPadding = (x, y) => {
-  elements.character_list_content.style.padding = `${y}px ${x}px`;
+export const setPadding = (top, left, right, bottom) => {
+  elements.character_list_content.style.padding = `${top}px ${right}px ${bottom}px ${left}px`;
 }
 
 /* ------------------------------ List Zoom ------------------------------ */

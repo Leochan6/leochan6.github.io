@@ -22,6 +22,8 @@ For any feedback or questions, please contact me the locations listed above.
 - [Filters](#Filters)
 - [Statistics](#Statistics)
 
+- [Memoria Lists](#Memoria-Lists)
+
 ## Usage
 
 ### Character Lists
@@ -199,6 +201,12 @@ For any feedback or questions, please contact me the locations listed above.
 - Statistics
 
     Press the `Stats` button to open the Stats dialog, showing a detailed breakdown of the statistics of the characters in the Character List and other details.
+
+### Memoria Lists
+
+- The same functionality as Magical Girls is available for Memoria.
+
+![Memoria List Preview](https://raw.githubusercontent.com/Leochan6/leochan6.github.io/master/magireco/assets/preview/memoria_list.png)
 
 ## Gallery
 List Preview Light

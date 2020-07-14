@@ -101,7 +101,7 @@ export const selectList = (listId, list) => {
   elements.list_name_title.setAttribute("listId", listId);
   profile_api.setProfile(list.selectedProfile);
   applyProfileToList(listId, list.selectedProfile);
-  setPadding(storage_api.settings.padding_x, storage_api.settings.padding_y);
+  setPadding(storage_api.settings.padding_top, storage_api.settings.padding_left, storage_api.settings.padding_right, storage_api.settings.padding_bottom);
   applyFilters();
   background_api.setBackground(list.selectedBackground);
   getStats();
@@ -445,7 +445,7 @@ export const changeAlignment = (alignment) => {
  */
 export const changePadding = (direction, padding) => {
   storage_api.settings[`padding_${direction}`] = padding;
-  setPadding(storage_api.settings.padding_x, storage_api.settings.padding_y);
+  setPadding(storage_api.settings.padding_top, storage_api.settings.padding_left, storage_api.settings.padding_right, storage_api.settings.padding_bottom);
 };
 
 /**
