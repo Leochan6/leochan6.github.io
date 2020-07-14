@@ -260,7 +260,7 @@ export const character_collection = [
       "2": false,
       "3": true,
       "4": true,
-      "5": false
+      "5": true
     },
     "obtainability": "limited",
     "url": "https://magireco.fandom.com/wiki/Amane_Tsukasa"
