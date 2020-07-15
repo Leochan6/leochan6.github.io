@@ -7,6 +7,7 @@ import * as database_api from '../../shared/js/database_api.js';
 import * as utils from '../../shared/js/utils.js';
 import * as functions from '../../shared/js/functions.js';
 import { character_elements as elements, messageDialog, characterSelectDialog, backgroundSelectDialog, importListDialog } from './character_elements.js';
+import { ContactDialog } from '../../shared/js/dialog.js'
 
 /**
  * Event Handlers for the Character Page.
@@ -28,7 +29,7 @@ import { character_elements as elements, messageDialog, characterSelectDialog, b
 
     // contact button.
     elements.contact_button.addEventListener("click", () => {
-      messageDialog.open(`Contact / Support`, `For assistance, support, or feedback, please contact Leo Chan on Discord (Leo_Chan#9150) or Reddit (u/Leochan6). More Information and how to use at:\nhttps://github.com/Leochan6/leochan6.github.io/blob/master/magireco/README.md`);
+      new ContactDialog();
     });
 
     // theme toggle button.

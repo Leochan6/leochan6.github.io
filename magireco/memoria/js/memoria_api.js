@@ -483,7 +483,7 @@ export const filterMemoria = (search) => {
       || memoria.naname.toLowerCase().includes(search)
       || memoria.type.toLowerCase().includes(search)
       || memoria.rank.toLowerCase().includes(search)
-      || memoria.chara.toLowerCase().includes(search)
+      || (memoria.chara && memoria.chara.toLowerCase().includes(search))
       || (memoria.effect1 && memoria.effect1.toLowerCase().includes(search))
       || (memoria.effect2 && memoria.effect2.toLowerCase().includes(search))
       || memoria.obtainability.includes(search)

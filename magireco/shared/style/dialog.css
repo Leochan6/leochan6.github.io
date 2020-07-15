@@ -1,0 +1,135 @@
+
+
+/* Modal Dialog */
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  padding: 20px;
+  overflow: hidden;
+  background-color: var(--modal-background-color);
+  border: 1px solid var(--modal-border-color);
+  border-radius: 20px;
+  resize: both;
+}
+
+.modal-fit-width {
+  width: fit-content;
+}
+
+.modal-fit-height {
+  height: fit-content;
+}
+
+.modal-large-width {
+  width: 80%;
+}
+
+.modal-large-height {
+  height: 80%;
+}
+
+.modal-medium-width {
+  min-width: 500px;
+  width: 60%;
+}
+
+.modal-medium-height {
+  height: 60%;
+}
+
+.modal-small-width {
+  width: 40%;
+}
+
+.modal-small-height {
+  height: 40%;
+}
+
+.modal-close {
+  position: relative;
+  color: var(--modal-close-button-color);
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  border: none;
+  background: none;
+}
+
+.modal-close:hover {
+  color: var(--modal-close-button-color-hover);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.modal-title {
+  margin: 0px;
+}
+
+.modal-main {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: auto;
+}
+
+.modal-text {
+  height: 100%;
+  resize: none;
+  padding: 5px;
+  color: var(--text-color-standard);
+  background-color: var(--textarea-background-color);
+  border: none;
+  outline: none;
+}
+
+.modal-copy {
+  margin-top: 5px;
+  width: fit-content;
+}
+
+.modal-link {
+  color: #00a1d6;
+  text-decoration: none;
+  font-size: 24px;
+  font-family: Arial, Helvetica, sans-serif;
+  opacity: 0.6;
+  transition: all 0.3s ease 0s;
+}
+
+.modal-link:hover {
+  color: #003749;
+}
+
+.modal-buttons {
+  padding: 10px;
+  align-self: flex-end;
+}
+
+.message-modal > div {
+  top: 10%;
+  bottom: auto;
+}

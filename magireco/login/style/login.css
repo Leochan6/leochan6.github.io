@@ -83,6 +83,7 @@ form {
 #content {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
 }
 
 #login_buttons, #signup_buttons, #forgot_password_buttons {

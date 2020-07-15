@@ -1,6 +1,7 @@
-import { login_elements as elements, messageDialog } from './login_elements.js';
+import { login_elements as elements } from './login_elements.js';
 import * as database from '../../shared/js/database_api.js';
 import * as utils from '../../shared/js/utils.js';
+import { SignOutDialog, ContactDialog } from '../../shared/js/dialog.js';
 
 (function () {
   "use strict";
@@ -94,24 +95,17 @@ import * as utils from '../../shared/js/utils.js';
     });
 
     elements.signout_button.addEventListener("click", () => {
+      // new SignOutDialog((res) => {
+      //   if (res) database.signout();
+      // })
       let res = confirm("Are you sure you want to Sign Out?");
       if (res) database.signout();
     });
 
     elements.contact_button.addEventListener("click", () => {
-      messageDialog.open(`Contact / Support`, "For assistance, support, or feedback, please contact Leo Chan on Discord (Leo_Chan#9150) or Reddit (u/Leochan6). More Information and how to use at:\nhttps://github.com/Leochan6/leochan6.github.io/blob/master/magireco/README.md");
+      new ContactDialog();
     });
-
-    // hide modal dialogs
-    window.addEventListener("click", (event) => {
-      if (event.target == messageDialog.modal && messageDialog.isOpen()) messageDialog.close();
-    });
-
-    // hide message modal dialog
-    messageDialog.closeButton.addEventListener("click", () => {
-      messageDialog.close();
-    });
-  };
+  }
 
   const loginHandler = (userCred, name) => {
     if (userCred.additionalUserInfo.isNewUser) {
