@@ -7044,7 +7044,7 @@ export const memoria_collection = [
     "url": "https://magireco.fandom.com/wiki/Dive_into_Summer_(Alina/Mifuyu)"
   },
   {
-    "id": "1368",
+    "id": "1369",
     "name": "Dive into Summer (Touka/Nemu)",
     "naname": "Dive into Summer (Touka & Nemu)",
     "type": "ability",
