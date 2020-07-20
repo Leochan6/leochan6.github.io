@@ -1170,10 +1170,38 @@ export const character_collection = [
       "2": false,
       "3": true,
       "4": true,
-      "5": false
+      "5": true
     },
     "obtainability": "limited",
     "url": "https://magireco.fandom.com/wiki/Melissa_de_Vignolles"
+  },
+  {
+    "id": "4025",
+    "name": "Corbeau",
+    "attribute": "Dark",
+    "ranks": {
+      "1": false,
+      "2": false,
+      "3": true,
+      "4": true,
+      "5": false
+    },
+    "obtainability": "limited",
+    "url": "https://magireco.fandom.com/wiki/Corbeau"
+  },
+  {
+    "id": "4026",
+    "name": "Elisa Celjska",
+    "attribute": "Fire",
+    "ranks": {
+      "1": false,
+      "2": false,
+      "3": false,
+      "4": true,
+      "5": true
+    },
+    "obtainability": "limited",
+    "url": "https://magireco.fandom.com/wiki/Elisa_Celjska"
   },
   {
     "id": "4031",

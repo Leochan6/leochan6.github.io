@@ -7105,7 +7105,7 @@ export const memoria_collection = [
   {
     "id": "1372",
     "name": "The Gem of the Noble Soul",
-    "naname": "",
+    "naname": "A Jewel Housing a Noble Soul",
     "type": "skill",
     "rank": "3",
     "min_hp": "423",
@@ -7125,7 +7125,7 @@ export const memoria_collection = [
   {
     "id": "1373",
     "name": "The Formed Darkness",
-    "naname": "",
+    "naname": "Darkness Given Form",
     "type": "skill",
     "rank": "3",
     "min_hp": "512",
@@ -7145,7 +7145,7 @@ export const memoria_collection = [
   {
     "id": "1374",
     "name": "Fire Drake Roars",
-    "naname": "",
+    "naname": "The Fiery Dragon Roars",
     "type": "skill",
     "rank": "4",
     "min_hp": "812",
@@ -7165,7 +7165,7 @@ export const memoria_collection = [
   {
     "id": "1375",
     "name": "Sisters Being Themselves",
-    "naname": "",
+    "naname": "The Unfulfilled Promise",
     "type": "ability",
     "rank": "3",
     "min_hp": "550",
@@ -7185,7 +7185,7 @@ export const memoria_collection = [
   {
     "id": "1376",
     "name": "Mysterious Memorial",
-    "naname": "",
+    "naname": "Strange Memento",
     "type": "ability",
     "rank": "3",
     "min_hp": "595",
@@ -7205,7 +7205,7 @@ export const memoria_collection = [
   {
     "id": "1377",
     "name": "Our Thoughts As One",
-    "naname": "",
+    "naname": "Hopes Combined",
     "type": "ability",
     "rank": "4",
     "min_hp": "",
