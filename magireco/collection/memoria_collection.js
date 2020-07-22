@@ -4804,7 +4804,7 @@ export const memoria_collection = [
   {
     "id": "1254",
     "name": "To Continue Living in This World",
-    "naname": "",
+    "naname": "I Will Keep On Living",
     "type": "skill",
     "rank": "4",
     "min_hp": "1266",
@@ -4824,7 +4824,7 @@ export const memoria_collection = [
   {
     "id": "1255",
     "name": "The Power to Protect Who You Love",
-    "naname": "",
+    "naname": "The Power to Protect",
     "type": "ability",
     "rank": "4",
     "min_hp": "866",

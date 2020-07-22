@@ -364,6 +364,20 @@ export const character_collection = [
     "url": "https://magireco.fandom.com/wiki/Iroha-chan"
   },
   {
+    "id": "1301",
+    "name": "Iroha & Yachiyo (Final Battle)",
+    "attribute": "Light",
+    "ranks": {
+      "1": false,
+      "2": false,
+      "3": false,
+      "4": true,
+      "5": true
+    },
+    "obtainability": "limited",
+    "url": "https://magireco.fandom.com/wiki/Iroha_%26_Yachiyo_(Final_Battle_ver.)"
+  },
+  {
     "id": "2001",
     "name": "Madoka Kaname",
     "attribute": "Light",
@@ -530,6 +544,20 @@ export const character_collection = [
     },
     "obtainability": "limited",
     "url": "https://magireco.fandom.com/wiki/Holy_Mami"
+  },
+  {
+    "id": "2600",
+    "name": "Kyoko Sakura (Swimsuit)",
+    "attribute": "Fire",
+    "ranks": {
+      "1": false,
+      "2": false,
+      "3": false,
+      "4": true,
+      "5": true
+    },
+    "obtainability": "limited",
+    "url": "https://magireco.fandom.com/wiki/Sakura_Kyouko_(Mizugi_ver.)"
   },
   {
     "id": "3001",
