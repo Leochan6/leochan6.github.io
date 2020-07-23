@@ -7065,7 +7065,7 @@ export const memoria_collection = [
   {
     "id": "1370",
     "name": "Because We're Not Alone",
-    "naname": "",
+    "naname": "We Aren't Alone",
     "type": "ability",
     "rank": "4",
     "min_hp": "840",
