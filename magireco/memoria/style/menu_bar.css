@@ -147,6 +147,11 @@
   width: 50px;
 }
 
+#preview_selected_text {
+  display: flex;
+  justify-content: space-between;
+}
+
 #protect_checkbox, #archive_checkbox {
   zoom: 1.5;
   margin: 3px 0px;
@@ -163,7 +168,7 @@
   margin: 2px 0px;
 }
 
-#preview_text {
+#preview_text, #selected_text {
   margin: 5px 0px;
 }
 

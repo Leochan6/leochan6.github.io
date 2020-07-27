@@ -57,6 +57,7 @@
   max_all_button: document.querySelector("#max_all_button"),
 
   // Character Preview
+  selected_text: document.querySelector("#selected_text"),
   display_preview: document.querySelector("#display_preview"),
 
   // Sorting Profiles

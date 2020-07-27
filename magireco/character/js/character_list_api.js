@@ -114,6 +114,7 @@ export const selectList = (listId, list) => {
   background_api.setBackground(list.selectedBackground);
   getStats();
   character_api.findAndSelectDisplay();
+  character_api.deselectDisplay(true);
   character_api.enableButtons();
   storage_api.updateSettings("selected_character_list", listId);
 };

@@ -412,10 +412,12 @@ export const enableButtons = () => {
       if (elements.update_button.disabled) elements.update_button.disabled = false;
       if (elements.copy_button.disabled) elements.copy_button.disabled = false;
       if (elements.delete_button.disabled) elements.delete_button.disabled = false;
+      if (elements.selected_text.classList.contains("hidden")) elements.selected_text.classList.remove("hidden");
     } else {
       if (!elements.update_button.disabled) elements.update_button.disabled = true;
       if (!elements.copy_button.disabled) elements.copy_button.disabled = true;
       if (!elements.delete_button.disabled) elements.delete_button.disabled = true;
+      if (!elements.selected_text.classList.contains("hidden")) elements.selected_text.classList.add("hidden");
     }
   } else {
     if (!elements.create_button.disabled) elements.create_button.disabled = true;

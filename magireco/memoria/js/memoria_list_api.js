@@ -106,6 +106,7 @@ export const selectList = (listId, list) => {
   background_api.setBackground(list.selectedBackground);
   getStats();
   memoria_api.findAndSelectDisplay();
+  memoria_api.deselectDisplay(true);
   memoria_api.enableButtons();
   storage_api.updateSettings("selected_memoria_list", listId);
 };

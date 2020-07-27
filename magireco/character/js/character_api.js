@@ -462,7 +462,8 @@ export const selectDisplay = (character_display) => {
 /**
  * deselects the select character display.
  */
-export const deselectDisplay = () => {
+export const deselectDisplay = (deselect = false) => {
+  if (deselect) selectedCharacter = null;
   if (selectedCharacter && selectedCharacter.characterDisplayId) {
     let character_display = document.querySelector(`.character_display:not(.preview)[_id="${selectedCharacter.characterDisplayId}"]`);
     if (character_display) character_display.classList.remove("selected");
