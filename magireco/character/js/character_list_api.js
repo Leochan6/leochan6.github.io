@@ -34,6 +34,8 @@ export const setLists = (lists) => {
     // update the fields of each character.
     Object.entries(list.characterList).forEach(([key, display]) => {
       display._id = key;
+      if (display.doppel == "unlocked") display.doppel = true;
+      else if (display.doppel == "locked") display.doppel = false;
     });
     let div = document.createElement("div");
     div.classList.add("character_list_row");
@@ -408,8 +410,8 @@ const group_properties = (display_properties, group_by, group_dir) => {
       display_groups[NUM_TO_WORD[properties.episode]].push(properties);
     });
   } else if (group_by == "doppel") {
-    if (group_dir == 1) display_groups = { "locked": [], "unlocked": [] };
-    if (group_dir == -1) display_groups = { "unlocked": [], "locked": [] };
+    if (group_dir == 1) display_groups = { false: [], true: [] };
+    if (group_dir == -1) display_groups = { true: [], false: [] };
     display_properties.forEach(properties => {
       display_groups[properties.doppel].push(properties);
     });
@@ -689,8 +691,8 @@ export const createFilter = (next = null) => {
           <option value="neq">=/=</option>
         </select>
         <select class="filter_field doppel_select form_input">
-          <option value="locked">Locked</option>
-          <option value="unlocked">Unlocked</option>
+          <option value="false">No</option>
+          <option value="true">Yes</option>
         </select>
       </div>
       <div class="filter_type obtainability_filter hidden">

@@ -96,7 +96,7 @@ export const sanitizeCharacter = (character, removeId = true) => {
  * @param {Character} character 
  */
 export const getBasicCharacterDisplay = (character) => {
-  return new Display(character.id, character.name, getMinRank(character.ranks), false, character.attribute, "1", "0", "1", "1", "locked");
+  return new Display(character.id, character.name, getMinRank(character.ranks), false, character.attribute, "1", "0", "1", "1", false);
 };
 
 /**
@@ -111,22 +111,22 @@ export const isValidCharacterDisplay = (character_id, display, validName = true)
   if (!character) return ["Cannot get character."]
   let err = [];
   // check id.
-  if (display.character_id !== character.id) err.push(`Display Id ${display.character_id} does not match Character ID ${character.id}.`);
+  if (display.character_id !== character.id) err.push(`Character ID ${display.character_id} does not match Character ID ${character.id}.`);
   // check name.
-  if (display.name !== character.name && validName) err.push(`Display Name ${display.name} does not match Character Name ${character.name}.`);
+  if (display.name !== character.name && validName) err.push(`Name ${display.name} does not match Character Name ${character.name}.`);
   // check rank.
-  if (!character.ranks[display.rank]) err.push(`Display Rank ${display.rank} does not match Character Ranks ${JSON.stringify(character.ranks)}`);
+  if (!character.ranks[display.rank]) err.push(`Rank: ${display.rank} does not match Character Ranks ${JSON.stringify(character.ranks)}`);
   // check level.
   let maxLevel = parseInt(getMaxLevel(display.rank));
-  if (parseInt(display.level) < 1 || parseInt(display.level) > maxLevel || !display.level) err.push(`Display Level ${display.level} for Display Rank ${display.rank} must be between 1 and ${maxLevel}.`);
+  if (parseInt(display.level) < 1 || parseInt(display.level) > maxLevel || !display.level) err.push(`Level ${display.level} for Rank ${display.rank} must be between 1 and ${maxLevel}.`);
   // check magic.
-  if (display.magic < 0 || display.magic > 3) err.push(`Display Magic ${display.magic} must be between 0 and 3.`);
+  if (display.magic < 0 || display.magic > 3) err.push(`Magic ${display.magic} must be between 0 and 3.`);
   // check magia.
-  if (display.magia < 1 || display.magia > 5) err.push(`Display Magia ${display.magia} must be between 1 and 5.`);
-  if (display.magia > display.episode) err.push(`Display Magia ${display.magia} must be less than or equal to Display Episode ${display.episode}.`);
+  if (display.magia < 1 || display.magia > 5) err.push(`Magia ${display.magia} must be between 1 and 5.`);
+  if (display.magia > display.episode) err.push(`Magia ${display.magia} must be less than or equal to Episode ${display.episode}.`);
   // check episode.
-  if (display.episode < 1 || display.episode > 5) err.push(`Display Episode ${display.episode} must be between 1 and 5.`);
-  if (!(display.doppel === "locked" || display.doppel === "unlocked") || (display.doppel === "unlocked" && (display.magia < 5 || display.rank < 5))) err.push(`Display Doppel ${display.doppel} can only be unlocked if Magia 5 and Rank 5.`);
+  if (display.episode < 1 || display.episode > 5) err.push(`Episode ${display.episode} must be between 1 and 5.`);
+  if (!(display.doppel === true || display.doppel === false) || (display.doppel === true && (display.magia < 5 || display.rank < 5))) err.push(`Doppel ${display.doppel} can only be true if Magia 5 and Rank 5.`);
   return err;
 };
 
@@ -146,7 +146,7 @@ const getFormDisplay = () => {
     elements.magic_select.value,
     elements.magia_select.value,
     elements.episode_select.value,
-    elements.doppel_select.value);
+    elements.doppel_checkbox.checked);
   return display;
 };
 
@@ -264,7 +264,7 @@ export const minimizeDisplay = () => {
   let character = character_collection.find(char => char.id === character_display.character_id);
   let minRank = getMinRank(character.ranks);
   let attribute = character.attribute.toLowerCase();
-  let display = new Display(character.id, character.name, minRank, false, attribute, "1", "0", "1", "1", "locked");
+  let display = new Display(character.id, character.name, minRank, false, attribute, "1", "0", "1", "1", false);
   updateForm(display);
   updatePreviewDisplay(display);
 };
@@ -278,7 +278,7 @@ export const maximizeDisplay = () => {
   let maxRank = getMaxRank(character.ranks);
   let level = RANK_TO_LEVEL[maxRank];
   let attribute = character.attribute.toLowerCase();
-  let display = new Display(character.id, character.name, maxRank, true, attribute, level, "3", "5", "5", maxRank == "5" ? "unlocked" : "locked");
+  let display = new Display(character.id, character.name, maxRank, true, attribute, level, "3", "5", "5", maxRank == "5" ? true : false);
   updateForm(display);
   updatePreviewDisplay(display);
 };
@@ -308,7 +308,7 @@ const updateForm = (display) => {
   elements.magic_select.value = display.magic;
   elements.magia_select.value = display.magia;
   elements.episode_select.value = display.episode;
-  elements.doppel_select.value = display.doppel;
+  elements.doppel_checkbox.checked = display.doppel === "true" || display.doppel === true ? true : false;
 };
 
 /**
@@ -329,12 +329,10 @@ const updateFormEnabled = (character) => {
   }
   // enable or disable the doppel select.
   if (getMaxRank(character.ranks) == "5") {
-    elements.doppel_select.options[0].disabled = false;
-    elements.doppel_select.options[1].disabled = false;
+    elements.doppel_checkbox.disabled = false;
   } else {
-    elements.doppel_select.options[0].disabled = false;
-    elements.doppel_select.options[1].disabled = true;
-    elements.doppel_select.value = "locked";
+    elements.doppel_checkbox.disabled = true;
+    elements.doppel_checkbox.checked = false;
   }
 };
 
@@ -514,10 +512,12 @@ export const enableButtons = () => {
       if (elements.update_button.disabled) elements.update_button.disabled = false;
       if (elements.copy_button.disabled) elements.copy_button.disabled = false;
       if (elements.delete_button.disabled) elements.delete_button.disabled = false;
+      if (elements.selected_text.classList.contains("hidden")) elements.selected_text.classList.remove("hidden");
     } else {
       if (!elements.update_button.disabled) elements.update_button.disabled = true;
       if (!elements.copy_button.disabled) elements.copy_button.disabled = true;
       if (!elements.delete_button.disabled) elements.delete_button.disabled = true;
+      if (!elements.selected_text.classList.contains("hidden")) elements.selected_text.classList.add("hidden");
     }
   } else {
     if (!elements.create_button.disabled) elements.create_button.disabled = true;

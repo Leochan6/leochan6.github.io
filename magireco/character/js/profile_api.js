@@ -309,7 +309,6 @@ export const loadsRules = (profileId) => {
   if (!storage_api.profiles[profileId].rules) return;
   elements.profile_rules.innerHTML = "";
   Object.entries(storage_api.profiles[profileId].rules).sort((a, b) => a[1].index > b[1].index ? 1 : -1).forEach(([ruleId, settings]) => {
-    console.log(ruleId, settings.index);
     loadRule(ruleId, settings);
   });
   if (elements.profile_rules.children.length > 0) {

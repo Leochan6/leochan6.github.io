@@ -6293,7 +6293,7 @@ export const memoria_collection = [
   {
     "id": "1331",
     "name": "People Who Like a Person She Hates",
-    "naname": "",
+    "naname": "The One I Hate, I Love",
     "type": "skill",
     "rank": "4",
     "min_hp": "847",
@@ -6313,7 +6313,7 @@ export const memoria_collection = [
   {
     "id": "1332",
     "name": "Obtaining Power From Nature",
-    "naname": "",
+    "naname": "Drawing Power From Nature",
     "type": "skill",
     "rank": "4",
     "min_hp": "727",
@@ -6530,7 +6530,7 @@ export const memoria_collection = [
   {
     "id": "1343",
     "name": "Even if I Take a Wrong Path",
-    "naname": "",
+    "naname": "Even If I Take the Wrong Path",
     "type": "skill",
     "rank": "4",
     "min_hp": "803",

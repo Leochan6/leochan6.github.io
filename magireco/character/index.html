@@ -179,11 +179,9 @@
                 </tr>
                 <tr>
                   <td>Doppel:</td>
-                  <td><select id="doppel_select" class="form create_field form_input"
+                  <td><input type="checkbox" id="doppel_checkbox" class="form"
                       title="Doppel of the Character is Unlocked.">
-                      <option value=locked>Locked</option>
-                      <option value=unlocked>Unlocked</option>
-                    </select></td>
+                  </td>
                 </tr>
               </table>
             </div>
@@ -206,7 +204,10 @@
               </div>
             </div>
             <p class="error_text" id="character_error_text"></p>
-            <h3 id="preview_text">Preview:</h3>
+            <div id="preview_selected_text">
+              <h3 id="preview_text">Preview:</h3>
+              <h3 id="selected_text" class="hidden">Selected</h3>
+            </div>
             <div id="display_preview"></div>
           </div>
         </div>
@@ -320,19 +321,23 @@
             <table id="settings_table" class="">
               <tr>
                 <td>Name:</td>
-                <td><input id="player_name_field" class="form_input setting_field" style="width: 100px;" title="In-Game Player Name."></td>
+                <td><input id="player_name_field" class="form_input setting_field" style="width: 100px;"
+                    title="In-Game Player Name."></td>
               </tr>
               <tr>
                 <td>Player ID:</td>
-                <td><input id="player_id_field" class="form_input setting_field" size="8" title="In-Game Player ID."></td>
+                <td><input id="player_id_field" class="form_input setting_field" size="8" title="In-Game Player ID.">
+                </td>
               </tr>
               <tr>
                 <td>Public List:</td>
-                <td><select id="public_list_select" class="form_input setting_field" title="The List to make Public."></select></td>
+                <td><select id="public_list_select" class="form_input setting_field"
+                    title="The List to make Public."></select></td>
               </tr>
             </table>
             <button id="update_user_button" class="small_btn" title="Save Your Changes">Save</button>
-            <button id="remove_id_button" class="small_btn" title="Remove Public Access to Character List.">Remove ID</button>
+            <button id="remove_id_button" class="small_btn" title="Remove Public Access to Character List.">Remove
+              ID</button>
             <button id="link_link_button" class="small_btn" title="Open the Public Character List.">Open Link</button>
           </div>
         </div>

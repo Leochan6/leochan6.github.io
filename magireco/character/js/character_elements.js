@@ -46,7 +46,7 @@ export const character_elements = {
   magic_select: document.querySelector("#magic_select"),
   magia_select: document.querySelector("#magia_select"),
   episode_select: document.querySelector("#episode_select"),
-  doppel_select: document.querySelector("#doppel_select"),
+  doppel_checkbox: document.querySelector("#doppel_checkbox"),
 
   // Create Character Buttons
   characterSelectModalOpen: document.querySelector("#characterSelectModalOpen"),
@@ -58,6 +58,7 @@ export const character_elements = {
   max_all_button: document.querySelector("#max_all_button"),
 
   // Character Preview
+  selected_text: document.querySelector("#selected_text"),
   display_preview: document.querySelector("#display_preview"),
 
   // Sorting Profiles
