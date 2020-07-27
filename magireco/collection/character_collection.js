@@ -10,6 +10,7 @@ export const character_collection = [
       "4": true,
       "5": true
     },
+    "release_date": "2019-06-25",
     "obtainability": "unlimited",
     "url": "https://magireco.fandom.com/wiki/Tamaki_Iroha"
   },
@@ -24,6 +25,7 @@ export const character_collection = [
       "4": true,
       "5": true
     },
+    "release_date": "2019-06-25",
     "obtainability": "unlimited",
     "url": "https://magireco.fandom.com/wiki/Nanami_Yachiyo"
   },
@@ -38,6 +40,7 @@ export const character_collection = [
       "4": true,
       "5": true
     },
+    "release_date": "2019-06-25",
     "obtainability": "unlimited",
     "url": "https://magireco.fandom.com/wiki/Yui_Tsuruno"
   },
@@ -52,6 +55,7 @@ export const character_collection = [
       "4": true,
       "5": true
     },
+    "release_date": "2019-08-06",
     "obtainability": "unlimited",
     "url": "https://magireco.fandom.com/wiki/Futaba_Sana"
   },
@@ -66,6 +70,7 @@ export const character_collection = [
       "4": true,
       "5": true
     },
+    "release_date": "2019-07-18",
     "obtainability": "unlimited",
     "url": "https://magireco.fandom.com/wiki/Mitsuki_Felicia"
   },
@@ -80,6 +85,7 @@ export const character_collection = [
       "4": true,
       "5": true
     },
+    "release_date": "2020-01-30",
     "obtainability": "unlimited",
     "url": "https://magireco.fandom.com/wiki/Azusa_Mifuyu"
   },
@@ -94,6 +100,7 @@ export const character_collection = [
       "4": true,
       "5": true
     },
+    "release_date": "2020-06-15",
     "obtainability": "unlimited",
     "url": "https://magireco.fandom.com/wiki/Satomi_Touka"
   },
@@ -108,6 +115,7 @@ export const character_collection = [
       "4": true,
       "5": true
     },
+    "release_date": "2019-09-25",
     "obtainability": "unlimited",
     "url": "https://magireco.fandom.com/wiki/Alina_Gray"
   },
@@ -122,6 +130,7 @@ export const character_collection = [
       "4": true,
       "5": true
     },
+    "release_date": "2019-06-25",
     "obtainability": "unlimited",
     "url": "https://magireco.fandom.com/wiki/Minami_Rena"
   },
@@ -136,6 +145,7 @@ export const character_collection = [
       "4": true,
       "5": true
     },
+    "release_date": "2019-06-25",
     "obtainability": "unlimited",
     "url": "https://magireco.fandom.com/wiki/Togame_Momoko"
   },
@@ -150,6 +160,7 @@ export const character_collection = [
       "4": true,
       "5": true
     },
+    "release_date": "2019-06-25",
     "obtainability": "unlimited",
     "url": "https://magireco.fandom.com/wiki/Akino_Kaede"
   },
@@ -164,6 +175,7 @@ export const character_collection = [
       "4": true,
       "5": true
     },
+    "release_date": "2019-10-25",
     "obtainability": "unlimited",
     "url": "https://magireco.fandom.com/wiki/Misono_Karin"
   },
@@ -178,6 +190,7 @@ export const character_collection = [
       "4": true,
       "5": true
     },
+    "release_date": "2019-06-25",
     "obtainability": "unlimited",
     "url": "https://magireco.fandom.com/wiki/Tatsuki_Asuka"
   },
@@ -192,6 +205,7 @@ export const character_collection = [
       "4": true,
       "5": true
     },
+    "release_date": "2020-06-19",
     "obtainability": "unlimited",
     "url": "https://magireco.fandom.com/wiki/Hiiragi_Nemu"
   },
@@ -206,6 +220,7 @@ export const character_collection = [
       "4": true,
       "5": true
     },
+    "release_date": "2020-07-07",
     "obtainability": "unlimited",
     "url": "https://magireco.fandom.com/wiki/Tamaki_Ui"
   },
@@ -220,6 +235,7 @@ export const character_collection = [
       "4": true,
       "5": true
     },
+    "release_date": "2020-03-09",
     "obtainability": "unlimited",
     "url": "https://magireco.fandom.com/wiki/Izumi_Kanagi"
   },
@@ -234,6 +250,7 @@ export const character_collection = [
       "4": true,
       "5": true
     },
+    "release_date": "2019-11-01",
     "obtainability": "unlimited",
     "url": "https://magireco.fandom.com/wiki/Yakumo_Mitama"
   },
@@ -248,6 +265,7 @@ export const character_collection = [
       "4": true,
       "5": true
     },
+    "release_date": "2019-08-22",
     "obtainability": "unlimited",
     "url": "https://magireco.fandom.com/wiki/Amane_Tsukuyo"
   },
@@ -262,6 +280,7 @@ export const character_collection = [
       "4": true,
       "5": true
     },
+    "release_date": "2019-08-22",
     "obtainability": "limited",
     "url": "https://magireco.fandom.com/wiki/Amane_Tsukasa"
   },
@@ -276,6 +295,7 @@ export const character_collection = [
       "4": true,
       "5": true
     },
+    "release_date": "2020-06-02",
     "obtainability": "limited",
     "url": "https://magireco.fandom.com/wiki/Tamaki_Iroha_(Mizugi_ver.)"
   },
@@ -290,6 +310,7 @@ export const character_collection = [
       "4": true,
       "5": true
     },
+    "release_date": "2020-01-17",
     "obtainability": "limited",
     "url": "https://magireco.fandom.com/wiki/Rumor_Tsuruno"
   },
@@ -304,6 +325,7 @@ export const character_collection = [
       "4": true,
       "5": false
     },
+    "release_date": "2050-01-01",
     "obtainability": "limited",
     "url": "https://magireco.fandom.com/wiki/Felicia-chan"
   },
@@ -318,6 +340,7 @@ export const character_collection = [
       "4": true,
       "5": true
     },
+    "release_date": "2019-12-13",
     "obtainability": "limited",
     "url": "https://magireco.fandom.com/wiki/Holy_Alina"
   },
@@ -332,6 +355,7 @@ export const character_collection = [
       "4": true,
       "5": true
     },
+    "release_date": "2020-01-08",
     "obtainability": "unlimited",
     "url": "https://magireco.fandom.com/wiki/Yakumo_Mitama_(Haregi_ver.)"
   },
@@ -346,6 +370,7 @@ export const character_collection = [
       "4": true,
       "5": true
     },
+    "release_date": "2020-07-15",
     "obtainability": "limited",
     "url": "https://magireco.fandom.com/wiki/Amane_Sisters_(Mizugi_ver.)"
   },
@@ -360,6 +385,7 @@ export const character_collection = [
       "4": true,
       "5": true
     },
+    "release_date": "2050-01-01",
     "obtainability": "limited",
     "url": "https://magireco.fandom.com/wiki/Iroha-chan"
   },
@@ -374,6 +400,7 @@ export const character_collection = [
       "4": true,
       "5": true
     },
+    "release_date": "2050-01-01",
     "obtainability": "limited",
     "url": "https://magireco.fandom.com/wiki/Iroha_%26_Yachiyo_(Final_Battle_ver.)"
   },
@@ -388,6 +415,7 @@ export const character_collection = [
       "4": true,
       "5": true
     },
+    "release_date": "2019-06-25",
     "obtainability": "unlimited",
     "url": "https://magireco.fandom.com/wiki/Kaname_Madoka"
   },
@@ -402,6 +430,7 @@ export const character_collection = [
       "4": true,
       "5": true
     },
+    "release_date": "2020-04-03",
     "obtainability": "limited",
     "url": "https://magireco.fandom.com/wiki/Akemi_Homura"
   },
@@ -416,6 +445,7 @@ export const character_collection = [
       "4": true,
       "5": true
     },
+    "release_date": "2019-06-25",
     "obtainability": "limited",
     "url": "https://magireco.fandom.com/wiki/Akemi_Homura_(Megane_ver.)"
   },
@@ -430,6 +460,7 @@ export const character_collection = [
       "4": true,
       "5": true
     },
+    "release_date": "2019-08-29",
     "obtainability": "unlimited",
     "url": "https://magireco.fandom.com/wiki/Miki_Sayaka"
   },
@@ -444,6 +475,7 @@ export const character_collection = [
       "4": true,
       "5": true
     },
+    "release_date": "2019-06-25",
     "obtainability": "unlimited",
     "url": "https://magireco.fandom.com/wiki/Tomoe_Mami"
   },
@@ -458,6 +490,7 @@ export const character_collection = [
       "4": true,
       "5": true
     },
+    "release_date": "2019-07-02",
     "obtainability": "unlimited",
     "url": "https://magireco.fandom.com/wiki/Sakura_Kyouko"
   },
@@ -472,6 +505,7 @@ export const character_collection = [
       "4": true,
       "5": true
     },
+    "release_date": "2020-04-13",
     "obtainability": "limited",
     "url": "https://magireco.fandom.com/wiki/Momoe_Nagisa"
   },
@@ -486,6 +520,7 @@ export const character_collection = [
       "4": true,
       "5": true
     },
+    "release_date": "2020-01-01",
     "obtainability": "limited",
     "url": "https://magireco.fandom.com/wiki/Kaname_Madoka_(Haregi_ver.)"
   },
@@ -500,6 +535,7 @@ export const character_collection = [
       "4": true,
       "5": true
     },
+    "release_date": "2020-02-25",
     "obtainability": "limited",
     "url": "https://magireco.fandom.com/wiki/Ultimate_Madoka"
   },
@@ -514,6 +550,7 @@ export const character_collection = [
       "4": true,
       "5": false
     },
+    "release_date": "2019-11-05",
     "obtainability": "limited",
     "url": "https://magireco.fandom.com/wiki/Madoka-senpai"
   },
@@ -528,6 +565,7 @@ export const character_collection = [
       "4": true,
       "5": true
     },
+    "release_date": "2020-05-01",
     "obtainability": "limited",
     "url": "https://magireco.fandom.com/wiki/Akemi_Homura_(Mizugi_ver.)"
   },
@@ -542,6 +580,7 @@ export const character_collection = [
       "4": true,
       "5": true
     },
+    "release_date": "2019-12-04",
     "obtainability": "limited",
     "url": "https://magireco.fandom.com/wiki/Holy_Mami"
   },
@@ -556,6 +595,7 @@ export const character_collection = [
       "4": true,
       "5": true
     },
+    "release_date": "2050-01-01",
     "obtainability": "limited",
     "url": "https://magireco.fandom.com/wiki/Sakura_Kyouko_(Mizugi_ver.)"
   },
@@ -570,6 +610,7 @@ export const character_collection = [
       "4": true,
       "5": false
     },
+    "release_date": "2019-06-25",
     "obtainability": "unlimited",
     "url": "https://magireco.fandom.com/wiki/Yayoi_Kanoko"
   },
@@ -584,6 +625,7 @@ export const character_collection = [
       "4": true,
       "5": false
     },
+    "release_date": "2019-06-25",
     "obtainability": "unlimited",
     "url": "https://magireco.fandom.com/wiki/Utsuho_Natsuki"
   },
@@ -598,6 +640,7 @@ export const character_collection = [
       "4": true,
       "5": true
     },
+    "release_date": "2019-06-25",
     "obtainability": "unlimited",
     "url": "https://magireco.fandom.com/wiki/Miyako_Hinano"
   },
@@ -612,6 +655,7 @@ export const character_collection = [
       "4": true,
       "5": false
     },
+    "release_date": "2019-06-25",
     "obtainability": "unlimited",
     "url": "https://magireco.fandom.com/wiki/Minagi_Sasara"
   },
@@ -626,6 +670,7 @@ export const character_collection = [
       "4": true,
       "5": true
     },
+    "release_date": "2019-06-25",
     "obtainability": "unlimited",
     "url": "https://magireco.fandom.com/wiki/Tokiwa_Nanaka"
   },
@@ -640,6 +685,7 @@ export const character_collection = [
       "4": true,
       "5": false
     },
+    "release_date": "2019-06-25",
     "obtainability": "unlimited",
     "url": "https://magireco.fandom.com/wiki/Kisaki_Emiri"
   },
@@ -654,6 +700,7 @@ export const character_collection = [
       "4": true,
       "5": false
     },
+    "release_date": "2019-06-25",
     "obtainability": "unlimited",
     "url": "https://magireco.fandom.com/wiki/Hozumi_Shizuku"
   },
@@ -668,6 +715,7 @@ export const character_collection = [
       "4": true,
       "5": false
     },
+    "release_date": "2019-06-25",
     "obtainability": "unlimited",
     "url": "https://magireco.fandom.com/wiki/Shinobu_Akira"
   },
@@ -682,6 +730,7 @@ export const character_collection = [
       "4": true,
       "5": false
     },
+    "release_date": "2019-06-25",
     "obtainability": "unlimited",
     "url": "https://magireco.fandom.com/wiki/Kurumi_Manaka"
   },
@@ -696,6 +745,7 @@ export const character_collection = [
       "4": true,
       "5": false
     },
+    "release_date": "2019-10-11",
     "obtainability": "unlimited",
     "url": "https://magireco.fandom.com/wiki/Ami_Ria"
   },
@@ -710,6 +760,7 @@ export const character_collection = [
       "4": true,
       "5": false
     },
+    "release_date": "2019-06-25",
     "obtainability": "unlimited",
     "url": "https://magireco.fandom.com/wiki/Natsume_Kako"
   },
@@ -724,6 +775,7 @@ export const character_collection = [
       "4": true,
       "5": false
     },
+    "release_date": "2019-06-25",
     "obtainability": "unlimited",
     "url": "https://magireco.fandom.com/wiki/Chun_Meiyui"
   },
@@ -738,6 +790,7 @@ export const character_collection = [
       "4": true,
       "5": false
     },
+    "release_date": "2019-09-30",
     "obtainability": "unlimited",
     "url": "https://magireco.fandom.com/wiki/Ibuki_Reira"
   },
@@ -752,6 +805,7 @@ export const character_collection = [
       "4": true,
       "5": false
     },
+    "release_date": "2019-09-30",
     "obtainability": "limited",
     "url": "https://magireco.fandom.com/wiki/Kumi_Seika"
   },
@@ -766,6 +820,7 @@ export const character_collection = [
       "4": true,
       "5": true
     },
+    "release_date": "2019-09-30",
     "obtainability": "unlimited",
     "url": "https://magireco.fandom.com/wiki/Aino_Mito"
   },
@@ -780,6 +835,7 @@ export const character_collection = [
       "4": true,
       "5": true
     },
+    "release_date": "2019-08-06",
     "obtainability": "unlimited",
     "url": "https://magireco.fandom.com/wiki/Awane_Kokoro"
   },
@@ -794,6 +850,7 @@ export const character_collection = [
       "4": true,
       "5": true
     },
+    "release_date": "2050-01-01",
     "obtainability": "unlimited",
     "url": "https://magireco.fandom.com/wiki/Sarasa_Hanna"
   },
@@ -808,6 +865,7 @@ export const character_collection = [
       "4": true,
       "5": false
     },
+    "release_date": "2019-06-25",
     "obtainability": "unlimited",
     "url": "https://magireco.fandom.com/wiki/Mariko_Ayaka"
   },
@@ -822,6 +880,7 @@ export const character_collection = [
       "4": true,
       "5": true
     },
+    "release_date": "2019-11-05",
     "obtainability": "unlimited",
     "url": "https://magireco.fandom.com/wiki/Mao_Himika"
   },
@@ -836,6 +895,7 @@ export const character_collection = [
       "4": true,
       "5": false
     },
+    "release_date": "2019-08-06",
     "obtainability": "unlimited",
     "url": "https://magireco.fandom.com/wiki/Eri_Aimi"
   },
@@ -850,6 +910,7 @@ export const character_collection = [
       "4": true,
       "5": true
     },
+    "release_date": "2019-07-09",
     "obtainability": "unlimited",
     "url": "https://magireco.fandom.com/wiki/Isuzu_Ren"
   },
@@ -864,6 +925,7 @@ export const character_collection = [
       "4": true,
       "5": true
     },
+    "release_date": "2019-07-23",
     "obtainability": "unlimited",
     "url": "https://magireco.fandom.com/wiki/Shizumi_Konoha"
   },
@@ -878,6 +940,7 @@ export const character_collection = [
       "4": true,
       "5": false
     },
+    "release_date": "2019-07-23",
     "obtainability": "unlimited",
     "url": "https://magireco.fandom.com/wiki/Yusa_Hazuki"
   },
@@ -892,6 +955,7 @@ export const character_collection = [
       "4": true,
       "5": false
     },
+    "release_date": "2019-07-23",
     "obtainability": "limited",
     "url": "https://magireco.fandom.com/wiki/Mikuri_Ayame"
   },
@@ -906,6 +970,7 @@ export const character_collection = [
       "4": true,
       "5": false
     },
+    "release_date": "2019-06-25",
     "obtainability": "unlimited",
     "url": "https://magireco.fandom.com/wiki/Kagami_Masara"
   },
@@ -920,6 +985,7 @@ export const character_collection = [
       "4": true,
       "5": false
     },
+    "release_date": "2019-06-25",
     "obtainability": "unlimited",
     "url": "https://magireco.fandom.com/wiki/Haruna_Konomi"
   },
@@ -934,6 +1000,7 @@ export const character_collection = [
       "4": true,
       "5": false
     },
+    "release_date": "2019-06-25",
     "obtainability": "unlimited",
     "url": "https://magireco.fandom.com/wiki/Ayano_Rika"
   },
@@ -948,6 +1015,7 @@ export const character_collection = [
       "4": true,
       "5": true
     },
+    "release_date": "2019-11-25",
     "obtainability": "unlimited",
     "url": "https://magireco.fandom.com/wiki/Kozue_Mayu"
   },
@@ -962,6 +1030,7 @@ export const character_collection = [
       "4": true,
       "5": true
     },
+    "release_date": "2020-05-22",
     "obtainability": "unlimited",
     "url": "https://magireco.fandom.com/wiki/Fumino_Sayuki"
   },
@@ -976,6 +1045,7 @@ export const character_collection = [
       "4": true,
       "5": true
     },
+    "release_date": "2020-03-19",
     "obtainability": "unlimited",
     "url": "https://magireco.fandom.com/wiki/Chiaki_Riko"
   },
@@ -990,6 +1060,7 @@ export const character_collection = [
       "4": true,
       "5": false
     },
+    "release_date": "2020-1-21",
     "obtainability": "unlimited",
     "url": "https://magireco.fandom.com/wiki/Anna_Meru"
   },
@@ -1004,6 +1075,7 @@ export const character_collection = [
       "4": true,
       "5": true
     },
+    "release_date": "2020-06-29",
     "obtainability": "limited",
     "url": "https://magireco.fandom.com/wiki/Rumor_of_the_Ten-Thousand-Year_Sakura"
   },
@@ -1018,6 +1090,7 @@ export const character_collection = [
       "4": true,
       "5": false
     },
+    "release_date": "2020-04-22",
     "obtainability": "unlimited",
     "url": "https://magireco.fandom.com/wiki/Midori_Ryou"
   },
@@ -1032,6 +1105,7 @@ export const character_collection = [
       "4": true,
       "5": true
     },
+    "release_date": "2020-01-21",
     "obtainability": "unlimited",
     "url": "https://magireco.fandom.com/wiki/Yukino_Kanae"
   },
@@ -1046,6 +1120,7 @@ export const character_collection = [
       "4": true,
       "5": true
     },
+    "release_date": "2020-03-27",
     "obtainability": "limited",
     "url": "https://magireco.fandom.com/wiki/Ashley_Taylor"
   },
@@ -1060,6 +1135,7 @@ export const character_collection = [
       "4": true,
       "5": true
     },
+    "release_date": "2020-04-22",
     "obtainability": "unlimited",
     "url": "https://magireco.fandom.com/wiki/Makino_Ikumi"
   },
@@ -1074,6 +1150,7 @@ export const character_collection = [
       "4": false,
       "5": false
     },
+    "release_date": "2020-02-14",
     "obtainability": "limited",
     "url": "https://magireco.fandom.com/wiki/Kuro"
   },
@@ -1088,6 +1165,7 @@ export const character_collection = [
       "4": true,
       "5": true
     },
+    "release_date": "2019-06-25",
     "obtainability": "unlimited",
     "url": "https://magireco.fandom.com/wiki/Mikuni_Oriko"
   },
@@ -1102,6 +1180,7 @@ export const character_collection = [
       "4": true,
       "5": true
     },
+    "release_date": "2019-06-25",
     "obtainability": "unlimited",
     "url": "https://magireco.fandom.com/wiki/Kure_Kirika"
   },
@@ -1116,6 +1195,7 @@ export const character_collection = [
       "4": true,
       "5": false
     },
+    "release_date": "2019-06-25",
     "obtainability": "unlimited",
     "url": "https://magireco.fandom.com/wiki/Chitose_Yuma"
   },
@@ -1130,6 +1210,7 @@ export const character_collection = [
       "4": true,
       "5": true
     },
+    "release_date": "2019-08-13",
     "obtainability": "limited",
     "url": "https://magireco.fandom.com/wiki/Kazumi"
   },
@@ -1144,6 +1225,7 @@ export const character_collection = [
       "4": true,
       "5": false
     },
+    "release_date": "2019-08-13",
     "obtainability": "limited",
     "url": "https://magireco.fandom.com/wiki/Misaki_Umika"
   },
@@ -1158,6 +1240,7 @@ export const character_collection = [
       "4": true,
       "5": false
     },
+    "release_date": "2019-08-13",
     "obtainability": "limited",
     "url": "https://magireco.fandom.com/wiki/Maki_Kaoru"
   },
@@ -1172,6 +1255,7 @@ export const character_collection = [
       "4": true,
       "5": true
     },
+    "release_date": "2019-09-11",
     "obtainability": "limited",
     "url": "https://magireco.fandom.com/wiki/Tart"
   },
@@ -1186,6 +1270,7 @@ export const character_collection = [
       "4": true,
       "5": true
     },
+    "release_date": "2019-09-19",
     "obtainability": "limited",
     "url": "https://magireco.fandom.com/wiki/Riz_Hawkwood"
   },
@@ -1200,6 +1285,7 @@ export const character_collection = [
       "4": true,
       "5": true
     },
+    "release_date": "2019-09-11",
     "obtainability": "limited",
     "url": "https://magireco.fandom.com/wiki/Melissa_de_Vignolles"
   },
@@ -1214,6 +1300,7 @@ export const character_collection = [
       "4": true,
       "5": false
     },
+    "release_date": "2020-07-22",
     "obtainability": "limited",
     "url": "https://magireco.fandom.com/wiki/Corbeau"
   },
@@ -1228,6 +1315,7 @@ export const character_collection = [
       "4": true,
       "5": true
     },
+    "release_date": "2020-07-22",
     "obtainability": "limited",
     "url": "https://magireco.fandom.com/wiki/Elisa_Celjska"
   },
@@ -1242,6 +1330,7 @@ export const character_collection = [
       "4": true,
       "5": true
     },
+    "release_date": "2019-10-15",
     "obtainability": "limited",
     "url": "https://magireco.fandom.com/wiki/Amano_Suzune"
   },
@@ -1256,6 +1345,7 @@ export const character_collection = [
       "4": true,
       "5": false
     },
+    "release_date": "2019-10-15",
     "obtainability": "limited",
     "url": "https://magireco.fandom.com/wiki/Narumi_Arisa"
   },
@@ -1270,6 +1360,7 @@ export const character_collection = [
       "4": true,
       "5": false
     },
+    "release_date": "2019-10-15",
     "obtainability": "limited",
     "url": "https://magireco.fandom.com/wiki/Shion_Chisato"
   },
@@ -1284,6 +1375,7 @@ export const character_collection = [
       "4": true,
       "5": true
     },
+    "release_date": "2019-11-13",
     "obtainability": "limited",
     "url": "https://magireco.fandom.com/wiki/Takamachi_Nanoha"
   },
@@ -1298,6 +1390,7 @@ export const character_collection = [
       "4": true,
       "5": true
     },
+    "release_date": "2019-11-19",
     "obtainability": "limited",
     "url": "https://magireco.fandom.com/wiki/Fate_T._Harlaown"
   },
@@ -1312,6 +1405,7 @@ export const character_collection = [
       "4": true,
       "5": false
     },
+    "release_date": "2019-11-13",
     "obtainability": "limited",
     "url": "https://magireco.fandom.com/wiki/Yagami_Hayate"
   }

@@ -274,6 +274,7 @@ export const applyProfileToList = (listId, profileId) => {
     let character = character_collection.find(character => display.character_id == character.id);
     display.attribute = character.attribute.toLowerCase();
     display.obtainability = character.obtainability;
+    display.release_date = new Date(character.release_date + "PST").getTime();
   });
   let rules = storage_api.profiles[profileId].rules;
   if (!rules) rules = profile_api.getSortSettings();
@@ -544,6 +545,7 @@ export const createFilter = (next = null) => {
         <option value="episode">Episode</option>
         <option value="doppel">Doppel</option>
         <option value="obtainability">Obtainability</option>
+        <option value="release_date">Release Date</option>
       </select>
       <div class="filter_type attribute_filter hidden">
         <select class="filter_field equality form_input">
@@ -700,6 +702,17 @@ export const createFilter = (next = null) => {
           <option value="unlimited">Unlimited</option>
           <option value="limited">Limited</option>
         </select>
+      </div>
+      <div class="filter_type release_date_filter hidden">
+        <select class="filter_field inequality form_input">
+          <option value="eq">=</option>
+          <option value="neq">=/=</option>
+          <option value="lt">&lt</option>
+          <option value="gt">&gt</option>
+          <option value="lte">&lt=</option>
+          <option value="gte">&gt=</option>
+        </select>
+        <input type="date" class="filter_field release_date_select form_input">
       </div>
       <button class="create small_btn" title="Add New Filter Above">+</button>
       <button class="delete small_btn" title="Delete Filter"></button>
@@ -871,27 +884,39 @@ const matchesFilter = (character_display, filter) => {
       if (filter[0].value === "eq" && obtainability === filter[1].value) return true;
       else if (filter[0].value === "neq" && obtainability !== filter[1].value) return true;
       else return false;
-    } else {
+    }  else {
       if (filter[0].value === "eq" && character_display[filter[1].param] === filter[1].value) return true;
       else if (filter[0].value === "neq" && character_display[filter[1].param] !== filter[1].value) return true;
       else return false;
     }
   } else {
-    let param = 1;
-    if (filter[1].param === "max_rank") {
-      param = parseInt(character_api.getMaxRank(character_collection.find(character => character_display.character_id == character.id).ranks))
-    } else if (filter[1].param === "min_rank") {
-      param = parseInt(character_api.getMinRank(character_collection.find(character => character_display.character_id == character.id).ranks))
+    if (filter[1].param === "release_date") {
+      let release_date = new Date(character_collection.find(character => character_display.character_id == character.id).release_date + "PST");
+      let filter_date = new Date(filter[1].value + "PST")
+      if (filter[0].value === "eq" && release_date.getTime() === filter_date.getTime()) return true;
+      else if (filter[0].value === "neq" && release_date.getTime() !== filter_date.getTime()) return true;
+      else if (filter[0].value === "lt" && release_date < filter_date) return true;
+      else if (filter[0].value === "gt" && release_date > filter_date) return true;
+      else if (filter[0].value === "lte" && release_date <= filter_date) return true;
+      else if (filter[0].value === "gte" && release_date >= filter_date) return true;
+      else return false;
     } else {
-      param = parseInt(character_display[filter[1].param]);
+      let param = 1;
+      if (filter[1].param === "max_rank") {
+        param = parseInt(character_api.getMaxRank(character_collection.find(character => character_display.character_id == character.id).ranks))
+      } else if (filter[1].param === "min_rank") {
+        param = parseInt(character_api.getMinRank(character_collection.find(character => character_display.character_id == character.id).ranks))
+      } else {
+        param = parseInt(character_display[filter[1].param]);
+      }
+      if (filter[0].value === "eq" && param === parseInt(filter[1].value)) return true;
+      else if (filter[0].value === "neq" && param !== parseInt(filter[1].value)) return true;
+      else if (filter[0].value === "lt" && param < parseInt(filter[1].value)) return true;
+      else if (filter[0].value === "gt" && param > parseInt(filter[1].value)) return true;
+      else if (filter[0].value === "lte" && param <= parseInt(filter[1].value)) return true;
+      else if (filter[0].value === "gte" && param >= parseInt(filter[1].value)) return true;
+      else return false;
     }
-    if (filter[0].value === "eq" && param === parseInt(filter[1].value)) return true;
-    else if (filter[0].value === "neq" && param !== parseInt(filter[1].value)) return true;
-    else if (filter[0].value === "lt" && param < parseInt(filter[1].value)) return true;
-    else if (filter[0].value === "gt" && param > parseInt(filter[1].value)) return true;
-    else if (filter[0].value === "lte" && param <= parseInt(filter[1].value)) return true;
-    else if (filter[0].value === "gte" && param >= parseInt(filter[1].value)) return true;
-    else return false;
   }
 };
 

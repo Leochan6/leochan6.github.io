@@ -44,7 +44,7 @@ export const setProfiles = (profiles, previous) => {
  */
 export const getSortSettings = () => {
   let settings = {};
-  Array.from(profile_rules.children).forEach((child, index) => {
+  Array.from(elements.profile_rules.children).forEach((child, index) => {
     let childRuleId = child.getAttribute("ruleId")
     let ruleId = childRuleId && childRuleId.length > 3 ? childRuleId : generatePushID();
     settings[ruleId] = {
@@ -184,6 +184,7 @@ export const createProfileRule = (next = null) => {
         <option value="episode">Episode</option>
         <option value="doppel">Doppel</option>
         <option value="obtainability">Obtainability</option>
+        <option value="release_date">Release Date</option>
         <option value="character_id">Character ID</option>
       </select>
       <button class="sort_dir down small_btn"></button>
@@ -201,8 +202,8 @@ export const createProfileRule = (next = null) => {
   });
   new_rule.querySelector(".delete").addEventListener("click", () => {
     new_rule.remove();
-    let first_rule = profile_rules.children[0].querySelector(".delete");
-    if (profile_rules.children.length === 1 && !first_rule.disabled) first_rule.disabled = true;
+    let first_rule = elements.profile_rules.children[0].querySelector(".delete");
+    if (elements.profile_rules.children.length === 1 && !first_rule.disabled) first_rule.disabled = true;
     if (getSelectedProfileName() === "Default") changeToCustom();
     updateProfile();
     character_list_api.applyProfileToList(character_list_api.getListId(), getSelectedProfileId());
@@ -234,19 +235,21 @@ export const createProfileRule = (next = null) => {
   // disable group or id level.
   state_select.addEventListener("change", () => {
     if (state_select.value === "group") {
-      if (type_select.value === "character_id" || type_select.value === "level") {
+      if (type_select.value === "character_id" || type_select.value === "release_date" || type_select.value === "level") {
         type_select.selectedIndex = -1;
       }
       type_select.options[3].disabled = true;
       type_select.options[9].disabled = true;
+      type_select.options[10].disabled = true;
     } else {
       type_select.options[3].disabled = false;
       type_select.options[9].disabled = false;
+      type_select.options[10].disabled = false;
     }
   });
 
   type_select.addEventListener("change", () => {
-    if (type_select.value === "character_id" || type_select.value === "level") {
+    if (type_select.value === "character_id" || type_select.value === "release_date" || type_select.value === "level") {
       if (state_select.value === "group") {
         state_select.selectedIndex = -1;
       }
@@ -255,7 +258,7 @@ export const createProfileRule = (next = null) => {
   });
 
   if (next !== null) next.after(new_rule);
-  else profile_rules.append(new_rule);
+  else elements.profile_rules.append(new_rule);
   return new_rule;
 };
 
@@ -277,17 +280,19 @@ export const loadRule = (ruleId, settings) => {
   else if (settings.direction == -1 && sort_dir.classList.contains("up")) sort_dir.classList.replace("up", "down");
 
   if (state_select.value === "group") {
-    if (type_select.value === "character_id" || type_select.value === "level") {
+    if (type_select.value === "character_id" || type_select.value === "release_date" || type_select.value === "level") {
       type_select.selectedIndex = -1;
     }
     type_select.options[3].disabled = true;
     type_select.options[9].disabled = true;
+    type_select.options[10].disabled = true;
   } else {
     type_select.options[3].disabled = false;
     type_select.options[9].disabled = false;
+    type_select.options[10].disabled = false;
   }
 
-  if (type_select.value === "character_id" || type_select.value === "level") {
+  if (type_select.value === "character_id" || type_select.value === "release_date" || type_select.value === "level") {
     if (state_select.value === "group") {
       state_select.selectedIndex = -1;
     }
@@ -302,12 +307,13 @@ export const loadRule = (ruleId, settings) => {
  */
 export const loadsRules = (profileId) => {
   if (!storage_api.profiles[profileId].rules) return;
-  profile_rules.innerHTML = "";
+  elements.profile_rules.innerHTML = "";
   Object.entries(storage_api.profiles[profileId].rules).sort((a, b) => a[1].index > b[1].index ? 1 : -1).forEach(([ruleId, settings]) => {
+    console.log(ruleId, settings.index);
     loadRule(ruleId, settings);
   });
-  if (profile_rules.children.length > 0) {
-    let first_rule = profile_rules.children[0].querySelector(".delete");
-    if (profile_rules.children.length === 1 && !first_rule.disabled) first_rule.disabled = true;
+  if (elements.profile_rules.children.length > 0) {
+    let first_rule = elements.profile_rules.children[0].querySelector(".delete");
+    if (elements.profile_rules.children.length === 1 && !first_rule.disabled) first_rule.disabled = true;
   }
 };
