@@ -502,7 +502,7 @@ import { ContactDialog, MessageDialog } from '../../shared/js/dialog.js'
     // open image button.
     elements.image_open_button.addEventListener("click", () => {
       if (storage_api.user.playerId && storage_api.user.publicListId && storage_api.user.savedList) {
-        window.open(`https://leo-chan.me/magireco/list/#${storage_api.user.playerId}`);
+        window.open(`https://leo-chan.me/magireco/list/?id=${storage_api.user.playerId}`);
       } else if (!storage_api.user.playerId) {
         new MessageDialog({ title: "Open Image Failed", text: "Player ID must be set." });
       } else if (!storage_api.user.publicListId) {
@@ -515,7 +515,7 @@ import { ContactDialog, MessageDialog } from '../../shared/js/dialog.js'
     // copy image button.
     elements.image_copy_button.addEventListener("click", () => {
       if (storage_api.user.playerId && storage_api.user.publicListId && storage_api.user.savedList) {
-        navigator.clipboard.writeText(`https://leo-chan.me/magireco/list/#${storage_api.user.playerId}`);
+        navigator.clipboard.writeText(`https://leo-chan.me/magireco/list/?id=${storage_api.user.playerId}`);
       } else if (!storage_api.user.playerId) {
         new MessageDialog({ title: "Delete Image Failed", text: "Player ID must be set." });
       } else if (!storage_api.user.publicListId) {

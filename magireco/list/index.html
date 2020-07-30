@@ -13,7 +13,7 @@
   <body>
     <script>
       let playerId =
-        document.location.search ? new URLSearchParams(document.location.search).get("playerId") :
+        document.location.search ? new URLSearchParams(document.location.search).get("id") :
           document.location.hash ? document.location.hash.substring(1) :
             null;
       if (!playerId) {
