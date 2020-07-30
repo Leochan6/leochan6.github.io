@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <header>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="favicon.ico" />
+    <title>List | Magia Record Character List</title>
+    <meta property="og:title" content="List | Magia Record Character List" />
+    <meta property="og:description" content="Please open link in browser to see list." />
+    <meta property="og:url" content="https://leo-chan.me/magireco/list/index.html">
+    <meta property="og:site_name" content="Leo Chan's Website">
+    <meta property="og:type" content="website">
+  </header>
+  <body>
+    <script>
+      let playerId =
+        document.location.search ? new URLSearchParams(document.location.search).get("playerId") :
+          document.location.hash ? document.location.hash.substring(1) :
+            null;
+      if (!playerId) {
+        const p = document.createElement("p");
+        p.innerHTML = "No Player ID";
+        document.body.appendChild(p);
+      } else {
+        document.title = `${playerId}'s ${document.title}`;
+        const img = document.createElement("img");
+        img.src = `https://firebasestorage.googleapis.com/v0/b/magia-record-25fb0.appspot.com/o/images%2Flists%2F${playerId}.png?alt=media`;
+        document.body.appendChild(img);
+      }
+    </script>
+  </body>
+
+</html>

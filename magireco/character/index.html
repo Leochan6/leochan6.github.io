@@ -336,9 +336,15 @@
               </tr>
             </table>
             <button id="update_user_button" class="small_btn" title="Save Your Changes">Save</button>
-            <button id="remove_id_button" class="small_btn" title="Remove Public Access to Character List.">Remove
+            <button id="remove_id_button" class="small_btn" title="Remove Public Access to List.">Remove
               ID</button>
-            <button id="link_link_button" class="small_btn" title="Open the Public Character List.">Open Link</button>
+            <button id="link_link_button" class="small_btn" title="Open the Public List.">Open Link</button>
+            <div class="horizontal-divider" style="margin-top: 5px;"></div>
+            <p style="margin: 5px 0px;">Save Current View as Image (Dependent on your browser rendering characters correctly)</p>
+            <button id="image_save_button" class="small_btn" title="Save the Public List Image.">Save Image</button>
+            <button id="image_delete_button" class="small_btn" title="Delete the Saved Public List Image.">Delete Image</button>
+            <button id="image_open_button" class="small_btn" title="Open the Public List Image.">Open Image</button>
+            <button id="image_copy_button" class="small_btn" title="Copy the Link to the Public List Image.">Copy Link</button>
           </div>
         </div>
       </div>
@@ -461,6 +467,7 @@
   <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-functions.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-storage.js"></script>
   <script src="../shared/libs/generate-pushid.js"></script>
   <script src="../shared/libs/html2canvas.js"></script>
   <script type="module" src="js/index.js"></script>

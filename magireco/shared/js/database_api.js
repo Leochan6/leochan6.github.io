@@ -7,7 +7,7 @@ const config = {
 };
 firebase.initializeApp(config);
 
-// Get a reference to the database service
+// Get a reference to the database service.
 const db = firebase.database().ref();
 const users = db.child("users");
 const userDetails = db.child("userDetails");
@@ -15,6 +15,9 @@ const lists = db.child("lists");
 const profiles = db.child("profiles");
 const settings = db.child("settings");
 const messages = db.child("messages");
+
+// Get a reference to the storage service.
+const storage = firebase.storage().ref();
 
 export const signin = (email, password, loginHandler, errorHandler) => {
   firebase.auth().signInWithEmailAndPassword(email, password)
@@ -356,6 +359,16 @@ export const onSettingUpdate = (userId, callback) => {
   });
 };
 
+// ---------- storage bucket ---------- //
+
+export const updateListImage = (playerId, dataURL) => {
+  return storage.child(`images/lists/${playerId}.png`).putString(dataURL, 'data_url');
+};
+
+export const deleteListImage = (playerId) => {
+  return storage.child(`images/lists/${playerId}.png`).delete();
+};
+
 // ---------- messages ---------- //
 
 export const onceMessageUpdate = (userId, callback) => {
@@ -378,4 +391,3 @@ export const onMessageUpdate = (userId, callback) => {
     else callback(false);
   });
 };
-

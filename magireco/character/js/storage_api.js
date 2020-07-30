@@ -323,3 +323,21 @@ export const setUserProperty = (settingName, newSettings) => {
 export const removeUserProperty = (settingName) => {
   database_api.removeUserProperty(userId, settingName);
 };
+
+/**
+ * Updates storage bucket.
+ */
+export const updateListImage = (dataURL) => {
+  let playerId = user.playerId;
+  if (playerId) return database_api.updateListImage(playerId, dataURL);
+  else return Promise.reject("No Player ID.");
+};
+
+/**
+ * Delete storage bucket.
+ */
+export const deleteListImage = () => {
+  let playerId = user.playerId;
+  if (playerId) return database_api.deleteListImage(playerId);
+  else return Promise.reject("No Player ID.");
+};

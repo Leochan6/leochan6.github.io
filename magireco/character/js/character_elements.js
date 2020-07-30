@@ -94,6 +94,10 @@ export const character_elements = {
   update_user_button: document.querySelector("#update_user_button"),
   remove_id_button: document.querySelector("#remove_id_button"),
   link_link_button: document.querySelector("#link_link_button"),
+  image_save_button: document.querySelector("#image_save_button"),
+  image_delete_button: document.querySelector("#image_delete_button"),
+  image_open_button: document.querySelector("#image_open_button"),
+  image_copy_button: document.querySelector("#image_copy_button"),
 
   // Body
   list_name_title: document.querySelector("#list_name_title"),

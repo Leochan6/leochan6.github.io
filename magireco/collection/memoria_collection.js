@@ -4276,7 +4276,7 @@ export const memoria_collection = [
   {
     "id": "1225",
     "name": "Outing in Plain Attire",
-    "naname": "",
+    "naname": "Dressing Up for Going Out",
     "type": "skill",
     "rank": "4",
     "max_hp": "4000",

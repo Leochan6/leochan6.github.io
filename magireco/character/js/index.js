@@ -7,7 +7,7 @@ import * as database_api from '../../shared/js/database_api.js';
 import * as utils from '../../shared/js/utils.js';
 import * as functions from '../../shared/js/functions.js';
 import { character_elements as elements, messageDialog, characterSelectDialog, backgroundSelectDialog, importListDialog } from './character_elements.js';
-import { ContactDialog } from '../../shared/js/dialog.js'
+import { ContactDialog, MessageDialog } from '../../shared/js/dialog.js'
 
 /**
  * Event Handlers for the Character Page.
@@ -455,6 +455,73 @@ import { ContactDialog } from '../../shared/js/dialog.js'
         window.open(`../friend/?playerId=${storage_api.user.playerId}`);
       } else {
         alert("Please set a Player ID and Public List before link is available.")
+      }
+    });
+
+    // save image button.
+    elements.image_save_button.addEventListener("click", () => {
+      if (storage_api.user.playerId && storage_api.user.publicListId) {
+        character_list_api.selectList(storage_api.user.publicListId);
+        setTimeout(() => { }, 500);
+        html2canvas(elements.character_list_content, { backgroundColor: null }).then(canvas => {
+          let data = canvas.toDataURL("image/png");
+          storage_api.updateListImage(data)
+            .then(() => {
+              storage_api.setUserProperty("savedList", true);
+              new MessageDialog({ title: "Save Image Success" });
+            }).catch((error) => {
+              new MessageDialog({ title: "Save Image Failed", text: error.code ? error.code : "Error" });
+            })
+        });
+      } else if (!storage_api.user.playerId) {
+        new MessageDialog({ title: "Delete Image Failed", text: "Player ID must be set." });
+      } else if (!storage_api.user.publicListId) {
+        new MessageDialog({ title: "Delete Image Failed", text: "Public List ID must be set." });
+      }
+    });
+
+    // delete image button.
+    elements.image_delete_button.addEventListener("click", () => {
+      if (storage_api.user.playerId && storage_api.user.publicListId && storage_api.user.savedList) {
+        storage_api.deleteListImage()
+          .then(() => {
+            storage_api.setUserProperty("savedList", false);
+            new MessageDialog({ title: "Delete Image Success" });
+          }).catch((error) => {
+            new MessageDialog({ title: "Delete Image Failed", text: error.code === "storage/object-not-found" ? "No Image to Delete" : error.code ? error.code : "Error" });
+          });
+      } else if (!storage_api.user.playerId) {
+        new MessageDialog({ title: "Delete Image Failed", text: "Player ID must be set." });
+      } else if (!storage_api.user.publicListId) {
+        new MessageDialog({ title: "Delete Image Failed", text: "Public List ID must be set." });
+      } else if (!storage_api.user.savedList) {
+        new MessageDialog({ title: "Delete Image Failed", text: "No Image Saved." });
+      }
+    });
+
+    // open image button.
+    elements.image_open_button.addEventListener("click", () => {
+      if (storage_api.user.playerId && storage_api.user.publicListId && storage_api.user.savedList) {
+        window.open(`https://leo-chan.me/magireco/list/#${storage_api.user.playerId}`);
+      } else if (!storage_api.user.playerId) {
+        new MessageDialog({ title: "Open Image Failed", text: "Player ID must be set." });
+      } else if (!storage_api.user.publicListId) {
+        new MessageDialog({ title: "Open Image Failed", text: "Public List ID must be set." });
+      } else if (!storage_api.user.savedList) {
+        new MessageDialog({ title: "Open Image Failed", text: "No Image Saved." });
+      }
+    });
+
+    // copy image button.
+    elements.image_copy_button.addEventListener("click", () => {
+      if (storage_api.user.playerId && storage_api.user.publicListId && storage_api.user.savedList) {
+        navigator.clipboard.writeText(`https://leo-chan.me/magireco/list/#${storage_api.user.playerId}`);
+      } else if (!storage_api.user.playerId) {
+        new MessageDialog({ title: "Delete Image Failed", text: "Player ID must be set." });
+      } else if (!storage_api.user.publicListId) {
+        new MessageDialog({ title: "Delete Image Failed", text: "Public List ID must be set." });
+      } else if (!storage_api.user.savedList) {
+        new MessageDialog({ title: "Delete Image Failed", text: "No Image Saved." });
       }
     });
 

@@ -11,7 +11,7 @@ characters[1].magia = 5
 characters[1].magic = 3
 characters[1].rank = "5"
 characters[1].level = "100"
-characters[1].doppel = "unlocked"
+characters[1].doppel = "true"
 
 let memorias = [
   ["1070", "1122", "9002", "1151"],

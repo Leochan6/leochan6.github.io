@@ -85,7 +85,9 @@ export const setLists = (lists) => {
  * @param {Object} list 
  */
 export const selectList = (listId, list) => {
-  if (!listId || !list) {
+  if (listId && !list) {
+    list = storage_api.lists[listId];
+  } else if (!listId || !list) {
     let first = Object.entries(storage_api.lists)[0][0];
     listId = first;
     list = storage_api.lists[first];
