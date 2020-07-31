@@ -7285,7 +7285,7 @@ export const memoria_collection = [
   {
     "id": "1381",
     "name": "Now, We Treasure Hunt!",
-    "naname": "",
+    "naname": "Time for a Treasure Hunt",
     "type": "ability",
     "rank": "4",
     "min_hp": "780",
@@ -7305,7 +7305,7 @@ export const memoria_collection = [
   {
     "id": "1382",
     "name": "Beach House Fun",
-    "naname": "",
+    "naname": "Beachside Banquet",
     "type": "skill",
     "rank": "3",
     "min_hp": "550",
@@ -7325,7 +7325,7 @@ export const memoria_collection = [
   {
     "id": "1383",
     "name": "Treasure of This One Moment",
-    "naname": "",
+    "naname": "A Priceless Treasure",
     "type": "ability",
     "rank": "4",
     "min_hp": "",
@@ -7345,7 +7345,7 @@ export const memoria_collection = [
   {
     "id": "1384",
     "name": "Free in the Sea!",
-    "naname": "",
+    "naname": "Freedom in the Water",
     "type": "skill",
     "rank": "3",
     "min_hp": "630",

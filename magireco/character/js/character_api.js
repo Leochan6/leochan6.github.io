@@ -87,6 +87,7 @@ export const sanitizeCharacter = (character, removeId = true) => {
   if (newCharacter.name) delete newCharacter.name;
   if (newCharacter.attribute) delete newCharacter.attribute;
   if (newCharacter.obtainability) delete newCharacter.obtainability;
+  if (newCharacter.release_date) delete newCharacter.release_date;
   return newCharacter;
 };
 

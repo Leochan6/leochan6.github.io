@@ -217,7 +217,7 @@ header {
 }
 
 .modal-body {
-  max-height: 80%;
+  height: calc(100% - 72px);
   overflow: auto;
 }
 
