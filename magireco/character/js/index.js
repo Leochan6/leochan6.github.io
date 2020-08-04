@@ -550,7 +550,7 @@ import { ContactDialog, MessageDialog } from '../../shared/js/dialog.js'
       let imageName = `${character_list_api.getListName() ? character_list_api.getListName().replace(" ", "_") : "list"}`
       html2canvas(elements.character_list_content, { backgroundColor: null }).then(canvas => {
         let data = canvas.toDataURL("image/png");
-        let w = window.open("Leo");
+        let w = window.open("_blank");
         let image = new Image();
         image.src = data;
         image.name = imageName + time + ".png";

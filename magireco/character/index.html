@@ -78,7 +78,6 @@
             <div id="list_create" class="list_form" style="display: none;">
               <form id="new_list_form">
                 <input type="text" id="create_list_name_field" class="form_input" placeholder="New List Name">
-                </td>
                 <button type="submit" id="create_list_create_button" class="small_btn"
                   title="Create a New List">Create</button>
               </form>
@@ -86,7 +85,6 @@
             <div id="list_duplicate" class="list_form" style="display: none;">
               <form id="duplicate_list_form">
                 <input type="text" id="duplicate_list_name_field" class="form_input" placeholder="Duplicate List Name">
-                </td>
                 <button type="submit" id="duplicate_list_create_button" class="small_btn"
                   title="Duplicate the Character List">Duplicate</button>
               </form>
@@ -94,7 +92,6 @@
             <div id="list_rename" class="list_form" style="display: none;">
               <form id="rename_list_form">
                 <input type="text" id="rename_list_name_field" class="form_input" placeholder="Rename List Name">
-                </td>
                 <button type="submit" id="rename_list_create_button" class="small_btn"
                   title="Rename the Character List">Rename</button>
               </form>
@@ -116,7 +113,7 @@
                   <td>Name:</td>
                   <td><select id="name_select" class="create_field form_input" style="width:145px"
                       title="Name of the Character."></select></td>
-                  <td><button id="characterSelectModalOpen" class="" title="Open the Character Select Dialog.">
+                  <td><button id="characterSelectModalOpen" class="" title="Open the Character Select Dialog."></button>
                   </td>
                 </tr>
                 <tr>
@@ -340,11 +337,14 @@
               ID</button>
             <button id="link_link_button" class="small_btn" title="Open the Public List.">Open Link</button>
             <div class="horizontal-divider" style="margin-top: 5px;"></div>
-            <p style="margin: 5px 0px;">Save Current View as Image (Dependent on your browser rendering characters correctly)</p>
+            <p style="margin: 5px 0px;">Save Current View as Image (Dependent on your browser rendering characters
+              correctly)</p>
             <button id="image_save_button" class="small_btn" title="Save the Public List Image.">Save Image</button>
-            <button id="image_delete_button" class="small_btn" title="Delete the Saved Public List Image.">Delete Image</button>
+            <button id="image_delete_button" class="small_btn" title="Delete the Saved Public List Image.">Delete
+              Image</button>
             <button id="image_open_button" class="small_btn" title="Open the Public List Image.">Open Image</button>
-            <button id="image_copy_button" class="small_btn" title="Copy the Link to the Public List Image.">Copy Link</button>
+            <button id="image_copy_button" class="small_btn" title="Copy the Link to the Public List Image.">Copy
+              Link</button>
           </div>
         </div>
       </div>
@@ -454,7 +454,7 @@
           <h2 id="importListModalTitle">Import List</h2>
           <span class="close" id="importListModalClose">&times;</span>
         </div>
-        <input type="text" id="importListModalName" class="form_input" placeholder="List Name"></textarea>
+        <input type="text" id="importListModalName" class="form_input" placeholder="List Name">
         <textarea id="importListModalText" class="form_input" placeholder="JSON"></textarea>
         <button id="importListModalImport" class="small_btn">Import</button>
         <div id="importListModalList"></div>
@@ -470,7 +470,7 @@
   <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-storage.js"></script>
   <script src="../shared/libs/generate-pushid.js"></script>
   <script src="../shared/libs/html2canvas.js"></script>
-  <script type="module" src="js/index.js"></script>
+  <script type="module" src="/magireco/dist/character/js/index.js"></script>
 </body>
 
 </html>

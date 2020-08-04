@@ -1,0 +1,55 @@
+{
+  "name": "leochan6.github.io",
+  "version": "1.0.0",
+  "description": "Magia Record Character List",
+  "dependencies": {
+    "browserify": "^16.5.2",
+    "browserify-directory": "^1.0.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "^7.0.0",
+    "@babel/plugin-proposal-class-properties": "^7.10.4",
+    "@babel/plugin-transform-runtime": "^7.11.0",
+    "@babel/preset-env": "^7.11.0",
+    "babelify": "^10.0.0"
+  },
+  "browserify": {
+    "transform": [
+      "babelify"
+    ]
+  },
+  "scripts": {
+    "babel": "babel magireco -d magireco/dev",
+    "browserify-login": "browserify magireco/dev/login/js/index.js -o magireco/dist/login/js/index.js",
+    "browserify-character": "browserify magireco/dev/character/js/index.js -o magireco/dist/character/js/index.js",
+    "browserify-memoria": "browserify magireco/dev/memoria/js/index.js -o magireco/dist/memoria/js/index.js",
+    "browserify-team": "browserify magireco/dev/team/js/index.js -o magireco/dist/team/js/index.js",
+    "browserify-friend": "browserify magireco/dev/friend/js/index.js -o magireco/dist/friend/js/index.js",
+    "build": "npm run babel && npm run browserify-login && npm run browserify-character && npm run browserify-memoria && npm run browserify-team && npm run browserify-friend",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Leochan6/Leochan6.github.io.git"
+  },
+  "keywords": [
+    "Magia",
+    "Record",
+    "Character",
+    "List",
+    "Memoria",
+    "Puella",
+    "Magia",
+    "Madoka",
+    "Magica",
+    "Leo",
+    "Chan"
+  ],
+  "author": "Leo Chan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Leochan6/Leochan6.github.io/issues"
+  },
+  "homepage": "https://github.com/Leochan6/Leochan6.github.io#readme"
+}

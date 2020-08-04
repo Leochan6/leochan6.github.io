@@ -20,7 +20,9 @@
 .tab {
   margin: 5px;
   width: calc(100% - 30px);
-  min-width: fit-content;
+  min-width: -moz-min-content;    /* Firefox */
+  min-width: -webkit-min-content; /* Chrome */
+  min-width: min-content;
   max-width: 300px;
   padding: 10px;
 }
