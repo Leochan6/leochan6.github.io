@@ -45,7 +45,7 @@ export const setLists = (lists) => {
     entry.setAttribute("listId", listId);
     entry.innerHTML = list.name;
     entry.addEventListener("click", () => {
-      selectList(listId, list);
+      selectList(listId, list, false);
     });
     div.append(entry);
     elements.saved_character_lists.append(div);
@@ -84,7 +84,7 @@ export const setLists = (lists) => {
  * @param {String} listId 
  * @param {Object} list 
  */
-export const selectList = (listId, list) => {
+export const selectList = (listId, list, refresh = true) => {
   if (listId && !list) {
     list = storage_api.lists[listId];
   } else if (!listId || !list) {
@@ -115,8 +115,9 @@ export const selectList = (listId, list) => {
   applyFilters();
   background_api.setBackground(list.selectedBackground);
   getStats();
-  character_api.findAndSelectDisplay();
-  character_api.deselectDisplay(true);
+  // select only if refreshing list, otherwise do not select.
+  if (refresh) character_api.findAndSelectDisplay();
+  else character_api.deselectDisplay(true);
   character_api.enableButtons();
   storage_api.updateSettings("selected_character_list", listId);
 };

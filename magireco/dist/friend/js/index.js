@@ -1405,7 +1405,7 @@ var setLists = function setLists(lists) {
     entry.setAttribute("listId", listId);
     entry.innerHTML = list.name;
     entry.addEventListener("click", function () {
-      selectList(listId, list);
+      selectList(listId, list, false);
     });
     div.append(entry);
 
@@ -1453,6 +1453,8 @@ var setLists = function setLists(lists) {
 exports.setLists = setLists;
 
 var selectList = function selectList(listId, list) {
+  var refresh = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : true;
+
   if (listId && !list) {
     list = storage_api.lists[listId];
   } else if (!listId || !list) {
@@ -1497,9 +1499,9 @@ var selectList = function selectList(listId, list) {
   setPadding(storage_api.settings.padding_top, storage_api.settings.padding_left, storage_api.settings.padding_right, storage_api.settings.padding_bottom);
   applyFilters();
   background_api.setBackground(list.selectedBackground);
-  getStats();
-  character_api.findAndSelectDisplay();
-  character_api.deselectDisplay(true);
+  getStats(); // select only if refreshing list, otherwise do not select.
+
+  if (refresh) character_api.findAndSelectDisplay();else character_api.deselectDisplay(true);
   character_api.enableButtons();
   storage_api.updateSettings("selected_character_list", listId);
 };
