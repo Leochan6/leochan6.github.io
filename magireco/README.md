@@ -17,7 +17,7 @@ For any feedback or questions, please contact me the locations listed above.
 - [Sorting Profiles](#Sorting-Profiles)
 - [Display Settings](#Display-Settings)
 - [Background](#Background)
-- [User](#User)
+- [User Settings](#User-Settings)
 - [Import and Export](#Import-and-Export)
 - [Filters](#Filters)
 - [Statistics](#Statistics)
@@ -132,7 +132,7 @@ For any feedback or questions, please contact me the locations listed above.
 
     Under the `Background` tab, change the `Transparency` field or slider to change the transparency of the selected background. **Currently, the transparency of the background is not support on Image Export.** For a transparent background, removed the background and set the transparency to `0`.
 
-### User
+### User Settings
 
 - Edit User Name
 
@@ -145,6 +145,22 @@ For any feedback or questions, please contact me the locations listed above.
 - Edit Public List
 
     Under the `User Settings` tab, change the `Public List` dropdown and press `Save`.
+    
+- Save Image
+
+    Make sure the desired list is selected. Under the `User Settings` tab, press `Save Image` to save an image of the current list.
+    
+- Delete Image
+
+    Under the `User Settings` tab, press `Delete Image` to delete the saved list image.    
+    
+- Open Image
+
+    Under the `User Settings` tab, press `Open Image` to open the saved list image in a new tab.
+    
+- Copy Link
+
+    Under the `User Settings` tab, press `Copy Link` to copy the link of the saved list image to the clipboard.
 
 ### Import and Export
 
