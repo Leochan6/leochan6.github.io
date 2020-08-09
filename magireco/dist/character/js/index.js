@@ -6314,7 +6314,7 @@ var character_collection = [{
     "5": true
   },
   "release_date": "2020-01-08",
-  "obtainability": "unlimited",
+  "obtainability": "limited",
   "url": "https://magireco.fandom.com/wiki/Yakumo_Mitama_(Haregi_ver.)"
 }, {
   "id": "1118",
