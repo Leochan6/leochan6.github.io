@@ -400,7 +400,7 @@ export const character_collection = [
       "4": true,
       "5": true
     },
-    "release_date": "2050-01-01",
+    "release_date": "2020-08-12",
     "obtainability": "limited",
     "url": "https://magireco.fandom.com/wiki/Iroha_%26_Yachiyo_(Final_Battle_ver.)"
   },
@@ -595,7 +595,7 @@ export const character_collection = [
       "4": true,
       "5": true
     },
-    "release_date": "2050-01-01",
+    "release_date": "2020-08-03",
     "obtainability": "limited",
     "url": "https://magireco.fandom.com/wiki/Sakura_Kyouko_(Mizugi_ver.)"
   },

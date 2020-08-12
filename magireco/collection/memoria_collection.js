@@ -5622,7 +5622,7 @@ export const memoria_collection = [
   {
     "id": "1297",
     "name": "Over Limiter",
-    "naname": "",
+    "naname": "Limit Breaker",
     "type": "skill",
     "rank": "3",
     "min_hp": "",
@@ -7445,7 +7445,7 @@ export const memoria_collection = [
   {
     "id": "1389",
     "name": "Will Cooling Off Help Us Relax?",
-    "naname": "",
+    "naname": "Maybe This Will Cool Us Off",
     "type": "ability",
     "rank": "3",
     "min_hp": "421",
@@ -7465,7 +7465,7 @@ export const memoria_collection = [
   {
     "id": "1390",
     "name": "Best Shot That's Only Between Us",
-    "naname": "",
+    "naname": "A Perfect Photo of Us",
     "type": "skill",
     "rank": "4",
     "min_hp": "807",
@@ -7485,7 +7485,7 @@ export const memoria_collection = [
   {
     "id": "1391",
     "name": "The Wings from Before, Once Again",
-    "naname": "",
+    "naname": "Those Feathers From Before",
     "type": "ability",
     "rank": "3",
     "min_hp": "637",
@@ -7505,7 +7505,7 @@ export const memoria_collection = [
   {
     "id": "1392",
     "name": "Is This Joy Momentary or Forever...?",
-    "naname": "",
+    "naname": "Is This Happiness Eternal?",
     "type": "ability",
     "rank": "4",
     "min_hp": "",
@@ -7525,7 +7525,7 @@ export const memoria_collection = [
   {
     "id": "1393",
     "name": "A Split-Second Tag Team",
-    "naname": "",
+    "naname": "Teamwork in Action",
     "type": "ability",
     "rank": "3",
     "min_hp": "",
@@ -7545,7 +7545,7 @@ export const memoria_collection = [
   {
     "id": "1394",
     "name": "One Summer's Courage",
-    "naname": "",
+    "naname": "Summer of Courage",
     "type": "ability",
     "rank": "4",
     "min_hp": "",
@@ -7565,7 +7565,7 @@ export const memoria_collection = [
   {
     "id": "1395",
     "name": "Our Summer Together",
-    "naname": "",
+    "naname": "The Summer With You",
     "type": "ability",
     "rank": "4",
     "min_hp": "",
@@ -7585,7 +7585,7 @@ export const memoria_collection = [
   {
     "id": "1396",
     "name": "Blue and Pink",
-    "naname": "",
+    "naname": "Blue & Pink",
     "type": "ability",
     "rank": "4",
     "min_hp": "",

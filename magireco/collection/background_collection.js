@@ -2148,7 +2148,7 @@ export const background_collection = {
     },
     {
       "id": "Beginning_and_Eternal_Background",
-      "name": "Beginning_and_Eternal"
+      "name": "Endless Beginnings"
     },
     {
       "id": "Madogatari_Exhibition_Collaboration_Background",
@@ -2164,7 +2164,7 @@ export const background_collection = {
     },
     {
       "id": "Leaving_the_Nest_Looking_Skyward_Background",
-      "name": "Leaving_the_Nest_Looking_Skyward"
+      "name": "A Fledgling's First Flight"
     },
     {
       "id": "Sayuki_Steps_Up!_(1)_Background",
@@ -2176,11 +2176,11 @@ export const background_collection = {
     },
     {
       "id": "The_Ephemeral_Summer_Night_Background",
-      "name": "The_Ephemeral_Summer_Night"
+      "name": "One Fleeting Summer Night"
     },
     {
       "id": "Rebels_from_the_Land_of_Everlasting_Night_Background",
-      "name": "Rebels_from_the_Land_of_Everlasting_Night"
+      "name": "Rebel of a Dawnless Land"
     },
     {
       "id": "CoCo_ICHI_Collab_Background",
@@ -2188,11 +2188,11 @@ export const background_collection = {
     },
     {
       "id": "SamaTore!_The_Summer_Treasure_that_Disappeared_into_the_Fire_(1)_Background",
-      "name": "SamaTore!_The_Summer_Treasure_that_Disappeared_into_the_Fire_(1)"
+      "name": "Summer Treasures 1"
     },
     {
       "id": "SamaTore!_The_Summer_Treasure_that_Disappeared_into_the_Fire_(2)_Background",
-      "name": "SamaTore!_The_Summer_Treasure_that_Disappeared_into_the_Fire_(2)"
+      "name": "Summer Treasures 2"
     },
     {
       "id": "The_Green_Jasper_Diviners_(1)_Background",
@@ -2204,11 +2204,11 @@ export const background_collection = {
     },
     {
       "id": "From_New_Breath_(1)_Background",
-      "name": "From_New_Breath_(1)"
+      "name": "A New Beginning 1"
     },
     {
       "id": "From_New_Breath_(2)_Background",
-      "name": "From_New_Breath_(2)"
+      "name": "A New Beginning 2"
     },
     {
       "id": "Dawn_of_the_Shallow_Dream_(1)_Background",
