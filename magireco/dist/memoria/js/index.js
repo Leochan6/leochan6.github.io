@@ -7945,7 +7945,7 @@ var memoria_collection = [{
 }, {
   "id": "1344",
   "name": "Jet-Black Ink",
-  "naname": "",
+  "naname": "Jet Black Ink",
   "type": "skill",
   "rank": "3",
   "min_hp": "429",
@@ -7964,7 +7964,7 @@ var memoria_collection = [{
 }, {
   "id": "1345",
   "name": "Back to Back",
-  "naname": "",
+  "naname": "Our Backs Together",
   "type": "ability",
   "rank": "4",
   "min_hp": "808",
@@ -7983,7 +7983,7 @@ var memoria_collection = [{
 }, {
   "id": "1346",
   "name": "The One Who Waits",
-  "naname": "",
+  "naname": "She Who Waits",
   "type": "skill",
   "rank": "3",
   "min_hp": "668",
@@ -8002,7 +8002,7 @@ var memoria_collection = [{
 }, {
   "id": "1347",
   "name": "Remnants of Light",
-  "naname": "",
+  "naname": "Afterglow",
   "type": "ability",
   "rank": "2",
   "min_hp": "444",
@@ -8021,7 +8021,7 @@ var memoria_collection = [{
 }, {
   "id": "1348",
   "name": "Under the Red Azalea",
-  "naname": "",
+  "naname": "With the Red Azalea",
   "type": "skill",
   "rank": "4",
   "min_hp": "880",
@@ -8040,7 +8040,7 @@ var memoria_collection = [{
 }, {
   "id": "1349",
   "name": "Under the White Camellia",
-  "naname": "",
+  "naname": "With the White Camellia",
   "type": "skill",
   "rank": "4",
   "min_hp": "761",
@@ -8059,7 +8059,7 @@ var memoria_collection = [{
 }, {
   "id": "1350",
   "name": "Tomorrow They Will Bloom Again",
-  "naname": "",
+  "naname": "The Flowers Will Bloom Again",
   "type": "ability",
   "rank": "4",
   "min_hp": "880",
@@ -8078,7 +8078,7 @@ var memoria_collection = [{
 }, {
   "id": "1351",
   "name": "Leave it to Us!",
-  "naname": "",
+  "naname": "We've Got This!",
   "type": "skill",
   "rank": "3",
   "min_hp": "598",
