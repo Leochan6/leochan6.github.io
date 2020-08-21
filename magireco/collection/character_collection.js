@@ -850,7 +850,7 @@ export const character_collection = [
       "4": true,
       "5": true
     },
-    "release_date": "2050-01-01",
+    "release_date": "2020-08-21",
     "obtainability": "unlimited",
     "url": "https://magireco.fandom.com/wiki/Sarasa_Hanna"
   },
