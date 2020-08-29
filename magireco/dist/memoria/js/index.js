@@ -8361,7 +8361,7 @@ var memoria_collection = [{
 }, {
   "id": "1366",
   "name": "Little Crescent Moons",
-  "naname": "",
+  "naname": "Small Crescent Moons",
   "type": "ability",
   "rank": "3",
   "min_hp": "500",
@@ -8624,7 +8624,7 @@ var memoria_collection = [{
 }, {
   "id": "1380",
   "name": "A Desert Island Feast",
-  "naname": "",
+  "naname": "A Desert Island Feast",
   "type": "skill",
   "rank": "3",
   "min_hp": "469",
