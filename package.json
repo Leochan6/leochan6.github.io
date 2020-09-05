@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "description": "Magia Record Character List",
   "dependencies": {
-    "browserify": "^16.5.2",
-    "browserify-directory": "^1.0.2"
+    "browserify": "^16.5.2"
   },
   "devDependencies": {
     "@babel/cli": "^7.0.0",

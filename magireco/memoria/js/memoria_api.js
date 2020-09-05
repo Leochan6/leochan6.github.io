@@ -45,8 +45,8 @@ export class Memoria {
 
 export const startUp = () => {
   // initialize name field.
-  [...memoria_collection].filter(memoria => memoria.naname).sort((a, b) => a.naname > b.naname ? 1 : -1).forEach((memoria) => {
-    elements.name_select.options.add(new Option(memoria.naname, memoria.id, false));
+  [...memoria_collection].sort((a, b) => a.name > b.name ? 1 : -1).forEach((memoria) => {
+    elements.name_select.options.add(new Option(memoria.name, memoria.id, false));
   });
   elements.name_select.value = 1001;
   elements.name_select.dispatchEvent(new Event("change"));
@@ -65,7 +65,7 @@ export const startUp = () => {
 export const getMemoria = (id) => {
   try {
     let memoria = memoria_collection.find(elem => elem.id === id);
-    let name = memoria.naname;
+    let name = memoria.name;
     let rank = memoria.rank;
     let type = memoria.type;
     return new Memoria(id, name, type, rank);
@@ -95,7 +95,7 @@ export const sanitizeMemoria = (memoria, removeId = true) => {
  * @param {Memoria} memoria 
  */
 export const getBasicMemoriaDisplay = (memoria) => {
-  return new Display(memoria.id, memoria.naname, memoria.type, memoria.rank, "0", "1", false, false);
+  return new Display(memoria.id, memoria.name, memoria.type, memoria.rank, "0", "1", false, false);
 };
 
 /**
@@ -215,7 +215,7 @@ export const getMaxLevel = (ascension, rank) => {
 export const minimizeDisplay = () => {
   let memoria_display = getMemoriaDisplay(display_preview.children[0]);
   let memoria = memoria_collection.find(elem => elem.id === memoria_display.memoria_id);
-  let display = new Display(memoria.id, memoria.naname, memoria.type, memoria.rank, "0", "1", elements.archive_checkbox.checked, elements.protect_checkbox.checked);
+  let display = new Display(memoria.id, memoria.name, memoria.type, memoria.rank, "0", "1", elements.archive_checkbox.checked, elements.protect_checkbox.checked);
   updateForm(display);
   updatePreviewDisplay(display);
 };
@@ -226,7 +226,7 @@ export const minimizeDisplay = () => {
 export const maximizeDisplay = () => {
   let memoria_display = getMemoriaDisplay(display_preview.children[0]);
   let memoria = memoria_collection.find(elem => elem.id === memoria_display.memoria_id);
-  let display = new Display(memoria.id, memoria.naname, memoria.type, memoria.rank, "4", getMaxLevel("4", memoria.rank), elements.archive_checkbox.checked, elements.protect_checkbox.checked);
+  let display = new Display(memoria.id, memoria.name, memoria.type, memoria.rank, "4", getMaxLevel("4", memoria.rank), elements.archive_checkbox.checked, elements.protect_checkbox.checked);
   updateForm(display);
   updatePreviewDisplay(display);
 };
@@ -271,7 +271,7 @@ const updateFormEnabled = (memoria) => {
 const updateMemoriaWithDisplay = (memoria, display) => {
   // return the default display.
   if (!display) return getBasicMemoriaDisplay(memoria);
-  return new Display(memoria.id, memoria.naname, memoria.type, memoria.rank, display.ascension, display.level, display.archive, display.protect);
+  return new Display(memoria.id, memoria.name, memoria.type, memoria.rank, display.ascension, display.level, display.archive, display.protect);
 };
 
 /**
@@ -434,14 +434,14 @@ export const enableButtons = () => {
  */
 export const loadMemoriaSelectList = () => {
   memoriaSelectDialog.list.innerHTML = "";
-  memoria_collection.filter(memoria => memoria.naname).forEach(memoria => {
+  memoria_collection.filter(memoria => memoria.name).forEach(memoria => {
     let added = Object.values(storage_api.lists[memoria_list_api.getListId()].memoriaList).filter(char => char.memoria_id === memoria.id);
     let container = document.createElement("div");
     container.classList.add("memoria_image_preview");
     container.setAttribute("id", memoria.id);
     let image = document.createElement("img");
     image.src = `/magireco/assets/memoria/memoria_${memoria.id}_s.png`;
-    image.title = memoria.naname;
+    image.title = memoria.name;
     container.append(image);
     if (added.length > 0) {
       let text = document.createElement("label");
@@ -482,7 +482,8 @@ export const filterMemoria = (search) => {
     let memoria = memoria_collection.find(elem => child.getAttribute("id") === elem.id);
     if (memoria.id.includes(search)
       || memoria.name.toLowerCase().includes(search)
-      || memoria.naname.toLowerCase().includes(search)
+      || memoria.name_na.toLowerCase().includes(search)
+      || memoria.name_jp.toLowerCase().includes(search)
       || memoria.type.toLowerCase().includes(search)
       || memoria.rank.toLowerCase().includes(search)
       || (memoria.chara && memoria.chara.toLowerCase().includes(search))
@@ -538,5 +539,5 @@ export const openMemoriaDialog = (memoria, displays) => {
     \nLocked: ${display.protect}\n`;
   });
 
-  messageDialog.open(`${memoria.naname} Details`, text);
+  messageDialog.open(`${memoria.name} Details`, text);
 };

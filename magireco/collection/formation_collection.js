@@ -83,7 +83,7 @@ export const formation_collection = [
     "name": "Attribute Delta (Flame)",
     "places": {
       "2": {
-        "att1": "fire",
+        "att1": "flame",
         "eff1": "attack_up2",
         "val1": "150"
       },
@@ -91,7 +91,7 @@ export const formation_collection = [
         "att1": "none"
       },
       "7": {
-        "att1": "fire",
+        "att1": "flame",
         "eff1": "attack_up2",
         "val1": "150"
       },
@@ -99,7 +99,7 @@ export const formation_collection = [
         "att1": "none"
       },
       "9": {
-        "att1": "fire",
+        "att1": "flame",
         "eff1": "attack_up2",
         "val1": "150"
       }
@@ -110,7 +110,7 @@ export const formation_collection = [
     "name": "Attribute Delta (Aqua)",
     "places": {
       "2": {
-        "att1": "water",
+        "att1": "aqua",
         "eff1": "attack_up2",
         "val1": "150"
       },
@@ -118,7 +118,7 @@ export const formation_collection = [
         "att1": "none"
       },
       "7": {
-        "att1": "water",
+        "att1": "aqua",
         "eff1": "attack_up2",
         "val1": "150"
       },
@@ -126,7 +126,7 @@ export const formation_collection = [
         "att1": "none"
       },
       "9": {
-        "att1": "water",
+        "att1": "aqua",
         "eff1": "attack_up2",
         "val1": "150"
       }
@@ -259,12 +259,12 @@ export const formation_collection = [
         "att1": "none"
       },
       "5": {
-        "att1": "fire",
+        "att1": "flame",
         "eff1": "attack_up3",
         "val1": "250"
       },
       "7": {
-        "att1": "fire",
+        "att1": "flame",
         "eff1": "attack_up3",
         "val1": "250"
       },
@@ -289,12 +289,12 @@ export const formation_collection = [
         "att1": "none"
       },
       "5": {
-        "att1": "water",
+        "att1": "aqua",
         "eff1": "attack_up3",
         "val1": "250"
       },
       "7": {
-        "att1": "water",
+        "att1": "aqua",
         "eff1": "attack_up3",
         "val1": "250"
       },
@@ -349,12 +349,12 @@ export const formation_collection = [
         "att1": "none"
       },
       "5": {
-        "att1": "fire",
+        "att1": "flame",
         "eff1": "attack_up3",
         "val1": "250"
       },
       "7": {
-        "att1": "fire",
+        "att1": "flame",
         "eff1": "attack_up3",
         "val1": "250"
       },
@@ -379,12 +379,12 @@ export const formation_collection = [
         "att1": "none"
       },
       "5": {
-        "att1": "water",
+        "att1": "aqua",
         "eff1": "attack_up3",
         "val1": "250"
       },
       "7": {
-        "att1": "water",
+        "att1": "aqua",
         "eff1": "attack_up3",
         "val1": "250"
       },
