@@ -26,7 +26,15 @@
 <body>
 
   <header>
-    <h1>Magia Record Character List</h1>
+    <div id="header_left">
+      <h1>Magia Record Character List</h1>
+      <div class="nav_bar">
+        <a class="nav_item hidden" href="/magireco/character/" id="enter_character_link">Character</a>
+        <a class="nav_item hidden" href="/magireco/memoria/" id="enter_memoria_link">Memoria</a>
+        <!-- <a class="nav_item" href="/magireco/friend/" >Friend</a>
+        <a class="nav_item" href="/magireco/tools/" >Tools</a> -->
+      </div>
+    </div>
     <div id="header_right">
       <div id="header_right_upper">
         <button id="contact_button" class="small_btn">Contact / Support</button>
@@ -40,12 +48,6 @@
 
   <div class="horizontal-divider"></div>
   <main>
-    <div id="header_buttons" class="hidden">
-      <a href="character/" class="nav_item home_link" id="enter_character_link">Character Lists</a>
-      <a href="memoria/" class="nav_item home_link" id="enter_memoria_link">Memoria Lists</a>
-      <a href="team/" class="hidden nav_item home_link" id="enter_teams_link">Teams</a>
-    </div>
-
     <div id="content">
       <div class="hidden section" id="login_content">
         <label class="header_label" id="login_label">Sign In</label>

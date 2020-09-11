@@ -26,7 +26,9 @@ var _dialog = require("../../shared/js/dialog.js");
 
         _login_elements.login_elements.signout_button.classList.remove("hidden");
 
-        _login_elements.login_elements.header_buttons.classList.remove("hidden");
+        _login_elements.login_elements.enter_character_link.classList.remove("hidden");
+
+        _login_elements.login_elements.enter_memoria_link.classList.remove("hidden");
 
         _login_elements.login_elements.header_username.innerHTML = "Welcome ".concat(user.displayName || userName || "Anonymous");
         userId = user.uid;
@@ -37,7 +39,9 @@ var _dialog = require("../../shared/js/dialog.js");
 
         _login_elements.login_elements.signout_button.classList.add("hidden");
 
-        _login_elements.login_elements.header_buttons.classList.add("hidden");
+        _login_elements.login_elements.enter_character_link.classList.add("hidden");
+
+        _login_elements.login_elements.enter_memoria_link.classList.add("hidden");
 
         _login_elements.login_elements.header_username.innerHTML = "";
         userId = null;
@@ -155,6 +159,12 @@ var _dialog = require("../../shared/js/dialog.js");
 
       errorSignupHandler("", false);
     }
+
+    _login_elements.login_elements.email_text.value = "";
+    _login_elements.login_elements.password_text.value = "";
+    _login_elements.login_elements.signup_email_text.value = "";
+    _login_elements.login_elements.signup_password_text.value = "";
+    _login_elements.login_elements.signup_password_confirm_text.value = "";
   };
 
   var errorHandler = function errorHandler(errorMsg) {
@@ -346,7 +356,7 @@ exports.signout = signout;
 
 var signOutRedirect = function signOutRedirect() {
   firebase.auth().signOut().then(function () {
-    window.location.href = "/magireco/";
+    if (window.location.pathname != "/magireco/") window.location.href = "/magireco/";
   })["catch"](function (error) {
     console.error(error);
   });
@@ -354,16 +364,14 @@ var signOutRedirect = function signOutRedirect() {
 
 var onAuthStateChanged = function onAuthStateChanged(callback) {
   firebase.auth().onAuthStateChanged(function (user) {
-    sessionTimeout();
-    callback(user);
+    sessionTimeout(user, callback);
   });
 };
 
 exports.onAuthStateChanged = onAuthStateChanged;
 
-var sessionTimeout = function sessionTimeout() {
-  var user = firebase.auth().currentUser;
-
+var sessionTimeout = function sessionTimeout(user, callback) {
+  // let user = firebase.auth().currentUser;
   if (user && !user.isAnonymous) {
     // https://stackoverflow.com/a/58899511/7627317
     var userSessionTimeout = null;
@@ -371,17 +379,22 @@ var sessionTimeout = function sessionTimeout() {
     if (user === null && userSessionTimeout) {
       clearTimeout(userSessionTimeout);
       userSessionTimeout = null;
+      return callback(null);
     } else {
       user.getIdTokenResult().then(function (idTokenResult) {
         var authTime = idTokenResult.claims.auth_time * 1000;
         var sessionDurationInMilliseconds = 3 * 60 * 60 * 1000; // 3 hours
 
         var expirationInMilliseconds = sessionDurationInMilliseconds - (Date.now() - authTime);
+        if (expirationInMilliseconds > 1000) callback(user);
         userSessionTimeout = setTimeout(function () {
-          return signout("Session Timeout", user.uid);
+          console.log(expirationInMilliseconds, "milliseconds until auto sign out.");
+          signout("Session Timeout", user.uid);
         }, expirationInMilliseconds);
       });
     }
+  } else {
+    return callback(user);
   }
 };
 
@@ -512,6 +525,8 @@ exports.updateUserRecentActivity = updateUserRecentActivity;
 var defaultLists = {};
 var listId = generatePushID();
 var charId = generatePushID();
+var memoListId = generatePushID();
+var memoId = generatePushID();
 defaultLists[listId] = {
   characterList: {},
   name: "Magical Girls",
@@ -528,11 +543,18 @@ defaultLists[listId].characterList[charId] = {
   post_awaken: false,
   rank: "1"
 };
-defaultLists[generatePushID()] = {
-  memoriaList: false,
+defaultLists[memoListId] = {
+  memoriaList: {},
   name: "Memoria",
   selectedBackground: false,
   selectedProfile: "10"
+};
+defaultLists[memoListId].memoriaList[memoId] = {
+  memoria_id: "1001",
+  ascension: "0",
+  level: "1",
+  archive: false,
+  protect: false
 };
 
 var getLists = function getLists(userId) {

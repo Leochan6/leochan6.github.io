@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "Magia Record Character List",
   "dependencies": {
-    "browserify": "^16.5.2"
+    "browserify": "^16.5.2",
+    "del-cli": "^3.0.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.0.0",
@@ -19,13 +20,14 @@
     ]
   },
   "scripts": {
+    "delete": "del-cli --force magireco/dev",
     "babel": "babel magireco -d magireco/dev",
     "browserify-login": "browserify magireco/dev/login/js/index.js -o magireco/dist/login/js/index.js",
     "browserify-character": "browserify magireco/dev/character/js/index.js -o magireco/dist/character/js/index.js",
     "browserify-memoria": "browserify magireco/dev/memoria/js/index.js -o magireco/dist/memoria/js/index.js",
     "browserify-team": "browserify magireco/dev/team/js/index.js -o magireco/dist/team/js/index.js",
     "browserify-friend": "browserify magireco/dev/friend/js/index.js -o magireco/dist/friend/js/index.js",
-    "build": "npm run babel && npm run browserify-login && npm run browserify-character && npm run browserify-memoria && npm run browserify-team && npm run browserify-friend",
+    "build": "npm run delete && npm run babel && npm run browserify-login && npm run browserify-character && npm run browserify-memoria && npm run browserify-team && npm run browserify-friend",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

@@ -54,32 +54,40 @@ export const signout = (details, userId) => {
 };
 
 const signOutRedirect = () => {
-  firebase.auth().signOut().then(() => { window.location.href = "/magireco/"; }).catch((error) => { console.error(error); });
+  firebase.auth().signOut().then(() => { 
+    if (window.location.pathname != "/magireco/") window.location.href = "/magireco/"; 
+  }).catch((error) => { console.error(error); });
 };
 
 export const onAuthStateChanged = (callback) => {
   firebase.auth().onAuthStateChanged(user => {
-    sessionTimeout();
-    callback(user);
+    sessionTimeout(user, callback);
   });
 };
 
-export const sessionTimeout = () => {
-  let user = firebase.auth().currentUser;
+export const sessionTimeout = (user, callback) => {
+  // let user = firebase.auth().currentUser;
   if (user && !user.isAnonymous) {
     // https://stackoverflow.com/a/58899511/7627317
     let userSessionTimeout = null;
     if (user === null && userSessionTimeout) {
       clearTimeout(userSessionTimeout);
       userSessionTimeout = null;
+      return callback(null);
     } else {
       user.getIdTokenResult().then((idTokenResult) => {
         const authTime = idTokenResult.claims.auth_time * 1000;
         const sessionDurationInMilliseconds = 3 * 60 * 60 * 1000; // 3 hours
         const expirationInMilliseconds = sessionDurationInMilliseconds - (Date.now() - authTime);
-        userSessionTimeout = setTimeout(() => signout("Session Timeout", user.uid), expirationInMilliseconds);
+        if (expirationInMilliseconds > 1000) callback(user);
+        userSessionTimeout = setTimeout(() => {
+          console.log(expirationInMilliseconds, "milliseconds until auto sign out.");
+          signout("Session Timeout", user.uid)
+        }, expirationInMilliseconds);
       });
     }
+  } else {
+    return callback(user);
   }
 };
 
@@ -178,6 +186,8 @@ export const updateUserRecentActivity = (userId, newActivity, callback) => {
 const defaultLists = {};
 let listId = generatePushID();
 let charId = generatePushID();
+let memoListId = generatePushID();
+let memoId = generatePushID();
 defaultLists[listId] = {
   characterList: {},
   name: "Magical Girls",
@@ -194,11 +204,18 @@ defaultLists[listId].characterList[charId] = {
   post_awaken: false,
   rank: "1"
 };
-defaultLists[generatePushID()] = {
-  memoriaList: false,
+defaultLists[memoListId] = {
+  memoriaList: {},
   name: "Memoria",
   selectedBackground: false,
   selectedProfile: "10"
+};
+defaultLists[memoListId].memoriaList[memoId] = {
+  memoria_id: "1001",
+  ascension: "0",
+  level: "1",
+  archive: false,
+  protect: false
 };
 
 export const getLists = (userId) => {

@@ -15,52 +15,14 @@
   margin: 0px;
 }
 
-/** Nav Bar **/
-
-#nav_bar {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-
-.nav_item {
-  width: 100px;
-  height: 30px;
-  margin: 0px;
-  transition: all 0.5s ease 0s;
-  background-color: var(--nav-item-background-color);
-  border: var(--nav-item-border-color) solid 1px;
-  border: none;
-  color: var(--nav-item-text-color);
-  outline: none;
-  cursor: pointer;
-  user-select: none;
-  font-size: 16px;
-  text-decoration: none;
-  text-align: center;
-  line-height: 30px;
-}
-
-.nav_item:hover {
-  color: var(--nav-item-text-color-hover);
-  background-color: var(--nav-item-background-color-hover);
-}
-
-.nav_item.selected {
-  color: var(--nav-item-text-color-selected);
-  background-color: var(--nav-item-background-color-selected);
-  cursor: default;
-  pointer-events: none;
-}
-
-#name_nav_export {
+#name_export {
   min-height: 47px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-#name_nav_export>* {
+#name_export>* {
   display: flex;
   flex: 1;
   margin: 10px;
@@ -163,6 +125,7 @@
   justify-content: flex-end;
   margin-right: 10px;
   align-items: center;
+  height: 35px;
 }
 
 #list_stats_list {
@@ -175,7 +138,14 @@
 }
 
 #import_options {
+  display: flex;
+  align-items: center;
   margin-left: 10px
+}
+
+#export_options {
+  display: flex;
+  align-items: center;
 }
 
 #zoom_range {

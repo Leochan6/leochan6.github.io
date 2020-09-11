@@ -10,7 +10,7 @@ header {
 .header_link {
   color: var(--header-link-text-color);
   opacity: 0.9;
-  transition: all 0.3 ease 0s;
+  transition: all 0.3s ease 0s;
   text-decoration: none;
 }
 
@@ -24,7 +24,8 @@ header {
 }
 
 #header_left>h1 {
-  margin: 0.25em 0px;
+  margin: 5px 0px;
+  height: 36px;
 }
 
 #header_right {
@@ -42,6 +43,7 @@ header {
   align-items: center;
   margin-left: auto;
   float: right;
+  height: 35px;
 }
 
 #header_right_lower {
@@ -58,10 +60,11 @@ header {
 
 /** Nav Bar **/
 
-#nav_bar {
+.nav_bar {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: flex-start;
+  min-height: 32px;
 }
 
 .nav_item {
@@ -88,6 +91,13 @@ header {
 .nav_item.selected {
   color: var(--nav-item-text-color-selected);
   background-color: var(--nav-item-background-color-selected);
+  cursor: default;
+  pointer-events: none;
+}
+
+.nav_item.disabled {
+  color: var(--nav-item-text-color-disabled);
+  background-color: var(--nav-item-background-color-disabled);
   cursor: default;
   pointer-events: none;
 }
@@ -335,6 +345,8 @@ textarea {
   --nav-item-text-color-hover: #ffffff;
   --nav-item-background-color-selected: #1d1d1d;
   --nav-item-text-color-selected: #ffffff;
+  --nav-item-background-color-disabled: #777777;
+  --nav-item-text-color-disabled: #000000;
   --message-background-color: #d1d1d1;
 }
 

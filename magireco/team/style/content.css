@@ -3,7 +3,6 @@ body {
   flex-direction: column;
   min-width: 500px;
   min-height: 500px;
-  height: calc(100vh - 22px);
   /* margin: 10px; */
   font-family: Arial, Helvetica, sans-serif;
   /* border: 1px solid var(--divider-color); */
@@ -14,7 +13,7 @@ body {
   display: flex;
   flex-direction: row;
   width: 100%;
-  height: 90%
+  height: calc(100vh - 125px);
 }
 
 #verify_email {

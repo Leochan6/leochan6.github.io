@@ -235,15 +235,8 @@ export const manualCreateList = (name, memoriaList, selectedProfile, selectedBac
  */
 export const addMemoriaToList = (listId, memoria) => {
   let newMemoria = {};
-  if (memoria.name) delete memoria.name;
-  if (memoria.type) delete memoria.type;
-  if (memoria.obtainability || typeof memoria.obtainability === 'undefined') delete memoria.obtainability;
-  if (memoria._id) {
-    newMemoria[memoria._id] = memoria;
-    delete memoria._id;
-  } else {
-    newMemoria[generatePushID()] = memoria;
-  }
+  if (memoria._id) newMemoria[memoria._id] = memoria_api.sanitizeMemoria({ ...memoria});
+  else newMemoria[generatePushID()] = memoria_api.sanitizeMemoria({ ...memoria});
   database_api.updateListProperty(userId, listId, "memoriaList", newMemoria);
 }
 

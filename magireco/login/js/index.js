@@ -16,14 +16,16 @@ import { SignOutDialog, ContactDialog } from '../../shared/js/dialog.js';
         elements.login_content.classList.add("hidden");
         elements.anonymous_content.classList.add("hidden");
         elements.signout_button.classList.remove("hidden");
-        elements.header_buttons.classList.remove("hidden");
+        elements.enter_character_link.classList.remove("hidden");
+        elements.enter_memoria_link.classList.remove("hidden");
         elements.header_username.innerHTML = `Welcome ${user.displayName || userName || "Anonymous"}`;
         userId = user.uid;
       } else {
         elements.login_content.classList.remove("hidden");
         elements.anonymous_content.classList.remove("hidden");
         elements.signout_button.classList.add("hidden");
-        elements.header_buttons.classList.add("hidden");
+        elements.enter_character_link.classList.add("hidden");
+        elements.enter_memoria_link.classList.add("hidden");
         elements.header_username.innerHTML = "";
         userId = null;
       }
@@ -118,6 +120,11 @@ import { SignOutDialog, ContactDialog } from '../../shared/js/dialog.js';
       elements.login_content.classList.remove("hidden");
       errorSignupHandler("", false);
     }
+    elements.email_text.value = "";
+    elements.password_text.value = "";
+    elements.signup_email_text.value = "";
+    elements.signup_password_text.value = "";
+    elements.signup_password_confirm_text.value = "";
   };
 
   const errorHandler = (errorMsg, log = true) => {
