@@ -378,6 +378,24 @@ export const character_collection = [
     "url": "https://magireco.fandom.com/wiki/Kasane_Ao"
   },
   {
+    "id": "1025",
+    "name": "Tokime Shizuka",
+    "name_jp": "時女 静香",
+    "name_na": "",
+    "attribute": "Flame",
+    "ranks": {
+      "1": false,
+      "2": false,
+      "3": false,
+      "4": true,
+      "5": true
+    },
+    "release_date": "2020-09-18",
+    "release_date_na": "2050-01-01",
+    "obtainability": "unlimited",
+    "url": "https://magireco.fandom.com/wiki/Tokime_Shizuka"
+  },
+  {
     "id": "1026",
     "name": "Hiroe Chiharu",
     "name_jp": "広江 ちはる",
