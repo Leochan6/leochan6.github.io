@@ -558,6 +558,24 @@ export const character_collection = [
     "url": "https://magireco.fandom.com/wiki/Tamaki_Iroha (Mizugi ver.)"
   },
   {
+    "id": "1102",
+    "name": "Yachiyo & Mifuyu (Beginning ver.)",
+    "name_jp": "やちよ & ふゆ (始まり ver.)",
+    "name_na": "",
+    "attribute": "Aqua",
+    "ranks": {
+      "1": false,
+      "2": false,
+      "3": false,
+      "4": true,
+      "5": true
+    },
+    "release_date": "2020-10-12",
+    "release_date_na": "2050-01-01",
+    "obtainability": "limited",
+    "url": "https://magireco.fandom.com/wiki/Yachiyo_%26_Mifuyu_(Beginning_ver.)"
+  },
+  {
     "id": "1103",
     "name": "Rumor Tsuruno",
     "name_jp": "ウワサの鶴乃",
@@ -1870,6 +1888,24 @@ export const character_collection = [
     "release_date_na": "2050-01-01",
     "obtainability": "unlimited",
     "url": "https://magireco.fandom.com/wiki/Kaharu_Yuuna"
+  },
+  {
+    "id": "3051",
+    "name": "Kazari Jun",
+    "name_jp": "飾利 潤",
+    "name_na": "",
+    "attribute": "Dark",
+    "ranks": {
+      "1": false,
+      "2": false,
+      "3": false,
+      "4": true,
+      "5": true
+    },
+    "release_date": "2020-09-28",
+    "release_date_na": "2050-01-01",
+    "obtainability": "unlimited",
+    "url": "https://magireco.fandom.com/wiki/Kazari_Jun"
   },
   {
     "id": "3052",

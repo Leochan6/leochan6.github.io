@@ -14,8 +14,11 @@ export const memoria_collection = [
     "max_def": "450",
     "effect1": "Attack Up [III / 15%] (Self / 1 Turn)",
     "effect2": "Attack Up [IV / 20%] (Self / 1 Turn)",
+    "cooldown1": "6",
+    "cooldown2": "5",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Minion_of the Rose Garden Witch (Anthony)"
+    "url": "https://magireco.fandom.com/wiki/Minion_of_the_Rose_Garden_Witch_(Anthony)"
   },
   {
     "id": "1002",
@@ -32,8 +35,11 @@ export const memoria_collection = [
     "max_def": "475",
     "effect1": "Defense Up [III / 22.5%] (Self / 1 Turn)",
     "effect2": "Defense Up [IV / 30%] (Self / 1 Turn)",
+    "cooldown1": "6",
+    "cooldown2": "5",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Minion_of the Rose Garden Witch (Adelbert)"
+    "url": "https://magireco.fandom.com/wiki/Minion_of_the_Rose_Garden_Witch_(Adelbert)"
   },
   {
     "id": "1003",
@@ -50,8 +56,11 @@ export const memoria_collection = [
     "max_def": "500",
     "effect1": "Damage Up [III / 15%] (Self / 1 Turn)",
     "effect2": "Damage Up [IV / 20%] (Self / 1 Turn)",
+    "cooldown1": "6",
+    "cooldown2": "5",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Minion_of the Darkness Witch"
+    "url": "https://magireco.fandom.com/wiki/Minion_of_the_Darkness_Witch"
   },
   {
     "id": "1004",
@@ -68,8 +77,11 @@ export const memoria_collection = [
     "max_def": "525",
     "effect1": "Magia Damage Up [III / 10%] (Self / 1 Turn)",
     "effect2": "Magia Damage Up [IV / 12.5%] (Self / 1 Turn)",
+    "cooldown1": "6",
+    "cooldown2": "5",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Minion_of the Sweets Witch"
+    "url": "https://magireco.fandom.com/wiki/Minion_of_the_Sweets_Witch"
   },
   {
     "id": "1005",
@@ -86,8 +98,11 @@ export const memoria_collection = [
     "max_def": "550",
     "effect1": "Attack Down [III / 15%] (One / 1 Turn)",
     "effect2": "Attack Down [IV / 20%] (One / 1 Turn)",
+    "cooldown1": "6",
+    "cooldown2": "5",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Minions_of the Box Witch"
+    "url": "https://magireco.fandom.com/wiki/Minions_of_the_Box_Witch"
   },
   {
     "id": "1006",
@@ -104,8 +119,11 @@ export const memoria_collection = [
     "max_def": "475",
     "effect1": "Defense Down [III / 15%] (One / 1 Turn)",
     "effect2": "Defense Down [IV / 20%] (One / 1 Turn)",
+    "cooldown1": "6",
+    "cooldown2": "5",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Minion_of the Scribbling Witch"
+    "url": "https://magireco.fandom.com/wiki/Minion_of_the_Scribbling_Witch"
   },
   {
     "id": "1007",
@@ -122,8 +140,11 @@ export const memoria_collection = [
     "max_def": "500",
     "effect1": "Damage Down [III / 15%] (One / 1 Turn)",
     "effect2": "Damage Down [IV / 20%] (One / 1 Turn)",
+    "cooldown1": "6",
+    "cooldown2": "5",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Minion_of the Silver Witch"
+    "url": "https://magireco.fandom.com/wiki/Minion_of_the_Silver_Witch"
   },
   {
     "id": "1008",
@@ -140,8 +161,11 @@ export const memoria_collection = [
     "max_def": "525",
     "effect1": "Status Ailment Resistance Down [III / 10%] (One / 1 Turn)",
     "effect2": "Status Ailment Resistance Down [IV / 12.5%] (One / 1 Turn)",
+    "cooldown1": "6",
+    "cooldown2": "5",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Minions_of the Shadow Witch"
+    "url": "https://magireco.fandom.com/wiki/Minions_of_the_Shadow_Witch"
   },
   {
     "id": "1009",
@@ -158,8 +182,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Attack Up [I / 5%]",
     "effect2": "Attack Up [II / 10%]",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Minions_of the Dog Witch"
+    "url": "https://magireco.fandom.com/wiki/Minions_of_the_Dog_Witch"
   },
   {
     "id": "1010",
@@ -176,8 +201,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Defense Up [I / 7.5%]",
     "effect2": "Defense Up [II / 15%]",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Minion_of the Artist Witch"
+    "url": "https://magireco.fandom.com/wiki/Minion_of_the_Artist_Witch"
   },
   {
     "id": "1011",
@@ -194,8 +220,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Damage Up [I / 5%]",
     "effect2": "Damage Up [II / 10%]",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Minion_of the Rooftop Witch"
+    "url": "https://magireco.fandom.com/wiki/Minion_of_the_Rooftop_Witch"
   },
   {
     "id": "1013",
@@ -212,8 +239,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Accele MP Gain Up [I / 10%]",
     "effect2": "Accele MP Gain Up [II / 12.5%]",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Minion_of the Sandbox Witch"
+    "url": "https://magireco.fandom.com/wiki/Minion_of_the_Sandbox_Witch"
   },
   {
     "id": "1014",
@@ -230,8 +258,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Blast Damage Up [I / 15%]",
     "effect2": "Blast Damage Up [II / 20%]",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Minion_of the Symbol Witch"
+    "url": "https://magireco.fandom.com/wiki/Minion_of_the_Symbol_Witch"
   },
   {
     "id": "1015",
@@ -248,8 +277,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Charged Attack Damage Up [I / 5%]",
     "effect2": "Charged Attack Damage Up [II / 7.5%]",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Minion_of the Sheep Witch"
+    "url": "https://magireco.fandom.com/wiki/Minion_of_the_Sheep_Witch"
   },
   {
     "id": "1016",
@@ -266,6 +296,9 @@ export const memoria_collection = [
     "max_def": "900",
     "effect1": "Attack Up [V / 25%] (Self / 1 Turn)",
     "effect2": "Attack Up [VI / 30%] (Self / 1 Turn)",
+    "cooldown1": "6",
+    "cooldown2": "5",
+    "chara": "",
     "obtainability": "unlimited",
     "url": "https://magireco.fandom.com/wiki/Girl's_Boundary"
   },
@@ -284,6 +317,7 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Attack Up [II / 10%]",
     "effect2": "Attack Up [III / 15%]",
+    "chara": "",
     "obtainability": "unlimited",
     "url": "https://magireco.fandom.com/wiki/Gentle_Sunlight"
   },
@@ -302,8 +336,11 @@ export const memoria_collection = [
     "max_def": "950",
     "effect1": "Defense Up [V / 37.5%] (Self / 1 Turn)",
     "effect2": "Defense Up [VI / 45%] (Self / 1 Turn)",
+    "cooldown1": "6",
+    "cooldown2": "5",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Closely_Watched Heart"
+    "url": "https://magireco.fandom.com/wiki/Closely_Watched_Heart"
   },
   {
     "id": "1019",
@@ -320,6 +357,7 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Defense Up [II / 15%]",
     "effect2": "Defense Up [III / 22.5%]",
+    "chara": "",
     "obtainability": "unlimited",
     "url": "https://magireco.fandom.com/wiki/Time_Traveler"
   },
@@ -338,8 +376,11 @@ export const memoria_collection = [
     "max_def": "1000",
     "effect1": "Damage Up [V / 25%] (Self / 1 Turn)",
     "effect2": "Damage Up [VI / 30%] (Self / 1 Turn)",
+    "cooldown1": "6",
+    "cooldown2": "5",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/That's_Not a Doll, Right%3F"
+    "url": "https://magireco.fandom.com/wiki/That's_Not_a_Doll,_Right%3F"
   },
   {
     "id": "1021",
@@ -356,6 +397,7 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Damage Up [II / 10%]",
     "effect2": "Damage Up [III / 15%]",
+    "chara": "",
     "obtainability": "unlimited",
     "url": "https://magireco.fandom.com/wiki/Reliable_Mami-senpai!"
   },
@@ -374,8 +416,11 @@ export const memoria_collection = [
     "max_def": "1050",
     "effect1": "Accele MP Gain Up [V / 20%] (Self / 1 Turn)",
     "effect2": "Accele MP Gain Up [VI / 22.5%] (Self / 1 Turn)",
+    "cooldown1": "6",
+    "cooldown2": "5",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Just_a Small Bite!"
+    "url": "https://magireco.fandom.com/wiki/Just_a_Small_Bite!"
   },
   {
     "id": "1023",
@@ -392,8 +437,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Magia Damage Up [II / 7.5%]",
     "effect2": "Magia Damage Up [III / 10%]",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Searching_for a Ray of Hope"
+    "url": "https://magireco.fandom.com/wiki/Searching_for_a_Ray_of_Hope"
   },
   {
     "id": "1024",
@@ -410,8 +456,11 @@ export const memoria_collection = [
     "max_def": "1100",
     "effect1": "Blast Damage Up [V / 35%] (Self / 1 Turn)",
     "effect2": "Blast Damage Up [VI / 40%] (Self / 1 Turn)",
+    "cooldown1": "6",
+    "cooldown2": "5",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/I'll_Never Regret It"
+    "url": "https://magireco.fandom.com/wiki/I'll_Never_Regret_It"
   },
   {
     "id": "1025",
@@ -428,8 +477,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Accele MP Gain Up [II / 12.5%]",
     "effect2": "Accele MP Gain Up [III / 15%]",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Different_Story: Rookies"
+    "url": "https://magireco.fandom.com/wiki/Different_Story:_Rookies"
   },
   {
     "id": "1026",
@@ -446,8 +496,11 @@ export const memoria_collection = [
     "max_def": "905",
     "effect1": "Charged Attack Damage Up [V / 15%] (Self / 1 Turn)",
     "effect2": "Charged Attack Damage Up [VI / 17.5%] (Self / 1 Turn)",
+    "cooldown1": "6",
+    "cooldown2": "5",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Different_Story: Mami and Kyouko"
+    "url": "https://magireco.fandom.com/wiki/Different_Story:_Mami_and_Kyouko"
   },
   {
     "id": "1027",
@@ -464,8 +517,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Blast Damage Up [II / 20%]",
     "effect2": "Blast Damage Up [III / 25%]",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Runway_to the World"
+    "url": "https://magireco.fandom.com/wiki/Runway_to_the_World"
   },
   {
     "id": "1028",
@@ -482,8 +536,11 @@ export const memoria_collection = [
     "max_def": "955",
     "effect1": "Magia Damage Up [V / 15%] (Self / 1 Turn)",
     "effect2": "Magia Damage Up [VI / 17.5%] (Self / 1 Turn)",
+    "cooldown1": "6",
+    "cooldown2": "5",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/By_Your Side!"
+    "url": "https://magireco.fandom.com/wiki/By_Your_Side!"
   },
   {
     "id": "1029",
@@ -500,6 +557,7 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Chance to Poison on Attack [II / 15%] (3 Turns)",
     "effect2": "Chance to Poison on Attack [III / 20%] (3 Turns)",
+    "chara": "",
     "obtainability": "unlimited",
     "url": "https://magireco.fandom.com/wiki/Science_Drunkard"
   },
@@ -518,8 +576,11 @@ export const memoria_collection = [
     "max_def": "1005",
     "effect1": "Attack Down [V / 25%] (One / 1 Turn)",
     "effect2": "Attack Down [VI / 30%] (One / 1 Turn)",
+    "cooldown1": "6",
+    "cooldown2": "5",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Busy_After School!"
+    "url": "https://magireco.fandom.com/wiki/Busy_After_School!"
   },
   {
     "id": "1031",
@@ -536,8 +597,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Charged Attack Damage Up [II / 7.5%]",
     "effect2": "Charged Attack Damage Up [III / 10%]",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Flowers_and Hearts"
+    "url": "https://magireco.fandom.com/wiki/Flowers_and_Hearts"
   },
   {
     "id": "1032",
@@ -554,8 +616,11 @@ export const memoria_collection = [
     "max_def": "1055",
     "effect1": "Defense Down [V / 25%] (One / 1 Turn)",
     "effect2": "Defense Down [VI / 30%] (One / 1 Turn)",
+    "cooldown1": "6",
+    "cooldown2": "5",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/These_Shoes Are Mine!"
+    "url": "https://magireco.fandom.com/wiki/These_Shoes_Are_Mine!"
   },
   {
     "id": "1033",
@@ -572,8 +637,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Chance to Fog on Attack [II / 15%] (3 Turns)",
     "effect2": "Chance to Fog on Attack [III / 20%] (3 Turns)",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/His_Place Is Far Away..."
+    "url": "https://magireco.fandom.com/wiki/His_Place_Is_Far_Away..."
   },
   {
     "id": "1034",
@@ -590,8 +656,11 @@ export const memoria_collection = [
     "max_def": "1105",
     "effect1": "Damage Down [V / 25%] (One / 1 Turn)",
     "effect2": "Damage Down [VI / 30%] (One / 1 Turn)",
+    "cooldown1": "6",
+    "cooldown2": "5",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Lovely_Akira Room"
+    "url": "https://magireco.fandom.com/wiki/Lovely_Akira_Room"
   },
   {
     "id": "1035",
@@ -608,8 +677,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Damage Increase [II / 10%]",
     "effect2": "Damage Increase [III / 15%]",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Future_Three-Star Chef"
+    "url": "https://magireco.fandom.com/wiki/Future_Three-Star_Chef"
   },
   {
     "id": "1037",
@@ -626,6 +696,7 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Damage Cut [II / 10%]",
     "effect2": "Damage Cut [III / 15%]",
+    "chara": "",
     "obtainability": "unlimited",
     "url": "https://magireco.fandom.com/wiki/Blissful_World"
   },
@@ -644,6 +715,9 @@ export const memoria_collection = [
     "max_def": "960",
     "effect1": "Damage Cut [V / 25%] (Self / 1 Turn)",
     "effect2": "Damage Cut [VI / 30%] (Self / 1 Turn)",
+    "cooldown1": "8",
+    "cooldown2": "7",
+    "chara": "",
     "obtainability": "unlimited",
     "url": "https://magireco.fandom.com/wiki/Heart-Melting_Pillow"
   },
@@ -662,8 +736,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Chance to Critical Hit [II / 15%]",
     "effect2": "Chance to Critical Hit [III / 20%]",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Max_Effort One-Shot Gag"
+    "url": "https://magireco.fandom.com/wiki/Max_Effort_One-Shot_Gag"
   },
   {
     "id": "1041",
@@ -680,8 +755,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Chance to Evade [II / 15%]",
     "effect2": "Chance to Evade [III / 20%]",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/A_World Once Empty"
+    "url": "https://magireco.fandom.com/wiki/A_World_Once_Empty"
   },
   {
     "id": "1042",
@@ -698,8 +774,11 @@ export const memoria_collection = [
     "max_def": "1060",
     "effect1": "Attack Up [III / 15%] (Self / 3 Turns)",
     "effect2": "Attack Up [IV / 20%] (Self / 3 Turns)",
+    "cooldown1": "8",
+    "cooldown2": "7",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/The_Feelings Behind the Bouquet"
+    "url": "https://magireco.fandom.com/wiki/The_Feelings_Behind_the_Bouquet"
   },
   {
     "id": "1043",
@@ -716,8 +795,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Anti-Bind [100%] & Defense Up [I / 7.5%]",
     "effect2": "Anti-Bind [100%] & Defense Up [II / 15%]",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/This_Is the Fragrance of Love"
+    "url": "https://magireco.fandom.com/wiki/This_Is_the_Fragrance_of_Love"
   },
   {
     "id": "1044",
@@ -734,8 +814,11 @@ export const memoria_collection = [
     "max_def": "1110",
     "effect1": "Defense Up [III / 22.5%] (Self / 3 Turns)",
     "effect2": "Defense Up [IV / 30%] (Self / 3 Turns)",
+    "cooldown1": "8",
+    "cooldown2": "7",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Putting_Sugar in Bitter Black Tea"
+    "url": "https://magireco.fandom.com/wiki/Putting_Sugar_in_Bitter_Black_Tea"
   },
   {
     "id": "1045",
@@ -752,8 +835,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Chance to Defense Pierce [II / 15%]",
     "effect2": "Chance to Defense Pierce [III / 20%]",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Unlimited_Happiness to You"
+    "url": "https://magireco.fandom.com/wiki/Unlimited_Happiness_to_You"
   },
   {
     "id": "1046",
@@ -770,8 +854,11 @@ export const memoria_collection = [
     "max_def": "917",
     "effect1": "Damage Up [III / 15%] (Self / 3 Turns)",
     "effect2": "Damage Up [IV / 20%] (Self / 3 Turns)",
+    "cooldown1": "8",
+    "cooldown2": "7",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/A_Brusque Savior"
+    "url": "https://magireco.fandom.com/wiki/A_Brusque_Savior"
   },
   {
     "id": "1047",
@@ -788,8 +875,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Chance to Counter [II / 15%]",
     "effect2": "Chance to Counter [III / 20%]",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Hope_in Despair"
+    "url": "https://magireco.fandom.com/wiki/Hope_in_Despair"
   },
   {
     "id": "1048",
@@ -806,8 +894,11 @@ export const memoria_collection = [
     "max_def": "967",
     "effect1": "Attack Down [III / 15%] (One / 3 Turns)",
     "effect2": "Attack Down [IV / 20%] (One / 3 Turns)",
+    "cooldown1": "8",
+    "cooldown2": "7",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Towards_the End"
+    "url": "https://magireco.fandom.com/wiki/Towards_the_End"
   },
   {
     "id": "1049",
@@ -824,8 +915,11 @@ export const memoria_collection = [
     "max_def": "1350",
     "effect1": "Attack Up [VII / 35%] & Defense Up [VI / 45%] (Self / 1 Turn)",
     "effect2": "Attack Up [VIII / 40%] & Defense Up [VII / 52.5%] (Self / 1 Turn)",
+    "cooldown1": "7",
+    "cooldown2": "6",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/She'll_Definitely Be Happy"
+    "url": "https://magireco.fandom.com/wiki/She'll_Definitely_Be_Happy"
   },
   {
     "id": "1050",
@@ -842,8 +936,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Defense Up [III / 22.5%]",
     "effect2": "Defense Up [IV / 30%]",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/As_a Fashion Model"
+    "url": "https://magireco.fandom.com/wiki/As_a_Fashion_Model"
   },
   {
     "id": "1051",
@@ -860,8 +955,11 @@ export const memoria_collection = [
     "max_def": "1425",
     "effect1": "Defense Up [VII / 52.5%] & Status Ailment Resistance Up [VI / 45%] (Self / 1 Turn)",
     "effect2": "Defense Up [VIII / 60%] & Status Ailment Resistance Up [VII / 50%] (Self / 1 Turn)",
+    "cooldown1": "7",
+    "cooldown2": "6",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/The_Strongest, Even at Basketball"
+    "url": "https://magireco.fandom.com/wiki/The_Strongest,_Even_at_Basketball"
   },
   {
     "id": "1052",
@@ -878,8 +976,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "MP Gain Up [III / 10%]",
     "effect2": "MP Gain Up [IV / 12.5%]",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/It's_Not Like I Was Waiting"
+    "url": "https://magireco.fandom.com/wiki/It's_Not_Like_I_Was_Waiting"
   },
   {
     "id": "1053",
@@ -896,8 +995,11 @@ export const memoria_collection = [
     "max_def": "1500",
     "effect1": "Defense Down [VII / 35%] (All / 1 Turn)",
     "effect2": "Defense Down [VIII / 40%] (All / 1 Turn)",
+    "cooldown1": "7",
+    "cooldown2": "6",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/PPPH!_Perfect Callout!"
+    "url": "https://magireco.fandom.com/wiki/PPPH!_Perfect_Callout!"
   },
   {
     "id": "1054",
@@ -914,8 +1016,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Blast Damage Up [III / 25%]",
     "effect2": "Blast Damage Up [IV / 30%]",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Surrounded_by White Wings"
+    "url": "https://magireco.fandom.com/wiki/Surrounded_by_White_Wings"
   },
   {
     "id": "1055",
@@ -932,8 +1035,11 @@ export const memoria_collection = [
     "max_def": "1575",
     "effect1": "Chance to Provoke [VII / 40%] (Self / 1 Turn)",
     "effect2": "Chance to Provoke [VIII / 45%] (Self / 1 Turn)",
+    "cooldown1": "7",
+    "cooldown2": "6",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Tranquil_Morning Practice"
+    "url": "https://magireco.fandom.com/wiki/Tranquil_Morning_Practice"
   },
   {
     "id": "1056",
@@ -950,8 +1056,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Charged Attack Damage Up [III / 10%]",
     "effect2": "Charged Attack Damage Up [IV / 12.5%]",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/First_Meeting Combination!"
+    "url": "https://magireco.fandom.com/wiki/First_Meeting_Combination!"
   },
   {
     "id": "1057",
@@ -968,8 +1075,11 @@ export const memoria_collection = [
     "max_def": "1650",
     "effect1": "Damage Down [VII / 35%] (All / 1 Turn)",
     "effect2": "Damage Down [VIII / 40%] (All / 1 Turn)",
+    "cooldown1": "7",
+    "cooldown2": "6",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Let's_Eat Together"
+    "url": "https://magireco.fandom.com/wiki/Let's_Eat_Together"
   },
   {
     "id": "1059",
@@ -986,6 +1096,7 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Accele MP Gain Up [III / 15%]",
     "effect2": "Accele MP Gain Up [IV / 17.5%]",
+    "chara": "",
     "obtainability": "unlimited",
     "url": "https://magireco.fandom.com/wiki/Coordinated_Combination"
   },
@@ -1004,8 +1115,11 @@ export const memoria_collection = [
     "max_def": "1427",
     "effect1": "Blast Damage Up [VII / 45%] (Self / 1 Turn)",
     "effect2": "Blast Damage Up [VIII / 50%] (Self / 1 Turn)",
+    "cooldown1": "7",
+    "cooldown2": "6",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Begin_a Hunt"
+    "url": "https://magireco.fandom.com/wiki/Begin_a_Hunt"
   },
   {
     "id": "1062",
@@ -1022,8 +1136,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Accele MP Gain Up [III / 15%]",
     "effect2": "Accele MP Gain Up [IV / 17.5%]",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Keep_This a Secret From Everyone!"
+    "url": "https://magireco.fandom.com/wiki/Keep_This_a_Secret_From_Everyone!"
   },
   {
     "id": "1063",
@@ -1040,8 +1155,11 @@ export const memoria_collection = [
     "max_def": "1502",
     "effect1": "Chance to Critical Hit [VII / 40%] (Self / 1 Turn)",
     "effect2": "Chance to Critical Hit [VIII / 45%] (Self / 1 Turn)",
+    "cooldown1": "6",
+    "cooldown2": "5",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Girls_With Glasses on a Date"
+    "url": "https://magireco.fandom.com/wiki/Girls_With_Glasses_on_a_Date"
   },
   {
     "id": "1064",
@@ -1058,8 +1176,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Magia Damage Up [III / 10%]",
     "effect2": "Magia Damage Up [IV / 12.5%]",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/The_Magical Girls Who Entwine Fates With Madoka"
+    "url": "https://magireco.fandom.com/wiki/The_Magical_Girls_Who_Entwine_Fates_With_Madoka"
   },
   {
     "id": "1065",
@@ -1076,6 +1195,9 @@ export const memoria_collection = [
     "max_def": "1577",
     "effect1": "Damage Increase [VII / 35%] & Damage Cut [VI / 30%] (Self / 1 Turn)",
     "effect2": "Damage Increase [VIII / 40%] & Damage Cut [VII / 35%] (Self / 1 Turn)",
+    "cooldown1": "7",
+    "cooldown2": "6",
+    "chara": "",
     "obtainability": "unlimited",
     "url": "https://magireco.fandom.com/wiki/Splash_Party!"
   },
@@ -1094,8 +1216,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Regenerate HP [I / 2%]",
     "effect2": "Regenerate HP [II / 3%]",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Embrace_Your Hopes and Dreams!"
+    "url": "https://magireco.fandom.com/wiki/Embrace_Your_Hopes_and_Dreams!"
   },
   {
     "id": "1067",
@@ -1112,8 +1235,11 @@ export const memoria_collection = [
     "max_def": "1800",
     "effect1": "Attack Up [V / 25%] & Defense Up [IV / 30%] (Self / 3 Turns)",
     "effect2": "Attack Up [VI / 30%] & Defense Up [V / 37.5%] (Self / 3 Turns)",
+    "cooldown1": "9",
+    "cooldown2": "8",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/I_Won't Stray From This Path"
+    "url": "https://magireco.fandom.com/wiki/I_Won't_Stray_From_This_Path"
   },
   {
     "id": "1068",
@@ -1130,8 +1256,11 @@ export const memoria_collection = [
     "max_def": "1900",
     "effect1": "Damage Increase [V / 25%] (Self/3 Turns) & Damage Cut [IV / 20%] (Self/3 Turns)",
     "effect2": "Damage Increase [VI / 30%] (Self/3 Turns) & Damage Cut [V / 25%] (Self/3 Turns)",
+    "cooldown1": "9",
+    "cooldown2": "8",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Past_and Future"
+    "url": "https://magireco.fandom.com/wiki/Past_and_Future"
   },
   {
     "id": "1069",
@@ -1148,8 +1277,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Blast Damage Up [IV / 30%]",
     "effect2": "Blast Damage Up [V / 35%]",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Towards_the Light!"
+    "url": "https://magireco.fandom.com/wiki/Towards_the_Light!"
   },
   {
     "id": "1070",
@@ -1166,6 +1296,7 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Regenerate HP [II / 3%] & Anti-Bind [100%]",
     "effect2": "Regenerate HP [III / 4%] & Anti-Bind [100%]",
+    "chara": "",
     "obtainability": "unlimited",
     "url": "https://magireco.fandom.com/wiki/Everlasting_Light"
   },
@@ -1184,8 +1315,11 @@ export const memoria_collection = [
     "max_def": "2000",
     "effect1": "Chance to Critical Hit [V / 30%] & Chance to Anti-Evade [100%] (Self / 3 Turns)",
     "effect2": "Chance to Critical Hit [VI / 35%] & Chance to Anti-Evade [100%] (Self / 3 Turns)",
+    "cooldown1": "9",
+    "cooldown2": "8",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Fulfilling_the Sworn Promise"
+    "url": "https://magireco.fandom.com/wiki/Fulfilling_the_Sworn_Promise"
   },
   {
     "id": "1072",
@@ -1202,8 +1336,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "MP Up When Attacked By Weak Element [IV / 5]",
     "effect2": "MP Up When Attacked By Weak Element [V / 6]",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Black_Tea of Victory"
+    "url": "https://magireco.fandom.com/wiki/Black_Tea_of_Victory"
   },
   {
     "id": "1073",
@@ -1220,9 +1355,11 @@ export const memoria_collection = [
     "max_def": "1050",
     "effect1": "HP Restore [IX / 50%] (Self)",
     "effect2": "HP Restore [X / 52.5%] (Self)",
+    "cooldown1": "8",
+    "cooldown2": "7",
     "chara": "Tamaki Iroha",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Carefully_Written Cooking Recipe"
+    "url": "https://magireco.fandom.com/wiki/Carefully_Written_Cooking_Recipe"
   },
   {
     "id": "1074",
@@ -1239,9 +1376,11 @@ export const memoria_collection = [
     "max_def": "1100",
     "effect1": "Blast Damage Up [IX / 55%] (Self / 1 Turn)",
     "effect2": "Blast Damage Up [X / 60%] (Self / 1 Turn)",
+    "cooldown1": "8",
+    "cooldown2": "7",
     "chara": "Nanami Yachiyo",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Rumors_Spreading in Kamihama"
+    "url": "https://magireco.fandom.com/wiki/Rumors_Spreading_in_Kamihama"
   },
   {
     "id": "1075",
@@ -1258,9 +1397,11 @@ export const memoria_collection = [
     "max_def": "1150",
     "effect1": "Magia Damage Up [IX / 25%] (Self / 1 Turn)",
     "effect2": "Magia Damage Up [X / 27.5%] (Self / 1 Turn)",
+    "cooldown1": "8",
+    "cooldown2": "7",
     "chara": "Yui Tsuruno",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/How's_the Taste%3F"
+    "url": "https://magireco.fandom.com/wiki/How's_the_Taste%3F"
   },
   {
     "id": "1076",
@@ -1277,9 +1418,11 @@ export const memoria_collection = [
     "max_def": "1200",
     "effect1": "Accele MP Gain Up [IX / 25%] (Self / 1 Turn)",
     "effect2": "Accele MP Gain Up [X / 27.5%] (Self / 1 Turn)",
+    "cooldown1": "8",
+    "cooldown2": "7",
     "chara": "Minami Rena",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/An_Antithetical Existence"
+    "url": "https://magireco.fandom.com/wiki/An_Antithetical_Existence"
   },
   {
     "id": "1077",
@@ -1296,9 +1439,11 @@ export const memoria_collection = [
     "max_def": "1250",
     "effect1": "Charge Draw",
     "effect2": "Charge Draw",
+    "cooldown1": "15",
+    "cooldown2": "13",
     "chara": "Togame Momoko",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/I'm_a Girl After All"
+    "url": "https://magireco.fandom.com/wiki/I'm_a_Girl_After_All"
   },
   {
     "id": "1078",
@@ -1315,6 +1460,8 @@ export const memoria_collection = [
     "max_def": "1052",
     "effect1": "Attribute Draw",
     "effect2": "Attribute Draw",
+    "cooldown1": "15",
+    "cooldown2": "13",
     "chara": "Akino Kaede",
     "obtainability": "unlimited",
     "url": "https://magireco.fandom.com/wiki/Animal_Paradise"
@@ -1334,6 +1481,8 @@ export const memoria_collection = [
     "max_def": "1102",
     "effect1": "Endure (Self / 3 Turns)",
     "effect2": "Endure (Self / 3 Turns)",
+    "cooldown1": "8",
+    "cooldown2": "7",
     "chara": "Tatsuki Asuka",
     "obtainability": "unlimited",
     "url": "https://magireco.fandom.com/wiki/Inherited_Determination"
@@ -1353,6 +1502,8 @@ export const memoria_collection = [
     "max_def": "1152",
     "effect1": "Accele Draw",
     "effect2": "Accele Draw",
+    "cooldown1": "15",
+    "cooldown2": "13",
     "chara": "Kaname Madoka",
     "obtainability": "unlimited",
     "url": "https://magireco.fandom.com/wiki/Madoka's_Notebook"
@@ -1372,9 +1523,11 @@ export const memoria_collection = [
     "max_def": "1202",
     "effect1": "Skill Quicken (Self / 3 Turns)",
     "effect2": "Skill Quicken (Self / 3 Turns)",
+    "cooldown1": "15",
+    "cooldown2": "13",
     "chara": "Akemi Homura (megane)",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/I_Want to Become Someone Who Can Protect Her"
+    "url": "https://magireco.fandom.com/wiki/I_Want_to_Become_Someone_Who_Can_Protect_Her"
   },
   {
     "id": "1082",
@@ -1391,9 +1544,11 @@ export const memoria_collection = [
     "max_def": "1252",
     "effect1": "Monopolize Draw",
     "effect2": "Monopolize Draw",
+    "cooldown1": "15",
+    "cooldown2": "13",
     "chara": "Tomoe Mami",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/A_Moment of Rest"
+    "url": "https://magireco.fandom.com/wiki/A_Moment_of_Rest"
   },
   {
     "id": "1083",
@@ -1410,6 +1565,8 @@ export const memoria_collection = [
     "max_def": "1055",
     "effect1": "Chance to Charm [IX / 50%] (All / 1 Turn)",
     "effect2": "Chance to Charm [X / 52.5%] (All / 1 Turn)",
+    "cooldown1": "15",
+    "cooldown2": "13",
     "chara": "Yayoi Kanoko",
     "obtainability": "unlimited",
     "url": "https://magireco.fandom.com/wiki/Pushing_Forward"
@@ -1429,9 +1586,11 @@ export const memoria_collection = [
     "max_def": "1105",
     "effect1": "Monopolize Draw",
     "effect2": "Monopolize Draw",
+    "cooldown1": "15",
+    "cooldown2": "13",
     "chara": "Utsuho Natsuki",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Our_Hearts As One!"
+    "url": "https://magireco.fandom.com/wiki/Our_Hearts_As_One!"
   },
   {
     "id": "1085",
@@ -1448,6 +1607,8 @@ export const memoria_collection = [
     "max_def": "1155",
     "effect1": "Chance to Poison [100%] (All / 1 Turn)",
     "effect2": "Chance to Poison [100%] (All / 1 Turn)",
+    "cooldown1": "8",
+    "cooldown2": "7",
     "chara": "Miyako Hinano",
     "obtainability": "unlimited",
     "url": "https://magireco.fandom.com/wiki/LOVE_Chemistry"
@@ -1467,9 +1628,11 @@ export const memoria_collection = [
     "max_def": "1205",
     "effect1": "Endure (Self / 3 Turns)",
     "effect2": "Endure (Self / 3 Turns)",
+    "cooldown1": "15",
+    "cooldown2": "13",
     "chara": "Minagi Sasara",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Following_in Father's Footsteps"
+    "url": "https://magireco.fandom.com/wiki/Following_in_Father's_Footsteps"
   },
   {
     "id": "1087",
@@ -1486,9 +1649,11 @@ export const memoria_collection = [
     "max_def": "1255",
     "effect1": "Blast Draw",
     "effect2": "Blast Draw",
+    "cooldown1": "15",
+    "cooldown2": "13",
     "chara": "Tokiwa Nanaka",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/As_a Member of a Distinguished Family"
+    "url": "https://magireco.fandom.com/wiki/As_a_Member_of_a_Distinguished_Family"
   },
   {
     "id": "1088",
@@ -1505,9 +1670,11 @@ export const memoria_collection = [
     "max_def": "1057",
     "effect1": "Chance to Burn [IX / 50%] (All / 1 Turn)",
     "effect2": "Chance to Burn [X / 52.5%] (All / 1 Turn)",
+    "cooldown1": "15",
+    "cooldown2": "13",
     "chara": "Kisaki Emiri",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Immediately_Solve Any Troubles!"
+    "url": "https://magireco.fandom.com/wiki/Immediately_Solve_Any_Troubles!"
   },
   {
     "id": "1089",
@@ -1524,9 +1691,11 @@ export const memoria_collection = [
     "max_def": "1107",
     "effect1": "Chance to Critical Hit [100%] (Self / 1 Turn)",
     "effect2": "Chance to Critical Hit [100%] (Self / 1 Turn)",
+    "cooldown1": "15",
+    "cooldown2": "13",
     "chara": "Hozumi Shizuku",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/The_Other Side of the Light"
+    "url": "https://magireco.fandom.com/wiki/The_Other_Side_of_the_Light"
   },
   {
     "id": "1090",
@@ -1543,9 +1712,11 @@ export const memoria_collection = [
     "max_def": "1157",
     "effect1": "Charge Draw",
     "effect2": "Charge Draw",
+    "cooldown1": "15",
+    "cooldown2": "13",
     "chara": "Shinobu Akira",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/A_Gentle Warrior"
+    "url": "https://magireco.fandom.com/wiki/A_Gentle_Warrior"
   },
   {
     "id": "1091",
@@ -1562,9 +1733,11 @@ export const memoria_collection = [
     "max_def": "1207",
     "effect1": "Magia Damage Up [IX / 25%] (Self / 1 Turn)",
     "effect2": "Magia Damage Up [X / 27.5%] (Self / 1 Turn)",
+    "cooldown1": "15",
+    "cooldown2": "13",
     "chara": "Kurumi Manaka",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Limited_Quantity! Manaka's Special Bento Box"
+    "url": "https://magireco.fandom.com/wiki/Limited_Quantity!_Manaka's_Special_Bento_Box"
   },
   {
     "id": "1093",
@@ -1581,6 +1754,8 @@ export const memoria_collection = [
     "max_def": "1060",
     "effect1": "Accele Draw",
     "effect2": "Accele Draw",
+    "cooldown1": "15",
+    "cooldown2": "13",
     "chara": "Natsume Kako",
     "obtainability": "unlimited",
     "url": "https://magireco.fandom.com/wiki/Book_Resident"
@@ -1600,9 +1775,11 @@ export const memoria_collection = [
     "max_def": "1110",
     "effect1": "Charge Draw",
     "effect2": "Charge Draw",
+    "cooldown1": "15",
+    "cooldown2": "13",
     "chara": "Chun Meiyui",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Tattered_Wooden Dummy"
+    "url": "https://magireco.fandom.com/wiki/Tattered_Wooden_Dummy"
   },
   {
     "id": "1095",
@@ -1619,9 +1796,11 @@ export const memoria_collection = [
     "max_def": "1210",
     "effect1": "Blast Draw",
     "effect2": "Blast Draw",
+    "cooldown1": "15",
+    "cooldown2": "13",
     "chara": "Mariko Ayaka",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/If_I Smile, Everyone Will Smile"
+    "url": "https://magireco.fandom.com/wiki/If_I_Smile,_Everyone_Will_Smile"
   },
   {
     "id": "1097",
@@ -1638,9 +1817,11 @@ export const memoria_collection = [
     "max_def": "1260",
     "effect1": "Chance to Critical Hit [100%] (Self / 1 Turn)",
     "effect2": "Chance to Critical Hit [100%] (Self / 1 Turn)",
+    "cooldown1": "15",
+    "cooldown2": "13",
     "chara": "Kagami Masara",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Colorless_and Dry"
+    "url": "https://magireco.fandom.com/wiki/Colorless_and_Dry"
   },
   {
     "id": "1098",
@@ -1657,9 +1838,11 @@ export const memoria_collection = [
     "max_def": "1065",
     "effect1": "Monopolize Draw",
     "effect2": "Monopolize Draw",
+    "cooldown1": "15",
+    "cooldown2": "13",
     "chara": "Haruna Konomi",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Do_You Know the Flower Language%3F"
+    "url": "https://magireco.fandom.com/wiki/Do_You_Know_the_Flower_Language%3F"
   },
   {
     "id": "1099",
@@ -1676,9 +1859,11 @@ export const memoria_collection = [
     "max_def": "1115",
     "effect1": "Monopolize Draw",
     "effect2": "Monopolize Draw",
+    "cooldown1": "15",
+    "cooldown2": "13",
     "chara": "Ayano Rika",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Full_on Fashion!"
+    "url": "https://magireco.fandom.com/wiki/Full_on_Fashion!"
   },
   {
     "id": "1100",
@@ -1695,9 +1880,11 @@ export const memoria_collection = [
     "max_def": "1165",
     "effect1": "Monopolize Draw",
     "effect2": "Monopolize Draw",
+    "cooldown1": "15",
+    "cooldown2": "13",
     "chara": "Mikuni Oriko",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Crime_and Punishment"
+    "url": "https://magireco.fandom.com/wiki/Crime_and_Punishment"
   },
   {
     "id": "1101",
@@ -1714,9 +1901,11 @@ export const memoria_collection = [
     "max_def": "1215",
     "effect1": "Chance to Counter [100%] (Self / 1 Turn)",
     "effect2": "Chance to Counter [100%] (Self / 1 Turn)",
+    "cooldown1": "15",
+    "cooldown2": "13",
     "chara": "Kure Kirika",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Lump_of Love"
+    "url": "https://magireco.fandom.com/wiki/Lump_of_Love"
   },
   {
     "id": "1102",
@@ -1733,9 +1922,11 @@ export const memoria_collection = [
     "max_def": "1265",
     "effect1": "Blast Draw",
     "effect2": "Blast Draw",
+    "cooldown1": "15",
+    "cooldown2": "13",
     "chara": "Chitose Yuma",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Encounter_With a Hero"
+    "url": "https://magireco.fandom.com/wiki/Encounter_With_a_Hero"
   },
   {
     "id": "1103",
@@ -1752,8 +1943,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Chance to Skill Seal on Attack [II / 15%] (3 Turns)",
     "effect2": "Chance to Skill Seal on Attack [III / 20%] (3 Turns)",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Napping_to Your Heart's Content on a Day Off"
+    "url": "https://magireco.fandom.com/wiki/Napping_to_Your_Heart's_Content_on_a_Day_Off"
   },
   {
     "id": "1104",
@@ -1770,9 +1962,11 @@ export const memoria_collection = [
     "max_def": "1067",
     "effect1": "Chance to Anti-Counter [100%] (Self / 3 Turns) & Attack Up [VIII / 40%] (Self / 1 Turn)",
     "effect2": "Chance to Anti-Counter [100%] (Self / 3 Turns) & Attack Up [IX / 45%] (Self / 1 Turn)",
+    "cooldown1": "8",
+    "cooldown2": "7",
     "chara": "Mitsuki Felicia",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Memories_of the Farm"
+    "url": "https://magireco.fandom.com/wiki/Memories_of_the_Farm"
   },
   {
     "id": "1105",
@@ -1789,8 +1983,11 @@ export const memoria_collection = [
     "max_def": "2100",
     "effect1": "Attack Down [VI / 30%] (One / 1 Turn)",
     "effect2": "Attack Down [VII / 35%] (One / 1 Turn)",
+    "cooldown1": "6",
+    "cooldown2": "5",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Colors_of a Clear Summer"
+    "url": "https://magireco.fandom.com/wiki/Colors_of_a_Clear_Summer"
   },
   {
     "id": "1106",
@@ -1807,8 +2004,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Defense Up [III / 22.5%]",
     "effect2": "Defense Up [IV / 30%]",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/There_Is No Such Thing As Beauty"
+    "url": "https://magireco.fandom.com/wiki/There_Is_No_Such_Thing_As_Beauty"
   },
   {
     "id": "1107",
@@ -1825,8 +2023,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Magia Damage Up [VII / 20%]",
     "effect2": "Magia Damage Up [IX / 25%]",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Here_With You"
+    "url": "https://magireco.fandom.com/wiki/Here_With_You"
   },
   {
     "id": "1108",
@@ -1843,9 +2042,11 @@ export const memoria_collection = [
     "max_def": "1217",
     "effect1": "Chance to Chase [100%] (Self / 1 Turn)",
     "effect2": "Chance to Chase [100%] (Self / 1 Turn) & Magia Damage Up [IX / 25%]",
+    "cooldown1": "7",
+    "cooldown2": "6",
     "chara": "Isuzu Ren",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/The_Day I Came to Know the Light"
+    "url": "https://magireco.fandom.com/wiki/The_Day_I_Came_to_Know_the_Light"
   },
   {
     "id": "1109",
@@ -1864,7 +2065,7 @@ export const memoria_collection = [
     "effect2": "Chance to Guardian [II / 15%] (100% if the target is Ayano Rika)",
     "chara": "Isuzu Ren",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/The_First and Last Page"
+    "url": "https://magireco.fandom.com/wiki/The_First_and_Last_Page"
   },
   {
     "id": "1110",
@@ -1881,8 +2082,11 @@ export const memoria_collection = [
     "max_def": "2002",
     "effect1": "Chance to Guardian on Allies with Critical Health [100%] (Self/1 Turn)",
     "effect2": "Chance to Guardian on Allies with Critical Health [100%] (Self/1 Turn) & Regenerate HP [IX / 10%] (Self/1 Turn)",
+    "cooldown1": "7",
+    "cooldown2": "6",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/My_Dreams Continue After I Wake Up"
+    "url": "https://magireco.fandom.com/wiki/My_Dreams_Continue_After_I_Wake_Up"
   },
   {
     "id": "1111",
@@ -1899,6 +2103,8 @@ export const memoria_collection = [
     "max_def": "1167",
     "effect1": "Endure (Self / 3 Turns)",
     "effect2": "Endure (Self / 3 Turns)",
+    "cooldown1": "15",
+    "cooldown2": "13",
     "chara": "Sakura Kyouko",
     "obtainability": "unlimited",
     "url": "https://magireco.fandom.com/wiki/Mundane_Things"
@@ -1918,8 +2124,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Chance to Burn on Attack [III / 20% / 2 Turns]",
     "effect2": "Chance to Burn on Attack [IV / 25% / 2 Turns]",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/My_School Life"
+    "url": "https://magireco.fandom.com/wiki/My_School_Life"
   },
   {
     "id": "1113",
@@ -1936,6 +2143,9 @@ export const memoria_collection = [
     "max_def": "1802",
     "effect1": "Blast Damage Up [IX / 55%] (Self / 1 Turn)",
     "effect2": "Blast Damage Up [X / 60%] (Self / 1 Turn)",
+    "cooldown1": "8",
+    "cooldown2": "7",
+    "chara": "",
     "obtainability": "unlimited",
     "url": "https://magireco.fandom.com/wiki/Unwavering_Belief"
   },
@@ -1954,9 +2164,11 @@ export const memoria_collection = [
     "max_def": "1252",
     "effect1": "MP Gain Up [IX / 25%] (Self / 1 Turn)",
     "effect2": "MP Gain Up [X / 27.5%] (Self / 1 Turn)",
+    "cooldown1": "8",
+    "cooldown2": "7",
     "chara": "Shizumi Konoha",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Raised_in an Ever Blooming House"
+    "url": "https://magireco.fandom.com/wiki/Raised_in_an_Ever_Blooming_House"
   },
   {
     "id": "1115",
@@ -1973,8 +2185,11 @@ export const memoria_collection = [
     "max_def": "902",
     "effect1": "Magia Damage Up [V / 15%] (Self / 1 Turn)",
     "effect2": "Magia Damage Up [VI / 17.5%] (Self / 1 Turn)",
+    "cooldown1": "6",
+    "cooldown2": "5",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Tea_With the Three of Us"
+    "url": "https://magireco.fandom.com/wiki/Tea_With_the_Three_of_Us"
   },
   {
     "id": "1116",
@@ -1991,9 +2206,11 @@ export const memoria_collection = [
     "max_def": "1102",
     "effect1": "Skill Quicken (Self / 3 Turns)",
     "effect2": "Skill Quicken (Self / 3 Turns)",
+    "cooldown1": "15",
+    "cooldown2": "13",
     "chara": "Yusa Hazuki",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Hazuki_Is Always Busy"
+    "url": "https://magireco.fandom.com/wiki/Hazuki_Is_Always_Busy"
   },
   {
     "id": "1117",
@@ -2010,8 +2227,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Chance to Evade [II / 15%]",
     "effect2": "Chance to Evade [III / 20%]",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/The_Thing Before Your Gaze Is..."
+    "url": "https://magireco.fandom.com/wiki/The_Thing_Before_Your_Gaze_Is..."
   },
   {
     "id": "1118",
@@ -2028,6 +2246,8 @@ export const memoria_collection = [
     "max_def": "1202",
     "effect1": "Chance to Critical Hit [100%] (Self / 1 Turn)",
     "effect2": "Chance to Critical Hit [100%] (Self / 1 Turn)",
+    "cooldown1": "15",
+    "cooldown2": "13",
     "chara": "Mikuri Ayame",
     "obtainability": "unlimited",
     "url": "https://magireco.fandom.com/wiki/Ayame_Collection!"
@@ -2047,8 +2267,11 @@ export const memoria_collection = [
     "max_def": "1102",
     "effect1": "Damage Up [III / 15%] (Self / 3 Turns)",
     "effect2": "Damage Up [IV / 20%] (Self / 3 Turns)",
+    "cooldown1": "8",
+    "cooldown2": "7",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Upside_Down Me!"
+    "url": "https://magireco.fandom.com/wiki/Upside_Down_Me!"
   },
   {
     "id": "1120",
@@ -2065,8 +2288,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Regenerate HP [IV / 5%] & Magia Damage Up [III / 10%]",
     "effect2": "Regenerate HP [V / 6%]& Magia Damage Up [IV / 12.5%]",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/A_Bygone Time"
+    "url": "https://magireco.fandom.com/wiki/A_Bygone_Time"
   },
   {
     "id": "1121",
@@ -2083,6 +2307,9 @@ export const memoria_collection = [
     "max_def": "2200",
     "effect1": "Damage Down [IX / 45%] (All / 1 Turn) & Status Ailment Resistance Up [VIII / 55%] (Self / 1 Turn)",
     "effect2": "Damage Down [X / 50%] (All / 1 Turn) & Status Ailment Resistance Up [IX / 60%] (Self / 1 Turn)",
+    "cooldown1": "6",
+    "cooldown2": "5",
+    "chara": "",
     "obtainability": "unlimited",
     "url": "https://magireco.fandom.com/wiki/Reliable_Negotiator"
   },
@@ -2101,8 +2328,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Chance to Critical Hit [III / 20%]  & Attack Up [III / 15%]",
     "effect2": "Chance to Critical Hit [IV / 25%] & Attack Up [IV / 20%]",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/I_Made Friends!"
+    "url": "https://magireco.fandom.com/wiki/I_Made_Friends!"
   },
   {
     "id": "1123",
@@ -2119,9 +2347,11 @@ export const memoria_collection = [
     "max_def": "1070",
     "effect1": "Chance to Defense Pierce [100%] (Self / 1 Turn)",
     "effect2": "Chance to Defense Pierce [100%] (Self / 1 Turn)",
+    "cooldown1": "8",
+    "cooldown2": "7",
     "chara": "Eri Aimi",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/50th_Love Letter (Incomplete)"
+    "url": "https://magireco.fandom.com/wiki/50th_Love_Letter_(Incomplete)"
   },
   {
     "id": "1124",
@@ -2138,6 +2368,7 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Status Ailment Resistance Up [II / 25%]",
     "effect2": "Status Ailment Resistance Up [III / 30%]",
+    "chara": "",
     "obtainability": "unlimited",
     "url": "https://magireco.fandom.com/wiki/Daily_Fantasies"
   },
@@ -2156,9 +2387,11 @@ export const memoria_collection = [
     "max_def": "1120",
     "effect1": "Chance to Guardian [100%] (Self / 1 Turn)",
     "effect2": "Chance to Guardian [100%] (Self / 1 Turn)",
+    "cooldown1": "8",
+    "cooldown2": "7",
     "chara": "Futaba Sana",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Back_Alley Friend"
+    "url": "https://magireco.fandom.com/wiki/Back_Alley_Friend"
   },
   {
     "id": "1126",
@@ -2175,8 +2408,11 @@ export const memoria_collection = [
     "max_def": "957",
     "effect1": "Chance to Poison [V / 40%] (All / 1 Turn)",
     "effect2": "Chance to Poison [VI / 42.5%] (All / 1 Turn)",
+    "cooldown1": "8",
+    "cooldown2": "7",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/After-school_Invisible Girl"
+    "url": "https://magireco.fandom.com/wiki/After-school_Invisible_Girl"
   },
   {
     "id": "1127",
@@ -2193,8 +2429,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Defense Up [III / 22.5%] & Anti-Stun [100%]",
     "effect2": "Defense Up [IV / 30%] & Anti-Stun [100%]",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/A_Rough Welcome in the Sewers"
+    "url": "https://magireco.fandom.com/wiki/A_Rough_Welcome_in_the_Sewers"
   },
   {
     "id": "1128",
@@ -2211,8 +2448,11 @@ export const memoria_collection = [
     "max_def": "2102",
     "effect1": "Chance to Guardian [100%] (Self / 1 Turn) & Defense Up [VIII / 60%] (Self / 1 Turn)",
     "effect2": "Chance to Guardian [100%] (Self / 1 Turn) & Defense Up [IX / 67.5%] (Self / 1 Turn)",
+    "cooldown1": "8",
+    "cooldown2": "7",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Recovery_and Resolve"
+    "url": "https://magireco.fandom.com/wiki/Recovery_and_Resolve"
   },
   {
     "id": "1129",
@@ -2229,9 +2469,11 @@ export const memoria_collection = [
     "max_def": "1170",
     "effect1": "Chance to Anti-Evade [100%] (Self / 3 Turns)",
     "effect2": "Chance to Anti-Evade [100%] (Self / 3 Turns)",
+    "cooldown1": "5",
+    "cooldown2": "4",
     "chara": "Misono Karin",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Phantom_Thief Karin's Scheme"
+    "url": "https://magireco.fandom.com/wiki/Phantom_Thief_Karin's_Scheme"
   },
   {
     "id": "1130",
@@ -2248,6 +2490,7 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Damage Increase [IV / 20%] & Anti-Curse [100%]",
     "effect2": "Damage Increase [V / 25%] & Anti-Curse [100%]",
+    "chara": "",
     "obtainability": "unlimited",
     "url": "https://magireco.fandom.com/wiki/My_Bible"
   },
@@ -2266,8 +2509,11 @@ export const memoria_collection = [
     "max_def": "1652",
     "effect1": "Chance to Charm [III / 35%] (All / 1 Turn)",
     "effect2": "Chance to Charm [IV / 37.5%] (All / 1 Turn)",
+    "cooldown1": "7",
+    "cooldown2": "6",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Wolf_for a Single Night"
+    "url": "https://magireco.fandom.com/wiki/Wolf_for_a_Single_Night"
   },
   {
     "id": "1132",
@@ -2284,8 +2530,11 @@ export const memoria_collection = [
     "max_def": "952",
     "effect1": "Chance to Fog [V / 40%] (All / 1 Turn)",
     "effect2": "Chance to Fog [VI / 42.5%] (All / 1 Turn)",
+    "cooldown1": "7",
+    "cooldown2": "6",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Welcoming_With Treats"
+    "url": "https://magireco.fandom.com/wiki/Welcoming_With_Treats"
   },
   {
     "id": "1133",
@@ -2302,8 +2551,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Chance to Stun on Attack [I / 10%] (1 Turn)",
     "effect2": "Chance to Stun on Attack [II / 15%] (1 Turn)",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/The_Practice Continues"
+    "url": "https://magireco.fandom.com/wiki/The_Practice_Continues"
   },
   {
     "id": "1134",
@@ -2320,8 +2570,11 @@ export const memoria_collection = [
     "max_def": "1902",
     "effect1": "Defense Down [VIII / 40%] (One / 1 Turn) & Chance to Curse [100%] (One / 1 Turn)",
     "effect2": "Defense Down [IX / 45%] (One / 1 Turn) & Chance to Curse [100%] (One / 1 Turn)",
+    "cooldown1": "5",
+    "cooldown2": "4",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Magical_Halloween Theater"
+    "url": "https://magireco.fandom.com/wiki/Magical_Halloween_Theater"
   },
   {
     "id": "1135",
@@ -2338,9 +2591,11 @@ export const memoria_collection = [
     "max_def": "1052",
     "effect1": "Damage Cut [VII / 35%] (Self / 1 Turn)",
     "effect2": "Damage Cut [VIII / 40%] (Self / 1 Turn)",
+    "cooldown1": "8",
+    "cooldown2": "7",
     "chara": "Awane Kokoro",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/The_Scenery Emerging Behind My Eyelids"
+    "url": "https://magireco.fandom.com/wiki/The_Scenery_Emerging_Behind_My_Eyelids"
   },
   {
     "id": "1136",
@@ -2358,7 +2613,7 @@ export const memoria_collection = [
     "effect1": "Defense Up [II / 15%]",
     "effect2": "Defense Up [III / 22.5%]",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/An_Ordinary Day"
+    "url": "https://magireco.fandom.com/wiki/An_Ordinary_Day"
   },
   {
     "id": "1137",
@@ -2375,6 +2630,8 @@ export const memoria_collection = [
     "max_def": "1430",
     "effect1": "Magia Damage Up [VII / 20%] (Self / 1 Turn)",
     "effect2": "Magia Damage Up [VIII / 22.5%] (Self / 1 Turn)",
+    "cooldown1": "5",
+    "cooldown2": "4",
     "obtainability": "limited",
     "url": "https://magireco.fandom.com/wiki/Unexpected_Reaction"
   },
@@ -2394,7 +2651,7 @@ export const memoria_collection = [
     "effect1": "Attack Up While At Max Health [IV / 20%]",
     "effect2": "Attack Up While At Max Health [V / 25%]",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/A_Pleasant Imbalance"
+    "url": "https://magireco.fandom.com/wiki/A_Pleasant_Imbalance"
   },
   {
     "id": "1139",
@@ -2411,9 +2668,11 @@ export const memoria_collection = [
     "max_def": "1155",
     "effect1": "Damage Down [IX / 45%] (One / 1 Turn)",
     "effect2": "Damage Down [X / 50%] (One / 1 Turn)",
+    "cooldown1": "6",
+    "cooldown2": "5",
     "chara": "Kazumi",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Grandma's_Strawberry Risotto"
+    "url": "https://magireco.fandom.com/wiki/Grandma's_Strawberry_Risotto"
   },
   {
     "id": "1140",
@@ -2430,8 +2689,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Damage Increase [II / 10%]",
     "effect2": "Damage Increase [III / 15%]",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/The_Transfer Student Is a Returnee!"
+    "url": "https://magireco.fandom.com/wiki/The_Transfer_Student_Is_a_Returnee!"
   },
   {
     "id": "1141",
@@ -2448,9 +2708,11 @@ export const memoria_collection = [
     "max_def": "1055",
     "effect1": "Defense Down [IX / 45%] & Status Ailment Resistance Down [VIII / 22.5%] (One / 1 Turn)",
     "effect2": "Defense Down [X / 50%] & Status Ailment Resistance Down [IX / 25%] (One / 1 Turn)",
+    "cooldown1": "6",
+    "cooldown2": "5",
     "chara": "Misaki Umika",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Seven_Stars in the Moonlit Sky"
+    "url": "https://magireco.fandom.com/wiki/Seven_Stars_in_the_Moonlit_Sky"
   },
   {
     "id": "1142",
@@ -2467,6 +2729,9 @@ export const memoria_collection = [
     "max_def": "907",
     "effect1": "Accele MP Gain Up [V / 20%] (Self / 1 Turn)",
     "effect2": "Accele MP Gain Up [VI / 22.5%] (Self / 1 Turn)",
+    "cooldown1": "6",
+    "cooldown2": "5",
+    "chara": "",
     "obtainability": "limited",
     "url": "https://magireco.fandom.com/wiki/Refreshing_Shopping"
   },
@@ -2485,9 +2750,11 @@ export const memoria_collection = [
     "max_def": "1255",
     "effect1": "Attack Up [VI / 30%] (Self / 1 Turn)",
     "effect2": "Attack Up [VII / 35%] (Self / 1 Turn)",
+    "cooldown1": "6",
+    "cooldown2": "5",
     "chara": "Maki Kaoru",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Wound_of the Body and Wound of the Heart"
+    "url": "https://magireco.fandom.com/wiki/Wound_of_the_Body_and_Wound_of_the_Heart"
   },
   {
     "id": "1144",
@@ -2505,7 +2772,7 @@ export const memoria_collection = [
     "effect1": "Damage Increase [V / 25%] & Regenerate HP [III / 4%]",
     "effect2": "Damage Increase [VI / 30%] & Regenerate HP [IV / 5%]",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Walking_an Entwined Path"
+    "url": "https://magireco.fandom.com/wiki/Walking_an_Entwined_Path"
   },
   {
     "id": "1145",
@@ -2521,9 +2788,9 @@ export const memoria_collection = [
     "max_atk": "1432",
     "max_def": "0",
     "effect1": "MP Gain Up [III / 10%] & MP Up When Attacked By Weak Element [I / 2]",
-    "effect2": "MP Gain Up [IV / 12.5%] & MP Up When Attacked By Weak Element [II / 3]\n\n}}",
+    "effect2": "MP Gain Up [IV / 12.5%] & MP Up When Attacked By Weak Element [II / 3]",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Is_It Such a Dramatic Taste!?"
+    "url": "https://magireco.fandom.com/wiki/Is_It_Such_a_Dramatic_Taste!?"
   },
   {
     "id": "1146",
@@ -2540,8 +2807,10 @@ export const memoria_collection = [
     "max_def": "2207",
     "effect1": "Magia Damage Up [IX / 25%] (Self / 1 Turn)",
     "effect2": "Magia Damage Up [X / 27.5%] (Self / 1 Turn)",
+    "cooldown1": "6",
+    "cooldown2": "5",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/The_Three of Us, Forward"
+    "url": "https://magireco.fandom.com/wiki/The_Three_of_Us,_Forward"
   },
   {
     "id": "1147",
@@ -2553,7 +2822,7 @@ export const memoria_collection = [
     "max_hp": "0",
     "max_atk": "0",
     "max_def": "0",
-    "effect2": "Attack Up [I / 5%]\n}}",
+    "effect2": "Attack Up [I / 5%]",
     "obtainability": "limited",
     "url": "https://magireco.fandom.com/wiki/Memoria_Circuit"
   },
@@ -2571,8 +2840,9 @@ export const memoria_collection = [
     "max_atk": "0",
     "max_def": "0",
     "effect2": "Defense Up [I / 7.5%]",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Memoria_Circuit - Core"
+    "url": "https://magireco.fandom.com/wiki/Memoria_Circuit_-_Core"
   },
   {
     "id": "1149",
@@ -2589,6 +2859,8 @@ export const memoria_collection = [
     "max_def": "1157",
     "effect1": "Monopolize Draw",
     "effect2": "Monopolize Draw",
+    "cooldown1": "5",
+    "cooldown2": "4",
     "chara": "Amane Tsukuyo",
     "obtainability": "unlimited",
     "url": "https://magireco.fandom.com/wiki/Tsukuyo's_Treasure"
@@ -2608,6 +2880,8 @@ export const memoria_collection = [
     "max_def": "1207",
     "effect1": "MP Gain Up [IX / 25%] (Self / 1 Turn)",
     "effect2": "MP Gain Up [X / 27.5%] (Self / 1 Turn)",
+    "cooldown1": "8",
+    "cooldown2": "6",
     "chara": "Amane Tsukasa",
     "obtainability": "unlimited",
     "url": "https://magireco.fandom.com/wiki/Tsukasa's_Treasure"
@@ -2627,6 +2901,8 @@ export const memoria_collection = [
     "max_def": "2202",
     "effect1": "Chance to Provoke [100%] & Defense Up [VIII / 60%] (Self / 1 Turn)",
     "effect2": "Chance to Provoke [100%] & Defense Up [IX / 67.5%] (Self / 1 Turn)",
+    "cooldown1": "6",
+    "cooldown2": "5",
     "obtainability": "unlimited",
     "url": "https://magireco.fandom.com/wiki/Never-Ending_Practice"
   },
@@ -2644,8 +2920,9 @@ export const memoria_collection = [
     "max_atk": "1000",
     "max_def": "0",
     "effect2": "MP Gauge Increased On Battle Start [10% full]",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/The_Story That Starts Here"
+    "url": "https://magireco.fandom.com/wiki/The_Story_That_Starts_Here"
   },
   {
     "id": "1153",
@@ -2662,9 +2939,11 @@ export const memoria_collection = [
     "max_def": "1220",
     "effect1": "Chance to Burn [VIII / 47.5%] (All / 1 Turn)",
     "effect2": "Chance to Burn [X / 52.5%] (All / 1 Turn)",
+    "cooldown1": "7",
+    "cooldown2": "6",
     "chara": "Holy Mami",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Magical_Girl VS Series%3F"
+    "url": "https://magireco.fandom.com/wiki/Magical_Girl_VS_Series%3F"
   },
   {
     "id": "1154",
@@ -2699,8 +2978,10 @@ export const memoria_collection = [
     "max_def": "1805",
     "effect1": "Attack Up [VII / 35%] & Charged Attack Damage Up [VI / 17.5%] (Self / 1 Turn)",
     "effect2": "Attack Up [VIII / 40%] & Charged Attack Damage Up [VII / 20%] (Self / 1 Turn)",
+    "cooldown1": "6",
+    "cooldown2": "5",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Descent_of a Saint"
+    "url": "https://magireco.fandom.com/wiki/Descent_of_a_Saint"
   },
   {
     "id": "1156",
@@ -2716,7 +2997,7 @@ export const memoria_collection = [
     "max_atk": "2002",
     "max_def": "0",
     "effect1": "Charged Attack Damage Up [IV / 12.5%] & Blast Damage Up [II / 20%]",
-    "effect2": "Charged Attack Damage Up [V / 15%] & Blast Damage Up [III / 25%]\n}}",
+    "effect2": "Charged Attack Damage Up [V / 15%] & Blast Damage Up [III / 25%]",
     "obtainability": "limited",
     "url": "https://magireco.fandom.com/wiki/Warm_Christmas"
   },
@@ -2734,8 +3015,9 @@ export const memoria_collection = [
     "max_atk": "1000",
     "max_def": "0",
     "effect2": "Episode Experience Gain Increased [II / 20%]",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Everyone_Has Gathered"
+    "url": "https://magireco.fandom.com/wiki/Everyone_Has_Gathered"
   },
   {
     "id": "1159",
@@ -2752,6 +3034,8 @@ export const memoria_collection = [
     "max_def": "1270",
     "effect1": "Endure & Regenerate HP [I / 2%] (Self / 3 Turns)",
     "effect2": "Endure & Regenerate HP [II / 3%] (Self / 3 Turns)",
+    "cooldown1": "8",
+    "cooldown2": "7",
     "chara": "Kaname Madoka (Haregi ver.)",
     "obtainability": "unlimited",
     "url": "https://magireco.fandom.com/wiki/Hanetsuki_Game"
@@ -2771,8 +3055,11 @@ export const memoria_collection = [
     "max_def": "1905",
     "effect1": "Attack Down [IX / 45%] & Damage Down [VIII / 40%] (One / 1 Turn)",
     "effect2": "Attack Down [X / 50%] & Damage Down [IX / 45%] (One / 1 Turn)",
+    "cooldown1": "9",
+    "cooldown2": "8",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/For_This Fine Day"
+    "url": "https://magireco.fandom.com/wiki/For_This_Fine_Day"
   },
   {
     "id": "1161",
@@ -2790,7 +3077,7 @@ export const memoria_collection = [
     "effect1": "Chance to Dazzle on Attack [II / 15%] (1 Turn) & Damage Up [IV / 20%]",
     "effect2": "Chance to Dazzle on Attack [III / 20%]  (1 Turn) & Damage Up [V / 25%]",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/About_to Leave in Haregi"
+    "url": "https://magireco.fandom.com/wiki/About_to_Leave_in_Haregi"
   },
   {
     "id": "1162",
@@ -2825,7 +3112,7 @@ export const memoria_collection = [
     "max_def": "0",
     "effect2": "Anti-Stun [100%]",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/How_Will Our Luck Be This Year%3F"
+    "url": "https://magireco.fandom.com/wiki/How_Will_Our_Luck_Be_This_Year%3F"
   },
   {
     "id": "1164",
@@ -2842,8 +3129,11 @@ export const memoria_collection = [
     "max_def": "1355",
     "effect1": "Chance to Anti-Evade [100%] & Blast Damage Up [VI / 40%] (Self / 1 Turn)",
     "effect2": "Chance to Anti-Evade [100%] & Blast Damage Up [VII / 45%] (Self / 1 Turn)",
+    "cooldown1": "6",
+    "cooldown2": "5",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Twin_Shadows Sneaking Up"
+    "url": "https://magireco.fandom.com/wiki/Twin_Shadows_Sneaking_Up"
   },
   {
     "id": "1165",
@@ -2860,6 +3150,8 @@ export const memoria_collection = [
     "max_def": "1072",
     "effect1": "Monopolize Draw",
     "effect2": "Monopolize Draw",
+    "cooldown1": "7",
+    "cooldown2": "6",
     "chara": "Miki Sayaka",
     "obtainability": "unlimited",
     "url": "https://magireco.fandom.com/wiki/Sentimental_Melody"
@@ -2879,8 +3171,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Magia Damage Up [II / 7.5%]",
     "effect2": "Magia Damage Up [III / 10%]",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/A_Duo's Battlefront"
+    "url": "https://magireco.fandom.com/wiki/A_Duo's_Battlefront"
   },
   {
     "id": "1167",
@@ -2897,8 +3190,11 @@ export const memoria_collection = [
     "max_def": "2005",
     "effect1": "Regenerate HP [III / 4%] (Self / 3 Turns) & Damage Cut [III / 15%]",
     "effect2": "Regenerate HP [IV / 5%] (Self / 3 Turns) & Damage Cut [IV / 20%]",
+    "cooldown1": "6",
+    "cooldown2": "5",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/For_My Treasured Ones"
+    "url": "https://magireco.fandom.com/wiki/For_My_Treasured_Ones"
   },
   {
     "id": "1168",
@@ -2915,8 +3211,11 @@ export const memoria_collection = [
     "max_def": "1807",
     "effect1": "Damage Increase [V / 25%] & Damage Up Versus Enemies Affected With Status Ailments [V / 35%] (Self / 1 Turn)",
     "effect2": "Damage Increase [VI / 30%] & Damage Up Versus Enemies Affected With Status Ailments [VI / 40%] (Self / 1 Turn)",
+    "cooldown1": "9",
+    "cooldown2": "8",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Deliver_Your Wish!"
+    "url": "https://magireco.fandom.com/wiki/Deliver_Your_Wish!"
   },
   {
     "id": "1169",
@@ -2933,8 +3232,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Defense Up [II / 15%] & Defense Up When At Critical Health [III / 40%]",
     "effect2": "Defense Up [III / 22.5%] & Defense Up When At Critical Health [IV / 50%]",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/First_Handmade Chocolate"
+    "url": "https://magireco.fandom.com/wiki/First_Handmade_Chocolate"
   },
   {
     "id": "1170",
@@ -2951,9 +3251,11 @@ export const memoria_collection = [
     "max_def": "1158",
     "effect1": "Chance to Guardian [100%] (Self / 1 Turn)",
     "effect2": "Chance to Guardian [100%] (Self / 1 Turn)",
+    "cooldown1": "8",
+    "cooldown2": "7",
     "chara": "Tart",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Épée_de Clovis"
+    "url": "https://magireco.fandom.com/wiki/Épée_de_Clovis"
   },
   {
     "id": "1171",
@@ -2970,8 +3272,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Attack Up [II / 10%]",
     "effect2": "Attack Up [III / 15%]",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Determination_of a Maiden"
+    "url": "https://magireco.fandom.com/wiki/Determination_of_a_Maiden"
   },
   {
     "id": "1172",
@@ -2988,6 +3291,8 @@ export const memoria_collection = [
     "max_def": "1107",
     "effect1": "Chance to Anti-Evade [100%] (Self / 1 Turn) & Accele MP Gain Up [VIII / 27.5%]",
     "effect2": "Chance to Anti-Evade [100%] (Self / 1 Turn) & Accele MP Gain Up [IX / 30%]",
+    "cooldown1": "6",
+    "cooldown2": "5",
     "chara": "Riz Hawkwood",
     "obtainability": "unlimited",
     "url": "https://magireco.fandom.com/wiki/Two_Oaths"
@@ -3007,8 +3312,11 @@ export const memoria_collection = [
     "max_def": "905",
     "effect1": "Chance to Anti-Evade [100%] (Self / 1 Turn) & Chance to Anti-Counter [100%]",
     "effect2": "Chance to Anti-Evade [100%] (Self / 1 Turn) & Chance to Anti-Counter [100%]",
+    "cooldown1": "9",
+    "cooldown2": "8",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Adjoined_Shadow and Light"
+    "url": "https://magireco.fandom.com/wiki/Adjoined_Shadow_and_Light"
   },
   {
     "id": "1174",
@@ -3024,9 +3332,10 @@ export const memoria_collection = [
     "max_atk": "1580",
     "max_def": "0",
     "effect1": "MP Up When Attacked By Weak Element [II / 3]",
-    "effect2": "MP Up When Attacked By Weak Element [III / 4]\n}}",
+    "effect2": "MP Up When Attacked By Weak Element [III / 4]",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Angel's_War Flag"
+    "url": "https://magireco.fandom.com/wiki/Angel's_War_Flag"
   },
   {
     "id": "1175",
@@ -3045,7 +3354,7 @@ export const memoria_collection = [
     "effect2": "MP Gain Up [V / 15%] & Magia Damage Up [IX / 25%]",
     "chara": "Melissa de Vignolles",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Hope_and Despair"
+    "url": "https://magireco.fandom.com/wiki/Hope_and_Despair"
   },
   {
     "id": "1176",
@@ -3062,8 +3371,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Charged Attack Damage Up [IV / 12.5%] & Accele MP Gain Up [IV / 17.5%]",
     "effect2": "Charged Attack Damage Up [V / 15%] & Accele MP Gain Up [V / 20%]",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/The_Third Magical Girl"
+    "url": "https://magireco.fandom.com/wiki/The_Third_Magical_Girl"
   },
   {
     "id": "1177",
@@ -3080,8 +3390,11 @@ export const memoria_collection = [
     "max_def": "2007",
     "effect1": "Attack Up [IX / 45%] & Chance to Defense Pierce [VIII / 45%] (Self / 1 Turn)",
     "effect2": "Attack Up [X / 50%] & Chance to Defense Pierce [IX / 50%] (Self / 1 Turn)",
+    "cooldown1": "9",
+    "cooldown2": "8",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Reinforcements_That Transcend Time"
+    "url": "https://magireco.fandom.com/wiki/Reinforcements_That_Transcend_Time"
   },
   {
     "id": "1178",
@@ -3098,9 +3411,11 @@ export const memoria_collection = [
     "max_def": "1258",
     "effect1": "Monopolize Draw",
     "effect2": "Monopolize Draw",
+    "cooldown1": "15",
+    "cooldown2": "13",
     "chara": "Alina Gray",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Last_Work: Alina's Kusouzu"
+    "url": "https://magireco.fandom.com/wiki/Last_Work:_Alina's_Kusouzu"
   },
   {
     "id": "1179",
@@ -3117,8 +3432,11 @@ export const memoria_collection = [
     "max_def": "1580",
     "effect1": "Chance to Anti-Evade [100%] (Self / 3 Turns)",
     "effect2": "Chance to Anti-Evade [100%] (Self / 3 Turns)",
+    "cooldown1": "6",
+    "cooldown2": "5",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/A_Fine Day to Cool Down"
+    "url": "https://magireco.fandom.com/wiki/A_Fine_Day_to_Cool_Down"
   },
   {
     "id": "1180",
@@ -3135,8 +3453,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Anti-Poison [100%] & Damage Up Versus Enemies Affected With Status Ailments [IV / 32.5% ]",
     "effect2": "Anti-Poison [100%] & Damage Up Versus Enemies Affected With Status Ailments [V/ 35% ]",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Stance_on Art"
+    "url": "https://magireco.fandom.com/wiki/Stance_on_Art"
   },
   {
     "id": "1181",
@@ -3153,8 +3472,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "",
     "effect2": "CC Gain Up [II / 10%] (Does Not Work on Supports)",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Smile_to Everyone!"
+    "url": "https://magireco.fandom.com/wiki/Smile_to_Everyone!"
   },
   {
     "id": "1182",
@@ -3171,6 +3491,8 @@ export const memoria_collection = [
     "max_def": "1000",
     "effect1": "",
     "effect2": "HP Restore [III / 35%] (Self)",
+    "cooldown2": "7",
+    "chara": "",
     "obtainability": "limited",
     "url": "https://magireco.fandom.com/wiki/Welcome_Back!"
   },
@@ -3189,6 +3511,8 @@ export const memoria_collection = [
     "max_def": "1123",
     "effect1": "MP Gain Up [IX / 25%] (Self / 1 Turn)",
     "effect2": "MP Gain Up [X / 27.5%] (Self / 1 Turn)",
+    "cooldown1": "7",
+    "cooldown2": "6",
     "chara": "Ibuki Reira",
     "obtainability": "unlimited",
     "url": "https://magireco.fandom.com/wiki/Reira's_Key"
@@ -3208,9 +3532,11 @@ export const memoria_collection = [
     "max_def": "1173",
     "effect1": "Attribute Draw",
     "effect2": "Attribute Draw",
+    "cooldown1": "8",
+    "cooldown2": "7",
     "chara": "Kumi Seika",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/The_Secret Nekketsu Collection"
+    "url": "https://magireco.fandom.com/wiki/The_Secret_Nekketsu_Collection"
   },
   {
     "id": "1185",
@@ -3227,9 +3553,11 @@ export const memoria_collection = [
     "max_def": "1223",
     "effect1": "Chance to Chase [100%] (Self / 1 Turn)",
     "effect2": "Chance to Chase [100%] (Self / 1 Turn) & Magia Damage Up [IX / 25%]",
+    "cooldown1": "7",
+    "cooldown2": "6",
     "chara": "Aino Mito",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Dream_World Sketch"
+    "url": "https://magireco.fandom.com/wiki/Dream_World_Sketch"
   },
   {
     "id": "1186",
@@ -3246,8 +3574,11 @@ export const memoria_collection = [
     "max_def": "1655",
     "effect1": "Chance to Darkness [100%] & Attack Down [VI / 30%] (One / 1 Turn)",
     "effect2": "Chance to Darkness [100%] & Attack Down [VII / 35%] (One / 1 Turn)",
+    "cooldown1": "7",
+    "cooldown2": "6",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/The_Way Home after the Rain (Reira)"
+    "url": "https://magireco.fandom.com/wiki/The_Way_Home_after_the_Rain_(Reira)"
   },
   {
     "id": "1187",
@@ -3264,8 +3595,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Anti-Curse [85%] & Attack Up [I / 5%]",
     "effect2": "Anti-Curse [100%] & Attack Up [II / 10%]",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/The_Way Home after the Rain (Seika)"
+    "url": "https://magireco.fandom.com/wiki/The_Way_Home_after_the_Rain_(Seika)"
   },
   {
     "id": "1188",
@@ -3282,8 +3614,11 @@ export const memoria_collection = [
     "max_def": "2205",
     "effect1": "Attack Down [IX / 45%] & Defense Down [VIII / 40%] (All / 1 Turn)",
     "effect2": "Attack Down [X / 50%] & Defense Down [IX / 45%] (All / 1 Turn)",
+    "cooldown1": "6",
+    "cooldown2": "5",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/The_Way Home after the Rain (Mito)"
+    "url": "https://magireco.fandom.com/wiki/The_Way_Home_after_the_Rain_(Mito)"
   },
   {
     "id": "1189",
@@ -3300,8 +3635,11 @@ export const memoria_collection = [
     "max_def": "1357",
     "effect1": "Chance to Critical Hit [IV / 25%] (Self / 1 Turn)",
     "effect2": "Chance to Critical Hit [V / 30%] (Self / 1 Turn)",
+    "cooldown1": "6",
+    "cooldown2": "5",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Hello_from Atop the Stairs"
+    "url": "https://magireco.fandom.com/wiki/Hello_from_Atop_the_Stairs"
   },
   {
     "id": "1190",
@@ -3318,8 +3656,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Chance to Guardian [II / 15%] & Defense Up [III / 22.5%]",
     "effect2": "Chance to Guardian [III / 20%] & Defense Up [IV / 30%]",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/The_Sunlight That Shines Into the Complex"
+    "url": "https://magireco.fandom.com/wiki/The_Sunlight_That_Shines_Into_the_Complex"
   },
   {
     "id": "1191",
@@ -3336,9 +3675,11 @@ export const memoria_collection = [
     "max_def": "1272",
     "effect1": "Chance to Charm [100%] (One / 1 Turn)",
     "effect2": "Chance to Charm [100%] (One / 1 Turn)",
+    "cooldown1": "8",
+    "cooldown2": "7",
     "chara": "Kozue Mayu",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/A_Dream to be an Art Conservator"
+    "url": "https://magireco.fandom.com/wiki/A_Dream_to_be_an_Art_Conservator"
   },
   {
     "id": "1192",
@@ -3355,8 +3696,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Regenerate HP [IV / 5%] & Magia Damage Up [III / 10%]",
     "effect2": "Regenerate HP [V / 6%] & Magia Damage Up [IV / 12.5%]",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/I_Can Make a Serious Face Too, You Know%3F"
+    "url": "https://magireco.fandom.com/wiki/I_Can_Make_a_Serious_Face_Too,_You_Know%3F"
   },
   {
     "id": "1193",
@@ -3373,8 +3715,11 @@ export const memoria_collection = [
     "max_def": "1582",
     "effect1": "Accele MP Gain Up [IV / 17.5%] & Magia Damage Up [III / 10%] (Self / 3 Turns)",
     "effect2": "Accele MP Gain Up [V / 20%] & Magia Damage Up [IV / 12.5%] (Self / 3 Turns)",
+    "cooldown1": "7",
+    "cooldown2": "6",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Part-timing_at the Art Gallery"
+    "url": "https://magireco.fandom.com/wiki/Part-timing_at_the_Art_Gallery"
   },
   {
     "id": "1194",
@@ -3390,7 +3735,7 @@ export const memoria_collection = [
     "max_atk": "1117",
     "max_def": "0",
     "effect1": "CC Gain Up [I / 5%] (Does Not Work on Supports)",
-    "effect2": "CC Gain Up [II / 10%] (Does Not Work on Supports)\n}}",
+    "effect2": "CC Gain Up [II / 10%] (Does Not Work on Supports)",
     "chara": "Mao Himika",
     "obtainability": "unlimited",
     "url": "https://magireco.fandom.com/wiki/Happy_Sounds"
@@ -3409,9 +3754,10 @@ export const memoria_collection = [
     "max_atk": "1440",
     "max_def": "0",
     "effect1": "Defense Up [III / 22.5%] & Status Ailment Resistance Up [II / 25%]",
-    "effect2": "Defense Up [IV / 30%] & Status Ailment Resistance Up [III / 30%]\n}}",
+    "effect2": "Defense Up [IV / 30%] & Status Ailment Resistance Up [III / 30%]",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/The_Mao Family Is Lively Today As Well"
+    "url": "https://magireco.fandom.com/wiki/The_Mao_Family_Is_Lively_Today_As_Well"
   },
   {
     "id": "1196",
@@ -3427,7 +3773,8 @@ export const memoria_collection = [
     "max_atk": "1810",
     "max_def": "0",
     "effect1": "Chance to Critical Hit [III / 20%] & Charged Attack Damage Up [III / 10%]",
-    "effect2": "Chance to Critical Hit [IV / 25%] & Charged Attack Damage Up [IV / 12.5%]\n}}",
+    "effect2": "Chance to Critical Hit [IV / 25%] & Charged Attack Damage Up [IV / 12.5%]",
+    "chara": "",
     "obtainability": "unlimited",
     "url": "https://magireco.fandom.com/wiki/Starlight_Power!"
   },
@@ -3446,8 +3793,11 @@ export const memoria_collection = [
     "max_def": "1360",
     "effect1": "Chance to Dazzle [8 / 8%] (One / 1 Turn)",
     "effect2": "Chance to Dazzle [88 / 16%] (One / 1 Turn)",
+    "cooldown1": "7",
+    "cooldown2": "6",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/‘Tis_I, the Third Amane Sister, Tsukune"
+    "url": "https://magireco.fandom.com/wiki/‘Tis_I,_the_Third_Amane_Sister,_Tsukune"
   },
   {
     "id": "1198",
@@ -3463,10 +3813,10 @@ export const memoria_collection = [
     "max_atk": "1015",
     "max_def": "0",
     "effect1": "MP Gauge Increased On Battle Start [15% full]",
-    "effect2": "MP Gauge Increased On Battle Start [15% full]\n}}",
+    "effect2": "MP Gauge Increased On Battle Start [15% full]",
     "chara": "Yakumo Mitama",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Evidence_of Darkness"
+    "url": "https://magireco.fandom.com/wiki/Evidence_of_Darkness"
   },
   {
     "id": "1199",
@@ -3483,8 +3833,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Chance to Charm on Attack [I / 10%] (1 Turn)",
     "effect2": "Chance to Charm on Attack [II / 15%] (1 Turn)",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/The_Destination of Shizuku's Travel Is!?"
+    "url": "https://magireco.fandom.com/wiki/The_Destination_of_Shizuku's_Travel_Is!?"
   },
   {
     "id": "1200",
@@ -3501,8 +3852,11 @@ export const memoria_collection = [
     "max_def": "1915",
     "effect1": "Blast Damage Down [IX / 25%] (One / 3 Turns)",
     "effect2": "Blast Damage Down [X / 27.5%] (One / 3 Turns)",
+    "cooldown1": "6",
+    "cooldown2": "5",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/The_Natural Me is..."
+    "url": "https://magireco.fandom.com/wiki/The_Natural_Me_is..."
   },
   {
     "id": "1201",
@@ -3521,7 +3875,7 @@ export const memoria_collection = [
     "effect2": "Anti-Charm [100%] & Anti-Dazzle [100%]",
     "chara": "Ami Ria",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Broken,_Yet Beautiful"
+    "url": "https://magireco.fandom.com/wiki/Broken,_Yet_Beautiful"
   },
   {
     "id": "1202",
@@ -3538,8 +3892,11 @@ export const memoria_collection = [
     "max_def": "1657",
     "effect1": "Chance to Charm [III / 35%] (All / 1 Turn)",
     "effect2": "Chance to Charm [IV / 37.5%] (All / 1 Turn)",
+    "cooldown1": "7",
+    "cooldown2": "5",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/All_Eyes on Me"
+    "url": "https://magireco.fandom.com/wiki/All_Eyes_on_Me"
   },
   {
     "id": "1203",
@@ -3556,8 +3913,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Chance to Counter [IV / 25%] & Chance to Provoke [V / 30%]",
     "effect2": "Chance to Counter [V / 30%] & Chance to Provoke [VI / 35%]",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Assistant_Instructor of the Ryuushin Style"
+    "url": "https://magireco.fandom.com/wiki/Assistant_Instructor_of_the_Ryuushin_Style"
   },
   {
     "id": "1204",
@@ -3574,6 +3932,8 @@ export const memoria_collection = [
     "max_def": "1268",
     "effect1": "Chance to Critical Hit [100%] (Self / 1 Turn)",
     "effect2": "Chance to Critical Hit [100%] (Self / 1 Turn)",
+    "cooldown1": "6",
+    "cooldown2": "5",
     "chara": "Amano Suzune",
     "obtainability": "unlimited",
     "url": "https://magireco.fandom.com/wiki/Lucky_Charm"
@@ -3593,9 +3953,11 @@ export const memoria_collection = [
     "max_def": "1102",
     "effect1": "Attack Up [IV / 20%] & Defense Up [III / 22.5%] (Self / 3 Turns)",
     "effect2": "Attack Up [V / 25%] & Defense Up [IV / 30%] (Self / 3 Turns)",
+    "cooldown1": "6",
+    "cooldown2": "5",
     "chara": "Narumi Arisa",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Wishing_for Power to Not Lose"
+    "url": "https://magireco.fandom.com/wiki/Wishing_for_Power_to_Not_Lose"
   },
   {
     "id": "1206",
@@ -3614,7 +3976,7 @@ export const memoria_collection = [
     "effect2": "Chance to Skill Seal on Attack [VI / 35%] (1 Turn)",
     "chara": "Shion Chisato",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/The_Witch, the Wolf, and the Villager"
+    "url": "https://magireco.fandom.com/wiki/The_Witch,_the_Wolf,_and_the_Villager"
   },
   {
     "id": "1207",
@@ -3628,8 +3990,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "",
     "effect2": "Anti-Bind [100%] & Anti-Stun [100%]",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/The_Hand Arisa Held"
+    "url": "https://magireco.fandom.com/wiki/The_Hand_Arisa_Held"
   },
   {
     "id": "1208",
@@ -3646,8 +4009,11 @@ export const memoria_collection = [
     "max_def": "1432",
     "effect1": "Chance to Anti-Counter [100%] & Attack Up [V / 25%] (Self / 3 Turns)",
     "effect2": "Chance to Anti-Counter [100%] & Attack Up [VI / 30%] (Self / 3 Turns)",
+    "cooldown1": "8",
+    "cooldown2": "7",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/The_Hand Chisato Held"
+    "url": "https://magireco.fandom.com/wiki/The_Hand_Chisato_Held"
   },
   {
     "id": "1209",
@@ -3664,8 +4030,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Attack Up [III / 15%] & Attack Up While At Max Health [IV / 20%]",
     "effect2": "Attack Up [IV / 20%] & Attack Up While At Max Health [V / 25%]",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/The_Sword Which Strikes in the Space Between Light and Dark"
+    "url": "https://magireco.fandom.com/wiki/The_Sword_Which_Strikes_in_the_Space_Between_Light_and_Dark"
   },
   {
     "id": "1210",
@@ -3682,8 +4049,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Charged Attack Damage Up [II / 7.5%]",
     "effect2": "Charged Attack Damage Up [III / 10%]",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/In_the End..."
+    "url": "https://magireco.fandom.com/wiki/In_the_End..."
   },
   {
     "id": "1212",
@@ -3700,6 +4068,8 @@ export const memoria_collection = [
     "max_def": "1275",
     "effect1": "Status Ailment Resistance Down [II / 7.5%] (All / 1 Turn)",
     "effect2": "Status Ailment Resistance Down [III / 10%] (All / 1 Turn)",
+    "cooldown1": "6",
+    "cooldown2": "5",
     "chara": "Anna Meru",
     "obtainability": "unlimited",
     "url": "https://magireco.fandom.com/wiki/Divination_Ban"
@@ -3719,9 +4089,11 @@ export const memoria_collection = [
     "max_def": "1075",
     "effect1": "Remove Debuffs & Remove Status Ailments (Self)",
     "effect2": "Remove Debuffs & Remove Status Ailments (Self)",
+    "cooldown1": "4",
+    "cooldown2": "2",
     "chara": "Yukino Kanae",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/A_Thing That Talks in Place of Me"
+    "url": "https://magireco.fandom.com/wiki/A_Thing_That_Talks_in_Place_of_Me"
   },
   {
     "id": "1214",
@@ -3737,8 +4109,10 @@ export const memoria_collection = [
     "max_atk": "0",
     "max_def": "2195",
     "effect2": "Magia Damage Down [X / 50%] (One / 1 Turn)",
+    "cooldown2": "6",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Morning_Is the Moment of Destiny"
+    "url": "https://magireco.fandom.com/wiki/Morning_Is_the_Moment_of_Destiny"
   },
   {
     "id": "1215",
@@ -3755,8 +4129,11 @@ export const memoria_collection = [
     "max_def": "1810",
     "effect1": "Status Ailment Resistance Up [V / 40%] (Self / 3 Turns)",
     "effect2": "Status Ailment Resistance Up [VII / 50%] (Self / 3 Turns)",
+    "cooldown1": "6",
+    "cooldown2": "5",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/A_Gentle Breeze"
+    "url": "https://magireco.fandom.com/wiki/A_Gentle_Breeze"
   },
   {
     "id": "1216",
@@ -3773,8 +4150,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Defense Up When At Critical Health [II / 30%] & Defense Up [II / 15%]",
     "effect2": "Defense Up When At Critical Health [III / 40%] & Defense Up [II / 15%]",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Now_the Two of Us Watch Over"
+    "url": "https://magireco.fandom.com/wiki/Now_the_Two_of_Us_Watch_Over"
   },
   {
     "id": "1217",
@@ -3793,7 +4171,7 @@ export const memoria_collection = [
     "effect2": "Accele MP Gain Up [IV / 17.5%] & Magia Damage Up [III / 10%]",
     "chara": "Rumor Tsuruno",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Symbol_of Carefreeness"
+    "url": "https://magireco.fandom.com/wiki/Symbol_of_Carefreeness"
   },
   {
     "id": "1218",
@@ -3810,6 +4188,9 @@ export const memoria_collection = [
     "max_def": "1815",
     "effect1": "Blast Damage Up [V / 35%] & Accele MP Gain Up [V / 20%] (Self / 1 Turn)",
     "effect2": "Blast Damage Up [VI / 40%] & Accele MP Gain Up [VI / 22.5%] (Self / 1 Turn)",
+    "cooldown1": "5",
+    "cooldown2": "4",
+    "chara": "",
     "obtainability": "limited",
     "url": "https://magireco.fandom.com/wiki/Fuuuusion!!"
   },
@@ -3828,8 +4209,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Damage Increase [II / 10%] & Damage Cut [II / 10%]",
     "effect2": "Damage Increase [III / 15%] & Damage Cut [III / 15%]",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Without_Conveying Our Feelings..."
+    "url": "https://magireco.fandom.com/wiki/Without_Conveying_Our_Feelings..."
   },
   {
     "id": "1220",
@@ -3846,9 +4228,11 @@ export const memoria_collection = [
     "max_def": "1252",
     "effect1": "Redraw Discs",
     "effect2": "Redraw Discs",
+    "cooldown1": "8",
+    "cooldown2": "7",
     "chara": "Azusa Mifuyu",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Exchange_of Final Wishes"
+    "url": "https://magireco.fandom.com/wiki/Exchange_of_Final_Wishes"
   },
   {
     "id": "1221",
@@ -3865,8 +4249,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Anti-Skill Seal & Accele MP Gain Up [II / 12.5%]",
     "effect2": "Anti-Skill Seal & Accele MP Gain Up [III / 15%]",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Being_Wrapped In Self-Reproach"
+    "url": "https://magireco.fandom.com/wiki/Being_Wrapped_In_Self-Reproach"
   },
   {
     "id": "1222",
@@ -3883,8 +4268,11 @@ export const memoria_collection = [
     "max_def": "1427",
     "effect1": "Chance to Dazzle [III / 35%] (All / 1 Turn)",
     "effect2": "Chance to Dazzle [IV / 37.5%] (All / 1 Turn)",
+    "cooldown1": "8",
+    "cooldown2": "6",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Reason_For Involvement"
+    "url": "https://magireco.fandom.com/wiki/Reason_For_Involvement"
   },
   {
     "id": "1223",
@@ -3901,8 +4289,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Chance to Chase [II / 4%]",
     "effect2": "Chance to Chase [III / 5%]",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Tension_Between the East and West"
+    "url": "https://magireco.fandom.com/wiki/Tension_Between_the_East_and_West"
   },
   {
     "id": "1224",
@@ -3919,8 +4308,11 @@ export const memoria_collection = [
     "max_def": "2102",
     "effect1": "Chance to Anti-Evade [VI / 50%] (Self / 1 Turn)",
     "effect2": "Chance to Anti-Evade [100%] (Self / 1 Turn)",
+    "cooldown1": "5",
+    "cooldown2": "4",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Reconciliation_Between the East and West"
+    "url": "https://magireco.fandom.com/wiki/Reconciliation_Between_the_East_and_West"
   },
   {
     "id": "1225",
@@ -3933,8 +4325,9 @@ export const memoria_collection = [
     "max_atk": "0",
     "max_def": "0",
     "effect2": "Regenerate HP [II / 3%] & Status Ailment Resistance Up [III / 30%]",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Outing_in Plain Attire"
+    "url": "https://magireco.fandom.com/wiki/Outing_in_Plain_Attire"
   },
   {
     "id": "1226",
@@ -3951,8 +4344,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Chance to Fog on Attack [II / 15%] (3 Turns) & Damage Up [III / 15%]",
     "effect2": "Chance to Fog on Attack [III / 20%] (3 Turns) & Damage Up [IV / 20%]",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Guide_to Release"
+    "url": "https://magireco.fandom.com/wiki/Guide_to_Release"
   },
   {
     "id": "1227",
@@ -3969,8 +4363,11 @@ export const memoria_collection = [
     "max_def": "1435",
     "effect1": "HP Restore [I / 30%] (Self)",
     "effect2": "HP Restore [I / 30%] (Self)",
+    "cooldown1": "10",
+    "cooldown2": "8",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Prayer_for Release"
+    "url": "https://magireco.fandom.com/wiki/Prayer_for_Release"
   },
   {
     "id": "1228",
@@ -3987,9 +4384,11 @@ export const memoria_collection = [
     "max_def": "1117",
     "effect1": "Anti-Evade [100%] (Self / 1 turn) & Anti-Counter [100%]",
     "effect2": "Anti-Evade [100%] (Self / 1 turn) & Anti-Counter [100%]",
+    "cooldown1": "6",
+    "cooldown2": "5",
     "chara": "Izumi Kanagi",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/An_Important Uniform"
+    "url": "https://magireco.fandom.com/wiki/An_Important_Uniform"
   },
   {
     "id": "1229",
@@ -4006,8 +4405,11 @@ export const memoria_collection = [
     "max_def": "2010",
     "effect1": "Accele MP Gain Down [IX / 25%] & Magia Damage Down [VI / 30%] (All / 1 Turn)",
     "effect2": "Accele MP Gain Down [X / 27.5%] & Magia Damage Down [VII / 35%] (All / 1 Turn)",
+    "cooldown1": "6",
+    "cooldown2": "5",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/An_Uncrossable Gap"
+    "url": "https://magireco.fandom.com/wiki/An_Uncrossable_Gap"
   },
   {
     "id": "1230",
@@ -4024,8 +4426,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Accele MP Gain Up [I / 10%]",
     "effect2": "Accele MP Gain Up [II / 12.5%]",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/An_Eccentric Maid"
+    "url": "https://magireco.fandom.com/wiki/An_Eccentric_Maid"
   },
   {
     "id": "1231",
@@ -4042,8 +4445,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Blast Damage Up [II / 20%] & Magia Damage Up [I / 5%]",
     "effect2": "Blast Damage Up [III / 25%] & Magia Damage Up [II / 7.5%]",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Leave_it to Nagi-Tan"
+    "url": "https://magireco.fandom.com/wiki/Leave_it_to_Nagi-Tan"
   },
   {
     "id": "1232",
@@ -4060,8 +4464,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Blast Damage Up [II / 20%] & Charged Attack Damage Up [II / 7.5%] & Accele MP Gain Up [I / 10%]",
     "effect2": "Blast Damage Up [III / 25%] & Charged Attack Damage Up [II / 7.5%] & Accele MP Gain Up [II / 12.5%]",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/I'll_Repeat It No Matter How Many Times It Takes"
+    "url": "https://magireco.fandom.com/wiki/I'll_Repeat_It_No_Matter_How_Many_Times_It_Takes"
   },
   {
     "id": "1233",
@@ -4078,9 +4483,11 @@ export const memoria_collection = [
     "max_def": "1102",
     "effect1": "Monopolize Draw",
     "effect2": "Monopolize Draw",
+    "cooldown1": "10",
+    "cooldown2": "8",
     "chara": "Akemi Homura (Mizugi ver.)",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/After_the Rain"
+    "url": "https://magireco.fandom.com/wiki/After_the_Rain"
   },
   {
     "id": "1234",
@@ -4097,8 +4504,11 @@ export const memoria_collection = [
     "max_def": "1910",
     "effect1": "Remove Debuffs (Self)",
     "effect2": "Remove Debuffs (Self)",
+    "cooldown1": "8",
+    "cooldown2": "6",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/From_Top to Bottom"
+    "url": "https://magireco.fandom.com/wiki/From_Top_to_Bottom"
   },
   {
     "id": "1235",
@@ -4115,8 +4525,11 @@ export const memoria_collection = [
     "max_def": "1357",
     "effect1": "Chance to Charm [I / 30%] & Attack Down [IV / 20%] (All / 1 Turn)",
     "effect2": "Chance to Charm [III / 35%] & Attack Down [V / 25%] (All / 1 Turn)",
+    "cooldown1": "8",
+    "cooldown2": "7",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Changing_into Swimsuits"
+    "url": "https://magireco.fandom.com/wiki/Changing_into_Swimsuits"
   },
   {
     "id": "1236",
@@ -4133,8 +4546,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Anti-Darkness [100%] & Status Ailment Resistance Up [I / 20%]",
     "effect2": "Anti-Darkness [100%] & Status Ailment Resistance Up [III / 30%]",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/A_Sea and Sky for Just the Two of Us"
+    "url": "https://magireco.fandom.com/wiki/A_Sea_and_Sky_for_Just_the_Two_of_Us"
   },
   {
     "id": "1237",
@@ -4150,7 +4564,8 @@ export const memoria_collection = [
     "max_atk": "1347",
     "max_def": "0",
     "effect1": "Attack Up [III / 15%] & Defense Down [V / 25%]",
-    "effect2": "Attack Up [IV / 20%] & Defense Down [V / 25%]\n}}",
+    "effect2": "Attack Up [IV / 20%] & Defense Down [V / 25%]",
+    "chara": "",
     "obtainability": "limited",
     "url": "https://magireco.fandom.com/wiki/Summer_Impact!?"
   },
@@ -4169,9 +4584,11 @@ export const memoria_collection = [
     "max_def": "1057",
     "effect1": "HP Restore [III / 35%] & MP Restore [I / 10 MP] (Self)",
     "effect2": "HP Restore [IV / 37.5%] & MP Restore [I / 10 MP] (Self)",
+    "cooldown1": "9",
+    "cooldown2": "8",
     "chara": "Tamaki Iroha (Mizugi ver.)",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/A_Pleasant Time"
+    "url": "https://magireco.fandom.com/wiki/A_Pleasant_Time"
   },
   {
     "id": "1239",
@@ -4188,8 +4605,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Attack Up [III / 15%] & MP Gain Up [II / 7.5%]",
     "effect2": "Attack Up [IV / 20%] & MP Gain Up [IV / 12.5%]",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Iroha_of the Midsummer Beach"
+    "url": "https://magireco.fandom.com/wiki/Iroha_of_the_Midsummer_Beach"
   },
   {
     "id": "1240",
@@ -4206,8 +4624,11 @@ export const memoria_collection = [
     "max_def": "1585",
     "effect1": "Attack Up [IV / 20%] & Status Ailment Resistance Up [III / 30%] (Self / 3 Turns)",
     "effect2": "Attack Up [V / 25%] & Status Ailment Resistance Up [IV / 35%] (Self / 3 Turns)",
+    "cooldown1": "7",
+    "cooldown2": "6",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Learning_by Imitation...?"
+    "url": "https://magireco.fandom.com/wiki/Learning_by_Imitation...?"
   },
   {
     "id": "1241",
@@ -4224,8 +4645,11 @@ export const memoria_collection = [
     "max_def": "1440",
     "effect1": "Damage Cut [V / 25%] (Self / 1 Turn)",
     "effect2": "Damage Cut [VI / 30%] (Self / 1 Turn)",
+    "cooldown1": "9",
+    "cooldown2": "8",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/The_Treasure Is Here"
+    "url": "https://magireco.fandom.com/wiki/The_Treasure_Is_Here"
   },
   {
     "id": "1243",
@@ -4238,8 +4662,9 @@ export const memoria_collection = [
     "max_atk": "1820",
     "max_def": "0",
     "effect2": "Anti-Curse [100%] & Regenerate HP [I / 2%]",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/A_Short Rest (Madoka, Homura)"
+    "url": "https://magireco.fandom.com/wiki/A_Short_Rest_(Madoka,_Homura)"
   },
   {
     "id": "1244",
@@ -4252,8 +4677,10 @@ export const memoria_collection = [
     "max_atk": "0",
     "max_def": "1817",
     "effect2": "Accele MP Gain Up [VII / 25%] (Self / 1 Turn)",
+    "cooldown2": "5",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/A_Short Rest (Iroha, Yachiyo)"
+    "url": "https://magireco.fandom.com/wiki/A_Short_Rest_(Iroha,_Yachiyo)"
   },
   {
     "id": "1245",
@@ -4270,9 +4697,11 @@ export const memoria_collection = [
     "max_def": "1225",
     "effect1": "Remove Debuffs (Self)",
     "effect2": "Remove Debuffs (Self)",
+    "cooldown1": "8",
+    "cooldown2": "6",
     "chara": "Ultimate Madoka",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/A_Bit of True Hope"
+    "url": "https://magireco.fandom.com/wiki/A_Bit_of_True_Hope"
   },
   {
     "id": "1246",
@@ -4289,8 +4718,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Attack Up [III / 15%] & Chance to Anti-Evade [XI / 75%]",
     "effect2": "Attack Up [IV / 20%] & Chance to Anti-Evade [XIII / 85%]",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Born_Amidst Light"
+    "url": "https://magireco.fandom.com/wiki/Born_Amidst_Light"
   },
   {
     "id": "1247",
@@ -4307,8 +4737,11 @@ export const memoria_collection = [
     "max_def": "2225",
     "effect1": "Defense Down [V / 25%] (One / 1 Turn) & Magia Damage Up [VII / 20%] (Self / 1 Turn)",
     "effect2": "Defense Down [VI / 30%] (One / 1 Turn) & Magia Damage Up [VIII / 22.5%] (Self / 1 Turn)",
+    "cooldown1": "10",
+    "cooldown2": "8",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/The_Light of Hope Without Despair"
+    "url": "https://magireco.fandom.com/wiki/The_Light_of_Hope_Without_Despair"
   },
   {
     "id": "1248",
@@ -4325,6 +4758,9 @@ export const memoria_collection = [
     "max_def": "1450",
     "effect1": "Chance to Guardian on Allies with Critical Health [VIII / 45%] (Self/3 Turns)",
     "effect2": "Chance to Guardian on Allies with Critical Health [X / 55%] (Self/3 Turns)",
+    "cooldown1": "7",
+    "cooldown2": "6",
+    "chara": "",
     "obtainability": "limited",
     "url": "https://magireco.fandom.com/wiki/To_Hope"
   },
@@ -4339,8 +4775,9 @@ export const memoria_collection = [
     "max_atk": "1000",
     "max_def": "0",
     "effect2": "Episode Experience Gain Increased [I / 15%] & CC Gain Up [I / 5%] (Does Not Work on Supports)",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/A_Handful of Warmth"
+    "url": "https://magireco.fandom.com/wiki/A_Handful_of_Warmth"
   },
   {
     "id": "1250",
@@ -4353,8 +4790,10 @@ export const memoria_collection = [
     "max_atk": "0",
     "max_def": "1000",
     "effect2": "Regenerate HP [IV / 5%] & Damage Cut [VIII / 40%] (Self / 1 Turn)",
+    "cooldown2": "5",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/The_Goddess Stares Quietly"
+    "url": "https://magireco.fandom.com/wiki/The_Goddess_Stares_Quietly"
   },
   {
     "id": "1251",
@@ -4367,8 +4806,10 @@ export const memoria_collection = [
     "max_atk": "0",
     "max_def": "1000",
     "effect2": "Attack Up [VI / 30%] & Defense Up [V / 37.5%] (Self / 1 Turn)",
+    "cooldown2": "5",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/One_More Story"
+    "url": "https://magireco.fandom.com/wiki/One_More_Story"
   },
   {
     "id": "1252",
@@ -4385,6 +4826,7 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Defense Up While At Max Health [V / 50%] & Damage Cut [II / 10%]",
     "effect2": "Defense Up While At Max Health [VIII / 80%] & Damage Cut [III / 15%]",
+    "chara": "",
     "obtainability": "limited",
     "url": "https://magireco.fandom.com/wiki/Me_x4"
   },
@@ -4403,8 +4845,11 @@ export const memoria_collection = [
     "max_def": "1425",
     "effect1": "Chance to Poison [X / 52.5%] (One / 3 Turns)",
     "effect2": "Chance to Poison [100%] (One / 3 Turns)",
+    "cooldown1": "5",
+    "cooldown2": "4",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/The_Two Copies"
+    "url": "https://magireco.fandom.com/wiki/The_Two_Copies"
   },
   {
     "id": "1254",
@@ -4421,8 +4866,11 @@ export const memoria_collection = [
     "max_def": "1912",
     "effect1": "Chance to Chase [V / 18%] (Self / 3 Turns) & Defense Down [III / 10%] (All / 3 Turns)",
     "effect2": "Chance to Chase [VII / 21%] (Self / 3 Turns) & Defense Down [IV / 12.5%] (All / 3 Turns)",
+    "cooldown1": "10",
+    "cooldown2": "8",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/To_Continue Living in This World"
+    "url": "https://magireco.fandom.com/wiki/To_Continue_Living_in_This_World"
   },
   {
     "id": "1255",
@@ -4440,7 +4888,7 @@ export const memoria_collection = [
     "effect1": "Defense Up When At Critical Health [II / 30%] & Defense Up [III / 22.5%] & Damage Cut [II / 10%]",
     "effect2": "Defense Up When At Critical Health [III / 40%] & Defense Up [IV / 30%] & Damage Cut [III / 15%]",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/The_Power to Protect Who You Love"
+    "url": "https://magireco.fandom.com/wiki/The_Power_to_Protect_Who_You_Love"
   },
   {
     "id": "1257",
@@ -4457,9 +4905,11 @@ export const memoria_collection = [
     "max_def": "1280",
     "effect1": "Damage Increase [VII / 35%] (Self / 1 Turn)",
     "effect2": "Damage Increase [VIII / 40%] (Self / 1 Turn)",
+    "cooldown1": "6",
+    "cooldown2": "5",
     "chara": "Senjougahara Hitagi",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Lethal_Weapons Known as Stationery"
+    "url": "https://magireco.fandom.com/wiki/Lethal_Weapons_Known_as_Stationery"
   },
   {
     "id": "1258",
@@ -4478,7 +4928,7 @@ export const memoria_collection = [
     "effect2": "Anti-Fog [100%] & Anti-Darkness [100%] & Anti-Charm [100%]",
     "chara": "Sengoku Nadeko",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Hobby,_Cap Collection"
+    "url": "https://magireco.fandom.com/wiki/Hobby,_Cap_Collection"
   },
   {
     "id": "1259",
@@ -4495,8 +4945,11 @@ export const memoria_collection = [
     "max_def": "2108",
     "effect1": "Blast Damage Up [V / 35%] & Damage Up [I / 5%] (Self / 1 Turn)",
     "effect2": "Blast Damage Up [VI / 40%] & Damage Up [IV / 20%] (Self / 1 Turn)",
+    "cooldown1": "7",
+    "cooldown2": "6",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Let_Us, Have a War"
+    "url": "https://magireco.fandom.com/wiki/Let_Us,_Have_a_War"
   },
   {
     "id": "1260",
@@ -4513,8 +4966,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Chance to Bind on Attack [II / 15%] (1 Turn) & Damage Up [IV / 20%]",
     "effect2": "Chance to Bind on Attack [III / 20%] (1 Turn) & Damage Up [V / 25%]",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/I_Won't Forgive You If You Open It"
+    "url": "https://magireco.fandom.com/wiki/I_Won't_Forgive_You_If_You_Open_It"
   },
   {
     "id": "1261",
@@ -4531,8 +4985,11 @@ export const memoria_collection = [
     "max_def": "2125",
     "effect1": "Attack Up [IV / 20%] & Chance to Critical Hit [IV / 25%] & Defense Up [III / 22.5%] (Self / 3 Turns)",
     "effect2": "Attack Up [V / 25%] & Chance to Critical Hit [V / 30%] & Defense Up [IV / 30%] (Self / 3 Turns)",
+    "cooldown1": "9",
+    "cooldown2": "8",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/A_Universe-Colliding Dream Collaboration"
+    "url": "https://magireco.fandom.com/wiki/A_Universe-Colliding_Dream_Collaboration"
   },
   {
     "id": "1262",
@@ -4549,8 +5006,11 @@ export const memoria_collection = [
     "max_def": "1445",
     "effect1": "Accele MP Gain Up [VI / 22.5%] (Self / 3 Turns)",
     "effect2": "Accele MP Gain Up [VII / 25%] (Self / 3 Turns)",
+    "cooldown1": "8",
+    "cooldown2": "7",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Big-League_Middle Schooler"
+    "url": "https://magireco.fandom.com/wiki/Big-League_Middle_Schooler"
   },
   {
     "id": "1263",
@@ -4567,9 +5027,11 @@ export const memoria_collection = [
     "max_def": "1095",
     "effect1": "Monopolize Draw",
     "effect2": "Monopolize Draw",
+    "cooldown1": "5",
+    "cooldown2": "4",
     "chara": "Chiaki Riko",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/The_Lead to the Ideal"
+    "url": "https://magireco.fandom.com/wiki/The_Lead_to_the_Ideal"
   },
   {
     "id": "1264",
@@ -4586,8 +5048,11 @@ export const memoria_collection = [
     "max_def": "1820",
     "effect1": "Redraw Discs",
     "effect2": "Redraw Discs",
+    "cooldown1": "10",
+    "cooldown2": "8",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Garnish_Everything Cutely!"
+    "url": "https://magireco.fandom.com/wiki/Garnish_Everything_Cutely!"
   },
   {
     "id": "1265",
@@ -4604,8 +5069,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Anti-Magia Seal [VII / 55%] (Self)",
     "effect2": "Anti-Magia Seal [100%] (Self)",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Popular_in the Artisan Ward"
+    "url": "https://magireco.fandom.com/wiki/Popular_in_the_Artisan_Ward"
   },
   {
     "id": "1266",
@@ -4622,6 +5088,9 @@ export const memoria_collection = [
     "max_def": "915",
     "effect1": "MP Gain Up [II / 7.5%] (Self / 3 Turns)",
     "effect2": "MP Gain Up [III / 10%] (Self / 3 Turns)",
+    "cooldown1": "8",
+    "cooldown2": "7",
+    "chara": "",
     "obtainability": "unlimited",
     "url": "https://magireco.fandom.com/wiki/Inherited_Bonds"
   },
@@ -4640,8 +5109,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Attack Up [II / 10%] & Charged Attack Damage Up [II / 7.5%]",
     "effect2": "Attack Up [V / 25%] & Charged Attack Damage Up [V / 15%]",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Kyubey_Knight Breaking Through"
+    "url": "https://magireco.fandom.com/wiki/Kyubey_Knight_Breaking_Through"
   },
   {
     "id": "1268",
@@ -4658,8 +5128,11 @@ export const memoria_collection = [
     "max_def": "1600",
     "effect1": "Attack Down [IV / 20%] (All / 1 Turn)",
     "effect2": "Attack Down [VI / 30%] (All / 1 Turn)",
+    "cooldown1": "7",
+    "cooldown2": "6",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/A_Place of Ease"
+    "url": "https://magireco.fandom.com/wiki/A_Place_of_Ease"
   },
   {
     "id": "1269",
@@ -4678,7 +5151,7 @@ export const memoria_collection = [
     "effect2": "Anti-Bind & Endure & Anti-Burn",
     "chara": "Momoe Nagisa",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/A_Hospital Room Shrouded in Darkness"
+    "url": "https://magireco.fandom.com/wiki/A_Hospital_Room_Shrouded_in_Darkness"
   },
   {
     "id": "1270",
@@ -4695,8 +5168,11 @@ export const memoria_collection = [
     "max_def": "2230",
     "effect1": "Chance to Stun [II / 32.5%] (One / 1 Turn) & Blast Damage Down [VII / 20%] (One / 2 Turns) & Attack Down [III / 15%] (One / 2 Turns)",
     "effect2": "Chance to Stun [IV / 37.5%] (One / 1 Turn) & Blast Damage Down [VIII / 22.5%] (One / 2 Turns) & Attack Down [IV / 20%] (One / 2 Turns)",
+    "cooldown1": "10",
+    "cooldown2": "8",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Nagisa_Will Resolve Things!"
+    "url": "https://magireco.fandom.com/wiki/Nagisa_Will_Resolve_Things!"
   },
   {
     "id": "1271",
@@ -4713,8 +5189,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Regenerate HP [I / 2%] & Damage Up [II / 10%]",
     "effect2": "Regenerate HP [II / 3%] & Damage Up [III / 15%]",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/The_Girl Who Came Back"
+    "url": "https://magireco.fandom.com/wiki/The_Girl_Who_Came_Back"
   },
   {
     "id": "1272",
@@ -4731,8 +5208,11 @@ export const memoria_collection = [
     "max_def": "1525",
     "effect1": "Defense Up [IV / 30%] (Self / 3 Turns) & Status Ailment Resistance Up [III / 30%] (Self / 3 Turns)",
     "effect2": "Defense Up [V / 37.5%] (Self / 3 Turns) & Status Ailment Resistance Up [IV / 35%] (Self / 3 Turns)",
+    "cooldown1": "7",
+    "cooldown2": "6",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Bonds_of Destiny"
+    "url": "https://magireco.fandom.com/wiki/Bonds_of_Destiny"
   },
   {
     "id": "1273",
@@ -4749,8 +5229,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Attack Up [II / 10%] & Attack Up When at Critical Health [I / 10%]",
     "effect2": "Attack Up [III / 15%] & Attack Up When at Critical Health [I / 10%]",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/To_Step Over the Boundary"
+    "url": "https://magireco.fandom.com/wiki/To_Step_Over_the_Boundary"
   },
   {
     "id": "1274",
@@ -4767,8 +5248,11 @@ export const memoria_collection = [
     "max_def": "1887",
     "effect1": "Accele MP Gain Up [III / 15%] (Self / 1 Turn) & Magia Damage Up [III / 10%] (Self / 1 Turn)",
     "effect2": "Accele MP Gain Up [V / 20%] (Self / 1 Turn) & Magia Damage Up [V / 15%] (Self / 1 Turn)",
+    "cooldown1": "5",
+    "cooldown2": "4",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Nagisa's_Declaration of Independence"
+    "url": "https://magireco.fandom.com/wiki/Nagisa's_Declaration_of_Independence"
   },
   {
     "id": "1275",
@@ -4785,9 +5269,11 @@ export const memoria_collection = [
     "max_def": "1057",
     "effect1": "Remove Status Ailments (Self)",
     "effect2": "Remove Status Ailments (Self)",
+    "cooldown1": "8",
+    "cooldown2": "6",
     "chara": "Makino Ikumi",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Two_People, Two Dreams"
+    "url": "https://magireco.fandom.com/wiki/Two_People,_Two_Dreams"
   },
   {
     "id": "1276",
@@ -4806,7 +5292,7 @@ export const memoria_collection = [
     "effect2": "Attack Up [III / 15%] & MP Gain Up [II / 7.5%]",
     "chara": "Midori Ryou",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Minagi_Free School Renowned: Midori Report"
+    "url": "https://magireco.fandom.com/wiki/Minagi_Free_School_Renowned:_Midori_Report"
   },
   {
     "id": "1277",
@@ -4823,8 +5309,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Attack Up When At Critical Health [III / 20%] & Defense Up When At Critical Health [III / 40%]",
     "effect2": "Attack Up When At Critical Health [IV / 25%] & Defense Up When At Critical Health [IV / 50%]",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Love_Kyun-ly Maid-san"
+    "url": "https://magireco.fandom.com/wiki/Love_Kyun-ly_Maid-san"
   },
   {
     "id": "1278",
@@ -4841,8 +5328,11 @@ export const memoria_collection = [
     "max_def": "1365",
     "effect1": "Chance to Darkness [III / 35%] (All / 1 Turn)",
     "effect2": "Chance to Darkness [IV / 37.5%] (All / 1 Turn)",
+    "cooldown1": "7",
+    "cooldown2": "6",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Never_Missing a Scoop"
+    "url": "https://magireco.fandom.com/wiki/Never_Missing_a_Scoop"
   },
   {
     "id": "1279",
@@ -4859,8 +5349,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Chance to Anti-Counter [V / 45%] & Attack Up [II / 10%]",
     "effect2": "Anti-Counter [100%] & Attack Up [II / 10%]",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Their_Separate Destinations"
+    "url": "https://magireco.fandom.com/wiki/Their_Separate_Destinations"
   },
   {
     "id": "1280",
@@ -4877,8 +5368,11 @@ export const memoria_collection = [
     "max_def": "1920",
     "effect1": "Chance to Curse [100%] (One / 1 Turn)",
     "effect2": "Chance to Curse [100%] (One / 1 Turn)",
+    "cooldown1": "5",
+    "cooldown2": "4",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Their_Connected Destination"
+    "url": "https://magireco.fandom.com/wiki/Their_Connected_Destination"
   },
   {
     "id": "1281",
@@ -4895,9 +5389,11 @@ export const memoria_collection = [
     "max_def": "1175",
     "effect1": "Chance to Evade [100%] (Self / 1 Turn)",
     "effect2": "Chance to Evade [100%] (Self / 1 Turn)",
+    "cooldown1": "10",
+    "cooldown2": "8",
     "chara": "Hachikuji Mayoi",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/A_Snail at Home"
+    "url": "https://magireco.fandom.com/wiki/A_Snail_at_Home"
   },
   {
     "id": "1282",
@@ -4916,7 +5412,7 @@ export const memoria_collection = [
     "effect2": "MP Gain Up [III / 10%] & MP Up When Attacked By Weak Element [I / 2]",
     "chara": "Hanekawa Tsubasa",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/A_Class Representative Chosen By God"
+    "url": "https://magireco.fandom.com/wiki/A_Class_Representative_Chosen_By_God"
   },
   {
     "id": "1283",
@@ -4933,8 +5429,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Attack Up [II / 10%] & Chance to Anti-Charm [VII / 55%]",
     "effect2": "Attack Up [IV / 20%] & Anti-Charm [100%]",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/It's_Not Like I'm Going to Disappear or Anything"
+    "url": "https://magireco.fandom.com/wiki/It's_Not_Like_I'm_Going_to_Disappear_or_Anything"
   },
   {
     "id": "1284",
@@ -4951,8 +5448,11 @@ export const memoria_collection = [
     "max_def": "2002",
     "effect1": "Magia Damage Up [V / 15%] (Self / 1 Turn) & Skill Quicken [V / 40%] (Self / 1 Turn)",
     "effect2": "Magia Damage Up [VIII / 22.5%] (Self / 1 Turn) & Skill Quicken [100%] (Self / 1 Turn)",
+    "cooldown1": "7",
+    "cooldown2": "6",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Since_I Already Put My Email In"
+    "url": "https://magireco.fandom.com/wiki/Since_I_Already_Put_My_Email_In"
   },
   {
     "id": "1285",
@@ -4969,8 +5469,11 @@ export const memoria_collection = [
     "max_def": "2122",
     "effect1": "Chance to Fog [V / 40%] (All / 1 Turn) & Damage Up Versus Enemies Affected With Status Ailments [IV / 30%] (Self / 1 Turn)",
     "effect2": "Chance to Fog [VII / 45%] (All / 1 Turn) & Damage Up Versus Enemies Affected With Status Ailments [V / 35%] (Self / 1 Turn)",
+    "cooldown1": "7",
+    "cooldown2": "6",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Getting_Lost Is a Daily Insurance"
+    "url": "https://magireco.fandom.com/wiki/Getting_Lost_Is_a_Daily_Insurance"
   },
   {
     "id": "1286",
@@ -4987,8 +5490,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Magia Damage Up [III / 10%] & Attack Up [III / 15%]",
     "effect2": "Magia Damage Up [IV / 12.5%] & Attack Up [IV / 20%]",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Overly_Fair Taste"
+    "url": "https://magireco.fandom.com/wiki/Overly_Fair_Taste"
   },
   {
     "id": "1287",
@@ -5005,9 +5509,11 @@ export const memoria_collection = [
     "max_def": "1075",
     "effect1": "Status Ailment Resistance Down [III / 10%] (All / 3 Turns)",
     "effect2": "Status Ailment Resistance Down [IV / 12.5%] (All / 3 Turns)",
+    "cooldown1": "8",
+    "cooldown2": "7",
     "chara": "Holy Alina",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Magical_Girl VS Series? Round 2"
+    "url": "https://magireco.fandom.com/wiki/Magical_Girl_VS_Series?_Round_2"
   },
   {
     "id": "1288",
@@ -5024,8 +5530,11 @@ export const memoria_collection = [
     "max_def": "2012",
     "effect1": "Blast Damage Up [VII / 45%] (Self / 1 Turn) & Status Ailment Resistance Down [IV / 12.5%] (All / 1 Turn)",
     "effect2": "Blast Damage Up [VIII / 50%] (Self / 1 Turn) & Status Ailment Resistance Down [V / 15%] (All / 1 Turn)",
+    "cooldown1": "7",
+    "cooldown2": "6",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Christmas_Night Magic"
+    "url": "https://magireco.fandom.com/wiki/Christmas_Night_Magic"
   },
   {
     "id": "1289",
@@ -5042,8 +5551,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Charged Attack Damage Up [II / 7.5%] & Accele MP Gain Up [I / 10%]",
     "effect2": "Charged Attack Damage Up [III / 10%] & Accele MP Gain Up [I / 10%]",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Memories_of Young Miss Santa"
+    "url": "https://magireco.fandom.com/wiki/Memories_of_Young_Miss_Santa"
   },
   {
     "id": "1290",
@@ -5060,8 +5570,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Chance to Poison on Attack [IV / 25%] (3 Turns)",
     "effect2": "Chance to Poison on Attack [VIII / 45%] (3 Turns)",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Alina_Protects the Supreme Body"
+    "url": "https://magireco.fandom.com/wiki/Alina_Protects_the_Supreme_Body"
   },
   {
     "id": "1291",
@@ -5078,8 +5589,11 @@ export const memoria_collection = [
     "max_def": "1370",
     "effect1": "Blast Damage Up [II / 20%] (Self / 1 Turn)",
     "effect2": "Blast Damage Up [IV / 30%] (Self / 1 Turn)",
+    "cooldown1": "5",
+    "cooldown2": "4",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Rumor_Girl Death Caribou"
+    "url": "https://magireco.fandom.com/wiki/Rumor_Girl_Death_Caribou"
   },
   {
     "id": "1292",
@@ -5096,9 +5610,11 @@ export const memoria_collection = [
     "max_def": "1077",
     "effect1": "Accele Draw",
     "effect2": "Accele Draw",
+    "cooldown1": "15",
+    "cooldown2": "13",
     "chara": "Yakumo Mitama (Haregi ver.)",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Mitama's_Dream Osechi"
+    "url": "https://magireco.fandom.com/wiki/Mitama's_Dream_Osechi"
   },
   {
     "id": "1293",
@@ -5115,8 +5631,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Blast Damage Up [II / 20%] & Accele MP Gain Up [II / 12.5%] & Anti-Bind [100%]",
     "effect2": "Blast Damage Up [IV / 30%] & Accele MP Gain Up [III / 15%] & Anti-Bind [100%]",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Food_Stall Paradise"
+    "url": "https://magireco.fandom.com/wiki/Food_Stall_Paradise"
   },
   {
     "id": "1294",
@@ -5133,8 +5650,11 @@ export const memoria_collection = [
     "max_def": "1595",
     "effect1": "Attack Up [III / 15%] (Self / 3 Turns) & Defense Up [II / 15%] (Self / 3 Turns)",
     "effect2": "Attack Up [IV / 20%] (Self / 3 Turns) & Defense Up [III / 22.5%] (Self / 3 Turns)",
+    "cooldown1": "8",
+    "cooldown2": "7",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/New_Years Party Waitress"
+    "url": "https://magireco.fandom.com/wiki/New_Years_Party_Waitress"
   },
   {
     "id": "1295",
@@ -5151,8 +5671,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Chance to Anti-Poison [X / 70%] & Chance to Anti-Burn [IV / 40%] & Chance to Anti-Curse [IV / 40%]",
     "effect2": "Anti-Poison [100%] & Chance to Anti-Burn [IX / 65%] & Chance to Anti-Curse [IX / 65%]",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/May_the Wishes Be Heard"
+    "url": "https://magireco.fandom.com/wiki/May_the_Wishes_Be_Heard"
   },
   {
     "id": "1297",
@@ -5168,6 +5689,8 @@ export const memoria_collection = [
     "max_atk": "0",
     "max_def": "0",
     "effect2": "Attack Up [I / 5%] (Self / 1 turn)",
+    "cooldown2": "8",
+    "chara": "",
     "obtainability": "limited",
     "url": "https://magireco.fandom.com/wiki/Over_Limiter"
   },
@@ -5185,8 +5708,10 @@ export const memoria_collection = [
     "max_atk": "0",
     "max_def": "0",
     "effect2": "Defense Up [I / 7.5%] (Self / 1 turn)",
+    "cooldown2": "6",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Over_Limiter - Core"
+    "url": "https://magireco.fandom.com/wiki/Over_Limiter_-_Core"
   },
   {
     "id": "1299",
@@ -5203,9 +5728,11 @@ export const memoria_collection = [
     "max_def": "1070",
     "effect1": "Chance to Evade [100%] (Self / 1 Turn) & Chance to Chase [VII / 40%] (Self / 1 Turn)",
     "effect2": "Chance to Evade [100%] (Self / 1 Turn) & Chance to Chase [X / 55%] (Self / 1 Turn)",
+    "cooldown1": "12",
+    "cooldown2": "10",
     "chara": "Akemi Homura",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/In_a Broken World"
+    "url": "https://magireco.fandom.com/wiki/In_a_Broken_World"
   },
   {
     "id": "1300",
@@ -5222,8 +5749,11 @@ export const memoria_collection = [
     "max_def": "1820",
     "effect1": "Chance to Anti-Evade [VIII / 60%] & Blast Damage Up [III / 25%] (Self / 3 Turns)",
     "effect2": "Chance to Anti-Evade [X / 70%] & Blast Damage Up [IV / 30%] (Self / 3 Turns)",
+    "cooldown1": "10",
+    "cooldown2": "9",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/The_Price of a Wish"
+    "url": "https://magireco.fandom.com/wiki/The_Price_of_a_Wish"
   },
   {
     "id": "1301",
@@ -5240,6 +5770,7 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Defense Up [II / 15%] & MP Gain Up [I / 5%] & MP Up When Attacked By Weak Element [I / 2]",
     "effect2": "Defense Up [III / 22.5%] & MP Gain Up [II / 7.5%] & MP Up When Attacked By Weak Element [I / 2]",
+    "chara": "",
     "obtainability": "limited",
     "url": "https://magireco.fandom.com/wiki/Hearts,_Shared"
   },
@@ -5258,8 +5789,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Chance to Evade [I / 10%]",
     "effect2": "Chance to Evade [III / 20%]",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/The_Struggle Against Fate"
+    "url": "https://magireco.fandom.com/wiki/The_Struggle_Against_Fate"
   },
   {
     "id": "1303",
@@ -5276,6 +5808,7 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Chance to Critical Hit [III / 20%] & Chance to Anti-Dazzle [X / 70%]",
     "effect2": "Chance to Critical Hit [IV / 25%] & Anti-Dazzle [100%]",
+    "chara": "",
     "obtainability": "limited",
     "url": "https://magireco.fandom.com/wiki/Sweet_Apportionment"
   },
@@ -5294,6 +5827,9 @@ export const memoria_collection = [
     "max_def": "1532",
     "effect1": "Regenerate MP [I / 3 MP] (Self / 3 Turns)",
     "effect2": "Regenerate MP [I / 3 MP] (Self / 3 Turns)",
+    "cooldown1": "8",
+    "cooldown2": "6",
+    "chara": "",
     "obtainability": "limited",
     "url": "https://magireco.fandom.com/wiki/Wonderful_Time"
   },
@@ -5312,8 +5848,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Status Ailment Resistance Up [III / 30%]",
     "effect2": "Status Ailment Resistance Up [IV / 35%]",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/To_the Two Who Have Yet to Experience First Love"
+    "url": "https://magireco.fandom.com/wiki/To_the_Two_Who_Have_Yet_to_Experience_First_Love"
   },
   {
     "id": "1306",
@@ -5330,8 +5867,11 @@ export const memoria_collection = [
     "max_def": "1917",
     "effect1": "Accele MP Gain Up [IV / 17.5%] (Self / 3 Turns)",
     "effect2": "Accele MP Gain Up [VI / 22.5%] (Self / 3 Turns)",
+    "cooldown1": "10",
+    "cooldown2": "8",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Mood_Is Always Important!"
+    "url": "https://magireco.fandom.com/wiki/Mood_Is_Always_Important!"
   },
   {
     "id": "1307",
@@ -5348,8 +5888,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Anti-Burn [V / 45%] & Defense Up [I / 7.5%]",
     "effect2": "Anti-Burn [100%] & Defense Up [II / 15%]",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/As_Natural as Breathing"
+    "url": "https://magireco.fandom.com/wiki/As_Natural_as_Breathing"
   },
   {
     "id": "1308",
@@ -5366,9 +5907,11 @@ export const memoria_collection = [
     "max_def": "1115",
     "effect1": "Charged Attack Damage Up [IV / 12.5%] (Self / 1 Turn) & Accele MP Gain Up [II / 12.5%] (Self / 1 Turn)",
     "effect2": "Charged Attack Damage Up [V / 15%] (Self / 1 Turn) & Accele MP Gain Up [III / 15%] (Self / 1 Turn)",
+    "cooldown1": "7",
+    "cooldown2": "6",
     "chara": "Kanbaru Suruga",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Main_Weapon: Accelerator"
+    "url": "https://magireco.fandom.com/wiki/Main_Weapon:_Accelerator"
   },
   {
     "id": "1309",
@@ -5385,8 +5928,11 @@ export const memoria_collection = [
     "max_def": "1822",
     "effect1": "Attack Up [IV / 20%](Self / 3 Turns) & Charged Attack Damage Up[IV / 12.5%](Self / 3 Turns)",
     "effect2": "Attack Up [V / 25%](Self / 3 Turns) & Charged Attack Damage Up[V / 15%](Self / 3 Turns)",
+    "cooldown1": "9",
+    "cooldown2": "8",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/The_Bicycle Is My Weak Point"
+    "url": "https://magireco.fandom.com/wiki/The_Bicycle_Is_My_Weak_Point"
   },
   {
     "id": "1310",
@@ -5403,8 +5949,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Chance to Critical Hit [II / 15%] & Chance to Anti-Evade [VIII / 60%]",
     "effect2": "Chance to Critical Hit [III / 20%] & Chance to Anti-Evade [XIII / 85%]",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/The_Ace Is a Southpaw"
+    "url": "https://magireco.fandom.com/wiki/The_Ace_Is_a_Southpaw"
   },
   {
     "id": "1311",
@@ -5421,8 +5968,11 @@ export const memoria_collection = [
     "max_def": "1997",
     "effect1": "Blast Damage Up [IV / 30%] (Self / 1 Turn) & Magia Damage Up [II / 7.5%] (Self / 1 Turn)",
     "effect2": "Blast Damage Up [VI / 40%] (Self / 1 Turn) & Magia Damage Up [IV / 12.5%] (Self / 1 Turn)",
+    "cooldown1": "7",
+    "cooldown2": "6",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/A_Self-Proclaimed 500-Year-Old Vampire"
+    "url": "https://magireco.fandom.com/wiki/A_Self-Proclaimed_500-Year-Old_Vampire"
   },
   {
     "id": "1312",
@@ -5439,9 +5989,11 @@ export const memoria_collection = [
     "max_def": "1070",
     "effect1": "Attack Down [IV / 20%] (One / 1 Turn) & Defense Down [IV / 20%] (One / 1 Turn) & Regenerate HP [III / 4%] (Self / 3 Turns)",
     "effect2": "Attack Down [V / 25%] (One / 1 Turn) & Defense Down [V / 25%] (One / 1 Turn) & Regenerate HP [IV / 5%] (Self / 3 Turns)",
+    "cooldown1": "7",
+    "cooldown2": "6",
     "chara": "Oshino Shinobu",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Treasure_Trove of Treats"
+    "url": "https://magireco.fandom.com/wiki/Treasure_Trove_of_Treats"
   },
   {
     "id": "1313",
@@ -5458,8 +6010,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Chance to Curse on Attack [II / 15%] & Damage Up [II / 10%] & Regenerate HP [II / 3%]",
     "effect2": "Chance to Curse on Attack [III / 20%] & Damage Up [III / 15%] & Regenerate HP [III / 4%]",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/A_Strange Little Blonde Girl"
+    "url": "https://magireco.fandom.com/wiki/A_Strange_Little_Blonde_Girl"
   },
   {
     "id": "1314",
@@ -5478,7 +6031,7 @@ export const memoria_collection = [
     "effect2": "Attack Up Upon Death [IV / 6.3%] (Allies / 2 Turns) & Defense Up Upon Death [IV / 12.6%] (Allies / 2 Turns)",
     "chara": "Kuro",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/That_Day's Regret"
+    "url": "https://magireco.fandom.com/wiki/That_Day's_Regret"
   },
   {
     "id": "1315",
@@ -5495,9 +6048,11 @@ export const memoria_collection = [
     "max_def": "1080",
     "effect1": "MP Damage [I / 30 MP] (One) & MP Restore [I / 10 MP] (Self)",
     "effect2": "MP Damage [I / 30 MP] (One) & MP Restore [I / 10 MP] (Self)",
+    "cooldown1": "10",
+    "cooldown2": "8",
     "chara": "Satomi Touka",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/A_Freedom for Just Me"
+    "url": "https://magireco.fandom.com/wiki/A_Freedom_for_Just_Me"
   },
   {
     "id": "1316",
@@ -5514,8 +6069,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Attack Up [II / 10%] & Defense Up [II / 15%]",
     "effect2": "Attack Up [III / 15%] & Defense Up [III / 22.5%]",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/What_Flavor Is Break Time (Alina)"
+    "url": "https://magireco.fandom.com/wiki/What_Flavor_Is_Break_Time_(Alina)"
   },
   {
     "id": "1317",
@@ -5532,8 +6088,11 @@ export const memoria_collection = [
     "max_def": "2015",
     "effect1": "MP Gain Down [VIII / 45%] (All / 1 Turn)",
     "effect2": "MP Gain Down [IX / 50%] (All / 1 Turn)",
+    "cooldown1": "7",
+    "cooldown2": "6",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/What_Flavor Is Break Time (Touka)"
+    "url": "https://magireco.fandom.com/wiki/What_Flavor_Is_Break_Time_(Touka)"
   },
   {
     "id": "1318",
@@ -5550,8 +6109,11 @@ export const memoria_collection = [
     "max_def": "1432",
     "effect1": "Chance to Skill Seal [III / 35%] (All / 1 Turn)",
     "effect2": "Chance to Skill Seal [IV / 37.5%] (All / 1 Turn)",
+    "cooldown1": "7",
+    "cooldown2": "6",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/What_Flavor Is Break Time (Nemu)"
+    "url": "https://magireco.fandom.com/wiki/What_Flavor_Is_Break_Time_(Nemu)"
   },
   {
     "id": "1319",
@@ -5568,9 +6130,11 @@ export const memoria_collection = [
     "max_def": "1280",
     "effect1": "Remove Buffs (All)",
     "effect2": "Remove Buffs (All)",
+    "cooldown1": "15",
+    "cooldown2": "13",
     "chara": "Hiiragi Nemu",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/An_Unobtainable Thing"
+    "url": "https://magireco.fandom.com/wiki/An_Unobtainable_Thing"
   },
   {
     "id": "1320",
@@ -5587,8 +6151,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Attack Up [III / 15%] & Status Ailment Resistance Up [II / 25%]",
     "effect2": "Attack Up [IV / 20%] & Status Ailment Resistance Up [III / 30%]",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/A_Longing for the Beyond"
+    "url": "https://magireco.fandom.com/wiki/A_Longing_for_the_Beyond"
   },
   {
     "id": "1321",
@@ -5605,8 +6170,11 @@ export const memoria_collection = [
     "max_def": "1800",
     "effect1": "Magia Damage Up [III / 10%] (All / 1 Turn)",
     "effect2": "Magia Damage Up [IV / 12.5%] (All / 1 Turn)",
+    "cooldown1": "12",
+    "cooldown2": "10",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Peace_to this Battered, Dead Land"
+    "url": "https://magireco.fandom.com/wiki/Peace_to_this_Battered,_Dead_Land"
   },
   {
     "id": "1322",
@@ -5623,6 +6191,9 @@ export const memoria_collection = [
     "max_def": "1585",
     "effect1": "Chance to Poison [100%] (One / 1 Turn) & Defense Down [IV / 20%] (One / 1 Turn)",
     "effect2": "Chance to Poison [100%] (One / 1 Turn) & Defense Down [V / 25%] (One / 1 Turn)",
+    "cooldown1": "5",
+    "cooldown2": "4",
+    "chara": "",
     "obtainability": "unlimited",
     "url": "https://magireco.fandom.com/wiki/Three_Geniuses"
   },
@@ -5640,8 +6211,9 @@ export const memoria_collection = [
     "max_atk": "1000",
     "max_def": "0",
     "effect2": "Episode Experience Gain Increased [II / 20%]",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/A_Step That Starts the Story"
+    "url": "https://magireco.fandom.com/wiki/A_Step_That_Starts_the_Story"
   },
   {
     "id": "1324",
@@ -5657,6 +6229,8 @@ export const memoria_collection = [
     "max_atk": "0",
     "max_def": "1000",
     "effect2": "Attack Down [V / 25%] & Defense Down [V / 25%] (One / 1 Turn)",
+    "cooldown2": "8",
+    "chara": "",
     "obtainability": "limited",
     "url": "https://magireco.fandom.com/wiki/Lively_Neighbor"
   },
@@ -5675,6 +6249,8 @@ export const memoria_collection = [
     "max_def": "1160",
     "effect1": "Chance to Critical Hit [100%] (Self / 1 Turn)",
     "effect2": "Chance to Critical Hit [100%] (Self / 1 Turn)",
+    "cooldown1": "7",
+    "cooldown2": "6",
     "chara": "Rumor of the Ten Thousand Year Sakura",
     "obtainability": "unlimited",
     "url": "https://magireco.fandom.com/wiki/Don't_Touch"
@@ -5694,8 +6270,11 @@ export const memoria_collection = [
     "max_def": "2025",
     "effect1": "Chance to Critical Hit [V / 30%] & Attack Up [VII / 35%] (Self / 1 Turn)",
     "effect2": "Chance to Critical Hit [VI / 35%] & Attack Up [VIII / 40%] (Self / 1 Turn)",
+    "cooldown1": "8",
+    "cooldown2": "7",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Image_Training in the Server"
+    "url": "https://magireco.fandom.com/wiki/Image_Training_in_the_Server"
   },
   {
     "id": "1327",
@@ -5712,8 +6291,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Anti-Darkness [100%] & Accele MP Gain Up [II / 12.5%]",
     "effect2": "Anti-Darkness [100%] & Accele MP Gain Up [III / 15%]",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Relaxing_in the Park"
+    "url": "https://magireco.fandom.com/wiki/Relaxing_in_the_Park"
   },
   {
     "id": "1328",
@@ -5729,9 +6309,10 @@ export const memoria_collection = [
     "max_atk": "1795",
     "max_def": "0",
     "effect1": "Chance to Guardian [II / 15%] & Regenerate HP [I / 2%]",
-    "effect2": "Chance to Guardian [III / 20%] & Regenerate HP [II / 3%]\n}}",
+    "effect2": "Chance to Guardian [III / 20%] & Regenerate HP [II / 3%]",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/The_Stories (Rumors) Also Know"
+    "url": "https://magireco.fandom.com/wiki/The_Stories_(Rumors)_Also_Know"
   },
   {
     "id": "1329",
@@ -5748,6 +6329,9 @@ export const memoria_collection = [
     "max_def": "1500",
     "effect1": "MP Gain Up [II / 7.5%]",
     "effect2": "MP Gain Up [III / 10%]",
+    "cooldown1": "11",
+    "cooldown2": "9",
+    "chara": "",
     "obtainability": "limited",
     "url": "https://magireco.fandom.com/wiki/Look_There"
   },
@@ -5766,8 +6350,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Chance to Ignore Damage Cut [V/ 50%] & Charged Attack Damage Up [IV/ 12.5%]",
     "effect2": "Chance to Ignore Damage Cut [VII / 60%] & Charged Attack Damage Up [V / 15%]",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/A_Meddlesome Timing"
+    "url": "https://magireco.fandom.com/wiki/A_Meddlesome_Timing"
   },
   {
     "id": "1331",
@@ -5784,8 +6369,11 @@ export const memoria_collection = [
     "max_def": "1917",
     "effect1": "Accele MP Gain Up [IV / 17.5%] & Chance to Critical Hit [IV / 25%] (Self / 3 Turns)",
     "effect2": "Accele MP Gain Up [V / 20%] & Chance to Critical Hit [V / 30%] (Self / 3 Turns)",
+    "cooldown1": "8",
+    "cooldown2": "7",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/People_Who Like a Person She Hates"
+    "url": "https://magireco.fandom.com/wiki/People_Who_Like_a_Person_She_Hates"
   },
   {
     "id": "1332",
@@ -5802,8 +6390,11 @@ export const memoria_collection = [
     "max_def": "2217",
     "effect1": "Chance to Bind [III / 35%] (All / 1 turn) & Magia Damage Up [VI / 17.5%] (Self / 1 Turn)",
     "effect2": "Chance to Bind [IV / 37.5%] (All / 1 turn) & Magia Damage Up [VII / 20%] (Self / 1 Turn)",
+    "cooldown1": "8",
+    "cooldown2": "7",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Obtaining_Power From Nature"
+    "url": "https://magireco.fandom.com/wiki/Obtaining_Power_From_Nature"
   },
   {
     "id": "1333",
@@ -5820,8 +6411,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Attack Up While At Max Health [V / 25%] & Chance to Anti-Counter [V / 45%] & Defense Down [V / 25%]",
     "effect2": "Attack Up While At Max Health [VI / 30%] & Anti-Counter [100%] & Defense Down [V / 25%]",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Make_It or Break It"
+    "url": "https://magireco.fandom.com/wiki/Make_It_or_Break_It"
   },
   {
     "id": "1334",
@@ -5838,8 +6430,11 @@ export const memoria_collection = [
     "max_def": "1527",
     "effect1": "Chance to Charm [I / 30%] (All / 1 Turn) & Chance to Dazzle [I / 30%] (All / 1 Turn)",
     "effect2": "Chance to Charm [I / 30%] (All / 1 Turn) & Chance to Dazzle [I / 30%] (All / 1 Turn)",
+    "cooldown1": "10",
+    "cooldown2": "8",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Ghost_of the Blonde Beauty"
+    "url": "https://magireco.fandom.com/wiki/Ghost_of_the_Blonde_Beauty"
   },
   {
     "id": "1335",
@@ -5856,8 +6451,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Chance to Anti-Dazzle [IX / 65%]",
     "effect2": "CC Gain Up [I / 5%] (Does Not Work on Supports) & Anti-Dazzle [100%]",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Suddenly_Given Stones x200"
+    "url": "https://magireco.fandom.com/wiki/Suddenly_Given_Stones_x200"
   },
   {
     "id": "1336",
@@ -5873,8 +6469,10 @@ export const memoria_collection = [
     "max_atk": "0",
     "max_def": "1000",
     "effect2": "Regenerate HP [III / 4%] (Self / 3 Turns) & Magia Damage Up [III / 10%] (Self / 3 Turns)",
+    "cooldown2": "8",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/The_Various Faces of Us"
+    "url": "https://magireco.fandom.com/wiki/The_Various_Faces_of_Us"
   },
   {
     "id": "1337",
@@ -5890,8 +6488,9 @@ export const memoria_collection = [
     "max_atk": "1000",
     "max_def": "0",
     "effect2": "Attack Up [III / 15%] & MP Up When Attacked By Weak Element [II / 3]",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Still_Lively Neighbor"
+    "url": "https://magireco.fandom.com/wiki/Still_Lively_Neighbor"
   },
   {
     "id": "1338",
@@ -5908,9 +6507,11 @@ export const memoria_collection = [
     "max_def": "1080",
     "effect1": "MP Gain Down [VIII / 45%] (All / 3 Turns) & MP Gain Up [II / 7.5%] (Self / 3 Turns)",
     "effect2": "MP Gain Down [IX / 50%] (All / 3 Turns) & MP Gain Up [III / 10%] (Self / 3 Turns)",
+    "cooldown1": "8",
+    "cooldown2": "7",
     "chara": "Tamaki Ui",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Future_Planning Survey"
+    "url": "https://magireco.fandom.com/wiki/Future_Planning_Survey"
   },
   {
     "id": "1339",
@@ -5927,8 +6528,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Accele MP Gain Up [III / 15%] & Status Ailment Resistance Up [II / 25%]",
     "effect2": "Accele MP Gain Up [IV / 17.5%] & Status Ailment Resistance Up [III / 30%]",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Because_the World Is Full of Wishes"
+    "url": "https://magireco.fandom.com/wiki/Because_the_World_Is_Full_of_Wishes"
   },
   {
     "id": "1340",
@@ -5945,8 +6547,11 @@ export const memoria_collection = [
     "max_def": "2030",
     "effect1": "Blast Damage Up [IV / 30%] & Charged Attack Damage Up [IV / 12.5%] (Self / 1 Turn) & Accele MP Gain Up [III / 15%]",
     "effect2": "Blast Damage Up [V / 35%] & Charged Attack Damage Up [V / 15%] (Self / 1 Turn) & Accele MP Gain Up [IV / 17.5%]",
+    "cooldown1": "7",
+    "cooldown2": "6",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/What_Kind of Person Will I Become?"
+    "url": "https://magireco.fandom.com/wiki/What_Kind_of_Person_Will_I_Become?"
   },
   {
     "id": "1341",
@@ -5963,8 +6568,11 @@ export const memoria_collection = [
     "max_def": "1795",
     "effect1": "Attack Up [III / 15%] & MP Gain Up [I / 5%] (Self / 3 Turns)",
     "effect2": "Attack Up [V / 25%] & MP Gain Up [II / 7.5%] (Self / 3 Turns)",
+    "cooldown1": "9",
+    "cooldown2": "8",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Because_She Shines Too Brightly"
+    "url": "https://magireco.fandom.com/wiki/Because_She_Shines_Too_Brightly"
   },
   {
     "id": "1342",
@@ -5981,8 +6589,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Chance to Anti-Charm [VI / 50%]",
     "effect2": "Anti-Charm [100%]",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Determination_for the Future"
+    "url": "https://magireco.fandom.com/wiki/Determination_for_the_Future"
   },
   {
     "id": "1343",
@@ -5999,8 +6608,11 @@ export const memoria_collection = [
     "max_def": "2007",
     "effect1": "Chance to Anti-Counter [IX / 65%]  & Attack Up [VI / 30%] (Self / 3 Turns)",
     "effect2": "Chance to Anti-Counter [XII / 80%] & Attack Up [VII / 35%] (Self / 3 Turns)",
+    "cooldown1": "7",
+    "cooldown2": "6",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Even_if I Take a Wrong Path"
+    "url": "https://magireco.fandom.com/wiki/Even_if_I_Take_a_Wrong_Path"
   },
   {
     "id": "1344",
@@ -6017,6 +6629,8 @@ export const memoria_collection = [
     "max_def": "1275",
     "effect1": "Chance to Bind [IV / 37.5%] & Defense Down [V / 25%] (One / 1 Turn)",
     "effect2": "Chance to Bind [V / 40%] & Defense Down [VI / 30%] (One / 1 Turn)",
+    "cooldown1": "9",
+    "cooldown2": "8",
     "chara": "Sarasa Hanna",
     "obtainability": "unlimited",
     "url": "https://magireco.fandom.com/wiki/Jet-Black_Ink"
@@ -6036,8 +6650,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Chance to Burn on Attack [V / 30% / 2 turns] & Chance to Anti-Evade [X / 70%]",
     "effect2": "Chance to Burn on Attack [VI / 35% / 2 turns] & Anti-Evade [100%]",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Back_to Back"
+    "url": "https://magireco.fandom.com/wiki/Back_to_Back"
   },
   {
     "id": "1346",
@@ -6054,8 +6669,11 @@ export const memoria_collection = [
     "max_def": "1370",
     "effect1": "MP Gain Down [III / 20%] (All / 3 turns)",
     "effect2": "MP Gain Down [IV / 25%] (All / 3 turns)",
+    "cooldown1": "8",
+    "cooldown2": "7",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/The_One Who Waits"
+    "url": "https://magireco.fandom.com/wiki/The_One_Who_Waits"
   },
   {
     "id": "1347",
@@ -6072,8 +6690,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Chance to Anti-Dazzle [IX / 65%]",
     "effect2": "Anti-Dazzle [100%]",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Remnants_of Light"
+    "url": "https://magireco.fandom.com/wiki/Remnants_of_Light"
   },
   {
     "id": "1348",
@@ -6090,8 +6709,11 @@ export const memoria_collection = [
     "max_def": "1797",
     "effect1": "Damage Cut [V / 25%] (Self / 3 turns)",
     "effect2": "Damage Cut [VI / 30%] (Self / 3 turns)",
+    "cooldown1": "8",
+    "cooldown2": "7",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Under_the Red Azalea"
+    "url": "https://magireco.fandom.com/wiki/Under_the_Red_Azalea"
   },
   {
     "id": "1349",
@@ -6108,8 +6730,11 @@ export const memoria_collection = [
     "max_def": "2095",
     "effect1": "Damage Increase [V / 25%] (Self / 3 turns)",
     "effect2": "Damage Increase [VI / 30%] (Self / 3 turns)",
+    "cooldown1": "9",
+    "cooldown2": "8",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Under_the White Camellia"
+    "url": "https://magireco.fandom.com/wiki/Under_the_White_Camellia"
   },
   {
     "id": "1350",
@@ -6126,8 +6751,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Regenerate HP [II / 3%] & Status Ailment Resistance Up [III / 30%]",
     "effect2": "Regenerate HP [III / 4%] & Status Ailment Resistance Up [IV / 35%]",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Tomorrow_They Will Bloom Again"
+    "url": "https://magireco.fandom.com/wiki/Tomorrow_They_Will_Bloom_Again"
   },
   {
     "id": "1351",
@@ -6144,8 +6770,11 @@ export const memoria_collection = [
     "max_def": "1500",
     "effect1": "Magia Damage Cut [IV / 20%] (Self / 1 turn)",
     "effect2": "Magia Damage Cut [VI / 30%] (Self / 1 turn)",
+    "cooldown1": "7",
+    "cooldown2": "6",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Leave_it to Us!"
+    "url": "https://magireco.fandom.com/wiki/Leave_it_to_Us!"
   },
   {
     "id": "1352",
@@ -6162,9 +6791,11 @@ export const memoria_collection = [
     "max_def": "1060",
     "effect1": "Regenerate HP [III / 4%] (Self / 3 turns) & Remove Debuffs (Self)",
     "effect2": "Regenerate HP [IV / 5%] (Self / 3 turns) & Remove Debuffs (Self)",
+    "cooldown1": "10",
+    "cooldown2": "9",
     "chara": "Fumino Sayuki",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Messages_from Precious Friends"
+    "url": "https://magireco.fandom.com/wiki/Messages_from_Precious_Friends"
   },
   {
     "id": "1353",
@@ -6180,9 +6811,10 @@ export const memoria_collection = [
     "max_atk": "1905",
     "max_def": "0",
     "effect1": "Attack Up [III / 15%] & Anti-Fog [100%]",
-    "effect2": "Attack Up [IV / 20%] & Anti-Fog [100%]\n}}",
+    "effect2": "Attack Up [IV / 20%] & Anti-Fog [100%]",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Cause_I'm an Idol and a Magical Girl"
+    "url": "https://magireco.fandom.com/wiki/Cause_I'm_an_Idol_and_a_Magical_Girl"
   },
   {
     "id": "1354",
@@ -6199,8 +6831,11 @@ export const memoria_collection = [
     "max_def": "1510",
     "effect1": "Accele MP Gain Up [V / 20%] (Self / 1 Turn) & Damage Increase [III / 15%] (Self / 1 Turn)",
     "effect2": "Accele MP Gain Up [VI / 22.5%] (Self / 1 Turn) & Damage Increase [IV / 20%] (Self / 1 Turn)",
+    "cooldown1": "6",
+    "cooldown2": "5",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/To_Museums on the Weekends"
+    "url": "https://magireco.fandom.com/wiki/To_Museums_on_the_Weekends"
   },
   {
     "id": "1355",
@@ -6217,8 +6852,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "",
     "effect2": "Anti-Darkness [100%] & Chance to Anti-Skill Seal [IX / 65%] & Attack Up [II / 10%]",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Place_Where You Can Meet Everyone"
+    "url": "https://magireco.fandom.com/wiki/Place_Where_You_Can_Meet_Everyone"
   },
   {
     "id": "1356",
@@ -6235,6 +6871,8 @@ export const memoria_collection = [
     "max_def": "1180",
     "effect1": "Damage Cut [VII / 35%] (Self / 1 turn) & Chance to Ignore Damage Cut [VI / 55%] (Self / 1 turn)",
     "effect2": "Damage Cut [VIII / 40%] (Self / 1 turn) & Chance to Ignore Damage Cut [VII / 60%] (Self / 1 turn)",
+    "cooldown1": "7",
+    "cooldown2": "6",
     "chara": "Takamachi Nanoha",
     "obtainability": "limited",
     "url": "https://magireco.fandom.com/wiki/Standby_Ready"
@@ -6254,9 +6892,11 @@ export const memoria_collection = [
     "max_def": "1185",
     "effect1": "Evade [100%] (Self / 1 turn)",
     "effect2": "Evade [100%] (Self / 1 turn)",
+    "cooldown1": "10",
+    "cooldown2": "8",
     "chara": "Fate T. Harlaown",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Two_Magical Lights"
+    "url": "https://magireco.fandom.com/wiki/Two_Magical_Lights"
   },
   {
     "id": "1358",
@@ -6275,7 +6915,7 @@ export const memoria_collection = [
     "effect2": "Magia Damage Up [V / 15%] % Damage Cut [III / 15%]",
     "chara": "Yagami Hayate",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/The_Sole Treasure"
+    "url": "https://magireco.fandom.com/wiki/The_Sole_Treasure"
   },
   {
     "id": "1359",
@@ -6292,8 +6932,11 @@ export const memoria_collection = [
     "max_def": "2030",
     "effect1": "Magia Damage Up [V / 15%] (Self / 3 turns) & Accele MP Gain Up [IV / 17.5%] (Self / 3 turns)",
     "effect2": "Magia Damage Up [VI / 17.5%] (Self / 3 turns) & Accele MP Gain Up [V / 20%] (Self / 3 turns)",
+    "cooldown1": "8",
+    "cooldown2": "7",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Gather,_Glittering Starlight"
+    "url": "https://magireco.fandom.com/wiki/Gather,_Glittering_Starlight"
   },
   {
     "id": "1360",
@@ -6310,6 +6953,7 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Blast Damage Up [II / 20%] & Defense Up [II / 15%]",
     "effect2": "Blast Damage Up [III / 25%] & Defense Up [III / 22.5%]",
+    "chara": "",
     "obtainability": "limited",
     "url": "https://magireco.fandom.com/wiki/Our_Magic"
   },
@@ -6328,8 +6972,11 @@ export const memoria_collection = [
     "max_def": "2095",
     "effect1": "Magia Damage Up [VI / 17.5%] (Self / 1 turn) & Defense Down [IV / 20%] (All / 1 turn)",
     "effect2": "Magia Damage Up [VII / 20%] (Self / 1 turn) & Defense Down [V / 25%] (All / 1 turn)",
+    "cooldown1": "10",
+    "cooldown2": "8",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Resound,_Horn of the End"
+    "url": "https://magireco.fandom.com/wiki/Resound,_Horn_of_the_End"
   },
   {
     "id": "1362",
@@ -6346,8 +6993,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Chance to Bind on Attack [II / 15%] (1 turn) & Attack Up [I / 5%]",
     "effect2": "Chance to Bind on Attack [III / 20%] (1 turn) & Attack Up [II / 10%]",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/A_Light That Illuminates the Darkness"
+    "url": "https://magireco.fandom.com/wiki/A_Light_That_Illuminates_the_Darkness"
   },
   {
     "id": "1363",
@@ -6364,8 +7012,11 @@ export const memoria_collection = [
     "max_def": "1530",
     "effect1": "Blast Damage Up [II / 20%] & Magia Damage Up [III / 10%] (Self / 3 turns)",
     "effect2": "Blast Damage Up [III / 25%] & Magia Damage Up [IV / 12.5%] (Self / 3 turns)",
+    "cooldown1": "9",
+    "cooldown2": "8",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Master_of the Tome of the Night Sky"
+    "url": "https://magireco.fandom.com/wiki/Master_of_the_Tome_of_the_Night_Sky"
   },
   {
     "id": "1364",
@@ -6382,6 +7033,9 @@ export const memoria_collection = [
     "max_def": "2200",
     "effect1": "Chance to Critical Hit [VI / 35%] & Chance to Evade [VIII / 45%] (Self / 1 turn)",
     "effect2": "Chance to Critical Hit [VII / 40%] & Chance to Evade [IX / 50%] (Self / 1 turn)",
+    "cooldown1": "7",
+    "cooldown2": "6",
+    "chara": "",
     "obtainability": "limited",
     "url": "https://magireco.fandom.com/wiki/Lightning_Blitz"
   },
@@ -6400,8 +7054,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Damage Cut [II / 10%] & Defense Up [II / 15%]",
     "effect2": "Damage Cut [III / 15%] & Defense Up [III / 22.5%]",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/The_Blessed Wind Once More"
+    "url": "https://magireco.fandom.com/wiki/The_Blessed_Wind_Once_More"
   },
   {
     "id": "1366",
@@ -6420,7 +7075,7 @@ export const memoria_collection = [
     "effect2": "Anti-Dazzle & Anti-Darkness",
     "chara": "Amane Sisters (Mizugi ver.)",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Little_Crescent Moons"
+    "url": "https://magireco.fandom.com/wiki/Little_Crescent_Moons"
   },
   {
     "id": "1367",
@@ -6437,8 +7092,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Attack Up [IV / 20%]",
     "effect2": "Attack Up [V / 25%]",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Dive_into Summer (Tsukuyo/Tsukasa)"
+    "url": "https://magireco.fandom.com/wiki/Dive_into_Summer_(Tsukuyo/Tsukasa)"
   },
   {
     "id": "1368",
@@ -6455,8 +7111,11 @@ export const memoria_collection = [
     "max_def": "1532",
     "effect1": "Blast Damage Up [V / 35%] (Self / 1 turn) & Chance to Critical Hit [IV / 25%] (Self / 1 turn)",
     "effect2": "Blast Damage Up [VI / 40%] (Self / 1 turn) & Chance to Critical Hit [V / 30%] (Self / 1 turn)",
+    "cooldown1": "7",
+    "cooldown2": "6",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Dive_into Summer (Alina/Mifuyu)"
+    "url": "https://magireco.fandom.com/wiki/Dive_into_Summer_(Alina/Mifuyu)"
   },
   {
     "id": "1369",
@@ -6473,8 +7132,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Defense Up [II / 15%] & MP Gain Up [II / 7.5%]",
     "effect2": "Defense Up [II / 22.5%] & MP Gain Up [II / 10%]",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Dive_into Summer (Touka/Nemu)"
+    "url": "https://magireco.fandom.com/wiki/Dive_into_Summer_(Touka/Nemu)"
   },
   {
     "id": "1370",
@@ -6491,8 +7151,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Attack Up [II / 10%] & Chance to Anti-Stun [VI / 50%]",
     "effect2": "Attack Up [III / 15%] & Chance to Anti-Stun [100%]",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Because_We're Not Alone"
+    "url": "https://magireco.fandom.com/wiki/Because_We're_Not_Alone"
   },
   {
     "id": "1371",
@@ -6509,8 +7170,11 @@ export const memoria_collection = [
     "max_def": "1500",
     "effect1": "Charged Attack Damage Up [III / 10%] (Self / 3 turns)",
     "effect2": "Charged Attack Damage Up [V / 15%] (Self / 3 turns)",
+    "cooldown1": "8",
+    "cooldown2": "7",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Guided_by Destiny"
+    "url": "https://magireco.fandom.com/wiki/Guided_by_Destiny"
   },
   {
     "id": "1372",
@@ -6527,9 +7191,11 @@ export const memoria_collection = [
     "max_def": "1277",
     "effect1": "Attack Up [IV / 20%] & Defense Up [V /37.5%] & Chance to Provoke [VII / 40%] (Self / 1 turn)",
     "effect2": "Attack Up [V / 25%] & Defense Up [VI / 45%] & Chance to Provoke [VIII / 45%] (Self / 1 turn)",
+    "cooldown1": "10",
+    "cooldown2": "9",
     "chara": "Elisa Celjska",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/The_Gem of the Noble Soul"
+    "url": "https://magireco.fandom.com/wiki/The_Gem_of_the_Noble_Soul"
   },
   {
     "id": "1373",
@@ -6546,9 +7212,11 @@ export const memoria_collection = [
     "max_def": "1050",
     "effect1": "MP Gain Down [VII / 40%] (All / 1 turn) & Regenerate HP [III / 4%] (Self / 3 turns)",
     "effect2": "MP Gain Down [VIII / 45%] (All / 1 turn) & Regenerate HP [IV / 5%] (Self / 3 turns)",
+    "cooldown1": "8",
+    "cooldown2": "7",
     "chara": "Corbeau",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/The_Formed Darkness"
+    "url": "https://magireco.fandom.com/wiki/The_Formed_Darkness"
   },
   {
     "id": "1374",
@@ -6565,8 +7233,11 @@ export const memoria_collection = [
     "max_def": "2030",
     "effect1": "Chance to Burn [XV / 65%] & Defense Down [VIII / 40%] (One / 1 Turn)",
     "effect2": "Chance to Burn [100%] & Defense Down [IX / 45%] (One / 1 Turn)",
+    "cooldown1": "5",
+    "cooldown2": "4",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Fire_Drake Roars"
+    "url": "https://magireco.fandom.com/wiki/Fire_Drake_Roars"
   },
   {
     "id": "1375",
@@ -6583,8 +7254,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Chance to Anti-Evade [IV / 40%] & Chance to Anti-Counter [IV / 40%]",
     "effect2": "Chance to Anti-Evade [VI / 50%] & Chance to Anti-Counter [VI / 50%]",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Sisters_Being Themselves"
+    "url": "https://magireco.fandom.com/wiki/Sisters_Being_Themselves"
   },
   {
     "id": "1376",
@@ -6601,6 +7273,7 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Status Ailment Resistance Up [II / 25%]",
     "effect2": "Status Ailment Resistance Up [IV / 35%]",
+    "chara": "",
     "obtainability": "limited",
     "url": "https://magireco.fandom.com/wiki/Mysterious_Memorial"
   },
@@ -6619,8 +7292,10 @@ export const memoria_collection = [
     "max_def": "2000",
     "effect1": "",
     "effect2": "Endure (Self / 1 turn) & Regenerate HP [XV / 16%] (Self / 1 turn)",
+    "cooldown2": "7",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Our_Thoughts As One"
+    "url": "https://magireco.fandom.com/wiki/Our_Thoughts_As_One"
   },
   {
     "id": "1378",
@@ -6637,8 +7312,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "",
     "effect2": "Anti-Burn & Regenerate HP [III / 4%]",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Two_Makes One"
+    "url": "https://magireco.fandom.com/wiki/Two_Makes_One"
   },
   {
     "id": "1379",
@@ -6655,8 +7331,10 @@ export const memoria_collection = [
     "max_def": "1000",
     "effect1": "",
     "effect2": "Status Ailment Resistance Up [IV / 35%] (Self / 3 Turns) & Regenerate MP [I / 3 MP]",
+    "cooldown2": "8",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Three_Makes One?"
+    "url": "https://magireco.fandom.com/wiki/Three_Makes_One?"
   },
   {
     "id": "1380",
@@ -6673,9 +7351,11 @@ export const memoria_collection = [
     "max_def": "1180",
     "effect1": "Blast Damage Up [II /20%] & MP Gain Up [IV / 12.5%] (Self / 3 Turns)",
     "effect2": "Blast Damage Up [III / 25%] & MP Gain Up [V / 15%] (Self / 3 Turns)",
+    "cooldown1": "7",
+    "cooldown2": "6",
     "chara": "Sakura Kyouko (Mizugi ver.)",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/A_Desert Island Feast"
+    "url": "https://magireco.fandom.com/wiki/A_Desert_Island_Feast"
   },
   {
     "id": "1381",
@@ -6692,8 +7372,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Blast Damage Up [II / 20%] & Accele MP Gain Up [II / 12.5%] & Anti-Charm [100%]",
     "effect2": "Blast Damage Up [IV / 30%] & Accele MP Gain Up [III / 15%] & Anti-Charm [100%]",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Now,_We Treasure Hunt!"
+    "url": "https://magireco.fandom.com/wiki/Now,_We_Treasure_Hunt!"
   },
   {
     "id": "1382",
@@ -6710,8 +7391,11 @@ export const memoria_collection = [
     "max_def": "1675",
     "effect1": "HP Restore [I / 30%] (Self)",
     "effect2": "HP Restore [I / 30%] (Self)",
+    "cooldown1": "10",
+    "cooldown2": "8",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Beach_House Fun"
+    "url": "https://magireco.fandom.com/wiki/Beach_House_Fun"
   },
   {
     "id": "1383",
@@ -6728,8 +7412,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "",
     "effect2": "Anti-Dazzle [100%] & Blast Damage Up [III / 25%]",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Treasure_of This One Moment"
+    "url": "https://magireco.fandom.com/wiki/Treasure_of_This_One_Moment"
   },
   {
     "id": "1384",
@@ -6746,8 +7431,11 @@ export const memoria_collection = [
     "max_def": "1425",
     "effect1": "Attack Up [II / 10%] (Self / 3 turns)",
     "effect2": "Attack Up [IV / 20%] (Self / 3 turns)",
+    "cooldown1": "7",
+    "cooldown2": "6",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Free_in the Sea!"
+    "url": "https://magireco.fandom.com/wiki/Free_in_the_Sea!"
   },
   {
     "id": "1385",
@@ -6764,9 +7452,11 @@ export const memoria_collection = [
     "max_def": "1160",
     "effect1": "Defense Down [VII / 35%] (One / 1 turn) & Remove Status Ailments (Self)",
     "effect2": "Defense Down [VIII / 40%] (One / 1 turn) & Remove Status Ailments (Self)",
+    "cooldown1": "10",
+    "cooldown2": "9",
     "chara": "Hiroe Chiharu",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/The_Truth Is Right Nearby"
+    "url": "https://magireco.fandom.com/wiki/The_Truth_Is_Right_Nearby"
   },
   {
     "id": "1386",
@@ -6783,8 +7473,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Attack Up [II / 10%] & Defense Up [II / 15%] & Status Ailment Resistance Up [II / 25%]",
     "effect2": "Attack Up [III / 15%] & Defense Up [II / 15%] & Status Ailment Resistance Up [III  / 30%]",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Depart_on Morning Glow"
+    "url": "https://magireco.fandom.com/wiki/Depart_on_Morning_Glow"
   },
   {
     "id": "1387",
@@ -6801,6 +7492,8 @@ export const memoria_collection = [
     "max_def": "2105",
     "effect1": "",
     "effect2": "Attack Down [III / 15%] (All / 3 Turns)",
+    "cooldown2": "9",
+    "chara": "",
     "obtainability": "limited",
     "url": "https://magireco.fandom.com/wiki/Maidens'_Grave"
   },
@@ -6819,8 +7512,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Chance to Anti-Skill Seal [VI / 50%]",
     "effect2": "Anti-Skill Seal [100%]",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/My_Soul for the Land of the Rising Sun"
+    "url": "https://magireco.fandom.com/wiki/My_Soul_for_the_Land_of_the_Rising_Sun"
   },
   {
     "id": "1389",
@@ -6839,7 +7533,7 @@ export const memoria_collection = [
     "effect2": "MP Gain Up [III / 10%] & MP Up When Attacked By Weak Element [I / 2]",
     "chara": "Iroha & Yachiyo (Final Battle ver.)",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Will_Cooling Off Help Us Relax?"
+    "url": "https://magireco.fandom.com/wiki/Will_Cooling_Off_Help_Us_Relax?"
   },
   {
     "id": "1390",
@@ -6856,8 +7550,11 @@ export const memoria_collection = [
     "max_def": "2017",
     "effect1": "Anti-Evade [100%] & Blast Damage Up [I / 15%] (Allies / 1 Turn)",
     "effect2": "Anti-Evade [100%] & Blast Damage Up [II / 20%] (Allies / 1 Turn)",
+    "cooldown1": "6",
+    "cooldown2": "5",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Best_Shot That's Only Between Us"
+    "url": "https://magireco.fandom.com/wiki/Best_Shot_That's_Only_Between_Us"
   },
   {
     "id": "1391",
@@ -6874,8 +7571,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Accele MP Gain Up [II / 12.5%] & Chance to Evade [II / 15%]",
     "effect2": "Accele MP Gain Up [III / 15%] & Chance to Evade [III / 20%]",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/The_Wings from Before, Once Again"
+    "url": "https://magireco.fandom.com/wiki/The_Wings_from_Before,_Once_Again"
   },
   {
     "id": "1392",
@@ -6892,8 +7590,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "",
     "effect2": "Damage Increase [III / 15%] & Anti-Fog & Anti-Darkness",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Is_This Joy Momentary or Forever...?"
+    "url": "https://magireco.fandom.com/wiki/Is_This_Joy_Momentary_or_Forever...?"
   },
   {
     "id": "1393",
@@ -6910,8 +7609,10 @@ export const memoria_collection = [
     "max_def": "1355",
     "effect1": "",
     "effect2": "Attack Up [V / 25%] & Charged Attack Damage Up [IV / 12.5%] (Self / 1 Turn)",
+    "cooldown2": "7",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/A_Split-Second Tag Team"
+    "url": "https://magireco.fandom.com/wiki/A_Split-Second_Tag_Team"
   },
   {
     "id": "1394",
@@ -6928,8 +7629,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "",
     "effect2": "Chance to Critical Hit [III / 20%] & Status Ailment Resistance Up [III / 30%]",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/One_Summer's Courage"
+    "url": "https://magireco.fandom.com/wiki/One_Summer's_Courage"
   },
   {
     "id": "1395",
@@ -6946,8 +7648,10 @@ export const memoria_collection = [
     "max_def": "1000",
     "effect1": "",
     "effect2": "Blast Damage Up [IV / 30%] & Regenerate HP [IV / 5%] (Self / 3 Turns)",
+    "cooldown2": "8",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Our_Summer Together"
+    "url": "https://magireco.fandom.com/wiki/Our_Summer_Together"
   },
   {
     "id": "1396",
@@ -6964,8 +7668,10 @@ export const memoria_collection = [
     "max_def": "1000",
     "effect1": "",
     "effect2": "HP Restore to Lowest HP Ally [I / 30% HP]",
+    "cooldown2": "8",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Blue_and Pink"
+    "url": "https://magireco.fandom.com/wiki/Blue_and_Pink"
   },
   {
     "id": "1397",
@@ -6982,8 +7688,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Regenerate HP [II / 3%] & Damage Increase [III / 15%] & Anti-Stun [100%]",
     "effect2": "Regenerate HP [III / 4%] & Damage Increase [IV / 20%] & Anti-Stun [100%]",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Like_This, For Now"
+    "url": "https://magireco.fandom.com/wiki/Like_This,_For_Now"
   },
   {
     "id": "1398",
@@ -7000,8 +7707,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Chance to Skill Seal on Attack [III / 20%] (1 Turn) & Damage Up [III / 15%]",
     "effect2": "Chance to Skill Seal on Attack [IV / 25%] (1 Turn) & Damage Up [IV / 20%]",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/To_My Promising Friends"
+    "url": "https://magireco.fandom.com/wiki/To_My_Promising_Friends"
   },
   {
     "id": "1399",
@@ -7018,6 +7726,9 @@ export const memoria_collection = [
     "max_def": "1917",
     "effect1": "Defense Down [VII / 35%] (One / 1 turn) & Anti-Counter (Self / 1 turn)",
     "effect2": "Defense Down [VIII / 40%] (One / 1 turn) & Anti-Counter (Self / 1 turn)",
+    "cooldown1": "5",
+    "cooldown2": "4",
+    "chara": "",
     "obtainability": "unlimited",
     "url": "https://magireco.fandom.com/wiki/Little_Soldier"
   },
@@ -7036,8 +7747,11 @@ export const memoria_collection = [
     "max_def": "2000",
     "effect1": "Status Ailment Resistance Down [II / 7.5%] (All / 1 turn)",
     "effect2": "Status Ailment Resistance Down [II / 12.5%] (All / 1 turn)",
+    "cooldown1": "6",
+    "cooldown2": "5",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Only_You Are Real"
+    "url": "https://magireco.fandom.com/wiki/Only_You_Are_Real"
   },
   {
     "id": "1401",
@@ -7054,6 +7768,7 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Attack Up While At Max Health [III / 15%]",
     "effect2": "Attack Up While At Max Health [IV / 20%]",
+    "chara": "",
     "obtainability": "limited",
     "url": "https://magireco.fandom.com/wiki/Miyako-senpai_Radar"
   },
@@ -7072,9 +7787,11 @@ export const memoria_collection = [
     "max_def": "1050",
     "effect1": "Redraw Discs",
     "effect2": "Redraw Discs",
+    "cooldown1": "8",
+    "cooldown2": "7",
     "chara": "Nanase Yukika",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Closet_Casino Set"
+    "url": "https://magireco.fandom.com/wiki/Closet_Casino_Set"
   },
   {
     "id": "1403",
@@ -7091,8 +7808,11 @@ export const memoria_collection = [
     "max_def": "1807",
     "effect1": "Chance to Critical Hit [XII / 65%] & Chance to Defense Pierce [VIII / 45%] (Self / 1 Turn) & Darkness [100%] & Chance to Dazzle [70%]",
     "effect2": "Chance to Critical Hit [XIII / 70%] & Chance to Defense Pierce [IX / 50%] (Self / 1 Turn) & Darkness [100%] & Chance to Dazzle [70%]",
+    "cooldown1": "7",
+    "cooldown2": "6",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Pinch_Is a Chance"
+    "url": "https://magireco.fandom.com/wiki/Pinch_Is_a_Chance"
   },
   {
     "id": "1404",
@@ -7109,8 +7829,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Attack Up [III / 15%] & Defense Down [V / 25%]",
     "effect2": "Attack Up [IV / 20%] & Defense Down [V / 25%]",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Maiden's_Secret Etiquette"
+    "url": "https://magireco.fandom.com/wiki/Maiden's_Secret_Etiquette"
   },
   {
     "id": "1405",
@@ -7127,8 +7848,10 @@ export const memoria_collection = [
     "max_def": "1900",
     "effect1": "",
     "effect2": "Accele MP Gain Up [IV / 17.5%] & Status Ailment Resistance Up [III / 30%] (Self / 3 Turns))",
+    "cooldown2": "8",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/A_Different Moon Than Usual"
+    "url": "https://magireco.fandom.com/wiki/A_Different_Moon_Than_Usual"
   },
   {
     "id": "1406",
@@ -7145,8 +7868,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Damage Cut [II / 10%]  & Attack Up When At Critical Health [I / 10%] & Defense Up When At Critical Health [I / 20%]",
     "effect2": "Damage Cut [III / 15%] & Attack Up When At Critical Health [II / 15%] & Defense Up When At Critical Health [II / 30%]",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Welcome_to the Meeting"
+    "url": "https://magireco.fandom.com/wiki/Welcome_to_the_Meeting"
   },
   {
     "id": "1407",
@@ -7163,6 +7887,8 @@ export const memoria_collection = [
     "max_def": "1000",
     "effect1": "",
     "effect2": "Status Ailment Resistance Up [II / 15%] (All / 3 turns)",
+    "cooldown2": "10",
+    "chara": "",
     "obtainability": "limited",
     "url": "https://magireco.fandom.com/wiki/KAMIHA_MAGICA"
   },
@@ -7181,9 +7907,11 @@ export const memoria_collection = [
     "max_def": "1105",
     "effect1": "Magia Damage Down [VII / 35%] (One / 1 Turn) & Attack Down [V / 25%] (One / 1 Turn)",
     "effect2": "Magia Damage Down [VIII / 40%] (One / 1 Turn) & Attack Down [VI / 30%] (One / 1 Turn)",
+    "cooldown1": "6",
+    "cooldown2": "5",
     "chara": "Kirari Hikaru",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/A_Moment of Indulgence"
+    "url": "https://magireco.fandom.com/wiki/A_Moment_of_Indulgence"
   },
   {
     "id": "1409",
@@ -7200,8 +7928,11 @@ export const memoria_collection = [
     "max_def": "1907",
     "effect1": "Damage Cut [IV / 20%] (Self / 3 Turns) & Chance to Critical Hit [IV / 25%] (Self / 3 Turns)",
     "effect2": "Damage Cut [V / 25%] (Self / 3 Turns) & Chance to Critical Hit [V / 30%] (Self / 3 Turns)",
+    "cooldown1": "9",
+    "cooldown2": "8",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/The_One and Only Contradiction"
+    "url": "https://magireco.fandom.com/wiki/The_One_and_Only_Contradiction"
   },
   {
     "id": "1411",
@@ -7218,6 +7949,7 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "",
     "effect2": "Charged Attack Damage Up [IV / 12.5%] & Blast Damage Up [II / 20%]",
+    "chara": "",
     "obtainability": "limited",
     "url": "https://magireco.fandom.com/wiki/Crimson_Resolve"
   },
@@ -7236,6 +7968,8 @@ export const memoria_collection = [
     "max_def": "1350",
     "effect1": "",
     "effect2": "Attack Down [II / 10%] & Damage Down [II / 10%] (One / 3 Turns)",
+    "cooldown2": "8",
+    "chara": "",
     "obtainability": "limited",
     "url": "https://magireco.fandom.com/wiki/Overlapping_Strategies"
   },
@@ -7254,9 +7988,10 @@ export const memoria_collection = [
     "max_def": "1000",
     "effect1": "",
     "effect2": "MP Restore [II / 18 MP] (Self)",
+    "cooldown2": "5",
     "chara": "Tamaki Iroha; Tamaki Ui",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Pure_White Futures"
+    "url": "https://magireco.fandom.com/wiki/Pure_White_Futures"
   },
   {
     "id": "1414",
@@ -7272,8 +8007,10 @@ export const memoria_collection = [
     "max_atk": "0",
     "max_def": "1000",
     "effect2": "Chance to Chase [IX / 50%] & Endure (Self / 1 Turn)",
+    "cooldown2": "8",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/An_Exceptional Stage"
+    "url": "https://magireco.fandom.com/wiki/An_Exceptional_Stage"
   },
   {
     "id": "1415",
@@ -7292,7 +8029,7 @@ export const memoria_collection = [
     "effect2": "Chance to Darkness [VI / 42.5%] (All / 1 Turn)",
     "chara": "Hinata Matsuri",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Fate_Has Begun to Tumble"
+    "url": "https://magireco.fandom.com/wiki/Fate_Has_Begun_to_Tumble"
   },
   {
     "id": "1416",
@@ -7311,7 +8048,7 @@ export const memoria_collection = [
     "effect2": "Defense Up When At Critical Health [II / 30%] & Defense Up [III / 22.5%] & Damage Cut [II / 10%]",
     "chara": "Kanade Haruka",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/The_Picture that Could Not Be Shown"
+    "url": "https://magireco.fandom.com/wiki/The_Picture_that_Could_Not_Be_Shown"
   },
   {
     "id": "1417",
@@ -7328,6 +8065,7 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Defense Up at Critical Health [II / 30%] & Defense Up [IV / 22.5%] & Anti-Burn [100%]",
     "effect2": "Defense Up at Critical Health [III / 40%] & Defense Up [V / 30%] & Anti-Burn [100%]",
+    "chara": "",
     "obtainability": "limited",
     "url": "https://magireco.fandom.com/wiki/Inherited_Amulet"
   },
@@ -7346,8 +8084,11 @@ export const memoria_collection = [
     "max_def": "2032",
     "effect1": "Blast Damage Up [I / 6.5%] & Charged Attack Damage Up [I / 5%] (Allies / 3 Turns) & Accele MP Gain Up [I / 6%]",
     "effect2": "Blast Damage Up [I / 6.5%] & Charged Attack Damage Up [I / 5%] (Allies / 3 Turns) & Accele MP Gain Up [I / 6%]",
+    "cooldown1": "10",
+    "cooldown2": "8",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/The_Girls' Daily Scenery"
+    "url": "https://magireco.fandom.com/wiki/The_Girls'_Daily_Scenery"
   },
   {
     "id": "1419",
@@ -7364,8 +8105,11 @@ export const memoria_collection = [
     "max_def": "1450",
     "effect1": "Attack Down [III / 15%] & MP Gain Down [III / 20%] (All / 1 Turn)",
     "effect2": "Attack Down [IV / 20%] & MP Gain Down [IV / 25%] (All / 1 Turn)",
+    "cooldown1": "8",
+    "cooldown2": "7",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/It_Seems I Wasn't Good Enough"
+    "url": "https://magireco.fandom.com/wiki/It_Seems_I_Wasn't_Good_Enough"
   },
   {
     "id": "1420",
@@ -7382,8 +8126,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "",
     "effect2": "Blast Damage Up [III / 25%] & Accele MP Gain Up [III / 15%]",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Once_Again, Taking Your Hand"
+    "url": "https://magireco.fandom.com/wiki/Once_Again,_Taking_Your_Hand"
   },
   {
     "id": "1421",
@@ -7400,8 +8145,11 @@ export const memoria_collection = [
     "max_def": "1355",
     "effect1": "Chance to Critical Hit [I / 10%] (Self / 3 Turns) & Attack Up [II / 10%]",
     "effect2": "Chance to Critical Hit [I / 10%] (Self / 3 Turns) & Attack Up [III / 15%]",
+    "cooldown1": "9",
+    "cooldown2": "7",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/The_Day We Became Friends"
+    "url": "https://magireco.fandom.com/wiki/The_Day_We_Became_Friends"
   },
   {
     "id": "1422",
@@ -7418,9 +8166,11 @@ export const memoria_collection = [
     "max_def": "1215",
     "effect1": "Chance to Critical Hit [III / 20%] (Self / 1 Turn) & Attack Up [V / 25%]",
     "effect2": "Chance to Critical Hit [IV / 25%] (Self / 1 Turn) & Attack Up [VI / 30%]",
+    "cooldown1": "9",
+    "cooldown2": "8",
     "chara": "Toki Sunao",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Helping_at the Public Hall"
+    "url": "https://magireco.fandom.com/wiki/Helping_at_the_Public_Hall"
   },
   {
     "id": "1423",
@@ -7437,8 +8187,11 @@ export const memoria_collection = [
     "max_def": "1935",
     "effect1": "Blast Damage Up [V / 35%] (Self / 1 Turn) & Accele MP Gain Up [V / 20%]",
     "effect2": "Blast Damage Up [VI / 40%] (Self / 1 Turn) & Accele MP Gain Up [VI / 22.5%]",
+    "cooldown1": "5",
+    "cooldown2": "4",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Latent_Strength of the Tokime"
+    "url": "https://magireco.fandom.com/wiki/Latent_Strength_of_the_Tokime"
   },
   {
     "id": "1424",
@@ -7455,8 +8208,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Chance to Anti-Poison [VII / 55%] & Blast Damage Up [I / 15%]",
     "effect2": "Anti-Poison [100%] & Blast Damage Up [II / 20%]",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Can't_Get Used to the City"
+    "url": "https://magireco.fandom.com/wiki/Can't_Get_Used_to_the_City"
   },
   {
     "id": "1425",
@@ -7473,9 +8227,11 @@ export const memoria_collection = [
     "max_def": "1267",
     "effect1": "Monopolize Draw",
     "effect2": "Monopolize Draw",
+    "cooldown1": "15",
+    "cooldown2": "13",
     "chara": "Komachi Mikura",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/The_Cue Is from a Detour"
+    "url": "https://magireco.fandom.com/wiki/The_Cue_Is_from_a_Detour"
   },
   {
     "id": "1426",
@@ -7494,7 +8250,7 @@ export const memoria_collection = [
     "effect2": "CC Gain Up [II / 10%] (Does Not Work on Supports)",
     "chara": "Mihono Seira",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/A_Dream's Opening Act"
+    "url": "https://magireco.fandom.com/wiki/A_Dream's_Opening_Act"
   },
   {
     "id": "1427",
@@ -7511,9 +8267,11 @@ export const memoria_collection = [
     "max_def": "1165",
     "effect1": "Remove Buffs (One)",
     "effect2": "Remove Buffs (One)",
+    "cooldown1": "15",
+    "cooldown2": "13",
     "chara": "Kira Temari",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/The_Usual Whims"
+    "url": "https://magireco.fandom.com/wiki/The_Usual_Whims"
   },
   {
     "id": "1428",
@@ -7530,8 +8288,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Blast Damage Up [IV / 30%] & Blast Damage Cut [II / 10%]",
     "effect2": "Blast Damage Up [V / 35%] & Blast Damage Cut [III / 15%]",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/The_Archive Is a Friend"
+    "url": "https://magireco.fandom.com/wiki/The_Archive_Is_a_Friend"
   },
   {
     "id": "1429",
@@ -7548,8 +8307,11 @@ export const memoria_collection = [
     "max_def": "2025",
     "effect1": "Blast Damage Up [III / 25%] & Damage Up [II / 10%] (Self / 3 turns)",
     "effect2": "Blast Damage Up [IV / 30%] & Damage Up [III / 15%] (Self / 3 turns)",
+    "cooldown1": "9",
+    "cooldown2": "8",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/The_Origin Is a Monster Movie"
+    "url": "https://magireco.fandom.com/wiki/The_Origin_Is_a_Monster_Movie"
   },
   {
     "id": "1430",
@@ -7566,8 +8328,11 @@ export const memoria_collection = [
     "max_def": "1445",
     "effect1": "Defense Down [VI / 30%] (All / 1 turn) & Status Ailment Resistance Up [V / 40%] (Self / 1 turn)",
     "effect2": "Defense Down [VII / 35%] (All / 1 turn) & Status Ailment Resistance Up [VI / 45%] (Self / 1 turn)",
+    "cooldown1": "8",
+    "cooldown2": "7",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Waking_Up from the School Bell"
+    "url": "https://magireco.fandom.com/wiki/Waking_Up_from_the_School_Bell"
   },
   {
     "id": "1431",
@@ -7584,8 +8349,10 @@ export const memoria_collection = [
     "max_def": "1835",
     "effect1": "",
     "effect2": "Remove Debuffs (Self)",
+    "cooldown2": "9",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Blue_Night Sky and Fanciful Evening Party"
+    "url": "https://magireco.fandom.com/wiki/Blue_Night_Sky_and_Fanciful_Evening_Party"
   },
   {
     "id": "1432",
@@ -7602,8 +8369,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Attack Up [II / 10%] & Chance to Anti-Bind [VI / 50%]",
     "effect2": "Attack Up [III / 15%] & Anti-Bind [100%]",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/The_End Roll Is Full of Difficulties"
+    "url": "https://magireco.fandom.com/wiki/The_End_Roll_Is_Full_of_Difficulties"
   },
   {
     "id": "1433",
@@ -7620,6 +8388,8 @@ export const memoria_collection = [
     "max_def": "1065",
     "effect1": "Evade [100%] (Self / 1 turn)",
     "effect2": "Evade [100%] (Self / 1 turn)",
+    "cooldown1": "10",
+    "cooldown2": "8",
     "chara": "Miyabi Shigure",
     "obtainability": "unlimited",
     "url": "https://magireco.fandom.com/wiki/Digital_Hideaway"
@@ -7639,8 +8409,11 @@ export const memoria_collection = [
     "max_def": "2235",
     "effect1": "Blast Damage Down [VII / 20%] & Chance to Fog [XV / 65%] (One / 3 turns)",
     "effect2": "Blast Damage Down [VIII / 22.5%] & Fog [100%] (One / 3 turns)",
+    "cooldown1": "8",
+    "cooldown2": "7",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/The_Connection Under the Hood"
+    "url": "https://magireco.fandom.com/wiki/The_Connection_Under_the_Hood"
   },
   {
     "id": "1435",
@@ -7657,8 +8430,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Attack Up [II / 10%] & Chance to Anti-Provoke [IV / 45%]",
     "effect2": "Attack Up [III / 15%] & Chance to Anti-Provoke [VI / 55%]",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/The_Weak Are Crushed"
+    "url": "https://magireco.fandom.com/wiki/The_Weak_Are_Crushed"
   },
   {
     "id": "1436",
@@ -7675,9 +8449,11 @@ export const memoria_collection = [
     "max_def": "1225",
     "effect1": "Remove Debuffs (Self)",
     "effect2": "Remove Debuffs (Self)",
+    "cooldown1": "7",
+    "cooldown2": "6",
     "chara": "Rika & Ren (Christmas ver.)",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/The_Lights on Our Chests"
+    "url": "https://magireco.fandom.com/wiki/The_Lights_on_Our_Chests"
   },
   {
     "id": "1437",
@@ -7694,8 +8470,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Accele MP Gain Up [IV / 17.5%] & Damage Increase [III / 15%]",
     "effect2": "Accele MP Gain Up [V / 20%] & Damage Increase [IV / 20%]",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Waiting_for the Moment"
+    "url": "https://magireco.fandom.com/wiki/Waiting_for_the_Moment"
   },
   {
     "id": "1438",
@@ -7712,8 +8489,11 @@ export const memoria_collection = [
     "max_def": "1390",
     "effect1": "Attack Up [III / 15%] & Chance to Defense Pierce [VI / 35%] (Self / 1 turn)",
     "effect2": "Attack Up [IV / 20%] & Chance to Defense Pierce [VII / 40%] (Self / 1 turn)",
+    "cooldown1": "6",
+    "cooldown2": "5",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Tonight's_Guest Is..."
+    "url": "https://magireco.fandom.com/wiki/Tonight's_Guest_Is..."
   },
   {
     "id": "1439",
@@ -7730,8 +8510,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Magia Damage Up [III / 10%] & Magia Damage Cut [III / 15%]",
     "effect2": "Magia Damage Up [IV / 12.5%] & Magia Damage Cut [IV / 20%]",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/A_Christmas Miracle"
+    "url": "https://magireco.fandom.com/wiki/A_Christmas_Miracle"
   },
   {
     "id": "1440",
@@ -7748,8 +8529,11 @@ export const memoria_collection = [
     "max_def": "1505",
     "effect1": "Accele MP Gain Up [III / 15%] & Magia Damage Up [II / 7.5%] (Self / 3 turns)",
     "effect2": "Accele MP Gain Up [V / 15%] & Magia Damage Up [IV / 12.5%] (Self / 3 turns)",
+    "cooldown1": "8",
+    "cooldown2": "7",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Holy_Girls Formation!"
+    "url": "https://magireco.fandom.com/wiki/Holy_Girls_Formation!"
   },
   {
     "id": "1441",
@@ -7766,8 +8550,10 @@ export const memoria_collection = [
     "max_def": "1000",
     "effect1": "",
     "effect2": "Attack Up [III / 15%] & Status Ailment Resistance Up [II / 25%] (Self / 3 turns)",
+    "cooldown2": "8",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/1._Mochi - 2. Lion - 3. Kureha"
+    "url": "https://magireco.fandom.com/wiki/1._Mochi_-_2._Lion_-_3._Kureha"
   },
   {
     "id": "1442",
@@ -7784,6 +8570,8 @@ export const memoria_collection = [
     "max_def": "1230",
     "effect1": "Guardian [100%] (Self / 1 turn)",
     "effect2": "Guardian [100%] (Self / 1 turn)",
+    "cooldown1": "8",
+    "cooldown2": "7",
     "chara": "Miki Sayaka (Haregi ver.)",
     "obtainability": "unlimited",
     "url": "https://magireco.fandom.com/wiki/Special_Remnants"
@@ -7803,8 +8591,10 @@ export const memoria_collection = [
     "max_def": "2040",
     "effect1": "Charged Attack Damage Up [IV / 12.5%] (Self / 3 turns) & Blast Damage Up [III / 25%]",
     "effect2": "Charged Attack Damage Up [V / 15%] (Self / 3 turns) & Blast Damage Up [IV / 30%]",
+    "cooldown1": "8",
+    "cooldown2": "7",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Admiration_of Many Colors"
+    "url": "https://magireco.fandom.com/wiki/Admiration_of_Many_Colors"
   },
   {
     "id": "1444",
@@ -7821,8 +8611,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Attack Up While At Max Health [II / 10%] & Attack Up [II / 10%]",
     "effect2": "Attack Up While At Max Health [III / 15%] & Attack Up [II / 10%]",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/These_Thoughts Must End!"
+    "url": "https://magireco.fandom.com/wiki/These_Thoughts_Must_End!"
   },
   {
     "id": "1445",
@@ -7839,8 +8630,10 @@ export const memoria_collection = [
     "max_def": "2100",
     "effect1": "",
     "effect2": "Damage Increase [V / 25%] (Self / 3 turns) & Damage Cut [IV / 20%]",
+    "cooldown2": "8",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/The_Loving Heart that Wields the Brush"
+    "url": "https://magireco.fandom.com/wiki/The_Loving_Heart_that_Wields_the_Brush"
   },
   {
     "id": "1446",
@@ -7857,8 +8650,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "",
     "effect2": "Regenerate HP [III / 4%] & Attack Up [II / 10%]",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/New_Year's Sincere Heart"
+    "url": "https://magireco.fandom.com/wiki/New_Year's_Sincere_Heart"
   },
   {
     "id": "1447",
@@ -7875,9 +8669,11 @@ export const memoria_collection = [
     "max_def": "1275",
     "effect1": "Damage Cut [III / 15%] & Magia Damage Up [III / 10%] (Self / 3 turns)",
     "effect2": "Damage Cut [IV / 20%] & Magia Damage Up [IV / 12.5%] (Self / 3 turns)",
+    "cooldown1": "7",
+    "cooldown2": "6",
     "chara": "Livia Medeiros",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Blessing_Unto You"
+    "url": "https://magireco.fandom.com/wiki/Blessing_Unto_You"
   },
   {
     "id": "1448",
@@ -7894,9 +8690,11 @@ export const memoria_collection = [
     "max_def": "1225",
     "effect1": "Chance to Evade [III / 20%] & Regenerate HP [III / 4%] (Self / 3 turns)",
     "effect2": "Chance to Evade [IV / 25%] & Regenerate HP [IV / 5%] (Self / 3 turns)",
+    "cooldown1": "9",
+    "cooldown2": "8",
     "chara": "Chizu Ranka",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Cyber_Relaxation Space"
+    "url": "https://magireco.fandom.com/wiki/Cyber_Relaxation_Space"
   },
   {
     "id": "1449",
@@ -7913,8 +8711,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Chance to Critical Hit [III / 20%] & Attack Up [I / 5%] & Anti-Charm [100%]",
     "effect2": "Chance to Critical Hit [IV / 25%] & Attack Up [II / 10%] & Anti-Charm [100%]",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/The_Travelling Adjuster"
+    "url": "https://magireco.fandom.com/wiki/The_Travelling_Adjuster"
   },
   {
     "id": "1450",
@@ -7931,8 +8730,11 @@ export const memoria_collection = [
     "max_def": "1600",
     "effect1": "Regenerate HP [II / 3%] (Self / 3 turns) & MP Gain Up [II / 7.5%]",
     "effect2": "Regenerate HP [III / 4%] (Self / 3 turns) & MP Gain Up [III / 10%]",
+    "cooldown1": "9",
+    "cooldown2": "8",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/In_Dreams Are Sadness Permitted"
+    "url": "https://magireco.fandom.com/wiki/In_Dreams_Are_Sadness_Permitted"
   },
   {
     "id": "1451",
@@ -7949,9 +8751,11 @@ export const memoria_collection = [
     "max_def": "1220",
     "effect1": "Redraw Discs",
     "effect2": "Redraw Discs",
+    "cooldown1": "8",
+    "cooldown2": "7",
     "chara": "Suzuka Sakuya",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/The_Goal Is Still Far Away"
+    "url": "https://magireco.fandom.com/wiki/The_Goal_Is_Still_Far_Away"
   },
   {
     "id": "1452",
@@ -7968,9 +8772,11 @@ export const memoria_collection = [
     "max_def": "1077",
     "effect1": "Damage Cut [III / 15%] (Self / 3 turns) & Charged Attack Damage Up [II / 7.5%]",
     "effect2": "Damage Cut [IV / 20%] (Self / 3 turns) & Charged Attack Damage Up [III / 10%]",
+    "cooldown1": "7",
+    "cooldown2": "6",
     "chara": "Natsu Ryouko",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/If_You Go Through Yourself"
+    "url": "https://magireco.fandom.com/wiki/If_You_Go_Through_Yourself"
   },
   {
     "id": "1453",
@@ -7987,8 +8793,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Damage Increase [V / 25%] & Regenerate HP [III / 4%]",
     "effect2": "Damage Increase [VI / 30%] & Regenerate HP [IV / 5%]",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Ryouko_and Sakuya: Moment of Perfection"
+    "url": "https://magireco.fandom.com/wiki/Ryouko_and_Sakuya:_Moment_of_Perfection"
   },
   {
     "id": "1454",
@@ -8005,6 +8812,9 @@ export const memoria_collection = [
     "max_def": "1597",
     "effect1": "Charged Attack Damage Up [II / 7.5%] (Self / 3 turns) & Accele MP Gain Up [II / 12.5%]",
     "effect2": "Charged Attack Damage Up [III / 10%] (Self / 3 turns) & Accele MP Gain Up [III / 15%]",
+    "cooldown1": "10",
+    "cooldown2": "9",
+    "chara": "",
     "obtainability": "unlimited",
     "url": "https://magireco.fandom.com/wiki/Youth_Runner"
   },
@@ -8023,8 +8833,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "",
     "effect2": "Chance to Guardian [III / 20%] & Damage Cut [III / 15%]",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Natsu_and Suzuka: Painful Break"
+    "url": "https://magireco.fandom.com/wiki/Natsu_and_Suzuka:_Painful_Break"
   },
   {
     "id": "1456",
@@ -8041,8 +8852,10 @@ export const memoria_collection = [
     "max_def": "2100",
     "effect1": "",
     "effect2": "MP Gain Up [IV / 12.5%] & Status Ailment Resistance Up [III / 30%] (Self / 3 turns)",
+    "cooldown2": "8",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Hunger_Sensor ON"
+    "url": "https://magireco.fandom.com/wiki/Hunger_Sensor_ON"
   },
   {
     "id": "1457",
@@ -8059,8 +8872,11 @@ export const memoria_collection = [
     "max_def": "1837",
     "effect1": "Attack Up [IV / 20%] & Defense Up [III / 22.5%] & Regenerate HP [IV / 5%] (Self / 3 turns)",
     "effect2": "Attack Up [V / 25%] & Defense Up [IV / 30%] & Regenerate HP [V / 6%] (Self / 3 turns)",
+    "cooldown1": "9",
+    "cooldown2": "8",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/How_About Delicious Chocolate?"
+    "url": "https://magireco.fandom.com/wiki/How_About_Delicious_Chocolate?"
   },
   {
     "id": "1458",
@@ -8077,8 +8893,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "",
     "effect2": "Damage Cut [III / 15%] & Chance to Critical Hit [III / 20%]",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Sweetly_Melting Together at Dusk"
+    "url": "https://magireco.fandom.com/wiki/Sweetly_Melting_Together_at_Dusk"
   },
   {
     "id": "1459",
@@ -8095,9 +8912,11 @@ export const memoria_collection = [
     "max_def": "1080",
     "effect1": "Damage Down [II / 10%] (All / 1 turn) & Magia Damage Up [V / 15%] (Self / 1 turn)",
     "effect2": "Damage Down [III / 15%] (All / 1 turn) & Magia Damage Up [VI / 17.5%] (Self / 1 turn)",
+    "cooldown1": "6",
+    "cooldown2": "5",
     "chara": "Momoe Nagisa (Valentine's ver.)",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/The_Universe's Best Chocolate Cake"
+    "url": "https://magireco.fandom.com/wiki/The_Universe's_Best_Chocolate_Cake"
   },
   {
     "id": "1460",
@@ -8114,8 +8933,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Charged Attack Damage Up [IV / 12.5%] & Blast Damage Up [II / 20%] & Status Ailment Resistance Up [II / 25%]",
     "effect2": "Charged Attack Damage Up [V / 15%] & Blast Damage Up [III / 25%] & Status Ailment Resistance Up [III / 30%]",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/The_Small Chocolatier"
+    "url": "https://magireco.fandom.com/wiki/The_Small_Chocolatier"
   },
   {
     "id": "1461",
@@ -8132,8 +8952,10 @@ export const memoria_collection = [
     "max_def": "1580",
     "effect1": "",
     "effect2": "Attack Up [III / 15%] & MP Gain Up [III / 10%] (Self / 3 turns)",
+    "cooldown2": "10",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/The_Long-Awaited Choco Date!"
+    "url": "https://magireco.fandom.com/wiki/The_Long-Awaited_Choco_Date!"
   },
   {
     "id": "1462",
@@ -8150,8 +8972,10 @@ export const memoria_collection = [
     "max_def": "1795",
     "effect1": "",
     "effect2": "Anti-Counter [100%] & Attack Up [VI / 30%] & Endure (Self / 1 turn)",
+    "cooldown2": "7",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Mami_of the Land of Sweets"
+    "url": "https://magireco.fandom.com/wiki/Mami_of_the_Land_of_Sweets"
   },
   {
     "id": "1463",
@@ -8168,9 +8992,11 @@ export const memoria_collection = [
     "max_def": "1230",
     "effect1": "Charge Draw",
     "effect2": "Charge Draw",
+    "cooldown1": "8",
+    "cooldown2": "7",
     "chara": "Azumi Hagumu",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Prickle_Prickle Fiddle Fiddle"
+    "url": "https://magireco.fandom.com/wiki/Prickle_Prickle_Fiddle_Fiddle"
   },
   {
     "id": "1464",
@@ -8185,8 +9011,10 @@ export const memoria_collection = [
     "max_hp": "1275",
     "max_atk": "0",
     "max_def": "1075",
-    "effect1": "Charge Combo Charge Count Up (+2 / cannot be repeated) & Damage Cut [IV / 20%] (Self / 3 turns)",
-    "effect2": "Charge Combo Charge Count Up (+2 / cannot be repeated) & Damage Cut [IV / 20%] (Self / 3 turns)",
+    "effect1": "Charge Combo Charge Count Up (+2) & Damage Cut [IV / 20%] (Self / 3 turns)",
+    "effect2": "Charge Combo Charge Count Up (+2) & Damage Cut [IV / 20%] (Self / 3 turns)",
+    "cooldown1": "6",
+    "cooldown2": "5",
     "chara": "Megumi Moka",
     "obtainability": "unlimited",
     "url": "https://magireco.fandom.com/wiki/Simple_Trauma"
@@ -8206,8 +9034,11 @@ export const memoria_collection = [
     "max_def": "1922",
     "effect1": "Blast Damage Up [V / 35%] & Damage Up [III / 15%] (Self / 1 turn)",
     "effect2": "Blast Damage Up [VI / 40%] & Damage Up [IV / 20%] (Self / 1 turn)",
+    "cooldown1": "7",
+    "cooldown2": "6",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Behind_the Scene Performance"
+    "url": "https://magireco.fandom.com/wiki/Behind_the_Scene_Performance"
   },
   {
     "id": "1466",
@@ -8224,6 +9055,7 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Chance to Critical Hit [II / 15%] & Charged Attack Damage Up [II / 7.5%]",
     "effect2": "Chance to Critical Hit [III / 20%] & Charged Attack Damage Up [III / 10%]",
+    "chara": "",
     "obtainability": "unlimited",
     "url": "https://magireco.fandom.com/wiki/Fluffy_Suspense"
   },
@@ -8242,8 +9074,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "",
     "effect2": "Episode Experience Gain Increased [II / 20%] & Regenerate HP [III / 4%]",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/A_Little Success"
+    "url": "https://magireco.fandom.com/wiki/A_Little_Success"
   },
   {
     "id": "1468",
@@ -8262,7 +9095,7 @@ export const memoria_collection = [
     "effect2": "Attack Up [II / 10%] & Blast Damage Up [III / 25%] & Regenerate HP [III / 4%]",
     "chara": "Tamaki Iroha; Nanami Yachiyo",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Rumor_of the Magical Girl"
+    "url": "https://magireco.fandom.com/wiki/Rumor_of_the_Magical_Girl"
   },
   {
     "id": "1469",
@@ -8279,8 +9112,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "",
     "effect2": "Anti-Bind [100%] & Anti-Stun [100%] & Attack Up [I / 5%]",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Gomakashi_- Utsuroi"
+    "url": "https://magireco.fandom.com/wiki/Gomakashi_-_Utsuroi"
   },
   {
     "id": "1470",
@@ -8299,7 +9133,7 @@ export const memoria_collection = [
     "effect2": "Blast Damage Up [X / 60%] & Attack Up [VII / 35%]",
     "chara": "Sasame Yozuru",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/A_Worn Mother-and-Child Notebook"
+    "url": "https://magireco.fandom.com/wiki/A_Worn_Mother-and-Child_Notebook"
   },
   {
     "id": "1471",
@@ -8316,9 +9150,11 @@ export const memoria_collection = [
     "max_def": "1125",
     "effect1": "Blast Damage Up [I / 15%] (All / 1 turn) & Magia Damage Up [I / 5%] (All / 1 turn) & Attack Down [25%] (Self / 2 turns)",
     "effect2": "Blast Damage Up [II / 20%] (All / 1 turn) & Magia Damage Up [II / 7.5%] (All / 1 turn) & Attack Down [25%] (Self / 2 turns)",
+    "cooldown1": "8",
+    "cooldown2": "7",
     "chara": "Hibiki Meguru",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/The_Road Is Still Far Away! ~Broadcasting Club Theater~"
+    "url": "https://magireco.fandom.com/wiki/The_Road_Is_Still_Far_Away!_~Broadcasting_Club_Theater~"
   },
   {
     "id": "1472",
@@ -8335,8 +9171,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Damage Increase [IV / 20%] & Damage Cut [III / 15%]",
     "effect2": "Damage Increase [V / 25%] & Damage Cut [IV / 20%]",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Kindness_Can Be Made"
+    "url": "https://magireco.fandom.com/wiki/Kindness_Can_Be_Made"
   },
   {
     "id": "1473",
@@ -8353,8 +9190,11 @@ export const memoria_collection = [
     "max_def": "1520",
     "effect1": "Attack Up [IV / 20%] & Status Ailment Resistance Up [III / 30%] (Self / 3 turns)",
     "effect2": "Attack Up [V / 25%] & Status Ailment Resistance Up [IV / 35%] (Self / 3 turns)",
+    "cooldown1": "7",
+    "cooldown2": "6",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Going_Round and Round Wednesday"
+    "url": "https://magireco.fandom.com/wiki/Going_Round_and_Round_Wednesday"
   },
   {
     "id": "1474",
@@ -8371,8 +9211,11 @@ export const memoria_collection = [
     "max_def": "1925",
     "effect1": "Redraw Discs",
     "effect2": "Redraw Discs",
+    "cooldown1": "12",
+    "cooldown2": "10",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/The_Exhibition Will Open Soon! Please Pay Attention!"
+    "url": "https://magireco.fandom.com/wiki/The_Exhibition_Will_Open_Soon!_Please_Pay_Attention!"
   },
   {
     "id": "1475",
@@ -8389,8 +9232,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Attack Up [IV / 20%] & Charged Attack Damage Up [IV / 12.5%]",
     "effect2": "Attack Up [V / 25%] & Charged Attack Damage Up [V / 15%]",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/To_Grace with Aster"
+    "url": "https://magireco.fandom.com/wiki/To_Grace_with_Aster"
   },
   {
     "id": "1476",
@@ -8407,8 +9251,11 @@ export const memoria_collection = [
     "max_def": "2100",
     "effect1": "Magia Seal [100%] (One / 1 turn) & Attack Down [VI / 30%]",
     "effect2": "Magia Seal [100%] (One / 1 turn) & Attack Down [VII / 35%]",
+    "cooldown1": "5",
+    "cooldown2": "4",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Ascending_Cherry Blossom Front"
+    "url": "https://magireco.fandom.com/wiki/Ascending_Cherry_Blossom_Front"
   },
   {
     "id": "1477",
@@ -8424,8 +9271,10 @@ export const memoria_collection = [
     "max_atk": "0",
     "max_def": "2002",
     "effect2": "Regenerate HP [IV / 5%] (Self / 3 turns) & Magia Damage Up [IV / 12.5%]",
+    "cooldown2": "6",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Offering_to the Sky"
+    "url": "https://magireco.fandom.com/wiki/Offering_to_the_Sky"
   },
   {
     "id": "1478",
@@ -8441,8 +9290,9 @@ export const memoria_collection = [
     "max_atk": "2102",
     "max_def": "0",
     "effect2": "Chance to Anti-Magia Seal [X / 70%] & Defense Up [IV / 30%]",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/New_Product! Sakura Sweets!!"
+    "url": "https://magireco.fandom.com/wiki/New_Product!_Sakura_Sweets!!"
   },
   {
     "id": "1479",
@@ -8458,6 +9308,7 @@ export const memoria_collection = [
     "max_atk": "1502",
     "max_def": "0",
     "effect2": "Attack Up [III / 15%] & Defense Up [III / 22.5%]",
+    "chara": "",
     "obtainability": "limited",
     "url": "https://magireco.fandom.com/wiki/Rumor's_Time"
   },
@@ -8476,8 +9327,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Damage Increase [III / 15%] & Attack Up [I / 5%] & Anti-Charm [100%]",
     "effect2": "Damage Increase [IV / 20%] & Attack Up [II / 10%] & Anti-Charm [100%]",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Successful_Venue Crossover"
+    "url": "https://magireco.fandom.com/wiki/Successful_Venue_Crossover"
   },
   {
     "id": "1482",
@@ -8494,8 +9346,11 @@ export const memoria_collection = [
     "max_def": "1575",
     "effect1": "Chance to Dazzle [VI / 42.5%] (One / 1 turn) & Attack Down [VI / 30%]",
     "effect2": "Chance to Dazzle [VII / 45%] (One / 1 turn) & Attack Down [VII / 35%]",
+    "cooldown1": "7",
+    "cooldown2": "6",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Light_Attributed Characters"
+    "url": "https://magireco.fandom.com/wiki/Light_Attributed_Characters"
   },
   {
     "id": "1483",
@@ -8512,8 +9367,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "",
     "effect2": "Attack Up [III / 15%] & Accele MP Gain Up [II / 12.5%] & Defense Down [V / 25%]",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Pulse_Rate Is 150+"
+    "url": "https://magireco.fandom.com/wiki/Pulse_Rate_Is_150+"
   },
   {
     "id": "1480",
@@ -8532,7 +9388,7 @@ export const memoria_collection = [
     "effect2": "Blast Damage Up [III / 25%] & Blast MP Gain Up [IV / 4MP]",
     "chara": "Yui Tsuruno",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Just_Like the Old Days"
+    "url": "https://magireco.fandom.com/wiki/Just_Like_the_Old_Days"
   },
   {
     "id": "1484",
@@ -8549,6 +9405,8 @@ export const memoria_collection = [
     "max_def": "1130",
     "effect1": "Attribute Draw",
     "effect2": "Attribute Draw",
+    "cooldown1": "10",
+    "cooldown2": "8",
     "chara": "Kasane Ao",
     "obtainability": "unlimited",
     "url": "https://magireco.fandom.com/wiki/Life-Changing_Game"
@@ -8568,9 +9426,11 @@ export const memoria_collection = [
     "max_def": "1075",
     "effect1": "Regenerate HP [III / 4%] (Self / 3 turns) & Damage Cut [III / 15%]",
     "effect2": "Regenerate HP [IV / 5%] (Self / 3 turns) & Damage Cut [IV / 20%]",
+    "cooldown1": "6",
+    "cooldown2": "5",
     "chara": "Yuki Maria",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Memo_and Heart Are Attached"
+    "url": "https://magireco.fandom.com/wiki/Memo_and_Heart_Are_Attached"
   },
   {
     "id": "1486",
@@ -8587,8 +9447,11 @@ export const memoria_collection = [
     "max_def": "2215",
     "effect1": "Magia Damage Up [V / 15%] & Chance to Skill Quicken [V / 40%] (Self / 1 Turn)",
     "effect2": "Magia Damage Up [VIII / 22.5%] & Skill Quicken [100%] (Self / 1 Turn)",
+    "cooldown1": "7",
+    "cooldown2": "6",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/When_You Look Up It's Blue"
+    "url": "https://magireco.fandom.com/wiki/When_You_Look_Up_It's_Blue"
   },
   {
     "id": "1487",
@@ -8605,8 +9468,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Chance to Charm on Attack [II / 15%] & Attack Up [I / 5%]",
     "effect2": "Chance to Charm on Attack [III / 20%] & Attack Up [II / 10%]",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Holy_Mother Surrounded by Angels"
+    "url": "https://magireco.fandom.com/wiki/Holy_Mother_Surrounded_by_Angels"
   },
   {
     "id": "1488",
@@ -8623,9 +9487,11 @@ export const memoria_collection = [
     "max_def": "1075",
     "effect1": "Attack Up [III / 15%] & MP Gain Up [I / 5%] (Self / 3 turns)",
     "effect2": "Attack Up [IV / 20%] & MP Gain Up [II / 7.5%] (Self / 3 turns )",
+    "cooldown1": "9",
+    "cooldown2": "8",
     "chara": "Mizuki Rui",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Dark_Goat's Mantle"
+    "url": "https://magireco.fandom.com/wiki/Dark_Goat's_Mantle"
   },
   {
     "id": "1489",
@@ -8642,8 +9508,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Blast Damage Up [IV / 30%] & Magia Damage Up [III / 10%]",
     "effect2": "Blast Damage Up [V / 35%] & Magia Damage Up [IV / 12.5%]",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Super_Soft Familiar"
+    "url": "https://magireco.fandom.com/wiki/Super_Soft_Familiar"
   },
   {
     "id": "1490",
@@ -8660,8 +9527,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "",
     "effect2": "Attack Up [II / 10%] & Chance to Anti-Evade [VIII / 60%]",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Revelation_from My Precious Other World"
+    "url": "https://magireco.fandom.com/wiki/Revelation_from_My_Precious_Other_World"
   },
   {
     "id": "1491",
@@ -8678,8 +9546,10 @@ export const memoria_collection = [
     "max_def": "1577",
     "effect1": "",
     "effect2": "Damage Down [II / 17.5%] (All / 3 turns) & Status Ailment Resistance Up [IV / 35%] (Self / 3 turns)",
+    "cooldown2": "9",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Evil_Eye of Ruination"
+    "url": "https://magireco.fandom.com/wiki/Evil_Eye_of_Ruination"
   },
   {
     "id": "1492",
@@ -8696,8 +9566,11 @@ export const memoria_collection = [
     "max_def": "2110",
     "effect1": "Attack Up [V / 25%] & Defense Up [IV / 30%] (Self / 3 Turns) & Anti-Debuff [2 Debuffs]",
     "effect2": "Attack Up [VI / 30%] & Defense Up [V / 37.5%] (Self / 3 Turns) & Anti-Debuff [2 Debuffs]",
+    "cooldown1": "9",
+    "cooldown2": "8",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Survival_Date on a Deserted Island"
+    "url": "https://magireco.fandom.com/wiki/Survival_Date_on_a_Deserted_Island"
   },
   {
     "id": "1493",
@@ -8714,9 +9587,11 @@ export const memoria_collection = [
     "max_def": "1230",
     "effect1": "Damage Cut [III / 15%] & Status Ailment Resistance Up [II / 25%] (Self / 3 turns)",
     "effect2": "Damage Cut [IV / 20%] & Status Ailment Resistance Up [III / 30%] (Self / 3 turns)",
+    "cooldown1": "7",
+    "cooldown2": "6",
     "chara": "Wakana Tsumugi",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Tsumugi's_Mystery Gourmet Notebook"
+    "url": "https://magireco.fandom.com/wiki/Tsumugi's_Mystery_Gourmet_Notebook"
   },
   {
     "id": "1494",
@@ -8733,8 +9608,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Attack Up [III / 15%] & Attack Up While At Max Health [IV / 20%]",
     "effect2": "Attack Up [IV / 20%] & Attack Up While At Max Health [V / 25%]",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/The_Happiest Moment in Human Life"
+    "url": "https://magireco.fandom.com/wiki/The_Happiest_Moment_in_Human_Life"
   },
   {
     "id": "1495",
@@ -8751,8 +9627,11 @@ export const memoria_collection = [
     "max_def": "1600",
     "effect1": "Regenerate HP [II / 3%] & Status Ailment Resistance Up [II / 25%] (Self / 3 turns)",
     "effect2": "Regenerate HP [III / 4%] & Status Ailment Resistance Up [III / 30%] (Self / 3 turns)",
+    "cooldown1": "7",
+    "cooldown2": "6",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Undoubtedly_Delicious School Festival"
+    "url": "https://magireco.fandom.com/wiki/Undoubtedly_Delicious_School_Festival"
   },
   {
     "id": "1496",
@@ -8769,8 +9648,10 @@ export const memoria_collection = [
     "max_def": "2102",
     "effect1": "",
     "effect2": "Attack Up [V / 25%] (Self / 1 turn) & Anti-Evade [100%]",
+    "cooldown2": "6",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/A_Memory Framed in a Photo"
+    "url": "https://magireco.fandom.com/wiki/A_Memory_Framed_in_a_Photo"
   },
   {
     "id": "1497",
@@ -8787,8 +9668,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "",
     "effect2": "Attack Up [II / 10%] & Anti-Darkness [100%]",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Flavor_Detective Tsumugi (Self-Proclaimed)"
+    "url": "https://magireco.fandom.com/wiki/Flavor_Detective_Tsumugi_(Self-Proclaimed)"
   },
   {
     "id": "1498",
@@ -8805,9 +9687,11 @@ export const memoria_collection = [
     "max_def": "1230",
     "effect1": "Attack Up [VII / 35%] & Defense Up [VI / 45%] (Self / 1 turn)",
     "effect2": "Attack Up [VIII / 40%] & Defense Up [VII / 52.5%] (Self / 1 turn)",
+    "cooldown1": "7",
+    "cooldown2": "6",
     "chara": "Yuzuki Hotori",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Courage_Lodged in the Heart"
+    "url": "https://magireco.fandom.com/wiki/Courage_Lodged_in_the_Heart"
   },
   {
     "id": "1499",
@@ -8843,9 +9727,11 @@ export const memoria_collection = [
     "max_def": "1082",
     "effect1": "Chance to Fog [XIII / 60%] (One / 3 turns) & Attack Down [III / 15%]",
     "effect2": "Chance to Fog [XV / 65] (One / 3 turns) & Attack Down [IV / 20%]",
+    "cooldown1": "10",
+    "cooldown2": "9",
     "chara": "Kaharu Yuuna",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Melancholy_Melts with Black Tea"
+    "url": "https://magireco.fandom.com/wiki/Melancholy_Melts_with_Black_Tea"
   },
   {
     "id": "1501",
@@ -8862,8 +9748,11 @@ export const memoria_collection = [
     "max_def": "1885",
     "effect1": "Chance to Charm [V / 40%] (All / 1 turn) & Attack Down [V / 25%]",
     "effect2": "Chance to Charm [VI / 42.5%] (All / 1 turn) & Attack Down [VI / 30%]",
+    "cooldown1": "9",
+    "cooldown2": "8",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/An_Inhabitant from Another World"
+    "url": "https://magireco.fandom.com/wiki/An_Inhabitant_from_Another_World"
   },
   {
     "id": "1502",
@@ -8880,8 +9769,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Attack Up [I / 5%] & Chance to Evade [II / 15%]",
     "effect2": "Attack Up [II / 10%] & Chance to Evade [III / 20%]",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Sunday_Morning Habit"
+    "url": "https://magireco.fandom.com/wiki/Sunday_Morning_Habit"
   },
   {
     "id": "1503",
@@ -8898,6 +9788,7 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Accele MP Gain Up [II / 12.5%] & Chance to Anti-Curse [X / 70%]",
     "effect2": "Accele MP Gain Up [III / 15%] & Anti-Curse [100%]",
+    "chara": "",
     "obtainability": "unlimited",
     "url": "https://magireco.fandom.com/wiki/My_Things!"
   },
@@ -8916,8 +9807,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "",
     "effect2": "Damage Up [III / 15%] & Chance to Anti-Provoke [VI / 55%]",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Light_of Guidance"
+    "url": "https://magireco.fandom.com/wiki/Light_of_Guidance"
   },
   {
     "id": "1505",
@@ -8934,6 +9826,7 @@ export const memoria_collection = [
     "max_def": "1580",
     "effect1": "",
     "effect2": "Poison [100%] (One / 1 turn) & Damage Up Versus Enemies Affected With Status Ailments [IV / 30%] (Self / 1 turn)",
+    "chara": "",
     "obtainability": "unlimited",
     "url": "https://magireco.fandom.com/wiki/Secret_Admiration"
   },
@@ -8954,7 +9847,7 @@ export const memoria_collection = [
     "effect2": "Chance to Skill Seal on Attack [VI / 35%] & Attack Up [III / 15%] & Charged Attack Damage Up [III / 10%]",
     "chara": "Mitsuki Felicia",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/I'll_Do Anything (Memoria)"
+    "url": "https://magireco.fandom.com/wiki/I'll_Do_Anything_(Memoria)"
   },
   {
     "id": "1507",
@@ -8971,6 +9864,8 @@ export const memoria_collection = [
     "max_def": "1130",
     "effect1": "Endure & Chance to Evade [IV / 25%] (Self / 1 turn)",
     "effect2": "Endure & Chance to Evade [V / 30%] (Self / 1 turn)",
+    "cooldown1": "8",
+    "cooldown2": "7",
     "chara": "Lapine",
     "obtainability": "unlimited",
     "url": "https://magireco.fandom.com/wiki/Masquerade"
@@ -8990,6 +9885,8 @@ export const memoria_collection = [
     "max_def": "1132",
     "effect1": "Blast Draw",
     "effect2": "Blast Draw",
+    "cooldown1": "15",
+    "cooldown2": "13",
     "chara": "Tart (Final ver.)",
     "obtainability": "unlimited",
     "url": "https://magireco.fandom.com/wiki/Last_Prayer"
@@ -9009,8 +9906,11 @@ export const memoria_collection = [
     "max_def": "2002",
     "effect1": "Remove Debuffs (Self / 3 turns) & Attack Up [IV / 20%]",
     "effect2": "Remove Debuffs (Self / 3 turns) & Attack Up [V / 25%]",
+    "cooldown1": "9",
+    "cooldown2": "8",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/The_Legendary 'Maiden'"
+    "url": "https://magireco.fandom.com/wiki/The_Legendary_'Maiden'"
   },
   {
     "id": "1510",
@@ -9027,8 +9927,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Blast Damage Up [III / 25%] & Accele MP Gain Up [III / 15%]",
     "effect2": "Blast Damage Up [IV / 30%] & Accele MP Gain Up [IV / 17.5%]",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Loading_a Shining Pennon with Hope"
+    "url": "https://magireco.fandom.com/wiki/Loading_a_Shining_Pennon_with_Hope"
   },
   {
     "id": "1512",
@@ -9045,8 +9946,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "",
     "effect2": "Attack Up [II / 10%] & Charged Attack Damage Up [II / 7.5%]",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Holding_Hand by Hand"
+    "url": "https://magireco.fandom.com/wiki/Holding_Hand_by_Hand"
   },
   {
     "id": "1511",
@@ -9063,8 +9965,10 @@ export const memoria_collection = [
     "max_def": "1802",
     "effect1": "",
     "effect2": "Defense Up [III / 30%] (All / 3 turns)",
+    "cooldown2": "10",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Comrades_in Arms"
+    "url": "https://magireco.fandom.com/wiki/Comrades_in_Arms"
   },
   {
     "id": "1513",
@@ -9083,7 +9987,7 @@ export const memoria_collection = [
     "effect2": "Damage Cut [III / 15%] & MP Gain Up [III / 10%]",
     "chara": "Sawa Sudachi",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/The_Scene Is Sin-Colored"
+    "url": "https://magireco.fandom.com/wiki/The_Scene_Is_Sin-Colored"
   },
   {
     "id": "1514",
@@ -9100,9 +10004,11 @@ export const memoria_collection = [
     "max_def": "1182",
     "effect1": "Attack Up [III / 15%] & MP Gain Up [I / 5%] (Self / 3 turns)",
     "effect2": "Attack Up [IV / 20%] & MP Gain Up [II / 7.5%] (Self / 3 turns)",
+    "cooldown1": "9",
+    "cooldown2": "8",
     "chara": "Aoba Chika",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Trust_in the Natural Stance"
+    "url": "https://magireco.fandom.com/wiki/Trust_in_the_Natural_Stance"
   },
   {
     "id": "1515",
@@ -9119,6 +10025,7 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Defense Up While At Max Health [VII / 70%] & Damage Cut [III / 15%]",
     "effect2": "Defense Up While At Max Health [IX / 90%] & Damage Cut [IV / 20%]",
+    "chara": "",
     "obtainability": "unlimited",
     "url": "https://magireco.fandom.com/wiki/Rest_Deliciously"
   },
@@ -9137,8 +10044,11 @@ export const memoria_collection = [
     "max_def": "1735",
     "effect1": "Guardian [100%] (Self / 1 turn)",
     "effect2": "Guardian [100%] (Self / 1 turn)",
+    "cooldown1": "10",
+    "cooldown2": "9",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Nice_Feeling Only Between Us"
+    "url": "https://magireco.fandom.com/wiki/Nice_Feeling_Only_Between_Us"
   },
   {
     "id": "1516",
@@ -9155,8 +10065,11 @@ export const memoria_collection = [
     "max_def": "2092",
     "effect1": "Anti-Debuff [3 Debuffs] (Self / 3 turns)",
     "effect2": "Anti-Debuff [3 Debuffs] (Self / 3 turns)",
+    "cooldown1": "8",
+    "cooldown2": "7",
+    "chara": "",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Blood_Rush to a Superb View"
+    "url": "https://magireco.fandom.com/wiki/Blood_Rush_to_a_Superb_View"
   },
   {
     "id": "1518",
@@ -9173,9 +10086,11 @@ export const memoria_collection = [
     "max_def": "1185",
     "effect1": "Attack Up [III / 15%] & Ignore Damage Cut [100%] (Self / 1 turn)",
     "effect2": "Attack Up [?? / ??%] & Ignore Damage Cut [100%] (Self / 1 turn)",
+    "cooldown1": "10",
+    "cooldown2": "??",
     "chara": "Rena & Kaede (Mizugi ver.)",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Flowers_Blooming in the Summer"
+    "url": "https://magireco.fandom.com/wiki/Flowers_Blooming_in_the_Summer"
   },
   {
     "id": "1519",
@@ -9192,6 +10107,7 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Damage Up [IV / 20%] & Status Ailment Resistance Up [II / 25%]",
     "effect2": "Damage Up [V / 25%] & Status Ailment Resistance Up [III / 30%]",
+    "chara": "",
     "obtainability": "limited",
     "url": "https://magireco.fandom.com/wiki/Hey,_Smile"
   },
@@ -9210,8 +10126,11 @@ export const memoria_collection = [
     "max_def": "2205",
     "effect1": "Attack Up [IV / 20%] & Charged Attack Damage Up [III / 10%] (Self / 3 turns) & Accele MP Gain Up [II/ 12.5%]",
     "effect2": "Attack Up [V / 25%] & Charged Attack Damage Up [IV / 12.5%] (Self / 3 turns) & Accele MP Gain Up [III / 15%]",
+    "cooldown1": "10",
+    "cooldown2": "9",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Trio's_Summer Vacation"
+    "url": "https://magireco.fandom.com/wiki/Trio's_Summer_Vacation"
   },
   {
     "id": "1522",
@@ -9228,8 +10147,10 @@ export const memoria_collection = [
     "max_def": "1502",
     "effect1": "",
     "effect2": "Chance to Critical Hit [IV / 30%] (Self / 1 turn) & Anti-Evade [100%]",
+    "cooldown2": "6",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Best_Splash Scene"
+    "url": "https://magireco.fandom.com/wiki/Best_Splash_Scene"
   },
   {
     "id": "1521",
@@ -9246,6 +10167,7 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "",
     "effect2": "Accele MP Gain Up [III / 15%] & Blast Damage Up [III / 25%] & Charged Attack Damage Up [II / 7.5%]",
+    "chara": "",
     "obtainability": "limited",
     "url": "https://magireco.fandom.com/wiki/Beach_Friendship"
   },
@@ -9264,9 +10186,11 @@ export const memoria_collection = [
     "max_def": "1235",
     "effect1": "Attack Up [III / 15%] & Damage Up Versus Enemies Affected With Status Ailments [III / 25%]",
     "effect2": "Attack Up [IV / 20%] & Damage Up Versus Enemies Affected With Status Ailments [IV / 30%]",
+    "cooldown1": "11",
+    "cooldown2": "10",
     "chara": "Tomoe Mami (Mizugi ver.)",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Different_Fireworks Than Usual"
+    "url": "https://magireco.fandom.com/wiki/Different_Fireworks_Than_Usual"
   },
   {
     "id": "1524",
@@ -9283,6 +10207,7 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Attack Up [IV / 20%] & Magia Damage Up [III / 10%]",
     "effect2": "Attack Up [V / 25%] & Magia Damage Up [IV / 12.5%]",
+    "chara": "",
     "obtainability": "limited",
     "url": "https://magireco.fandom.com/wiki/Miracle_Heroines"
   },
@@ -9301,8 +10226,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "",
     "effect2": "Attack Up [III / 15%] & Chance to Burn on Attack [V / 30% / 2 turns]",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Absolutely_Unrivaled Summertime"
+    "url": "https://magireco.fandom.com/wiki/Absolutely_Unrivaled_Summertime"
   },
   {
     "id": "1526",
@@ -9319,8 +10245,10 @@ export const memoria_collection = [
     "max_def": "2005",
     "effect1": "",
     "effect2": "Status Ailment Resistance Up [V / 30%] (All / 3 Turns)",
+    "cooldown2": "9",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Midsummer_Night Magic"
+    "url": "https://magireco.fandom.com/wiki/Midsummer_Night_Magic"
   },
   {
     "id": "1527",
@@ -9337,9 +10265,10 @@ export const memoria_collection = [
     "max_def": "2200",
     "effect1": "",
     "effect2": "Guardian [100%] & Damage Cut [VII / 35%] (Self / 1 turn)",
+    "cooldown2": "5",
     "chara": "Futaba Sana",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/A_World with Just Me (Memoria)"
+    "url": "https://magireco.fandom.com/wiki/A_World_with_Just_Me_(Memoria)"
   },
   {
     "id": "1528",
@@ -9356,9 +10285,11 @@ export const memoria_collection = [
     "max_def": "1235",
     "effect1": "Attack Up [V / 25%] (All / 1 Turn)",
     "effect2": "Attack Up [VI / 30%] (All / 1 Turn)",
+    "cooldown1": "11",
+    "cooldown2": "10",
     "chara": "Rumor of the Ten-Thousand-Year Sakura (Mizugi ver.)",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Secret_Treasure Box"
+    "url": "https://magireco.fandom.com/wiki/Secret_Treasure_Box"
   },
   {
     "id": "1529",
@@ -9375,8 +10306,11 @@ export const memoria_collection = [
     "max_def": "2310",
     "effect1": "Accele MP Gain Up [V / 20%] & Damage Increase [III / 15%] (Self / 3 Turns)",
     "effect2": "Accele MP Gain Up [VI / 22.5%] & Damage Increase [IV / 20%] (Self / 3 Turns)",
+    "cooldown1": "10",
+    "cooldown2": "9",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Wanting_to Covet This and That"
+    "url": "https://magireco.fandom.com/wiki/Wanting_to_Covet_This_and_That"
   },
   {
     "id": "1530",
@@ -9393,8 +10327,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Chance to Stun on Attack [II / 15%] (1 Turn) & Attack Up [I / 5%]",
     "effect2": "Chance to Stun on Attack [III / 20%] (1 Turn) & Attack Up [II / 10%]",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/An_Unforgettable Scary Story"
+    "url": "https://magireco.fandom.com/wiki/An_Unforgettable_Scary_Story"
   },
   {
     "id": "1532",
@@ -9411,8 +10346,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "",
     "effect2": "Attack Up [III / 15%] & Accele MP Gain Up [IV / 17.5%]",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Something_to Remember"
+    "url": "https://magireco.fandom.com/wiki/Something_to_Remember"
   },
   {
     "id": "1531",
@@ -9429,8 +10365,10 @@ export const memoria_collection = [
     "max_def": "1800",
     "effect1": "",
     "effect2": "Magia Damage Cut [V / 25%] (All / 1 Turn)",
+    "cooldown2": "9",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Fluttering_Sakura Aquarium"
+    "url": "https://magireco.fandom.com/wiki/Fluttering_Sakura_Aquarium"
   },
   {
     "id": "1533",
@@ -9447,9 +10385,11 @@ export const memoria_collection = [
     "max_def": "1235",
     "effect1": "Attack Up [III / 15%] & Chance to Defense Pierce [III / 20%] (Self / 1 turn)",
     "effect2": "Attack Up [IV / 20%] & Chance to Defense Pierce [IV / 25%] (Self / 1 turn)",
+    "cooldown1": "10",
+    "cooldown2": "9",
     "chara": "Little Kyubey",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Proof_of the Best Tiniest Family"
+    "url": "https://magireco.fandom.com/wiki/Proof_of_the_Best_Tiniest_Family"
   },
   {
     "id": "1534",
@@ -9466,8 +10406,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Blast Damage Up [V / 35%] & Chance to Anti-Evade [XIII / 85%]",
     "effect2": "Blast Damage Up [VI / 40%] & Anti-Evade [100%]",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/The_Usual Special Seat"
+    "url": "https://magireco.fandom.com/wiki/The_Usual_Special_Seat"
   },
   {
     "id": "1535",
@@ -9484,8 +10425,11 @@ export const memoria_collection = [
     "max_def": "2215",
     "effect1": "Damage Up [VI / 30%]& Chance to Ignore Damage Cut [VIII / 65%] (Self / 1 turn)",
     "effect2": "Damage Up [VII / 35%] & Chance to Ignore Damage Cut [IX / 70%] (Self / 1 turn)",
+    "cooldown1": "10",
+    "cooldown2": "9",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/When_I See Your Eyes"
+    "url": "https://magireco.fandom.com/wiki/When_I_See_Your_Eyes"
   },
   {
     "id": "1536",
@@ -9502,8 +10446,10 @@ export const memoria_collection = [
     "max_def": "1908",
     "effect1": "",
     "effect2": "Blast Damage Down [X / 27.5%] (One / 1 Turn) & Magia Damage Down [X / 50%] (One / 1 Turn) & Defense Up [VII / 52.5%] (Self / 1 Turn)",
+    "cooldown2": "10",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Blessing_to the Fighting Girls"
+    "url": "https://magireco.fandom.com/wiki/Blessing_to_the_Fighting_Girls"
   },
   {
     "id": "1537",
@@ -9520,8 +10466,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "",
     "effect2": "Damage Increase [III / 15%] & MP Up When Attacked By Weak Element [VI / 7%]",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Do_Your Best, Little Savior"
+    "url": "https://magireco.fandom.com/wiki/Do_Your_Best,_Little_Savior"
   },
   {
     "id": "1538",
@@ -9538,8 +10485,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "",
     "effect2": "Episode Experience Gain Increased [II / 20%] & Attack Up [II / 10%]",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/The_Memory of a Lifetime Called Today"
+    "url": "https://magireco.fandom.com/wiki/The_Memory_of_a_Lifetime_Called_Today"
   },
   {
     "id": "1539",
@@ -9556,9 +10504,188 @@ export const memoria_collection = [
     "max_def": "1800",
     "effect1": "",
     "effect2": "Attack Up [V / 25%] (Self / 3 turns) & HP Restore [II / 32.5%] (Self) & MP Restore [II / 18 MP] (Self)",
+    "cooldown2": "7",
     "chara": "Nanami Yachiyo;Tamaki Iroha",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/It's_Ok, If It's the Two of Us"
+    "url": "https://magireco.fandom.com/wiki/It's_Ok,_If_It's_the_Two_of_Us"
+  },
+  {
+    "id": "1540",
+    "name": "Garment of Departure",
+    "name_jp": "旅立ちの衣装",
+    "name_na": "",
+    "type": "ability",
+    "rank": "3",
+    "min_hp": "502",
+    "min_atk": "422",
+    "min_def": "0",
+    "max_hp": "1255",
+    "max_atk": "1055",
+    "max_def": "0",
+    "effect1": "Attack Up [IV / 20%] & Status Ailment Resistance Up [II / 25%]",
+    "effect2": "Attack Up [V / 25%] & Status Ailment Resistance Up [III / 30%]",
+    "chara": "Tokime Shizuka",
+    "obtainability": "unlimited",
+    "url": "https://magireco.fandom.com/wiki/Garment_of_Departure"
+  },
+  {
+    "id": "1541",
+    "name": "Everyday Overflowing with Pride",
+    "name_jp": "日常にあふれる誇り",
+    "name_na": "",
+    "type": "ability",
+    "rank": "4",
+    "min_hp": "838",
+    "min_atk": "838",
+    "min_def": "0",
+    "max_hp": "2095",
+    "max_atk": "2095",
+    "max_def": "0",
+    "effect1": "Attack Up [IV / 20%] & Defense Up [IV / 30%]",
+    "effect2": "Attack Up [V / 25%] & Defense Up [V / 37.5%]",
+    "chara": "",
+    "obtainability": "unlimited",
+    "url": "https://magireco.fandom.com/wiki/Everyday_Overflowing_with_Pride"
+  },
+  {
+    "id": "1542",
+    "name": "Formally Deciding",
+    "name_jp": "改めて決意を",
+    "name_na": "",
+    "type": "skill",
+    "rank": "4",
+    "min_hp": "880",
+    "min_atk": "0",
+    "min_def": "800",
+    "max_hp": "2200",
+    "max_atk": "0",
+    "max_def": "2000",
+    "effect1": "Attack Up [V / 25%] (Self / 3 Turns) & Status Ailment Resistance Up [V / 40%] (Self / 3 Turns)",
+    "effect2": "Attack Up [VI / 30%] (Self / 3 Turns) & Status Ailment Resistance Up [VII / 50%] (Self / 3 Turns)",
+    "cooldown1": "10",
+    "cooldown2": "9",
+    "chara": "",
+    "obtainability": "unlimited",
+    "url": "https://magireco.fandom.com/wiki/Formally_Deciding"
+  },
+  {
+    "id": "1543",
+    "name": "For You Who Always Perseveres",
+    "name_jp": "いつも頑張るあなたに",
+    "name_na": "",
+    "type": "ability",
+    "rank": "3",
+    "min_hp": "666",
+    "min_atk": "606",
+    "min_def": "0",
+    "max_hp": "1665",
+    "max_atk": "1515",
+    "max_def": "0",
+    "effect1": "Blast Damage Up [I / 15%] & Status Ailment Resistance Up [I / 20%]",
+    "effect2": "Blast Damage Up [III / 25%] & Status Ailment Resistance Up [II / 25%]",
+    "chara": "",
+    "obtainability": "unlimited",
+    "url": "https://magireco.fandom.com/wiki/For_You_Who_Always_Perseveres"
+  },
+  {
+    "id": "1544",
+    "name": "Junkie Girl's Companion",
+    "name_jp": "ジャンキーガールの道連れ",
+    "name_na": "",
+    "type": "skill",
+    "rank": "3",
+    "min_hp": "481",
+    "min_atk": "0",
+    "min_def": "461",
+    "max_hp": "1202",
+    "max_atk": "0",
+    "max_def": "1152",
+    "effect1": "Monopolize Draw",
+    "effect2": "Monopolize Draw",
+    "cooldown1": "5",
+    "cooldown2": "4",
+    "chara": "Kazari Jun",
+    "obtainability": "unlimited",
+    "url": "https://magireco.fandom.com/wiki/Junkie_Girl's_Companion"
+  },
+  {
+    "id": "1545",
+    "name": "The Invincible Snacks General",
+    "name_jp": "無敵の駄菓子大将",
+    "name_na": "",
+    "type": "ability",
+    "rank": "4",
+    "min_hp": "923",
+    "min_atk": "763",
+    "min_def": "0",
+    "max_hp": "2308",
+    "max_atk": "1908",
+    "max_def": "0",
+    "effect1": "Magia Damage Up [VI / 17.5%] & Chance to Anti-Magia Seal [VI / 65%]",
+    "effect2": "Magia Damage Up [VII / 20%] & Chance to Anti-Magia Seal [VII / 100%]",
+    "chara": "",
+    "obtainability": "unlimited",
+    "url": "https://magireco.fandom.com/wiki/The_Invincible_Snacks_General"
+  },
+  {
+    "id": "1546",
+    "name": "A Symbol of Acquaintance",
+    "name_jp": "お近づきのしるし",
+    "name_na": "",
+    "type": "skill",
+    "rank": "3",
+    "min_hp": "579",
+    "min_atk": "0",
+    "min_def": "699",
+    "max_hp": "1447",
+    "max_atk": "0",
+    "max_def": "1747",
+    "effect1": "Regenerate HP [?? / ?/] & Damage Cut [?? / ??] (Self / 3 turns)",
+    "effect2": "Regenerate HP [II / 3%] & Damage Cut [II / 10%] (Self / 3 turns)",
+    "cooldown1": "?",
+    "cooldown2": "?",
+    "chara": "",
+    "obtainability": "unlimited",
+    "url": "https://magireco.fandom.com/wiki/A_Symbol_of_Acquaintance"
+  },
+  {
+    "id": "1547",
+    "name": "Then, At the Shop Again Tomorrow",
+    "name_jp": "また、あした屋で",
+    "name_na": "",
+    "type": "ability",
+    "rank": "3",
+    "min_hp": "",
+    "min_atk": "",
+    "min_def": "",
+    "max_hp": "1505",
+    "max_atk": "0",
+    "max_def": "1505",
+    "effect1": "",
+    "effect2": "Attack Up [V / 25%] (Self / 3 Turns)",
+    "cooldown2": "6",
+    "chara": "",
+    "obtainability": "limited",
+    "url": "https://magireco.fandom.com/wiki/Then,_At_the_Shop_Again_Tomorrow"
+  },
+  {
+    "id": "1548",
+    "name": "The Great Escape",
+    "name_jp": "ザ・グレート・エスケープ",
+    "name_na": "",
+    "type": "ability",
+    "rank": "4",
+    "min_hp": "",
+    "min_atk": "",
+    "min_def": "",
+    "max_hp": "1905",
+    "max_atk": "2105",
+    "max_def": "0",
+    "effect1": "",
+    "effect2": "Anti-Poison [100%] & Anti-Charm [100%] & Defense Up [V / 37.5%]",
+    "chara": "",
+    "obtainability": "limited",
+    "url": "https://magireco.fandom.com/wiki/The_Great_Escape"
   },
   {
     "id": "9002",
@@ -9575,6 +10702,9 @@ export const memoria_collection = [
     "max_def": "2125",
     "effect1": "Blast Damage Up [VI / 40%] (Self / 1 Turn) & Defense Down [VIII / 40%] (All / 1 Turn)",
     "effect2": "Blast Damage Up [VII / 45%] (Self / 1 Turn) & Defense Down [IX / 45%] (All / 1 Turn)",
+    "cooldown1": "7",
+    "cooldown2": "6",
+    "chara": "",
     "obtainability": "limited",
     "url": "https://magireco.fandom.com/wiki/Kawaii_Collection"
   },
@@ -9593,8 +10723,9 @@ export const memoria_collection = [
     "max_def": "0",
     "effect1": "Chance to Bind on Attack [II / 15%] (1 Turn) & Attack Up [IV / 20%]",
     "effect2": "Chance to Bind on Attack [III / 20%] (1 Turn) & Attack Up [V / 25%]",
+    "chara": "",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/My_Victory Pose Is Kawaii Too"
+    "url": "https://magireco.fandom.com/wiki/My_Victory_Pose_Is_Kawaii_Too"
   },
   {
     "id": "9003",
@@ -9611,8 +10742,10 @@ export const memoria_collection = [
     "max_def": "1200",
     "effect1": "HP Restore [IX / 50%] (Self)",
     "effect2": "HP Restore [X / 52.5%] (Self)",
+    "cooldown1": "8",
+    "cooldown2": "7",
     "chara": "Ashley Taylor",
     "obtainability": "unlimited",
-    "url": "https://magireco.fandom.com/wiki/Kumanosuke's_Kawaii Vid"
+    "url": "https://magireco.fandom.com/wiki/Kumanosuke's_Kawaii_Vid"
   }
 ]
