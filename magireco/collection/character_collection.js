@@ -648,6 +648,42 @@ export const character_collection = [
     "url": "https://magireco.fandom.com/wiki/Rena-chan_(Idol ver.)"
   },
   {
+    "id": "1110",
+    "name": "Togame Momoko (Sister ver.)",
+    "name_jp": "十咎ももこ (シスターver.)",
+    "name_na": "",
+    "attribute": "Light",
+    "ranks": {
+      "1": false,
+      "2": false,
+      "3": false,
+      "4": true,
+      "5": true
+    },
+    "release_date": "2020-11-02",
+    "release_date_na": "2050-01-01",
+    "obtainability": "limited",
+    "url": "https://magireco.fandom.com/wiki/Togame_Momoko_(Sister_ver.)"
+  },
+  {
+    "id": "1116",
+    "name": "Izumi Kanagi (Vampire ver.)",
+    "name_jp": "十咎ももこ (シスターver.)",
+    "name_na": "",
+    "attribute": "Dark",
+    "ranks": {
+      "1": false,
+      "2": false,
+      "3": false,
+      "4": true,
+      "5": true
+    },
+    "release_date": "2020-10-23",
+    "release_date_na": "2050-01-01",
+    "obtainability": "limited",
+    "url": "https://magireco.fandom.com/wiki/Izumi_Kanagi_(Vampire_ver.)"
+  },
+  {
     "id": "1117",
     "name": "Yakumo Mitama (Haregi ver.)",
     "name_jp": "八雲 みたま (晴着ver.)",
@@ -1894,7 +1930,7 @@ export const character_collection = [
     "name": "Kazari Jun",
     "name_jp": "飾利 潤",
     "name_na": "",
-    "attribute": "Dark",
+    "attribute": "Aqua",
     "ranks": {
       "1": false,
       "2": false,
