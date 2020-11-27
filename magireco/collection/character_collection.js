@@ -468,6 +468,24 @@ export const character_collection = [
     "url": "https://magireco.fandom.com/wiki/Azumi_Hagumu"
   },
   {
+    "id": "1038",
+    "name": "Yakumo Mikage",
+    "name_jp": "八雲 みかげ",
+    "name_na": "",
+    "attribute": "Dark",
+    "ranks": {
+      "1": false,
+      "2": false,
+      "3": false,
+      "4": true,
+      "5": true
+    },
+    "release_date": "2020-11-16",
+    "release_date_na": "2050-01-01",
+    "obtainability": "unlimited",
+    "url": "https://magireco.fandom.com/wiki/Yakumo_Mikage"
+  },
+  {
     "id": "1039",
     "name": "Sawa Sudachi",
     "name_jp": "佐和月出里",
