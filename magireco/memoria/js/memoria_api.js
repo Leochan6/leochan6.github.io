@@ -525,11 +525,12 @@ export const toggleAdded = (value) => {
  * @param {Display} displays 
  */
 export const openMemoriaDialog = (memoria, displays) => {
-  let text = `Type: ${memoria.type}\
-      \nEffect: ${memoria.effect1}\
-      \nMLB Effect: ${memoria.effect2}\
-      \nUsable: ${memoria.charaList ? memoria.charaList[0].name : "ALL"}\
-      \nFandom Wiki Link:\n${memoria.url}`
+  let text = `ID: ${memoria.id}\
+  \nType: ${memoria.type}\
+  \nEffect: ${memoria.effect1}\
+  \nMLB Effect: ${memoria.effect2}\
+  \nUsable: ${memoria.charaList ? memoria.charaList[0].name : "ALL"}\
+  \nFandom Wiki Link:\n${memoria.url}`
 
   if (displays.length > 0) text += `\n\nYour Memoria${displays.length > 1 ? "s" : ""}:`;
   displays.forEach(display => {

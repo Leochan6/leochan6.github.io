@@ -630,6 +630,24 @@ export const character_collection = [
     "url": "https://magireco.fandom.com/wiki/Felicia-chan"
   },
   {
+    "id": "1107",
+    "name": "Touka & Nemu (Holy Night ver.)",
+    "name_jp": "灯花・ねむ (聖夜ver.)",
+    "name_na": "",
+    "attribute": "Dark",
+    "ranks": {
+      "1": false,
+      "2": false,
+      "3": false,
+      "4": true,
+      "5": true
+    },
+    "release_date": "2020-12-16",
+    "release_date_na": "2050-01-01",
+    "obtainability": "limited",
+    "url": "https://magireco.fandom.com/wiki/Touka_%26_Nemu_(Holy_Night_ver.)"
+  },
+  {
     "id": "1108",
     "name": "Holy Alina",
     "name_jp": "ホーリーアリナ",
@@ -754,6 +772,24 @@ export const character_collection = [
     "release_date_na": "2050-01-01",
     "obtainability": "limited",
     "url": "https://magireco.fandom.com/wiki/Iroha-chan"
+  },
+  {
+    "id": "1203",
+    "name": "Tsuruno & Felicia (Delivery ver.)",
+    "name_jp": "鶴乃・フェリシア (宅配ver.)",
+    "name_na": "",
+    "attribute": "Flame",
+    "ranks": {
+      "1": false,
+      "2": false,
+      "3": false,
+      "4": true,
+      "5": true
+    },
+    "release_date": "2020-12-04",
+    "release_date_na": "2050-01-01",
+    "obtainability": "limited",
+    "url": "https://magireco.fandom.com/wiki/Tsuruno_%26_Felicia_(Delivery_ver.)"
   },
   {
     "id": "1209",

@@ -622,7 +622,8 @@ export const toggleAdded = (value) => {
  * @param {Display} displays 
  */
 export const openCharacterDialog = (character, displays) => {
-  let text = `Attribute: ${character.attribute}\
+  let text = `ID: ${character.id}\
+  \nAttribute: ${character.attribute}\
   \nRanks: ${Object.keys(character.ranks).filter(key => character.ranks[key])}\
   \nObtainability: ${character.obtainability}\
   \nFandom Wiki Link:\n${character.url}`;
