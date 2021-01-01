@@ -183,6 +183,7 @@ export const createProfileRule = (next = null) => {
         <option value="magia">Magia</option>
         <option value="episode">Episode</option>
         <option value="doppel">Doppel</option>
+        <option value="se">SE</option>
         <option value="obtainability">Obtainability</option>
         <option value="release_date">Release Date</option>
         <option value="character_id">Character ID</option>
@@ -239,12 +240,14 @@ export const createProfileRule = (next = null) => {
         type_select.selectedIndex = -1;
       }
       type_select.options[3].disabled = true;
-      type_select.options[9].disabled = true;
+      type_select.options[8].disabled = true;
       type_select.options[10].disabled = true;
+      type_select.options[11].disabled = true;
     } else {
       type_select.options[3].disabled = false;
-      type_select.options[9].disabled = false;
+      type_select.options[8].disabled = false;
       type_select.options[10].disabled = false;
+      type_select.options[11].disabled = false;
     }
   });
 
@@ -280,19 +283,21 @@ export const loadRule = (ruleId, settings) => {
   else if (settings.direction == -1 && sort_dir.classList.contains("up")) sort_dir.classList.replace("up", "down");
 
   if (state_select.value === "group") {
-    if (type_select.value === "character_id" || type_select.value === "release_date" || type_select.value === "level") {
+    if (type_select.value === "character_id" || type_select.value === "release_date" || type_select.value === "level" || type_select.value === "se") {
       type_select.selectedIndex = -1;
     }
     type_select.options[3].disabled = true;
-    type_select.options[9].disabled = true;
+    type_select.options[8].disabled = true;
     type_select.options[10].disabled = true;
+    type_select.options[11].disabled = true;
   } else {
     type_select.options[3].disabled = false;
-    type_select.options[9].disabled = false;
+    type_select.options[8].disabled = false;
     type_select.options[10].disabled = false;
+    type_select.options[11].disabled = false;
   }
 
-  if (type_select.value === "character_id" || type_select.value === "release_date" || type_select.value === "level") {
+  if (type_select.value === "character_id" || type_select.value === "release_date" || type_select.value === "level" || type_select.value === "se") {
     if (state_select.value === "group") {
       state_select.selectedIndex = -1;
     }

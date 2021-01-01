@@ -36,6 +36,7 @@ export const setLists = (lists) => {
       display._id = key;
       if (display.doppel == "unlocked") display.doppel = true;
       else if (display.doppel == "locked") display.doppel = false;
+      if (display.se === undefined) display.se = "0"
     });
     let div = document.createElement("div");
     div.classList.add("character_list_row");
@@ -550,6 +551,7 @@ export const createFilter = (next = null) => {
         <option value="magia">Magia</option>
         <option value="episode">Episode</option>
         <option value="doppel">Doppel</option>
+        <option value="se">SE</option>
         <option value="obtainability">Obtainability</option>
         <option value="release_date">Release Date</option>
       </select>
@@ -698,6 +700,17 @@ export const createFilter = (next = null) => {
           <option value="false">No</option>
           <option value="true">Yes</option>
         </select>
+      </div>
+      <div class="filter_type se_filter hidden">
+        <select class="filter_field inequality form_input">
+        <option value="eq">=</option>
+        <option value="neq">=/=</option>
+        <option value="lt">&lt</option>
+        <option value="gt">&gt</option>
+        <option value="lte">&lt=</option>
+        <option value="gte">&gt=</option>
+        </select>
+        <input class="filter_field se_input form_input" type="number" value=0 maxlength="3" size=3 min=0 max=100>
       </div>
       <div class="filter_type obtainability_filter hidden">
         <select class="filter_field equality form_input">
@@ -960,31 +973,12 @@ export const getStats = () => {
   let result = {
     totalCharacters: 0,
     totalVisible: 0,
-    limited: 0,
-    maxLevel: 0,
-    maxRank: 0,
-    maxMagic: 0,
-    maxMagia: 0,
-    maxEpisode: 0
   };
 
   Array.from(elements.character_list_content.querySelectorAll(".character_display")).forEach(character_display_element => {
     result.totalCharacters++;
     if (!character_display_element.classList.contains("hidden")) {
       result.totalVisible++;
-      let character_display = character_api.getCharacterDisplay(character_display_element);
-      let character = character_collection.find(character => character.id == character_display.character_id);
-      if (character.obtainability == "limited") result.limited++;
-      if (character_display.rank == 1 && character_display.level == 40) result.maxLevel++;
-      else if (character_display.rank == 2 && character_display.level == 50) result.maxLevel++;
-      else if (character_display.rank == 3 && character_display.level == 60) result.maxLevel++;
-      else if (character_display.rank == 4 && character_display.level == 80) result.maxLevel++;
-      else if (character_display.rank == 5 && character_display.level == 100) result.maxLevel++;
-      let maxRank = character_api.getMaxRank(character.ranks);
-      if (character_display.rank == maxRank) result.maxRank++;
-      if (character_display.magic == "3") result.maxMagic++;
-      if (character_display.magia == "5") result.maxMagia++;
-      if (character_display.episode == "5") result.maxEpisode++;
     }
   });
   elements.list_stats_list.innerHTML = `Visible: ${result.totalVisible}/${result.totalCharacters}`;
@@ -1011,7 +1005,9 @@ export const getMoreStats = () => {
     magias: {},
     maxEpisode: 0,
     episodes: {},
-    rankCopies: {}
+    rankCopies: {},
+    ses: {},
+    maxSe: 0
   };
 
   Array.from(elements.character_list_content.querySelectorAll(".character_display")).forEach(character_display_element => {
@@ -1043,16 +1039,20 @@ export const getMoreStats = () => {
       else if (minRank == 3) totalCopies = 3 * (parseInt(character_display.magic)) + 1;
       else if (minRank == 4) totalCopies = 1 * (parseInt(character_display.magic)) + 1;
       result.rankCopies[minRank] = result.rankCopies[minRank] ? result.rankCopies[minRank] + totalCopies : totalCopies;
+      if (character_display.se == "60") result.maxSe++;
+      result.ses[character_display.se] = result.ses[character_display.se] + 1 || 1;
     }
   });
 
   return `Total Characters: ${result.totalCharacters}\nTotal Visible: ${result.totalVisible}\nLimited: ${result.limited}\nUnlimited: ${result.totalVisible - result.limited}\
       \nMax Level: ${result.maxLevel}\nMax Rank: ${result.maxRank}\nMax Magic: ${result.maxMagic}\nMax Magia: ${result.maxMagia}\nMax Episode: ${result.maxEpisode}\
+      \nMax Spirit Enhancement: ${result.maxSe}\
       \nLevels:${Object.entries(result.levels).map(([level, count]) => `\n  ${level}: ${count}`).toString()}\
       \nRanks:${Object.entries(result.ranks).map(([level, count]) => `\n  ${level}: ${count}`).toString()}\
       \nMagic Levels:${Object.entries(result.magics).map(([level, count]) => `\n  ${level}: ${count}`).toString()}\
       \nMagia Levels:${Object.entries(result.magias).map(([level, count]) => `\n  ${level}: ${count}`).toString()}\
       \nEpisode Levels:${Object.entries(result.episodes).map(([level, count]) => `\n  ${level}: ${count}`).toString()}\
+      \nSpirit Enhancement Levels:${Object.entries(result.ses).map(([level, count]) => `\n  ${level}: ${count}`).toString()}\
       \nCopies of Each Rank:${Object.entries(result.rankCopies).map(([level, count]) => `\n  ${level}: ${count}`).toString()}`;
 };
 

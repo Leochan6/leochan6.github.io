@@ -6,7 +6,7 @@ import * as storage_api from './storage_api.js';
 export let selectedCharacter = null;
 
 export class Display {
-  constructor(id, name, rank, post_awaken, attribute, level, magic, magia, episode, doppel) {
+  constructor(id, name, rank, post_awaken, attribute, level, magic, magia, episode, doppel, se) {
     if (typeof rank !== undefined) {
       this.character_id = id;
       this.name = name;
@@ -18,6 +18,7 @@ export class Display {
       this.magia = magia;
       this.episode = episode;
       this.doppel = doppel;
+      this.se = se;
     } else {
       this._id = id;
       this.character_id = name.character_id;
@@ -30,6 +31,7 @@ export class Display {
       this.magia = name.magia;
       this.episode = name.episode;
       this.doppel = name.doppel;
+      this.se = name.se;
     }
   }
 };
@@ -97,7 +99,7 @@ export const sanitizeCharacter = (character, removeId = true) => {
  * @param {Character} character 
  */
 export const getBasicCharacterDisplay = (character) => {
-  return new Display(character.id, character.name, getMinRank(character.ranks), false, character.attribute, "1", "0", "1", "1", false);
+  return new Display(character.id, character.name, getMinRank(character.ranks), false, character.attribute, "1", "0", "1", "1", false, "0");
 };
 
 /**
@@ -127,7 +129,10 @@ export const isValidCharacterDisplay = (character_id, display, validName = true)
   if (display.magia > display.episode) err.push(`Magia ${display.magia} must be less than or equal to Episode ${display.episode}.`);
   // check episode.
   if (display.episode < 1 || display.episode > 5) err.push(`Episode ${display.episode} must be between 1 and 5.`);
+  // check doppel.
   if (!(display.doppel === true || display.doppel === false) || (display.doppel === true && (display.magia < 5 || display.rank < 5))) err.push(`Doppel ${display.doppel} can only be true if Magia 5 and Rank 5.`);
+  // check se.
+  if ((display.se < 0 || display.se > 100)) err.push(`Spirit Enhancement ${display.se} must be between 0 and 100.`)
   return err;
 };
 
@@ -147,7 +152,8 @@ const getFormDisplay = () => {
     elements.magic_select.value,
     elements.magia_select.value,
     elements.episode_select.value,
-    elements.doppel_checkbox.checked);
+    elements.doppel_checkbox.checked,
+    elements.se_select.value);
   return display;
 };
 
@@ -168,7 +174,8 @@ export const getCharacterDisplay = (character_display) => {
     character_display.getAttribute("magic"),
     character_display.getAttribute("magia"),
     character_display.getAttribute("episode"),
-    character_display.getAttribute("doppel"));
+    character_display.getAttribute("doppel"),
+    character_display.getAttribute("se"));
   display._id = character_display.getAttribute("_id");
   return display;
 };
@@ -193,6 +200,7 @@ export const createDisplay = (display, listener = false) => {
   character_display.setAttribute("episode", display.episode);
   character_display.setAttribute("level", display.level);
   character_display.setAttribute("doppel", display.doppel);
+  character_display.setAttribute("se", display.se);
   character_display.innerHTML = `
   <img class="background" src="/magireco/assets/ui/bg/${display.attribute}.png">
   <img class="card_image" src="/magireco/assets/image/card_${display.character_id}${display.rank}_f.png">
@@ -205,6 +213,7 @@ export const createDisplay = (display, listener = false) => {
     <div class="level_pre">Lvl.</div>
     <div class="level_num">${display.level}</div>
   </div>
+  <div class="se">${display.se}/100</div>
   <img class="doppel" src="/magireco/assets/ui/doppel/${display.doppel}.png">
   <img class="post_awaken" src="/magireco/assets/ui/gift/gift_${display.post_awaken}.png">`;
 
@@ -265,7 +274,7 @@ export const minimizeDisplay = () => {
   let character = character_collection.find(char => char.id === character_display.character_id);
   let minRank = getMinRank(character.ranks);
   let attribute = character.attribute.toLowerCase();
-  let display = new Display(character.id, character.name, minRank, false, attribute, "1", "0", "1", "1", false);
+  let display = new Display(character.id, character.name, minRank, false, attribute, "1", "0", "1", "1", false, "0");
   updateForm(display);
   updatePreviewDisplay(display);
 };
@@ -279,7 +288,7 @@ export const maximizeDisplay = () => {
   let maxRank = getMaxRank(character.ranks);
   let level = RANK_TO_LEVEL[maxRank];
   let attribute = character.attribute.toLowerCase();
-  let display = new Display(character.id, character.name, maxRank, true, attribute, level, "3", "5", "5", maxRank == "5" ? true : false);
+  let display = new Display(character.id, character.name, maxRank, true, attribute, level, "3", "5", "5", maxRank == "5" ? true : false, "60");
   updateForm(display);
   updatePreviewDisplay(display);
 };
@@ -310,6 +319,7 @@ const updateForm = (display) => {
   elements.magia_select.value = display.magia;
   elements.episode_select.value = display.episode;
   elements.doppel_checkbox.checked = display.doppel === "true" || display.doppel === true ? true : false;
+  elements.se_select.value = display.se;
 };
 
 /**
@@ -346,7 +356,7 @@ const updateFormEnabled = (character) => {
 const updateCharacterWithDisplay = (character, display) => {
   // return the default display.
   if (!display) return getBasicCharacterDisplay(character);
-  return new Display(character.id, character.name, display.rank, display.post_awaken, character.attribute, display.level, display.magic, display.magia, display.episode, display.doppel);
+  return new Display(character.id, character.name, display.rank, display.post_awaken, character.attribute, display.level, display.magic, display.magia, display.episode, display.doppel, display.se);
 };
 
 /**
@@ -636,7 +646,8 @@ export const openCharacterDialog = (character, displays) => {
     \nMagic: ${display.magic}\
     \nMagia: ${display.magia}\
     \nEpisode: ${display.episode}\
-    \nDoppel: ${display.doppel}\n`;
+    \nDoppel: ${display.doppel}\
+    \nSpirit Enhancement: ${display.se}\n`;
   });
 
   messageDialog.open(`${character.name} Details`, text);

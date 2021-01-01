@@ -222,7 +222,7 @@ function _objectSpread(target) {
 var selectedCharacter = null;
 exports.selectedCharacter = selectedCharacter;
 
-var Display = function Display(id, name, rank, post_awaken, attribute, level, magic, magia, episode, doppel) {
+var Display = function Display(id, name, rank, post_awaken, attribute, level, magic, magia, episode, doppel, se) {
   (0, _classCallCheck2["default"])(this, Display);
 
   if ((0, _typeof2["default"])(rank) !== undefined) {
@@ -236,6 +236,7 @@ var Display = function Display(id, name, rank, post_awaken, attribute, level, ma
     this.magia = magia;
     this.episode = episode;
     this.doppel = doppel;
+    this.se = se;
   } else {
     this._id = id;
     this.character_id = name.character_id;
@@ -248,6 +249,7 @@ var Display = function Display(id, name, rank, post_awaken, attribute, level, ma
     this.magia = name.magia;
     this.episode = name.episode;
     this.doppel = name.doppel;
+    this.se = name.se;
   }
 };
 
@@ -337,7 +339,7 @@ var sanitizeCharacter = function sanitizeCharacter(character) {
 exports.sanitizeCharacter = sanitizeCharacter;
 
 var getBasicCharacterDisplay = function getBasicCharacterDisplay(character) {
-  return new Display(character.id, character.name, getMinRank(character.ranks), false, character.attribute, "1", "0", "1", "1", false);
+  return new Display(character.id, character.name, getMinRank(character.ranks), false, character.attribute, "1", "0", "1", "1", false, "0");
 };
 /**
  * check if display is valid.
@@ -370,8 +372,11 @@ var isValidCharacterDisplay = function isValidCharacterDisplay(character_id, dis
   if (display.magia < 1 || display.magia > 5) err.push("Magia ".concat(display.magia, " must be between 1 and 5."));
   if (display.magia > display.episode) err.push("Magia ".concat(display.magia, " must be less than or equal to Episode ").concat(display.episode, ".")); // check episode.
 
-  if (display.episode < 1 || display.episode > 5) err.push("Episode ".concat(display.episode, " must be between 1 and 5."));
-  if (!(display.doppel === true || display.doppel === false) || display.doppel === true && (display.magia < 5 || display.rank < 5)) err.push("Doppel ".concat(display.doppel, " can only be true if Magia 5 and Rank 5."));
+  if (display.episode < 1 || display.episode > 5) err.push("Episode ".concat(display.episode, " must be between 1 and 5.")); // check doppel.
+
+  if (!(display.doppel === true || display.doppel === false) || display.doppel === true && (display.magia < 5 || display.rank < 5)) err.push("Doppel ".concat(display.doppel, " can only be true if Magia 5 and Rank 5.")); // check se.
+
+  if (display.se < 0 || display.se > 100) err.push("Spirit Enhancement ".concat(display.se, " must be between 0 and 100."));
   return err;
 };
 /**
@@ -386,7 +391,7 @@ exports.isValidCharacterDisplay = isValidCharacterDisplay;
 var getFormDisplay = function getFormDisplay() {
   var display = new Display(_character_elements.character_elements.name_select.value, _character_elements.character_elements.name_select[name_select.options.selectedIndex].text, _character_elements.character_elements.rank_select.value, _character_elements.character_elements.post_awaken_checkbox.checked, _character_collection.character_collection.find(function (_char) {
     return _char.id === _character_elements.character_elements.name_select.value;
-  }).attribute.toLowerCase() || null, _character_elements.character_elements.level_select.value, _character_elements.character_elements.magic_select.value, _character_elements.character_elements.magia_select.value, _character_elements.character_elements.episode_select.value, _character_elements.character_elements.doppel_checkbox.checked);
+  }).attribute.toLowerCase() || null, _character_elements.character_elements.level_select.value, _character_elements.character_elements.magic_select.value, _character_elements.character_elements.magia_select.value, _character_elements.character_elements.episode_select.value, _character_elements.character_elements.doppel_checkbox.checked, _character_elements.character_elements.se_select.value);
   return display;
 };
 /**
@@ -398,7 +403,7 @@ var getFormDisplay = function getFormDisplay() {
 
 
 var getCharacterDisplay = function getCharacterDisplay(character_display) {
-  var display = new Display(character_display.getAttribute("character_id"), character_display.getAttribute("name"), character_display.getAttribute("rank"), character_display.getAttribute("post_awaken"), character_display.getAttribute("attribute"), character_display.getAttribute("level"), character_display.getAttribute("magic"), character_display.getAttribute("magia"), character_display.getAttribute("episode"), character_display.getAttribute("doppel"));
+  var display = new Display(character_display.getAttribute("character_id"), character_display.getAttribute("name"), character_display.getAttribute("rank"), character_display.getAttribute("post_awaken"), character_display.getAttribute("attribute"), character_display.getAttribute("level"), character_display.getAttribute("magic"), character_display.getAttribute("magia"), character_display.getAttribute("episode"), character_display.getAttribute("doppel"), character_display.getAttribute("se"));
   display._id = character_display.getAttribute("_id");
   return display;
 };
@@ -427,7 +432,8 @@ var createDisplay = function createDisplay(display) {
   character_display.setAttribute("episode", display.episode);
   character_display.setAttribute("level", display.level);
   character_display.setAttribute("doppel", display.doppel);
-  character_display.innerHTML = "\n  <img class=\"background\" src=\"/magireco/assets/ui/bg/".concat(display.attribute, ".png\">\n  <img class=\"card_image\" src=\"/magireco/assets/image/card_").concat(display.character_id).concat(display.rank, "_f.png\">\n  <img class=\"frame_rank\" src=\"/magireco/assets/ui/frame/").concat(display.rank, ".png\">\n  <img class=\"star_rank\" src=\"/magireco/assets/ui/star/").concat(display.rank, ".png\">\n  <img class=\"attribute\" src=\"/magireco/assets/ui/attribute/").concat(display.attribute, ".png\">\n  <img class=\"magic\" src=\"/magireco/assets/ui/magic/").concat(display.magic, ".png\">\n  <img class=\"magia\" src=\"/magireco/assets/ui/magia/").concat(display.magia, "-").concat(display.episode, ".png\">\n  <div class=\"level\">\n    <div class=\"level_pre\">Lvl.</div>\n    <div class=\"level_num\">").concat(display.level, "</div>\n  </div>\n  <img class=\"doppel\" src=\"/magireco/assets/ui/doppel/").concat(display.doppel, ".png\">\n  <img class=\"post_awaken\" src=\"/magireco/assets/ui/gift/gift_").concat(display.post_awaken, ".png\">");
+  character_display.setAttribute("se", display.se);
+  character_display.innerHTML = "\n  <img class=\"background\" src=\"/magireco/assets/ui/bg/".concat(display.attribute, ".png\">\n  <img class=\"card_image\" src=\"/magireco/assets/image/card_").concat(display.character_id).concat(display.rank, "_f.png\">\n  <img class=\"frame_rank\" src=\"/magireco/assets/ui/frame/").concat(display.rank, ".png\">\n  <img class=\"star_rank\" src=\"/magireco/assets/ui/star/").concat(display.rank, ".png\">\n  <img class=\"attribute\" src=\"/magireco/assets/ui/attribute/").concat(display.attribute, ".png\">\n  <img class=\"magic\" src=\"/magireco/assets/ui/magic/").concat(display.magic, ".png\">\n  <img class=\"magia\" src=\"/magireco/assets/ui/magia/").concat(display.magia, "-").concat(display.episode, ".png\">\n  <div class=\"level\">\n    <div class=\"level_pre\">Lvl.</div>\n    <div class=\"level_num\">").concat(display.level, "</div>\n  </div>\n  <div class=\"se\">").concat(display.se, "/100</div>\n  <img class=\"doppel\" src=\"/magireco/assets/ui/doppel/").concat(display.doppel, ".png\">\n  <img class=\"post_awaken\" src=\"/magireco/assets/ui/gift/gift_").concat(display.post_awaken, ".png\">");
 
   if (listener) {
     character_display.addEventListener("click", function () {
@@ -517,7 +523,7 @@ var minimizeDisplay = function minimizeDisplay() {
 
   var minRank = getMinRank(character.ranks);
   var attribute = character.attribute.toLowerCase();
-  var display = new Display(character.id, character.name, minRank, false, attribute, "1", "0", "1", "1", false);
+  var display = new Display(character.id, character.name, minRank, false, attribute, "1", "0", "1", "1", false, "0");
   updateForm(display);
   updatePreviewDisplay(display);
 };
@@ -538,7 +544,7 @@ var maximizeDisplay = function maximizeDisplay() {
   var maxRank = getMaxRank(character.ranks);
   var level = RANK_TO_LEVEL[maxRank];
   var attribute = character.attribute.toLowerCase();
-  var display = new Display(character.id, character.name, maxRank, true, attribute, level, "3", "5", "5", maxRank == "5" ? true : false);
+  var display = new Display(character.id, character.name, maxRank, true, attribute, level, "3", "5", "5", maxRank == "5" ? true : false, "60");
   updateForm(display);
   updatePreviewDisplay(display);
 };
@@ -574,6 +580,7 @@ var updateForm = function updateForm(display) {
   _character_elements.character_elements.magia_select.value = display.magia;
   _character_elements.character_elements.episode_select.value = display.episode;
   _character_elements.character_elements.doppel_checkbox.checked = display.doppel === "true" || display.doppel === true ? true : false;
+  _character_elements.character_elements.se_select.value = display.se;
 };
 /**
  * updates the form with the available options and selects lowest.
@@ -614,7 +621,7 @@ var updateFormEnabled = function updateFormEnabled(character) {
 var updateCharacterWithDisplay = function updateCharacterWithDisplay(character, display) {
   // return the default display.
   if (!display) return getBasicCharacterDisplay(character);
-  return new Display(character.id, character.name, display.rank, display.post_awaken, character.attribute, display.level, display.magic, display.magia, display.episode, display.doppel);
+  return new Display(character.id, character.name, display.rank, display.post_awaken, character.attribute, display.level, display.magic, display.magia, display.episode, display.doppel, display.se);
 };
 /**
  * updates the form fields with the selected character.
@@ -983,7 +990,7 @@ var openCharacterDialog = function openCharacterDialog(character, displays) {
   }), "  \nObtainability: ").concat(character.obtainability, "  \nFandom Wiki Link:\n").concat(character.url);
   if (displays.length > 0) text += "\n\nYour Character".concat(displays.length > 1 ? "s" : "", ":");
   displays.forEach(function (display) {
-    text += "\nRank: ".concat(display.rank, "    \nPost Awaken: ").concat(display.post_awaken, "    \nLevel: ").concat(display.level, "    \nMagic: ").concat(display.magic, "    \nMagia: ").concat(display.magia, "    \nEpisode: ").concat(display.episode, "    \nDoppel: ").concat(display.doppel, "\n");
+    text += "\nRank: ".concat(display.rank, "    \nPost Awaken: ").concat(display.post_awaken, "    \nLevel: ").concat(display.level, "    \nMagic: ").concat(display.magic, "    \nMagia: ").concat(display.magia, "    \nEpisode: ").concat(display.episode, "    \nDoppel: ").concat(display.doppel, "    \nSpirit Enhancement: ").concat(display.se, "\n");
   });
 
   _character_elements.messageDialog.open("".concat(character.name, " Details"), text);
@@ -1044,6 +1051,7 @@ var character_elements = {
   magia_select: document.querySelector("#magia_select"),
   episode_select: document.querySelector("#episode_select"),
   doppel_checkbox: document.querySelector("#doppel_checkbox"),
+  se_select: document.querySelector("#se_select"),
   // Create Character Buttons
   characterSelectModalOpen: document.querySelector("#characterSelectModalOpen"),
   create_button: document.querySelector("#create_button"),
@@ -1396,6 +1404,7 @@ var setLists = function setLists(lists) {
 
       display._id = key;
       if (display.doppel == "unlocked") display.doppel = true;else if (display.doppel == "locked") display.doppel = false;
+      if (display.se === undefined) display.se = "0";
     });
     var div = document.createElement("div");
     div.classList.add("character_list_row");
@@ -2121,7 +2130,7 @@ var createFilter = function createFilter() {
   var next = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
   var new_filter = document.createElement("div");
   new_filter.classList.add("filter_row");
-  new_filter.innerHTML = "\n      <select class=\"state_select collapse form_input\">\n        <option value=\"and\">And</option>\n        <option value=\"or\">Or</option>\n      </select>\n      <select class=\"type_select form_input\">\n        <option value=\"attribute\">Attribute</option>\n        <option value=\"rank\">Rank</option>\n        <option value=\"post_awaken\">Post Awaken</option>\n        <option value=\"min_rank\">Min Rank</option>\n        <option value=\"max_rank\">Max Rank</option>\n        <option value=\"level\">Level</option>\n        <option value=\"magic\">Magic</option>\n        <option value=\"magia\">Magia</option>\n        <option value=\"episode\">Episode</option>\n        <option value=\"doppel\">Doppel</option>\n        <option value=\"obtainability\">Obtainability</option>\n        <option value=\"release_date\">Release Date</option>\n      </select>\n      <div class=\"filter_type attribute_filter hidden\">\n        <select class=\"filter_field equality form_input\">\n          <option value=\"eq\">=</option>\n          <option value=\"neq\">=/=</option>\n        </select>\n        <select class=\"filter_field attribute_select form_input\">\n          <option value=\"dark\">Dark</option>\n          <option value=\"flame\">Flame</option>\n          <option value=\"light\">Light</option>\n          <option value=\"forest\">Forest</option>\n          <option value=\"void\">Void</option>\n          <option value=\"aqua\">Aqua</option>\n        </select>\n      </div>\n      <div class=\"filter_type rank_filter hidden\">\n        <select class=\"filter_field inequality form_input\">\n          <option value=\"eq\">=</option>\n          <option value=\"neq\">=/=</option>\n          <option value=\"lt\">&lt</option>\n          <option value=\"gt\">&gt</option>\n          <option value=\"lte\">&lt=</option>\n          <option value=\"gte\">&gt=</option>\n        </select>\n        <select class=\"filter_field rank_select form_input\">\n          <option value=\"1\">1</option>\n          <option value=\"2\">2</option>\n          <option value=\"3\">3</option>\n          <option value=\"4\">4</option>\n          <option value=\"5\">5</option>\n        </select>\n      </div>\n      <div class=\"filter_type post_awaken_filter hidden\">\n        <select class=\"filter_field equality form_input\">\n          <option value=\"eq\">=</option>\n          <option value=\"neq\">=/=</option>\n        </select>\n        <select class=\"filter_field post_awaken_select form_input\">\n          <option value=\"false\">No</option>\n          <option value=\"true\">Yes</option>\n        </select>\n      </div>\n      <div class=\"filter_type min_rank_filter hidden\">\n        <select class=\"filter_field inequality form_input\">\n          <option value=\"eq\">=</option>\n          <option value=\"neq\">=/=</option>\n          <option value=\"lt\">&lt</option>\n          <option value=\"gt\">&gt</option>\n          <option value=\"lte\">&lt=</option>\n          <option value=\"gte\">&gt=</option>\n        </select>\n        <select class=\"filter_field min_rank_select form_input\">\n          <option value=\"1\">1</option>\n          <option value=\"2\">2</option>\n          <option value=\"3\">3</option>\n          <option value=\"4\">4</option>\n          <option value=\"5\">5</option>\n        </select>\n      </div>\n      <div class=\"filter_type max_rank_filter hidden\">\n        <select class=\"filter_field inequality form_input\">\n          <option value=\"eq\">=</option>\n          <option value=\"neq\">=/=</option>\n          <option value=\"lt\">&lt</option>\n          <option value=\"gt\">&gt</option>\n          <option value=\"lte\">&lt=</option>\n          <option value=\"gte\">&gt=</option>\n        </select>\n        <select class=\"filter_field max_rank_select form_input\">\n          <option value=\"1\">1</option>\n          <option value=\"2\">2</option>\n          <option value=\"3\">3</option>\n          <option value=\"4\">4</option>\n          <option value=\"5\">5</option>\n        </select>\n      </div>\n      <div class=\"filter_type level_filter hidden\">\n        <select class=\"filter_field inequality form_input\">\n          <option value=\"eq\">=</option>\n          <option value=\"neq\">=/=</option>\n          <option value=\"lt\">&lt</option>\n          <option value=\"gt\">&gt</option>\n          <option value=\"lte\">&lt=</option>\n          <option value=\"gte\">&gt=</option>\n        </select>\n        <input class=\"filter_field level_input form_input\" type=\"number\" value=1 maxlength=\"3\" size=3 min=1 max=100>\n      </div>\n      <div class=\"filter_type magic_filter hidden\">\n        <select class=\"filter_field inequality form_input\">\n          <option value=\"eq\">=</option>\n          <option value=\"neq\">=/=</option>\n          <option value=\"lt\">&lt</option>\n          <option value=\"gt\">&gt</option>\n          <option value=\"lte\">&lt=</option>\n          <option value=\"gte\">&gt=</option>\n        </select>\n        <select class=\"filter_field magic_select form_input\">\n          <option value=\"0\">0</option>\n          <option value=\"1\">1</option>\n          <option value=\"2\">2</option>\n          <option value=\"3\">3</option>\n        </select>\n      </div>\n      <div class=\"filter_type magia_filter hidden\">\n        <select class=\"filter_field inequality form_input\">\n          <option value=\"eq\">=</option>\n          <option value=\"neq\">=/=</option>\n          <option value=\"lt\">&lt</option>\n          <option value=\"gt\">&gt</option>\n          <option value=\"lte\">&lt=</option>\n          <option value=\"gte\">&gt=</option>\n        </select>\n        <select class=\"filter_field magia_select form_input\">\n          <option value=\"1\">1</option>\n          <option value=\"2\">2</option>\n          <option value=\"3\">3</option>\n          <option value=\"4\">4</option>\n          <option value=\"5\">5</option>\n        </select>\n      </div>\n      <div class=\"filter_type episode_filter hidden\">\n        <select class=\"filter_field inequality form_input\">\n          <option value=\"eq\">=</option>\n          <option value=\"neq\">=/=</option>\n          <option value=\"lt\">&lt</option>\n          <option value=\"gt\">&gt</option>\n          <option value=\"lte\">&lt=</option>\n          <option value=\"gte\">&gt=</option>\n        </select>\n        <select class=\"filter_field episode_select form_input\">\n          <option value=\"1\">1</option>\n          <option value=\"2\">2</option>\n          <option value=\"3\">3</option>\n          <option value=\"4\">4</option>\n          <option value=\"5\">5</option>\n        </select>\n      </div>\n      <div class=\"filter_type doppel_filter hidden\">\n        <select class=\"filter_field equality form_input\">\n          <option value=\"eq\">=</option>\n          <option value=\"neq\">=/=</option>\n        </select>\n        <select class=\"filter_field doppel_select form_input\">\n          <option value=\"false\">No</option>\n          <option value=\"true\">Yes</option>\n        </select>\n      </div>\n      <div class=\"filter_type obtainability_filter hidden\">\n        <select class=\"filter_field equality form_input\">\n          <option value=\"eq\">=</option>\n          <option value=\"neq\">=/=</option>\n        </select>\n        <select class=\"filter_field obtainability_select form_input\">\n          <option value=\"unlimited\">Unlimited</option>\n          <option value=\"limited\">Limited</option>\n        </select>\n      </div>\n      <div class=\"filter_type release_date_filter hidden\">\n        <select class=\"filter_field inequality form_input\">\n          <option value=\"eq\">=</option>\n          <option value=\"neq\">=/=</option>\n          <option value=\"lt\">&lt</option>\n          <option value=\"gt\">&gt</option>\n          <option value=\"lte\">&lt=</option>\n          <option value=\"gte\">&gt=</option>\n        </select>\n        <input type=\"date\" class=\"filter_field release_date_select form_input\">\n      </div>\n      <button class=\"create small_btn\" title=\"Add New Filter Above\">+</button>\n      <button class=\"delete small_btn\" title=\"Delete Filter\"></button>\n    ";
+  new_filter.innerHTML = "\n      <select class=\"state_select collapse form_input\">\n        <option value=\"and\">And</option>\n        <option value=\"or\">Or</option>\n      </select>\n      <select class=\"type_select form_input\">\n        <option value=\"attribute\">Attribute</option>\n        <option value=\"rank\">Rank</option>\n        <option value=\"post_awaken\">Post Awaken</option>\n        <option value=\"min_rank\">Min Rank</option>\n        <option value=\"max_rank\">Max Rank</option>\n        <option value=\"level\">Level</option>\n        <option value=\"magic\">Magic</option>\n        <option value=\"magia\">Magia</option>\n        <option value=\"episode\">Episode</option>\n        <option value=\"doppel\">Doppel</option>\n        <option value=\"se\">SE</option>\n        <option value=\"obtainability\">Obtainability</option>\n        <option value=\"release_date\">Release Date</option>\n      </select>\n      <div class=\"filter_type attribute_filter hidden\">\n        <select class=\"filter_field equality form_input\">\n          <option value=\"eq\">=</option>\n          <option value=\"neq\">=/=</option>\n        </select>\n        <select class=\"filter_field attribute_select form_input\">\n          <option value=\"dark\">Dark</option>\n          <option value=\"flame\">Flame</option>\n          <option value=\"light\">Light</option>\n          <option value=\"forest\">Forest</option>\n          <option value=\"void\">Void</option>\n          <option value=\"aqua\">Aqua</option>\n        </select>\n      </div>\n      <div class=\"filter_type rank_filter hidden\">\n        <select class=\"filter_field inequality form_input\">\n          <option value=\"eq\">=</option>\n          <option value=\"neq\">=/=</option>\n          <option value=\"lt\">&lt</option>\n          <option value=\"gt\">&gt</option>\n          <option value=\"lte\">&lt=</option>\n          <option value=\"gte\">&gt=</option>\n        </select>\n        <select class=\"filter_field rank_select form_input\">\n          <option value=\"1\">1</option>\n          <option value=\"2\">2</option>\n          <option value=\"3\">3</option>\n          <option value=\"4\">4</option>\n          <option value=\"5\">5</option>\n        </select>\n      </div>\n      <div class=\"filter_type post_awaken_filter hidden\">\n        <select class=\"filter_field equality form_input\">\n          <option value=\"eq\">=</option>\n          <option value=\"neq\">=/=</option>\n        </select>\n        <select class=\"filter_field post_awaken_select form_input\">\n          <option value=\"false\">No</option>\n          <option value=\"true\">Yes</option>\n        </select>\n      </div>\n      <div class=\"filter_type min_rank_filter hidden\">\n        <select class=\"filter_field inequality form_input\">\n          <option value=\"eq\">=</option>\n          <option value=\"neq\">=/=</option>\n          <option value=\"lt\">&lt</option>\n          <option value=\"gt\">&gt</option>\n          <option value=\"lte\">&lt=</option>\n          <option value=\"gte\">&gt=</option>\n        </select>\n        <select class=\"filter_field min_rank_select form_input\">\n          <option value=\"1\">1</option>\n          <option value=\"2\">2</option>\n          <option value=\"3\">3</option>\n          <option value=\"4\">4</option>\n          <option value=\"5\">5</option>\n        </select>\n      </div>\n      <div class=\"filter_type max_rank_filter hidden\">\n        <select class=\"filter_field inequality form_input\">\n          <option value=\"eq\">=</option>\n          <option value=\"neq\">=/=</option>\n          <option value=\"lt\">&lt</option>\n          <option value=\"gt\">&gt</option>\n          <option value=\"lte\">&lt=</option>\n          <option value=\"gte\">&gt=</option>\n        </select>\n        <select class=\"filter_field max_rank_select form_input\">\n          <option value=\"1\">1</option>\n          <option value=\"2\">2</option>\n          <option value=\"3\">3</option>\n          <option value=\"4\">4</option>\n          <option value=\"5\">5</option>\n        </select>\n      </div>\n      <div class=\"filter_type level_filter hidden\">\n        <select class=\"filter_field inequality form_input\">\n          <option value=\"eq\">=</option>\n          <option value=\"neq\">=/=</option>\n          <option value=\"lt\">&lt</option>\n          <option value=\"gt\">&gt</option>\n          <option value=\"lte\">&lt=</option>\n          <option value=\"gte\">&gt=</option>\n        </select>\n        <input class=\"filter_field level_input form_input\" type=\"number\" value=1 maxlength=\"3\" size=3 min=1 max=100>\n      </div>\n      <div class=\"filter_type magic_filter hidden\">\n        <select class=\"filter_field inequality form_input\">\n          <option value=\"eq\">=</option>\n          <option value=\"neq\">=/=</option>\n          <option value=\"lt\">&lt</option>\n          <option value=\"gt\">&gt</option>\n          <option value=\"lte\">&lt=</option>\n          <option value=\"gte\">&gt=</option>\n        </select>\n        <select class=\"filter_field magic_select form_input\">\n          <option value=\"0\">0</option>\n          <option value=\"1\">1</option>\n          <option value=\"2\">2</option>\n          <option value=\"3\">3</option>\n        </select>\n      </div>\n      <div class=\"filter_type magia_filter hidden\">\n        <select class=\"filter_field inequality form_input\">\n          <option value=\"eq\">=</option>\n          <option value=\"neq\">=/=</option>\n          <option value=\"lt\">&lt</option>\n          <option value=\"gt\">&gt</option>\n          <option value=\"lte\">&lt=</option>\n          <option value=\"gte\">&gt=</option>\n        </select>\n        <select class=\"filter_field magia_select form_input\">\n          <option value=\"1\">1</option>\n          <option value=\"2\">2</option>\n          <option value=\"3\">3</option>\n          <option value=\"4\">4</option>\n          <option value=\"5\">5</option>\n        </select>\n      </div>\n      <div class=\"filter_type episode_filter hidden\">\n        <select class=\"filter_field inequality form_input\">\n          <option value=\"eq\">=</option>\n          <option value=\"neq\">=/=</option>\n          <option value=\"lt\">&lt</option>\n          <option value=\"gt\">&gt</option>\n          <option value=\"lte\">&lt=</option>\n          <option value=\"gte\">&gt=</option>\n        </select>\n        <select class=\"filter_field episode_select form_input\">\n          <option value=\"1\">1</option>\n          <option value=\"2\">2</option>\n          <option value=\"3\">3</option>\n          <option value=\"4\">4</option>\n          <option value=\"5\">5</option>\n        </select>\n      </div>\n      <div class=\"filter_type doppel_filter hidden\">\n        <select class=\"filter_field equality form_input\">\n          <option value=\"eq\">=</option>\n          <option value=\"neq\">=/=</option>\n        </select>\n        <select class=\"filter_field doppel_select form_input\">\n          <option value=\"false\">No</option>\n          <option value=\"true\">Yes</option>\n        </select>\n      </div>\n      <div class=\"filter_type se_filter hidden\">\n        <select class=\"filter_field inequality form_input\">\n        <option value=\"eq\">=</option>\n        <option value=\"neq\">=/=</option>\n        <option value=\"lt\">&lt</option>\n        <option value=\"gt\">&gt</option>\n        <option value=\"lte\">&lt=</option>\n        <option value=\"gte\">&gt=</option>\n        </select>\n        <input class=\"filter_field se_input form_input\" type=\"number\" value=0 maxlength=\"3\" size=3 min=0 max=100>\n      </div>\n      <div class=\"filter_type obtainability_filter hidden\">\n        <select class=\"filter_field equality form_input\">\n          <option value=\"eq\">=</option>\n          <option value=\"neq\">=/=</option>\n        </select>\n        <select class=\"filter_field obtainability_select form_input\">\n          <option value=\"unlimited\">Unlimited</option>\n          <option value=\"limited\">Limited</option>\n        </select>\n      </div>\n      <div class=\"filter_type release_date_filter hidden\">\n        <select class=\"filter_field inequality form_input\">\n          <option value=\"eq\">=</option>\n          <option value=\"neq\">=/=</option>\n          <option value=\"lt\">&lt</option>\n          <option value=\"gt\">&gt</option>\n          <option value=\"lte\">&lt=</option>\n          <option value=\"gte\">&gt=</option>\n        </select>\n        <input type=\"date\" class=\"filter_field release_date_select form_input\">\n      </div>\n      <button class=\"create small_btn\" title=\"Add New Filter Above\">+</button>\n      <button class=\"delete small_btn\" title=\"Delete Filter\"></button>\n    ";
   new_filter.querySelector(".type_select").selectedIndex = -1;
   new_filter.querySelector(".type_select").addEventListener("change", function () {
     var type = new_filter.querySelector(".type_select").value;
@@ -2399,32 +2408,13 @@ exports.resetFilters = resetFilters;
 var getStats = function getStats() {
   var result = {
     totalCharacters: 0,
-    totalVisible: 0,
-    limited: 0,
-    maxLevel: 0,
-    maxRank: 0,
-    maxMagic: 0,
-    maxMagia: 0,
-    maxEpisode: 0
+    totalVisible: 0
   };
   Array.from(_character_elements.character_elements.character_list_content.querySelectorAll(".character_display")).forEach(function (character_display_element) {
     result.totalCharacters++;
 
     if (!character_display_element.classList.contains("hidden")) {
       result.totalVisible++;
-      var character_display = character_api.getCharacterDisplay(character_display_element);
-
-      var character = _character_collection.character_collection.find(function (character) {
-        return character.id == character_display.character_id;
-      });
-
-      if (character.obtainability == "limited") result.limited++;
-      if (character_display.rank == 1 && character_display.level == 40) result.maxLevel++;else if (character_display.rank == 2 && character_display.level == 50) result.maxLevel++;else if (character_display.rank == 3 && character_display.level == 60) result.maxLevel++;else if (character_display.rank == 4 && character_display.level == 80) result.maxLevel++;else if (character_display.rank == 5 && character_display.level == 100) result.maxLevel++;
-      var maxRank = character_api.getMaxRank(character.ranks);
-      if (character_display.rank == maxRank) result.maxRank++;
-      if (character_display.magic == "3") result.maxMagic++;
-      if (character_display.magia == "5") result.maxMagia++;
-      if (character_display.episode == "5") result.maxEpisode++;
     }
   });
   _character_elements.character_elements.list_stats_list.innerHTML = "Visible: ".concat(result.totalVisible, "/").concat(result.totalCharacters);
@@ -2454,7 +2444,9 @@ var getMoreStats = function getMoreStats() {
     magias: {},
     maxEpisode: 0,
     episodes: {},
-    rankCopies: {}
+    rankCopies: {},
+    ses: {},
+    maxSe: 0
   };
   Array.from(_character_elements.character_elements.character_list_content.querySelectorAll(".character_display")).forEach(function (character_display_element) {
     result.totalCharacters++;
@@ -2483,9 +2475,11 @@ var getMoreStats = function getMoreStats() {
       var totalCopies = 0;
       if (minRank == 1) totalCopies = 10 * parseInt(character_display.magic) + 1;else if (minRank == 2) totalCopies = 10 * parseInt(character_display.magic) + 1;else if (minRank == 3) totalCopies = 3 * parseInt(character_display.magic) + 1;else if (minRank == 4) totalCopies = 1 * parseInt(character_display.magic) + 1;
       result.rankCopies[minRank] = result.rankCopies[minRank] ? result.rankCopies[minRank] + totalCopies : totalCopies;
+      if (character_display.se == "60") result.maxSe++;
+      result.ses[character_display.se] = result.ses[character_display.se] + 1 || 1;
     }
   });
-  return "Total Characters: ".concat(result.totalCharacters, "\nTotal Visible: ").concat(result.totalVisible, "\nLimited: ").concat(result.limited, "\nUnlimited: ").concat(result.totalVisible - result.limited, "      \nMax Level: ").concat(result.maxLevel, "\nMax Rank: ").concat(result.maxRank, "\nMax Magic: ").concat(result.maxMagic, "\nMax Magia: ").concat(result.maxMagia, "\nMax Episode: ").concat(result.maxEpisode, "      \nLevels:").concat(Object.entries(result.levels).map(function (_ref13) {
+  return "Total Characters: ".concat(result.totalCharacters, "\nTotal Visible: ").concat(result.totalVisible, "\nLimited: ").concat(result.limited, "\nUnlimited: ").concat(result.totalVisible - result.limited, "      \nMax Level: ").concat(result.maxLevel, "\nMax Rank: ").concat(result.maxRank, "\nMax Magic: ").concat(result.maxMagic, "\nMax Magia: ").concat(result.maxMagia, "\nMax Episode: ").concat(result.maxEpisode, "      \nMax Spirit Enhancement: ").concat(result.maxSe, "      \nLevels:").concat(Object.entries(result.levels).map(function (_ref13) {
     var _ref14 = (0, _slicedToArray2["default"])(_ref13, 2),
         level = _ref14[0],
         count = _ref14[1];
@@ -2515,10 +2509,16 @@ var getMoreStats = function getMoreStats() {
         count = _ref22[1];
 
     return "\n  ".concat(level, ": ").concat(count);
-  }).toString(), "      \nCopies of Each Rank:").concat(Object.entries(result.rankCopies).map(function (_ref23) {
+  }).toString(), "      \nSpirit Enhancement Levels:").concat(Object.entries(result.ses).map(function (_ref23) {
     var _ref24 = (0, _slicedToArray2["default"])(_ref23, 2),
         level = _ref24[0],
         count = _ref24[1];
+
+    return "\n  ".concat(level, ": ").concat(count);
+  }).toString(), "      \nCopies of Each Rank:").concat(Object.entries(result.rankCopies).map(function (_ref25) {
+    var _ref26 = (0, _slicedToArray2["default"])(_ref25, 2),
+        level = _ref26[0],
+        count = _ref26[1];
 
     return "\n  ".concat(level, ": ").concat(count);
   }).toString());
@@ -2582,10 +2582,10 @@ var importList = function importList() {
       _character_elements.character_elements.profile_select.value = "Default";
       _character_elements.character_elements.character_list_content.innerHTML = "";
       var newCharacterList = {};
-      Object.entries(characterList).forEach(function (_ref25) {
-        var _ref26 = (0, _slicedToArray2["default"])(_ref25, 2),
-            key = _ref26[0],
-            value = _ref26[1];
+      Object.entries(characterList).forEach(function (_ref27) {
+        var _ref28 = (0, _slicedToArray2["default"])(_ref27, 2),
+            key = _ref28[0],
+            value = _ref28[1];
 
         return newCharacterList[generatePushID()] = character_api.sanitizeCharacter(value);
       });
@@ -2872,7 +2872,7 @@ var createProfileRule = function createProfileRule() {
   var next = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
   var new_rule = document.createElement("div");
   new_rule.classList.add("profile_rule");
-  new_rule.innerHTML = "\n      <select class=\"state_select form_input\">\n        <option value=\"sort\">Sort By</option>\n        <option value=\"group\">Group By</option>\n      </select>\n      <select class=\"type_select form_input\">\n        <option value=\"attribute\">Attribute</option>\n        <option value=\"rank\">Rank</option>\n        <option value=\"post_awaken\">Post Awaken</option>\n        <option value=\"level\">Level</option>\n        <option value=\"magic\">Magic</option>\n        <option value=\"magia\">Magia</option>\n        <option value=\"episode\">Episode</option>\n        <option value=\"doppel\">Doppel</option>\n        <option value=\"obtainability\">Obtainability</option>\n        <option value=\"release_date\">Release Date</option>\n        <option value=\"character_id\">Character ID</option>\n      </select>\n      <button class=\"sort_dir down small_btn\"></button>\n      <button class=\"create add small_btn\" title=\"Add New Rule Below\"></button>\n      <button class=\"delete small_btn\" title=\"Delete Rule\"></button>";
+  new_rule.innerHTML = "\n      <select class=\"state_select form_input\">\n        <option value=\"sort\">Sort By</option>\n        <option value=\"group\">Group By</option>\n      </select>\n      <select class=\"type_select form_input\">\n        <option value=\"attribute\">Attribute</option>\n        <option value=\"rank\">Rank</option>\n        <option value=\"post_awaken\">Post Awaken</option>\n        <option value=\"level\">Level</option>\n        <option value=\"magic\">Magic</option>\n        <option value=\"magia\">Magia</option>\n        <option value=\"episode\">Episode</option>\n        <option value=\"doppel\">Doppel</option>\n        <option value=\"se\">SE</option>\n        <option value=\"obtainability\">Obtainability</option>\n        <option value=\"release_date\">Release Date</option>\n        <option value=\"character_id\">Character ID</option>\n      </select>\n      <button class=\"sort_dir down small_btn\"></button>\n      <button class=\"create add small_btn\" title=\"Add New Rule Below\"></button>\n      <button class=\"delete small_btn\" title=\"Delete Rule\"></button>";
   var state_select = new_rule.querySelector(".state_select");
   var type_select = new_rule.querySelector(".type_select");
   var sort_dir = new_rule.querySelector(".sort_dir");
@@ -2921,12 +2921,14 @@ var createProfileRule = function createProfileRule() {
       }
 
       type_select.options[3].disabled = true;
-      type_select.options[9].disabled = true;
+      type_select.options[8].disabled = true;
       type_select.options[10].disabled = true;
+      type_select.options[11].disabled = true;
     } else {
       type_select.options[3].disabled = false;
-      type_select.options[9].disabled = false;
+      type_select.options[8].disabled = false;
       type_select.options[10].disabled = false;
+      type_select.options[11].disabled = false;
     }
   });
   type_select.addEventListener("change", function () {
@@ -2962,20 +2964,22 @@ var loadRule = function loadRule(ruleId, settings) {
   if (settings.direction == 1 && sort_dir.classList.contains("down")) sort_dir.classList.replace("down", "up");else if (settings.direction == -1 && sort_dir.classList.contains("up")) sort_dir.classList.replace("up", "down");
 
   if (state_select.value === "group") {
-    if (type_select.value === "character_id" || type_select.value === "release_date" || type_select.value === "level") {
+    if (type_select.value === "character_id" || type_select.value === "release_date" || type_select.value === "level" || type_select.value === "se") {
       type_select.selectedIndex = -1;
     }
 
     type_select.options[3].disabled = true;
-    type_select.options[9].disabled = true;
+    type_select.options[8].disabled = true;
     type_select.options[10].disabled = true;
+    type_select.options[11].disabled = true;
   } else {
     type_select.options[3].disabled = false;
-    type_select.options[9].disabled = false;
+    type_select.options[8].disabled = false;
     type_select.options[10].disabled = false;
+    type_select.options[11].disabled = false;
   }
 
-  if (type_select.value === "character_id" || type_select.value === "release_date" || type_select.value === "level") {
+  if (type_select.value === "character_id" || type_select.value === "release_date" || type_select.value === "level" || type_select.value === "se") {
     if (state_select.value === "group") {
       state_select.selectedIndex = -1;
     }
@@ -6042,8 +6046,8 @@ var character_collection = [{
     "4": true,
     "5": true
   },
-  "release_date": "2019-08-22",
-  "release_date_na": "2020-08-12",
+  "release_date": "2021-01-01",
+  "release_date_na": "",
   "obtainability": "limited",
   "url": "https://magireco.fandom.com/wiki/Iroha_& Yachiyo (Final Battle ver.)"
 }, {

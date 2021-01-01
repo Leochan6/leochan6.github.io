@@ -52,7 +52,7 @@ For any feedback or questions, please contact me the locations listed above.
 
 - Create Character
 
-    Without a Character selected, change the values in the form under the `Create Character` tab. Press the <img src="https://leo-chan.me/magireco/assets/icon/magical_girls.png" alt="magical girls" title="magical girls" height="15"/> button to see a visual list of the character available and who is already created in the list (there is a check box to disable the visibility of already created characters). You can also use the search box to narrow down the list of girls. The available fields in the form are `Name`, `Rank`, `Post Awaken`, `Experience`, `Magic Level`, `Magia Level`, `Episode Level`, and `Doppel`. Once all the fields are filled as desired and there are no errors, the preview will be updated with the details. Then press the `Create` button to add to the list, if a Character List has been created and selected.
+    Without a Character selected, change the values in the form under the `Create Character` tab. Press the <img src="https://leo-chan.me/magireco/assets/icon/magical_girls.png" alt="magical girls" title="magical girls" height="15"/> button to see a visual list of the character available and who is already created in the list (there is a check box to disable the visibility of already created characters). You can also use the search box to narrow down the list of girls. The available fields in the form are `Name`, `Rank`, `Post Awaken`, `Experience`, `Magic Level`, `Magia Level`, `Episode Level`, `Doppel`, `Spirit Enhancement`. Once all the fields are filled as desired and there are no errors, the preview will be updated with the details. Then press the `Create` button to add to the list, if a Character List has been created and selected.
 
 - Select Character
 
@@ -90,7 +90,7 @@ For any feedback or questions, please contact me the locations listed above.
 
 - Add Rule
 
-    Under the `Sorting Profiles` tab, press the second or lower `+` button to create a new rule below the current rule. Rules can be either a `Group By` or a `Sort By` rule with the following attributes: `Attribute`, `Rank`, `Post Awaken`, `Level`, `Magic`, `Magia`, `Episode`, `Doppel`, `Obtainability`, and `Character ID`. Certain attributes cannot be grouped by, such as `Level` and `Character ID`. The order of the grouping or sorting can be changed by pressing the `▼ (descending)` or `▲ (ascending)` buttons. The order of the rules matter, as the groups are nested and the sorting is done one after another, to order is top to bottom. Grouping is always done before sorting. The `Default` profile cannot have rules added to it, so adding a rule will automatically change to the `Custom` profile.
+    Under the `Sorting Profiles` tab, press the second or lower `+` button to create a new rule below the current rule. Rules can be either a `Group By` or a `Sort By` rule with the following attributes: `Attribute`, `Rank`, `Post Awaken`, `Level`, `Magic`, `Magia`, `Episode`, `Doppel`, `Spirit Enhancement`, `Obtainability`, and `Character ID`. Certain attributes cannot be grouped by, such as `Level` and `Character ID`. The order of the grouping or sorting can be changed by pressing the `▼ (descending)` or `▲ (ascending)` buttons. The order of the rules matter, as the groups are nested and the sorting is done one after another, to order is top to bottom. Grouping is always done before sorting. The `Default` profile cannot have rules added to it, so adding a rule will automatically change to the `Custom` profile.
 
 - Edit Rule
 
@@ -184,7 +184,7 @@ For any feedback or questions, please contact me the locations listed above.
 
 - Create Filter
 
-    Press the `New` button to create a new filter. Select from the dropdown the property to filter on, how to filter, and what to filter by. The available properties to filter on are `Attribute`, `Rank`, `Post Awaken`, `Min Rank`, `Max Rank`, `Level`, `Magic`, `Magia`, `Episode`, `Doppel`, and `Obtainability`, which can be filtered as `equal to`, `not equal to`, `less than`, `greater than`, `less than or equal to`, and `greater than or equal to`. Some properties only have the `equal to` and `not equal to` options. If a filter has already been created, press the `+` button to create a new filter above the pressed filter.
+    Press the `New` button to create a new filter. Select from the dropdown the property to filter on, how to filter, and what to filter by. The available properties to filter on are `Attribute`, `Rank`, `Post Awaken`, `Min Rank`, `Max Rank`, `Level`, `Magic`, `Magia`, `Episode`, `Doppel`, `Spirit Enhancement`, and `Obtainability`, which can be filtered as `equal to`, `not equal to`, `less than`, `greater than`, `less than or equal to`, and `greater than or equal to`. Some properties only have the `equal to` and `not equal to` options. If a filter has already been created, press the `+` button to create a new filter above the pressed filter.
 
 - Delete Filter
 

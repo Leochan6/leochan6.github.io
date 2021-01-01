@@ -47,6 +47,7 @@ export const character_elements = {
   magia_select: document.querySelector("#magia_select"),
   episode_select: document.querySelector("#episode_select"),
   doppel_checkbox: document.querySelector("#doppel_checkbox"),
+  se_select: document.querySelector("#se_select"),
 
   // Create Character Buttons
   characterSelectModalOpen: document.querySelector("#characterSelectModalOpen"),

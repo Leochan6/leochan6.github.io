@@ -83,12 +83,12 @@
   margin-left: 10px;
 }
 
-.filter_field.level_input {
+.filter_field.level_input, .filter_field.se_input, .filter_field.release_date_select {
   margin-left: 10px;
   text-align: left;
 }
 
-.level_input {
+.level_input, .se_input {
   height: 17px;
   width: 56px;
   padding: 0px;

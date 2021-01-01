@@ -840,8 +840,8 @@ export const character_collection = [
       "4": true,
       "5": true
     },
-    "release_date": "2019-08-22",
-    "release_date_na": "2020-08-12",
+    "release_date": "2021-01-01",
+    "release_date_na": "",
     "obtainability": "limited",
     "url": "https://magireco.fandom.com/wiki/Iroha_& Yachiyo (Final Battle ver.)"
   },
