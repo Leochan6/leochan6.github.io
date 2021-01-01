@@ -812,8 +812,26 @@ export const character_collection = [
   {
     "id": "1301",
     "name": "Iroha & Yachiyo (Final Battle ver.)",
-    "name_jp": "いろは・やちよ（決戦ver.）",
+    "name_jp": "いろは・やちよ（決戦ver.",
     "name_na": "Iroha & Yachiyo (Final Battle)",
+    "attribute": "Light",
+    "ranks": {
+      "1": false,
+      "2": false,
+      "3": false,
+      "4": true,
+      "5": true
+    },
+    "release_date": "2019-08-22",
+    "release_date_na": "2020-08-12",
+    "obtainability": "limited",
+    "url": "https://magireco.fandom.com/wiki/Iroha_& Yachiyo (Final Battle ver.)"
+  },
+  {
+    "id": "1401",
+    "name": "Iroha & Ui (Miko ver.)",
+    "name_jp": "いろは・うい (巫女ver.)",
+    "name_na": "",
     "attribute": "Light",
     "ranks": {
       "1": false,
