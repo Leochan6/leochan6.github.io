@@ -8540,6 +8540,126 @@ var memoria_collection = [{
   "obtainability": "limited",
   "url": "https://magireco.fandom.com/wiki/Like_This_Since_When"
 }, {
+  "id": "1586",
+  "name": "Medals of Respect, Gratitude, and Determination",
+  "name_jp": "敬意と感謝と不退の勲章",
+  "name_na": "",
+  "type": "ability",
+  "rank": "3",
+  "effect1": "Anti-Burn [100%] & Attack Up [III / 15%]",
+  "effect2": "Anti-Burn [100%] & Attack Up [IV / 20%]",
+  "chara": "Ooba Juri",
+  "obtainability": "unlimited",
+  "url": "https://magireco.fandom.com/wiki/Medals_of_Respect,_Gratitude,_and_Determination"
+}, {
+  "id": "1587",
+  "name": "Feigning Innocence School Time",
+  "name_jp": "猫かぶりスクールタイム",
+  "name_na": "",
+  "type": "ability",
+  "rank": "4",
+  "effect1": "Chance to Anti-Stun [X / 70%] & Attack Up [IV / 20%]",
+  "effect2": "Anti-Stun [100%] & Attack Up [V / 25%]",
+  "chara": "",
+  "obtainability": "unlimited",
+  "url": "https://magireco.fandom.com/wiki/Feigning_Innocence_School_Time"
+}, {
+  "id": "1588",
+  "name": "The Great Father",
+  "name_jp": "ザ・グレート・ファザー",
+  "name_na": "",
+  "type": "skill",
+  "rank": "3",
+  "effect1": "Blast Damage Up [III / 25%] (Self / 3 Turns)",
+  "effect2": "Blast Damage Up [IV / 30%] (Self / 3 turns)",
+  "chara": "",
+  "obtainability": "unlimited",
+  "url": "https://magireco.fandom.com/wiki/The_Great_Father"
+}, {
+  "id": "1589",
+  "name": "",
+  "name_jp": "",
+  "name_na": "",
+  "type": "skill",
+  "rank": "3",
+  "effect1": "",
+  "effect2": "",
+  "chara": "",
+  "obtainability": "",
+  "url": ""
+}, {
+  "id": "1590",
+  "name": "",
+  "name_jp": "",
+  "name_na": "",
+  "type": "skill",
+  "rank": "4",
+  "effect1": "",
+  "effect2": "",
+  "chara": "",
+  "obtainability": "",
+  "url": ""
+}, {
+  "id": "1591",
+  "name": "",
+  "name_jp": "",
+  "name_na": "",
+  "type": "ability",
+  "rank": "3",
+  "effect1": "",
+  "effect2": "",
+  "chara": "",
+  "obtainability": "",
+  "url": ""
+}, {
+  "id": "1592",
+  "name": "",
+  "name_jp": "",
+  "name_na": "",
+  "type": "ability",
+  "rank": "3",
+  "effect1": "",
+  "effect2": "",
+  "chara": "",
+  "obtainability": "",
+  "url": ""
+}, {
+  "id": "1593",
+  "name": "",
+  "name_jp": "",
+  "name_na": "",
+  "type": "skill",
+  "rank": "4",
+  "effect1": "",
+  "effect2": "",
+  "chara": "",
+  "obtainability": "",
+  "url": ""
+}, {
+  "id": "1594",
+  "name": "",
+  "name_jp": "",
+  "name_na": "",
+  "type": "skill",
+  "rank": "4",
+  "effect1": "",
+  "effect2": "",
+  "chara": "",
+  "obtainability": "",
+  "url": ""
+}, {
+  "id": "1595",
+  "name": "",
+  "name_jp": "",
+  "name_na": "",
+  "type": "ability",
+  "rank": "4",
+  "effect1": "",
+  "effect2": "",
+  "chara": "",
+  "obtainability": "",
+  "url": ""
+}, {
   "id": "9001",
   "name": "My Victory Pose Is Kawaii Too",
   "name_jp": "",
@@ -9869,9 +9989,7 @@ exports.enableButtons = enableButtons;
 var loadMemoriaSelectList = function loadMemoriaSelectList() {
   _memoria_elements.memoriaSelectDialog.list.innerHTML = "";
 
-  _memoria_collection.memoria_collection.filter(function (memoria) {
-    return memoria.name;
-  }).forEach(function (memoria) {
+  _memoria_collection.memoria_collection.forEach(function (memoria) {
     var added = Object.values(storage_api.lists[memoria_list_api.getListId()].memoriaList).filter(function (_char) {
       return _char.memoria_id === memoria.id;
     });

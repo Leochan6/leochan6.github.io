@@ -434,7 +434,7 @@ export const enableButtons = () => {
  */
 export const loadMemoriaSelectList = () => {
   memoriaSelectDialog.list.innerHTML = "";
-  memoria_collection.filter(memoria => memoria.name).forEach(memoria => {
+  memoria_collection.forEach(memoria => {
     let added = Object.values(storage_api.lists[memoria_list_api.getListId()].memoriaList).filter(char => char.memoria_id === memoria.id);
     let container = document.createElement("div");
     container.classList.add("memoria_image_preview");

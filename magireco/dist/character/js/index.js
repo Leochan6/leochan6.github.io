@@ -6343,6 +6343,23 @@ var character_collection = [{
   "obtainability": "unlimited",
   "url": "https://magireco.fandom.com/wiki/Kasane_Ao"
 }, {
+  "id": "1024",
+  "name": "Ooba Juri",
+  "name_jp": "大庭 樹里",
+  "name_na": "",
+  "attribute": "Flame",
+  "ranks": {
+    "1": false,
+    "2": false,
+    "3": false,
+    "4": true,
+    "5": true
+  },
+  "release_date": "2021-01-18",
+  "release_date_na": "2050-01-01",
+  "obtainability": "unlimited",
+  "url": "https://magireco.fandom.com/wiki/Ooba_Juri"
+}, {
   "id": "1025",
   "name": "Tokime Shizuka",
   "name_jp": "時女 静香",
@@ -6781,7 +6798,7 @@ var character_collection = [{
     "5": true
   },
   "release_date": "2021-01-01",
-  "release_date_na": "",
+  "release_date_na": "2050-01-01",
   "obtainability": "limited",
   "url": "https://magireco.fandom.com/wiki/Iroha_& Yachiyo (Final Battle ver.)"
 }, {
@@ -8314,6 +8331,23 @@ var character_collection = [{
   "release_date_na": "2050-01-01",
   "obtainability": "limited",
   "url": "https://magireco.fandom.com/wiki/Kanade_Haruka"
+}, {
+  "id": "4036",
+  "name": "Mikoto Tsubaki",
+  "name_jp": "美琴 椿",
+  "name_na": "",
+  "attribute": "Flame",
+  "ranks": {
+    "1": false,
+    "2": false,
+    "3": false,
+    "4": true,
+    "5": true
+  },
+  "release_date": "2021-01-25",
+  "release_date_na": "2050-01-01",
+  "obtainability": "limited",
+  "url": "https://magireco.fandom.com/wiki/Mikoto_Tsubaki"
 }, {
   "id": "4041",
   "name": "Senjougahara Hitagi",
