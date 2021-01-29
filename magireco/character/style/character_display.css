@@ -17,56 +17,47 @@
   background-color: var(--display-background-color);
 }
 
-.character_display :not(.card_image) {
-  position: relative;
+.character_display * {
+  position: absolute;
+  -webkit-user-drag: none;
 }
 
 .character_display .frame_rank {
-  margin-top: -110px;
-  -webkit-user-drag: none;
 }
 
 .character_display .star_rank {
-  margin-top: -112px;
-  -webkit-user-drag: none;
 }
 
 .character_display .attribute {
-  margin-top: -108px;
-  -webkit-user-drag: none;
 }
 
 .character_display .magic {
-  margin-top: 0px;
-  -webkit-user-drag: none;
+  top: 112px;
 }
 
 .character_display .magia {
-  margin-top: 0px;
-  -webkit-user-drag: none;
+  top: 134px;
 }
 
 .character_display .doppel {
   display: flex;
   width: 43px;
-  margin-top: -13px;
-  margin-left: -5px;
+  top: 34px;
+  left: -5px;
 }
 
 .character_display .post_awaken {
   display: flex;
   width: 20px;
-  margin-top: -30px;
-  margin-right: 0px;
-  margin-left: auto;
+  top: 66px;
+  right: -2px;
 }
 
 .character_display .level {
   display: flex;
   flex-direction: row;
-  margin-left: auto;
-  margin-right: 0px;
-  margin-top: -156px;
+  right: 0px;
+  top: 0px;
   text-align: right;
   font-family: Arial, Helvetica, sans-serif;
   cursor: default;
@@ -83,6 +74,7 @@
 }
 
 .character_display .level .level_num {
+  position: relative;
   font-size: 24px;
   color: white;
   text-shadow: -1px -1px black, -1px 0px black, -1px 1px black, 0px -1px black, 0px 1px black, 1px -1px black, 1px 0px black, 1px 1px black;
@@ -91,9 +83,8 @@
 .character_display .se {
   display: flex;
   flex-direction: row;
-  margin-left: auto;
-  margin-right: 0px;
-  margin-top: 0px;
+  right: 0px;
+  top: 28px;
   text-align: right;
   font-family: Arial, Helvetica, sans-serif;
   cursor: default;
@@ -104,7 +95,6 @@
 }
 
 .character_display .card_image {
-  position: absolute;
   border-radius: 50%;
   margin: 3px;
   width: 106px;
