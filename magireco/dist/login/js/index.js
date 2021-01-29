@@ -941,7 +941,7 @@ var ContactDialog = /*#__PURE__*/function (_MessageDialog) {
       link: false,
       copy: false
     });
-    _this4.list.innerHTML = "\n    <p>For assistance, support, or feedback, please contact Leo Chan at</p>\n    <li>Discord: Leo_Chan#9150 or <a target=\"_blank\" href=\"https://discord.gg/magiarecord\">PMMM: Magia Record Discord Server</a></li>\n    <li>Reddit: <a target=\"_blank\" href=\"https://www.reddit.com/message/compose/?to=Leochan6\">u/Leochan6</a></li>\n    <p>For more information and how to use, <a target=\"_blank\" href=\"https://github.com/Leochan6/leochan6.github.io/blob/master/magireco/README.md\">check the README file</a></p>";
+    _this4.list.innerHTML = "\n    <p>For assistance, support, or feedback, please contact Leo Chan at</p>\n    <li>Discord: Leo_Chan#9150 or <a target=\"_blank\" href=\"https://discord.gg/magiarecord\">PMMM: Magia Record Discord Server</a></li>\n    <li>Reddit: <a target=\"_blank\" href=\"https://www.reddit.com/message/compose/?to=Leochan6\">u/Leochan6</a></li>\n    <p>For more information and how to use, <a target=\"_blank\" href=\"https://github.com/Leochan6/leochan6.github.io/blob/master/magireco/README.md\">check the README file</a></p>\n    <p>If the Navigation Buttons do not appear or the page is not loading, please clear your Cookies and Reload.";
     return _this4;
   }
 

@@ -2458,7 +2458,7 @@ export const character_collection = [
       "2": false,
       "3": true,
       "4": true,
-      "5": false
+      "5": true
     },
     "release_date": "2018-05-01",
     "release_date_na": "2019-10-15",
