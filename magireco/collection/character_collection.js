@@ -630,6 +630,24 @@ export const character_collection = [
     "url": "https://magireco.fandom.com/wiki/Rumor_Tsuruno"
   },
   {
+    "id": "1104",
+    "name": "Rumor Sana",
+    "name_jp": "ウワサのさな",
+    "name_na": "",
+    "attribute": "Aqua",
+    "ranks": {
+      "1": false,
+      "2": false,
+      "3": false,
+      "4": true,
+      "5": true
+    },
+    "release_date": "2021-02-12",
+    "release_date_na": "2050-01-01",
+    "obtainability": "limited",
+    "url": "https://magireco.fandom.com/wiki/Rumor_Sana"
+  },
+  {
     "id": "1105",
     "name": "Felicia-chan",
     "name_jp": "フェリシアちゃん",
