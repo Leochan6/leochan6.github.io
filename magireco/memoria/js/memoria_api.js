@@ -529,7 +529,7 @@ export const openMemoriaDialog = (memoria, displays) => {
   \nType: ${memoria.type}\
   \nEffect: ${memoria.effect1}\
   \nMLB Effect: ${memoria.effect2}\
-  \nUsable: ${memoria.charaList ? memoria.charaList[0].name : "ALL"}\
+  \nUsable: ${memoria.chara ? memoria.chara : "ALL"}\
   \nFandom Wiki Link:\n${memoria.url}`
 
   if (displays.length > 0) text += `\n\nYour Memoria${displays.length > 1 ? "s" : ""}:`;
