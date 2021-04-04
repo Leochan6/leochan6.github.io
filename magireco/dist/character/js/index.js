@@ -6989,6 +6989,23 @@ var character_collection = [{
   "obtainability": "limited",
   "url": "https://magireco.fandom.com/wiki/Madoka-senpai"
 }, {
+  "id": "2103",
+  "name": "Ultimate Madoka-senpai",
+  "name_jp": "究極まどか先輩",
+  "name_na": "",
+  "attribute": "Light",
+  "ranks": {
+    "1": false,
+    "2": false,
+    "3": false,
+    "4": true,
+    "5": true
+  },
+  "release_date": "2021-04-02",
+  "release_date_na": "2050-01-01",
+  "obtainability": "limited",
+  "url": "https://magireco.fandom.com/wiki/Ultimate_Madoka-senpai"
+}, {
   "id": "2300",
   "name": "Akemi Homura (Mizugi ver.)",
   "name_jp": "暁美 ほむら (水着ver.)",
@@ -7957,6 +7974,23 @@ var character_collection = [{
   "release_date_na": "2020-04-22",
   "obtainability": "unlimited",
   "url": "https://magireco.fandom.com/wiki/Makino_Ikumi"
+}, {
+  "id": "3054",
+  "name": "Miwa Mitsune",
+  "name_jp": "三輪 みつね",
+  "name_na": "",
+  "attribute": "Light",
+  "ranks": {
+    "1": false,
+    "2": false,
+    "3": false,
+    "4": true,
+    "5": true
+  },
+  "release_date": "2021-03-22",
+  "release_date_na": "2050-01-01",
+  "obtainability": "unlimited",
+  "url": "https://magireco.fandom.com/wiki/Miwa_Mitsune"
 }, {
   "id": "3056",
   "name": "Mizuki Rui",
