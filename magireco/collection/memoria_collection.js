@@ -7775,6 +7775,45 @@ export const memoria_collection = [
     "url": "https://magireco.fandom.com/wiki/Handmade_Ultimate_Dress"
   },
   {
+    "id": "1615",
+    "name": "Ill-Fitting Thoughts",
+    "name_jp": "収まらない想い",
+    "name_na": "",
+    "type": "ability",
+    "rank": "3",
+    "effect1": "Chance to Anti-Skill Seal [VI / 50%] & MP Gain Up [III / 10%]",
+    "effect2": "Chance to Anti-Skill Seal [VIII / 60%] & MP Gain Up [IV / 12.5%]",
+    "chara": "Kurusu Alexandra",
+    "obtainability": "unlimited",
+    "url": "https://magireco.fandom.com/wiki/Ill-Fitting_Thoughts"
+  },
+  {
+    "id": "1616",
+    "name": "Hand-Waving Happiness",
+    "name_jp": "手を振れる幸せ",
+    "name_na": "",
+    "type": "ability",
+    "rank": "4",
+    "effect1": "Defense Up [V / 37.5%] & Status Ailment Resistance Up [III / 30%]",
+    "effect2": "Defense Up [VI / 45%] & Status Ailment Resistance Up [IV / 35%]",
+    "chara": "",
+    "obtainability": "unlimited",
+    "url": "https://magireco.fandom.com/wiki/Hand-Waving_Happiness"
+  },
+  {
+    "id": "1617",
+    "name": "The Tone Gently Melts",
+    "name_jp": "音色は優しく溶けて",
+    "name_na": "",
+    "type": "skill",
+    "rank": "3",
+    "effect1": "Attack Up [II / 10%] (Self / 3 turns) & Remove Debuffs",
+    "effect2": "Attack Up [III / 15%] (Self / 3 turns) & Remove Debuffs",
+    "chara": "",
+    "obtainability": "unlimited",
+    "url": "https://magireco.fandom.com/wiki/The_Tone_Gently_Melts"
+  },
+  {
     "id": "9001",
     "name": "My Victory Pose Is Kawaii Too",
     "name_jp": "",

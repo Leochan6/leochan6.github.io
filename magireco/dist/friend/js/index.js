@@ -5711,6 +5711,23 @@ var character_collection = [{
   "obtainability": "unlimited",
   "url": "https://magireco.fandom.com/wiki/Azumi_Hagumu"
 }, {
+  "id": "1035",
+  "name": "Kurusu Alexandra",
+  "name_jp": "栗栖 アレクサンドラ",
+  "name_na": "",
+  "attribute": "Forest",
+  "ranks": {
+    "1": false,
+    "2": false,
+    "3": false,
+    "4": true,
+    "5": true
+  },
+  "release_date": "2021-04-14",
+  "release_date_na": "2050-01-01",
+  "obtainability": "unlimited",
+  "url": "https://magireco.fandom.com/wiki/Kurusu_Alexandra"
+}, {
   "id": "1038",
   "name": "Yakumo Mikage",
   "name_jp": "八雲 みかげ",
