@@ -6826,7 +6826,7 @@ var character_collection = [{
     "2": false,
     "3": true,
     "4": true,
-    "5": false
+    "5": true
   },
   "release_date": "2017-10-10",
   "release_date_na": "2019-07-23",
@@ -6843,7 +6843,7 @@ var character_collection = [{
     "2": true,
     "3": true,
     "4": true,
-    "5": false
+    "5": true
   },
   "release_date": "2017-10-10",
   "release_date_na": "2019-07-23",
@@ -7342,6 +7342,23 @@ var character_collection = [{
   "release_date_na": "2050-01-01",
   "obtainability": "limited",
   "url": "https://magireco.fandom.com/wiki/Rumor_of the Ten-Thousand-Year Sakura (Mizugi ver.)"
+}, {
+  "id": "3503",
+  "name": "Konoha & Hazuki",
+  "name_jp": "このは・葉月",
+  "name_na": "",
+  "attribute": "Forest",
+  "ranks": {
+    "1": false,
+    "2": false,
+    "3": false,
+    "4": true,
+    "5": true
+  },
+  "release_date": "2021-04-30",
+  "release_date_na": "2050-01-01",
+  "obtainability": "limited",
+  "url": "https://magireco.fandom.com/wiki/Konoha_%26_Hazuki"
 }, {
   "id": "3900",
   "name": "Kuro",

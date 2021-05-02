@@ -7814,6 +7814,58 @@ export const memoria_collection = [
     "url": "https://magireco.fandom.com/wiki/The_Tone_Gently_Melts"
   },
   {
+    "id": "1618",
+    "name": "Sisters Since That Day",
+    "name_jp": "姉妹になったあの日から",
+    "name_na": "",
+    "type": "skill",
+    "rank": "3",
+    "effect1": "Accele MP Gain Up [IV / 17.5%] (Self / 3 Turns) & Magia Damage Up [V / 15%] (Self / 3 Turns)",
+    "effect2": "Accele MP Gain Up [V / 20%] (Self / 3 Turns) & Magia Damage Up [VI / 17.5%] (Self / 3 Turns)",
+    "chara": "Konoha & Hazuki",
+    "obtainability": "unlimited",
+    "url": "https://magireco.fandom.com/wiki/Sisters_Since_That_Day"
+  },
+  {
+    "id": "1619",
+    "name": "Because This Is Just a Walk",
+    "name_jp": "これはただの散歩だから",
+    "name_na": "",
+    "type": "skill",
+    "rank": "4",
+    "effect1": "Damage Up Versus Enemies Affected With Status Ailments [VI / 40%] (Self / 1 Turn) & Chance to Dazzle [XXI / 80%] (One / 1 Turn)",
+    "effect2": "Damage Up Versus Enemies Affected With Status Ailments [VII / 45%] (Self / 1 Turn) & Dazzle [100%] (One / 1 Turn)",
+    "chara": "",
+    "obtainability": "limited",
+    "url": "https://magireco.fandom.com/wiki/Because_This_Is_Just_a_Walk"
+  },
+  {
+    "id": "1620",
+    "name": "",
+    "name_jp": "",
+    "name_na": "",
+    "type": "ability",
+    "rank": "4",
+    "effect1": "",
+    "effect2": "",
+    "chara": "",
+    "obtainability": "limited",
+    "url": ""
+  },
+  {
+    "id": "1621",
+    "name": "Calmly Weaving Through the Days",
+    "name_jp": "穏やかに日々を紡いで",
+    "name_na": "",
+    "type": "skill",
+    "rank": "3",
+    "effect1": "",
+    "effect2": "Status Ailment Resistance Up [III / 30%] (All / 1 Turn)",
+    "chara": "",
+    "obtainability": "limited",
+    "url": "https://magireco.fandom.com/wiki/Calmly_Weaving_Through_the_Days"
+  },
+  {
     "id": "9001",
     "name": "My Victory Pose Is Kawaii Too",
     "name_jp": "",
