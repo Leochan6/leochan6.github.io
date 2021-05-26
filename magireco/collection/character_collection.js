@@ -2412,6 +2412,24 @@ export const character_collection = [
     "url": "https://magireco.fandom.com/wiki/Melissa_de Vignolles"
   },
   {
+    "id": "4024",
+    "name": "Minou",
+    "name_jp": "ミヌゥ",
+    "name_na": "",
+    "attribute": "Light",
+    "ranks": {
+      "1": false,
+      "2": false,
+      "3": false,
+      "4": true,
+      "5": true
+    },
+    "release_date": "2021-05-24",
+    "release_date_na": "2050-01-01",
+    "obtainability": "limited",
+    "url": "https://magireco.fandom.com/wiki/Minou"
+  },
+  {
     "id": "4025",
     "name": "Corbeau",
     "name_jp": "コルボー",
@@ -2422,7 +2440,7 @@ export const character_collection = [
       "2": false,
       "3": true,
       "4": true,
-      "5": false
+      "5": true
     },
     "release_date": "2019-07-12",
     "release_date_na": "2020-07-22",
@@ -2458,7 +2476,7 @@ export const character_collection = [
       "2": false,
       "3": true,
       "4": true,
-      "5": false
+      "5": true
     },
     "release_date": "2020-06-19",
     "release_date_na": "2050-01-01",
@@ -2752,5 +2770,23 @@ export const character_collection = [
     "release_date_na": "2019-11-13",
     "obtainability": "limited",
     "url": "https://magireco.fandom.com/wiki/Yagami_Hayate"
+  },
+  {
+    "id": "4121",
+    "name": "Isabeau (Witch ver.)",
+    "name_jp": "イザボー (魔女ver.)",
+    "name_na": "",
+    "attribute": "Light",
+    "ranks": {
+      "1": false,
+      "2": false,
+      "3": false,
+      "4": true,
+      "5": true
+    },
+    "release_date": "2021-05-24",
+    "release_date_na": "2050-01-01",
+    "obtainability": "limited",
+    "url": "https://magireco.fandom.com/wiki/Isabeau_(Witch_ver.)"
   }
 ]
