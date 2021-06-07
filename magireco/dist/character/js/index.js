@@ -8009,6 +8009,23 @@ var character_collection = [{
   "obtainability": "unlimited",
   "url": "https://magireco.fandom.com/wiki/Miwa_Mitsune"
 }, {
+  "id": "3055",
+  "name": "Kirino Sae",
+  "name_jp": "桐野 紗枝",
+  "name_na": "",
+  "attribute": "Flame",
+  "ranks": {
+    "1": false,
+    "2": false,
+    "3": false,
+    "4": true,
+    "5": true
+  },
+  "release_date": "2021-06-04",
+  "release_date_na": "2050-01-01",
+  "obtainability": "unlimited",
+  "url": "https://magireco.fandom.com/wiki/Kirino_Sae"
+}, {
   "id": "3056",
   "name": "Mizuki Rui",
   "name_jp": "水樹 塁",
