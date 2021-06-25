@@ -8009,6 +8009,58 @@ export const memoria_collection = [
     "url": "https://magireco.fandom.com/wiki/The_Me_I_Might_Have_Been"
   },
   {
+    "id": "1633",
+    "name": "Connected 10000km by Tastes",
+    "name_jp": "味覚で繋がる10000km",
+    "name_na": "",
+    "type": "skill",
+    "rank": "3",
+    "effect1": "Attack Down [V / 25%] & Damage Down [V / 25%] (One / 1 turn)",
+    "effect2": "Attack Down [VI / 30%] & Damage Down [VI / 30%] (One / 1 turn)",
+    "chara": "",
+    "obtainability": "unlimited",
+    "url": "https://magireco.fandom.com/wiki/Connected_10000km_by_Tastes"
+  },
+  {
+    "id": "1634",
+    "name": "Deep in Thought",
+    "name_jp": "思い悩んで上の空",
+    "name_na": "",
+    "type": "ability",
+    "rank": "4",
+    "effect1": "Accele MP Gain Up [II / 12.5%] & Damage Up [II / 10%] & MP Gain Up [II / 7.5%]",
+    "effect2": "Accele MP Gain Up [III / 15%] & Damage Up [III / 15%] & MP Gain Up [III / 10%]",
+    "chara": "",
+    "obtainability": "unlimited",
+    "url": "https://magireco.fandom.com/wiki/Deep_in_Thought"
+  },
+  {
+    "id": "1635",
+    "name": "Good Intentions Can Lead to a Disaster",
+    "name_jp": "良かれと思って大惨事",
+    "name_na": "",
+    "type": "skill",
+    "rank": "3",
+    "effect1": "Chance to Evade [VII / 40%] (Self / 1 turn) & Status Ailment Resistance Up [I / 20%] (Self / 3 turns )",
+    "effect2": "Chance to Evade [VII / 40%] (Self / 1 turn) & Status Ailment Resistance Up [II / 25%] (Self / 3 turns )",
+    "chara": "",
+    "obtainability": "unlimited",
+    "url": "https://magireco.fandom.com/wiki/Good_Intentions_Can_Lead_to_a_Disaster"
+  },
+  {
+    "id": "1636",
+    "name": "Hands Linked to the Unravelled Thread",
+    "name_jp": "解けた糸と繋いだ手",
+    "name_na": "",
+    "type": "skill",
+    "rank": "3",
+    "effect1": "",
+    "effect2": "Damage Up [15%] & MP Gain Up [III / 10%] (Self / 3 turns)",
+    "chara": "",
+    "obtainability": "limited",
+    "url": "https://magireco.fandom.com/wiki/Hands_Linked_to_the_Unravelled_Thread"
+  },
+  {
     "id": "9001",
     "name": "My Victory Pose Is Kawaii Too",
     "name_jp": "",

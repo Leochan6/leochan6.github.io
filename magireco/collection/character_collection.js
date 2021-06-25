@@ -504,6 +504,24 @@ export const character_collection = [
     "url": "https://magireco.fandom.com/wiki/Kurusu_Alexandra"
   },
   {
+    "id": "1037",
+    "name": "Satomi Nayuta",
+    "name_jp": "里見 那由他",
+    "name_na": "",
+    "attribute": "Dark",
+    "ranks": {
+      "1": false,
+      "2": false,
+      "3": false,
+      "4": true,
+      "5": true
+    },
+    "release_date": "2021-06-11",
+    "release_date_na": "2050-01-01",
+    "obtainability": "unlimited",
+    "url": "https://magireco.fandom.com/wiki/Satomi_Nayuta"
+  },
+  {
     "id": "1038",
     "name": "Yakumo Mikage",
     "name_jp": "八雲 みかげ",
