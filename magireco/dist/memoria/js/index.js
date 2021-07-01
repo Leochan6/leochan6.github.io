@@ -9164,6 +9164,78 @@ var memoria_collection = [{
   "obtainability": "limited",
   "url": "https://magireco.fandom.com/wiki/Hands_Linked_to_the_Unravelled_Thread"
 }, {
+  "id": "1637",
+  "name": "Victory Pierces Through Time",
+  "name_jp": "勝利は時を貫いて",
+  "name_na": "",
+  "type": "ability",
+  "rank": "4",
+  "effect1": "",
+  "effect2": "Attack Up [III / 15%] & Damage Up Versus Witches [IV / 20%] & Regenerate HP [II / 3%]",
+  "chara": "",
+  "obtainability": "limited",
+  "url": "https://magireco.fandom.com/wiki/Template:Victory_Pierces_Through_Time"
+}, {
+  "id": "1638",
+  "name": "Repeatedly Flipped-Through Script",
+  "name_jp": "繰り返しめくられた台本",
+  "name_na": "",
+  "type": "ability",
+  "rank": "3",
+  "effect1": "Attack Up [III / 15%] & Defense Up [III / 22.5%]",
+  "effect2": "Attack Up [IV / 20%] & Defense Up [IV / 30%]",
+  "chara": "	Nanami Yachiyo (Tanabata ver.)",
+  "obtainability": "unlimited",
+  "url": "https://magireco.fandom.com/wiki/Repeatedly_Flipped-Through_Script"
+}, {
+  "id": "1639",
+  "name": "Stars to Express Gratitude",
+  "name_jp": "感謝を込めて星々を",
+  "name_na": "",
+  "type": "ability",
+  "rank": "4",
+  "effect1": "Attack Up [III / 15%] & Damage Cut [III / 15%] & Damage Up [II / 10%]",
+  "effect2": "Attack Up [III / 15%] & Damage Cut [IV / 20%] & Damage Up [III / 15%]",
+  "chara": "	",
+  "obtainability": "limited",
+  "url": "https://magireco.fandom.com/wiki/Stars_to_Express_Gratitude"
+}, {
+  "id": "1640",
+  "name": "Floating in the Starry Sky",
+  "name_jp": "星合に浮かぶ",
+  "name_na": "",
+  "type": "skill",
+  "rank": "3",
+  "effect1": "Attack Down [III / 15%] (One / 1 Turn) & Defense Up [II / 15%] (Self / 1 Turn)",
+  "effect2": "Attack Down [V / 25%] (One / 1 Turn) & Defense Up [II / 15%] (Self / 1 Turn)",
+  "chara": "	",
+  "obtainability": "limited",
+  "url": "https://magireco.fandom.com/wiki/Floating_in_the_Starry_Sky"
+}, {
+  "id": "1641",
+  "name": "I'm so proud of you.",
+  "name_jp": "私らしく、誇りを持って",
+  "name_na": "",
+  "type": "ability",
+  "rank": "4",
+  "effect1": "",
+  "effect2": "",
+  "chara": "	",
+  "obtainability": "limited",
+  "url": ""
+}, {
+  "id": "1642",
+  "name": "Tracing the Thoughts that Remain at Tanabata",
+  "name_jp": "七夕に遺る思いをなぞって",
+  "name_na": "",
+  "type": "skill",
+  "rank": "3",
+  "effect1": "",
+  "effect2": "Attack Up [III / 15%] (Self / 1 Turn) & Charge Disc Damage Up [V / 25%] (Self / 1 Turn)",
+  "chara": "	",
+  "obtainability": "limited",
+  "url": "https://magireco.fandom.com/wiki/Tracing_the_Thoughts_that_Remain_at_Tanabata"
+}, {
   "id": "9001",
   "name": "My Victory Pose Is Kawaii Too",
   "name_jp": "",
@@ -9205,7 +9277,7 @@ exports.memoria_collection = memoria_collection;
 },{}],3:[function(require,module,exports){
 "use strict";
 
-var _interopRequireWildcard = require("@babel/runtime/helpers/interopRequireWildcard");
+var _typeof = require("@babel/runtime/helpers/typeof");
 
 Object.defineProperty(exports, "__esModule", {
   value: true
@@ -9217,6 +9289,56 @@ var _memoria_elements = require("./memoria_elements.js");
 var _background_collection = require("../../collection/background_collection.js");
 
 var storage_api = _interopRequireWildcard(require("./storage_api.js"));
+
+function _getRequireWildcardCache(nodeInterop) {
+  if (typeof WeakMap !== "function") return null;
+  var cacheBabelInterop = new WeakMap();
+  var cacheNodeInterop = new WeakMap();
+  return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) {
+    return nodeInterop ? cacheNodeInterop : cacheBabelInterop;
+  })(nodeInterop);
+}
+
+function _interopRequireWildcard(obj, nodeInterop) {
+  if (!nodeInterop && obj && obj.__esModule) {
+    return obj;
+  }
+
+  if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") {
+    return {
+      "default": obj
+    };
+  }
+
+  var cache = _getRequireWildcardCache(nodeInterop);
+
+  if (cache && cache.has(obj)) {
+    return cache.get(obj);
+  }
+
+  var newObj = {};
+  var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;
+
+  for (var key in obj) {
+    if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) {
+      var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;
+
+      if (desc && (desc.get || desc.set)) {
+        Object.defineProperty(newObj, key, desc);
+      } else {
+        newObj[key] = obj[key];
+      }
+    }
+  }
+
+  newObj["default"] = obj;
+
+  if (cache) {
+    cache.set(obj, newObj);
+  }
+
+  return newObj;
+}
 /**
  * Background API for the Memoria Page.
  */
@@ -9359,10 +9481,10 @@ var startUp = function startUp() {
 
 exports.startUp = startUp;
 
-},{"../../collection/background_collection.js":1,"./memoria_elements.js":6,"./storage_api.js":9,"@babel/runtime/helpers/interopRequireWildcard":22}],4:[function(require,module,exports){
+},{"../../collection/background_collection.js":1,"./memoria_elements.js":6,"./storage_api.js":9,"@babel/runtime/helpers/typeof":30}],4:[function(require,module,exports){
 "use strict";
 
-var _interopRequireWildcard = require("@babel/runtime/helpers/interopRequireWildcard");
+var _typeof = require("@babel/runtime/helpers/typeof");
 
 var memoria_api = _interopRequireWildcard(require("./memoria_api.js"));
 
@@ -9381,6 +9503,56 @@ var utils = _interopRequireWildcard(require("../../shared/js/utils.js"));
 var _memoria_elements = require("./memoria_elements.js");
 
 var _dialog = require("../../shared/js/dialog.js");
+
+function _getRequireWildcardCache(nodeInterop) {
+  if (typeof WeakMap !== "function") return null;
+  var cacheBabelInterop = new WeakMap();
+  var cacheNodeInterop = new WeakMap();
+  return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) {
+    return nodeInterop ? cacheNodeInterop : cacheBabelInterop;
+  })(nodeInterop);
+}
+
+function _interopRequireWildcard(obj, nodeInterop) {
+  if (!nodeInterop && obj && obj.__esModule) {
+    return obj;
+  }
+
+  if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") {
+    return {
+      "default": obj
+    };
+  }
+
+  var cache = _getRequireWildcardCache(nodeInterop);
+
+  if (cache && cache.has(obj)) {
+    return cache.get(obj);
+  }
+
+  var newObj = {};
+  var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;
+
+  for (var key in obj) {
+    if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) {
+      var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;
+
+      if (desc && (desc.get || desc.set)) {
+        Object.defineProperty(newObj, key, desc);
+      } else {
+        newObj[key] = obj[key];
+      }
+    }
+  }
+
+  newObj["default"] = obj;
+
+  if (cache) {
+    cache.set(obj, newObj);
+  }
+
+  return newObj;
+}
 /**
  * Event Handlers for the Memoria Page.
  */
@@ -9910,12 +10082,12 @@ var _dialog = require("../../shared/js/dialog.js");
   });
 })();
 
-},{"../../shared/js/database_api.js":10,"../../shared/js/dialog.js":11,"../../shared/js/utils.js":12,"./background_api.js":3,"./memoria_api.js":5,"./memoria_elements.js":6,"./memoria_list_api.js":7,"./profile_api.js":8,"./storage_api.js":9,"@babel/runtime/helpers/interopRequireWildcard":22}],5:[function(require,module,exports){
+},{"../../shared/js/database_api.js":10,"../../shared/js/dialog.js":11,"../../shared/js/utils.js":12,"./background_api.js":3,"./memoria_api.js":5,"./memoria_elements.js":6,"./memoria_list_api.js":7,"./profile_api.js":8,"./storage_api.js":9,"@babel/runtime/helpers/typeof":30}],5:[function(require,module,exports){
 "use strict";
 
-var _interopRequireWildcard = require("@babel/runtime/helpers/interopRequireWildcard");
-
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
+var _typeof3 = require("@babel/runtime/helpers/typeof");
 
 Object.defineProperty(exports, "__esModule", {
   value: true
@@ -9938,14 +10110,68 @@ var memoria_list_api = _interopRequireWildcard(require("./memoria_list_api.js"))
 
 var storage_api = _interopRequireWildcard(require("./storage_api.js"));
 
+function _getRequireWildcardCache(nodeInterop) {
+  if (typeof WeakMap !== "function") return null;
+  var cacheBabelInterop = new WeakMap();
+  var cacheNodeInterop = new WeakMap();
+  return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) {
+    return nodeInterop ? cacheNodeInterop : cacheBabelInterop;
+  })(nodeInterop);
+}
+
+function _interopRequireWildcard(obj, nodeInterop) {
+  if (!nodeInterop && obj && obj.__esModule) {
+    return obj;
+  }
+
+  if (obj === null || _typeof3(obj) !== "object" && typeof obj !== "function") {
+    return {
+      "default": obj
+    };
+  }
+
+  var cache = _getRequireWildcardCache(nodeInterop);
+
+  if (cache && cache.has(obj)) {
+    return cache.get(obj);
+  }
+
+  var newObj = {};
+  var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;
+
+  for (var key in obj) {
+    if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) {
+      var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;
+
+      if (desc && (desc.get || desc.set)) {
+        Object.defineProperty(newObj, key, desc);
+      } else {
+        newObj[key] = obj[key];
+      }
+    }
+  }
+
+  newObj["default"] = obj;
+
+  if (cache) {
+    cache.set(obj, newObj);
+  }
+
+  return newObj;
+}
+
 function ownKeys(object, enumerableOnly) {
   var keys = Object.keys(object);
 
   if (Object.getOwnPropertySymbols) {
     var symbols = Object.getOwnPropertySymbols(object);
-    if (enumerableOnly) symbols = symbols.filter(function (sym) {
-      return Object.getOwnPropertyDescriptor(object, sym).enumerable;
-    });
+
+    if (enumerableOnly) {
+      symbols = symbols.filter(function (sym) {
+        return Object.getOwnPropertyDescriptor(object, sym).enumerable;
+      });
+    }
+
     keys.push.apply(keys, symbols);
   }
 
@@ -10605,7 +10831,7 @@ var openMemoriaDialog = function openMemoriaDialog(memoria, displays) {
 
 exports.openMemoriaDialog = openMemoriaDialog;
 
-},{"../../collection/memoria_collection.js":2,"./memoria_elements.js":6,"./memoria_list_api.js":7,"./storage_api.js":9,"@babel/runtime/helpers/classCallCheck":17,"@babel/runtime/helpers/defineProperty":18,"@babel/runtime/helpers/interopRequireDefault":21,"@babel/runtime/helpers/interopRequireWildcard":22,"@babel/runtime/helpers/toConsumableArray":30,"@babel/runtime/helpers/typeof":31}],6:[function(require,module,exports){
+},{"../../collection/memoria_collection.js":2,"./memoria_elements.js":6,"./memoria_list_api.js":7,"./storage_api.js":9,"@babel/runtime/helpers/classCallCheck":17,"@babel/runtime/helpers/defineProperty":18,"@babel/runtime/helpers/interopRequireDefault":21,"@babel/runtime/helpers/toConsumableArray":29,"@babel/runtime/helpers/typeof":30}],6:[function(require,module,exports){
 "use strict";
 
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
@@ -10802,9 +11028,9 @@ exports.importListDialog = importListDialog;
 },{"@babel/runtime/helpers/defineProperty":18,"@babel/runtime/helpers/interopRequireDefault":21}],7:[function(require,module,exports){
 "use strict";
 
-var _interopRequireWildcard = require("@babel/runtime/helpers/interopRequireWildcard");
-
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
+var _typeof = require("@babel/runtime/helpers/typeof");
 
 Object.defineProperty(exports, "__esModule", {
   value: true
@@ -10827,10 +11053,60 @@ var storage_api = _interopRequireWildcard(require("./storage_api.js"));
 
 var utils = _interopRequireWildcard(require("../../shared/js/utils.js"));
 
-function _createForOfIteratorHelper(o, allowArrayLike) {
-  var it;
+function _getRequireWildcardCache(nodeInterop) {
+  if (typeof WeakMap !== "function") return null;
+  var cacheBabelInterop = new WeakMap();
+  var cacheNodeInterop = new WeakMap();
+  return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) {
+    return nodeInterop ? cacheNodeInterop : cacheBabelInterop;
+  })(nodeInterop);
+}
 
-  if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) {
+function _interopRequireWildcard(obj, nodeInterop) {
+  if (!nodeInterop && obj && obj.__esModule) {
+    return obj;
+  }
+
+  if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") {
+    return {
+      "default": obj
+    };
+  }
+
+  var cache = _getRequireWildcardCache(nodeInterop);
+
+  if (cache && cache.has(obj)) {
+    return cache.get(obj);
+  }
+
+  var newObj = {};
+  var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;
+
+  for (var key in obj) {
+    if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) {
+      var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;
+
+      if (desc && (desc.get || desc.set)) {
+        Object.defineProperty(newObj, key, desc);
+      } else {
+        newObj[key] = obj[key];
+      }
+    }
+  }
+
+  newObj["default"] = obj;
+
+  if (cache) {
+    cache.set(obj, newObj);
+  }
+
+  return newObj;
+}
+
+function _createForOfIteratorHelper(o, allowArrayLike) {
+  var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"];
+
+  if (!it) {
     if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") {
       if (it) o = it;
       var i = 0;
@@ -10863,7 +11139,7 @@ function _createForOfIteratorHelper(o, allowArrayLike) {
       err;
   return {
     s: function s() {
-      it = o[Symbol.iterator]();
+      it = it.call(o);
     },
     n: function n() {
       var step = it.next();
@@ -12065,12 +12341,12 @@ var validateMemoriaList = function validateMemoriaList(memoria_list) {
   return false;
 };
 
-},{"../../collection/memoria_collection.js":2,"../../shared/js/utils.js":12,"./background_api.js":3,"./memoria_api.js":5,"./memoria_elements.js":6,"./profile_api.js":8,"./storage_api.js":9,"@babel/runtime/helpers/interopRequireDefault":21,"@babel/runtime/helpers/interopRequireWildcard":22,"@babel/runtime/helpers/slicedToArray":29}],8:[function(require,module,exports){
+},{"../../collection/memoria_collection.js":2,"../../shared/js/utils.js":12,"./background_api.js":3,"./memoria_api.js":5,"./memoria_elements.js":6,"./profile_api.js":8,"./storage_api.js":9,"@babel/runtime/helpers/interopRequireDefault":21,"@babel/runtime/helpers/slicedToArray":28,"@babel/runtime/helpers/typeof":30}],8:[function(require,module,exports){
 "use strict";
 
-var _interopRequireWildcard = require("@babel/runtime/helpers/interopRequireWildcard");
-
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
+var _typeof = require("@babel/runtime/helpers/typeof");
 
 Object.defineProperty(exports, "__esModule", {
   value: true
@@ -12084,6 +12360,56 @@ var _memoria_elements = require("./memoria_elements.js");
 var memoria_list_api = _interopRequireWildcard(require("./memoria_list_api.js"));
 
 var storage_api = _interopRequireWildcard(require("./storage_api.js"));
+
+function _getRequireWildcardCache(nodeInterop) {
+  if (typeof WeakMap !== "function") return null;
+  var cacheBabelInterop = new WeakMap();
+  var cacheNodeInterop = new WeakMap();
+  return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) {
+    return nodeInterop ? cacheNodeInterop : cacheBabelInterop;
+  })(nodeInterop);
+}
+
+function _interopRequireWildcard(obj, nodeInterop) {
+  if (!nodeInterop && obj && obj.__esModule) {
+    return obj;
+  }
+
+  if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") {
+    return {
+      "default": obj
+    };
+  }
+
+  var cache = _getRequireWildcardCache(nodeInterop);
+
+  if (cache && cache.has(obj)) {
+    return cache.get(obj);
+  }
+
+  var newObj = {};
+  var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;
+
+  for (var key in obj) {
+    if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) {
+      var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;
+
+      if (desc && (desc.get || desc.set)) {
+        Object.defineProperty(newObj, key, desc);
+      } else {
+        newObj[key] = obj[key];
+      }
+    }
+  }
+
+  newObj["default"] = obj;
+
+  if (cache) {
+    cache.set(obj, newObj);
+  }
+
+  return newObj;
+}
 /**
  * Profile API for the Memoria Page.
  */
@@ -12449,12 +12775,12 @@ var loadsRules = function loadsRules(profileId) {
 
 exports.loadsRules = loadsRules;
 
-},{"./memoria_elements.js":6,"./memoria_list_api.js":7,"./storage_api.js":9,"@babel/runtime/helpers/interopRequireDefault":21,"@babel/runtime/helpers/interopRequireWildcard":22,"@babel/runtime/helpers/slicedToArray":29}],9:[function(require,module,exports){
+},{"./memoria_elements.js":6,"./memoria_list_api.js":7,"./storage_api.js":9,"@babel/runtime/helpers/interopRequireDefault":21,"@babel/runtime/helpers/slicedToArray":28,"@babel/runtime/helpers/typeof":30}],9:[function(require,module,exports){
 "use strict";
 
-var _interopRequireWildcard = require("@babel/runtime/helpers/interopRequireWildcard");
-
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
+var _typeof = require("@babel/runtime/helpers/typeof");
 
 Object.defineProperty(exports, "__esModule", {
   value: true
@@ -12479,14 +12805,68 @@ var profile_api = _interopRequireWildcard(require("./profile_api.js"));
 
 var utils = _interopRequireWildcard(require("../../shared/js/utils.js"));
 
+function _getRequireWildcardCache(nodeInterop) {
+  if (typeof WeakMap !== "function") return null;
+  var cacheBabelInterop = new WeakMap();
+  var cacheNodeInterop = new WeakMap();
+  return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) {
+    return nodeInterop ? cacheNodeInterop : cacheBabelInterop;
+  })(nodeInterop);
+}
+
+function _interopRequireWildcard(obj, nodeInterop) {
+  if (!nodeInterop && obj && obj.__esModule) {
+    return obj;
+  }
+
+  if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") {
+    return {
+      "default": obj
+    };
+  }
+
+  var cache = _getRequireWildcardCache(nodeInterop);
+
+  if (cache && cache.has(obj)) {
+    return cache.get(obj);
+  }
+
+  var newObj = {};
+  var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;
+
+  for (var key in obj) {
+    if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) {
+      var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;
+
+      if (desc && (desc.get || desc.set)) {
+        Object.defineProperty(newObj, key, desc);
+      } else {
+        newObj[key] = obj[key];
+      }
+    }
+  }
+
+  newObj["default"] = obj;
+
+  if (cache) {
+    cache.set(obj, newObj);
+  }
+
+  return newObj;
+}
+
 function ownKeys(object, enumerableOnly) {
   var keys = Object.keys(object);
 
   if (Object.getOwnPropertySymbols) {
     var symbols = Object.getOwnPropertySymbols(object);
-    if (enumerableOnly) symbols = symbols.filter(function (sym) {
-      return Object.getOwnPropertyDescriptor(object, sym).enumerable;
-    });
+
+    if (enumerableOnly) {
+      symbols = symbols.filter(function (sym) {
+        return Object.getOwnPropertyDescriptor(object, sym).enumerable;
+      });
+    }
+
     keys.push.apply(keys, symbols);
   }
 
@@ -12896,7 +13276,7 @@ var updateSettings = function updateSettings(settingName, newSettings) {
 
 exports.updateSettings = updateSettings;
 
-},{"../../shared/js/database_api.js":10,"../../shared/js/utils.js":12,"./background_api.js":3,"./memoria_api.js":5,"./memoria_elements.js":6,"./memoria_list_api.js":7,"./profile_api.js":8,"@babel/runtime/helpers/defineProperty":18,"@babel/runtime/helpers/interopRequireDefault":21,"@babel/runtime/helpers/interopRequireWildcard":22,"@babel/runtime/helpers/slicedToArray":29}],10:[function(require,module,exports){
+},{"../../shared/js/database_api.js":10,"../../shared/js/utils.js":12,"./background_api.js":3,"./memoria_api.js":5,"./memoria_elements.js":6,"./memoria_list_api.js":7,"./profile_api.js":8,"@babel/runtime/helpers/defineProperty":18,"@babel/runtime/helpers/interopRequireDefault":21,"@babel/runtime/helpers/slicedToArray":28,"@babel/runtime/helpers/typeof":30}],10:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -13436,7 +13816,7 @@ function _isNativeReflectConstruct() {
   if (typeof Proxy === "function") return true;
 
   try {
-    Date.prototype.toString.call(Reflect.construct(Date, [], function () {}));
+    Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {}));
     return true;
   } catch (e) {
     return false;
@@ -13738,7 +14118,7 @@ var ImportListDialog = /*#__PURE__*/function (_Dialog5) {
 
 exports.ImportListDialog = ImportListDialog;
 
-},{"@babel/runtime/helpers/assertThisInitialized":16,"@babel/runtime/helpers/classCallCheck":17,"@babel/runtime/helpers/defineProperty":18,"@babel/runtime/helpers/getPrototypeOf":19,"@babel/runtime/helpers/inherits":20,"@babel/runtime/helpers/interopRequireDefault":21,"@babel/runtime/helpers/possibleConstructorReturn":27}],12:[function(require,module,exports){
+},{"@babel/runtime/helpers/assertThisInitialized":16,"@babel/runtime/helpers/classCallCheck":17,"@babel/runtime/helpers/defineProperty":18,"@babel/runtime/helpers/getPrototypeOf":19,"@babel/runtime/helpers/inherits":20,"@babel/runtime/helpers/interopRequireDefault":21,"@babel/runtime/helpers/possibleConstructorReturn":26}],12:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -13815,21 +14195,24 @@ function _arrayLikeToArray(arr, len) {
 }
 
 module.exports = _arrayLikeToArray;
+module.exports["default"] = module.exports, module.exports.__esModule = true;
 },{}],14:[function(require,module,exports){
 function _arrayWithHoles(arr) {
   if (Array.isArray(arr)) return arr;
 }
 
 module.exports = _arrayWithHoles;
+module.exports["default"] = module.exports, module.exports.__esModule = true;
 },{}],15:[function(require,module,exports){
-var arrayLikeToArray = require("./arrayLikeToArray");
+var arrayLikeToArray = require("./arrayLikeToArray.js");
 
 function _arrayWithoutHoles(arr) {
   if (Array.isArray(arr)) return arrayLikeToArray(arr);
 }
 
 module.exports = _arrayWithoutHoles;
-},{"./arrayLikeToArray":13}],16:[function(require,module,exports){
+module.exports["default"] = module.exports, module.exports.__esModule = true;
+},{"./arrayLikeToArray.js":13}],16:[function(require,module,exports){
 function _assertThisInitialized(self) {
   if (self === void 0) {
     throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
@@ -13839,6 +14222,7 @@ function _assertThisInitialized(self) {
 }
 
 module.exports = _assertThisInitialized;
+module.exports["default"] = module.exports, module.exports.__esModule = true;
 },{}],17:[function(require,module,exports){
 function _classCallCheck(instance, Constructor) {
   if (!(instance instanceof Constructor)) {
@@ -13847,6 +14231,7 @@ function _classCallCheck(instance, Constructor) {
 }
 
 module.exports = _classCallCheck;
+module.exports["default"] = module.exports, module.exports.__esModule = true;
 },{}],18:[function(require,module,exports){
 function _defineProperty(obj, key, value) {
   if (key in obj) {
@@ -13864,17 +14249,20 @@ function _defineProperty(obj, key, value) {
 }
 
 module.exports = _defineProperty;
+module.exports["default"] = module.exports, module.exports.__esModule = true;
 },{}],19:[function(require,module,exports){
 function _getPrototypeOf(o) {
   module.exports = _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) {
     return o.__proto__ || Object.getPrototypeOf(o);
   };
+  module.exports["default"] = module.exports, module.exports.__esModule = true;
   return _getPrototypeOf(o);
 }
 
 module.exports = _getPrototypeOf;
+module.exports["default"] = module.exports, module.exports.__esModule = true;
 },{}],20:[function(require,module,exports){
-var setPrototypeOf = require("./setPrototypeOf");
+var setPrototypeOf = require("./setPrototypeOf.js");
 
 function _inherits(subClass, superClass) {
   if (typeof superClass !== "function" && superClass !== null) {
@@ -13892,7 +14280,8 @@ function _inherits(subClass, superClass) {
 }
 
 module.exports = _inherits;
-},{"./setPrototypeOf":28}],21:[function(require,module,exports){
+module.exports["default"] = module.exports, module.exports.__esModule = true;
+},{"./setPrototypeOf.js":27}],21:[function(require,module,exports){
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : {
     "default": obj
@@ -13900,78 +14289,27 @@ function _interopRequireDefault(obj) {
 }
 
 module.exports = _interopRequireDefault;
+module.exports["default"] = module.exports, module.exports.__esModule = true;
 },{}],22:[function(require,module,exports){
-var _typeof = require("../helpers/typeof");
-
-function _getRequireWildcardCache() {
-  if (typeof WeakMap !== "function") return null;
-  var cache = new WeakMap();
-
-  _getRequireWildcardCache = function _getRequireWildcardCache() {
-    return cache;
-  };
-
-  return cache;
-}
-
-function _interopRequireWildcard(obj) {
-  if (obj && obj.__esModule) {
-    return obj;
-  }
-
-  if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") {
-    return {
-      "default": obj
-    };
-  }
-
-  var cache = _getRequireWildcardCache();
-
-  if (cache && cache.has(obj)) {
-    return cache.get(obj);
-  }
-
-  var newObj = {};
-  var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;
-
-  for (var key in obj) {
-    if (Object.prototype.hasOwnProperty.call(obj, key)) {
-      var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;
-
-      if (desc && (desc.get || desc.set)) {
-        Object.defineProperty(newObj, key, desc);
-      } else {
-        newObj[key] = obj[key];
-      }
-    }
-  }
-
-  newObj["default"] = obj;
-
-  if (cache) {
-    cache.set(obj, newObj);
-  }
-
-  return newObj;
-}
-
-module.exports = _interopRequireWildcard;
-},{"../helpers/typeof":31}],23:[function(require,module,exports){
 function _iterableToArray(iter) {
-  if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter);
+  if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter);
 }
 
 module.exports = _iterableToArray;
-},{}],24:[function(require,module,exports){
+module.exports["default"] = module.exports, module.exports.__esModule = true;
+},{}],23:[function(require,module,exports){
 function _iterableToArrayLimit(arr, i) {
-  if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return;
+  var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"];
+
+  if (_i == null) return;
   var _arr = [];
   var _n = true;
   var _d = false;
-  var _e = undefined;
+
+  var _s, _e;
 
   try {
-    for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {
+    for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) {
       _arr.push(_s.value);
 
       if (i && _arr.length === i) break;
@@ -13991,22 +14329,25 @@ function _iterableToArrayLimit(arr, i) {
 }
 
 module.exports = _iterableToArrayLimit;
-},{}],25:[function(require,module,exports){
+module.exports["default"] = module.exports, module.exports.__esModule = true;
+},{}],24:[function(require,module,exports){
 function _nonIterableRest() {
   throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
 }
 
 module.exports = _nonIterableRest;
-},{}],26:[function(require,module,exports){
+module.exports["default"] = module.exports, module.exports.__esModule = true;
+},{}],25:[function(require,module,exports){
 function _nonIterableSpread() {
   throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
 }
 
 module.exports = _nonIterableSpread;
-},{}],27:[function(require,module,exports){
-var _typeof = require("../helpers/typeof");
+module.exports["default"] = module.exports, module.exports.__esModule = true;
+},{}],26:[function(require,module,exports){
+var _typeof = require("@babel/runtime/helpers/typeof")["default"];
 
-var assertThisInitialized = require("./assertThisInitialized");
+var assertThisInitialized = require("./assertThisInitialized.js");
 
 function _possibleConstructorReturn(self, call) {
   if (call && (_typeof(call) === "object" || typeof call === "function")) {
@@ -14017,46 +14358,51 @@ function _possibleConstructorReturn(self, call) {
 }
 
 module.exports = _possibleConstructorReturn;
-},{"../helpers/typeof":31,"./assertThisInitialized":16}],28:[function(require,module,exports){
+module.exports["default"] = module.exports, module.exports.__esModule = true;
+},{"./assertThisInitialized.js":16,"@babel/runtime/helpers/typeof":30}],27:[function(require,module,exports){
 function _setPrototypeOf(o, p) {
   module.exports = _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) {
     o.__proto__ = p;
     return o;
   };
 
+  module.exports["default"] = module.exports, module.exports.__esModule = true;
   return _setPrototypeOf(o, p);
 }
 
 module.exports = _setPrototypeOf;
-},{}],29:[function(require,module,exports){
-var arrayWithHoles = require("./arrayWithHoles");
+module.exports["default"] = module.exports, module.exports.__esModule = true;
+},{}],28:[function(require,module,exports){
+var arrayWithHoles = require("./arrayWithHoles.js");
 
-var iterableToArrayLimit = require("./iterableToArrayLimit");
+var iterableToArrayLimit = require("./iterableToArrayLimit.js");
 
-var unsupportedIterableToArray = require("./unsupportedIterableToArray");
+var unsupportedIterableToArray = require("./unsupportedIterableToArray.js");
 
-var nonIterableRest = require("./nonIterableRest");
+var nonIterableRest = require("./nonIterableRest.js");
 
 function _slicedToArray(arr, i) {
   return arrayWithHoles(arr) || iterableToArrayLimit(arr, i) || unsupportedIterableToArray(arr, i) || nonIterableRest();
 }
 
 module.exports = _slicedToArray;
-},{"./arrayWithHoles":14,"./iterableToArrayLimit":24,"./nonIterableRest":25,"./unsupportedIterableToArray":32}],30:[function(require,module,exports){
-var arrayWithoutHoles = require("./arrayWithoutHoles");
+module.exports["default"] = module.exports, module.exports.__esModule = true;
+},{"./arrayWithHoles.js":14,"./iterableToArrayLimit.js":23,"./nonIterableRest.js":24,"./unsupportedIterableToArray.js":31}],29:[function(require,module,exports){
+var arrayWithoutHoles = require("./arrayWithoutHoles.js");
 
-var iterableToArray = require("./iterableToArray");
+var iterableToArray = require("./iterableToArray.js");
 
-var unsupportedIterableToArray = require("./unsupportedIterableToArray");
+var unsupportedIterableToArray = require("./unsupportedIterableToArray.js");
 
-var nonIterableSpread = require("./nonIterableSpread");
+var nonIterableSpread = require("./nonIterableSpread.js");
 
 function _toConsumableArray(arr) {
   return arrayWithoutHoles(arr) || iterableToArray(arr) || unsupportedIterableToArray(arr) || nonIterableSpread();
 }
 
 module.exports = _toConsumableArray;
-},{"./arrayWithoutHoles":15,"./iterableToArray":23,"./nonIterableSpread":26,"./unsupportedIterableToArray":32}],31:[function(require,module,exports){
+module.exports["default"] = module.exports, module.exports.__esModule = true;
+},{"./arrayWithoutHoles.js":15,"./iterableToArray.js":22,"./nonIterableSpread.js":25,"./unsupportedIterableToArray.js":31}],30:[function(require,module,exports){
 function _typeof(obj) {
   "@babel/helpers - typeof";
 
@@ -14064,18 +14410,23 @@ function _typeof(obj) {
     module.exports = _typeof = function _typeof(obj) {
       return typeof obj;
     };
+
+    module.exports["default"] = module.exports, module.exports.__esModule = true;
   } else {
     module.exports = _typeof = function _typeof(obj) {
       return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
     };
+
+    module.exports["default"] = module.exports, module.exports.__esModule = true;
   }
 
   return _typeof(obj);
 }
 
 module.exports = _typeof;
-},{}],32:[function(require,module,exports){
-var arrayLikeToArray = require("./arrayLikeToArray");
+module.exports["default"] = module.exports, module.exports.__esModule = true;
+},{}],31:[function(require,module,exports){
+var arrayLikeToArray = require("./arrayLikeToArray.js");
 
 function _unsupportedIterableToArray(o, minLen) {
   if (!o) return;
@@ -14087,4 +14438,5 @@ function _unsupportedIterableToArray(o, minLen) {
 }
 
 module.exports = _unsupportedIterableToArray;
-},{"./arrayLikeToArray":13}]},{},[4]);
+module.exports["default"] = module.exports, module.exports.__esModule = true;
+},{"./arrayLikeToArray.js":13}]},{},[4]);

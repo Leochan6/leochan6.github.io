@@ -846,6 +846,24 @@ export const character_collection = [
     "url": "https://magireco.fandom.com/wiki/Iroha-chan"
   },
   {
+    "id": "1202",
+    "name": "Nanami Yachiyo (Tanabata ver.)",
+    "name_jp": "七海 やちよ (七夕ver.)",
+    "name_na": "",
+    "attribute": "Aqua",
+    "ranks": {
+      "1": false,
+      "2": false,
+      "3": false,
+      "4": true,
+      "5": true
+    },
+    "release_date": "2021-06-28",
+    "release_date_na": "2050-01-01",
+    "obtainability": "limited",
+    "url": "https://magireco.fandom.com/wiki/Nanami_Yachiyo_(Tanabata_ver.)"
+  },
+  {
     "id": "1203",
     "name": "Tsuruno & Felicia (Delivery ver.)",
     "name_jp": "鶴乃・フェリシア (宅配ver.)",
