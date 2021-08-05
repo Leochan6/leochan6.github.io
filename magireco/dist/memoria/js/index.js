@@ -9184,7 +9184,7 @@ var memoria_collection = [{
   "rank": "3",
   "effect1": "Attack Up [III / 15%] & Defense Up [III / 22.5%]",
   "effect2": "Attack Up [IV / 20%] & Defense Up [IV / 30%]",
-  "chara": "	Nanami Yachiyo (Tanabata ver.)",
+  "chara": "Nanami Yachiyo (Tanabata ver.)",
   "obtainability": "unlimited",
   "url": "https://magireco.fandom.com/wiki/Repeatedly_Flipped-Through_Script"
 }, {
@@ -9196,7 +9196,7 @@ var memoria_collection = [{
   "rank": "4",
   "effect1": "Attack Up [III / 15%] & Damage Cut [III / 15%] & Damage Up [II / 10%]",
   "effect2": "Attack Up [III / 15%] & Damage Cut [IV / 20%] & Damage Up [III / 15%]",
-  "chara": "	",
+  "chara": "",
   "obtainability": "limited",
   "url": "https://magireco.fandom.com/wiki/Stars_to_Express_Gratitude"
 }, {
@@ -9208,7 +9208,7 @@ var memoria_collection = [{
   "rank": "3",
   "effect1": "Attack Down [III / 15%] (One / 1 Turn) & Defense Up [II / 15%] (Self / 1 Turn)",
   "effect2": "Attack Down [V / 25%] (One / 1 Turn) & Defense Up [II / 15%] (Self / 1 Turn)",
-  "chara": "	",
+  "chara": "",
   "obtainability": "limited",
   "url": "https://magireco.fandom.com/wiki/Floating_in_the_Starry_Sky"
 }, {
@@ -9220,7 +9220,7 @@ var memoria_collection = [{
   "rank": "4",
   "effect1": "",
   "effect2": "",
-  "chara": "	",
+  "chara": "",
   "obtainability": "limited",
   "url": ""
 }, {
@@ -9232,9 +9232,141 @@ var memoria_collection = [{
   "rank": "3",
   "effect1": "",
   "effect2": "Attack Up [III / 15%] (Self / 1 Turn) & Charge Disc Damage Up [V / 25%] (Self / 1 Turn)",
-  "chara": "	",
+  "chara": "",
   "obtainability": "limited",
   "url": "https://magireco.fandom.com/wiki/Tracing_the_Thoughts_that_Remain_at_Tanabata"
+}, {
+  "id": "1643",
+  "name": "I'll Continue to Shoulder the Burden",
+  "name_jp": "私は背負い続ける",
+  "name_na": "",
+  "type": "ability",
+  "rank": "4",
+  "effect1": "",
+  "effect2": "Blast Damage Up [IV / 30%] & Damage Increase [V / 25%]",
+  "chara": "",
+  "obtainability": "limited",
+  "url": "https://magireco.fandom.com/wiki/I%27ll_Continue_to_Shoulder_the_Burden"
+}, {
+  "id": "1644",
+  "name": "A Little More Until It's Baked",
+  "name_jp": "焼きあがるまであと少し",
+  "name_na": "",
+  "type": "skill",
+  "rank": "3",
+  "effect1": "Damage Up [II / 10%] (Self / 3 turns) & Skill Quicken (Self / 1 turn)",
+  "effect2": "Damage Up [III / 15%] (Self / 3 turns) & Skill Quicken (Self / 1 turn)",
+  "chara": "Momoko & Mitama (Mermaid ver.)",
+  "obtainability": "unlimited",
+  "url": "https://magireco.fandom.com/wiki/A_Little_More_Until_It%27s_Baked"
+}, {
+  "id": "1645",
+  "name": "Whereabouts of the Bubbles",
+  "name_jp": "泡の行方",
+  "name_na": "",
+  "type": "skill",
+  "rank": "4",
+  "effect1": "Damage Increase [IV / 20%] & Damage Up Versus Enemies Affected With Status Ailments [IV / 30%] & Magia Damage Up [II / 7.5%] (Self / 1 Turn)",
+  "effect2": "Damage Increase [VI / 30%] & Damage Up Versus Enemies Affected With Status Ailments [VI / 40%] & Magia Damage Up [IV / 12.5%] (Self / 1 Turn)",
+  "chara": "",
+  "obtainability": "limited",
+  "url": "https://magireco.fandom.com/wiki/Whereabouts_of_the_Bubbles"
+}, {
+  "id": "1646",
+  "name": "In One Gulp",
+  "name_jp": "ひとくちにのせて",
+  "name_na": "",
+  "type": "ability",
+  "rank": "3",
+  "effect1": "Chance to Anti-Poison [VIII / 60%] & Attack Up [I / 5%]",
+  "effect2": "Anti-Poison [100%] & Attack Up [II / 10%]",
+  "chara": "",
+  "obtainability": "limited",
+  "url": "https://magireco.fandom.com/wiki/In_One_Gulp"
+}, {
+  "id": "1647",
+  "name": "Lively Summer (Momoko/Mitama)",
+  "name_jp": "弾むサマー＜ももこ・みたま＞",
+  "name_na": "",
+  "type": "skill",
+  "rank": "4",
+  "effect1": "",
+  "effect2": "Attack Down [V / 25%] (All / 1 Turn) & Magia Damage Down [VI / 30%] (All / 1 Turn)",
+  "chara": "",
+  "obtainability": "limited",
+  "url": "https://magireco.fandom.com/wiki/Lively_Summer_(Momoko/Mitama)"
+}, {
+  "id": "1648",
+  "name": "Lively Summer (Tokime Clan)",
+  "name_jp": "弾むサマー＜時女一族＞",
+  "name_na": "",
+  "type": "ability",
+  "rank": "3",
+  "effect1": "",
+  "effect2": "Attack Up [II / 10%] & Blast Damage Up [II / 20%]",
+  "chara": "",
+  "obtainability": "limited",
+  "url": "https://magireco.fandom.com/wiki/Lively_Summer_(Tokime_Clan)"
+}, {
+  "id": "1649",
+  "name": "Time Starts to Move Again",
+  "name_jp": "時は再び動き出す",
+  "name_na": "",
+  "type": "ability",
+  "rank": "3",
+  "effect1": "Defense Up [IV / 30%] & Chance to Provoke [IV / 25%]",
+  "effect2": "Defense Up [V / 37.5%] & Chance to Provoke [V / 30%]",
+  "chara": "Miki Sayaka (Surfing ver.)",
+  "obtainability": "unlimited",
+  "url": "https://magireco.fandom.com/wiki/Time_Starts_to_Move_Again"
+}, {
+  "id": "1650",
+  "name": "Beyond the Waves",
+  "name_jp": "波の彼方をめざして",
+  "name_na": "",
+  "type": "ability",
+  "rank": "4",
+  "effect1": "Damage Cut [IV / 20%] & Defense Up [II / 15%] & MP Gain Up [II / 7.5%]",
+  "effect2": "Damage Cut [V / 25%] & Defense Up [IV / 30%] & MP Gain Up [III / 10%]",
+  "chara": "",
+  "obtainability": "limited",
+  "url": "https://magireco.fandom.com/wiki/Beyond_the_Waves"
+}, {
+  "id": "1651",
+  "name": "Summer Girls Cannot Decide",
+  "name_jp": "夏の少女は決められない",
+  "name_na": "",
+  "type": "skill",
+  "rank": "3",
+  "effect1": "Accele MP Gain Up [II / 12.5%] (Self / 1 Turn) & Charged Attack Damage Up [III / 10%] (Self / 1 Turn)",
+  "effect2": "Accele MP Gain Up [IV / 17.5%] (Self / 1 Turn) & Charged Attack Damage Up [IV / 12.5%] (Self / 1 Turn)",
+  "chara": "",
+  "obtainability": "limited",
+  "url": "https://magireco.fandom.com/wiki/Summer_Girls_Cannot_Decide"
+}, {
+  "id": "1652",
+  "name": "An Entrance Backed by a Column of Clouds",
+  "name_jp": "入道雲を背に登場",
+  "name_na": "",
+  "type": "skill",
+  "rank": "4",
+  "effect1": "",
+  "effect2": "",
+  "chara": "",
+  "obtainability": "limited",
+  "url": "https://magireco.fandom.com/wiki/Template:An_Entrance_Backed_by_a_Column_of_Clouds"
+}, {
+  "id": "1653",
+  "name": "Beach Nagisa's Afternoon Naptime",
+  "name_jp": "渚のなぎさはお昼寝タイム",
+  "name_na": "",
+  "type": "skill",
+  "rank": "3",
+  "effect1": "",
+  "effect2": "Chance to Critical Hit [VII / 40%] (Self / 1 Turn) & Chance to Evade [VI / 35%] (Self / 1 Turn)",
+  "chara": "",
+  "obtainability": "limited",
+  "url": "https://magireco.fandom.com/wiki/Beach_Nagisa%27s_Afternoon_Naptime"
 }, {
   "id": "9001",
   "name": "My Victory Pose Is Kawaii Too",
@@ -11272,11 +11404,11 @@ var setLists = function setLists(lists) {
     _memoria_elements.memoria_elements.delete_list_button.disabled = false;
   } // disable list rename, duplicate and delete buttons if no list
   else {
-      _memoria_elements.memoria_elements.rename_list_button.disabled = true;
-      _memoria_elements.memoria_elements.duplicate_list_button.disabled = true;
-      _memoria_elements.memoria_elements.delete_list_button.disabled = true;
-      _memoria_elements.memoria_elements.memoria_list_content.innerHTML = "";
-    }
+    _memoria_elements.memoria_elements.rename_list_button.disabled = true;
+    _memoria_elements.memoria_elements.duplicate_list_button.disabled = true;
+    _memoria_elements.memoria_elements.delete_list_button.disabled = true;
+    _memoria_elements.memoria_elements.memoria_list_content.innerHTML = "";
+  }
 };
 /**
  * select the list of name and loads the memoria list

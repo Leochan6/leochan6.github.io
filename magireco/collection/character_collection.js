@@ -900,6 +900,24 @@ export const character_collection = [
     "url": "https://magireco.fandom.com/wiki/Rena_& Kaede (Mizugi ver.)"
   },
   {
+    "id": "1210",
+    "name": "Momoko & Mitama (Mermaid ver.)",
+    "name_jp": "ももこ・みたま (人魚ver.)",
+    "name_na": "",
+    "attribute": "Void",
+    "ranks": {
+      "1": false,
+      "2": false,
+      "3": false,
+      "4": true,
+      "5": true
+    },
+    "release_date": "2021-07-12",
+    "release_date_na": "2050-01-01",
+    "obtainability": "limited",
+    "url": "https://magireco.fandom.com/wiki/Momoko_%26_Mitama_(Mermaid_ver.)"
+  },
+  {
     "id": "1301",
     "name": "Iroha & Yachiyo (Final Battle ver.)",
     "name_jp": "いろは・やちよ（決戦ver.",
@@ -1168,6 +1186,24 @@ export const character_collection = [
     "release_date_na": "2050-01-01",
     "obtainability": "limited",
     "url": "https://magireco.fandom.com/wiki/Miki_Sayaka (Haregi ver.)"
+  },
+  {
+    "id": "2401",
+    "name": "Miki Sayaka (Surfing ver.)",
+    "name_jp": "美樹 さやか (波乗りver.)",
+    "name_na": "",
+    "attribute": "Aqua",
+    "ranks": {
+      "1": false,
+      "2": false,
+      "3": false,
+      "4": true,
+      "5": true
+    },
+    "release_date": "2020-07-30",
+    "release_date_na": "2050-01-01",
+    "obtainability": "limited",
+    "url": "https://magireco.fandom.com/wiki/Miki_Sayaka_(Surfing_ver.)"
   },
   {
     "id": "2500",
