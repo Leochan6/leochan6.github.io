@@ -5833,6 +5833,23 @@ var character_collection = [{
   "obtainability": "limited",
   "url": "https://magireco.fandom.com/wiki/Amane_Tsukasa"
 }, {
+  "id": "1021",
+  "name": "Kureha Yuna",
+  "name_jp": "紅晴 結菜",
+  "name_na": "",
+  "attribute": "Light",
+  "ranks": {
+    "1": false,
+    "2": false,
+    "3": false,
+    "4": true,
+    "5": true
+  },
+  "release_date": "2021-08-10",
+  "release_date_na": "2050-01-01",
+  "obtainability": "unlimited",
+  "url": "https://magireco.fandom.com/wiki/Kureha_Yuna"
+}, {
   "id": "1022",
   "name": "Kirari Hikaru",
   "name_jp": "煌里 ひかる",
@@ -6597,6 +6614,23 @@ var character_collection = [{
   "release_date_na": "2050-01-01",
   "obtainability": "limited",
   "url": "https://magireco.fandom.com/wiki/Ultimate_Madoka-senpai"
+}, {
+  "id": "2104",
+  "name": "Madoka & Iroha",
+  "name_jp": "まどか・いろは",
+  "name_na": "",
+  "attribute": "Light",
+  "ranks": {
+    "1": false,
+    "2": false,
+    "3": false,
+    "4": true,
+    "5": true
+  },
+  "release_date": "2021-08-22",
+  "release_date_na": "2050-01-01",
+  "obtainability": "limited",
+  "url": "https://magireco.fandom.com/wiki/Madoka_%26_Iroha"
 }, {
   "id": "2300",
   "name": "Akemi Homura (Mizugi ver.)",
