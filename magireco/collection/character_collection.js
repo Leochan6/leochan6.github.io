@@ -2902,7 +2902,7 @@ export const character_collection = [
     "name": "Isabeau (Witch ver.)",
     "name_jp": "イザボー (魔女ver.)",
     "name_na": "",
-    "attribute": "Light",
+    "attribute": "Dark",
     "ranks": {
       "1": false,
       "2": false,
