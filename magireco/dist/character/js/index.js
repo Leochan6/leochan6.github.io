@@ -8293,7 +8293,7 @@ var character_collection = [{
     "2": false,
     "3": true,
     "4": true,
-    "5": false
+    "5": true
   },
   "release_date": "2018-11-12",
   "release_date_na": "2020-04-22",
@@ -8316,6 +8316,23 @@ var character_collection = [{
   "release_date_na": "2050-01-01",
   "obtainability": "unlimited",
   "url": "https://magireco.fandom.com/wiki/Aoba_Chika"
+}, {
+  "id": "3048",
+  "name": "Yura Hotaru",
+  "name_jp": "由良 蛍",
+  "name_na": "",
+  "attribute": "Aqua",
+  "ranks": {
+    "1": false,
+    "2": false,
+    "3": true,
+    "4": true,
+    "5": false
+  },
+  "release_date": "2021-08-13",
+  "release_date_na": "2050-01-01",
+  "obtainability": "unlimited",
+  "url": "https://magireco.fandom.com/wiki/Yura_Hotaru"
 }, {
   "id": "3049",
   "name": "Yukino Kanae",

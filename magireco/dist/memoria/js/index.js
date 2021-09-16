@@ -9524,6 +9524,66 @@ var memoria_collection = [{
   "obtainability": "limited",
   "url": "https://magireco.fandom.com/wiki/Feelings_Melt_into_Melody"
 }, {
+  "id": "1667",
+  "name": "That Which Gives a Special Sleep",
+  "name_jp": "特別な安眠をくれるもの",
+  "name_na": "",
+  "type": "skill",
+  "rank": "3",
+  "effect1": "Anti-Debuff [2 debuffs] (Self / ∞ Turns) & Attack Up [III / 15%] (Self / 3 Turns)",
+  "effect2": "Anti-Debuff [2 debuffs] (Self / ∞ Turns) & Attack Up [IV / 20%] (Self / 3 Turns)",
+  "chara": "Yura Hotaru",
+  "obtainability": "unlimited",
+  "url": "https://magireco.fandom.com/wiki/That_Which_Gives_a_Special_Sleep"
+}, {
+  "id": "1668",
+  "name": "Peacefully Sleeping Anywhere and Anytime",
+  "name_jp": "いつでもどこでもすやすやと",
+  "name_na": "",
+  "type": "skill",
+  "rank": "4",
+  "effect1": "Status Ailment Resistance Down [V / 15%] (All / 3 Turns) & Chance to Stun [VII / 45%] (One / 1 Turn)",
+  "effect2": "Status Ailment Resistance Down [VII / 20%] (All / 3 Turns) & Chance to Stun [IX / 50%] (One / 1 Turn)",
+  "chara": "",
+  "obtainability": "limited",
+  "url": "https://magireco.fandom.com/wiki/Peacefully_Sleeping_Anywhere_and_Anytime"
+}, {
+  "id": "1669",
+  "name": "We Sleep and Wake Up Together...",
+  "name_jp": "We Sleep and Wake Up Together...",
+  "name_na": "",
+  "type": "ability",
+  "rank": "4",
+  "effect1": "Charge Disc Damage Up [II / 10%] & Damage Increase [III / 15%]",
+  "effect2": "Charge Disc Damage Up [III / 15%] & Damage Increase [IV / 20%]",
+  "chara": "",
+  "obtainability": "limited",
+  "url": "https://magireco.fandom.com/wiki/We_Sleep_and_Wake_Up_Together..."
+}, {
+  "id": "1670",
+  "name": "Staying Up Late Just for Today",
+  "name_jp": "今日だけ夜更かし",
+  "name_na": "",
+  "type": "ability",
+  "rank": "3",
+  "effect1": "Attack Up [II / 10%] & Defense Up [II / 15%]",
+  "effect2": "Attack Up [III / 15%] & Defense Up [II / 15%] & Chance to Evade [I / 10%]",
+  "chara": "",
+  "obtainability": "limited",
+  "url": "https://magireco.fandom.com/wiki/Staying_Up_Late_Just_for_Today"
+}, {
+  "id": "1671",
+  "name": "Now After Having Fun Playing...",
+  "name_jp": "楽しく遊んだそのあとは…",
+  "name_na": "",
+  "type": "skill",
+  "rank": "4",
+  "effect1": "",
+  "effect2": "Damage Down [VII / 35%] (One / 3 Turns) & Defense Up [IV / 30%] (Self / 3 Turns)",
+  "chara": "",
+  "obtainability": "limited",
+  "url": "https://magireco.fandom.com/wiki/Now_After_Having_Fun_Playing..."
+}, {
   "id": "9001",
   "name": "My Victory Pose Is Kawaii Too",
   "name_jp": "",
