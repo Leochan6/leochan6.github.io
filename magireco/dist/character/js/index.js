@@ -8487,6 +8487,23 @@ var character_collection = [{
   "obtainability": "unlimited",
   "url": "https://magireco.fandom.com/wiki/Natsu_Ryouko"
 }, {
+  "id": "3059",
+  "name": "Irina Kushu",
+  "name_jp": "入名 クシュ",
+  "name_na": "",
+  "attribute": "Dark",
+  "ranks": {
+    "1": false,
+    "2": false,
+    "3": false,
+    "4": true,
+    "5": true
+  },
+  "release_date": "2021-09-21",
+  "release_date_na": "2050-01-01",
+  "obtainability": "unlimited",
+  "url": "https://magireco.fandom.com/wiki/Irina_Kushu"
+}, {
   "id": "3501",
   "name": "Rika & Ren (Christmas ver.)",
   "name_jp": "梨花・れん クリスマスver.",
@@ -8650,12 +8667,29 @@ var character_collection = [{
     "2": false,
     "3": true,
     "4": true,
-    "5": false
+    "5": true
   },
   "release_date": "2017-11-20",
   "release_date_na": "2019-08-13",
   "obtainability": "limited",
   "url": "https://magireco.fandom.com/wiki/Maki_Kaoru"
+}, {
+  "id": "4014",
+  "name": "Subaru Kazumi",
+  "name_jp": "昴 かずみ",
+  "name_na": "",
+  "attribute": "Light",
+  "ranks": {
+    "1": false,
+    "2": false,
+    "3": false,
+    "4": true,
+    "5": true
+  },
+  "release_date": "2021-10-20",
+  "release_date_na": "2050-01-01",
+  "obtainability": "limited",
+  "url": "https://magireco.fandom.com/wiki/Subaru_Kazumi"
 }, {
   "id": "4021",
   "name": "Tart",
