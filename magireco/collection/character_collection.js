@@ -504,6 +504,24 @@ export const character_collection = [
     "url": "https://magireco.fandom.com/wiki/Azumi_Hagumu"
   },
   {
+    "id": "1031",
+    "name": "Kagura San",
+    "name_jp": "神楽 燦",
+    "name_na": "",
+    "attribute": "Forest",
+    "ranks": {
+      "1": false,
+      "2": false,
+      "3": false,
+      "4": true,
+      "5": true
+    },
+    "release_date": "2021-11-12",
+    "release_date_na": "2050-01-01",
+    "obtainability": "unlimited",
+    "url": "https://magireco.fandom.com/wiki/Kagura_San"
+  },
+  {
     "id": "1035",
     "name": "Kurusu Alexandra",
     "name_jp": "栗栖 アレクサンドラ",
@@ -790,6 +808,24 @@ export const character_collection = [
     "release_date_na": "2050-01-01",
     "obtainability": "limited",
     "url": "https://magireco.fandom.com/wiki/Togame_Momoko_(Sister_ver.)"
+  },
+  {
+    "id": "1112",
+    "name": "Karin & Alina (Halloween ver.)",
+    "name_jp": "かりん・アリナ (ハロウィンver.)",
+    "name_na": "",
+    "attribute": "Flame",
+    "ranks": {
+      "1": false,
+      "2": false,
+      "3": false,
+      "4": true,
+      "5": true
+    },
+    "release_date": "2021-11-19",
+    "release_date_na": "2050-01-01",
+    "obtainability": "limited",
+    "url": "https://magireco.fandom.com/wiki/Karin_%26_Alina_(Halloween_ver.)"
   },
   {
     "id": "1116",
