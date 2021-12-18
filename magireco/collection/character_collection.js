@@ -522,6 +522,24 @@ export const character_collection = [
     "url": "https://magireco.fandom.com/wiki/Kagura_San"
   },
   {
+    "id": "1032",
+    "name": "Yukari Miyuri",
+    "name_jp": "遊狩 ミユリ",
+    "name_na": "",
+    "attribute": "Aqua",
+    "ranks": {
+      "1": false,
+      "2": false,
+      "3": false,
+      "4": true,
+      "5": true
+    },
+    "release_date": "2021-11-19",
+    "release_date_na": "2050-01-01",
+    "obtainability": "unlimited",
+    "url": "https://magireco.fandom.com/wiki/Yukari_Miyuri"
+  },
+  {
     "id": "1035",
     "name": "Kurusu Alexandra",
     "name_jp": "栗栖 アレクサンドラ",
@@ -1312,6 +1330,24 @@ export const character_collection = [
     "release_date_na": "2050-01-01",
     "obtainability": "limited",
     "url": "https://magireco.fandom.com/wiki/Tomoe_Mami (Mizugi ver.)"
+  },
+  {
+    "id": "2502",
+    "name": "Holy Mami (Anime ver.)",
+    "name_jp": "ホーリーマミ (アニメver.)",
+    "name_na": "",
+    "attribute": "Forest",
+    "ranks": {
+      "1": false,
+      "2": false,
+      "3": false,
+      "4": true,
+      "5": true
+    },
+    "release_date": "2021-12-10",
+    "release_date_na": "2050-01-01",
+    "obtainability": "limited",
+    "url": "https://magireco.fandom.com/wiki/Holy_Mami_(Anime_ver.)"
   },
   {
     "id": "2600",
