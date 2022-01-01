@@ -6341,7 +6341,7 @@ var character_collection = [{
   "release_date": "2019-01-01",
   "release_date_na": "2020-01-08",
   "obtainability": "limited",
-  "url": "https://magireco.fandom.com/wiki/Yakumo_Mitama (Haregi ver.)"
+  "url": "https://magireco.fandom.com/wiki/Yakumo_Mitama_(Haregi ver.)"
 }, {
   "id": "1118",
   "name": "Amane Sisters (Mizugi ver.)",
@@ -6358,7 +6358,24 @@ var character_collection = [{
   "release_date": "2019-07-01",
   "release_date_na": "2020-07-15",
   "obtainability": "limited",
-  "url": "https://magireco.fandom.com/wiki/Amane_Sisters (Mizugi ver.)"
+  "url": "https://magireco.fandom.com/wiki/Amane_Sisters_(Mizugi ver.)"
+}, {
+  "id": "1125",
+  "name": "Tokime Shizuka (First Sunrise of the Year ver.)",
+  "name_jp": "時女 静香 (初日の出ver.)",
+  "name_na": "",
+  "attribute": "Flame",
+  "ranks": {
+    "1": false,
+    "2": false,
+    "3": false,
+    "4": true,
+    "5": true
+  },
+  "release_date": "2022-01-01",
+  "release_date_na": "2050-01-01",
+  "obtainability": "limited",
+  "url": "https://magireco.fandom.com/wiki/Tokime_Shizuka_(First_Sunrise_of_the_Year_ver.)"
 }, {
   "id": "1201",
   "name": "Iroha-chan",
