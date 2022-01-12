@@ -10136,6 +10136,42 @@ var memoria_collection = [{
   "obtainability": "limited",
   "url": ""
 }, {
+  "id": "1718",
+  "name": "Foolishness Leading to Disaster",
+  "name_jp": "災厄を招く馬鹿騒ぎ",
+  "name_na": "",
+  "type": "ability",
+  "rank": "3",
+  "effect1": "Blast Damage Up [III / 25%] & Damage Increase [IV / 20%]",
+  "effect2": "Blast Damage Up [IV / 30%] & Damage Increase [V / 25%]",
+  "chara": "Nanami Yachiyo (Anime ver.)",
+  "obtainability": "unlimited",
+  "url": "https://magireco.fandom.com/wiki/Foolishness_Leading_to_Disaster"
+}, {
+  "id": "1719",
+  "name": "I Just Wanted to Survive",
+  "name_jp": "生き残りたいと願ったのは",
+  "name_na": "",
+  "type": "ability",
+  "rank": "4",
+  "effect1": "Blast Damage Up [VI / 40%] & Damage Cut [III / 15%]",
+  "effect2": "Blast Damage Up [VII / 45%] & Damage Cut [IV / 20%]",
+  "chara": "",
+  "obtainability": "limited",
+  "url": "https://magireco.fandom.com/wiki/I_Just_Wanted_to_Survive"
+}, {
+  "id": "1720",
+  "name": "The Mikazuki House Destined for Me",
+  "name_jp": "あてがわれたみかづき荘",
+  "name_na": "",
+  "type": "skill",
+  "rank": "3",
+  "effect1": "Chance to Charm [VII / 45%] (One / 1 Turn) & Defense Down [IV / 20%] (One / 1 Turn)",
+  "effect2": "Chance to Charm [IX / 50%] (One / 1 Turn) & Defense Down [V / 25%] (One / 1 Turn)",
+  "chara": "",
+  "obtainability": "limited",
+  "url": "https://magireco.fandom.com/wiki/The_Mikazuki_House_Destined_for_Me"
+}, {
   "id": "9001",
   "name": "My Victory Pose Is Kawaii Too",
   "name_jp": "",

@@ -681,7 +681,7 @@ export const character_collection = [
     "release_date": "2018-08-08",
     "release_date_na": "2020-06-02",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Tamaki_Iroha (Mizugi ver.)"
+    "url": "https://magireco.fandom.com/wiki/Tamaki_Iroha_(Mizugi_ver.)"
   },
   {
     "id": "1102",
@@ -807,7 +807,7 @@ export const character_collection = [
     "release_date": "2020-04-02",
     "release_date_na": "2050-01-01",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Rena-chan_(Idol ver.)"
+    "url": "https://magireco.fandom.com/wiki/Rena-chan_(Idol_ver.)"
   },
   {
     "id": "1110",
@@ -879,7 +879,7 @@ export const character_collection = [
     "release_date": "2019-01-01",
     "release_date_na": "2020-01-08",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Yakumo_Mitama_(Haregi ver.)"
+    "url": "https://magireco.fandom.com/wiki/Yakumo_Mitama_(Haregi_ver.)"
   },
   {
     "id": "1118",
@@ -897,7 +897,7 @@ export const character_collection = [
     "release_date": "2019-07-01",
     "release_date_na": "2020-07-15",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Amane_Sisters_(Mizugi ver.)"
+    "url": "https://magireco.fandom.com/wiki/Amane_Sisters_(Mizugi_ver.)"
   },
   {
     "id": "1125",
@@ -987,7 +987,7 @@ export const character_collection = [
     "release_date": "2020-07-15",
     "release_date_na": "2050-01-01",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Rena_& Kaede (Mizugi ver.)"
+    "url": "https://magireco.fandom.com/wiki/Rena_&_Kaede_(Mizugi_ver.)"
   },
   {
     "id": "1210",
@@ -1023,7 +1023,25 @@ export const character_collection = [
     "release_date": "2019-08-22",
     "release_date_na": "2020-08-12",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Iroha_& Yachiyo (Final Battle ver.)"
+    "url": "https://magireco.fandom.com/wiki/Iroha_&_Yachiyo_(Final_Battle_ver.)"
+  },
+  {
+    "id": "1302",
+    "name": "Nanami Yachiyo (Anime ver.)",
+    "name_jp": "七海 やちよ (アニメver.)",
+    "name_na": "",
+    "attribute": "Aqua",
+    "ranks": {
+      "1": false,
+      "2": false,
+      "3": false,
+      "4": true,
+      "5": true
+    },
+    "release_date": "2022-01-11",
+    "release_date_na": "2050-01-01",
+    "obtainability": "limited",
+    "url": "https://magireco.fandom.com/wiki/Nanami_Yachiyo_(Anime_ver.)"
   },
   {
     "id": "1401",
@@ -1041,7 +1059,7 @@ export const character_collection = [
     "release_date": "2021-01-01",
     "release_date_na": "2050-01-01",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Iroha_& Yachiyo (Final Battle ver.)"
+    "url": "https://magireco.fandom.com/wiki/Iroha_%26_Ui_(Miko_ver.)"
   },
   {
     "id": "2001",
@@ -1095,7 +1113,7 @@ export const character_collection = [
     "release_date": "2017-08-22",
     "release_date_na": "2019-06-25",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Akemi_Homura (Megane ver.)"
+    "url": "https://magireco.fandom.com/wiki/Akemi_Homura_(Megane_ver.)"
   },
   {
     "id": "2004",
@@ -1185,7 +1203,7 @@ export const character_collection = [
     "release_date": "2018-01-01",
     "release_date_na": "2020-01-01",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Kaname_Madoka (Haregi ver.)"
+    "url": "https://magireco.fandom.com/wiki/Kaname_Madoka_(Haregi_ver.)"
   },
   {
     "id": "2101",
@@ -1275,7 +1293,7 @@ export const character_collection = [
     "release_date": "2018-07-20",
     "release_date_na": "2020-05-01",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Akemi_Homura (Mizugi ver.)"
+    "url": "https://magireco.fandom.com/wiki/Akemi_Homura_(Mizugi_ver.)"
   },
   {
     "id": "2400",
@@ -1347,7 +1365,7 @@ export const character_collection = [
     "release_date": "2020-07-27",
     "release_date_na": "2050-01-01",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Tomoe_Mami (Mizugi ver.)"
+    "url": "https://magireco.fandom.com/wiki/Tomoe_Mami_(Mizugi_ver.)"
   },
   {
     "id": "2502",
@@ -1383,7 +1401,7 @@ export const character_collection = [
     "release_date": "2019-07-26",
     "release_date_na": "2020-08-03",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Sakura_Kyouko (Mizugi ver.)"
+    "url": "https://magireco.fandom.com/wiki/Sakura_Kyouko_(Mizugi_ver.)"
   },
   {
     "id": "2700",
@@ -1401,7 +1419,7 @@ export const character_collection = [
     "release_date": "2020-02-14",
     "release_date_na": "2050-01-01",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Momoe_Nagisa (Valentine's ver.)"
+    "url": "https://magireco.fandom.com/wiki/Momoe_Nagisa_(Valentine's_ver.)"
   },
   {
     "id": "3001",
@@ -2157,7 +2175,7 @@ export const character_collection = [
     "release_date": "2019-03-25",
     "release_date_na": "2020-06-29",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Rumor_of the Ten-Thousand-Year Sakura"
+    "url": "https://magireco.fandom.com/wiki/Rumor_of_the_Ten-Thousand-Year_Sakura"
   },
   {
     "id": "3044",
@@ -2463,7 +2481,7 @@ export const character_collection = [
     "release_date": "2020-08-07",
     "release_date_na": "2050-01-01",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Rumor_of the Ten-Thousand-Year Sakura (Mizugi ver.)"
+    "url": "https://magireco.fandom.com/wiki/Rumor_of_the_Ten-Thousand-Year_Sakura_(Mizugi_ver.)"
   },
   {
     "id": "3503",
@@ -2769,7 +2787,7 @@ export const character_collection = [
     "release_date": "2020-06-19",
     "release_date_na": "2050-01-01",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Tart_(Final ver.)"
+    "url": "https://magireco.fandom.com/wiki/Tart_(Final_ver.)"
   },
   {
     "id": "4031",
