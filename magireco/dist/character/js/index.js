@@ -7161,6 +7161,23 @@ var character_collection = [{
   "obtainability": "limited",
   "url": "https://magireco.fandom.com/wiki/Tokime_Shizuka_(First_Sunrise_of_the_Year_ver.)"
 }, {
+  "id": "1137",
+  "name": "Nayuta & Mikage (Christmas ver.)",
+  "name_jp": "那由他・みかげ (クリスマスver.)",
+  "name_na": "",
+  "attribute": "Forest",
+  "ranks": {
+    "1": false,
+    "2": false,
+    "3": false,
+    "4": true,
+    "5": true
+  },
+  "release_date": "2021-12-20",
+  "release_date_na": "2050-01-01",
+  "obtainability": "limited",
+  "url": "https://magireco.fandom.com/wiki/Nayuta_%26_Mikage_(Christmas_ver.)"
+}, {
   "id": "1201",
   "name": "Iroha-chan",
   "name_jp": "いろはちゃん",
