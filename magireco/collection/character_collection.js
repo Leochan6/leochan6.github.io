@@ -1486,7 +1486,7 @@ export const character_collection = [
       "2": true,
       "3": true,
       "4": true,
-      "5": false
+      "5": true
     },
     "release_date": "2017-08-22",
     "release_date_na": "2019-06-25",
@@ -1540,7 +1540,7 @@ export const character_collection = [
       "2": true,
       "3": true,
       "4": true,
-      "5": false
+      "5": true
     },
     "release_date": "2017-08-22",
     "release_date_na": "2019-06-25",
