@@ -540,6 +540,24 @@ export const character_collection = [
     "url": "https://magireco.fandom.com/wiki/Yukari_Miyuri"
   },
   {
+    "id": "1034",
+    "name": "Miura Asahi",
+    "name_jp": "三浦 旭",
+    "name_na": "",
+    "attribute": "Dark",
+    "ranks": {
+      "1": false,
+      "2": false,
+      "3": false,
+      "4": true,
+      "5": true
+    },
+    "release_date": "2022-01-28",
+    "release_date_na": "2050-01-01",
+    "obtainability": "unlimited",
+    "url": "https://magireco.fandom.com/wiki/Miura_Asahi"
+  },
+  {
     "id": "1035",
     "name": "Kurusu Alexandra",
     "name_jp": "栗栖 アレクサンドラ",
@@ -1406,7 +1424,7 @@ export const character_collection = [
   {
     "id": "2600",
     "name": "Sakura Kyouko (Mizugi ver.)",
-    "name_jp": "佐倉 杏子（水着ver.）",
+    "name_jp": "佐倉 杏子（水着ver.",
     "name_na": "Kyoko Sakura (Swimsuit)",
     "attribute": "Flame",
     "ranks": {
@@ -1420,6 +1438,24 @@ export const character_collection = [
     "release_date_na": "2020-08-03",
     "obtainability": "limited",
     "url": "https://magireco.fandom.com/wiki/Sakura_Kyouko_(Mizugi_ver.)"
+  },
+  {
+    "id": "2602",
+    "name": "Sakura Kyouko (Doppel ver.)",
+    "name_jp": "佐倉 杏子 (ドッペルver.)",
+    "name_na": "",
+    "attribute": "Flame",
+    "ranks": {
+      "1": false,
+      "2": false,
+      "3": false,
+      "4": true,
+      "5": true
+    },
+    "release_date": "2022-02-10",
+    "release_date_na": "2050-01-04",
+    "obtainability": "limited",
+    "url": "https://magireco.fandom.com/wiki/Sakura_Kyouko_(Doppel_ver.)"
   },
   {
     "id": "2700",
