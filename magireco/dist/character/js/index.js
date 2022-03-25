@@ -8980,6 +8980,23 @@ var character_collection = [{
   "obtainability": "limited",
   "url": "https://magireco.fandom.com/wiki/Tart_(Final_ver.)"
 }, {
+  "id": "4029",
+  "name": "Pernelle",
+  "name_jp": "ペレネル",
+  "name_na": "",
+  "attribute": "Void",
+  "ranks": {
+    "1": false,
+    "2": false,
+    "3": false,
+    "4": true,
+    "5": true
+  },
+  "release_date": "2022-03-24",
+  "release_date_na": "2050-01-01",
+  "obtainability": "limited",
+  "url": "https://magireco.fandom.com/wiki/Pernelle"
+}, {
   "id": "4031",
   "name": "Amano Suzune",
   "name_jp": "天乃 鈴音",
@@ -9251,6 +9268,23 @@ var character_collection = [{
   "release_date_na": "2050-01-01",
   "obtainability": "limited",
   "url": "https://magireco.fandom.com/wiki/Isabeau_(Witch_ver.)"
+}, {
+  "id": "4122",
+  "name": "Isabeau",
+  "name_jp": "イザボー",
+  "name_na": "",
+  "attribute": "Dark",
+  "ranks": {
+    "1": false,
+    "2": false,
+    "3": false,
+    "4": true,
+    "5": true
+  },
+  "release_date": "2022-03-18",
+  "release_date_na": "2050-01-01",
+  "obtainability": "limited",
+  "url": "https://magireco.fandom.com/wiki/Isabeau"
 }];
 exports.character_collection = character_collection;
 
