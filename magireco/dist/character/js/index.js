@@ -6940,6 +6940,23 @@ var character_collection = [{
   "obtainability": "limited",
   "url": "https://magireco.fandom.com/wiki/Little_Kyubey"
 }, {
+  "id": "1043",
+  "name": "Kuroe",
+  "name_jp": "黒江",
+  "name_na": "",
+  "attribute": "Dark",
+  "ranks": {
+    "1": false,
+    "2": false,
+    "3": false,
+    "4": true,
+    "5": true
+  },
+  "release_date": "2022-03-28",
+  "release_date_na": "2050-01-01",
+  "obtainability": "limited",
+  "url": "https://magireco.fandom.com/wiki/Kuroe"
+}, {
   "id": "1101",
   "name": "Tamaki Iroha (Mizugi ver.)",
   "name_jp": "環 いろは (水着ver.)",
@@ -7534,6 +7551,23 @@ var character_collection = [{
   "release_date_na": "2050-01-01",
   "obtainability": "limited",
   "url": "https://magireco.fandom.com/wiki/Madoka_%26_Iroha"
+}, {
+  "id": "2201",
+  "name": "Akuma Homura-chan",
+  "name_jp": "悪魔ほむらちゃん",
+  "name_na": "",
+  "attribute": "Dark",
+  "ranks": {
+    "1": false,
+    "2": false,
+    "3": false,
+    "4": true,
+    "5": true
+  },
+  "release_date": "2022-04-08",
+  "release_date_na": "2050-01-01",
+  "obtainability": "limited",
+  "url": "https://magireco.fandom.com/wiki/Akuma_Homura-chan"
 }, {
   "id": "2300",
   "name": "Akemi Homura (Mizugi ver.)",
