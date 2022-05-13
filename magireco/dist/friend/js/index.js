@@ -6564,6 +6564,23 @@ var character_collection = [{
   "obtainability": "limited",
   "url": "https://magireco.fandom.com/wiki/Iroha_%26_Ui_(Miko_ver.)"
 }, {
+  "id": "1501",
+  "name": "Tamaki Iroha (Anime ver.)",
+  "name_jp": "環 いろは (アニメver.)",
+  "name_na": "",
+  "attribute": "Light",
+  "ranks": {
+    "1": false,
+    "2": false,
+    "3": false,
+    "4": true,
+    "5": true
+  },
+  "release_date": "2022-04-18",
+  "release_date_na": "2050-01-01",
+  "obtainability": "limited",
+  "url": "https://magireco.fandom.com/wiki/Tamaki_Iroha_(Anime_ver.)"
+}, {
   "id": "2001",
   "name": "Kaname Madoka",
   "name_jp": "鹿目 まどか",
@@ -8025,6 +8042,23 @@ var character_collection = [{
   "release_date_na": "2019-06-25",
   "obtainability": "unlimited",
   "url": "https://magireco.fandom.com/wiki/Chitose_Yuma"
+}, {
+  "id": "4004",
+  "name": "Mikuni Oriko (Final ver.)",
+  "name_jp": "美国 織莉子 (ver.Final)",
+  "name_na": "",
+  "attribute": "Light",
+  "ranks": {
+    "1": false,
+    "2": false,
+    "3": false,
+    "4": true,
+    "5": true
+  },
+  "release_date": "2022-05-11",
+  "release_date_na": "2050-01-01",
+  "obtainability": "limited",
+  "url": "https://magireco.fandom.com/wiki/Mikuni_Oriko_(Final_ver.)"
 }, {
   "id": "4011",
   "name": "Kazumi",
