@@ -10485,18 +10485,6 @@ var memoria_collection = [{
   "url": "https://magireco.fandom.com/wiki/Even_the_Devil_Shines_on_the_Everlasting_Summer_Beach"
 }, {
   "id": "1749",
-  "name": "The Strongest Ever Memoria (Self-Proclaimed)",
-  "name_jp": "史上最強のメモリア（自称）",
-  "name_na": "",
-  "type": "ability",
-  "rank": "3",
-  "effect1": "",
-  "effect2": "Attack Up [8 / 8%] & Defense Up [8 / 8%] & Chance to Evade [8 / 8%] & Status Ailment Resistance Up [8 / 8%]",
-  "chara": "",
-  "obtainability": "limited",
-  "url": "https://magireco.fandom.com/wiki/The_Strongest_Ever_Memoria_(Self-Proclaimed)"
-}, {
-  "id": "1749",
   "name": "(EMERGENCY STREAM) 4 Star Will Be Pulled",
   "name_jp": "【緊急配信】星４出します",
   "name_na": "",
