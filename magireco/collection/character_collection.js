@@ -468,6 +468,24 @@ export const character_collection = [
     "url": "https://magireco.fandom.com/wiki/Toki_Sunao"
   },
   {
+    "id": "1028",
+    "name": "Aika Himena",
+    "name_jp": "藍家 ひめな",
+    "name_na": "",
+    "attribute": "Aqua",
+    "ranks": {
+      "1": false,
+      "2": false,
+      "3": false,
+      "4": true,
+      "5": true
+    },
+    "release_date": "2022-05-23",
+    "release_date_na": "2050-01-01",
+    "obtainability": "unlimited",
+    "url": "https://magireco.fandom.com/wiki/Aika_Himena"
+  },
+  {
     "id": "1029",
     "name": "Miyabi Shigure",
     "name_jp": "宮尾 時雨",
@@ -1096,6 +1114,24 @@ export const character_collection = [
     "release_date_na": "2050-01-01",
     "obtainability": "limited",
     "url": "https://magireco.fandom.com/wiki/Nanami_Yachiyo_(Anime_ver.)"
+  },
+  {
+    "id": "1309",
+    "name": "Minami Rena (Anime ver.)",
+    "name_jp": "水波 レナ (アニメver.)",
+    "name_na": "",
+    "attribute": "Aqua",
+    "ranks": {
+      "1": false,
+      "2": false,
+      "3": false,
+      "4": true,
+      "5": true
+    },
+    "release_date": "2022-05-30",
+    "release_date_na": "2050-01-01",
+    "obtainability": "limited",
+    "url": "https://magireco.fandom.com/wiki/Minami_Rena_(Anime_ver.)"
   },
   {
     "id": "1401",
