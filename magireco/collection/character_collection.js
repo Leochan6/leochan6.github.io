@@ -558,6 +558,24 @@ export const character_collection = [
     "url": "https://magireco.fandom.com/wiki/Yukari_Miyuri"
   },
   {
+    "id": "1033",
+    "name": "Himuro Lavi",
+    "name_jp": "氷室 ラビ",
+    "name_na": "",
+    "attribute": "Forest",
+    "ranks": {
+      "1": false,
+      "2": false,
+      "3": false,
+      "4": true,
+      "5": true
+    },
+    "release_date": "2022-07-11",
+    "release_date_na": "2050-01-01",
+    "obtainability": "unlimited",
+    "url": "https://magireco.fandom.com/wiki/Himuro_Lavi"
+  },
+  {
     "id": "1034",
     "name": "Miura Asahi",
     "name_jp": "三浦 旭",
@@ -592,6 +610,24 @@ export const character_collection = [
     "release_date_na": "2050-01-01",
     "obtainability": "unlimited",
     "url": "https://magireco.fandom.com/wiki/Kurusu_Alexandra"
+  },
+  {
+    "id": "1036",
+    "name": "Yume Urara",
+    "name_jp": "有愛 うらら",
+    "name_na": "",
+    "attribute": "Aqua",
+    "ranks": {
+      "1": false,
+      "2": false,
+      "3": false,
+      "4": true,
+      "5": true
+    },
+    "release_date": "2022-06-27",
+    "release_date_na": "2050-01-01",
+    "obtainability": "unlimited",
+    "url": "https://magireco.fandom.com/wiki/Yume_Urara"
   },
   {
     "id": "1037",
@@ -2554,6 +2590,24 @@ export const character_collection = [
     "release_date_na": "2050-01-01",
     "obtainability": "unlimited",
     "url": "https://magireco.fandom.com/wiki/Mizuki_Rui"
+  },
+  {
+    "id": "3057",
+    "name": "Mai Akari",
+    "name_jp": "真井 あかり",
+    "name_na": "",
+    "attribute": "Light",
+    "ranks": {
+      "1": false,
+      "2": false,
+      "3": false,
+      "4": true,
+      "5": true
+    },
+    "release_date": "2022-06-09",
+    "release_date_na": "2050-01-01",
+    "obtainability": "unlimited",
+    "url": "https://magireco.fandom.com/wiki/Mai_Akari"
   },
   {
     "id": "3058",
