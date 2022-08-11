@@ -1026,6 +1026,24 @@ export const character_collection = [
     "url": "https://magireco.fandom.com/wiki/Nayuta_%26_Mikage_(Christmas_ver.)"
   },
   {
+    "id": "1143",
+    "name": "Kuroe (Mizugi ver.)",
+    "name_jp": "黒江 (水着ver.)",
+    "name_na": "",
+    "attribute": "Dark",
+    "ranks": {
+      "1": false,
+      "2": false,
+      "3": false,
+      "4": true,
+      "5": true
+    },
+    "release_date": "2022-07-29",
+    "release_date_na": "2050-01-01",
+    "obtainability": "limited",
+    "url": "https://magireco.fandom.com/wiki/Kuroe_(Mizugi_ver.)"
+  },
+  {
     "id": "1201",
     "name": "Iroha-chan",
     "name_jp": "いろはちゃん",
@@ -1150,6 +1168,24 @@ export const character_collection = [
     "release_date_na": "2050-01-01",
     "obtainability": "limited",
     "url": "https://magireco.fandom.com/wiki/Nanami_Yachiyo_(Anime_ver.)"
+  },
+  {
+    "id": "1303",
+    "name": "Rumor Tsuruno (Anime ver.)",
+    "name_jp": "ウワサの鶴乃 (アニメver.)",
+    "name_na": "",
+    "attribute": "Flame",
+    "ranks": {
+      "1": false,
+      "2": false,
+      "3": false,
+      "4": true,
+      "5": true
+    },
+    "release_date": "2022-07-22",
+    "release_date_na": "2050-01-01",
+    "obtainability": "limited",
+    "url": "https://magireco.fandom.com/wiki/Rumor_Tsuruno_(Anime_ver.)"
   },
   {
     "id": "1309",
@@ -1420,6 +1456,24 @@ export const character_collection = [
     "release_date_na": "2050-01-01",
     "obtainability": "limited",
     "url": "https://magireco.fandom.com/wiki/Madoka_%26_Iroha"
+  },
+  {
+    "id": "2106",
+    "name": "Kaname Madoka (Mizugi ver.)",
+    "name_jp": "鹿目 まどか (水着ver.)",
+    "name_na": "",
+    "attribute": "Aqua",
+    "ranks": {
+      "1": false,
+      "2": false,
+      "3": false,
+      "4": true,
+      "5": true
+    },
+    "release_date": "2022-08-10",
+    "release_date_na": "2050-01-01",
+    "obtainability": "limited",
+    "url": "https://magireco.fandom.com/wiki/Kaname_Madoka_(Mizugi_ver.)"
   },
   {
     "id": "2201",
