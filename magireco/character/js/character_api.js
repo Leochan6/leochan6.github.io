@@ -288,7 +288,7 @@ export const maximizeDisplay = () => {
   let maxRank = getMaxRank(character.ranks);
   let level = RANK_TO_LEVEL[maxRank];
   let attribute = character.attribute.toLowerCase();
-  let display = new Display(character.id, character.name, maxRank, true, attribute, level, "3", "5", "5", maxRank == "5" ? true : false, "60");
+  let display = new Display(character.id, character.name, maxRank, true, attribute, level, "3", "5", "5", maxRank == "5" ? true : false, "100");
   updateForm(display);
   updatePreviewDisplay(display);
 };

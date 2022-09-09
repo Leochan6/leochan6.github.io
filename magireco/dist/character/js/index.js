@@ -648,7 +648,7 @@ var maximizeDisplay = function maximizeDisplay() {
   var maxRank = getMaxRank(character.ranks);
   var level = RANK_TO_LEVEL[maxRank];
   var attribute = character.attribute.toLowerCase();
-  var display = new Display(character.id, character.name, maxRank, true, attribute, level, "3", "5", "5", maxRank == "5" ? true : false, "60");
+  var display = new Display(character.id, character.name, maxRank, true, attribute, level, "3", "5", "5", maxRank == "5" ? true : false, "100");
   updateForm(display);
   updatePreviewDisplay(display);
 };
@@ -7466,6 +7466,23 @@ var character_collection = [{
   "release_date_na": "2050-01-01",
   "obtainability": "limited",
   "url": "https://magireco.fandom.com/wiki/Tamaki_Iroha_(Anime_ver.)"
+}, {
+  "id": "1601",
+  "name": "Infinite Iroha",
+  "name_jp": "∞いろは",
+  "name_na": "",
+  "attribute": "Light",
+  "ranks": {
+    "1": false,
+    "2": false,
+    "3": false,
+    "4": true,
+    "5": true
+  },
+  "release_date": "2022-08-22",
+  "release_date_na": "2050-01-01",
+  "obtainability": "limited",
+  "url": "https://magireco.fandom.com/wiki/Infinite_Iroha)"
 }, {
   "id": "2001",
   "name": "Kaname Madoka",

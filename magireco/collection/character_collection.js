@@ -1242,6 +1242,24 @@ export const character_collection = [
     "url": "https://magireco.fandom.com/wiki/Tamaki_Iroha_(Anime_ver.)"
   },
   {
+    "id": "1601",
+    "name": "Infinite Iroha",
+    "name_jp": "∞いろは",
+    "name_na": "",
+    "attribute": "Light",
+    "ranks": {
+      "1": false,
+      "2": false,
+      "3": false,
+      "4": true,
+      "5": true
+    },
+    "release_date": "2022-08-22",
+    "release_date_na": "2050-01-01",
+    "obtainability": "limited",
+    "url": "https://magireco.fandom.com/wiki/Infinite_Iroha)"
+  },
+  {
     "id": "2001",
     "name": "Kaname Madoka",
     "name_jp": "鹿目 まどか",
