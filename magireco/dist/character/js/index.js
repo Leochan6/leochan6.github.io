@@ -7008,6 +7008,23 @@ var character_collection = [{
   "obtainability": "limited",
   "url": "https://magireco.fandom.com/wiki/Kuroe"
 }, {
+  "id": "1044",
+  "name": "Sena Mikoto",
+  "name_jp": "瀬奈 みこと",
+  "name_na": "",
+  "attribute": "Void",
+  "ranks": {
+    "1": false,
+    "2": false,
+    "3": false,
+    "4": true,
+    "5": true
+  },
+  "release_date": "2022-09-20",
+  "release_date_na": "2050-01-01",
+  "obtainability": "limited",
+  "url": "https://magireco.fandom.com/wiki/Sena_Mikoto"
+}, {
   "id": "1101",
   "name": "Tamaki Iroha (Mizugi ver.)",
   "name_jp": "環 いろは (水着ver.)",

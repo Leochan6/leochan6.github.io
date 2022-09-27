@@ -11096,6 +11096,66 @@ var memoria_collection = [{
   "obtainability": "limited",
   "url": "https://magireco.fandom.com/wiki/Confrontation_at_the_First_Act"
 }, {
+  "id": "1807",
+  "name": "The Hearts I Wanted to Overlap",
+  "name_jp": "重ねたかった心",
+  "name_na": "",
+  "type": "ability",
+  "rank": "3",
+  "effect1": "MP Gauge Increased On Battle Start [10% full] & Accele MP Gain Up [IV / 17.5%]",
+  "effect2": "MP Gauge Increased On Battle Start [15% full] & Accele MP Gain Up [V / 20%]",
+  "chara": "Sena Mikoto",
+  "obtainability": "unlimited",
+  "url": "https://magireco.fandom.com/wiki/The_Hearts_I_Wanted_to_Overlap"
+}, {
+  "id": "1808",
+  "name": "Mikoto-In-Mirrors",
+  "name_jp": "ミコト・イン・ミラーズ",
+  "name_na": "",
+  "type": "ability",
+  "rank": "4",
+  "effect1": "Chance to Anti-Provoke [VI / 55%] & Chance to Ignore Damage Cut [VI / 55%]",
+  "effect2": "Chance to Anti-Provoke [VIII / 65%] & Chance to Ignore Damage Cut [VIII / 65%]",
+  "chara": "",
+  "obtainability": "limited",
+  "url": "https://magireco.fandom.com/wiki/Mikoto-In-Mirrors"
+}, {
+  "id": "1809",
+  "name": "For the First Time, the Rumored Daily Life",
+  "name_jp": "はじめての、噂に聞く日常",
+  "name_na": "",
+  "type": "ability",
+  "rank": "3",
+  "effect1": "Attack Up [II / 10%] & Chance to Defense Pierce [II / 15%]",
+  "effect2": "Attack Up [III / 15%] & Chance to Defense Pierce [III / 20%]",
+  "chara": "",
+  "obtainability": "limited",
+  "url": "https://magireco.fandom.com/wiki/For_the_First_Time%2C_the_Rumored_Daily_Life"
+}, {
+  "id": "1810",
+  "name": "The Beginning of Despair Illuminated by Hope",
+  "name_jp": "希望が灯る絶望のはじまり",
+  "name_na": "",
+  "type": "ability",
+  "rank": "4",
+  "effect1": "",
+  "effect2": "Charge Disc Damage Up [IV / 20%] & Attack Up [III / 15%]",
+  "chara": "",
+  "obtainability": "limited",
+  "url": "https://magireco.fandom.com/wiki/The_Beginning_of_Despair_Illuminated_by_Hope"
+}, {
+  "id": "1811",
+  "name": "Shining Like the Setting Sun",
+  "name_jp": "夕日のように輝いて",
+  "name_na": "",
+  "type": "skill",
+  "rank": "3",
+  "effect1": "",
+  "effect2": "Defense Down [II / 10%] & Defense Down Further [III / 15%] (One / 1 Turn)",
+  "chara": "",
+  "obtainability": "limited",
+  "url": "https://magireco.fandom.com/wiki/Shining_Like_the_Setting_Sun"
+}, {
   "id": "9001",
   "name": "My Victory Pose Is Kawaii Too",
   "name_jp": "",
