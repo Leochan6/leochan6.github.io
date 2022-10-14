@@ -527,6 +527,7 @@ export const toggleAdded = (value) => {
 export const openMemoriaDialog = (memoria, displays) => {
   let text = `ID: ${memoria.id}\
   \nType: ${memoria.type}\
+  \nRank: ${memoria.rank}\
   \nEffect: ${memoria.effect1}\
   \nMLB Effect: ${memoria.effect2}\
   \nUsable: ${memoria.chara ? memoria.chara : "ALL"}\

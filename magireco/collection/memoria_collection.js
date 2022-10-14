@@ -10255,5 +10255,70 @@ export const memoria_collection = [
     "chara": "Ashley Taylor",
     "obtainability": "unlimited",
     "url": "https://magireco.fandom.com/wiki/Kumanosuke's_Kawaii_Vid"
+  },
+  {
+    "id": "10001",
+    "name": "Goodbye to the Old, Hello to the New",
+    "name_jp": "辞旧迎新",
+    "name_na": "",
+    "type": "ability",
+    "rank": "4",
+    "effect1": "",
+    "effect2": "Episode Experience Gain Increased [II / 20%]",
+    "chara": "China",
+    "obtainability": "limited",
+    "url": "https://magireco.fandom.com/wiki/Goodbye_to_the_Old,_Hello_to_the_New"
+  },
+  {
+    "id": "10002",
+    "name": "Artist and assistants",
+    "name_jp": "Artist and assistants",
+    "name_na": "",
+    "type": "ability",
+    "rank": "4",
+    "effect1": "CC Gain Up [II / 10%] (Does Not Work on Supports)",
+    "effect2": "CC Gain Up [II / 10%] (Does Not Work on Supports)",
+    "chara": "China",
+    "obtainability": "limited",
+    "url": "https://magireco.fandom.com/wiki/Artist_and_assistants"
+  },
+  {
+    "id": "10003",
+    "name": "Our Circle",
+    "name_jp": "属于我们的圆",
+    "name_na": "",
+    "type": "ability",
+    "rank": "4",
+    "effect1": "Attack Up [II / 10%] & Chance to Anti-Charm [VII / 55%]",
+    "effect2": "Attack Up [IV / 20%] & Anti-Charm [100%]",
+    "chara": "China",
+    "obtainability": "limited",
+    "url": "https://magireco.fandom.com/wiki/Our_Circle"
+  },
+  {
+    "id": "10004",
+    "name": "The Clock that Spins Alone",
+    "name_jp": "独自旋转的时钟",
+    "name_na": "",
+    "type": "skill",
+    "rank": "4",
+    "effect1": "Attack Up [IV / 20%] & Chance to Critical Hit [IV / 25%] & Defense Up [III / 22.5%] (Self / 3 Turns)",
+    "effect2": "Attack Up [V / 25%] & Chance to Critical Hit [V / 30%] & Defense Up [IV / 30%] (Self / 3 Turns)",
+    "chara": "China",
+    "obtainability": "limited",
+    "url": "https://magireco.fandom.com/wiki/The_Clock_that_Spins_Alone"
+  },
+  {
+    "id": "100001",
+    "name": "Ximen Red House Tour",
+    "name_jp": "西門紅樓遊",
+    "name_na": "",
+    "type": "ability",
+    "rank": "4",
+    "effect1": "",
+    "effect2": "Episode Experience Gain Increased [II / 20%]",
+    "chara": "Taiwan",
+    "obtainability": "limited",
+    "url": "https://magireco.fandom.com/wiki/Ximen_Red_House_Tour"
   }
 ]
