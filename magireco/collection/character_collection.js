@@ -1152,6 +1152,24 @@ export const character_collection = [
     "url": "https://magireco.fandom.com/wiki/Momoko_%26_Mitama_(Mermaid_ver.)"
   },
   {
+    "id": "1216",
+    "name": "Izumi Kanagi (Eternal Darkness ver.)",
+    "name_jp": "和泉 十七夜 (常闇ver.)",
+    "name_na": "",
+    "attribute": "Dark",
+    "ranks": {
+      "1": false,
+      "2": false,
+      "3": false,
+      "4": true,
+      "5": true
+    },
+    "release_date": "2022-10-03",
+    "release_date_na": "2050-01-01",
+    "obtainability": "limited",
+    "url": "https://magireco.fandom.com/wiki/Izumi_Kanagi_(Eternal_Darkness_ver.)"
+  },
+  {
     "id": "1301",
     "name": "Iroha & Yachiyo (Final Battle ver.)",
     "name_jp": "いろは・やちよ（決戦ver.",
