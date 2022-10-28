@@ -7399,6 +7399,23 @@ var character_collection = [{
   "obtainability": "limited",
   "url": "https://magireco.fandom.com/wiki/Izumi_Kanagi_(Eternal_Darkness_ver.)"
 }, {
+  "id": "1217",
+  "name": "Yakumo Mitama (Eternal Darkness ver.)",
+  "name_jp": "八雲 みたま (常闇ver.)",
+  "name_na": "",
+  "attribute": "Void",
+  "ranks": {
+    "1": false,
+    "2": false,
+    "3": false,
+    "4": true,
+    "5": true
+  },
+  "release_date": "2022-10-28",
+  "release_date_na": "2050-01-01",
+  "obtainability": "limited",
+  "url": "https://magireco.fandom.com/wiki/Yakumo_Mitama_(Eternal_Darkness_ver.)"
+}, {
   "id": "1301",
   "name": "Iroha & Yachiyo (Final Battle ver.)",
   "name_jp": "いろは・やちよ（決戦ver.",

@@ -11228,6 +11228,54 @@ var memoria_collection = [{
   "obtainability": "limited",
   "url": "https://magireco.fandom.com/wiki/Candy_for_the_Defiant"
 }, {
+  "id": "1818",
+  "name": "I'm Home...",
+  "name_jp": "「ただいま･･･」",
+  "name_na": "",
+  "type": "ability",
+  "rank": "3",
+  "effect1": "MP Gauge Increased On Battle Start [15% full] & Accele MP Gain Up [IV / 17.5%]",
+  "effect2": "MP Gauge Increased On Battle Start [20% full] & Accele MP Gain Up [V / 20%]",
+  "chara": "Yakumo Mitama (Eternal Darkness ver.)",
+  "obtainability": "unlimited",
+  "url": "https://magireco.fandom.com/wiki/I'm_Home..."
+}, {
+  "id": "1819",
+  "name": "Contradiction of Apology and Punishment",
+  "name_jp": "謝罪と罰の矛盾",
+  "name_na": "",
+  "type": "ability",
+  "rank": "4",
+  "effect1": "Damage Up Versus Witches [IV / 20%] & Attack Up [IV / 20%]",
+  "effect2": "Damage Up Versus Witches [V / 25%] & Attack Up [V / 25%]",
+  "chara": "",
+  "obtainability": "limited",
+  "url": "https://magireco.fandom.com/wiki/Contradiction_of_Apology_and_Punishment"
+}, {
+  "id": "1820",
+  "name": "Wash Away The Past",
+  "name_jp": "過去を洗い流して",
+  "name_na": "",
+  "type": "skill",
+  "rank": "3",
+  "effect1": "Fog [100%] & Attack Down [VI / 30%] (One / 1 Turn)",
+  "effect2": "Fog [100%] & Attack Down [VII / 35%] (One / 1 Turn)",
+  "chara": "",
+  "obtainability": "limited",
+  "url": "https://magireco.fandom.com/wiki/Wash_Away_The_Past"
+}, {
+  "id": "1822",
+  "name": "Eternal Darkness Party",
+  "name_jp": "常闇のパーティー",
+  "name_na": "",
+  "type": "skill",
+  "rank": "3",
+  "effect1": "",
+  "effect2": "Attack Down [VII / 35%] (All / 1 Turn)",
+  "chara": "",
+  "obtainability": "limited",
+  "url": "https://magireco.fandom.com/wiki/Eternal_Darkness_Party"
+}, {
   "id": "9001",
   "name": "My Victory Pose Is Kawaii Too",
   "name_jp": "",
