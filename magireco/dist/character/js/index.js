@@ -6617,6 +6617,23 @@ var character_collection = [{
   "obtainability": "limited",
   "url": "https://magireco.fandom.com/wiki/Amane_Tsukasa"
 }, {
+  "id": "1020",
+  "name": "Satori Kagome",
+  "name_jp": "佐鳥 かごめ",
+  "name_na": "",
+  "attribute": "Forest",
+  "ranks": {
+    "1": false,
+    "2": false,
+    "3": false,
+    "4": true,
+    "5": true
+  },
+  "release_date": "2022-11-25",
+  "release_date_na": "2050-01-01",
+  "obtainability": "unlimited",
+  "url": "https://magireco.fandom.com/wiki/Satori_Kagome"
+}, {
   "id": "1021",
   "name": "Kureha Yuna",
   "name_jp": "紅晴 結菜",
@@ -7262,6 +7279,23 @@ var character_collection = [{
   "release_date_na": "2050-01-01",
   "obtainability": "limited",
   "url": "https://magireco.fandom.com/wiki/Tokime_Shizuka_(First_Sunrise_of_the_Year_ver.)"
+}, {
+  "id": "1133",
+  "name": "Himuro Lavi (Kimochi ver.)",
+  "name_jp": "氷室ラビ (キモチver.)",
+  "name_na": "",
+  "attribute": "Void",
+  "ranks": {
+    "1": false,
+    "2": false,
+    "3": false,
+    "4": true,
+    "5": true
+  },
+  "release_date": "2022-11-14",
+  "release_date_na": "2050-01-01",
+  "obtainability": "limited",
+  "url": "https://magireco.fandom.com/wiki/Himuro_Lavi_(Kimochi_ver.)"
 }, {
   "id": "1137",
   "name": "Nayuta & Mikage (Christmas ver.)",

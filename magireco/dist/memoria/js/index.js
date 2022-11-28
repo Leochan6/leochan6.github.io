@@ -11264,6 +11264,18 @@ var memoria_collection = [{
   "obtainability": "limited",
   "url": "https://magireco.fandom.com/wiki/Wash_Away_The_Past"
 }, {
+  "id": "1821",
+  "name": "The Duo's Entwined Path",
+  "name_jp": "ふたりの道行き",
+  "name_na": "",
+  "type": "skill",
+  "rank": "4",
+  "effect1": "",
+  "effect2": "Redraw Discs",
+  "chara": "",
+  "obtainability": "limited",
+  "url": "https://magireco.fandom.com/wiki/The_Duo%27s_Entwined_Path"
+}, {
   "id": "1822",
   "name": "Eternal Darkness Party",
   "name_jp": "常闇のパーティー",
@@ -11275,6 +11287,114 @@ var memoria_collection = [{
   "chara": "",
   "obtainability": "limited",
   "url": "https://magireco.fandom.com/wiki/Eternal_Darkness_Party"
+}, {
+  "id": "1823",
+  "name": "Inside the Heart Even When Cold",
+  "name_jp": "寒くとも心の内は",
+  "name_na": "",
+  "type": "ability",
+  "rank": "4",
+  "effect1": "Defense Up [V / 37.5%] & MP Gain Up [III / 10%]",
+  "effect2": "Defense Up [VI / 45%] & MP Gain Up [IV / 12.5%]",
+  "chara": "",
+  "obtainability": "limited",
+  "url": "https://magireco.fandom.com/wiki/Inside_the_Heart_Even_When_Cold"
+}, {
+  "id": "1824",
+  "name": "Accumulating Moments",
+  "name_jp": "瞬間を積み重ねて",
+  "name_na": "",
+  "type": "skill",
+  "rank": "4",
+  "effect1": "",
+  "effect2": "HP Restore [V / 20%] (All) & Status Ailment Resistance Up [III / 30%] (All / 3 Turns)",
+  "chara": "",
+  "obtainability": "limited",
+  "url": "https://magireco.fandom.com/wiki/Accumulating_Moments"
+}, {
+  "id": "1825",
+  "name": "Peaceful Days Ahead",
+  "name_jp": "平和な日常をこれからも",
+  "name_na": "",
+  "type": "ability",
+  "rank": "3",
+  "effect1": "Attack Up [III / 15%] & Defense Up [III / 22.5%] & Regenerate HP [II / 3%]",
+  "effect2": "Attack Up [IV / 20%] & Defense Up [IV / 30%] & Regenerate HP [III / 4%]",
+  "chara": "Himuro Lavi (Kimochi ver.)",
+  "obtainability": "unlimited",
+  "url": "https://magireco.fandom.com/wiki/Peaceful_Days_Ahead"
+}, {
+  "id": "1826",
+  "name": "Real Intentions that were Kept Hidden",
+  "name_jp": "隠していた本音",
+  "name_na": "",
+  "type": "ability",
+  "rank": "4",
+  "effect1": "Blast Damage Up [IV / 30%] & Attack Up [III / 15%]",
+  "effect2": "Blast Damage Up [V / 35%] & Attack Up [IV / 20%]",
+  "chara": "",
+  "obtainability": "limited",
+  "url": "https://magireco.fandom.com/wiki/Real_Intentions_that_were_Kept_Hidden"
+}, {
+  "id": "1827",
+  "name": "Unexpected Real Intentions",
+  "name_jp": "予想外の本音",
+  "name_na": "",
+  "type": "skill",
+  "rank": "3",
+  "effect1": "Attack Up [V / 25%] & Defense Up [V / 37.5%] (Self / 1 Turn)",
+  "effect2": "Attack Up [VI / 30%] & Defense Up [VI / 45%] (Self / 1 Turn)",
+  "chara": "",
+  "obtainability": "limited",
+  "url": "https://magireco.fandom.com/wiki/Unexpected_Real_Intentions"
+}, {
+  "id": "1828",
+  "name": "Friends from Today",
+  "name_jp": "今日から友だち",
+  "name_na": "",
+  "type": "skill",
+  "rank": "3",
+  "effect1": "Accele Draw ",
+  "effect2": "Accele Draw ",
+  "chara": "Satori Kagome",
+  "obtainability": "unlimited",
+  "url": "https://magireco.fandom.com/wiki/Friends_from_Today"
+}, {
+  "id": "1829",
+  "name": "A Moment of Peace",
+  "name_jp": "やすらぎのひととき",
+  "name_na": "",
+  "type": "ability",
+  "rank": "4",
+  "effect1": "Magia Damage Up [X / 27.5%] & Accele MP Gain Up [III / 15%] & Status Ailment Resistance Down [III / 10%]",
+  "effect2": "Magia Damage Up [XI / 30%] & Accele MP Gain Up [IV / 17.5%] & Status Ailment Resistance Down [III / 10%]",
+  "chara": "",
+  "obtainability": "unlimited",
+  "url": "https://magireco.fandom.com/wiki/A_Moment_of_Peace"
+}, {
+  "id": "1830",
+  "name": "To Protect the Future",
+  "name_jp": "守るべき未来のために",
+  "name_na": "",
+  "type": "ability",
+  "rank": "3",
+  "effect1": "Damage Cut [I / 5%] & Defense Up [II / 15%]",
+  "effect2": "Damage Cut [II / 10%] & Defense Up [III / 22.5%]",
+  "chara": "",
+  "obtainability": "unlimited",
+  "url": "https://magireco.fandom.com/wiki/To_Protect_the_Future"
+}, {
+  "id": "1832",
+  "name": "Whilst in the Dark",
+  "name_jp": "つつ闇の中で",
+  "name_na": "",
+  "type": "skill",
+  "rank": "3",
+  "effect1": "",
+  "effect2": "Poison [100%] (Target / 1 Turn) & Damage Up Versus Enemies Affected With Status Ailments [IV / 30%] (Self / 1 Turn)",
+  "chara": "",
+  "obtainability": "limited",
+  "url": "https://magireco.fandom.com/wiki/Whilst_in_the_Dark"
 }, {
   "id": "9001",
   "name": "My Victory Pose Is Kawaii Too",
