@@ -7127,6 +7127,23 @@ var character_collection = [{
   "obtainability": "limited",
   "url": "https://magireco.fandom.com/wiki/Felicia-chan"
 }, {
+  "id": "1106",
+  "name": "Azusa Mifuyu (Fairy Tale ver.)",
+  "name_jp": "梓 みふゆ (おとぎ話ver.)",
+  "name_na": "",
+  "attribute": "Flame",
+  "ranks": {
+    "1": false,
+    "2": false,
+    "3": false,
+    "4": true,
+    "5": true
+  },
+  "release_date": "2022-12-12",
+  "release_date_na": "2050-01-01",
+  "obtainability": "limited",
+  "url": "https://magireco.fandom.com/wiki/Azusa_Mifuyu_(Fairy_Tale_ver.)"
+}, {
   "id": "1107",
   "name": "Touka & Nemu (Holy Night ver.)",
   "name_jp": "灯花・ねむ (聖夜ver.)",
@@ -7534,6 +7551,23 @@ var character_collection = [{
   "release_date_na": "2050-01-01",
   "obtainability": "limited",
   "url": "https://magireco.fandom.com/wiki/Iroha_%26_Ui_(Miko_ver.)"
+}, {
+  "id": "1402",
+  "name": "Nanami Yachiyo (Fairy Tale ver.)",
+  "name_jp": "七海 やちよ (おとぎ話ver.)",
+  "name_na": "",
+  "attribute": "Aqua",
+  "ranks": {
+    "1": false,
+    "2": false,
+    "3": false,
+    "4": true,
+    "5": true
+  },
+  "release_date": "2022-12-20",
+  "release_date_na": "2050-01-01",
+  "obtainability": "limited",
+  "url": "https://magireco.fandom.com/wiki/Nanami_Yachiyo_(Fairy_Tale_ver.)"
 }, {
   "id": "1501",
   "name": "Tamaki Iroha (Anime ver.)",
