@@ -828,6 +828,24 @@ export const character_collection = [
     "url": "https://magireco.fandom.com/wiki/Chizuru"
   },
   {
+    "id": "1047",
+    "name": "Kuro (2023)",
+    "name_jp": "くろ",
+    "name_na": "",
+    "attribute": "Light",
+    "ranks": {
+      "1": false,
+      "2": false,
+      "3": true,
+      "4": true,
+      "5": false
+    },
+    "release_date": "2023-02-10",
+    "release_date_na": "2050-01-01",
+    "obtainability": "limited",
+    "url": "https://magireco.fandom.com/wiki/Kuro_(2023)"
+  },
+  {
     "id": "1101",
     "name": "Tamaki Iroha (Mizugi ver.)",
     "name_jp": "環 いろは (水着ver.)",
@@ -1132,6 +1150,24 @@ export const character_collection = [
     "release_date_na": "2050-01-01",
     "obtainability": "limited",
     "url": "https://magireco.fandom.com/wiki/Nayuta_%26_Mikage_(Christmas_ver.)"
+  },
+  {
+    "id": "1139",
+    "name": "Sawa Sudachi (Valentine's ver.)",
+    "name_jp": "佐和 月出里 (バレンタインver.)",
+    "name_na": "",
+    "attribute": "Void",
+    "ranks": {
+      "1": false,
+      "2": false,
+      "3": false,
+      "4": true,
+      "5": true
+    },
+    "release_date": "2023-02-10",
+    "release_date_na": "2050-01-01",
+    "obtainability": "limited",
+    "url": "https://magireco.fandom.com/wiki/Sawa_Sudachi_(Valentine%27s_ver.)"
   },
   {
     "id": "1143",
