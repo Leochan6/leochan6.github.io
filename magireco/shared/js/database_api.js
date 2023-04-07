@@ -78,10 +78,9 @@ export const sessionTimeout = (user, callback) => {
       user.getIdTokenResult().then((idTokenResult) => {
         const authTime = idTokenResult.claims.auth_time * 1000;
         const sessionDurationInMilliseconds = 3 * 60 * 60 * 1000; // 3 hours
-        const expirationInMilliseconds = sessionDurationInMilliseconds - (Date.now() - authTime);
+        const expirationInMilliseconds = Math.max(0, sessionDurationInMilliseconds - (Date.now() - authTime));
         if (expirationInMilliseconds > 1000) callback(user);
         userSessionTimeout = setTimeout(() => {
-          console.log(expirationInMilliseconds, "milliseconds until auto sign out.");
           signout("Session Timeout", user.uid)
         }, expirationInMilliseconds);
       });

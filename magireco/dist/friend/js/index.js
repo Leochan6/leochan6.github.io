@@ -2,18 +2,13 @@
 "use strict";
 
 var _typeof = require("@babel/runtime/helpers/typeof");
-
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.startUp = exports.filterBackgrounds = exports.loadBackgroundList = exports.getSelectedBackground = exports.removeBackground = exports.changeTransparency = exports.setBackground = exports.getBackgrounds = void 0;
-
+exports.startUp = exports.setBackground = exports.removeBackground = exports.loadBackgroundList = exports.getSelectedBackground = exports.getBackgrounds = exports.filterBackgrounds = exports.changeTransparency = void 0;
 var _character_elements = require("./character_elements.js");
-
 var _background_collection = require("../../collection/background_collection.js");
-
 var storage_api = _interopRequireWildcard(require("./storage_api.js"));
-
 function _getRequireWildcardCache(nodeInterop) {
   if (typeof WeakMap !== "function") return null;
   var cacheBabelInterop = new WeakMap();
@@ -22,31 +17,24 @@ function _getRequireWildcardCache(nodeInterop) {
     return nodeInterop ? cacheNodeInterop : cacheBabelInterop;
   })(nodeInterop);
 }
-
 function _interopRequireWildcard(obj, nodeInterop) {
   if (!nodeInterop && obj && obj.__esModule) {
     return obj;
   }
-
   if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") {
     return {
       "default": obj
     };
   }
-
   var cache = _getRequireWildcardCache(nodeInterop);
-
   if (cache && cache.has(obj)) {
     return cache.get(obj);
   }
-
   var newObj = {};
   var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;
-
   for (var key in obj) {
     if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) {
       var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;
-
       if (desc && (desc.get || desc.set)) {
         Object.defineProperty(newObj, key, desc);
       } else {
@@ -54,13 +42,10 @@ function _interopRequireWildcard(obj, nodeInterop) {
       }
     }
   }
-
   newObj["default"] = obj;
-
   if (cache) {
     cache.set(obj, newObj);
   }
-
   return newObj;
 }
 /**
@@ -70,21 +55,17 @@ function _interopRequireWildcard(obj, nodeInterop) {
 /**
  * Gets all the Home Screen Backgrounds.
  */
-
-
 var getBackgrounds = function getBackgrounds() {
   var backgrounds = _background_collection.background_collection["home screen"];
   return backgrounds;
 };
+
 /**
  * Sets the background of the list with the background_id.
  * 
  * @param {String} background_id 
  */
-
-
 exports.getBackgrounds = getBackgrounds;
-
 var setBackground = function setBackground(background_id) {
   if (background_id) {
     background_select.value = background_id;
@@ -96,46 +77,38 @@ var setBackground = function setBackground(background_id) {
     background_select.selectedIndex = -1;
   }
 };
+
 /**
  * Changes the transparency of the list to transparency / 100.
  * 
  * @param {Number} transparency 
  */
-
-
 exports.setBackground = setBackground;
-
 var changeTransparency = function changeTransparency(transparency) {
   _character_elements.character_elements.character_list_content.style.backgroundColor = "rgba(255,255,255,".concat(transparency / 100, ")");
 };
+
 /**
  * Removes the background from the list.
  */
-
-
 exports.changeTransparency = changeTransparency;
-
 var removeBackground = function removeBackground() {
   _character_elements.character_elements.character_list_content.style.backgroundImage = "";
   background_select.selectedIndex = -1;
 };
+
 /**
  * Gets the background_id of the selected background.
  */
-
-
 exports.removeBackground = removeBackground;
-
 var getSelectedBackground = function getSelectedBackground() {
   return background_select.value;
 };
+
 /**
  * Loads the background image previews into the Background Select Dialog.
  */
-
-
 exports.getSelectedBackground = getSelectedBackground;
-
 var loadBackgroundList = function loadBackgroundList() {
   var backgrounds = getBackgrounds();
   backgrounds.forEach(function (background) {
@@ -151,18 +124,15 @@ var loadBackgroundList = function loadBackgroundList() {
       background_select.dispatchEvent(new Event("change"));
       backgroundSelectModal.style.display = "none";
     });
-
     _character_elements.backgroundSelectDialog.list.append(container);
   });
 };
+
 /**
  * Filters the backgrounds based on the search term.
  * @param {String} search 
  */
-
-
 exports.loadBackgroundList = loadBackgroundList;
-
 var filterBackgrounds = function filterBackgrounds(search) {
   if (!search || search.length == 0) {
     Array.from(backgroundSelectModalList.children).forEach(function (child) {
@@ -172,13 +142,11 @@ var filterBackgrounds = function filterBackgrounds(search) {
       }
     });
   }
-
   search = search.toLowerCase();
   Array.from(backgroundSelectModalList.children).forEach(function (child) {
     var background = getBackgrounds().find(function (back) {
       return child.getAttribute("id") === back.id;
     });
-
     if (background.id.includes(search) || background.name.toLowerCase().includes(search) || background.id.toLowerCase().split("_").includes(search)) {
       child.classList.remove("hidden");
       child.style.display = "inline-block";
@@ -188,13 +156,11 @@ var filterBackgrounds = function filterBackgrounds(search) {
     }
   });
 };
+
 /**
  * Load the background_select with background names.
  */
-
-
 exports.filterBackgrounds = filterBackgrounds;
-
 var startUp = function startUp() {
   var backgrounds = getBackgrounds();
   backgrounds.forEach(function (background) {
@@ -202,39 +168,27 @@ var startUp = function startUp() {
   });
   background_select.selectedIndex = -1;
 };
-
 exports.startUp = startUp;
 
-},{"../../collection/background_collection.js":7,"./character_elements.js":3,"./storage_api.js":6,"@babel/runtime/helpers/typeof":25}],2:[function(require,module,exports){
+},{"../../collection/background_collection.js":7,"./character_elements.js":3,"./storage_api.js":6,"@babel/runtime/helpers/typeof":28}],2:[function(require,module,exports){
 "use strict";
 
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
-
 var _typeof3 = require("@babel/runtime/helpers/typeof");
-
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.openCharacterDialog = exports.toggleAdded = exports.filterCharacters = exports.loadCharacterSelectList = exports.enableButtons = exports.updatePreviewOnForm = exports.findAndSelectDisplay = exports.deselectDisplay = exports.selectDisplay = exports.deleteCharacter = exports.copyCharacter = exports.updateCharacter = exports.createCharacter = exports.updateFieldsOnMagia = exports.updateFieldsOnRank = exports.updateFieldsOnName = exports.maximizeDisplay = exports.minimizeDisplay = exports.getMaxRank = exports.getMinRank = exports.getMaxLevel = exports.createDisplay = exports.getCharacterDisplay = exports.isValidCharacterDisplay = exports.getBasicCharacterDisplay = exports.sanitizeCharacter = exports.getCharacter = exports.startUp = exports.Character = exports.Display = exports.selectedCharacter = void 0;
-
+exports.updatePreviewOnForm = exports.updateFieldsOnRank = exports.updateFieldsOnName = exports.updateFieldsOnMagia = exports.updateCharacter = exports.toggleAdded = exports.startUp = exports.selectedCharacter = exports.selectDisplay = exports.sanitizeCharacter = exports.openCharacterDialog = exports.minimizeDisplay = exports.maximizeDisplay = exports.loadCharacterSelectList = exports.isValidCharacterDisplay = exports.getMinRank = exports.getMaxRank = exports.getMaxLevel = exports.getCharacterDisplay = exports.getCharacter = exports.getBasicCharacterDisplay = exports.findAndSelectDisplay = exports.filterCharacters = exports.enableButtons = exports.deselectDisplay = exports.deleteCharacter = exports.createDisplay = exports.createCharacter = exports.copyCharacter = exports.Display = exports.Character = void 0;
 var _slicedToArray2 = _interopRequireDefault(require("@babel/runtime/helpers/slicedToArray"));
-
 var _defineProperty2 = _interopRequireDefault(require("@babel/runtime/helpers/defineProperty"));
-
 var _toConsumableArray2 = _interopRequireDefault(require("@babel/runtime/helpers/toConsumableArray"));
-
 var _typeof2 = _interopRequireDefault(require("@babel/runtime/helpers/typeof"));
-
+var _createClass2 = _interopRequireDefault(require("@babel/runtime/helpers/createClass"));
 var _classCallCheck2 = _interopRequireDefault(require("@babel/runtime/helpers/classCallCheck"));
-
 var _character_collection = require("../../collection/character_collection.js");
-
 var _character_elements = require("./character_elements.js");
-
 var character_list_api = _interopRequireWildcard(require("./character_list_api.js"));
-
 var storage_api = _interopRequireWildcard(require("./storage_api.js"));
-
 function _getRequireWildcardCache(nodeInterop) {
   if (typeof WeakMap !== "function") return null;
   var cacheBabelInterop = new WeakMap();
@@ -243,31 +197,24 @@ function _getRequireWildcardCache(nodeInterop) {
     return nodeInterop ? cacheNodeInterop : cacheBabelInterop;
   })(nodeInterop);
 }
-
 function _interopRequireWildcard(obj, nodeInterop) {
   if (!nodeInterop && obj && obj.__esModule) {
     return obj;
   }
-
   if (obj === null || _typeof3(obj) !== "object" && typeof obj !== "function") {
     return {
       "default": obj
     };
   }
-
   var cache = _getRequireWildcardCache(nodeInterop);
-
   if (cache && cache.has(obj)) {
     return cache.get(obj);
   }
-
   var newObj = {};
   var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;
-
   for (var key in obj) {
     if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) {
       var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;
-
       if (desc && (desc.get || desc.set)) {
         Object.defineProperty(newObj, key, desc);
       } else {
@@ -275,60 +222,37 @@ function _interopRequireWildcard(obj, nodeInterop) {
       }
     }
   }
-
   newObj["default"] = obj;
-
   if (cache) {
     cache.set(obj, newObj);
   }
-
   return newObj;
 }
-
 function ownKeys(object, enumerableOnly) {
   var keys = Object.keys(object);
-
   if (Object.getOwnPropertySymbols) {
     var symbols = Object.getOwnPropertySymbols(object);
-
-    if (enumerableOnly) {
-      symbols = symbols.filter(function (sym) {
-        return Object.getOwnPropertyDescriptor(object, sym).enumerable;
-      });
-    }
-
-    keys.push.apply(keys, symbols);
+    enumerableOnly && (symbols = symbols.filter(function (sym) {
+      return Object.getOwnPropertyDescriptor(object, sym).enumerable;
+    })), keys.push.apply(keys, symbols);
   }
-
   return keys;
 }
-
 function _objectSpread(target) {
   for (var i = 1; i < arguments.length; i++) {
-    var source = arguments[i] != null ? arguments[i] : {};
-
-    if (i % 2) {
-      ownKeys(Object(source), true).forEach(function (key) {
-        (0, _defineProperty2["default"])(target, key, source[key]);
-      });
-    } else if (Object.getOwnPropertyDescriptors) {
-      Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
-    } else {
-      ownKeys(Object(source)).forEach(function (key) {
-        Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
-      });
-    }
+    var source = null != arguments[i] ? arguments[i] : {};
+    i % 2 ? ownKeys(Object(source), !0).forEach(function (key) {
+      (0, _defineProperty2["default"])(target, key, source[key]);
+    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) {
+      Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
+    });
   }
-
   return target;
 }
-
 var selectedCharacter = null;
 exports.selectedCharacter = selectedCharacter;
-
-var Display = function Display(id, name, rank, post_awaken, attribute, level, magic, magia, episode, doppel, se) {
+var Display = /*#__PURE__*/(0, _createClass2["default"])(function Display(id, name, rank, post_awaken, attribute, level, magic, magia, episode, doppel, se) {
   (0, _classCallCheck2["default"])(this, Display);
-
   if ((0, _typeof2["default"])(rank) !== undefined) {
     this.character_id = id;
     this.name = name;
@@ -355,25 +279,22 @@ var Display = function Display(id, name, rank, post_awaken, attribute, level, ma
     this.doppel = name.doppel;
     this.se = name.se;
   }
-};
-
+});
 exports.Display = Display;
 ;
-
-var Character = function Character(id, name, attribute, ranks) {
+var Character = /*#__PURE__*/(0, _createClass2["default"])(function Character(id, name, attribute, ranks) {
   (0, _classCallCheck2["default"])(this, Character);
   this.id = id;
   this.name = name;
   this.attribute = attribute;
   this.ranks = ranks;
-};
-
+});
 exports.Character = Character;
 ;
+
 /**
  * starts up the list.
  */
-
 var startUp = function startUp() {
   // initialize name field.
   (0, _toConsumableArray2["default"])(_character_collection.character_collection).sort(function (a, b) {
@@ -382,28 +303,23 @@ var startUp = function startUp() {
     _character_elements.character_elements.name_select.options.add(new Option(character.name, character.id, false));
   });
   _character_elements.character_elements.name_select.value = 1001;
-
   _character_elements.character_elements.name_select.dispatchEvent(new Event("change"));
-
   var character = getCharacter("1001");
   updateFormEnabled(character);
   updatePreviewDisplay(getBasicCharacterDisplay(character));
 };
+
 /**
  * get the attribute and rank for the character.
  * 
  * @param {String} id 
  */
-
-
 exports.startUp = startUp;
-
 var getCharacter = function getCharacter(id) {
   try {
     var character = _character_collection.character_collection.find(function (character) {
       return character.id === id;
     });
-
     var name = character.name;
     var attribute = character.attribute.toLowerCase();
     var ranks = character.ranks;
@@ -412,20 +328,16 @@ var getCharacter = function getCharacter(id) {
     return null;
   }
 };
+
 /**
  * removes the extra properties of the character.
  * 
  * @param {Character} character 
  */
-
-
 exports.getCharacter = getCharacter;
-
 var sanitizeCharacter = function sanitizeCharacter(character) {
   var removeId = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : true;
-
   var newCharacter = _objectSpread({}, character);
-
   if (removeId && newCharacter._id) delete newCharacter._id;
   if (newCharacter.name) delete newCharacter.name;
   if (newCharacter.attribute) delete newCharacter.attribute;
@@ -433,18 +345,17 @@ var sanitizeCharacter = function sanitizeCharacter(character) {
   if (newCharacter.release_date) delete newCharacter.release_date;
   return newCharacter;
 };
+
 /**
  * gets the basic display for the character.
  * 
  * @param {Character} character 
  */
-
-
 exports.sanitizeCharacter = sanitizeCharacter;
-
 var getBasicCharacterDisplay = function getBasicCharacterDisplay(character) {
   return new Display(character.id, character.name, getMinRank(character.ranks), false, character.attribute, "1", "0", "1", "1", false, "0");
 };
+
 /**
  * check if display is valid.
  * 
@@ -452,75 +363,67 @@ var getBasicCharacterDisplay = function getBasicCharacterDisplay(character) {
  * @param {Display} display 
  * @param {boolean} validName 
  */
-
-
 exports.getBasicCharacterDisplay = getBasicCharacterDisplay;
-
 var isValidCharacterDisplay = function isValidCharacterDisplay(character_id, display) {
   var validName = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : true;
   var character = getCharacter(character_id);
   if (!character) return ["Cannot get character."];
-  var err = []; // check id.
-
-  if (display.character_id !== character.id) err.push("Character ID ".concat(display.character_id, " does not match Character ID ").concat(character.id, ".")); // check name.
-
-  if (display.name !== character.name && validName) err.push("Name ".concat(display.name, " does not match Character Name ").concat(character.name, ".")); // check rank.
-
-  if (!character.ranks[display.rank]) err.push("Rank: ".concat(display.rank, " does not match Character Ranks ").concat(JSON.stringify(character.ranks))); // check level.
-
+  var err = [];
+  // check id.
+  if (display.character_id !== character.id) err.push("Character ID ".concat(display.character_id, " does not match Character ID ").concat(character.id, "."));
+  // check name.
+  if (display.name !== character.name && validName) err.push("Name ".concat(display.name, " does not match Character Name ").concat(character.name, "."));
+  // check rank.
+  if (!character.ranks[display.rank]) err.push("Rank: ".concat(display.rank, " does not match Character Ranks ").concat(JSON.stringify(character.ranks)));
+  // check level.
   var maxLevel = parseInt(getMaxLevel(display.rank));
-  if (parseInt(display.level) < 1 || parseInt(display.level) > maxLevel || !display.level) err.push("Level ".concat(display.level, " for Rank ").concat(display.rank, " must be between 1 and ").concat(maxLevel, ".")); // check magic.
-
-  if (display.magic < 0 || display.magic > 3) err.push("Magic ".concat(display.magic, " must be between 0 and 3.")); // check magia.
-
+  if (parseInt(display.level) < 1 || parseInt(display.level) > maxLevel || !display.level) err.push("Level ".concat(display.level, " for Rank ").concat(display.rank, " must be between 1 and ").concat(maxLevel, "."));
+  // check magic.
+  if (display.magic < 0 || display.magic > 3) err.push("Magic ".concat(display.magic, " must be between 0 and 3."));
+  // check magia.
   if (display.magia < 1 || display.magia > 5) err.push("Magia ".concat(display.magia, " must be between 1 and 5."));
-  if (display.magia > display.episode) err.push("Magia ".concat(display.magia, " must be less than or equal to Episode ").concat(display.episode, ".")); // check episode.
-
-  if (display.episode < 1 || display.episode > 5) err.push("Episode ".concat(display.episode, " must be between 1 and 5.")); // check doppel.
-
-  if (!(display.doppel === true || display.doppel === false) || display.doppel === true && (display.magia < 5 || display.rank < 5)) err.push("Doppel ".concat(display.doppel, " can only be true if Magia 5 and Rank 5.")); // check se.
-
+  if (display.magia > display.episode) err.push("Magia ".concat(display.magia, " must be less than or equal to Episode ").concat(display.episode, "."));
+  // check episode.
+  if (display.episode < 1 || display.episode > 5) err.push("Episode ".concat(display.episode, " must be between 1 and 5."));
+  // check doppel.
+  if (!(display.doppel === true || display.doppel === false) || display.doppel === true && (display.magia < 5 || display.rank < 5)) err.push("Doppel ".concat(display.doppel, " can only be true if Magia 5 and Rank 5."));
+  // check se.
   if (display.se < 0 || display.se > 100) err.push("Spirit Enhancement ".concat(display.se, " must be between 0 and 100."));
   return err;
 };
+
 /**
  * get Display from the form.
  * 
  * @return {Display}
  */
-
-
 exports.isValidCharacterDisplay = isValidCharacterDisplay;
-
 var getFormDisplay = function getFormDisplay() {
   var display = new Display(_character_elements.character_elements.name_select.value, _character_elements.character_elements.name_select[name_select.options.selectedIndex].text, _character_elements.character_elements.rank_select.value, _character_elements.character_elements.post_awaken_checkbox.checked, _character_collection.character_collection.find(function (_char) {
     return _char.id === _character_elements.character_elements.name_select.value;
   }).attribute.toLowerCase() || null, _character_elements.character_elements.level_select.value, _character_elements.character_elements.magic_select.value, _character_elements.character_elements.magia_select.value, _character_elements.character_elements.episode_select.value, _character_elements.character_elements.doppel_checkbox.checked, _character_elements.character_elements.se_select.value);
   return display;
 };
+
 /**
  * get Display from character display.
  * 
  * @param {HTMLDivElement} character_display
  * @return {Display}
  */
-
-
 var getCharacterDisplay = function getCharacterDisplay(character_display) {
   var display = new Display(character_display.getAttribute("character_id"), character_display.getAttribute("name"), character_display.getAttribute("rank"), character_display.getAttribute("post_awaken"), character_display.getAttribute("attribute"), character_display.getAttribute("level"), character_display.getAttribute("magic"), character_display.getAttribute("magia"), character_display.getAttribute("episode"), character_display.getAttribute("doppel"), character_display.getAttribute("se"));
   display._id = character_display.getAttribute("_id");
   return display;
 };
+
 /**
  * create a character display element from Display.
  * 
  * @param {Display} display
  * @return {HTMLDivElement}
  */
-
-
 exports.getCharacterDisplay = getCharacterDisplay;
-
 var createDisplay = function createDisplay(display) {
   var listener = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
   var character_display = document.createElement("div");
@@ -538,13 +441,11 @@ var createDisplay = function createDisplay(display) {
   character_display.setAttribute("doppel", display.doppel);
   character_display.setAttribute("se", display.se);
   character_display.innerHTML = "\n  <img class=\"background\" src=\"/magireco/assets/ui/bg/".concat(display.attribute, ".png\">\n  <img class=\"card_image\" src=\"/magireco/assets/image/card_").concat(display.character_id).concat(display.rank, "_f.png\">\n  <img class=\"frame_rank\" src=\"/magireco/assets/ui/frame/").concat(display.rank, ".png\">\n  <img class=\"star_rank\" src=\"/magireco/assets/ui/star/").concat(display.rank, ".png\">\n  <img class=\"attribute\" src=\"/magireco/assets/ui/attribute/").concat(display.attribute, ".png\">\n  <img class=\"magic\" src=\"/magireco/assets/ui/magic/").concat(display.magic, ".png\">\n  <img class=\"magia\" src=\"/magireco/assets/ui/magia/").concat(display.magia, "-").concat(display.episode, ".png\">\n  <div class=\"level\">\n    <div class=\"level_pre\">Lvl.</div>\n    <div class=\"level_num\">").concat(display.level, "</div>\n  </div>\n  <div class=\"se\">").concat(display.se, "/100</div>\n  <img class=\"doppel\" src=\"/magireco/assets/ui/doppel/").concat(display.doppel, ".png\">\n  <img class=\"post_awaken\" src=\"/magireco/assets/ui/gift/gift_").concat(display.post_awaken, ".png\">");
-
   if (listener) {
     character_display.addEventListener("click", function () {
       selectDisplay(character_display);
     });
   }
-
   character_display.addEventListener("contextmenu", function (e) {
     e.preventDefault();
     openCharacterDialog(_character_collection.character_collection.find(function (elem) {
@@ -553,19 +454,16 @@ var createDisplay = function createDisplay(display) {
   });
   return character_display;
 };
+
 /**
  * Gets the maximum level for the rank
  * 
  * @param {String} rank 
  */
-
-
 exports.createDisplay = createDisplay;
-
 var getMaxLevel = function getMaxLevel(rank) {
   if (rank == "1") return "40";else if (rank == "2") return "50";else if (rank == "3") return "60";else if (rank == "4") return "80";else if (rank == "5") return "100";
 };
-
 exports.getMaxLevel = getMaxLevel;
 var RANK_TO_LEVEL = {
   "1": "40",
@@ -574,77 +472,65 @@ var RANK_TO_LEVEL = {
   "4": "80",
   "5": "100"
 };
+
 /**
  * Gets the minimum (natural) rank from the character ranks object.
  * 
  * @param {Object} ranks 
  */
-
 var getMinRank = function getMinRank(ranks) {
   var minRank = "5";
   Object.entries(ranks).reverse().forEach(function (_ref) {
     var _ref2 = (0, _slicedToArray2["default"])(_ref, 2),
-        rank = _ref2[0],
-        value = _ref2[1];
-
+      rank = _ref2[0],
+      value = _ref2[1];
     return minRank = value ? rank : minRank;
   });
   return minRank;
 };
+
 /**
  * Gets the maximum rank from the character ranks object.
  * 
  * @param {Object} ranks 
  */
-
-
 exports.getMinRank = getMinRank;
-
 var getMaxRank = function getMaxRank(ranks) {
   var maxRank = "1";
   Object.entries(ranks).forEach(function (_ref3) {
     var _ref4 = (0, _slicedToArray2["default"])(_ref3, 2),
-        rank = _ref4[0],
-        value = _ref4[1];
-
+      rank = _ref4[0],
+      value = _ref4[1];
     return maxRank = value ? rank : maxRank;
   });
   return maxRank;
 };
+
 /**
  * Minimizes all the fields of the preview Character Display.
  */
-
-
 exports.getMaxRank = getMaxRank;
-
 var minimizeDisplay = function minimizeDisplay() {
   var character_display = getCharacterDisplay(display_preview.children[0]);
-
   var character = _character_collection.character_collection.find(function (_char2) {
     return _char2.id === character_display.character_id;
   });
-
   var minRank = getMinRank(character.ranks);
   var attribute = character.attribute.toLowerCase();
   var display = new Display(character.id, character.name, minRank, false, attribute, "1", "0", "1", "1", false, "0");
   updateForm(display);
   updatePreviewDisplay(display);
 };
+
 /**
  * Maximizes all the fields of the preview Character Display.
  */
-
-
 exports.minimizeDisplay = minimizeDisplay;
-
 var maximizeDisplay = function maximizeDisplay() {
   var character_display = getCharacterDisplay(display_preview.children[0]);
-
   var character = _character_collection.character_collection.find(function (_char3) {
     return _char3.id === character_display.character_id;
   });
-
   var maxRank = getMaxRank(character.ranks);
   var level = RANK_TO_LEVEL[maxRank];
   var attribute = character.attribute.toLowerCase();
@@ -652,29 +538,25 @@ var maximizeDisplay = function maximizeDisplay() {
   updateForm(display);
   updatePreviewDisplay(display);
 };
+
 /**
  * updates the display preview with Display.
  * 
  * @param {HTMLDivElement} display
  */
-
-
 exports.maximizeDisplay = maximizeDisplay;
-
 var updatePreviewDisplay = function updatePreviewDisplay(display) {
   var character_display = createDisplay(display);
   character_display.classList.add("preview");
   _character_elements.character_elements.display_preview.innerHTML = "";
-
   _character_elements.character_elements.display_preview.appendChild(character_display);
 };
+
 /**
  * updates the form with Display.
  * 
  * @param {Display} display
  */
-
-
 var updateForm = function updateForm(display) {
   _character_elements.character_elements.name_select.value = display.character_id;
   _character_elements.character_elements.rank_select.value = display.rank;
@@ -686,27 +568,24 @@ var updateForm = function updateForm(display) {
   _character_elements.character_elements.doppel_checkbox.checked = display.doppel === "true" || display.doppel === true ? true : false;
   _character_elements.character_elements.se_select.value = display.se;
 };
+
 /**
  * updates the form with the available options and selects lowest.
  * 
  * @param {Character} character
  */
-
-
 var updateFormEnabled = function updateFormEnabled(character) {
   // enable or disable the rank select.
   for (var i = 0; i < 5; i++) {
     _character_elements.character_elements.rank_select.options[i].disabled = !character.ranks[i + 1];
-  } // if the currently select rank is disabled, then select minimum available rank.
-
-
+  }
+  // if the currently select rank is disabled, then select minimum available rank.
   if (!character.ranks[rank_select.selectedIndex + 1]) {
-    _character_elements.character_elements.rank_select.selectedIndex = getMinRank(character.ranks) - 1; // update the level to match max rank.
-
+    _character_elements.character_elements.rank_select.selectedIndex = getMinRank(character.ranks) - 1;
+    // update the level to match max rank.
     _character_elements.character_elements.level_select.value = RANK_TO_LEVEL[_character_elements.character_elements.rank_select.value];
-  } // enable or disable the doppel select.
-
-
+  }
+  // enable or disable the doppel select.
   if (getMaxRank(character.ranks) == "5") {
     _character_elements.character_elements.doppel_checkbox.disabled = false;
   } else {
@@ -714,24 +593,22 @@ var updateFormEnabled = function updateFormEnabled(character) {
     _character_elements.character_elements.doppel_checkbox.checked = false;
   }
 };
+
 /**
  * gets the standard display given the display.
  * 
  * @param {Character} character 
  * @param {Display} display 
  */
-
-
 var updateCharacterWithDisplay = function updateCharacterWithDisplay(character, display) {
   // return the default display.
   if (!display) return getBasicCharacterDisplay(character);
   return new Display(character.id, character.name, display.rank, display.post_awaken, character.attribute, display.level, display.magic, display.magia, display.episode, display.doppel, display.se);
 };
+
 /**
  * updates the form fields with the selected character.
  */
-
-
 var updateFieldsOnName = function updateFieldsOnName() {
   var character = getCharacter(name_select.value);
   updateFormEnabled(character);
@@ -739,13 +616,11 @@ var updateFieldsOnName = function updateFieldsOnName() {
   updateForm(character_preview);
   updatePreviewDisplay(character_preview);
 };
+
 /**
  * updates the form fields with the selected character's rank.
  */
-
-
 exports.updateFieldsOnName = updateFieldsOnName;
-
 var updateFieldsOnRank = function updateFieldsOnRank() {
   var character = getCharacter(name_select.value);
   var form_display = getFormDisplay();
@@ -755,13 +630,11 @@ var updateFieldsOnRank = function updateFieldsOnRank() {
   updateForm(character_preview);
   updatePreviewDisplay(character_preview);
 };
+
 /**
  * updates the form fields with the selected character's magia.
  */
-
-
 exports.updateFieldsOnRank = updateFieldsOnRank;
-
 var updateFieldsOnMagia = function updateFieldsOnMagia() {
   var character = getCharacter(name_select.value);
   var form_display = getFormDisplay();
@@ -770,26 +643,22 @@ var updateFieldsOnMagia = function updateFieldsOnMagia() {
   updateForm(character_preview);
   updatePreviewDisplay(character_preview);
 };
+
 /**
  * adds a new character display to the list.
  */
-
-
 exports.updateFieldsOnMagia = updateFieldsOnMagia;
-
 var createCharacter = function createCharacter() {
   var display = getFormDisplay();
   var listId = character_list_api.getListId();
   display._id = generatePushID();
   storage_api.addCharacterToList(listId, display);
 };
+
 /**
  * updates the selected character display with the contents of the form.
  */
-
-
 exports.createCharacter = createCharacter;
-
 var updateCharacter = function updateCharacter() {
   var character_display = Array.from(document.querySelectorAll(".character_display:not(.preview)")).find(function (child) {
     return child.classList.contains("selected");
@@ -802,13 +671,11 @@ var updateCharacter = function updateCharacter() {
   };
   storage_api.updateCharacterOfList(character_list_api.getListId(), display._id, display);
 };
+
 /**
  * copies the contents of the selected display to the form.
  */
-
-
 exports.updateCharacter = updateCharacter;
-
 var copyCharacter = function copyCharacter() {
   var character_display = Array.from(document.querySelectorAll(".character_display:not(.preview)")).find(function (child) {
     return child.classList.contains("selected");
@@ -823,20 +690,17 @@ var copyCharacter = function copyCharacter() {
   updatePreviewDisplay(display);
   _character_elements.character_elements.character_error_text.innerHTML = "";
 };
+
 /**
  * deletes the selected character display and finds the next display to be selected.
  */
-
-
 exports.copyCharacter = copyCharacter;
-
 var deleteCharacter = function deleteCharacter() {
   var character_display = Array.from(document.querySelectorAll(".character_display:not(.preview)")).find(function (child) {
     return child.classList.contains("selected");
   });
   if (!character_display) return;
   var display = getCharacterDisplay(character_display);
-
   if (character_display.nextElementSibling) {
     exports.selectedCharacter = selectedCharacter = {
       characterDisplayId: character_display.nextElementSibling.getAttribute("_id")
@@ -848,26 +712,22 @@ var deleteCharacter = function deleteCharacter() {
   } else {
     exports.selectedCharacter = selectedCharacter = null;
   }
-
   var characterListId = character_list_api.getListId();
-
   if (Object.keys(storage_api.lists[characterListId].characterList).length === 1) {
     storage_api.updateListList(characterListId, false);
   } else {
     storage_api.deleteCharacterOfList(characterListId, display._id);
   }
 };
+
 /**
  * selects the display element.
  */
-
-
 exports.deleteCharacter = deleteCharacter;
-
 var selectDisplay = function selectDisplay(character_display) {
   // return of already selected.
-  if (character_display.classList.contains("selected")) return; // deselect all other character displays
-
+  if (character_display.classList.contains("selected")) return;
+  // deselect all other character displays
   document.querySelectorAll(".character_display:not(.preview)").forEach(function (child) {
     if (child.classList.contains("selected")) child.classList.remove("selected");
   });
@@ -875,21 +735,18 @@ var selectDisplay = function selectDisplay(character_display) {
   exports.selectedCharacter = selectedCharacter = {
     characterDisplayId: character_display.getAttribute("_id")
   };
-  enableButtons(); // update the form.
-
+  enableButtons();
+  // update the form.
   copyCharacter();
 };
+
 /**
  * deselects the select character display.
  */
-
-
 exports.selectDisplay = selectDisplay;
-
 var deselectDisplay = function deselectDisplay() {
   var deselect = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
   if (deselect) exports.selectedCharacter = selectedCharacter = null;
-
   if (selectedCharacter && selectedCharacter.characterDisplayId) {
     var character_display = document.querySelector(".character_display:not(.preview)[_id=\"".concat(selectedCharacter.characterDisplayId, "\"]"));
     if (character_display) character_display.classList.remove("selected");
@@ -897,31 +754,26 @@ var deselectDisplay = function deselectDisplay() {
     enableButtons();
   }
 };
+
 /**
  * finds and select the display element.
  */
-
-
 exports.deselectDisplay = deselectDisplay;
-
 var findAndSelectDisplay = function findAndSelectDisplay() {
   if (selectedCharacter && selectedCharacter.characterDisplayId) {
     var character_display = document.querySelector(".character_display:not(.preview)[_id=\"".concat(selectedCharacter.characterDisplayId, "\"]"));
     if (character_display) selectDisplay(character_display);
   }
 };
+
 /**
  * updates the preview character display with the contents of the form.
  */
-
-
 exports.findAndSelectDisplay = findAndSelectDisplay;
-
 var updatePreviewOnForm = function updatePreviewOnForm() {
   var display = getFormDisplay();
   character_error_text.innerHTML = '';
   var error = isValidCharacterDisplay(name_select.value, display);
-
   if (error.length == 0) {
     enableButtons();
     updatePreviewDisplay(display);
@@ -933,19 +785,16 @@ var updatePreviewOnForm = function updatePreviewOnForm() {
     _character_elements.character_elements.character_error_text.innerHTML = error.toString();
   }
 };
+
 /**
  * Enable and Disable the Character Buttons based on the current state.
  */
-
-
 exports.updatePreviewOnForm = updatePreviewOnForm;
-
 var enableButtons = function enableButtons() {
   if (character_list_api.selectedList && character_list_api.selectedList.listId) {
     if (_character_elements.character_elements.create_button.disabled) _character_elements.character_elements.create_button.disabled = false;
     if (_character_elements.character_elements.min_all_button.disabled) _character_elements.character_elements.min_all_button.disabled = false;
     if (_character_elements.character_elements.max_all_button.disabled) _character_elements.character_elements.max_all_button.disabled = false;
-
     if (selectedCharacter && selectedCharacter.characterDisplayId) {
       if (_character_elements.character_elements.update_button.disabled) _character_elements.character_elements.update_button.disabled = false;
       if (_character_elements.character_elements.copy_button.disabled) _character_elements.character_elements.copy_button.disabled = false;
@@ -966,21 +815,17 @@ var enableButtons = function enableButtons() {
     if (!_character_elements.character_elements.max_all_button.disabled) _character_elements.character_elements.max_all_button.disabled = true;
   }
 };
+
 /**
  * opens the modal dialog for character selection user interface.
  */
-
-
 exports.enableButtons = enableButtons;
-
 var loadCharacterSelectList = function loadCharacterSelectList() {
   _character_elements.characterSelectDialog.list.innerHTML = "";
-
   _character_collection.character_collection.forEach(function (character) {
     var star = Object.entries(character.ranks).find(function (_ref5) {
       var _ref6 = (0, _slicedToArray2["default"])(_ref5, 2),
-          val = _ref6[1];
-
+        val = _ref6[1];
       return val === true;
     })[0][0];
     var added = Object.values(storage_api.lists[character_list_api.getListId()].characterList).filter(function (_char4) {
@@ -993,39 +838,32 @@ var loadCharacterSelectList = function loadCharacterSelectList() {
     image.src = "/magireco/assets/image/card_".concat(character.id).concat(star, "_f.png");
     image.title = character.name;
     container.append(image);
-
     if (added.length > 0) {
       var text = document.createElement("label");
       text.classList.add("character_label");
       text.innerHTML = "✓";
       container.append(text);
     }
-
     container.addEventListener("click", function () {
       name_select.value = character.id;
       name_select.dispatchEvent(new Event("change"));
-
       _character_elements.characterSelectDialog.close();
     });
     container.addEventListener("contextmenu", function (e) {
       e.preventDefault();
       openCharacterDialog(character, added);
     });
-
     _character_elements.characterSelectDialog.list.append(container);
   });
-
   toggleAdded(_character_elements.characterSelectDialog.added.checked);
 };
+
 /**
  * Filters the character_image_preview's based on the search.
  * 
  * @param {String} search
  */
-
-
 exports.loadCharacterSelectList = loadCharacterSelectList;
-
 var filterCharacters = function filterCharacters(search) {
   if (!search || search.length == 0) {
     Array.from(_character_elements.characterSelectDialog.list.children).forEach(function (child) {
@@ -1035,18 +873,15 @@ var filterCharacters = function filterCharacters(search) {
       }
     });
   }
-
   search = search.toLowerCase();
   Array.from(_character_elements.characterSelectDialog.list.children).forEach(function (child) {
     var character = _character_collection.character_collection.find(function (_char5) {
       return child.getAttribute("character_id") === _char5.id;
     });
-
     if (character.id.includes(search) || character.name.toLowerCase().includes(search) || character.attribute.toLowerCase().includes(search) || Object.entries(character.ranks).some(function (_ref7) {
       var _ref8 = (0, _slicedToArray2["default"])(_ref7, 2),
-          rank = _ref8[0],
-          value = _ref8[1];
-
+        rank = _ref8[0],
+        value = _ref8[1];
       return value && rank.includes(search);
     })) {
       child.classList.remove("hidden");
@@ -1058,15 +893,13 @@ var filterCharacters = function filterCharacters(search) {
   });
   toggleAdded(_character_elements.characterSelectDialog.added.checked);
 };
+
 /**
  * Toggles the visibility of the character previews of added.
  * 
  * @param {boolean} value 
  */
-
-
 exports.filterCharacters = filterCharacters;
-
 var toggleAdded = function toggleAdded(value) {
   if (value) {
     Array.from(_character_elements.characterSelectDialog.list.children).forEach(function (child) {
@@ -1078,16 +911,14 @@ var toggleAdded = function toggleAdded(value) {
     });
   }
 };
+
 /**
  * Opens the Message Dialog with the Character Info.
  * 
  * @param {Character} character 
  * @param {Display} displays 
  */
-
-
 exports.toggleAdded = toggleAdded;
-
 var openCharacterDialog = function openCharacterDialog(character, displays) {
   var text = "ID: ".concat(character.id, "  \nAttribute: ").concat(character.attribute, "  \nRanks: ").concat(Object.keys(character.ranks).filter(function (key) {
     return character.ranks[key];
@@ -1096,23 +927,20 @@ var openCharacterDialog = function openCharacterDialog(character, displays) {
   displays.forEach(function (display) {
     text += "\nRank: ".concat(display.rank, "    \nPost Awaken: ").concat(display.post_awaken, "    \nLevel: ").concat(display.level, "    \nMagic: ").concat(display.magic, "    \nMagia: ").concat(display.magia, "    \nEpisode: ").concat(display.episode, "    \nDoppel: ").concat(display.doppel, "    \nSpirit Enhancement: ").concat(display.se, "\n");
   });
-
   _character_elements.messageDialog.open("".concat(character.name, " Details"), text);
 };
-
 exports.openCharacterDialog = openCharacterDialog;
 
-},{"../../collection/character_collection.js":8,"./character_elements.js":3,"./character_list_api.js":4,"./storage_api.js":6,"@babel/runtime/helpers/classCallCheck":16,"@babel/runtime/helpers/defineProperty":17,"@babel/runtime/helpers/interopRequireDefault":18,"@babel/runtime/helpers/slicedToArray":23,"@babel/runtime/helpers/toConsumableArray":24,"@babel/runtime/helpers/typeof":25}],3:[function(require,module,exports){
+},{"../../collection/character_collection.js":8,"./character_elements.js":3,"./character_list_api.js":4,"./storage_api.js":6,"@babel/runtime/helpers/classCallCheck":16,"@babel/runtime/helpers/createClass":17,"@babel/runtime/helpers/defineProperty":18,"@babel/runtime/helpers/interopRequireDefault":19,"@babel/runtime/helpers/slicedToArray":24,"@babel/runtime/helpers/toConsumableArray":25,"@babel/runtime/helpers/typeof":28}],3:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.importListDialog = exports.backgroundSelectDialog = exports.characterSelectDialog = exports.messageDialog = exports.character_elements = void 0;
+exports.messageDialog = exports.importListDialog = exports.character_elements = exports.characterSelectDialog = exports.backgroundSelectDialog = void 0;
 /**
  * Elements for the Character Page.
  */
-
 var character_elements = {
   // Header
   theme_button: document.querySelector("#theme_button"),
@@ -1228,8 +1056,9 @@ var character_elements = {
   // Character List
   character_list_container: document.querySelector("#character_list_container"),
   character_list_content: document.querySelector("#character_list_content")
-}; // Message Modal
+};
 
+// Message Modal
 exports.character_elements = character_elements;
 var messageDialog = {
   modal: document.querySelector("#messageModal"),
@@ -1257,8 +1086,9 @@ var messageDialog = {
   isOpen: function isOpen() {
     return messageDialog.modal.style.display === "block";
   }
-}; // Character Select Modal
+};
 
+// Character Select Modal
 exports.messageDialog = messageDialog;
 var characterSelectDialog = {
   modal: document.querySelector("#characterSelectModal"),
@@ -1281,8 +1111,9 @@ var characterSelectDialog = {
   isOpen: function isOpen() {
     return characterSelectDialog.modal.style.display === "block";
   }
-}; // Background Select Modal
+};
 
+// Background Select Modal
 exports.characterSelectDialog = characterSelectDialog;
 var backgroundSelectDialog = {
   modal: document.querySelector("#backgroundSelectModal"),
@@ -1303,8 +1134,9 @@ var backgroundSelectDialog = {
   isOpen: function isOpen() {
     return backgroundSelectDialog.modal.style.display === "block";
   }
-}; // Import List Modal
+};
 
+// Import List Modal
 exports.backgroundSelectDialog = backgroundSelectDialog;
 var importListDialog = {
   modal: document.querySelector("#importListModal"),
@@ -1337,30 +1169,19 @@ exports.importListDialog = importListDialog;
 "use strict";
 
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
-
 var _typeof = require("@babel/runtime/helpers/typeof");
-
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.importList = exports.openExportModal = exports.openStatsModal = exports.getMoreStats = exports.getStats = exports.resetFilters = exports.applyFilters = exports.getFilters = exports.createFilter = exports.zoom_fit = exports.setZoom = exports.changeZoom = exports.setPadding = exports.changePadding = exports.changeAlignment = exports.changeDisplaysPerRow = exports.createGroups = exports.displayGroups = exports.applyProfileToList = exports.getSelectedList = exports.checkListName = exports.getCharacterList = exports.getListId = exports.getListName = exports.updateList = exports.deleteList = exports.duplicateList = exports.renameList = exports.createList = exports.selectList = exports.setLists = exports.NUM_TO_WORD = exports.NUM_TO_ATT = exports.ATT_TO_NUM = exports.DIR_TO_FLEX = exports.selectedList = void 0;
-
+exports.zoom_fit = exports.updateList = exports.setZoom = exports.setPadding = exports.setLists = exports.selectedList = exports.selectList = exports.resetFilters = exports.renameList = exports.openStatsModal = exports.openExportModal = exports.importList = exports.getStats = exports.getSelectedList = exports.getMoreStats = exports.getListName = exports.getListId = exports.getFilters = exports.getCharacterList = exports.duplicateList = exports.displayGroups = exports.deleteList = exports.createList = exports.createGroups = exports.createFilter = exports.checkListName = exports.changeZoom = exports.changePadding = exports.changeDisplaysPerRow = exports.changeAlignment = exports.applyProfileToList = exports.applyFilters = exports.NUM_TO_WORD = exports.NUM_TO_ATT = exports.DIR_TO_FLEX = exports.ATT_TO_NUM = void 0;
 var _slicedToArray2 = _interopRequireDefault(require("@babel/runtime/helpers/slicedToArray"));
-
 var _character_collection = require("../../collection/character_collection.js");
-
 var background_api = _interopRequireWildcard(require("./background_api.js"));
-
 var _character_elements = require("./character_elements.js");
-
 var character_api = _interopRequireWildcard(require("./character_api.js"));
-
 var profile_api = _interopRequireWildcard(require("./profile_api.js"));
-
 var storage_api = _interopRequireWildcard(require("./storage_api.js"));
-
 var utils = _interopRequireWildcard(require("../../shared/js/utils.js"));
-
 function _getRequireWildcardCache(nodeInterop) {
   if (typeof WeakMap !== "function") return null;
   var cacheBabelInterop = new WeakMap();
@@ -1369,31 +1190,24 @@ function _getRequireWildcardCache(nodeInterop) {
     return nodeInterop ? cacheNodeInterop : cacheBabelInterop;
   })(nodeInterop);
 }
-
 function _interopRequireWildcard(obj, nodeInterop) {
   if (!nodeInterop && obj && obj.__esModule) {
     return obj;
   }
-
   if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") {
     return {
       "default": obj
     };
   }
-
   var cache = _getRequireWildcardCache(nodeInterop);
-
   if (cache && cache.has(obj)) {
     return cache.get(obj);
   }
-
   var newObj = {};
   var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;
-
   for (var key in obj) {
     if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) {
       var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;
-
       if (desc && (desc.get || desc.set)) {
         Object.defineProperty(newObj, key, desc);
       } else {
@@ -1401,26 +1215,19 @@ function _interopRequireWildcard(obj, nodeInterop) {
       }
     }
   }
-
   newObj["default"] = obj;
-
   if (cache) {
     cache.set(obj, newObj);
   }
-
   return newObj;
 }
-
 function _createForOfIteratorHelper(o, allowArrayLike) {
   var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"];
-
   if (!it) {
     if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") {
       if (it) o = it;
       var i = 0;
-
       var F = function F() {};
-
       return {
         s: F,
         n: function n() {
@@ -1438,13 +1245,11 @@ function _createForOfIteratorHelper(o, allowArrayLike) {
         f: F
       };
     }
-
     throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
   }
-
   var normalCompletion = true,
-      didErr = false,
-      err;
+    didErr = false,
+    err;
   return {
     s: function s() {
       it = it.call(o);
@@ -1467,7 +1272,6 @@ function _createForOfIteratorHelper(o, allowArrayLike) {
     }
   };
 }
-
 function _unsupportedIterableToArray(o, minLen) {
   if (!o) return;
   if (typeof o === "string") return _arrayLikeToArray(o, minLen);
@@ -1476,24 +1280,18 @@ function _unsupportedIterableToArray(o, minLen) {
   if (n === "Map" || n === "Set") return Array.from(o);
   if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);
 }
-
 function _arrayLikeToArray(arr, len) {
   if (len == null || len > arr.length) len = arr.length;
-
-  for (var i = 0, arr2 = new Array(len); i < len; i++) {
-    arr2[i] = arr[i];
-  }
-
+  for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i];
   return arr2;
 }
 /**
  * Character List API for the Character Page.
  */
 
-
 var selectedList = null;
-/* ------------------------------ Constants and Mappings ------------------------------ */
 
+/* ------------------------------ Constants and Mappings ------------------------------ */
 exports.selectedList = selectedList;
 var DIR_TO_FLEX = {
   "left": "flex-start",
@@ -1527,14 +1325,13 @@ var NUM_TO_WORD = {
   "4": "four",
   "5": "five"
 };
+
 /* ------------------------------ Load and Select Lists ------------------------------ */
 
 /**
  * Loads all the lists.
  */
-
 exports.NUM_TO_WORD = NUM_TO_WORD;
-
 var setLists = function setLists(lists) {
   exports.selectedList = selectedList = {
     listId: list_name_title.getAttribute("listId"),
@@ -1544,18 +1341,15 @@ var setLists = function setLists(lists) {
   _character_elements.character_elements.list_name_title.innerHTML = "";
   _character_elements.character_elements.list_stats_list.innerHTML = "";
   _character_elements.character_elements.public_list_select.innerHTML = "";
-
   var _loop = function _loop() {
     var _Object$entries$_i = (0, _slicedToArray2["default"])(_Object$entries[_i], 2),
-        listId = _Object$entries$_i[0],
-        list = _Object$entries$_i[1]; // update the fields of each character.
-
-
+      listId = _Object$entries$_i[0],
+      list = _Object$entries$_i[1];
+    // update the fields of each character.
     Object.entries(list.characterList).forEach(function (_ref) {
       var _ref2 = (0, _slicedToArray2["default"])(_ref, 2),
-          key = _ref2[0],
-          display = _ref2[1];
-
+        key = _ref2[0],
+        display = _ref2[1];
       display._id = key;
       if (display.doppel == "unlocked") display.doppel = true;else if (display.doppel == "locked") display.doppel = false;
       if (display.se === undefined) display.se = "0";
@@ -1571,18 +1365,13 @@ var setLists = function setLists(lists) {
       selectList(listId, list, false);
     });
     div.append(entry);
-
     _character_elements.character_elements.saved_character_lists.append(div);
-
     _character_elements.character_elements.public_list_select.options.add(new Option(list.name, listId, false));
   };
-
   for (var _i = 0, _Object$entries = Object.entries(lists); _i < _Object$entries.length; _i++) {
     _loop();
   }
-
   if (storage_api.user.publicListId) _character_elements.character_elements.public_list_select.value = storage_api.user.publicListId;else _character_elements.character_elements.public_list_select.selectedIndex = -1;
-
   if (Object.entries(lists).length > 0) {
     if (selectedList && selectedList.listId && lists[selectedList.listId]) {
       selectList(selectedList.listId, lists[selectedList.listId]);
@@ -1591,13 +1380,13 @@ var setLists = function setLists(lists) {
     } else {
       var first = Object.entries(lists)[0][0];
       selectList(first, lists[first]);
-    } // enable list rename, duplicate and delete buttons
-
-
+    }
+    // enable list rename, duplicate and delete buttons
     _character_elements.character_elements.rename_list_button.disabled = false;
     _character_elements.character_elements.duplicate_list_button.disabled = false;
     _character_elements.character_elements.delete_list_button.disabled = false;
-  } // disable list rename, duplicate and delete buttons if no list
+  }
+  // disable list rename, duplicate and delete buttons if no list
   else {
     _character_elements.character_elements.rename_list_button.disabled = true;
     _character_elements.character_elements.duplicate_list_button.disabled = true;
@@ -1605,19 +1394,16 @@ var setLists = function setLists(lists) {
     _character_elements.character_elements.character_list_content.innerHTML = "";
   }
 };
+
 /**
  * Selects the list listId and applies the list.
  * 
  * @param {String} listId 
  * @param {Object} list 
  */
-
-
 exports.setLists = setLists;
-
 var selectList = function selectList(listId, list) {
   var refresh = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : true;
-
   if (listId && !list) {
     list = storage_api.lists[listId];
   } else if (!listId || !list) {
@@ -1625,14 +1411,12 @@ var selectList = function selectList(listId, list) {
     listId = first;
     list = storage_api.lists[first];
   }
-
   var _iterator = _createForOfIteratorHelper(document.querySelectorAll(".character_list_entry")),
-      _step;
-
+    _step;
   try {
     for (_iterator.s(); !(_step = _iterator.n()).done;) {
-      var element = _step.value; // element already selected.
-
+      var element = _step.value;
+      // element already selected.
       if (element.getAttribute("listId") === listId) {
         if (element.classList.contains("selected")) return;else {
           element.classList.add("selected");
@@ -1648,47 +1432,38 @@ var selectList = function selectList(listId, list) {
   } finally {
     _iterator.f();
   }
-
   exports.selectedList = selectedList = {
     listId: listId,
     list: list
   };
   _character_elements.character_elements.list_name_title.innerHTML = list.name;
-
   _character_elements.character_elements.list_name_title.setAttribute("listId", listId);
-
   profile_api.setProfile(list.selectedProfile);
   applyProfileToList(listId, list.selectedProfile);
   setPadding(storage_api.settings.padding_top, storage_api.settings.padding_left, storage_api.settings.padding_right, storage_api.settings.padding_bottom);
   applyFilters();
   background_api.setBackground(list.selectedBackground);
-  getStats(); // select only if refreshing list, otherwise do not select.
-
+  getStats();
+  // select only if refreshing list, otherwise do not select.
   if (refresh) character_api.findAndSelectDisplay();else character_api.deselectDisplay(true);
   character_api.enableButtons();
   storage_api.updateSettings("selected_character_list", listId);
 };
+
 /* ------------------------------ Create and Delete List ------------------------------ */
 
 /**
  * creates a new list.
  */
-
-
 exports.selectList = selectList;
-
 var createList = function createList() {
   var listName = create_list_name_field.value;
-
   if (!listName) {
     home_error_text.innerHTML = "The list name must not be empty.";
     return;
   }
-
   _character_elements.character_elements.create_list_name_field.value = "";
-
   _character_elements.character_elements.new_list_button.classList.replace("minus", "add");
-
   _character_elements.character_elements.list_create.style.visibility = "collapse";
   _character_elements.character_elements.list_create.style.display = "none";
   _character_elements.character_elements.list_name_title.innerHTML = listName;
@@ -1696,16 +1471,14 @@ var createList = function createList() {
   _character_elements.character_elements.character_list_content.innerHTML = "";
   storage_api.createList(listName);
 };
+
 /**
  * Renames the list listId with name newName.
  * 
  * @param {String} listId 
  * @param {String} newName 
  */
-
-
 exports.createList = createList;
-
 var renameList = function renameList(listId, newName) {
   if (listId && newName && newName.length > 0) {
     storage_api.renameList(listId, newName);
@@ -1714,16 +1487,14 @@ var renameList = function renameList(listId, newName) {
     _character_elements.character_elements.list_rename.style.display = "none";
   }
 };
+
 /**
  * Duplicates the list with name newName.
  * 
  * @param {Object} list 
  * @param {String} newName 
  */
-
-
 exports.renameList = renameList;
-
 var duplicateList = function duplicateList(list, newName) {
   if (list && newName && newName.length > 0) {
     var newCharacterList = {};
@@ -1739,36 +1510,31 @@ var duplicateList = function duplicateList(list, newName) {
     _character_elements.character_elements.list_duplicate.style.display = "none";
   }
 };
+
 /**
  * Deletes the list listId.
  * 
  * @param {String} listId 
  */
-
-
 exports.duplicateList = duplicateList;
-
 var deleteList = function deleteList(listId) {
   exports.selectedList = selectedList = null;
   storage_api.updateSettings("selected_character_list", false);
   storage_api.deleteList(listId);
 };
+
 /**
  * Updates the list in the database with the list name, characters, and profile.
  */
-
-
 exports.deleteList = deleteList;
-
 var updateList = function updateList() {
   var listId = getListId();
   var listName = getListName();
   var characterList = {};
   Object.entries(storage_api.lists[listId].characterList).forEach(function (_ref3) {
     var _ref4 = (0, _slicedToArray2["default"])(_ref3, 2),
-        key = _ref4[0],
-        value = _ref4[1];
-
+      key = _ref4[0],
+      value = _ref4[1];
     return characterList[key] = character_api.sanitizeCharacter(value);
   });
   var selectedProfile = profile_api.getSelectedProfileId();
@@ -1776,37 +1542,31 @@ var updateList = function updateList() {
   if (!listName) return;
   storage_api.updateList(listId, listName, characterList, selectedProfile, selectedBackground);
 };
+
 /* ------------------------------ Get the Selected List ------------------------------ */
 
 /**
  * returns the list name.
  */
-
-
 exports.updateList = updateList;
-
 var getListName = function getListName() {
   return _character_elements.character_elements.list_name_title.innerText;
 };
+
 /**
  * returns the list id.
  */
-
-
 exports.getListName = getListName;
-
 var getListId = function getListId() {
   return _character_elements.character_elements.list_name_title.getAttribute("listId");
 };
+
 /**
  * returns all the character displays in a list.
  * 
  * @param {boolean} keep_id
  */
-
-
 exports.getListId = getListId;
-
 var getCharacterList = function getCharacterList() {
   var keep_id = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : true;
   var characterList = {};
@@ -1818,15 +1578,13 @@ var getCharacterList = function getCharacterList() {
   if (Object.keys(characterList).length == 0) characterList = true;
   return characterList;
 };
+
 /**
  * checks if the list name exists.
  * 
  * @param {String} listName
  */
-
-
 exports.getCharacterList = getCharacterList;
-
 var checkListName = function checkListName(listName) {
   if (!listName || listName.length === 0) _character_elements.character_elements.home_error_text.innerHTML = "The list name must not be empty.";else if (storage_api.listExists(listName)) _character_elements.character_elements.home_error_text.innerHTML = "The list name ".concat(listName, " already exists.");else {
     _character_elements.character_elements.home_error_text.innerHTML = "";
@@ -1834,17 +1592,14 @@ var checkListName = function checkListName(listName) {
   }
   return false;
 };
+
 /** 
  * returns the selected list.
  */
-
-
 exports.checkListName = checkListName;
-
 var getSelectedList = function getSelectedList() {
   var _iterator2 = _createForOfIteratorHelper(document.querySelectorAll(".character_list_entry")),
-      _step2;
-
+    _step2;
   try {
     for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
       var element = _step2.value;
@@ -1855,9 +1610,9 @@ var getSelectedList = function getSelectedList() {
   } finally {
     _iterator2.f();
   }
-
   return null;
 };
+
 /* ------------------------------ Sort Current List ------------------------------ */
 
 /**
@@ -1866,24 +1621,18 @@ var getSelectedList = function getSelectedList() {
  * @param {String} listId 
  * @param {String} profileId 
  */
-
-
 exports.getSelectedList = getSelectedList;
-
 var applyProfileToList = function applyProfileToList(listId, profileId) {
-  var characterList = storage_api.lists[listId].characterList; // modify the list.
-
+  var characterList = storage_api.lists[listId].characterList;
+  // modify the list.
   Object.entries(characterList).forEach(function (_ref5) {
     var _ref6 = (0, _slicedToArray2["default"])(_ref5, 2),
-        key = _ref6[0],
-        display = _ref6[1];
-
+      key = _ref6[0],
+      display = _ref6[1];
     display._id = key;
-
     var character = _character_collection.character_collection.find(function (character) {
       return display.character_id == character.id;
     });
-
     display.attribute = character.attribute.toLowerCase();
     display.obtainability = character.obtainability;
     display.release_date = new Date(character.release_date + "PST").getTime();
@@ -1894,28 +1643,24 @@ var applyProfileToList = function applyProfileToList(listId, profileId) {
   _character_elements.character_elements.character_list_content.innerHTML = '';
   displayGroups(_character_elements.character_elements.character_list_content, groups);
 };
+
 /**
  * Adds the groups to the parent element.
  * 
  * @param {HTMLDivElement} parent 
  * @param {Object} groups 
  */
-
-
 exports.applyProfileToList = applyProfileToList;
-
 var displayGroups = function displayGroups(parent, groups) {
   Object.entries(groups).forEach(function (_ref7) {
     var _ref8 = (0, _slicedToArray2["default"])(_ref7, 2),
-        key = _ref8[0],
-        group = _ref8[1];
-
+      key = _ref8[0],
+      group = _ref8[1];
     var group_row = document.createElement("div");
     group_row.classList.add("character_row");
     group_row.style.width = "".concat(storage_api.settings.displays_per_row * 122, "px");
     group_row.setAttribute("group", key);
     group_row.style.justifyContent = DIR_TO_FLEX[storage_api.settings.display_alignment];
-
     if (group instanceof Array) {
       group.forEach(function (display) {
         var character_display = character_api.createDisplay(display, true);
@@ -1924,10 +1669,10 @@ var displayGroups = function displayGroups(parent, groups) {
     } else {
       displayGroups(group_row, group);
     }
-
     parent.appendChild(group_row);
   });
 };
+
 /**
  * Create the group and sort order for the characterList and rules.
  * 
@@ -1936,21 +1681,17 @@ var displayGroups = function displayGroups(parent, groups) {
  * 
  * @returns {Object}
  */
-
-
 exports.displayGroups = displayGroups;
-
 var createGroups = function createGroups(characterList, rules) {
   var groups = [];
-  var sorts = []; // parse the rules;
-
+  var sorts = [];
+  // parse the rules;
   Object.entries(rules).sort(function (a, b) {
     return a[1].index > b[1].index ? 1 : -1;
   }).forEach(function (_ref9) {
     var _ref10 = (0, _slicedToArray2["default"])(_ref9, 2),
-        ruleId = _ref10[0],
-        rule = _ref10[1];
-
+      ruleId = _ref10[0],
+      rule = _ref10[1];
     if (rule.state === "group") {
       groups.push(rule);
     } else if (rule.state === "sort") {
@@ -1967,6 +1708,7 @@ var createGroups = function createGroups(characterList, rules) {
   var characterGroups = groupAndSort(Object.values(characterList), groups, sorts);
   return characterGroups;
 };
+
 /**
  * Recursively groups the characterList into groups and then sorts.
  * 
@@ -1976,10 +1718,7 @@ var createGroups = function createGroups(characterList, rules) {
  * 
  * @returns {Object}
  */
-
-
 exports.createGroups = createGroups;
-
 var groupAndSort = function groupAndSort(characterList, rules, sorts) {
   if (rules.length == 0) {
     var sorted = characterList;
@@ -1998,14 +1737,14 @@ var groupAndSort = function groupAndSort(characterList, rules, sorts) {
     var groups = group_properties(characterList, rule.type, rule.direction);
     Object.entries(groups).forEach(function (_ref11) {
       var _ref12 = (0, _slicedToArray2["default"])(_ref11, 2),
-          key = _ref12[0],
-          group = _ref12[1];
-
+        key = _ref12[0],
+        group = _ref12[1];
       groups[key] = groupAndSort(group, rules.slice(1), sorts);
     });
     return groups;
   }
 };
+
 /**
  * adds each display_property to the corresponding group.
  * 
@@ -2015,11 +1754,8 @@ var groupAndSort = function groupAndSort(characterList, rules, sorts) {
  * 
  * @returns {Object}
  */
-
-
 var group_properties = function group_properties(display_properties, group_by, group_dir) {
   var display_groups = {};
-
   if (group_by == "attribute") {
     if (group_dir == 1) display_groups = {
       "flame": [],
@@ -2154,9 +1890,9 @@ var group_properties = function group_properties(display_properties, group_by, g
       display_groups.none.push(properties);
     });
   }
-
   return display_groups;
 };
+
 /* ------------------------------ Display Settings ------------------------------ */
 
 /**
@@ -2164,23 +1900,19 @@ var group_properties = function group_properties(display_properties, group_by, g
  * 
  * @param {Number} displays 
  */
-
-
 var changeDisplaysPerRow = function changeDisplaysPerRow(displays) {
   storage_api.settings.displays_per_row = displays;
   document.querySelectorAll(".character_row").forEach(function (character_row) {
     character_row.style.width = "".concat(displays * 122, "px");
   });
 };
+
 /**
  * Sets the alignment of the character rows.
  * 
  * @param {String} alignment 
  */
-
-
 exports.changeDisplaysPerRow = changeDisplaysPerRow;
-
 var changeAlignment = function changeAlignment(alignment) {
   storage_api.settings.display_alignment = alignment;
   storage_api.updateSettings("display_alignment", alignment);
@@ -2188,20 +1920,19 @@ var changeAlignment = function changeAlignment(alignment) {
     character_row.style.justifyContent = DIR_TO_FLEX[alignment];
   });
 };
+
 /**
  * Changes the padding in the direction.
  * 
  * @param {String} direction 
  * @param {Number} padding 
  */
-
-
 exports.changeAlignment = changeAlignment;
-
 var changePadding = function changePadding(direction, padding) {
   storage_api.settings["padding_".concat(direction)] = padding;
   setPadding(storage_api.settings.padding_top, storage_api.settings.padding_left, storage_api.settings.padding_right, storage_api.settings.padding_bottom);
 };
+
 /**
  * Sets the padding of the list.
  * 
@@ -2210,13 +1941,11 @@ var changePadding = function changePadding(direction, padding) {
  * @param {Number} right 
  * @param {Number} bottom 
  */
-
-
 exports.changePadding = changePadding;
-
 var setPadding = function setPadding(top, left, right, bottom) {
   _character_elements.character_elements.character_list_content.style.padding = "".concat(top, "px ").concat(right, "px ").concat(bottom, "px ").concat(left, "px");
 };
+
 /* ------------------------------ List Zoom ------------------------------ */
 
 /**
@@ -2224,41 +1953,31 @@ var setPadding = function setPadding(top, left, right, bottom) {
  * 
  * @param {Number} zoom 
  */
-
-
 exports.setPadding = setPadding;
-
 var changeZoom = function changeZoom(zoom) {
   storage_api.updateSettings("character_zoom", zoom);
   setZoom(zoom);
 };
+
 /**
  * sets the zoom of the character list.
  * 
  * @param {Number} zoom 
  */
-
-
 exports.changeZoom = changeZoom;
-
 var setZoom = function setZoom(zoom) {
   _character_elements.character_elements.character_list_content.style.zoom = zoom / 100;
 };
+
 /**
  * sets the zoom of the character list to fit.
  */
-
-
 exports.setZoom = setZoom;
-
 var zoom_fit = function zoom_fit() {
   if (_character_elements.character_elements.character_list_content.innerHTML) {
     var row = _character_elements.character_elements.character_list_content.querySelector(".character_row");
-
     var list_width = row.clientWidth;
-
     var list_height = row.clientHeight * _character_elements.character_elements.character_list_content.querySelectorAll(".character_row").length;
-
     var container_width = _character_elements.character_elements.character_list_content.clientWidth;
     var container_height = _character_elements.character_elements.character_list_content.clientHeight;
     var ratio = Math.min((container_width - 40) / list_width, (container_height - 40) / list_height);
@@ -2269,6 +1988,7 @@ var zoom_fit = function zoom_fit() {
     _character_elements.character_elements.zoom_field.value = Math.round(ratio * 100);
   }
 };
+
 /* ------------------------------ List Filters ------------------------------ */
 
 /**
@@ -2276,10 +1996,7 @@ var zoom_fit = function zoom_fit() {
  * 
  * @param {HTMLDivElement} next optional 
  */
-
-
 exports.zoom_fit = zoom_fit;
-
 var createFilter = function createFilter() {
   var next = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
   var new_filter = document.createElement("div");
@@ -2299,55 +2016,43 @@ var createFilter = function createFilter() {
   });
   new_filter.querySelector(".delete").addEventListener("click", function () {
     new_filter.remove();
-
     if (list_filters.children.length > 0) {
       var first = list_filters.children[0].querySelector(".state_select");
       if (_character_elements.character_elements.list_filters.children.length >= 1 && !first.classList.contains("collapse")) first.classList.add("collapse");
     } else {
       if (!_character_elements.character_elements.toggle_filter_button.classList.contains("hidden")) {
         _character_elements.character_elements.toggle_filter_button.classList.add("hidden");
-
         if (_character_elements.character_elements.toggle_filter_button.classList.contains("add")) _character_elements.character_elements.toggle_filter_button.classList.remove("add");
         if (_character_elements.character_elements.toggle_filter_button.classList.contains("minus")) _character_elements.character_elements.toggle_filter_button.classList.remove("minus");
       }
     }
-
     getFilters();
   });
-
   if (_character_elements.character_elements.toggle_filter_button.classList.contains("hidden")) {
     _character_elements.character_elements.toggle_filter_button.classList.remove("hidden");
-
     _character_elements.character_elements.toggle_filter_button.classList.add("minus");
   } else {
     if (_character_elements.character_elements.toggle_filter_button.classList.contains("add")) {
       _character_elements.character_elements.toggle_filter_button.classList.replace("add", "minus");
-
       if (_character_elements.character_elements.list_filters.classList.contains("hidden")) _character_elements.character_elements.list_filters.classList.remove("hidden");
     }
   }
-
   if (list_filters.children.length > 0) new_filter.querySelector(".state_select").classList.remove("collapse");
-
   if (next != null) {
     _character_elements.character_elements.list_filters.insertBefore(new_filter, next);
-
     if (!_character_elements.character_elements.list_filters.children[0].querySelector(".state_select").classList.contains("collapse")) _character_elements.character_elements.list_filters.children[0].querySelector(".state_select").classList.add("collapse");
     if (next.querySelector(".state_select").classList.contains("collapse")) next.querySelector(".state_select").classList.remove("collapse");
   } else _character_elements.character_elements.list_filters.append(new_filter);
 };
+
 /**
  * Returns the filters.
  * 
  * @returns {Array}
  */
-
-
 exports.createFilter = createFilter;
-
 var getFilters = function getFilters() {
   var filters = [];
-
   var _loop2 = function _loop2() {
     var list_filter_row = _Array$from[_i2];
     var element = Array.from(list_filter_row.children).find(function (child) {
@@ -2356,7 +2061,6 @@ var getFilters = function getFilters() {
     var state = list_filter_row.querySelector(".state_select").value;
     if (list_filter_row.querySelector(".state_select").classList.contains("collapse")) state = "none";
     var filter = {};
-
     try {
       filter = {
         type: element.classList[1],
@@ -2366,7 +2070,6 @@ var getFilters = function getFilters() {
     } catch (_unused) {
       return "continue";
     }
-
     Array.from(element.children).forEach(function (child) {
       filter.value.push({
         param: child.classList[1].replace("_select", "").replace("_input", ""),
@@ -2375,27 +2078,22 @@ var getFilters = function getFilters() {
     });
     filters.push(filter);
   };
-
   for (var _i2 = 0, _Array$from = Array.from(_character_elements.character_elements.list_filters.children); _i2 < _Array$from.length; _i2++) {
     var _ret = _loop2();
-
     if (_ret === "continue") continue;
   }
-
   return filters;
 };
+
 /**
  * Applies the filters.
  * 
  * @param {Array} filters 
  */
-
-
 exports.getFilters = getFilters;
-
 var applyFilters = function applyFilters() {
-  var filters = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : getFilters(); // if no filters, then show everything.
-
+  var filters = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : getFilters();
+  // if no filters, then show everything.
   if (filters.length == 0) {
     Array.from(_character_elements.character_elements.character_list_content.querySelectorAll(".character_row")).forEach(function (character_row) {
       if (character_row.classList.contains("hidden")) {
@@ -2406,16 +2104,13 @@ var applyFilters = function applyFilters() {
     Array.from(_character_elements.character_elements.character_list_content.querySelectorAll(".character_display")).forEach(function (character_display_element) {
       if (character_display_element.classList.contains("hidden")) {
         _character_elements.character_elements.character_display_element.classList.remove("hidden");
-
         character_display_element.style.display = "flex";
       }
     });
     return;
   }
-
   Array.from(_character_elements.character_elements.character_list_content.querySelectorAll(".character_display")).forEach(function (character_display_element) {
     var character_display = character_api.getCharacterDisplay(character_display_element);
-
     if (matchesAllFilters(character_display, filters)) {
       if (character_display_element.classList.contains("hidden")) {
         character_display_element.classList.remove("hidden");
@@ -2444,7 +2139,6 @@ var applyFilters = function applyFilters() {
       }
     }
   });
-
   if (Array.from(character_list_content.querySelectorAll(".character_display")).every(function (child) {
     return child.classList.contains("hidden");
   })) {
@@ -2453,6 +2147,7 @@ var applyFilters = function applyFilters() {
     if (_character_elements.character_elements.character_list_content.classList.contains("hidden")) _character_elements.character_elements.character_list_content.classList.remove("hidden");
   }
 };
+
 /**
  * Check if character display matches all the filters.
  * 
@@ -2461,10 +2156,7 @@ var applyFilters = function applyFilters() {
  * 
  * @returns {boolean}
  */
-
-
 exports.applyFilters = applyFilters;
-
 var matchesAllFilters = function matchesAllFilters(character_display, filters) {
   var matches = Array(filters.length).fill(true);
   var result = [];
@@ -2479,21 +2171,19 @@ var matchesAllFilters = function matchesAllFilters(character_display, filters) {
     return value;
   });
 };
+
 /**
  * Check if the character display matches the filter.
  * 
  * @param {character_api.Display} character_display 
  * @param {Array} filter 
  */
-
-
 var matchesFilter = function matchesFilter(character_display, filter) {
   if (filter[0].param === "equality") {
     if (filter[1].param === "obtainability") {
       var obtainability = _character_collection.character_collection.find(function (character) {
         return character_display.character_id == character.id;
       }).obtainability;
-
       if (filter[0].value === "eq" && obtainability === filter[1].value) return true;else if (filter[0].value === "neq" && obtainability !== filter[1].value) return true;else return false;
     } else {
       if (filter[0].value === "eq" && character_display[filter[1].param] === filter[1].value) return true;else if (filter[0].value === "neq" && character_display[filter[1].param] !== filter[1].value) return true;else return false;
@@ -2507,7 +2197,6 @@ var matchesFilter = function matchesFilter(character_display, filter) {
       if (filter[0].value === "eq" && release_date.getTime() === filter_date.getTime()) return true;else if (filter[0].value === "neq" && release_date.getTime() !== filter_date.getTime()) return true;else if (filter[0].value === "lt" && release_date < filter_date) return true;else if (filter[0].value === "gt" && release_date > filter_date) return true;else if (filter[0].value === "lte" && release_date <= filter_date) return true;else if (filter[0].value === "gte" && release_date >= filter_date) return true;else return false;
     } else {
       var param = 1;
-
       if (filter[1].param === "max_rank") {
         param = parseInt(character_api.getMaxRank(_character_collection.character_collection.find(function (character) {
           return character_display.character_id == character.id;
@@ -2519,16 +2208,14 @@ var matchesFilter = function matchesFilter(character_display, filter) {
       } else {
         param = parseInt(character_display[filter[1].param]);
       }
-
       if (filter[0].value === "eq" && param === parseInt(filter[1].value)) return true;else if (filter[0].value === "neq" && param !== parseInt(filter[1].value)) return true;else if (filter[0].value === "lt" && param < parseInt(filter[1].value)) return true;else if (filter[0].value === "gt" && param > parseInt(filter[1].value)) return true;else if (filter[0].value === "lte" && param <= parseInt(filter[1].value)) return true;else if (filter[0].value === "gte" && param >= parseInt(filter[1].value)) return true;else return false;
     }
   }
 };
+
 /**
  * Removes all the filters.
  */
-
-
 var resetFilters = function resetFilters() {
   Array.from(_character_elements.character_elements.character_list_content.querySelectorAll(".character_row")).forEach(function (character_row) {
     if (character_row.classList.contains("hidden")) {
@@ -2548,6 +2235,7 @@ var resetFilters = function resetFilters() {
   if (_character_elements.character_elements.toggle_filter_button.classList.contains("minus")) _character_elements.character_elements.toggle_filter_button.classList.remove("minus");
   if (!_character_elements.character_elements.toggle_filter_button.classList.contains("hidden")) _character_elements.character_elements.toggle_filter_button.classList.add("hidden");
 };
+
 /* ------------------------------ List Stats ------------------------------ */
 
 /**
@@ -2555,10 +2243,7 @@ var resetFilters = function resetFilters() {
  * 
  * @returns {Object}
  */
-
-
 exports.resetFilters = resetFilters;
-
 var getStats = function getStats() {
   var result = {
     totalCharacters: 0,
@@ -2566,7 +2251,6 @@ var getStats = function getStats() {
   };
   Array.from(_character_elements.character_elements.character_list_content.querySelectorAll(".character_display")).forEach(function (character_display_element) {
     result.totalCharacters++;
-
     if (!character_display_element.classList.contains("hidden")) {
       result.totalVisible++;
     }
@@ -2574,15 +2258,13 @@ var getStats = function getStats() {
   _character_elements.character_elements.list_stats_list.innerHTML = "Visible: ".concat(result.totalVisible, "/").concat(result.totalCharacters);
   return result;
 };
+
 /**
  * Returns all the stats of the list.
  * 
  * @returns {Object}
  */
-
-
 exports.getStats = getStats;
-
 var getMoreStats = function getMoreStats() {
   var result = {
     totalCharacters: 0,
@@ -2604,15 +2286,12 @@ var getMoreStats = function getMoreStats() {
   };
   Array.from(_character_elements.character_elements.character_list_content.querySelectorAll(".character_display")).forEach(function (character_display_element) {
     result.totalCharacters++;
-
     if (!character_display_element.classList.contains("hidden")) {
       result.totalVisible++;
       var character_display = character_api.getCharacterDisplay(character_display_element);
-
       var character = _character_collection.character_collection.find(function (character) {
         return character_display.character_id == character.id;
       });
-
       if (character.obtainability == "limited") result.limited++;
       if (character_display.rank == 1 && character_display.level == 40) result.maxLevel++;else if (character_display.rank == 2 && character_display.level == 50) result.maxLevel++;else if (character_display.rank == 3 && character_display.level == 60) result.maxLevel++;else if (character_display.rank == 4 && character_display.level == 80) result.maxLevel++;else if (character_display.rank == 5 && character_display.level == 100) result.maxLevel++;
       var maxRank = character_api.getMaxRank(character.ranks);
@@ -2635,102 +2314,83 @@ var getMoreStats = function getMoreStats() {
   });
   return "Total Characters: ".concat(result.totalCharacters, "\nTotal Visible: ").concat(result.totalVisible, "\nLimited: ").concat(result.limited, "\nUnlimited: ").concat(result.totalVisible - result.limited, "      \nMax Level: ").concat(result.maxLevel, "\nMax Rank: ").concat(result.maxRank, "\nMax Magic: ").concat(result.maxMagic, "\nMax Magia: ").concat(result.maxMagia, "\nMax Episode: ").concat(result.maxEpisode, "      \nMax Spirit Enhancement: ").concat(result.maxSe, "      \nLevels:").concat(Object.entries(result.levels).map(function (_ref13) {
     var _ref14 = (0, _slicedToArray2["default"])(_ref13, 2),
-        level = _ref14[0],
-        count = _ref14[1];
-
+      level = _ref14[0],
+      count = _ref14[1];
     return "\n  ".concat(level, ": ").concat(count);
   }).toString(), "      \nRanks:").concat(Object.entries(result.ranks).map(function (_ref15) {
     var _ref16 = (0, _slicedToArray2["default"])(_ref15, 2),
-        level = _ref16[0],
-        count = _ref16[1];
-
+      level = _ref16[0],
+      count = _ref16[1];
     return "\n  ".concat(level, ": ").concat(count);
   }).toString(), "      \nMagic Levels:").concat(Object.entries(result.magics).map(function (_ref17) {
     var _ref18 = (0, _slicedToArray2["default"])(_ref17, 2),
-        level = _ref18[0],
-        count = _ref18[1];
-
+      level = _ref18[0],
+      count = _ref18[1];
     return "\n  ".concat(level, ": ").concat(count);
   }).toString(), "      \nMagia Levels:").concat(Object.entries(result.magias).map(function (_ref19) {
     var _ref20 = (0, _slicedToArray2["default"])(_ref19, 2),
-        level = _ref20[0],
-        count = _ref20[1];
-
+      level = _ref20[0],
+      count = _ref20[1];
     return "\n  ".concat(level, ": ").concat(count);
   }).toString(), "      \nEpisode Levels:").concat(Object.entries(result.episodes).map(function (_ref21) {
     var _ref22 = (0, _slicedToArray2["default"])(_ref21, 2),
-        level = _ref22[0],
-        count = _ref22[1];
-
+      level = _ref22[0],
+      count = _ref22[1];
     return "\n  ".concat(level, ": ").concat(count);
   }).toString(), "      \nSpirit Enhancement Levels:").concat(Object.entries(result.ses).map(function (_ref23) {
     var _ref24 = (0, _slicedToArray2["default"])(_ref23, 2),
-        level = _ref24[0],
-        count = _ref24[1];
-
+      level = _ref24[0],
+      count = _ref24[1];
     return "\n  ".concat(level, ": ").concat(count);
   }).toString(), "      \nCopies of Each Rank:").concat(Object.entries(result.rankCopies).map(function (_ref25) {
     var _ref26 = (0, _slicedToArray2["default"])(_ref25, 2),
-        level = _ref26[0],
-        count = _ref26[1];
-
+      level = _ref26[0],
+      count = _ref26[1];
     return "\n  ".concat(level, ": ").concat(count);
   }).toString());
 };
+
 /**
  * Opens the Message Dialog with the list stats.
  */
-
-
 exports.getMoreStats = getMoreStats;
-
 var openStatsModal = function openStatsModal() {
   _character_elements.messageDialog.open("Stats of \"".concat(getListName(), "\""), getMoreStats());
 };
+
 /* ------------------------------ Import and Export ------------------------------ */
 
 /**
  * Opens the Export Modal Dialog.
  */
-
-
 exports.openStatsModal = openStatsModal;
-
 var openExportModal = function openExportModal() {
   var list = Object.values(storage_api.lists[getListId()].characterList).map(function (value) {
     return character_api.sanitizeCharacter(value);
   }).sort(function (a, b) {
     return a.character_id > b.character_id ? 1 : -1;
   });
-
   _character_elements.messageDialog.open("\"".concat(selectedList.list.name, "\" Export as Text"), JSON.stringify(list, null, 2));
 };
+
 /**
  * Imports the list.
  */
-
-
 exports.openExportModal = openExportModal;
-
 var importList = function importList() {
   var data = _character_elements.importListDialog.text.value;
   var listName = _character_elements.importListDialog.name.value;
-
   if (!listName) {
     _character_elements.importListDialog.error.innerHTML = "The list name must not be empty.";
     return;
   }
-
   if (storage_api.listExists(listName)) {
     _character_elements.importListDialog.error.innerHTML = "The list name ".concat(listName, " already exists.");
     return;
   }
-
   _character_elements.importListDialog.error.innerHTML = "";
-
   try {
     var characterList = JSON.parse(data);
-
     if (validateCharacterList(characterList)) {
       _character_elements.character_elements.list_name_title.innerHTML = listName;
       _character_elements.character_elements.profile_select.value = "Default";
@@ -2738,13 +2398,11 @@ var importList = function importList() {
       var newCharacterList = {};
       Object.entries(characterList).forEach(function (_ref27) {
         var _ref28 = (0, _slicedToArray2["default"])(_ref27, 2),
-            key = _ref28[0],
-            value = _ref28[1];
-
+          key = _ref28[0],
+          value = _ref28[1];
         return newCharacterList[generatePushID()] = character_api.sanitizeCharacter(value);
       });
       storage_api.manualCreateList(listName, newCharacterList, "0", false);
-
       _character_elements.importListDialog.close();
     } else {
       _character_elements.importListDialog.error.innerHTML = "The format of the JSON is invalid. Please contact Leo Chan for details.";
@@ -2755,6 +2413,7 @@ var importList = function importList() {
     return;
   }
 };
+
 /**
  * Checks if the character list is valid.
  * 
@@ -2762,10 +2421,7 @@ var importList = function importList() {
  * 
  * @returns {boolean}
  */
-
-
 exports.importList = importList;
-
 var validateCharacterList = function validateCharacterList(character_list) {
   try {
     if (Array.from(character_list).every(function (character) {
@@ -2776,30 +2432,22 @@ var validateCharacterList = function validateCharacterList(character_list) {
   } catch (e) {
     return false;
   }
-
   return false;
 };
 
-},{"../../collection/character_collection.js":8,"../../shared/js/utils.js":12,"./background_api.js":1,"./character_api.js":2,"./character_elements.js":3,"./profile_api.js":5,"./storage_api.js":6,"@babel/runtime/helpers/interopRequireDefault":18,"@babel/runtime/helpers/slicedToArray":23,"@babel/runtime/helpers/typeof":25}],5:[function(require,module,exports){
+},{"../../collection/character_collection.js":8,"../../shared/js/utils.js":12,"./background_api.js":1,"./character_api.js":2,"./character_elements.js":3,"./profile_api.js":5,"./storage_api.js":6,"@babel/runtime/helpers/interopRequireDefault":19,"@babel/runtime/helpers/slicedToArray":24,"@babel/runtime/helpers/typeof":28}],5:[function(require,module,exports){
 "use strict";
 
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
-
 var _typeof = require("@babel/runtime/helpers/typeof");
-
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.loadsRules = exports.loadRule = exports.createProfileRule = exports.changeToCustom = exports.getProfileId = exports.getSelectedProfileName = exports.getSelectedProfileId = exports.setProfile = exports.deleteProfile = exports.checkProfile = exports.updateProfile = exports.saveProfile = exports.getSortSettings = exports.setProfiles = exports.selectedProfile = void 0;
-
+exports.updateProfile = exports.setProfiles = exports.setProfile = exports.selectedProfile = exports.saveProfile = exports.loadsRules = exports.loadRule = exports.getSortSettings = exports.getSelectedProfileName = exports.getSelectedProfileId = exports.getProfileId = exports.deleteProfile = exports.createProfileRule = exports.checkProfile = exports.changeToCustom = void 0;
 var _slicedToArray2 = _interopRequireDefault(require("@babel/runtime/helpers/slicedToArray"));
-
 var _character_elements = require("./character_elements.js");
-
 var character_list_api = _interopRequireWildcard(require("./character_list_api.js"));
-
 var storage_api = _interopRequireWildcard(require("./storage_api.js"));
-
 function _getRequireWildcardCache(nodeInterop) {
   if (typeof WeakMap !== "function") return null;
   var cacheBabelInterop = new WeakMap();
@@ -2808,31 +2456,24 @@ function _getRequireWildcardCache(nodeInterop) {
     return nodeInterop ? cacheNodeInterop : cacheBabelInterop;
   })(nodeInterop);
 }
-
 function _interopRequireWildcard(obj, nodeInterop) {
   if (!nodeInterop && obj && obj.__esModule) {
     return obj;
   }
-
   if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") {
     return {
       "default": obj
     };
   }
-
   var cache = _getRequireWildcardCache(nodeInterop);
-
   if (cache && cache.has(obj)) {
     return cache.get(obj);
   }
-
   var newObj = {};
   var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;
-
   for (var key in obj) {
     if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) {
       var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;
-
       if (desc && (desc.get || desc.set)) {
         Object.defineProperty(newObj, key, desc);
       } else {
@@ -2840,39 +2481,32 @@ function _interopRequireWildcard(obj, nodeInterop) {
       }
     }
   }
-
   newObj["default"] = obj;
-
   if (cache) {
     cache.set(obj, newObj);
   }
-
   return newObj;
 }
 /**
  * Profile API for the Character Page.
  */
 
-
 var selectedProfile = null;
+
 /**
  * Sets the profiles in the profile_select and loads the profile.
  * @param {Object} profiles 
  * @param {String} previous 
  */
-
 exports.selectedProfile = selectedProfile;
-
 var setProfiles = function setProfiles(profiles, previous) {
   _character_elements.character_elements.profile_select.innerHTML = "";
   Object.entries(profiles).forEach(function (_ref) {
     var _ref2 = (0, _slicedToArray2["default"])(_ref, 2),
-        id = _ref2[0],
-        profile = _ref2[1];
-
+      id = _ref2[0],
+      profile = _ref2[1];
     _character_elements.character_elements.profile_select.options.add(new Option(profile.name, id, false));
   });
-
   if (selectedProfile !== null && selectedProfile.name !== null) {
     var profileId = getProfileId(selectedProfile.name);
     _character_elements.character_elements.profile_select.value = profileId;
@@ -2882,29 +2516,22 @@ var setProfiles = function setProfiles(profiles, previous) {
     return option.value === previous;
   })) {
     _character_elements.character_elements.profile_select.value = previous;
-
     var _listId = character_list_api.getListId();
-
     if (_listId) storage_api.updateListProfile(_listId, previous);
   } else {
     _character_elements.character_elements.profile_select.value = "0";
-
     var _listId2 = character_list_api.getListId();
-
     if (_listId2) storage_api.updateListProfile(_listId2, "0");
   }
-
   loadsRules(_character_elements.character_elements.profile_select.value);
 };
+
 /**
  * Gets the Sorting Settings from the Profile Rules.
  * 
  * @returns {Object}
  */
-
-
 exports.setProfiles = setProfiles;
-
 var getSortSettings = function getSortSettings() {
   var settings = {};
   Array.from(_character_elements.character_elements.profile_rules.children).forEach(function (child, index) {
@@ -2919,28 +2546,23 @@ var getSortSettings = function getSortSettings() {
   });
   return settings;
 };
+
 /**
  * Saves a new profile.
  */
-
-
 exports.getSortSettings = getSortSettings;
-
 var saveProfile = function saveProfile() {
   var profileName = new_profile_field.value;
-
   if (Object.values(storage_api.profiles).some(function (profile) {
     return profile.name === profileName;
   })) {
     profile_error_text.innerHTML = "The sorting profile ".concat(profileName, " already exists.");
     return;
   }
-
   if (profileName.length === 0) {
     profile_error_text.innerHTML = "The sorting profile name must not be empty.";
     return;
   }
-
   new_profile_field.value = "";
   var properties = getSortSettings();
   exports.selectedProfile = selectedProfile = {
@@ -2951,13 +2573,11 @@ var saveProfile = function saveProfile() {
   if (!profile_create_block.classList.contains("hidden")) profile_create_block.classList.add("hidden");
   if (new_profile_button.classList.contains("minus")) new_profile_button.classList.replace("minus", "add");
 };
+
 /**
  * Updates the selected profile.
  */
-
-
 exports.saveProfile = saveProfile;
-
 var updateProfile = function updateProfile() {
   var profileId = getSelectedProfileId();
   var properties = getSortSettings();
@@ -2965,30 +2585,25 @@ var updateProfile = function updateProfile() {
   if (!profile_create_block.classList.contains("hidden")) profile_create_block.classList.add("hidden");
   if (new_profile_button.classList.contains("minus")) new_profile_button.classList.replace("minus", "add");
 };
+
 /**
  * Check if the profile name exists.
  * 
  * @param {String} profileName 
  */
-
-
 exports.updateProfile = updateProfile;
-
 var checkProfile = function checkProfile(profileName) {
   if (Object.values(storage_api.profiles).some(function (profile) {
     return profile.name === profileName;
   })) profile_error_text.innerHTML = "The sorting profile ".concat(profileName, " already exists.");else profile_error_text.innerHTML = "";
 };
+
 /**
  * Deletes the selected profile.
  */
-
-
 exports.checkProfile = checkProfile;
-
 var deleteProfile = function deleteProfile() {
   var profileId = getSelectedProfileId();
-
   if (storage_api.profiles[profileId].name !== "Default" && storage_api.profiles[profileId].name !== "Custom") {
     storage_api.deleteProfile(profileId);
     exports.selectedProfile = selectedProfile = {
@@ -3000,78 +2615,65 @@ var deleteProfile = function deleteProfile() {
     if (listId) storage_api.updateListProfile(listId, "0");
   }
 };
+
 /**
  * Sets the profile and loads the rules.
  * 
  * @param {String} profileId 
  */
-
-
 exports.deleteProfile = deleteProfile;
-
 var setProfile = function setProfile(profileId) {
   _character_elements.character_elements.profile_select.value = profileId;
   if (storage_api.profiles[profileId].rules) loadsRules(profileId);
   if (profileId === "0" || profileId === "1") _character_elements.character_elements.delete_profile_button.disabled = true;else _character_elements.character_elements.delete_profile_button.disabled = false;
 };
+
 /**
  * Returns the selected profile id.
  */
-
-
 exports.setProfile = setProfile;
-
 var getSelectedProfileId = function getSelectedProfileId() {
   if (_character_elements.character_elements.profile_select.selectedIndex > -1) return _character_elements.character_elements.profile_select.value;else return "0";
 };
+
 /**
  * returns the selected profile name.
  */
-
-
 exports.getSelectedProfileId = getSelectedProfileId;
-
 var getSelectedProfileName = function getSelectedProfileName() {
   if (_character_elements.character_elements.profile_select.options[_character_elements.character_elements.profile_select.selectedIndex]) return _character_elements.character_elements.profile_select.options[_character_elements.character_elements.profile_select.selectedIndex].text;else return "Default";
 };
+
 /**
  * Returns the profile id of profileName.
  * 
  * @param {String} profileName 
  */
-
-
 exports.getSelectedProfileName = getSelectedProfileName;
-
 var getProfileId = function getProfileId(profileName) {
   var profile = Object.entries(storage_api.profiles).find(function (_ref3) {
     var _ref4 = (0, _slicedToArray2["default"])(_ref3, 2),
-        id = _ref4[0],
-        profile = _ref4[1];
-
+      id = _ref4[0],
+      profile = _ref4[1];
     return profile.name === profileName;
   });
   return profile[0];
 };
+
 /**
  * Changes the profile_select to Custom.
  */
-
-
 exports.getProfileId = getProfileId;
-
 var changeToCustom = function changeToCustom() {
   _character_elements.character_elements.profile_select.value = "1";
 };
+
 /**
  * Create a new sorting profile rule.
  * 
  * @param {HTMLDivElement} next optional.
  */
-
-
 exports.changeToCustom = changeToCustom;
-
 var createProfileRule = function createProfileRule() {
   var next = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
   var new_rule = document.createElement("div");
@@ -3087,9 +2689,7 @@ var createProfileRule = function createProfileRule() {
   });
   new_rule.querySelector(".delete").addEventListener("click", function () {
     new_rule.remove();
-
     var first_rule = _character_elements.character_elements.profile_rules.children[0].querySelector(".delete");
-
     if (_character_elements.character_elements.profile_rules.children.length === 1 && !first_rule.disabled) first_rule.disabled = true;
     if (getSelectedProfileName() === "Default") changeToCustom();
     updateProfile();
@@ -3101,29 +2701,28 @@ var createProfileRule = function createProfileRule() {
     } else if (sort_dir.classList.contains("down")) {
       sort_dir.classList.replace("down", "up");
     }
-
     if (getSelectedProfileName() === "Default") changeToCustom();
     updateProfile();
     character_list_api.applyProfileToList(character_list_api.getListId(), getSelectedProfileId());
-  }); // update the list on sort form change.
+  });
 
+  // update the list on sort form change.
   [state_select, type_select].forEach(function (element) {
     element.addEventListener("change", function () {
       if (getSelectedProfileName() === "Default") changeToCustom();
-
       if (state_select.value && type_select.value) {
         updateProfile();
         character_list_api.applyProfileToList(character_list_api.getListId(), getSelectedProfileId());
       }
     });
-  }); // disable group or id level.
+  });
 
+  // disable group or id level.
   state_select.addEventListener("change", function () {
     if (state_select.value === "group") {
       if (type_select.value === "character_id" || type_select.value === "release_date" || type_select.value === "level") {
         type_select.selectedIndex = -1;
       }
-
       type_select.options[3].disabled = true;
       type_select.options[8].disabled = true;
       type_select.options[10].disabled = true;
@@ -3140,23 +2739,20 @@ var createProfileRule = function createProfileRule() {
       if (state_select.value === "group") {
         state_select.selectedIndex = -1;
       }
-
       state_select.options[1].disabled = true;
     } else state_select.options[1].disabled = false;
   });
   if (next !== null) next.after(new_rule);else _character_elements.character_elements.profile_rules.append(new_rule);
   return new_rule;
 };
+
 /**
  * Loads the rule with the settings.
  * 
  * @param {String} ruleId 
  * @param {Object} settings 
  */
-
-
 exports.createProfileRule = createProfileRule;
-
 var loadRule = function loadRule(ruleId, settings) {
   var rule = createProfileRule();
   var state_select = rule.querySelector(".state_select");
@@ -3166,12 +2762,10 @@ var loadRule = function loadRule(ruleId, settings) {
   state_select.value = settings.state;
   type_select.value = settings.type;
   if (settings.direction == 1 && sort_dir.classList.contains("down")) sort_dir.classList.replace("down", "up");else if (settings.direction == -1 && sort_dir.classList.contains("up")) sort_dir.classList.replace("up", "down");
-
   if (state_select.value === "group") {
     if (type_select.value === "character_id" || type_select.value === "release_date" || type_select.value === "level" || type_select.value === "se") {
       type_select.selectedIndex = -1;
     }
-
     type_select.options[3].disabled = true;
     type_select.options[8].disabled = true;
     type_select.options[10].disabled = true;
@@ -3182,24 +2776,20 @@ var loadRule = function loadRule(ruleId, settings) {
     type_select.options[10].disabled = false;
     type_select.options[11].disabled = false;
   }
-
   if (type_select.value === "character_id" || type_select.value === "release_date" || type_select.value === "level" || type_select.value === "se") {
     if (state_select.value === "group") {
       state_select.selectedIndex = -1;
     }
-
     state_select.options[1].disabled = true;
   } else state_select.options[1].disabled = false;
 };
+
 /**
  * Loads all the rules for the profile.
  * 
  * @param {String} profileId 
  */
-
-
 exports.loadRule = loadRule;
-
 var loadsRules = function loadsRules(profileId) {
   if (!storage_api.profiles[profileId].rules) return;
   _character_elements.character_elements.profile_rules.innerHTML = "";
@@ -3207,51 +2797,35 @@ var loadsRules = function loadsRules(profileId) {
     return a[1].index > b[1].index ? 1 : -1;
   }).forEach(function (_ref5) {
     var _ref6 = (0, _slicedToArray2["default"])(_ref5, 2),
-        ruleId = _ref6[0],
-        settings = _ref6[1];
-
+      ruleId = _ref6[0],
+      settings = _ref6[1];
     loadRule(ruleId, settings);
   });
-
   if (_character_elements.character_elements.profile_rules.children.length > 0) {
     var first_rule = _character_elements.character_elements.profile_rules.children[0].querySelector(".delete");
-
     if (_character_elements.character_elements.profile_rules.children.length === 1 && !first_rule.disabled) first_rule.disabled = true;
   }
 };
-
 exports.loadsRules = loadsRules;
 
-},{"./character_elements.js":3,"./character_list_api.js":4,"./storage_api.js":6,"@babel/runtime/helpers/interopRequireDefault":18,"@babel/runtime/helpers/slicedToArray":23,"@babel/runtime/helpers/typeof":25}],6:[function(require,module,exports){
+},{"./character_elements.js":3,"./character_list_api.js":4,"./storage_api.js":6,"@babel/runtime/helpers/interopRequireDefault":19,"@babel/runtime/helpers/slicedToArray":24,"@babel/runtime/helpers/typeof":28}],6:[function(require,module,exports){
 "use strict";
 
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
-
 var _typeof = require("@babel/runtime/helpers/typeof");
-
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.deleteListImage = exports.updateListImage = exports.removeUserProperty = exports.setUserProperty = exports.updateSettings = exports.deleteProfile = exports.updateProfile = exports.createProfile = exports.deleteCharacterOfList = exports.updateCharacterOfList = exports.addCharacterToList = exports.manualCreateList = exports.duplicateList = exports.deleteList = exports.updateListBackground = exports.updateListProfile = exports.updateListList = exports.updateList = exports.renameList = exports.createList = exports.listExists = exports.startUp = exports.user = exports.settings = exports.lists = exports.profiles = void 0;
-
+exports.user = exports.updateSettings = exports.updateProfile = exports.updateListProfile = exports.updateListList = exports.updateListImage = exports.updateListBackground = exports.updateList = exports.updateCharacterOfList = exports.startUp = exports.settings = exports.setUserProperty = exports.renameList = exports.removeUserProperty = exports.profiles = exports.manualCreateList = exports.lists = exports.listExists = exports.duplicateList = exports.deleteProfile = exports.deleteListImage = exports.deleteList = exports.deleteCharacterOfList = exports.createProfile = exports.createList = exports.addCharacterToList = void 0;
 var _defineProperty2 = _interopRequireDefault(require("@babel/runtime/helpers/defineProperty"));
-
 var _slicedToArray2 = _interopRequireDefault(require("@babel/runtime/helpers/slicedToArray"));
-
 var _character_elements = require("./character_elements.js");
-
 var background_api = _interopRequireWildcard(require("./background_api.js"));
-
 var character_api = _interopRequireWildcard(require("./character_api.js"));
-
 var character_list_api = _interopRequireWildcard(require("./character_list_api.js"));
-
 var database_api = _interopRequireWildcard(require("../../shared/js/database_api.js"));
-
 var profile_api = _interopRequireWildcard(require("./profile_api.js"));
-
 var utils = _interopRequireWildcard(require("../../shared/js/utils.js"));
-
 function _getRequireWildcardCache(nodeInterop) {
   if (typeof WeakMap !== "function") return null;
   var cacheBabelInterop = new WeakMap();
@@ -3260,31 +2834,24 @@ function _getRequireWildcardCache(nodeInterop) {
     return nodeInterop ? cacheNodeInterop : cacheBabelInterop;
   })(nodeInterop);
 }
-
 function _interopRequireWildcard(obj, nodeInterop) {
   if (!nodeInterop && obj && obj.__esModule) {
     return obj;
   }
-
   if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") {
     return {
       "default": obj
     };
   }
-
   var cache = _getRequireWildcardCache(nodeInterop);
-
   if (cache && cache.has(obj)) {
     return cache.get(obj);
   }
-
   var newObj = {};
   var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;
-
   for (var key in obj) {
     if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) {
       var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;
-
       if (desc && (desc.get || desc.set)) {
         Object.defineProperty(newObj, key, desc);
       } else {
@@ -3292,57 +2859,36 @@ function _interopRequireWildcard(obj, nodeInterop) {
       }
     }
   }
-
   newObj["default"] = obj;
-
   if (cache) {
     cache.set(obj, newObj);
   }
-
   return newObj;
 }
-
 function ownKeys(object, enumerableOnly) {
   var keys = Object.keys(object);
-
   if (Object.getOwnPropertySymbols) {
     var symbols = Object.getOwnPropertySymbols(object);
-
-    if (enumerableOnly) {
-      symbols = symbols.filter(function (sym) {
-        return Object.getOwnPropertyDescriptor(object, sym).enumerable;
-      });
-    }
-
-    keys.push.apply(keys, symbols);
+    enumerableOnly && (symbols = symbols.filter(function (sym) {
+      return Object.getOwnPropertyDescriptor(object, sym).enumerable;
+    })), keys.push.apply(keys, symbols);
   }
-
   return keys;
 }
-
 function _objectSpread(target) {
   for (var i = 1; i < arguments.length; i++) {
-    var source = arguments[i] != null ? arguments[i] : {};
-
-    if (i % 2) {
-      ownKeys(Object(source), true).forEach(function (key) {
-        (0, _defineProperty2["default"])(target, key, source[key]);
-      });
-    } else if (Object.getOwnPropertyDescriptors) {
-      Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
-    } else {
-      ownKeys(Object(source)).forEach(function (key) {
-        Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
-      });
-    }
+    var source = null != arguments[i] ? arguments[i] : {};
+    i % 2 ? ownKeys(Object(source), !0).forEach(function (key) {
+      (0, _defineProperty2["default"])(target, key, source[key]);
+    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) {
+      Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
+    });
   }
-
   return target;
 }
 /**
  * Storage API for the Character Page.
  */
-
 
 var profiles = {};
 exports.profiles = profiles;
@@ -3354,12 +2900,12 @@ var user = {};
 exports.user = user;
 var userId = null;
 var prevCharacter = null;
+
 /* ------------------------------ Start Up ------------------------------ */
 
 /**
  * Sets the user id, then loads the message or loads everything else.
  */
-
 var startUp = function startUp(user) {
   userId = user.uid;
   loadUserName();
@@ -3375,51 +2921,44 @@ var startUp = function startUp(user) {
     }
   });
 };
+
 /**
  * Loads the user's name.
  */
-
-
 exports.startUp = startUp;
-
 var loadUserName = function loadUserName() {
   database_api.onAuthStateChanged(function (user) {
     var name = user && user.displayName ? user.displayName : "Anonymous";
     _character_elements.character_elements.header_username.innerHTML = "Welcome " + name;
   });
 };
+
 /**
  * Loads the user.
  * 
  */
-
-
 var loadUser = function loadUser(snapshot) {
   exports.user = user = snapshot.val() ? snapshot.val() : {};
   if (user.name !== undefined) _character_elements.character_elements.player_name_field.value = user.name;else _character_elements.character_elements.player_name_field.value = "";
   if (user.playerId !== undefined) _character_elements.character_elements.player_id_field.value = user.playerId;else _character_elements.character_elements.player_id_field.value = "";
   if (user.publicListId !== undefined) _character_elements.character_elements.public_list_select.value = user.publicListId;else _character_elements.character_elements.public_list_select.selectedIndex = -1;
 };
+
 /**
  * Loads the settings.
  * 
  */
-
-
 var loadSettings = function loadSettings(snapshot) {
-  exports.settings = settings = snapshot.val() ? snapshot.val() : {}; // expand tabs
-
+  exports.settings = settings = snapshot.val() ? snapshot.val() : {};
+  // expand tabs
   Object.entries(settings.expanded_tabs).forEach(function (_ref) {
     var _ref2 = (0, _slicedToArray2["default"])(_ref, 2),
-        tab_id = _ref2[0],
-        expanded = _ref2[1];
-
+      tab_id = _ref2[0],
+      expanded = _ref2[1];
     var tab = document.querySelector("#".concat(tab_id));
-
     if (tab) {
       var tab_contents = tab.querySelector(".tab_contents");
       var tab_toggle = tab.querySelector(".tab_toggle");
-
       if (expanded) {
         if (tab_contents.classList.contains("hidden")) tab_contents.classList.remove("hidden");
         if (tab_toggle.classList.contains("right")) tab_toggle.classList.replace("right", "down");
@@ -3428,8 +2967,9 @@ var loadSettings = function loadSettings(snapshot) {
         if (tab_toggle.classList.contains("down")) tab_toggle.classList.replace("down", "right");
       }
     }
-  }); // display settings
+  });
 
+  // display settings
   character_list_api.setZoom(settings.character_zoom);
   _character_elements.character_elements.zoom_range.value = settings.character_zoom;
   _character_elements.character_elements.zoom_field.value = settings.character_zoom;
@@ -3443,31 +2983,32 @@ var loadSettings = function loadSettings(snapshot) {
   _character_elements.character_elements.display_padding_top_field.value = settings.padding_top;
   _character_elements.character_elements.display_padding_left_field.value = settings.padding_left;
   _character_elements.character_elements.display_padding_right_field.value = settings.padding_right;
-  _character_elements.character_elements.display_padding_bottom_field.value = settings.padding_bottom; // background settings
+  _character_elements.character_elements.display_padding_bottom_field.value = settings.padding_bottom;
 
+  // background settings
   if (!settings.background_transparency) settings.background_transparency = 0;
   _character_elements.character_elements.background_transparency_range.value = settings.background_transparency;
-  _character_elements.character_elements.background_transparency_field.value = settings.background_transparency; // theme
+  _character_elements.character_elements.background_transparency_field.value = settings.background_transparency;
 
+  // theme
   utils.setTheme(settings.theme);
 };
+
 /**
  * Loads the profiles.
  * 
  */
-
-
 var loadProfiles = function loadProfiles(snapshot) {
   // get the previous profile.
-  var previous = profile_api.getSelectedProfileId(); // get the settings.
-
+  var previous = profile_api.getSelectedProfileId();
+  // get the settings.
   var val = snapshot.val();
   var filtered = Object.keys(val).filter(function (key) {
     return val[key].type == "character";
   }).reduce(function (obj, key) {
     return _objectSpread(_objectSpread({}, obj), {}, (0, _defineProperty2["default"])({}, key, val[key]));
-  }, {}); // add index property if undefined.
-
+  }, {});
+  // add index property if undefined.
   Object.values(filtered).forEach(function (profile) {
     if (profile.rules) {
       Object.values(profile.rules).forEach(function (rule, index) {
@@ -3475,16 +3016,15 @@ var loadProfiles = function loadProfiles(snapshot) {
       });
     }
   });
-  exports.profiles = profiles = filtered; // update the profile select.
-
+  exports.profiles = profiles = filtered;
+  // update the profile select.
   profile_api.setProfiles(profiles, previous);
 };
+
 /**
  * Loads the lists.
  * 
  */
-
-
 var loadLists = function loadLists(snapshot) {
   var val = snapshot.val() ? snapshot.val() : {};
   var filtered = Object.keys(val).filter(function (key) {
@@ -3495,36 +3035,32 @@ var loadLists = function loadLists(snapshot) {
   exports.lists = lists = filtered;
   character_list_api.setLists(lists);
 };
+
 /**
  * Loads the message.
  */
-
-
 var loadMessage = function loadMessage(message) {
   if (message !== false) {
     _character_elements.messageDialog.open("Message", message);
   }
 };
+
 /* ------------------------------ Lists ------------------------------ */
 
 /**
  * Check if list with name name exists.
  */
-
-
 var listExists = function listExists(name) {
   if (Object.entries(lists).some(function (key, list) {
     return list.name === name;
   })) return true;
   return false;
 };
+
 /**
  * Create new List of name name.
  */
-
-
 exports.listExists = listExists;
-
 var createList = function createList(name) {
   database_api.createList(userId, {
     name: name,
@@ -3533,34 +3069,28 @@ var createList = function createList(name) {
     selectedBackground: false
   });
 };
+
 /**
  * Rename the List listId with name name.
  */
-
-
 exports.createList = createList;
-
 var renameList = function renameList(listId, name) {
   if (lists[listId].name != name) database_api.setListProperty(userId, listId, "name", name);
 };
+
 /**
  * Update the list listId.
  */
-
-
 exports.renameList = renameList;
-
 var updateList = function updateList(listId, name, characterList, selectedProfile, selectedBackground) {
   if (characterList && Object.keys(characterList).length > 0) {
     Object.entries(characterList).forEach(function (_ref3) {
       var _ref4 = (0, _slicedToArray2["default"])(_ref3, 2),
-          key = _ref4[0],
-          value = _ref4[1];
-
+        key = _ref4[0],
+        value = _ref4[1];
       return characterList[key] = character_api.sanitizeCharacter(value);
     });
   } else characterList = false;
-
   if (!selectedBackground) selectedBackground = false;
   database_api.updateList(userId, listId, {
     name: name,
@@ -3569,53 +3099,43 @@ var updateList = function updateList(listId, name, characterList, selectedProfil
     selectedBackground: selectedBackground
   });
 };
+
 /**
  * Updates the characterList of list listId with content.
  */
-
-
 exports.updateList = updateList;
-
 var updateListList = function updateListList(listId, content) {
   database_api.setListProperty(userId, listId, "characterList", content);
 };
+
 /**
  * Updates the profile of list listId with profile profileId.
  */
-
-
 exports.updateListList = updateListList;
-
 var updateListProfile = function updateListProfile(listId, profileId) {
   if (lists[listId].selectedProfile != profileId) database_api.setListProperty(userId, listId, "selectedProfile", profileId);
 };
+
 /**
  * Updates the profile of list listId with profile profileId.
  */
-
-
 exports.updateListProfile = updateListProfile;
-
 var updateListBackground = function updateListBackground(listId, backgroundId) {
   if (lists[listId].selectedBackground != backgroundId) database_api.setListProperty(userId, listId, "selectedBackground", backgroundId);
 };
+
 /**
  * Deletes the list listId.
  */
-
-
 exports.updateListBackground = updateListBackground;
-
 var deleteList = function deleteList(listId) {
   database_api.deleteList(userId, listId);
 };
+
 /**
  * Duplicates list with name newName.
  */
-
-
 exports.deleteList = deleteList;
-
 var duplicateList = function duplicateList(list, newName) {
   var selectedProfile = profile_api.getSelectedProfileId() || "0";
   var selectedBackground = background_api.getSelectedBackground() || false;
@@ -3626,13 +3146,11 @@ var duplicateList = function duplicateList(list, newName) {
     selectedBackground: selectedBackground
   });
 };
+
 /**
  * Create and new list with all the parameters passed in.
  */
-
-
 exports.duplicateList = duplicateList;
-
 var manualCreateList = function manualCreateList(name, characterList, selectedProfile, selectedBackground) {
   database_api.createList(userId, {
     name: name,
@@ -3641,50 +3159,42 @@ var manualCreateList = function manualCreateList(name, characterList, selectedPr
     selectedBackground: selectedBackground
   });
 };
+
 /**
  * Added the character character to the list listId.
  */
-
-
 exports.manualCreateList = manualCreateList;
-
 var addCharacterToList = function addCharacterToList(listId, character) {
   var newCharacter = {};
   if (character._id) newCharacter[character._id] = character_api.sanitizeCharacter(_objectSpread({}, character));else newCharacter[generatePushID()] = character_api.sanitizeCharacter(_objectSpread({}, character));
   database_api.updateListProperty(userId, listId, "characterList", newCharacter);
 };
+
 /**
  * Updates the character characterDisplayId with character character of list listId.
  */
-
-
 exports.addCharacterToList = addCharacterToList;
-
 var updateCharacterOfList = function updateCharacterOfList(listId, characterDisplayId, character) {
   character = character_api.sanitizeCharacter(character);
   if (JSON.stringify(character) === JSON.stringify(prevCharacter)) return;else prevCharacter = character;
   var newCharacter = (0, _defineProperty2["default"])({}, characterDisplayId, character);
   database_api.updateListProperty(userId, listId, "characterList", newCharacter);
 };
+
 /**
  * Delete the character characterDisplayId of list listId.
  */
-
-
 exports.updateCharacterOfList = updateCharacterOfList;
-
 var deleteCharacterOfList = function deleteCharacterOfList(listId, characterDisplayId) {
   database_api.deleteListItem(userId, listId, "characterList", characterDisplayId);
 };
+
 /* ------------------------------ Profiles ------------------------------ */
 
 /**
  * Create a new character profile with name name and settings settings.
  */
-
-
 exports.deleteCharacterOfList = deleteCharacterOfList;
-
 var createProfile = function createProfile(name, rules) {
   database_api.createProfile(userId, {
     name: name,
@@ -3692,13 +3202,11 @@ var createProfile = function createProfile(name, rules) {
     rules: rules
   });
 };
+
 /**
  * Updates the profile profileId with settings settings.
  */
-
-
 exports.createProfile = createProfile;
-
 var updateProfile = function updateProfile(profileId, rules) {
   database_api.updateProfile(userId, profileId, {
     name: profiles[profileId].name,
@@ -3706,83 +3214,69 @@ var updateProfile = function updateProfile(profileId, rules) {
     rules: rules
   });
 };
+
 /**
  * Deletes profile profileId and updates the profiles of all other lists to default.
  */
-
-
 exports.updateProfile = updateProfile;
-
 var deleteProfile = function deleteProfile(profileId) {
   database_api.deleteProfile(userId, profileId);
   Object.entries(lists).forEach(function (_ref5) {
     var _ref6 = (0, _slicedToArray2["default"])(_ref5, 2),
-        listId = _ref6[0],
-        list = _ref6[1];
-
+      listId = _ref6[0],
+      list = _ref6[1];
     if (list.selectedProfile === profileId) updateListProfile(listId, "0");
   });
 };
+
 /* ------------------------------ Settings ------------------------------ */
 
 /**
  * Updates the setting settingsName with settings newSettings.
  */
-
-
 exports.deleteProfile = deleteProfile;
-
 var updateSettings = function updateSettings(settingName, newSettings) {
   database_api.updateSettings(userId, settingName, newSettings);
 };
+
 /* ------------------------------ User ------------------------------ */
 
 /**
  * Sets the user property settingsName with settings newSettings.
  */
-
-
 exports.updateSettings = updateSettings;
-
 var setUserProperty = function setUserProperty(settingName, newSettings) {
   database_api.setUserProperty(userId, settingName, newSettings);
 };
+
 /**
  * Removes the user property settingsName with settings newSettings.
  */
-
-
 exports.setUserProperty = setUserProperty;
-
 var removeUserProperty = function removeUserProperty(settingName) {
   database_api.removeUserProperty(userId, settingName);
 };
+
 /**
  * Updates storage bucket.
  */
-
-
 exports.removeUserProperty = removeUserProperty;
-
 var updateListImage = function updateListImage(dataURL) {
   var playerId = user.playerId;
   if (playerId) return database_api.updateListImage(playerId, dataURL);else return Promise.reject("No Player ID.");
 };
+
 /**
  * Delete storage bucket.
  */
-
-
 exports.updateListImage = updateListImage;
-
 var deleteListImage = function deleteListImage() {
   var playerId = user.playerId;
   if (playerId) return database_api.deleteListImage(playerId);else return Promise.reject("No Player ID.");
 };
-
 exports.deleteListImage = deleteListImage;
 
-},{"../../shared/js/database_api.js":10,"../../shared/js/utils.js":12,"./background_api.js":1,"./character_api.js":2,"./character_elements.js":3,"./character_list_api.js":4,"./profile_api.js":5,"@babel/runtime/helpers/defineProperty":17,"@babel/runtime/helpers/interopRequireDefault":18,"@babel/runtime/helpers/slicedToArray":23,"@babel/runtime/helpers/typeof":25}],7:[function(require,module,exports){
+},{"../../shared/js/database_api.js":10,"../../shared/js/utils.js":12,"./background_api.js":1,"./character_api.js":2,"./character_elements.js":3,"./character_list_api.js":4,"./profile_api.js":5,"@babel/runtime/helpers/defineProperty":18,"@babel/runtime/helpers/interopRequireDefault":19,"@babel/runtime/helpers/slicedToArray":24,"@babel/runtime/helpers/typeof":28}],7:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -6902,7 +6396,24 @@ var character_collection = [{
   "release_date": "2022-08-22",
   "release_date_na": "2050-01-01",
   "obtainability": "limited",
-  "url": "https://magireco.fandom.com/wiki/Infinite_Iroha)"
+  "url": "https://magireco.fandom.com/wiki/Infinite_Iroha"
+}, {
+  "id": "1701",
+  "name": "Infinity Iroha-chan",
+  "name_jp": "無限大いろはちゃん",
+  "name_na": "",
+  "attribute": "Light",
+  "ranks": {
+    "1": false,
+    "2": false,
+    "3": false,
+    "4": true,
+    "5": true
+  },
+  "release_date": "2023-04-07",
+  "release_date_na": "2050-01-01",
+  "obtainability": "limited",
+  "url": "https://magireco.fandom.com/wiki/Infinity_Iroha-chan"
 }, {
   "id": "2001",
   "name": "Kaname Madoka",
@@ -8950,15 +8461,10 @@ exports.character_collection = character_collection;
 "use strict";
 
 var _typeof = require("@babel/runtime/helpers/typeof");
-
 var character_api = _interopRequireWildcard(require("../../character/js/character_api.js"));
-
 var functions = _interopRequireWildcard(require("../../shared/js/functions.js"));
-
 var utils = _interopRequireWildcard(require("../../shared/js/utils.js"));
-
 var _character_list_api = require("../../character/js/character_list_api.js");
-
 function _getRequireWildcardCache(nodeInterop) {
   if (typeof WeakMap !== "function") return null;
   var cacheBabelInterop = new WeakMap();
@@ -8967,31 +8473,24 @@ function _getRequireWildcardCache(nodeInterop) {
     return nodeInterop ? cacheNodeInterop : cacheBabelInterop;
   })(nodeInterop);
 }
-
 function _interopRequireWildcard(obj, nodeInterop) {
   if (!nodeInterop && obj && obj.__esModule) {
     return obj;
   }
-
   if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") {
     return {
       "default": obj
     };
   }
-
   var cache = _getRequireWildcardCache(nodeInterop);
-
   if (cache && cache.has(obj)) {
     return cache.get(obj);
   }
-
   var newObj = {};
   var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;
-
   for (var key in obj) {
     if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) {
       var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;
-
       if (desc && (desc.get || desc.set)) {
         Object.defineProperty(newObj, key, desc);
       } else {
@@ -8999,26 +8498,21 @@ function _interopRequireWildcard(obj, nodeInterop) {
       }
     }
   }
-
   newObj["default"] = obj;
-
   if (cache) {
     cache.set(obj, newObj);
   }
-
   return newObj;
 }
 /* Elements */
-
-
 var error_text = document.querySelector("#error_text");
 var character_list_content = document.querySelector("#character_list_content");
 var loading = document.querySelector("#loading");
 var info = document.querySelector("#info");
 var playerNameText = document.querySelector("#playerNameText");
 var playerIdText = document.querySelector("#playerIdText");
-/* Load List on Load */
 
+/* Load List on Load */
 window.addEventListener("load", function () {
   var playerId = new URLSearchParams(window.location.search).get("playerId");
   if (!playerId) return showError("No Player Id.");else if (playerId.length != 8) return showError("Invalid Player Id.");else clearError();
@@ -9028,13 +8522,11 @@ window.addEventListener("load", function () {
   }).then(function (result) {
     if (result && result.data) {
       loading.classList.add("hidden");
-
       if (result.data.playerId && result.data.playerName) {
         info.classList.remove("hidden");
         playerIdText.innerHTML = result.data.playerId;
         playerNameText.innerHTML = result.data.playerName;
       }
-
       if (result.data.message) {
         return showError(result.data.message);
       } else if (result.data.list && result.data.list.characterList) {
@@ -9082,7 +8574,6 @@ window.addEventListener("load", function () {
     return showError(error);
   });
 });
-
 var showError = function showError(message) {
   if (message) {
     error_text.classList.remove("hidden");
@@ -9093,19 +8584,18 @@ var showError = function showError(message) {
     error_text.innerHTML = "";
   }
 };
-
 var clearError = function clearError() {
   error_text.classList.add("hidden");
   error_text.innerHTML = "";
 };
 
-},{"../../character/js/character_api.js":2,"../../character/js/character_list_api.js":4,"../../shared/js/functions.js":11,"../../shared/js/utils.js":12,"@babel/runtime/helpers/typeof":25}],10:[function(require,module,exports){
+},{"../../character/js/character_api.js":2,"../../character/js/character_list_api.js":4,"../../shared/js/functions.js":11,"../../shared/js/utils.js":12,"@babel/runtime/helpers/typeof":28}],10:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.onMessageUpdate = exports.onceMessageUpdate = exports.deleteListImage = exports.updateListImage = exports.onSettingUpdate = exports.initSettings = exports.getSettings = exports.updateSettings = exports.onProfileUpdate = exports.deleteProfile = exports.updateProfile = exports.createProfile = exports.getProfiles = exports.onListUpdate = exports.deleteList = exports.deleteListItem = exports.updateListProperty = exports.setListProperty = exports.updateList = exports.createList = exports.getLists = exports.updateUserRecentActivity = exports.updateUserSignInCount = exports.updateUserDetails = exports.onUserUpdate = exports.removeUserProperty = exports.setUserProperty = exports.appendUser = exports.updateUser = exports.getUser = exports.deleteUser = exports.createUser = exports.sendEmailVerification = exports.resetPassword = exports.sessionTimeout = exports.onAuthStateChanged = exports.signout = exports.signInAnonymously = exports.signup = exports.signin = void 0;
+exports.updateUserSignInCount = exports.updateUserRecentActivity = exports.updateUserDetails = exports.updateUser = exports.updateSettings = exports.updateProfile = exports.updateListProperty = exports.updateListImage = exports.updateList = exports.signup = exports.signout = exports.signin = exports.signInAnonymously = exports.setUserProperty = exports.setListProperty = exports.sessionTimeout = exports.sendEmailVerification = exports.resetPassword = exports.removeUserProperty = exports.onceMessageUpdate = exports.onUserUpdate = exports.onSettingUpdate = exports.onProfileUpdate = exports.onMessageUpdate = exports.onListUpdate = exports.onAuthStateChanged = exports.initSettings = exports.getUser = exports.getSettings = exports.getProfiles = exports.getLists = exports.deleteUser = exports.deleteProfile = exports.deleteListItem = exports.deleteListImage = exports.deleteList = exports.createUser = exports.createProfile = exports.createList = exports.appendUser = void 0;
 var config = {
   apiKey: "AIzaSyCDOhFHwY8BHUafRA4hvAT7GISB72bUrhQ",
   authDomain: "magia-record-25fb0.firebaseapp.com",
@@ -9113,18 +8603,19 @@ var config = {
   databaseURL: "https://magia-record-25fb0.firebaseio.com",
   storageBucket: "magia-record-25fb0.appspot.com"
 };
-firebase.initializeApp(config); // Get a reference to the database service.
+firebase.initializeApp(config);
 
+// Get a reference to the database service.
 var db = firebase.database().ref();
 var users = db.child("users");
 var userDetails = db.child("userDetails");
 var lists = db.child("lists");
 var profiles = db.child("profiles");
 var settings = db.child("settings");
-var messages = db.child("messages"); // Get a reference to the storage service.
+var messages = db.child("messages");
 
+// Get a reference to the storage service.
 var storage = firebase.storage().ref();
-
 var signin = function signin(email, password, loginHandler, errorHandler) {
   firebase.auth().signInWithEmailAndPassword(email, password).then(function (userCreds) {
     updateUserDetails(userCreds.user.uid, "lastSignIn", "User");
@@ -9133,9 +8624,7 @@ var signin = function signin(email, password, loginHandler, errorHandler) {
     return errorHandler(error.message);
   });
 };
-
 exports.signin = signin;
-
 var signup = function signup(name, email, password, loginHandler, errorHandler) {
   firebase.auth().createUserWithEmailAndPassword(email, password).then(function (userCreds) {
     updateUserDetails(userCreds.user.uid, "signUp", "Email");
@@ -9144,9 +8633,7 @@ var signup = function signup(name, email, password, loginHandler, errorHandler) 
     return errorHandler(error.message);
   });
 };
-
 exports.signup = signup;
-
 var signInAnonymously = function signInAnonymously(loginHandler, errorHandler) {
   firebase.auth().signInAnonymously().then(function (userCreds) {
     updateUserDetails(userCreds.user.uid, "signUp", "Anonymous");
@@ -9155,17 +8642,13 @@ var signInAnonymously = function signInAnonymously(loginHandler, errorHandler) {
     return errorHandler(error);
   });
 };
-
 exports.signInAnonymously = signInAnonymously;
-
 var signout = function signout(details, userId) {
   var user = firebase.auth().currentUser;
   if (!details) details = "User";
   if (user && user.uid) updateUserDetails(user.uid, "lastSignOut", details, signOutRedirect);else if (userId) updateUserDetails(userId, "lastSignOut", details, signOutRedirect);
 };
-
 exports.signout = signout;
-
 var signOutRedirect = function signOutRedirect() {
   firebase.auth().signOut().then(function () {
     if (window.location.pathname != "/magireco/") window.location.href = "/magireco/";
@@ -9173,21 +8656,17 @@ var signOutRedirect = function signOutRedirect() {
     console.error(error);
   });
 };
-
 var onAuthStateChanged = function onAuthStateChanged(callback) {
   firebase.auth().onAuthStateChanged(function (user) {
     sessionTimeout(user, callback);
   });
 };
-
 exports.onAuthStateChanged = onAuthStateChanged;
-
 var sessionTimeout = function sessionTimeout(user, callback) {
   // let user = firebase.auth().currentUser;
   if (user && !user.isAnonymous) {
     // https://stackoverflow.com/a/58899511/7627317
     var userSessionTimeout = null;
-
     if (user === null && userSessionTimeout) {
       clearTimeout(userSessionTimeout);
       userSessionTimeout = null;
@@ -9196,11 +8675,9 @@ var sessionTimeout = function sessionTimeout(user, callback) {
       user.getIdTokenResult().then(function (idTokenResult) {
         var authTime = idTokenResult.claims.auth_time * 1000;
         var sessionDurationInMilliseconds = 3 * 60 * 60 * 1000; // 3 hours
-
-        var expirationInMilliseconds = sessionDurationInMilliseconds - (Date.now() - authTime);
+        var expirationInMilliseconds = Math.max(0, sessionDurationInMilliseconds - (Date.now() - authTime));
         if (expirationInMilliseconds > 1000) callback(user);
         userSessionTimeout = setTimeout(function () {
-          console.log(expirationInMilliseconds, "milliseconds until auto sign out.");
           signout("Session Timeout", user.uid);
         }, expirationInMilliseconds);
       });
@@ -9209,25 +8686,20 @@ var sessionTimeout = function sessionTimeout(user, callback) {
     return callback(user);
   }
 };
-
 exports.sessionTimeout = sessionTimeout;
-
 var resetPassword = function resetPassword(emailAddress, resolve, reject) {
   firebase.auth().sendPasswordResetEmail(emailAddress).then(resolve)["catch"](reject);
 };
-
 exports.resetPassword = resetPassword;
-
 var sendEmailVerification = function sendEmailVerification(resolve, reject, details) {
   var user = firebase.auth().currentUser;
   details = details ? details : "User";
   updateUserDetails(user.uid, "sendEmailVerification", details);
   user.sendEmailVerification().then(resolve)["catch"](reject);
-}; // ---------- users ---------- //
+};
 
-
+// ---------- users ---------- //
 exports.sendEmailVerification = sendEmailVerification;
-
 var createUser = function createUser(userId, name) {
   users.child(userId).update({
     name: name
@@ -9236,54 +8708,39 @@ var createUser = function createUser(userId, name) {
   profiles.child(userId).update(defaultProfiles);
   settings.child(userId).set(defaultSettings);
 };
-
 exports.createUser = createUser;
-
 var deleteUser = function deleteUser(userId) {
   users.child(userId).remove();
   lists.child(userId).remove();
   profiles.child(userId).remove();
   settings.child(userId).remove();
 };
-
 exports.deleteUser = deleteUser;
-
 var getUser = function getUser(userId) {
   return users.child(userId).once('value');
 };
-
 exports.getUser = getUser;
-
 var updateUser = function updateUser(userId, userProperty, content) {
   return users.child("".concat(userId, "/").concat(userProperty)).update(content);
 };
-
 exports.updateUser = updateUser;
-
 var appendUser = function appendUser(userId, userProperty, content) {
   return users.child("".concat(userId, "/").concat(userProperty)).push(content);
 };
-
 exports.appendUser = appendUser;
-
 var setUserProperty = function setUserProperty(userId, userProperty, content) {
   return users.child("".concat(userId, "/").concat(userProperty)).set(content);
 };
-
 exports.setUserProperty = setUserProperty;
-
 var removeUserProperty = function removeUserProperty(userId, userProperty) {
   return users.child("".concat(userId, "/").concat(userProperty)).remove();
 };
-
 exports.removeUserProperty = removeUserProperty;
-
 var onUserUpdate = function onUserUpdate(userId, callback) {
   users.child(userId).on('value', function (snapshot) {
     callback(snapshot);
   });
 };
-
 exports.onUserUpdate = onUserUpdate;
 var typeToEvent = {
   signUp: "Sign Up",
@@ -9291,7 +8748,6 @@ var typeToEvent = {
   lastSignOut: "Sign Out",
   sendEmailVerification: "Send Email Verification"
 };
-
 var updateUserDetails = function updateUserDetails(userId, type, details, callback) {
   var activity = {
     details: details,
@@ -9302,22 +8758,17 @@ var updateUserDetails = function updateUserDetails(userId, type, details, callba
   updateUserRecentActivity(userId, activity, callback);
   if (type === "lastSignIn") updateUserSignInCount(userId);
 };
-
 exports.updateUserDetails = updateUserDetails;
-
 var updateUserSignInCount = function updateUserSignInCount(userId) {
   userDetails.child("".concat(userId, "/signInCount")).once('value', function (snapshot) {
     var count = snapshot.val();
     if (count || count === 0) userDetails.child("".concat(userId, "/signInCount")).set(count + 1);else userDetails.child("".concat(userId, "/signInCount")).set(1);
   });
 };
-
 exports.updateUserSignInCount = updateUserSignInCount;
-
 var updateUserRecentActivity = function updateUserRecentActivity(userId, newActivity, callback) {
   userDetails.child("".concat(userId, "/recentActivity")).once('value', function (snapshot) {
     var activity = snapshot.val();
-
     if (activity && activity.length >= 5) {
       activity.shift();
       activity.push(newActivity);
@@ -9326,13 +8777,12 @@ var updateUserRecentActivity = function updateUserRecentActivity(userId, newActi
     } else {
       activity = [newActivity];
     }
-
     userDetails.child("".concat(userId, "/recentActivity")).set(activity);
     if (callback) callback();
   });
-}; // ---------- character lists ---------- //
+};
 
-
+// ---------- character lists ---------- //
 exports.updateUserRecentActivity = updateUserRecentActivity;
 var defaultLists = {};
 var listId = generatePushID();
@@ -9368,56 +8818,41 @@ defaultLists[memoListId].memoriaList[memoId] = {
   archive: false,
   protect: false
 };
-
 var getLists = function getLists(userId) {
   return lists.child(userId).once('value');
 };
-
 exports.getLists = getLists;
-
 var createList = function createList(userId, content) {
   return lists.child(userId).push(content);
 };
-
 exports.createList = createList;
-
 var updateList = function updateList(userId, listId, content) {
   return lists.child("".concat(userId, "/").concat(listId)).set(content);
 };
-
 exports.updateList = updateList;
-
 var setListProperty = function setListProperty(userId, listId, propertyName, content) {
   return lists.child("".concat(userId, "/").concat(listId, "/").concat(propertyName)).set(content);
 };
-
 exports.setListProperty = setListProperty;
-
 var updateListProperty = function updateListProperty(userId, listId, propertyName, content) {
   return lists.child("".concat(userId, "/").concat(listId, "/").concat(propertyName)).update(content);
 };
-
 exports.updateListProperty = updateListProperty;
-
 var deleteListItem = function deleteListItem(userId, listId, listProperty, content) {
   return lists.child("".concat(userId, "/").concat(listId, "/").concat(listProperty, "/").concat(content)).remove();
 };
-
 exports.deleteListItem = deleteListItem;
-
 var deleteList = function deleteList(userId, listId) {
   return lists.child("".concat(userId, "/").concat(listId)).remove();
 };
-
 exports.deleteList = deleteList;
-
 var onListUpdate = function onListUpdate(userId, callback) {
   lists.child(userId).on('value', function (snapshot) {
     callback(snapshot);
   });
-}; // ---------- profiles ---------- //
+};
 
-
+// ---------- profiles ---------- //
 exports.onListUpdate = onListUpdate;
 var defaultProfiles = {
   "0": {
@@ -9473,38 +8908,29 @@ var defaultProfiles = {
     settings: false
   }
 };
-
 var getProfiles = function getProfiles(userId) {
   return profiles.child(userId).once('value');
 };
-
 exports.getProfiles = getProfiles;
-
 var createProfile = function createProfile(userId, content) {
   return profiles.child("".concat(userId)).push(content);
 };
-
 exports.createProfile = createProfile;
-
 var updateProfile = function updateProfile(userId, profileId, content) {
   return profiles.child("".concat(userId, "/").concat(profileId)).set(content);
 };
-
 exports.updateProfile = updateProfile;
-
 var deleteProfile = function deleteProfile(userId, profileId) {
   return profiles.child("".concat(userId, "/").concat(profileId)).remove();
 };
-
 exports.deleteProfile = deleteProfile;
-
 var onProfileUpdate = function onProfileUpdate(userId, callback) {
   profiles.child(userId).on('value', function (snapshot) {
     callback(snapshot);
   });
-}; // ---------- settings ---------- //
+};
 
-
+// ---------- settings ---------- //
 exports.onProfileUpdate = onProfileUpdate;
 var defaultSettings = {
   expanded_tabs: {
@@ -9530,56 +8956,43 @@ var defaultSettings = {
   memoria_zoom: 100,
   background_transparency: 0
 };
-
 var updateSettings = function updateSettings(userId, settingName, content) {
   return settings.child("".concat(userId, "/").concat(settingName)).set(content);
 };
-
 exports.updateSettings = updateSettings;
-
 var getSettings = function getSettings(userId) {
   return settings.child(userId).once('value');
 };
-
 exports.getSettings = getSettings;
-
 var initSettings = function initSettings(userId) {
   return settings.child(userId).set(defaultSettings);
 };
-
 exports.initSettings = initSettings;
-
 var onSettingUpdate = function onSettingUpdate(userId, callback) {
   settings.child(userId).on('value', function (snapshot) {
     callback(snapshot);
   });
-}; // ---------- storage bucket ---------- //
+};
 
-
+// ---------- storage bucket ---------- //
 exports.onSettingUpdate = onSettingUpdate;
-
 var updateListImage = function updateListImage(playerId, dataURL) {
   return storage.child("images/lists/".concat(playerId, ".png")).putString(dataURL, 'data_url');
 };
-
 exports.updateListImage = updateListImage;
-
 var deleteListImage = function deleteListImage(playerId) {
   return storage.child("images/lists/".concat(playerId, ".png"))["delete"]();
-}; // ---------- messages ---------- //
+};
 
-
+// ---------- messages ---------- //
 exports.deleteListImage = deleteListImage;
-
 var onceMessageUpdate = function onceMessageUpdate(userId, callback) {
   messages.child("global").once('value', function (snapshot) {
     var val = snapshot.val();
     if (val && val.message && !val.excludeUserIds.includes(userId)) callback(val.message, val.blocking);else callback(false);
   });
 };
-
 exports.onceMessageUpdate = onceMessageUpdate;
-
 var onMessageUpdate = function onMessageUpdate(userId, callback) {
   messages.child("global").on('value', function (snapshot) {
     var val = snapshot.val();
@@ -9590,7 +9003,6 @@ var onMessageUpdate = function onMessageUpdate(userId, callback) {
     if (val && val.message) callback(val.message, val.blocking);else callback(false);
   });
 };
-
 exports.onMessageUpdate = onMessageUpdate;
 
 },{}],11:[function(require,module,exports){
@@ -9611,27 +9023,23 @@ exports.validPlayerID = validPlayerID;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.setTheme = exports.detectColorScheme = exports.sortArrayBy = void 0;
-
+exports.sortArrayBy = exports.setTheme = exports.detectColorScheme = void 0;
 var sortArrayBy = function sortArrayBy(a, b, sortBy) {
   var i = 0,
-      result = 0;
-
+    result = 0;
   while (i < sortBy.length && result === 0) {
     if (sortBy[i].isString) result = sortBy[i].direction * (a[sortBy[i].prop].toString() < b[sortBy[i].prop].toString() ? -1 : a[sortBy[i].prop].toString() > b[sortBy[i].prop].toString() ? 1 : 0);else result = sortBy[i].direction * (parseInt(a[sortBy[i].prop].toString()) < parseInt(b[sortBy[i].prop].toString()) ? -1 : parseInt(a[sortBy[i].prop].toString()) > parseInt(b[sortBy[i].prop].toString()) ? 1 : 0);
     i++;
   }
-
   return result;
-}; // https://stackoverflow.com/a/56550819/7627317
+};
 
-
+// https://stackoverflow.com/a/56550819/7627317
 exports.sortArrayBy = sortArrayBy;
-
 var detectColorScheme = function detectColorScheme() {
   var theme = "light"; //default to light
-  // local storage is used to override OS theme settings
 
+  // local storage is used to override OS theme settings
   if (window.localStorage.getItem("theme")) {
     if (window.localStorage.getItem("theme") == "dark") {
       theme = "dark";
@@ -9643,73 +9051,75 @@ var detectColorScheme = function detectColorScheme() {
     // OS theme setting detected as dark
     theme = "dark";
   }
-
   setTheme(theme);
 };
-
 exports.detectColorScheme = detectColorScheme;
-
 var setTheme = function setTheme(theme) {
   document.documentElement.setAttribute("data-theme", theme);
   var theme_button = document.querySelector("#theme_button");
-
   if (theme === "light") {
     if (theme_button) {
       if (theme_button.classList.contains("light")) theme_button.classList.replace("light", "dark");else if (!theme_button.classList.contains("dark")) theme_button.classList.add("dark");
     }
-
     window.localStorage.setItem("theme", "light");
   } else if (theme === "dark") {
     if (theme_button) {
       if (theme_button.classList.contains("dark")) theme_button.classList.replace("dark", "light");else if (!theme_button.classList.contains("light")) theme_button.classList.add("light");
     }
-
     window.localStorage.setItem("theme", "dark");
   }
 };
-
 exports.setTheme = setTheme;
 
 },{}],13:[function(require,module,exports){
 function _arrayLikeToArray(arr, len) {
   if (len == null || len > arr.length) len = arr.length;
-
-  for (var i = 0, arr2 = new Array(len); i < len; i++) {
-    arr2[i] = arr[i];
-  }
-
+  for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i];
   return arr2;
 }
-
-module.exports = _arrayLikeToArray;
-module.exports["default"] = module.exports, module.exports.__esModule = true;
+module.exports = _arrayLikeToArray, module.exports.__esModule = true, module.exports["default"] = module.exports;
 },{}],14:[function(require,module,exports){
 function _arrayWithHoles(arr) {
   if (Array.isArray(arr)) return arr;
 }
-
-module.exports = _arrayWithHoles;
-module.exports["default"] = module.exports, module.exports.__esModule = true;
+module.exports = _arrayWithHoles, module.exports.__esModule = true, module.exports["default"] = module.exports;
 },{}],15:[function(require,module,exports){
 var arrayLikeToArray = require("./arrayLikeToArray.js");
-
 function _arrayWithoutHoles(arr) {
   if (Array.isArray(arr)) return arrayLikeToArray(arr);
 }
-
-module.exports = _arrayWithoutHoles;
-module.exports["default"] = module.exports, module.exports.__esModule = true;
+module.exports = _arrayWithoutHoles, module.exports.__esModule = true, module.exports["default"] = module.exports;
 },{"./arrayLikeToArray.js":13}],16:[function(require,module,exports){
 function _classCallCheck(instance, Constructor) {
   if (!(instance instanceof Constructor)) {
     throw new TypeError("Cannot call a class as a function");
   }
 }
-
-module.exports = _classCallCheck;
-module.exports["default"] = module.exports, module.exports.__esModule = true;
+module.exports = _classCallCheck, module.exports.__esModule = true, module.exports["default"] = module.exports;
 },{}],17:[function(require,module,exports){
+var toPropertyKey = require("./toPropertyKey.js");
+function _defineProperties(target, props) {
+  for (var i = 0; i < props.length; i++) {
+    var descriptor = props[i];
+    descriptor.enumerable = descriptor.enumerable || false;
+    descriptor.configurable = true;
+    if ("value" in descriptor) descriptor.writable = true;
+    Object.defineProperty(target, toPropertyKey(descriptor.key), descriptor);
+  }
+}
+function _createClass(Constructor, protoProps, staticProps) {
+  if (protoProps) _defineProperties(Constructor.prototype, protoProps);
+  if (staticProps) _defineProperties(Constructor, staticProps);
+  Object.defineProperty(Constructor, "prototype", {
+    writable: false
+  });
+  return Constructor;
+}
+module.exports = _createClass, module.exports.__esModule = true, module.exports["default"] = module.exports;
+},{"./toPropertyKey.js":27}],18:[function(require,module,exports){
+var toPropertyKey = require("./toPropertyKey.js");
 function _defineProperty(obj, key, value) {
+  key = toPropertyKey(key);
   if (key in obj) {
     Object.defineProperty(obj, key, {
       value: value,
@@ -9720,131 +9130,112 @@ function _defineProperty(obj, key, value) {
   } else {
     obj[key] = value;
   }
-
   return obj;
 }
-
-module.exports = _defineProperty;
-module.exports["default"] = module.exports, module.exports.__esModule = true;
-},{}],18:[function(require,module,exports){
+module.exports = _defineProperty, module.exports.__esModule = true, module.exports["default"] = module.exports;
+},{"./toPropertyKey.js":27}],19:[function(require,module,exports){
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : {
     "default": obj
   };
 }
-
-module.exports = _interopRequireDefault;
-module.exports["default"] = module.exports, module.exports.__esModule = true;
-},{}],19:[function(require,module,exports){
+module.exports = _interopRequireDefault, module.exports.__esModule = true, module.exports["default"] = module.exports;
+},{}],20:[function(require,module,exports){
 function _iterableToArray(iter) {
   if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter);
 }
-
-module.exports = _iterableToArray;
-module.exports["default"] = module.exports, module.exports.__esModule = true;
-},{}],20:[function(require,module,exports){
-function _iterableToArrayLimit(arr, i) {
-  var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"];
-
-  if (_i == null) return;
-  var _arr = [];
-  var _n = true;
-  var _d = false;
-
-  var _s, _e;
-
-  try {
-    for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) {
-      _arr.push(_s.value);
-
-      if (i && _arr.length === i) break;
-    }
-  } catch (err) {
-    _d = true;
-    _e = err;
-  } finally {
-    try {
-      if (!_n && _i["return"] != null) _i["return"]();
-    } finally {
-      if (_d) throw _e;
-    }
-  }
-
-  return _arr;
-}
-
-module.exports = _iterableToArrayLimit;
-module.exports["default"] = module.exports, module.exports.__esModule = true;
+module.exports = _iterableToArray, module.exports.__esModule = true, module.exports["default"] = module.exports;
 },{}],21:[function(require,module,exports){
+function _iterableToArrayLimit(arr, i) {
+  var _i = null == arr ? null : "undefined" != typeof Symbol && arr[Symbol.iterator] || arr["@@iterator"];
+  if (null != _i) {
+    var _s,
+      _e,
+      _x,
+      _r,
+      _arr = [],
+      _n = !0,
+      _d = !1;
+    try {
+      if (_x = (_i = _i.call(arr)).next, 0 === i) {
+        if (Object(_i) !== _i) return;
+        _n = !1;
+      } else for (; !(_n = (_s = _x.call(_i)).done) && (_arr.push(_s.value), _arr.length !== i); _n = !0);
+    } catch (err) {
+      _d = !0, _e = err;
+    } finally {
+      try {
+        if (!_n && null != _i["return"] && (_r = _i["return"](), Object(_r) !== _r)) return;
+      } finally {
+        if (_d) throw _e;
+      }
+    }
+    return _arr;
+  }
+}
+module.exports = _iterableToArrayLimit, module.exports.__esModule = true, module.exports["default"] = module.exports;
+},{}],22:[function(require,module,exports){
 function _nonIterableRest() {
   throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
 }
-
-module.exports = _nonIterableRest;
-module.exports["default"] = module.exports, module.exports.__esModule = true;
-},{}],22:[function(require,module,exports){
+module.exports = _nonIterableRest, module.exports.__esModule = true, module.exports["default"] = module.exports;
+},{}],23:[function(require,module,exports){
 function _nonIterableSpread() {
   throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
 }
-
-module.exports = _nonIterableSpread;
-module.exports["default"] = module.exports, module.exports.__esModule = true;
-},{}],23:[function(require,module,exports){
+module.exports = _nonIterableSpread, module.exports.__esModule = true, module.exports["default"] = module.exports;
+},{}],24:[function(require,module,exports){
 var arrayWithHoles = require("./arrayWithHoles.js");
-
 var iterableToArrayLimit = require("./iterableToArrayLimit.js");
-
 var unsupportedIterableToArray = require("./unsupportedIterableToArray.js");
-
 var nonIterableRest = require("./nonIterableRest.js");
-
 function _slicedToArray(arr, i) {
   return arrayWithHoles(arr) || iterableToArrayLimit(arr, i) || unsupportedIterableToArray(arr, i) || nonIterableRest();
 }
-
-module.exports = _slicedToArray;
-module.exports["default"] = module.exports, module.exports.__esModule = true;
-},{"./arrayWithHoles.js":14,"./iterableToArrayLimit.js":20,"./nonIterableRest.js":21,"./unsupportedIterableToArray.js":26}],24:[function(require,module,exports){
+module.exports = _slicedToArray, module.exports.__esModule = true, module.exports["default"] = module.exports;
+},{"./arrayWithHoles.js":14,"./iterableToArrayLimit.js":21,"./nonIterableRest.js":22,"./unsupportedIterableToArray.js":29}],25:[function(require,module,exports){
 var arrayWithoutHoles = require("./arrayWithoutHoles.js");
-
 var iterableToArray = require("./iterableToArray.js");
-
 var unsupportedIterableToArray = require("./unsupportedIterableToArray.js");
-
 var nonIterableSpread = require("./nonIterableSpread.js");
-
 function _toConsumableArray(arr) {
   return arrayWithoutHoles(arr) || iterableToArray(arr) || unsupportedIterableToArray(arr) || nonIterableSpread();
 }
-
-module.exports = _toConsumableArray;
-module.exports["default"] = module.exports, module.exports.__esModule = true;
-},{"./arrayWithoutHoles.js":15,"./iterableToArray.js":19,"./nonIterableSpread.js":22,"./unsupportedIterableToArray.js":26}],25:[function(require,module,exports){
+module.exports = _toConsumableArray, module.exports.__esModule = true, module.exports["default"] = module.exports;
+},{"./arrayWithoutHoles.js":15,"./iterableToArray.js":20,"./nonIterableSpread.js":23,"./unsupportedIterableToArray.js":29}],26:[function(require,module,exports){
+var _typeof = require("./typeof.js")["default"];
+function _toPrimitive(input, hint) {
+  if (_typeof(input) !== "object" || input === null) return input;
+  var prim = input[Symbol.toPrimitive];
+  if (prim !== undefined) {
+    var res = prim.call(input, hint || "default");
+    if (_typeof(res) !== "object") return res;
+    throw new TypeError("@@toPrimitive must return a primitive value.");
+  }
+  return (hint === "string" ? String : Number)(input);
+}
+module.exports = _toPrimitive, module.exports.__esModule = true, module.exports["default"] = module.exports;
+},{"./typeof.js":28}],27:[function(require,module,exports){
+var _typeof = require("./typeof.js")["default"];
+var toPrimitive = require("./toPrimitive.js");
+function _toPropertyKey(arg) {
+  var key = toPrimitive(arg, "string");
+  return _typeof(key) === "symbol" ? key : String(key);
+}
+module.exports = _toPropertyKey, module.exports.__esModule = true, module.exports["default"] = module.exports;
+},{"./toPrimitive.js":26,"./typeof.js":28}],28:[function(require,module,exports){
 function _typeof(obj) {
   "@babel/helpers - typeof";
 
-  if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
-    module.exports = _typeof = function _typeof(obj) {
-      return typeof obj;
-    };
-
-    module.exports["default"] = module.exports, module.exports.__esModule = true;
-  } else {
-    module.exports = _typeof = function _typeof(obj) {
-      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
-    };
-
-    module.exports["default"] = module.exports, module.exports.__esModule = true;
-  }
-
-  return _typeof(obj);
+  return (module.exports = _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) {
+    return typeof obj;
+  } : function (obj) {
+    return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+  }, module.exports.__esModule = true, module.exports["default"] = module.exports), _typeof(obj);
 }
-
-module.exports = _typeof;
-module.exports["default"] = module.exports, module.exports.__esModule = true;
-},{}],26:[function(require,module,exports){
+module.exports = _typeof, module.exports.__esModule = true, module.exports["default"] = module.exports;
+},{}],29:[function(require,module,exports){
 var arrayLikeToArray = require("./arrayLikeToArray.js");
-
 function _unsupportedIterableToArray(o, minLen) {
   if (!o) return;
   if (typeof o === "string") return arrayLikeToArray(o, minLen);
@@ -9853,7 +9244,5 @@ function _unsupportedIterableToArray(o, minLen) {
   if (n === "Map" || n === "Set") return Array.from(o);
   if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return arrayLikeToArray(o, minLen);
 }
-
-module.exports = _unsupportedIterableToArray;
-module.exports["default"] = module.exports, module.exports.__esModule = true;
+module.exports = _unsupportedIterableToArray, module.exports.__esModule = true, module.exports["default"] = module.exports;
 },{"./arrayLikeToArray.js":13}]},{},[9]);

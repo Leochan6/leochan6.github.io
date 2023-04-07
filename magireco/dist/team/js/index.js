@@ -2,10 +2,7 @@
 "use strict";
 
 var _team_elements = require("./team_elements.js");
-/* ------------------------------ General Modal Dialogs ------------------------------ */
-// hide modal dialogs if not drag
-
-
+/* ------------------------------ General Modal Dialogs ------------------------------ */ // hide modal dialogs if not drag
 var dragging = false;
 window.addEventListener("mousedown", function (event) {
   var x = event.x;
@@ -30,20 +27,20 @@ window.addEventListener("keyup", function (e) {
     [_team_elements.messageDialog].forEach(function (dialog) {
       if (e.target == dialog.modal && dialog.isOpen()) return dialog.close();
     });
-
     if (character_api.selectedCharacter) {
       character_api.deselectDisplay();
     }
   }
 });
-/* ------------------------------ Message Modal Dialog ------------------------------ */
-// hide message modal dialog
 
+/* ------------------------------ Message Modal Dialog ------------------------------ */
+
+// hide message modal dialog
 _team_elements.messageDialog.closeButton.addEventListener("click", function () {
   _team_elements.messageDialog.close();
-}); // message modal dialog copy button.
+});
 
-
+// message modal dialog copy button.
 _team_elements.messageDialog.copy.addEventListener("click", function () {
   navigator.clipboard.writeText(_team_elements.messageDialog.text.value);
 });
@@ -52,16 +49,12 @@ _team_elements.messageDialog.copy.addEventListener("click", function () {
 "use strict";
 
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
-
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.importListDialog = exports.backgroundSelectDialog = exports.memoriaSelectDialog = exports.messageDialog = exports.team_elements = void 0;
-
+exports.team_elements = exports.messageDialog = exports.memoriaSelectDialog = exports.importListDialog = exports.backgroundSelectDialog = void 0;
 var _defineProperty2 = _interopRequireDefault(require("@babel/runtime/helpers/defineProperty"));
-
 var _team_elements;
-
 var team_elements = (_team_elements = {
   // Header
   theme_button: document.querySelector("#theme_button"),
@@ -130,8 +123,9 @@ var team_elements = (_team_elements = {
   sort_dir_2_select: document.querySelector("#sort_dir_2_select"),
   sort_id_dir_select: document.querySelector("#sort_id_dir_select"),
   displays_per_row: document.querySelector("#displays_per_row")
-}, (0, _defineProperty2["default"])(_team_elements, "displays_per_row", document.querySelector("#displays_per_row")), (0, _defineProperty2["default"])(_team_elements, "display_alignment_select", document.querySelector("#display_alignment_select")), (0, _defineProperty2["default"])(_team_elements, "backgroundSelectModalOpen", document.querySelector("#backgroundSelectModalOpen")), (0, _defineProperty2["default"])(_team_elements, "background_select", document.querySelector("#background_select")), (0, _defineProperty2["default"])(_team_elements, "remove_background_button", document.querySelector("#remove_background_button")), (0, _defineProperty2["default"])(_team_elements, "background_transparency_field", document.querySelector("#background_transparency_field")), (0, _defineProperty2["default"])(_team_elements, "background_transparency_range", document.querySelector("#background_transparency_range")), (0, _defineProperty2["default"])(_team_elements, "list_name_title", document.querySelector("#list_name_title")), (0, _defineProperty2["default"])(_team_elements, "header_content_divider", document.querySelector("#header_content_divider")), (0, _defineProperty2["default"])(_team_elements, "content", document.querySelector("#content")), (0, _defineProperty2["default"])(_team_elements, "main", document.querySelector("#main")), (0, _defineProperty2["default"])(_team_elements, "menu_bar", document.querySelector("#menu_bar")), (0, _defineProperty2["default"])(_team_elements, "left_main_divider", document.querySelector("#left_main_divider")), (0, _defineProperty2["default"])(_team_elements, "main_header", document.querySelector("#main_header")), (0, _defineProperty2["default"])(_team_elements, "export_image_button", document.querySelector("#export_image_button")), (0, _defineProperty2["default"])(_team_elements, "export_open_button", document.querySelector("#export_open_button")), (0, _defineProperty2["default"])(_team_elements, "export_text_button", document.querySelector("#export_text_button")), (0, _defineProperty2["default"])(_team_elements, "import_text_button", document.querySelector("#import_text_button")), (0, _defineProperty2["default"])(_team_elements, "zoom_field", document.querySelector("#zoom_field")), (0, _defineProperty2["default"])(_team_elements, "zoom_range", document.querySelector("#zoom_range")), (0, _defineProperty2["default"])(_team_elements, "list_filters", document.querySelector("#list_filters")), (0, _defineProperty2["default"])(_team_elements, "add_filter_button", document.querySelector("#add_filter_button")), (0, _defineProperty2["default"])(_team_elements, "apply_filter_button", document.querySelector("#apply_filter_button")), (0, _defineProperty2["default"])(_team_elements, "reset_filter_button", document.querySelector("#reset_filter_button")), (0, _defineProperty2["default"])(_team_elements, "toggle_filter_button", document.querySelector("#toggle_filter_button")), (0, _defineProperty2["default"])(_team_elements, "list_stats_list", document.querySelector("#list_stats_list")), (0, _defineProperty2["default"])(_team_elements, "more_stats_button", document.querySelector("#more_stats_button")), (0, _defineProperty2["default"])(_team_elements, "memoria_list_container", document.querySelector("#memoria_list_container")), (0, _defineProperty2["default"])(_team_elements, "memoria_list_content", document.querySelector("#memoria_list_content")), _team_elements); // Message Modal
+}, (0, _defineProperty2["default"])(_team_elements, "displays_per_row", document.querySelector("#displays_per_row")), (0, _defineProperty2["default"])(_team_elements, "display_alignment_select", document.querySelector("#display_alignment_select")), (0, _defineProperty2["default"])(_team_elements, "backgroundSelectModalOpen", document.querySelector("#backgroundSelectModalOpen")), (0, _defineProperty2["default"])(_team_elements, "background_select", document.querySelector("#background_select")), (0, _defineProperty2["default"])(_team_elements, "remove_background_button", document.querySelector("#remove_background_button")), (0, _defineProperty2["default"])(_team_elements, "background_transparency_field", document.querySelector("#background_transparency_field")), (0, _defineProperty2["default"])(_team_elements, "background_transparency_range", document.querySelector("#background_transparency_range")), (0, _defineProperty2["default"])(_team_elements, "list_name_title", document.querySelector("#list_name_title")), (0, _defineProperty2["default"])(_team_elements, "header_content_divider", document.querySelector("#header_content_divider")), (0, _defineProperty2["default"])(_team_elements, "content", document.querySelector("#content")), (0, _defineProperty2["default"])(_team_elements, "main", document.querySelector("#main")), (0, _defineProperty2["default"])(_team_elements, "menu_bar", document.querySelector("#menu_bar")), (0, _defineProperty2["default"])(_team_elements, "left_main_divider", document.querySelector("#left_main_divider")), (0, _defineProperty2["default"])(_team_elements, "main_header", document.querySelector("#main_header")), (0, _defineProperty2["default"])(_team_elements, "export_image_button", document.querySelector("#export_image_button")), (0, _defineProperty2["default"])(_team_elements, "export_open_button", document.querySelector("#export_open_button")), (0, _defineProperty2["default"])(_team_elements, "export_text_button", document.querySelector("#export_text_button")), (0, _defineProperty2["default"])(_team_elements, "import_text_button", document.querySelector("#import_text_button")), (0, _defineProperty2["default"])(_team_elements, "zoom_field", document.querySelector("#zoom_field")), (0, _defineProperty2["default"])(_team_elements, "zoom_range", document.querySelector("#zoom_range")), (0, _defineProperty2["default"])(_team_elements, "list_filters", document.querySelector("#list_filters")), (0, _defineProperty2["default"])(_team_elements, "add_filter_button", document.querySelector("#add_filter_button")), (0, _defineProperty2["default"])(_team_elements, "apply_filter_button", document.querySelector("#apply_filter_button")), (0, _defineProperty2["default"])(_team_elements, "reset_filter_button", document.querySelector("#reset_filter_button")), (0, _defineProperty2["default"])(_team_elements, "toggle_filter_button", document.querySelector("#toggle_filter_button")), (0, _defineProperty2["default"])(_team_elements, "list_stats_list", document.querySelector("#list_stats_list")), (0, _defineProperty2["default"])(_team_elements, "more_stats_button", document.querySelector("#more_stats_button")), (0, _defineProperty2["default"])(_team_elements, "memoria_list_container", document.querySelector("#memoria_list_container")), (0, _defineProperty2["default"])(_team_elements, "memoria_list_content", document.querySelector("#memoria_list_content")), _team_elements);
 
+// Message Modal
 exports.team_elements = team_elements;
 var messageDialog = {
   modal: document.querySelector("#messageModal"),
@@ -159,8 +153,9 @@ var messageDialog = {
   isOpen: function isOpen() {
     return messageDialog.modal.style.display === "block";
   }
-}; // Memoria Select Modal
+};
 
+// Memoria Select Modal
 exports.messageDialog = messageDialog;
 var memoriaSelectDialog = {
   modal: document.querySelector("#memoriaSelectModal"),
@@ -183,8 +178,9 @@ var memoriaSelectDialog = {
   isOpen: function isOpen() {
     return memoriaSelectDialog.modal.style.display === "block";
   }
-}; // Background Select Modal
+};
 
+// Background Select Modal
 exports.memoriaSelectDialog = memoriaSelectDialog;
 var backgroundSelectDialog = {
   modal: document.querySelector("#backgroundSelectModal"),
@@ -205,8 +201,9 @@ var backgroundSelectDialog = {
   isOpen: function isOpen() {
     return backgroundSelectDialog.modal.style.display === "block";
   }
-}; // Import List Modal
+};
 
+// Import List Modal
 exports.backgroundSelectDialog = backgroundSelectDialog;
 var importListDialog = {
   modal: document.querySelector("#importListModal"),
@@ -236,7 +233,9 @@ var importListDialog = {
 exports.importListDialog = importListDialog;
 
 },{"@babel/runtime/helpers/defineProperty":3,"@babel/runtime/helpers/interopRequireDefault":4}],3:[function(require,module,exports){
+var toPropertyKey = require("./toPropertyKey.js");
 function _defineProperty(obj, key, value) {
+  key = toPropertyKey(key);
   if (key in obj) {
     Object.defineProperty(obj, key, {
       value: value,
@@ -247,19 +246,46 @@ function _defineProperty(obj, key, value) {
   } else {
     obj[key] = value;
   }
-
   return obj;
 }
-
-module.exports = _defineProperty;
-module.exports["default"] = module.exports, module.exports.__esModule = true;
-},{}],4:[function(require,module,exports){
+module.exports = _defineProperty, module.exports.__esModule = true, module.exports["default"] = module.exports;
+},{"./toPropertyKey.js":6}],4:[function(require,module,exports){
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : {
     "default": obj
   };
 }
+module.exports = _interopRequireDefault, module.exports.__esModule = true, module.exports["default"] = module.exports;
+},{}],5:[function(require,module,exports){
+var _typeof = require("./typeof.js")["default"];
+function _toPrimitive(input, hint) {
+  if (_typeof(input) !== "object" || input === null) return input;
+  var prim = input[Symbol.toPrimitive];
+  if (prim !== undefined) {
+    var res = prim.call(input, hint || "default");
+    if (_typeof(res) !== "object") return res;
+    throw new TypeError("@@toPrimitive must return a primitive value.");
+  }
+  return (hint === "string" ? String : Number)(input);
+}
+module.exports = _toPrimitive, module.exports.__esModule = true, module.exports["default"] = module.exports;
+},{"./typeof.js":7}],6:[function(require,module,exports){
+var _typeof = require("./typeof.js")["default"];
+var toPrimitive = require("./toPrimitive.js");
+function _toPropertyKey(arg) {
+  var key = toPrimitive(arg, "string");
+  return _typeof(key) === "symbol" ? key : String(key);
+}
+module.exports = _toPropertyKey, module.exports.__esModule = true, module.exports["default"] = module.exports;
+},{"./toPrimitive.js":5,"./typeof.js":7}],7:[function(require,module,exports){
+function _typeof(obj) {
+  "@babel/helpers - typeof";
 
-module.exports = _interopRequireDefault;
-module.exports["default"] = module.exports, module.exports.__esModule = true;
+  return (module.exports = _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) {
+    return typeof obj;
+  } : function (obj) {
+    return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+  }, module.exports.__esModule = true, module.exports["default"] = module.exports), _typeof(obj);
+}
+module.exports = _typeof, module.exports.__esModule = true, module.exports["default"] = module.exports;
 },{}]},{},[1]);

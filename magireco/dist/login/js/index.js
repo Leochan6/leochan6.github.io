@@ -2,15 +2,10 @@
 "use strict";
 
 var _typeof = require("@babel/runtime/helpers/typeof");
-
 var _login_elements = require("./login_elements.js");
-
 var database = _interopRequireWildcard(require("../../shared/js/database_api.js"));
-
 var utils = _interopRequireWildcard(require("../../shared/js/utils.js"));
-
 var _dialog = require("../../shared/js/dialog.js");
-
 function _getRequireWildcardCache(nodeInterop) {
   if (typeof WeakMap !== "function") return null;
   var cacheBabelInterop = new WeakMap();
@@ -19,31 +14,24 @@ function _getRequireWildcardCache(nodeInterop) {
     return nodeInterop ? cacheNodeInterop : cacheBabelInterop;
   })(nodeInterop);
 }
-
 function _interopRequireWildcard(obj, nodeInterop) {
   if (!nodeInterop && obj && obj.__esModule) {
     return obj;
   }
-
   if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") {
     return {
       "default": obj
     };
   }
-
   var cache = _getRequireWildcardCache(nodeInterop);
-
   if (cache && cache.has(obj)) {
     return cache.get(obj);
   }
-
   var newObj = {};
   var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;
-
   for (var key in obj) {
     if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) {
       var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;
-
       if (desc && (desc.get || desc.set)) {
         Object.defineProperty(newObj, key, desc);
       } else {
@@ -51,63 +39,43 @@ function _interopRequireWildcard(obj, nodeInterop) {
       }
     }
   }
-
   newObj["default"] = obj;
-
   if (cache) {
     cache.set(obj, newObj);
   }
-
   return newObj;
 }
-
 (function () {
   "use strict";
 
   var userId = null;
   var userName = null;
-
   window.onload = function () {
     database.onAuthStateChanged(function (user) {
       if (user) {
         _login_elements.login_elements.login_content.classList.add("hidden");
-
         _login_elements.login_elements.anonymous_content.classList.add("hidden");
-
         _login_elements.login_elements.signout_button.classList.remove("hidden");
-
         _login_elements.login_elements.enter_character_link.classList.remove("hidden");
-
         _login_elements.login_elements.enter_memoria_link.classList.remove("hidden");
-
         _login_elements.login_elements.header_username.innerHTML = "Welcome ".concat(user.displayName || userName || "Anonymous");
         userId = user.uid;
       } else {
         _login_elements.login_elements.login_content.classList.remove("hidden");
-
         _login_elements.login_elements.anonymous_content.classList.remove("hidden");
-
         _login_elements.login_elements.signout_button.classList.add("hidden");
-
         _login_elements.login_elements.enter_character_link.classList.add("hidden");
-
         _login_elements.login_elements.enter_memoria_link.classList.add("hidden");
-
         _login_elements.login_elements.header_username.innerHTML = "";
         userId = null;
       }
     });
-
     _login_elements.login_elements.forgot_password_open_label.addEventListener("click", function (e) {
       e.preventDefault();
-
       _login_elements.login_elements.login_content.classList.add("hidden");
-
       _login_elements.login_elements.forgot_password_content.classList.remove("hidden");
-
       errorHandler("", false);
     });
-
     _login_elements.login_elements.signin_button.addEventListener("click", function (e) {
       e.preventDefault();
       var email = _login_elements.login_elements.email_text.value;
@@ -116,27 +84,18 @@ function _interopRequireWildcard(obj, nodeInterop) {
       if (!password) return errorHandler("Password must not be empty.");
       database.signin(email, password, loginHandler, errorHandler);
     });
-
     _login_elements.login_elements.open_signup_button.addEventListener("click", function (e) {
       e.preventDefault();
-
       _login_elements.login_elements.login_content.classList.add("hidden");
-
       _login_elements.login_elements.signup_content.classList.remove("hidden");
-
       errorHandler("", false);
     });
-
     _login_elements.login_elements.cancel_signup_button.addEventListener("click", function (e) {
       e.preventDefault();
-
       _login_elements.login_elements.signup_content.classList.add("hidden");
-
       _login_elements.login_elements.login_content.classList.remove("hidden");
-
       errorSignupHandler("", false);
     });
-
     signup_button.addEventListener("click", function (e) {
       e.preventDefault();
       var name = _login_elements.login_elements.signup_name_text.value;
@@ -149,35 +108,25 @@ function _interopRequireWildcard(obj, nodeInterop) {
       userName = name;
       database.signup(name, email, password, loginHandler, errorSignupHandler);
     });
-
     _login_elements.login_elements.forgot_password_send_button.addEventListener("click", function (e) {
       e.preventDefault();
       var email = _login_elements.login_elements.forgot_password_email.value;
       if (!email) errorResetHandler("Email must not be empty.");
       database.resetPassword(email, resetHandler, errorResetHandler);
     });
-
     _login_elements.login_elements.forgot_password_cancel_button.addEventListener("click", function (e) {
       e.preventDefault();
-
       _login_elements.login_elements.forgot_password_content.classList.add("hidden");
-
       _login_elements.login_elements.login_content.classList.remove("hidden");
-
       errorResetHandler("", false);
-
       _login_elements.login_elements.reset_error.classList.add("hidden");
-
       _login_elements.login_elements.reset_success.innerHTML = "";
-
       _login_elements.login_elements.reset_success.classList.add("hidden");
     });
-
     _login_elements.login_elements.signin_anonymous_button.addEventListener("click", function (e) {
       e.preventDefault();
       database.signInAnonymously(loginHandler, errorAnonymousHandler);
     });
-
     _login_elements.login_elements.signout_button.addEventListener("click", function () {
       // new SignOutDialog((res) => {
       //   if (res) database.signout();
@@ -185,12 +134,10 @@ function _interopRequireWildcard(obj, nodeInterop) {
       var res = confirm("Are you sure you want to Sign Out?");
       if (res) database.signout();
     });
-
     _login_elements.login_elements.contact_button.addEventListener("click", function () {
       new _dialog.ContactDialog();
     });
   };
-
   var loginHandler = function loginHandler(userCred, name) {
     if (userCred.additionalUserInfo.isNewUser) {
       if (name && name.length > 0) database.sendEmailVerification(function () {}, function (errorMsg) {
@@ -202,74 +149,55 @@ function _interopRequireWildcard(obj, nodeInterop) {
       });
       database.createUser(userCred.user.uid, name);
       _login_elements.login_elements.header_username.innerHTML = "Welcome ".concat(name);
-
       _login_elements.login_elements.signup_content.classList.add("hidden");
-
       _login_elements.login_elements.login_content.classList.remove("hidden");
-
       errorSignupHandler("", false);
     }
-
     _login_elements.login_elements.email_text.value = "";
     _login_elements.login_elements.password_text.value = "";
     _login_elements.login_elements.signup_email_text.value = "";
     _login_elements.login_elements.signup_password_text.value = "";
     _login_elements.login_elements.signup_password_confirm_text.value = "";
   };
-
   var errorHandler = function errorHandler(errorMsg) {
     var log = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : true;
     _login_elements.login_elements.email_text.value = "";
     _login_elements.login_elements.password_text.value = "";
-
     _login_elements.login_elements.login_error.classList.remove("hidden");
-
     _login_elements.login_elements.login_error.innerHTML = errorMsg;
     if (log) console.error(errorMsg);
   };
-
   var errorSignupHandler = function errorSignupHandler(errorMsg) {
     var log = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : true;
     _login_elements.login_elements.signup_name_text.value = "";
     _login_elements.login_elements.signup_email_text.value = "";
     _login_elements.login_elements.signup_password_text.value = "";
     _login_elements.login_elements.signup_password_confirm_text.value = "";
-
     _login_elements.login_elements.signup_error.classList.remove("hidden");
-
     _login_elements.login_elements.signup_error.innerHTML = errorMsg;
     if (log) console.error(errorMsg);
   };
-
   var errorAnonymousHandler = function errorAnonymousHandler(errorMsg) {
     var log = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : true;
-
     _login_elements.login_elements.anonymous_error.classList.remove("hidden");
-
     _login_elements.login_elements.anonymous_error.innerHTML = errorMsg;
     if (log) console.error(errorMsg);
   };
-
   var resetHandler = function resetHandler() {
     _login_elements.login_elements.reset_success.classList.remove("hidden");
-
     _login_elements.login_elements.reset_success.innerHTML = "A password reset email has been sent to the given email. If you do not see an email, please check the Junk or Spam folder.";
   };
-
   var errorResetHandler = function errorResetHandler(errorMsg) {
     var log = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : true;
     _login_elements.login_elements.forgot_password_email.value = "";
-
     _login_elements.login_elements.reset_error.classList.remove("hidden");
-
     _login_elements.login_elements.reset_error.innerHTML = errorMsg;
     if (log) console.error(errorMsg);
   };
-
   utils.detectColorScheme();
 })();
 
-},{"../../shared/js/database_api.js":3,"../../shared/js/dialog.js":4,"../../shared/js/utils.js":5,"./login_elements.js":2,"@babel/runtime/helpers/typeof":14}],2:[function(require,module,exports){
+},{"../../shared/js/database_api.js":3,"../../shared/js/dialog.js":4,"../../shared/js/utils.js":5,"./login_elements.js":2,"@babel/runtime/helpers/typeof":17}],2:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -343,7 +271,7 @@ exports.messageDialog = messageDialog;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.onMessageUpdate = exports.onceMessageUpdate = exports.deleteListImage = exports.updateListImage = exports.onSettingUpdate = exports.initSettings = exports.getSettings = exports.updateSettings = exports.onProfileUpdate = exports.deleteProfile = exports.updateProfile = exports.createProfile = exports.getProfiles = exports.onListUpdate = exports.deleteList = exports.deleteListItem = exports.updateListProperty = exports.setListProperty = exports.updateList = exports.createList = exports.getLists = exports.updateUserRecentActivity = exports.updateUserSignInCount = exports.updateUserDetails = exports.onUserUpdate = exports.removeUserProperty = exports.setUserProperty = exports.appendUser = exports.updateUser = exports.getUser = exports.deleteUser = exports.createUser = exports.sendEmailVerification = exports.resetPassword = exports.sessionTimeout = exports.onAuthStateChanged = exports.signout = exports.signInAnonymously = exports.signup = exports.signin = void 0;
+exports.updateUserSignInCount = exports.updateUserRecentActivity = exports.updateUserDetails = exports.updateUser = exports.updateSettings = exports.updateProfile = exports.updateListProperty = exports.updateListImage = exports.updateList = exports.signup = exports.signout = exports.signin = exports.signInAnonymously = exports.setUserProperty = exports.setListProperty = exports.sessionTimeout = exports.sendEmailVerification = exports.resetPassword = exports.removeUserProperty = exports.onceMessageUpdate = exports.onUserUpdate = exports.onSettingUpdate = exports.onProfileUpdate = exports.onMessageUpdate = exports.onListUpdate = exports.onAuthStateChanged = exports.initSettings = exports.getUser = exports.getSettings = exports.getProfiles = exports.getLists = exports.deleteUser = exports.deleteProfile = exports.deleteListItem = exports.deleteListImage = exports.deleteList = exports.createUser = exports.createProfile = exports.createList = exports.appendUser = void 0;
 var config = {
   apiKey: "AIzaSyCDOhFHwY8BHUafRA4hvAT7GISB72bUrhQ",
   authDomain: "magia-record-25fb0.firebaseapp.com",
@@ -351,18 +279,19 @@ var config = {
   databaseURL: "https://magia-record-25fb0.firebaseio.com",
   storageBucket: "magia-record-25fb0.appspot.com"
 };
-firebase.initializeApp(config); // Get a reference to the database service.
+firebase.initializeApp(config);
 
+// Get a reference to the database service.
 var db = firebase.database().ref();
 var users = db.child("users");
 var userDetails = db.child("userDetails");
 var lists = db.child("lists");
 var profiles = db.child("profiles");
 var settings = db.child("settings");
-var messages = db.child("messages"); // Get a reference to the storage service.
+var messages = db.child("messages");
 
+// Get a reference to the storage service.
 var storage = firebase.storage().ref();
-
 var signin = function signin(email, password, loginHandler, errorHandler) {
   firebase.auth().signInWithEmailAndPassword(email, password).then(function (userCreds) {
     updateUserDetails(userCreds.user.uid, "lastSignIn", "User");
@@ -371,9 +300,7 @@ var signin = function signin(email, password, loginHandler, errorHandler) {
     return errorHandler(error.message);
   });
 };
-
 exports.signin = signin;
-
 var signup = function signup(name, email, password, loginHandler, errorHandler) {
   firebase.auth().createUserWithEmailAndPassword(email, password).then(function (userCreds) {
     updateUserDetails(userCreds.user.uid, "signUp", "Email");
@@ -382,9 +309,7 @@ var signup = function signup(name, email, password, loginHandler, errorHandler) 
     return errorHandler(error.message);
   });
 };
-
 exports.signup = signup;
-
 var signInAnonymously = function signInAnonymously(loginHandler, errorHandler) {
   firebase.auth().signInAnonymously().then(function (userCreds) {
     updateUserDetails(userCreds.user.uid, "signUp", "Anonymous");
@@ -393,17 +318,13 @@ var signInAnonymously = function signInAnonymously(loginHandler, errorHandler) {
     return errorHandler(error);
   });
 };
-
 exports.signInAnonymously = signInAnonymously;
-
 var signout = function signout(details, userId) {
   var user = firebase.auth().currentUser;
   if (!details) details = "User";
   if (user && user.uid) updateUserDetails(user.uid, "lastSignOut", details, signOutRedirect);else if (userId) updateUserDetails(userId, "lastSignOut", details, signOutRedirect);
 };
-
 exports.signout = signout;
-
 var signOutRedirect = function signOutRedirect() {
   firebase.auth().signOut().then(function () {
     if (window.location.pathname != "/magireco/") window.location.href = "/magireco/";
@@ -411,21 +332,17 @@ var signOutRedirect = function signOutRedirect() {
     console.error(error);
   });
 };
-
 var onAuthStateChanged = function onAuthStateChanged(callback) {
   firebase.auth().onAuthStateChanged(function (user) {
     sessionTimeout(user, callback);
   });
 };
-
 exports.onAuthStateChanged = onAuthStateChanged;
-
 var sessionTimeout = function sessionTimeout(user, callback) {
   // let user = firebase.auth().currentUser;
   if (user && !user.isAnonymous) {
     // https://stackoverflow.com/a/58899511/7627317
     var userSessionTimeout = null;
-
     if (user === null && userSessionTimeout) {
       clearTimeout(userSessionTimeout);
       userSessionTimeout = null;
@@ -434,11 +351,9 @@ var sessionTimeout = function sessionTimeout(user, callback) {
       user.getIdTokenResult().then(function (idTokenResult) {
         var authTime = idTokenResult.claims.auth_time * 1000;
         var sessionDurationInMilliseconds = 3 * 60 * 60 * 1000; // 3 hours
-
-        var expirationInMilliseconds = sessionDurationInMilliseconds - (Date.now() - authTime);
+        var expirationInMilliseconds = Math.max(0, sessionDurationInMilliseconds - (Date.now() - authTime));
         if (expirationInMilliseconds > 1000) callback(user);
         userSessionTimeout = setTimeout(function () {
-          console.log(expirationInMilliseconds, "milliseconds until auto sign out.");
           signout("Session Timeout", user.uid);
         }, expirationInMilliseconds);
       });
@@ -447,25 +362,20 @@ var sessionTimeout = function sessionTimeout(user, callback) {
     return callback(user);
   }
 };
-
 exports.sessionTimeout = sessionTimeout;
-
 var resetPassword = function resetPassword(emailAddress, resolve, reject) {
   firebase.auth().sendPasswordResetEmail(emailAddress).then(resolve)["catch"](reject);
 };
-
 exports.resetPassword = resetPassword;
-
 var sendEmailVerification = function sendEmailVerification(resolve, reject, details) {
   var user = firebase.auth().currentUser;
   details = details ? details : "User";
   updateUserDetails(user.uid, "sendEmailVerification", details);
   user.sendEmailVerification().then(resolve)["catch"](reject);
-}; // ---------- users ---------- //
+};
 
-
+// ---------- users ---------- //
 exports.sendEmailVerification = sendEmailVerification;
-
 var createUser = function createUser(userId, name) {
   users.child(userId).update({
     name: name
@@ -474,54 +384,39 @@ var createUser = function createUser(userId, name) {
   profiles.child(userId).update(defaultProfiles);
   settings.child(userId).set(defaultSettings);
 };
-
 exports.createUser = createUser;
-
 var deleteUser = function deleteUser(userId) {
   users.child(userId).remove();
   lists.child(userId).remove();
   profiles.child(userId).remove();
   settings.child(userId).remove();
 };
-
 exports.deleteUser = deleteUser;
-
 var getUser = function getUser(userId) {
   return users.child(userId).once('value');
 };
-
 exports.getUser = getUser;
-
 var updateUser = function updateUser(userId, userProperty, content) {
   return users.child("".concat(userId, "/").concat(userProperty)).update(content);
 };
-
 exports.updateUser = updateUser;
-
 var appendUser = function appendUser(userId, userProperty, content) {
   return users.child("".concat(userId, "/").concat(userProperty)).push(content);
 };
-
 exports.appendUser = appendUser;
-
 var setUserProperty = function setUserProperty(userId, userProperty, content) {
   return users.child("".concat(userId, "/").concat(userProperty)).set(content);
 };
-
 exports.setUserProperty = setUserProperty;
-
 var removeUserProperty = function removeUserProperty(userId, userProperty) {
   return users.child("".concat(userId, "/").concat(userProperty)).remove();
 };
-
 exports.removeUserProperty = removeUserProperty;
-
 var onUserUpdate = function onUserUpdate(userId, callback) {
   users.child(userId).on('value', function (snapshot) {
     callback(snapshot);
   });
 };
-
 exports.onUserUpdate = onUserUpdate;
 var typeToEvent = {
   signUp: "Sign Up",
@@ -529,7 +424,6 @@ var typeToEvent = {
   lastSignOut: "Sign Out",
   sendEmailVerification: "Send Email Verification"
 };
-
 var updateUserDetails = function updateUserDetails(userId, type, details, callback) {
   var activity = {
     details: details,
@@ -540,22 +434,17 @@ var updateUserDetails = function updateUserDetails(userId, type, details, callba
   updateUserRecentActivity(userId, activity, callback);
   if (type === "lastSignIn") updateUserSignInCount(userId);
 };
-
 exports.updateUserDetails = updateUserDetails;
-
 var updateUserSignInCount = function updateUserSignInCount(userId) {
   userDetails.child("".concat(userId, "/signInCount")).once('value', function (snapshot) {
     var count = snapshot.val();
     if (count || count === 0) userDetails.child("".concat(userId, "/signInCount")).set(count + 1);else userDetails.child("".concat(userId, "/signInCount")).set(1);
   });
 };
-
 exports.updateUserSignInCount = updateUserSignInCount;
-
 var updateUserRecentActivity = function updateUserRecentActivity(userId, newActivity, callback) {
   userDetails.child("".concat(userId, "/recentActivity")).once('value', function (snapshot) {
     var activity = snapshot.val();
-
     if (activity && activity.length >= 5) {
       activity.shift();
       activity.push(newActivity);
@@ -564,13 +453,12 @@ var updateUserRecentActivity = function updateUserRecentActivity(userId, newActi
     } else {
       activity = [newActivity];
     }
-
     userDetails.child("".concat(userId, "/recentActivity")).set(activity);
     if (callback) callback();
   });
-}; // ---------- character lists ---------- //
+};
 
-
+// ---------- character lists ---------- //
 exports.updateUserRecentActivity = updateUserRecentActivity;
 var defaultLists = {};
 var listId = generatePushID();
@@ -606,56 +494,41 @@ defaultLists[memoListId].memoriaList[memoId] = {
   archive: false,
   protect: false
 };
-
 var getLists = function getLists(userId) {
   return lists.child(userId).once('value');
 };
-
 exports.getLists = getLists;
-
 var createList = function createList(userId, content) {
   return lists.child(userId).push(content);
 };
-
 exports.createList = createList;
-
 var updateList = function updateList(userId, listId, content) {
   return lists.child("".concat(userId, "/").concat(listId)).set(content);
 };
-
 exports.updateList = updateList;
-
 var setListProperty = function setListProperty(userId, listId, propertyName, content) {
   return lists.child("".concat(userId, "/").concat(listId, "/").concat(propertyName)).set(content);
 };
-
 exports.setListProperty = setListProperty;
-
 var updateListProperty = function updateListProperty(userId, listId, propertyName, content) {
   return lists.child("".concat(userId, "/").concat(listId, "/").concat(propertyName)).update(content);
 };
-
 exports.updateListProperty = updateListProperty;
-
 var deleteListItem = function deleteListItem(userId, listId, listProperty, content) {
   return lists.child("".concat(userId, "/").concat(listId, "/").concat(listProperty, "/").concat(content)).remove();
 };
-
 exports.deleteListItem = deleteListItem;
-
 var deleteList = function deleteList(userId, listId) {
   return lists.child("".concat(userId, "/").concat(listId)).remove();
 };
-
 exports.deleteList = deleteList;
-
 var onListUpdate = function onListUpdate(userId, callback) {
   lists.child(userId).on('value', function (snapshot) {
     callback(snapshot);
   });
-}; // ---------- profiles ---------- //
+};
 
-
+// ---------- profiles ---------- //
 exports.onListUpdate = onListUpdate;
 var defaultProfiles = {
   "0": {
@@ -711,38 +584,29 @@ var defaultProfiles = {
     settings: false
   }
 };
-
 var getProfiles = function getProfiles(userId) {
   return profiles.child(userId).once('value');
 };
-
 exports.getProfiles = getProfiles;
-
 var createProfile = function createProfile(userId, content) {
   return profiles.child("".concat(userId)).push(content);
 };
-
 exports.createProfile = createProfile;
-
 var updateProfile = function updateProfile(userId, profileId, content) {
   return profiles.child("".concat(userId, "/").concat(profileId)).set(content);
 };
-
 exports.updateProfile = updateProfile;
-
 var deleteProfile = function deleteProfile(userId, profileId) {
   return profiles.child("".concat(userId, "/").concat(profileId)).remove();
 };
-
 exports.deleteProfile = deleteProfile;
-
 var onProfileUpdate = function onProfileUpdate(userId, callback) {
   profiles.child(userId).on('value', function (snapshot) {
     callback(snapshot);
   });
-}; // ---------- settings ---------- //
+};
 
-
+// ---------- settings ---------- //
 exports.onProfileUpdate = onProfileUpdate;
 var defaultSettings = {
   expanded_tabs: {
@@ -768,56 +632,43 @@ var defaultSettings = {
   memoria_zoom: 100,
   background_transparency: 0
 };
-
 var updateSettings = function updateSettings(userId, settingName, content) {
   return settings.child("".concat(userId, "/").concat(settingName)).set(content);
 };
-
 exports.updateSettings = updateSettings;
-
 var getSettings = function getSettings(userId) {
   return settings.child(userId).once('value');
 };
-
 exports.getSettings = getSettings;
-
 var initSettings = function initSettings(userId) {
   return settings.child(userId).set(defaultSettings);
 };
-
 exports.initSettings = initSettings;
-
 var onSettingUpdate = function onSettingUpdate(userId, callback) {
   settings.child(userId).on('value', function (snapshot) {
     callback(snapshot);
   });
-}; // ---------- storage bucket ---------- //
+};
 
-
+// ---------- storage bucket ---------- //
 exports.onSettingUpdate = onSettingUpdate;
-
 var updateListImage = function updateListImage(playerId, dataURL) {
   return storage.child("images/lists/".concat(playerId, ".png")).putString(dataURL, 'data_url');
 };
-
 exports.updateListImage = updateListImage;
-
 var deleteListImage = function deleteListImage(playerId) {
   return storage.child("images/lists/".concat(playerId, ".png"))["delete"]();
-}; // ---------- messages ---------- //
+};
 
-
+// ---------- messages ---------- //
 exports.deleteListImage = deleteListImage;
-
 var onceMessageUpdate = function onceMessageUpdate(userId, callback) {
   messages.child("global").once('value', function (snapshot) {
     var val = snapshot.val();
     if (val && val.message && !val.excludeUserIds.includes(userId)) callback(val.message, val.blocking);else callback(false);
   });
 };
-
 exports.onceMessageUpdate = onceMessageUpdate;
-
 var onMessageUpdate = function onMessageUpdate(userId, callback) {
   messages.child("global").on('value', function (snapshot) {
     var val = snapshot.val();
@@ -828,54 +679,41 @@ var onMessageUpdate = function onMessageUpdate(userId, callback) {
     if (val && val.message) callback(val.message, val.blocking);else callback(false);
   });
 };
-
 exports.onMessageUpdate = onMessageUpdate;
 
 },{}],4:[function(require,module,exports){
 "use strict";
 
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
-
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.ImportListDialog = exports.BackgroundSelectDialog = exports.CharacterSelectDialog = exports.SignOutDialog = exports.AlertDialog = exports.ContactDialog = exports.MessageDialog = exports.Dialog = void 0;
-
+exports.SignOutDialog = exports.MessageDialog = exports.ImportListDialog = exports.Dialog = exports.ContactDialog = exports.CharacterSelectDialog = exports.BackgroundSelectDialog = exports.AlertDialog = void 0;
 var _assertThisInitialized2 = _interopRequireDefault(require("@babel/runtime/helpers/assertThisInitialized"));
-
 var _inherits2 = _interopRequireDefault(require("@babel/runtime/helpers/inherits"));
-
 var _possibleConstructorReturn2 = _interopRequireDefault(require("@babel/runtime/helpers/possibleConstructorReturn"));
-
 var _getPrototypeOf2 = _interopRequireDefault(require("@babel/runtime/helpers/getPrototypeOf"));
-
+var _createClass2 = _interopRequireDefault(require("@babel/runtime/helpers/createClass"));
 var _classCallCheck2 = _interopRequireDefault(require("@babel/runtime/helpers/classCallCheck"));
-
 var _defineProperty2 = _interopRequireDefault(require("@babel/runtime/helpers/defineProperty"));
-
 function _createSuper(Derived) {
   var hasNativeReflectConstruct = _isNativeReflectConstruct();
-
   return function _createSuperInternal() {
     var Super = (0, _getPrototypeOf2["default"])(Derived),
-        result;
-
+      result;
     if (hasNativeReflectConstruct) {
       var NewTarget = (0, _getPrototypeOf2["default"])(this).constructor;
       result = Reflect.construct(Super, arguments, NewTarget);
     } else {
       result = Super.apply(this, arguments);
     }
-
     return (0, _possibleConstructorReturn2["default"])(this, result);
   };
 }
-
 function _isNativeReflectConstruct() {
   if (typeof Reflect === "undefined" || !Reflect.construct) return false;
   if (Reflect.construct.sham) return false;
   if (typeof Proxy === "function") return true;
-
   try {
     Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {}));
     return true;
@@ -883,10 +721,8 @@ function _isNativeReflectConstruct() {
     return false;
   }
 }
-
-var Dialog = function Dialog() {
+var Dialog = /*#__PURE__*/(0, _createClass2["default"])(function Dialog() {
   var _this2 = this;
-
   (0, _classCallCheck2["default"])(this, Dialog);
   (0, _defineProperty2["default"])(this, "isOpen", function () {
     return _this2.dialog.style.display === "block";
@@ -895,8 +731,9 @@ var Dialog = function Dialog() {
     return;
   });
   this.dialog = document.createElement("div");
-  this.dialog.style.display = "block"; // hide dialog if not drag
+  this.dialog.style.display = "block";
 
+  // hide dialog if not drag
   var dragging = false;
   window.addEventListener("mousedown", function (event) {
     var x = event.x;
@@ -911,24 +748,19 @@ var Dialog = function Dialog() {
   window.addEventListener("mouseup", function (event) {
     if (!dragging && event.target == _this2.dialog && _this2.isOpen()) _this2.close();
   });
-};
-
+});
 exports.Dialog = Dialog;
-
 var MessageDialog = /*#__PURE__*/function (_Dialog) {
   (0, _inherits2["default"])(MessageDialog, _Dialog);
-
   var _super = _createSuper(MessageDialog);
-
   function MessageDialog(_ref) {
     var _this3;
-
     var title = _ref.title,
-        text = _ref.text,
-        list = _ref.list,
-        copy = _ref.copy,
-        link_name = _ref.link_name,
-        link_target = _ref.link_target;
+      text = _ref.text,
+      list = _ref.list,
+      copy = _ref.copy,
+      link_name = _ref.link_name,
+      link_target = _ref.link_target;
     (0, _classCallCheck2["default"])(this, MessageDialog);
     _this3 = _super.call(this);
     (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this3), "close", function () {
@@ -950,40 +782,28 @@ var MessageDialog = /*#__PURE__*/function (_Dialog) {
     _this3.link = _this3.dialog.querySelector(".modal-link");
     _this3.list = _this3.dialog.querySelector(".modal-list");
     if (!text) _this3.text.style.display = "none";
-
     if (link_name) {
       _this3.link.innerHTML = link_name;
-
       _this3.link.setAttribute("href", link_target);
     } else _this3.link.style.display = "none";
-
     if (!copy) _this3.copyBtn.style.display = "none";
-
     _this3.closeBtn.addEventListener("click", function () {
       _this3.close();
     });
-
     _this3.copyBtn.addEventListener("click", function () {
       _this3.copy();
     });
-
     return _this3;
   }
-
-  return MessageDialog;
+  return (0, _createClass2["default"])(MessageDialog);
 }(Dialog);
-
 exports.MessageDialog = MessageDialog;
 ;
-
 var ContactDialog = /*#__PURE__*/function (_MessageDialog) {
   (0, _inherits2["default"])(ContactDialog, _MessageDialog);
-
   var _super2 = _createSuper(ContactDialog);
-
   function ContactDialog() {
     var _this4;
-
     (0, _classCallCheck2["default"])(this, ContactDialog);
     _this4 = _super2.call(this, {
       title: "Contact / Support",
@@ -994,28 +814,20 @@ var ContactDialog = /*#__PURE__*/function (_MessageDialog) {
     _this4.list.innerHTML = "\n    <p>For assistance, support, or feedback, please contact Leo Chan at</p>\n    <li>Discord: Leo_Chan#9150 or <a target=\"_blank\" href=\"https://discord.gg/magiarecord\">PMMM: Magia Record Discord Server</a></li>\n    <li>Reddit: <a target=\"_blank\" href=\"https://www.reddit.com/message/compose/?to=Leochan6\">u/Leochan6</a></li>\n    <p>For more information and how to use, <a target=\"_blank\" href=\"https://github.com/Leochan6/leochan6.github.io/blob/master/magireco/README.md\">check the README file</a></p>\n    <p>If the Navigation Buttons do not appear or the page is not loading, please clear your Cookies and Reload.";
     return _this4;
   }
-
-  return ContactDialog;
+  return (0, _createClass2["default"])(ContactDialog);
 }(MessageDialog);
-
 exports.ContactDialog = ContactDialog;
-
 var AlertDialog = /*#__PURE__*/function (_Dialog2) {
   (0, _inherits2["default"])(AlertDialog, _Dialog2);
-
   var _super3 = _createSuper(AlertDialog);
-
   function AlertDialog(_ref2, callback) {
     var _this5;
-
     var title = _ref2.title,
-        text = _ref2.text,
-        buttons = _ref2.buttons;
+      text = _ref2.text,
+      buttons = _ref2.buttons;
     (0, _classCallCheck2["default"])(this, AlertDialog);
     _this5 = _super3.call(this);
-
     var _this = (0, _assertThisInitialized2["default"])(_this5);
-
     _this5.dialog = document.createElement("div");
     _this5.dialog.className = "alert-modal modal";
     _this5.dialog.innerHTML = "    <div class=\"modal-content modal-fit-width modal-fit-height\">      <div class=\"modal-header\">        <h2 class=\"modal-title\">".concat(title !== null && title !== void 0 ? title : "Message", "</h2>        <button class=\"modal-close\">&times;</span>      </div>      <div class=\"horizontal-divider\"></div>\n      <div class=\"modal-main\">        <textarea class=\"modal-text form_input\" readonly>").concat(text !== null && text !== void 0 ? text : "", "</textarea>        <div class=\"modal-buttons\"></div>\n      </div>    </div>");
@@ -1026,47 +838,35 @@ var AlertDialog = /*#__PURE__*/function (_Dialog2) {
     _this5.text = _this5.dialog.querySelector(".modal-text");
     _this5.buttons = _this5.dialog.querySelector(".modal-buttons");
     if (!text) _this5.text.style.display = "none";
-
     if (buttons) {
       Object.values(buttons).forEach(function (_ref3) {
         var text = _ref3.text,
-            res = _ref3.res;
+          res = _ref3.res;
         var button = document.createElement("button");
         button.innerHTML = text;
         button.className = "small_btn";
         button.addEventListener("click", function () {
           _this.close();
-
           callback(res);
         });
-
         _this5.buttons.appendChild(button);
       });
     }
-
     _this5.closeBtn.addEventListener("click", function () {
       _this.close();
-
       callback(false);
     });
-
     _this5.close = function () {
       _this5.dialog.remove();
     };
-
     return _this5;
   }
-
-  return AlertDialog;
+  return (0, _createClass2["default"])(AlertDialog);
 }(Dialog);
-
 exports.AlertDialog = AlertDialog;
-
 var SignOutDialog = /*#__PURE__*/function (_AlertDialog) {
   (0, _inherits2["default"])(SignOutDialog, _AlertDialog);
-
   var _super4 = _createSuper(SignOutDialog);
-
   function SignOutDialog(callback) {
     (0, _classCallCheck2["default"])(this, SignOutDialog);
     return _super4.call(this, {
@@ -1083,20 +883,14 @@ var SignOutDialog = /*#__PURE__*/function (_AlertDialog) {
       }
     }, callback);
   }
-
-  return SignOutDialog;
+  return (0, _createClass2["default"])(SignOutDialog);
 }(AlertDialog);
-
 exports.SignOutDialog = SignOutDialog;
-
 var CharacterSelectDialog = /*#__PURE__*/function (_Dialog3) {
   (0, _inherits2["default"])(CharacterSelectDialog, _Dialog3);
-
   var _super5 = _createSuper(CharacterSelectDialog);
-
   function CharacterSelectDialog() {
     var _this6;
-
     (0, _classCallCheck2["default"])(this, CharacterSelectDialog);
     _this6 = _super5.call(this);
     _this6.dialog.className = "character-select-modal modal";
@@ -1108,25 +902,17 @@ var CharacterSelectDialog = /*#__PURE__*/function (_Dialog3) {
     _this6.search = _this6.dialog.querySelector(".modal-search");
     _this6.added = _this6.dialog.querySelector("#added");
     _this6.list = _this6.dialog.querySelector(".modal-list");
-
     _this6.search.focus();
-
     return _this6;
   }
-
-  return CharacterSelectDialog;
+  return (0, _createClass2["default"])(CharacterSelectDialog);
 }(Dialog);
-
 exports.CharacterSelectDialog = CharacterSelectDialog;
-
 var BackgroundSelectDialog = /*#__PURE__*/function (_Dialog4) {
   (0, _inherits2["default"])(BackgroundSelectDialog, _Dialog4);
-
   var _super6 = _createSuper(BackgroundSelectDialog);
-
   function BackgroundSelectDialog(loadPreviews) {
     var _this7;
-
     (0, _classCallCheck2["default"])(this, BackgroundSelectDialog);
     _this7 = _super6.call(this);
     _this7.dialog.className = "background-select-modal modal";
@@ -1138,26 +924,18 @@ var BackgroundSelectDialog = /*#__PURE__*/function (_Dialog4) {
     _this7.search = _this7.dialog.querySelector(".modal-search");
     _this7.added_checkbox = _this7.dialog.querySelector("#added_checkbox");
     _this7.list = _this7.dialog.querySelector(".modal-list");
-
     _this7.search.focus();
-
     loadPreviews();
     return _this7;
   }
-
-  return BackgroundSelectDialog;
+  return (0, _createClass2["default"])(BackgroundSelectDialog);
 }(Dialog);
-
 exports.BackgroundSelectDialog = BackgroundSelectDialog;
-
 var ImportListDialog = /*#__PURE__*/function (_Dialog5) {
   (0, _inherits2["default"])(ImportListDialog, _Dialog5);
-
   var _super7 = _createSuper(ImportListDialog);
-
   function ImportListDialog() {
     var _this8;
-
     (0, _classCallCheck2["default"])(this, ImportListDialog);
     _this8 = _super7.call(this);
     _this8.dialog.className = "import-list-modal modal";
@@ -1173,39 +951,33 @@ var ImportListDialog = /*#__PURE__*/function (_Dialog5) {
     _this8.error = _this8.dialog.querySelector(".error_text");
     return _this8;
   }
-
-  return ImportListDialog;
+  return (0, _createClass2["default"])(ImportListDialog);
 }(Dialog);
-
 exports.ImportListDialog = ImportListDialog;
 
-},{"@babel/runtime/helpers/assertThisInitialized":6,"@babel/runtime/helpers/classCallCheck":7,"@babel/runtime/helpers/defineProperty":8,"@babel/runtime/helpers/getPrototypeOf":9,"@babel/runtime/helpers/inherits":10,"@babel/runtime/helpers/interopRequireDefault":11,"@babel/runtime/helpers/possibleConstructorReturn":12}],5:[function(require,module,exports){
+},{"@babel/runtime/helpers/assertThisInitialized":6,"@babel/runtime/helpers/classCallCheck":7,"@babel/runtime/helpers/createClass":8,"@babel/runtime/helpers/defineProperty":9,"@babel/runtime/helpers/getPrototypeOf":10,"@babel/runtime/helpers/inherits":11,"@babel/runtime/helpers/interopRequireDefault":12,"@babel/runtime/helpers/possibleConstructorReturn":13}],5:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.setTheme = exports.detectColorScheme = exports.sortArrayBy = void 0;
-
+exports.sortArrayBy = exports.setTheme = exports.detectColorScheme = void 0;
 var sortArrayBy = function sortArrayBy(a, b, sortBy) {
   var i = 0,
-      result = 0;
-
+    result = 0;
   while (i < sortBy.length && result === 0) {
     if (sortBy[i].isString) result = sortBy[i].direction * (a[sortBy[i].prop].toString() < b[sortBy[i].prop].toString() ? -1 : a[sortBy[i].prop].toString() > b[sortBy[i].prop].toString() ? 1 : 0);else result = sortBy[i].direction * (parseInt(a[sortBy[i].prop].toString()) < parseInt(b[sortBy[i].prop].toString()) ? -1 : parseInt(a[sortBy[i].prop].toString()) > parseInt(b[sortBy[i].prop].toString()) ? 1 : 0);
     i++;
   }
-
   return result;
-}; // https://stackoverflow.com/a/56550819/7627317
+};
 
-
+// https://stackoverflow.com/a/56550819/7627317
 exports.sortArrayBy = sortArrayBy;
-
 var detectColorScheme = function detectColorScheme() {
   var theme = "light"; //default to light
-  // local storage is used to override OS theme settings
 
+  // local storage is used to override OS theme settings
   if (window.localStorage.getItem("theme")) {
     if (window.localStorage.getItem("theme") == "dark") {
       theme = "dark";
@@ -1217,31 +989,24 @@ var detectColorScheme = function detectColorScheme() {
     // OS theme setting detected as dark
     theme = "dark";
   }
-
   setTheme(theme);
 };
-
 exports.detectColorScheme = detectColorScheme;
-
 var setTheme = function setTheme(theme) {
   document.documentElement.setAttribute("data-theme", theme);
   var theme_button = document.querySelector("#theme_button");
-
   if (theme === "light") {
     if (theme_button) {
       if (theme_button.classList.contains("light")) theme_button.classList.replace("light", "dark");else if (!theme_button.classList.contains("dark")) theme_button.classList.add("dark");
     }
-
     window.localStorage.setItem("theme", "light");
   } else if (theme === "dark") {
     if (theme_button) {
       if (theme_button.classList.contains("dark")) theme_button.classList.replace("dark", "light");else if (!theme_button.classList.contains("light")) theme_button.classList.add("light");
     }
-
     window.localStorage.setItem("theme", "dark");
   }
 };
-
 exports.setTheme = setTheme;
 
 },{}],6:[function(require,module,exports){
@@ -1249,23 +1014,40 @@ function _assertThisInitialized(self) {
   if (self === void 0) {
     throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
   }
-
   return self;
 }
-
-module.exports = _assertThisInitialized;
-module.exports["default"] = module.exports, module.exports.__esModule = true;
+module.exports = _assertThisInitialized, module.exports.__esModule = true, module.exports["default"] = module.exports;
 },{}],7:[function(require,module,exports){
 function _classCallCheck(instance, Constructor) {
   if (!(instance instanceof Constructor)) {
     throw new TypeError("Cannot call a class as a function");
   }
 }
-
-module.exports = _classCallCheck;
-module.exports["default"] = module.exports, module.exports.__esModule = true;
+module.exports = _classCallCheck, module.exports.__esModule = true, module.exports["default"] = module.exports;
 },{}],8:[function(require,module,exports){
+var toPropertyKey = require("./toPropertyKey.js");
+function _defineProperties(target, props) {
+  for (var i = 0; i < props.length; i++) {
+    var descriptor = props[i];
+    descriptor.enumerable = descriptor.enumerable || false;
+    descriptor.configurable = true;
+    if ("value" in descriptor) descriptor.writable = true;
+    Object.defineProperty(target, toPropertyKey(descriptor.key), descriptor);
+  }
+}
+function _createClass(Constructor, protoProps, staticProps) {
+  if (protoProps) _defineProperties(Constructor.prototype, protoProps);
+  if (staticProps) _defineProperties(Constructor, staticProps);
+  Object.defineProperty(Constructor, "prototype", {
+    writable: false
+  });
+  return Constructor;
+}
+module.exports = _createClass, module.exports.__esModule = true, module.exports["default"] = module.exports;
+},{"./toPropertyKey.js":16}],9:[function(require,module,exports){
+var toPropertyKey = require("./toPropertyKey.js");
 function _defineProperty(obj, key, value) {
+  key = toPropertyKey(key);
   if (key in obj) {
     Object.defineProperty(obj, key, {
       value: value,
@@ -1276,31 +1058,23 @@ function _defineProperty(obj, key, value) {
   } else {
     obj[key] = value;
   }
-
   return obj;
 }
-
-module.exports = _defineProperty;
-module.exports["default"] = module.exports, module.exports.__esModule = true;
-},{}],9:[function(require,module,exports){
+module.exports = _defineProperty, module.exports.__esModule = true, module.exports["default"] = module.exports;
+},{"./toPropertyKey.js":16}],10:[function(require,module,exports){
 function _getPrototypeOf(o) {
-  module.exports = _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) {
+  module.exports = _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function _getPrototypeOf(o) {
     return o.__proto__ || Object.getPrototypeOf(o);
-  };
-  module.exports["default"] = module.exports, module.exports.__esModule = true;
+  }, module.exports.__esModule = true, module.exports["default"] = module.exports;
   return _getPrototypeOf(o);
 }
-
-module.exports = _getPrototypeOf;
-module.exports["default"] = module.exports, module.exports.__esModule = true;
-},{}],10:[function(require,module,exports){
+module.exports = _getPrototypeOf, module.exports.__esModule = true, module.exports["default"] = module.exports;
+},{}],11:[function(require,module,exports){
 var setPrototypeOf = require("./setPrototypeOf.js");
-
 function _inherits(subClass, superClass) {
   if (typeof superClass !== "function" && superClass !== null) {
     throw new TypeError("Super expression must either be null or a function");
   }
-
   subClass.prototype = Object.create(superClass && superClass.prototype, {
     constructor: {
       value: subClass,
@@ -1308,69 +1082,70 @@ function _inherits(subClass, superClass) {
       configurable: true
     }
   });
+  Object.defineProperty(subClass, "prototype", {
+    writable: false
+  });
   if (superClass) setPrototypeOf(subClass, superClass);
 }
-
-module.exports = _inherits;
-module.exports["default"] = module.exports, module.exports.__esModule = true;
-},{"./setPrototypeOf.js":13}],11:[function(require,module,exports){
+module.exports = _inherits, module.exports.__esModule = true, module.exports["default"] = module.exports;
+},{"./setPrototypeOf.js":14}],12:[function(require,module,exports){
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : {
     "default": obj
   };
 }
-
-module.exports = _interopRequireDefault;
-module.exports["default"] = module.exports, module.exports.__esModule = true;
-},{}],12:[function(require,module,exports){
-var _typeof = require("@babel/runtime/helpers/typeof")["default"];
-
+module.exports = _interopRequireDefault, module.exports.__esModule = true, module.exports["default"] = module.exports;
+},{}],13:[function(require,module,exports){
+var _typeof = require("./typeof.js")["default"];
 var assertThisInitialized = require("./assertThisInitialized.js");
-
 function _possibleConstructorReturn(self, call) {
   if (call && (_typeof(call) === "object" || typeof call === "function")) {
     return call;
+  } else if (call !== void 0) {
+    throw new TypeError("Derived constructors may only return object or undefined");
   }
-
   return assertThisInitialized(self);
 }
-
-module.exports = _possibleConstructorReturn;
-module.exports["default"] = module.exports, module.exports.__esModule = true;
-},{"./assertThisInitialized.js":6,"@babel/runtime/helpers/typeof":14}],13:[function(require,module,exports){
+module.exports = _possibleConstructorReturn, module.exports.__esModule = true, module.exports["default"] = module.exports;
+},{"./assertThisInitialized.js":6,"./typeof.js":17}],14:[function(require,module,exports){
 function _setPrototypeOf(o, p) {
-  module.exports = _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) {
+  module.exports = _setPrototypeOf = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function _setPrototypeOf(o, p) {
     o.__proto__ = p;
     return o;
-  };
-
-  module.exports["default"] = module.exports, module.exports.__esModule = true;
+  }, module.exports.__esModule = true, module.exports["default"] = module.exports;
   return _setPrototypeOf(o, p);
 }
-
-module.exports = _setPrototypeOf;
-module.exports["default"] = module.exports, module.exports.__esModule = true;
-},{}],14:[function(require,module,exports){
+module.exports = _setPrototypeOf, module.exports.__esModule = true, module.exports["default"] = module.exports;
+},{}],15:[function(require,module,exports){
+var _typeof = require("./typeof.js")["default"];
+function _toPrimitive(input, hint) {
+  if (_typeof(input) !== "object" || input === null) return input;
+  var prim = input[Symbol.toPrimitive];
+  if (prim !== undefined) {
+    var res = prim.call(input, hint || "default");
+    if (_typeof(res) !== "object") return res;
+    throw new TypeError("@@toPrimitive must return a primitive value.");
+  }
+  return (hint === "string" ? String : Number)(input);
+}
+module.exports = _toPrimitive, module.exports.__esModule = true, module.exports["default"] = module.exports;
+},{"./typeof.js":17}],16:[function(require,module,exports){
+var _typeof = require("./typeof.js")["default"];
+var toPrimitive = require("./toPrimitive.js");
+function _toPropertyKey(arg) {
+  var key = toPrimitive(arg, "string");
+  return _typeof(key) === "symbol" ? key : String(key);
+}
+module.exports = _toPropertyKey, module.exports.__esModule = true, module.exports["default"] = module.exports;
+},{"./toPrimitive.js":15,"./typeof.js":17}],17:[function(require,module,exports){
 function _typeof(obj) {
   "@babel/helpers - typeof";
 
-  if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
-    module.exports = _typeof = function _typeof(obj) {
-      return typeof obj;
-    };
-
-    module.exports["default"] = module.exports, module.exports.__esModule = true;
-  } else {
-    module.exports = _typeof = function _typeof(obj) {
-      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
-    };
-
-    module.exports["default"] = module.exports, module.exports.__esModule = true;
-  }
-
-  return _typeof(obj);
+  return (module.exports = _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) {
+    return typeof obj;
+  } : function (obj) {
+    return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+  }, module.exports.__esModule = true, module.exports["default"] = module.exports), _typeof(obj);
 }
-
-module.exports = _typeof;
-module.exports["default"] = module.exports, module.exports.__esModule = true;
+module.exports = _typeof, module.exports.__esModule = true, module.exports["default"] = module.exports;
 },{}]},{},[1]);

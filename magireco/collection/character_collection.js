@@ -1473,7 +1473,25 @@ export const character_collection = [
     "release_date": "2022-08-22",
     "release_date_na": "2050-01-01",
     "obtainability": "limited",
-    "url": "https://magireco.fandom.com/wiki/Infinite_Iroha)"
+    "url": "https://magireco.fandom.com/wiki/Infinite_Iroha"
+  },
+  {
+    "id": "1701",
+    "name": "Infinity Iroha-chan",
+    "name_jp": "無限大いろはちゃん",
+    "name_na": "",
+    "attribute": "Light",
+    "ranks": {
+      "1": false,
+      "2": false,
+      "3": false,
+      "4": true,
+      "5": true
+    },
+    "release_date": "2023-04-07",
+    "release_date_na": "2050-01-01",
+    "obtainability": "limited",
+    "url": "https://magireco.fandom.com/wiki/Infinity_Iroha-chan"
   },
   {
     "id": "2001",

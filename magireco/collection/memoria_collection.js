@@ -9322,6 +9322,19 @@ export const memoria_collection = [
     "url": "https://magireco.fandom.com/wiki/Incubator%27s_Pupil"
   },
   {
+    "id": "1734",
+    "name": "Beyond the 1000 Year's Sleep",
+    "name_jp": "1000年の眠りを超えて",
+    "name_na": "",
+    "type": "skill",
+    "rank": "3",
+    "effect1": "Provoke & Damage Cut [VII / 35%] (Self / 1 Turn)",
+    "effect2": "Provoke & Damage Cut [IX / 45%] (Self / 1 Turn)",
+    "chara": "Pernelle",
+    "obtainability": "unlimited",
+    "url": "https://magireco.fandom.com/wiki/Beyond_the_1000_Year's_Sleep"
+  },
+  {
     "id": "1735",
     "name": "The Queen's Path",
     "name_jp": "女王の歩む道",
@@ -9346,6 +9359,19 @@ export const memoria_collection = [
     "chara": "",
     "obtainability": "limited",
     "url": "https://magireco.fandom.com/wiki/Call_On_the_Alchemist_Duo!"
+  },
+  {
+    "id": "1737",
+    "name": "Heirs to Their Memories",
+    "name_jp": "想いを継ぐものたち",
+    "name_na": "",
+    "type": "skill",
+    "rank": "4",
+    "effect1": "",
+    "effect2": "Regenerate HP [XV / 16%] & Skill Quicken (Self / 1 Turn)",
+    "chara": "",
+    "obtainability": "limited",
+    "url": "https://magireco.fandom.com/wiki/Heirs_to_Their_Memories"
   },
   {
     "id": "1738",
@@ -9569,6 +9595,71 @@ export const memoria_collection = [
     "url": "https://magireco.fandom.com/wiki/Transparent_Feelings_Reflected_in_the_Mirror"
   },
   {
+    "id": "1755",
+    "name": "After Dreaming",
+    "name_jp": "夢見たあとに",
+    "name_na": "",
+    "type": "skill",
+    "rank": "3",
+    "effect1": "Provoke & Regenerate HP [VII / 8%] (Self / 1 Turn)",
+    "effect2": "Provoke & Regenerate HP [IX / 10%] (Self / 1 Turn)",
+    "chara": "Yume Urara",
+    "obtainability": "unlimited",
+    "url": "https://magireco.fandom.com/wiki/After_Dreaming"
+  },
+  {
+    "id": "1756",
+    "name": "Reaching Out Towards Our Goal",
+    "name_jp": "憧れに背伸びして",
+    "name_na": "",
+    "type": "ability",
+    "rank": "4",
+    "effect1": "Chance to Fog on Attack [II / 15%] (3 Turns) & Attack Up [IV / 20%]",
+    "effect2": "Chance to Fog on Attack [III / 20%] (3 Turns) & Attack Up [V / 25%]",
+    "chara": "",
+    "obtainability": "unlimited",
+    "url": "https://magireco.fandom.com/wiki/Reaching_Out_Towards_Our_Goal"
+  },
+  {
+    "id": "1757",
+    "name": "Tears Sinking to the Watery Depths",
+    "name_jp": "水底に沈む涙",
+    "name_na": "",
+    "type": "skill",
+    "rank": "3",
+    "effect1": "Chance to Fog [100%] & Defense Down [IV / 20%] (Target / 1 Turn)",
+    "effect2": "Chance to Fog [100%] & Defense Down [V / 25%] (Target / 1 Turn)",
+    "chara": "",
+    "obtainability": "unlimited",
+    "url": "https://magireco.fandom.com/wiki/Tears_Sinking_to_the_Watery_Depths"
+  },
+  {
+    "id": "1758",
+    "name": "The End Is a Laughing Farewell",
+    "name_jp": "最後は笑ってさようなら",
+    "name_na": "",
+    "type": "skill",
+    "rank": "4",
+    "effect1": "",
+    "effect2": "Accele MP Gain Up [IV / 17.5%] & Status Ailment Resistance Up [III / 30%] (Self / 3 Turns)",
+    "chara": "",
+    "obtainability": "limited",
+    "url": "https://magireco.fandom.com/wiki/The_End_Is_a_Laughing_Farewell"
+  },
+  {
+    "id": "1759",
+    "name": "It's Showtime!",
+    "name_jp": "ショータイムなんよ！",
+    "name_na": "",
+    "type": "ability",
+    "rank": "3",
+    "effect1": "",
+    "effect2": "Attack Up [III / 15%] & Attack Up When At Critical Health [I / 10%]",
+    "chara": "",
+    "obtainability": "limited",
+    "url": "https://magireco.fandom.com/wiki/It's_Showtime!"
+  },
+  {
     "id": "1760",
     "name": "Today Is the Way You Eat",
     "name_jp": "今日はあなたの食べ方で",
@@ -9606,6 +9697,19 @@ export const memoria_collection = [
     "chara": "",
     "obtainability": "limited",
     "url": "https://magireco.fandom.com/wiki/What_I_Once_Hoped_For..."
+  },
+  {
+    "id": "1763",
+    "name": "Reaching the Settlement of Two Futures",
+    "name_jp": "ふたりの未来に至る決着を",
+    "name_na": "",
+    "type": "skill",
+    "rank": "4",
+    "effect1": "",
+    "effect2": "Remove Debuffs (Self)",
+    "chara": "",
+    "obtainability": "limited",
+    "url": "https://magireco.fandom.com/wiki/Reaching_the_Settlement_of_Two_Futures"
   },
   {
     "id": "1764",
@@ -10140,6 +10244,19 @@ export const memoria_collection = [
     "url": "https://magireco.fandom.com/wiki/The_Glow_of_Deepening_Bonds"
   },
   {
+    "id": "1805",
+    "name": "Wishing for the Final Act",
+    "name_jp": "終幕への願い",
+    "name_na": "",
+    "type": "skill",
+    "rank": "4",
+    "effect1": "",
+    "effect2": "MP Gain Down [VII / 40%] (Target / 3 Turns)",
+    "chara": "",
+    "obtainability": "limited",
+    "url": "https://magireco.fandom.com/wiki/Wishing_for_the_Final_Act"
+  },
+  {
     "id": "1806",
     "name": "Confrontation at the First Act",
     "name_jp": "序幕での対峙",
@@ -10465,6 +10582,19 @@ export const memoria_collection = [
     "url": "https://magireco.fandom.com/wiki/To_Protect_the_Future"
   },
   {
+    "id": "1831",
+    "name": "Everyone as One",
+    "name_jp": "みんなでひとつ",
+    "name_na": "",
+    "type": "ability",
+    "rank": "4",
+    "effect1": "",
+    "effect2": "Damage Up [III / 15%] & Chance to Anti-Provoke [VI / 55%]",
+    "chara": "",
+    "obtainability": "limited",
+    "url": "https://magireco.fandom.com/wiki/Everyone_as_One"
+  },
+  {
     "id": "1832",
     "name": "Whilst in the Dark",
     "name_jp": "つつ闇の中で",
@@ -10580,6 +10710,19 @@ export const memoria_collection = [
     "chara": "",
     "obtainability": "limited",
     "url": "https://magireco.fandom.com/wiki/Hoping_for_Occasional_Dependence"
+  },
+  {
+    "id": "1841",
+    "name": "The Fire Demon King and the Ice Queen",
+    "name_jp": "火の魔王と氷の女王",
+    "name_na": "",
+    "type": "skill",
+    "rank": "4",
+    "effect1": "",
+    "effect2": "Doppel Damage Up [IX / 45%] (Self / 1 Turn)",
+    "chara": "",
+    "obtainability": "limited",
+    "url": "https://magireco.fandom.com/wiki/The_Fire_Demon_King_and_the_Ice_Queen"
   },
   {
     "id": "1842",
@@ -10855,6 +10998,19 @@ export const memoria_collection = [
     "url": "https://magireco.fandom.com/wiki/A_Share_of_Friendship"
   },
   {
+    "id": "1863",
+    "name": "Bitter & Citrus",
+    "name_jp": "ビター＆シトラス",
+    "name_na": "",
+    "type": "ability",
+    "rank": "4",
+    "effect1": "",
+    "effect2": "Damage Cut [III / 15%] & Defense Up [II / 15%]",
+    "chara": "",
+    "obtainability": "limited",
+    "url": "https://magireco.fandom.com/wiki/Bitter_%26_Citrus"
+  },
+  {
     "id": "1864",
     "name": "Grassroots Valentine",
     "name_jp": "草の根のバレンタイン",
@@ -10972,6 +11128,19 @@ export const memoria_collection = [
     "url": "https://magireco.fandom.com/wiki/Gorge_of_Fate"
   },
   {
+    "id": "1873",
+    "name": "An Odd Coincidence",
+    "name_jp": "数奇な巡り合わせ",
+    "name_na": "",
+    "type": "ability",
+    "rank": "4",
+    "effect1": "",
+    "effect2": "Magia Damage Up [V / 15%] & Accele MP Gain Up [IV / 17.5%]",
+    "chara": "",
+    "obtainability": "limited",
+    "url": "https://magireco.fandom.com/wiki/An_Odd_Coincidence"
+  },
+  {
     "id": "1874",
     "name": "Blown by the Dust",
     "name_jp": "砂塵に吹かれて",
@@ -11009,6 +11178,110 @@ export const memoria_collection = [
     "chara": "",
     "obtainability": "limited",
     "url": "https://magireco.fandom.com/wiki/The_Chivalrous_Thief_Who_Believes_in_Bonds"
+  },
+  {
+    "id": "1877",
+    "name": "The End of an Ordinary Day",
+    "name_jp": "何気ない１日のシメ",     
+    "name_na": "",
+    "type": "skill",
+    "rank": "4",
+    "effect1": "Magia Damage Down [IX / 45%] & Attack Down [IV / 20%] (All Enemies / 1 Turn)",
+    "effect2": "Magia Damage Down [X / 50%] & Attack Down [V / 25%] (All Enemies / 1 Turn)",
+    "chara": "",
+    "obtainability": "limited",
+    "url": "https://magireco.fandom.com/wiki/The_End_of_an_Ordinary_Day"
+  },
+  {
+    "id": "1878",
+    "name": "Clock of Resignation Reflected in the Mirror",
+    "name_jp": "鏡に映るまやかしの憎悪",
+    "name_na": "",
+    "type": "ability",
+    "rank": "4",
+    "effect1": "",
+    "effect2": "Blast Damage Up [VI / 40%] & Status Ailment Resistance Up [III / 30%]",
+    "chara": "",
+    "obtainability": "limited",
+    "url": "https://magireco.fandom.com/wiki/Clock_of_Resignation_Reflected_in_the_Mirror"
+  },
+  {
+    "id": "1879",
+    "name": "From Now On, With Everyone",
+    "name_jp": "これからも、みんなと",
+    "name_na": "",
+    "type": "ability",
+    "rank": "4",
+    "effect1": "",
+    "effect2": "Attack Up [IV / 20%] & Defense Up [IV / 30%]",
+    "chara": "",
+    "obtainability": "limited",
+    "url": "https://magireco.fandom.com/wiki/From_Now_On%2C_With_Everyone"
+  },
+  {
+    "id": "1880",
+    "name": "Predestined Salvation",
+    "name_jp": "定められた救い",
+    "name_na": "",
+    "type": "skill",
+    "rank": "4",
+    "effect1": "",
+    "effect2": "Attack Up [VI / 30%] & Defense Up [V / 37.5%] (Self / 3 Turns)",
+    "chara": "",
+    "obtainability": "limited",
+    "url": "https://magireco.fandom.com/wiki/Predestined_Salvation"
+  },
+  {
+    "id": "1881",
+    "name": "It Will Surely be a Lovely Story",
+    "name_jp": "きっと愛しい物語に",
+    "name_na": "",
+    "type": "ability",
+    "rank": "4",
+    "effect1": "",
+    "effect2": "Episode Experience Gain Increased [IV / 30%] & Blast Damage Up [III / 25%]",
+    "chara": "",
+    "obtainability": "limited",
+    "url": "https://magireco.fandom.com/wiki/It_Will_Surely_be_a_Lovely_Story"
+  },
+  {
+    "id": "1882",
+    "name": "Serial Connect",
+    "name_jp": "直列コネクト",
+    "name_na": "",
+    "type": "skill",
+    "rank": "4",
+    "effect1": "Damage Increase [IX / 45%] & Doppel Damage Up [II / 10%] (Self / 1 Turn)",
+    "effect2": "Damage Increase [X / 50%] & Doppel Damage Up [III / 15%] (Self / 1 Turn)",
+    "chara": "",
+    "obtainability": "limited",
+    "url": "https://magireco.fandom.com/wiki/Serial_Connect"
+  },
+  {
+    "id": "1883",
+    "name": "Reverted Time Cannot be Reverted",
+    "name_jp": "戻した時間は戻らない",
+    "name_na": "",
+    "type": "ability",
+    "rank": "3",
+    "effect1": "Attack Up While At Max Health [III / 15%] & Defense Up While At Max Health [III / 30%]",
+    "effect2": "Attack Up While At Max Health [IV / 20%] & Defense Up While At Max Health [IV / 40%]",
+    "chara": "",
+    "obtainability": "limited",
+    "url": "https://magireco.fandom.com/wiki/Reverted_Time_Cannot_be_Reverted"
+  },
+  {
+    "id": "1884",
+    "name": "My Possibilities",
+    "name_jp": "私の可能性",
+    "name_na": "",
+    "type": "skill",
+    "rank": "3",
+    "effect1": "",
+    "effect2": "Magia Damage Up [V / 15%] & Skill Quicken (Self / 1 Turn)",
+    "chara": "",
+    "obtainability": "limited",
+    "url": "https://magireco.fandom.com/wiki/My_Possibilities"
   },
   {
     "id": "9001",

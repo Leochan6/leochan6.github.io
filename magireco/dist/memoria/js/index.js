@@ -10328,6 +10328,18 @@ var memoria_collection = [{
   "obtainability": "unlimited",
   "url": "https://magireco.fandom.com/wiki/Incubator%27s_Pupil"
 }, {
+  "id": "1734",
+  "name": "Beyond the 1000 Year's Sleep",
+  "name_jp": "1000年の眠りを超えて",
+  "name_na": "",
+  "type": "skill",
+  "rank": "3",
+  "effect1": "Provoke & Damage Cut [VII / 35%] (Self / 1 Turn)",
+  "effect2": "Provoke & Damage Cut [IX / 45%] (Self / 1 Turn)",
+  "chara": "Pernelle",
+  "obtainability": "unlimited",
+  "url": "https://magireco.fandom.com/wiki/Beyond_the_1000_Year's_Sleep"
+}, {
   "id": "1735",
   "name": "The Queen's Path",
   "name_jp": "女王の歩む道",
@@ -10351,6 +10363,18 @@ var memoria_collection = [{
   "chara": "",
   "obtainability": "limited",
   "url": "https://magireco.fandom.com/wiki/Call_On_the_Alchemist_Duo!"
+}, {
+  "id": "1737",
+  "name": "Heirs to Their Memories",
+  "name_jp": "想いを継ぐものたち",
+  "name_na": "",
+  "type": "skill",
+  "rank": "4",
+  "effect1": "",
+  "effect2": "Regenerate HP [XV / 16%] & Skill Quicken (Self / 1 Turn)",
+  "chara": "",
+  "obtainability": "limited",
+  "url": "https://magireco.fandom.com/wiki/Heirs_to_Their_Memories"
 }, {
   "id": "1738",
   "name": "The Chance Encounter of Loches Castle",
@@ -10556,6 +10580,66 @@ var memoria_collection = [{
   "obtainability": "limited",
   "url": "https://magireco.fandom.com/wiki/Transparent_Feelings_Reflected_in_the_Mirror"
 }, {
+  "id": "1755",
+  "name": "After Dreaming",
+  "name_jp": "夢見たあとに",
+  "name_na": "",
+  "type": "skill",
+  "rank": "3",
+  "effect1": "Provoke & Regenerate HP [VII / 8%] (Self / 1 Turn)",
+  "effect2": "Provoke & Regenerate HP [IX / 10%] (Self / 1 Turn)",
+  "chara": "Yume Urara",
+  "obtainability": "unlimited",
+  "url": "https://magireco.fandom.com/wiki/After_Dreaming"
+}, {
+  "id": "1756",
+  "name": "Reaching Out Towards Our Goal",
+  "name_jp": "憧れに背伸びして",
+  "name_na": "",
+  "type": "ability",
+  "rank": "4",
+  "effect1": "Chance to Fog on Attack [II / 15%] (3 Turns) & Attack Up [IV / 20%]",
+  "effect2": "Chance to Fog on Attack [III / 20%] (3 Turns) & Attack Up [V / 25%]",
+  "chara": "",
+  "obtainability": "unlimited",
+  "url": "https://magireco.fandom.com/wiki/Reaching_Out_Towards_Our_Goal"
+}, {
+  "id": "1757",
+  "name": "Tears Sinking to the Watery Depths",
+  "name_jp": "水底に沈む涙",
+  "name_na": "",
+  "type": "skill",
+  "rank": "3",
+  "effect1": "Chance to Fog [100%] & Defense Down [IV / 20%] (Target / 1 Turn)",
+  "effect2": "Chance to Fog [100%] & Defense Down [V / 25%] (Target / 1 Turn)",
+  "chara": "",
+  "obtainability": "unlimited",
+  "url": "https://magireco.fandom.com/wiki/Tears_Sinking_to_the_Watery_Depths"
+}, {
+  "id": "1758",
+  "name": "The End Is a Laughing Farewell",
+  "name_jp": "最後は笑ってさようなら",
+  "name_na": "",
+  "type": "skill",
+  "rank": "4",
+  "effect1": "",
+  "effect2": "Accele MP Gain Up [IV / 17.5%] & Status Ailment Resistance Up [III / 30%] (Self / 3 Turns)",
+  "chara": "",
+  "obtainability": "limited",
+  "url": "https://magireco.fandom.com/wiki/The_End_Is_a_Laughing_Farewell"
+}, {
+  "id": "1759",
+  "name": "It's Showtime!",
+  "name_jp": "ショータイムなんよ！",
+  "name_na": "",
+  "type": "ability",
+  "rank": "3",
+  "effect1": "",
+  "effect2": "Attack Up [III / 15%] & Attack Up When At Critical Health [I / 10%]",
+  "chara": "",
+  "obtainability": "limited",
+  "url": "https://magireco.fandom.com/wiki/It's_Showtime!"
+}, {
   "id": "1760",
   "name": "Today Is the Way You Eat",
   "name_jp": "今日はあなたの食べ方で",
@@ -10591,6 +10675,18 @@ var memoria_collection = [{
   "chara": "",
   "obtainability": "limited",
   "url": "https://magireco.fandom.com/wiki/What_I_Once_Hoped_For..."
+}, {
+  "id": "1763",
+  "name": "Reaching the Settlement of Two Futures",
+  "name_jp": "ふたりの未来に至る決着を",
+  "name_na": "",
+  "type": "skill",
+  "rank": "4",
+  "effect1": "",
+  "effect2": "Remove Debuffs (Self)",
+  "chara": "",
+  "obtainability": "limited",
+  "url": "https://magireco.fandom.com/wiki/Reaching_the_Settlement_of_Two_Futures"
 }, {
   "id": "1764",
   "name": "The Luxurious Cake Way of Eating",
@@ -11084,6 +11180,18 @@ var memoria_collection = [{
   "obtainability": "limited",
   "url": "https://magireco.fandom.com/wiki/The_Glow_of_Deepening_Bonds"
 }, {
+  "id": "1805",
+  "name": "Wishing for the Final Act",
+  "name_jp": "終幕への願い",
+  "name_na": "",
+  "type": "skill",
+  "rank": "4",
+  "effect1": "",
+  "effect2": "MP Gain Down [VII / 40%] (Target / 3 Turns)",
+  "chara": "",
+  "obtainability": "limited",
+  "url": "https://magireco.fandom.com/wiki/Wishing_for_the_Final_Act"
+}, {
   "id": "1806",
   "name": "Confrontation at the First Act",
   "name_jp": "序幕での対峙",
@@ -11384,6 +11492,18 @@ var memoria_collection = [{
   "obtainability": "unlimited",
   "url": "https://magireco.fandom.com/wiki/To_Protect_the_Future"
 }, {
+  "id": "1831",
+  "name": "Everyone as One",
+  "name_jp": "みんなでひとつ",
+  "name_na": "",
+  "type": "ability",
+  "rank": "4",
+  "effect1": "",
+  "effect2": "Damage Up [III / 15%] & Chance to Anti-Provoke [VI / 55%]",
+  "chara": "",
+  "obtainability": "limited",
+  "url": "https://magireco.fandom.com/wiki/Everyone_as_One"
+}, {
   "id": "1832",
   "name": "Whilst in the Dark",
   "name_jp": "つつ闇の中で",
@@ -11491,6 +11611,18 @@ var memoria_collection = [{
   "chara": "",
   "obtainability": "limited",
   "url": "https://magireco.fandom.com/wiki/Hoping_for_Occasional_Dependence"
+}, {
+  "id": "1841",
+  "name": "The Fire Demon King and the Ice Queen",
+  "name_jp": "火の魔王と氷の女王",
+  "name_na": "",
+  "type": "skill",
+  "rank": "4",
+  "effect1": "",
+  "effect2": "Doppel Damage Up [IX / 45%] (Self / 1 Turn)",
+  "chara": "",
+  "obtainability": "limited",
+  "url": "https://magireco.fandom.com/wiki/The_Fire_Demon_King_and_the_Ice_Queen"
 }, {
   "id": "1842",
   "name": "Sending Thoughts, Back to You",
@@ -11744,6 +11876,18 @@ var memoria_collection = [{
   "obtainability": "limited",
   "url": "https://magireco.fandom.com/wiki/A_Share_of_Friendship"
 }, {
+  "id": "1863",
+  "name": "Bitter & Citrus",
+  "name_jp": "ビター＆シトラス",
+  "name_na": "",
+  "type": "ability",
+  "rank": "4",
+  "effect1": "",
+  "effect2": "Damage Cut [III / 15%] & Defense Up [II / 15%]",
+  "chara": "",
+  "obtainability": "limited",
+  "url": "https://magireco.fandom.com/wiki/Bitter_%26_Citrus"
+}, {
   "id": "1864",
   "name": "Grassroots Valentine",
   "name_jp": "草の根のバレンタイン",
@@ -11852,6 +11996,18 @@ var memoria_collection = [{
   "obtainability": "limited",
   "url": "https://magireco.fandom.com/wiki/Gorge_of_Fate"
 }, {
+  "id": "1873",
+  "name": "An Odd Coincidence",
+  "name_jp": "数奇な巡り合わせ",
+  "name_na": "",
+  "type": "ability",
+  "rank": "4",
+  "effect1": "",
+  "effect2": "Magia Damage Up [V / 15%] & Accele MP Gain Up [IV / 17.5%]",
+  "chara": "",
+  "obtainability": "limited",
+  "url": "https://magireco.fandom.com/wiki/An_Odd_Coincidence"
+}, {
   "id": "1874",
   "name": "Blown by the Dust",
   "name_jp": "砂塵に吹かれて",
@@ -11887,6 +12043,102 @@ var memoria_collection = [{
   "chara": "",
   "obtainability": "limited",
   "url": "https://magireco.fandom.com/wiki/The_Chivalrous_Thief_Who_Believes_in_Bonds"
+}, {
+  "id": "1877",
+  "name": "The End of an Ordinary Day",
+  "name_jp": "何気ない１日のシメ",
+  "name_na": "",
+  "type": "skill",
+  "rank": "4",
+  "effect1": "Magia Damage Down [IX / 45%] & Attack Down [IV / 20%] (All Enemies / 1 Turn)",
+  "effect2": "Magia Damage Down [X / 50%] & Attack Down [V / 25%] (All Enemies / 1 Turn)",
+  "chara": "",
+  "obtainability": "limited",
+  "url": "https://magireco.fandom.com/wiki/The_End_of_an_Ordinary_Day"
+}, {
+  "id": "1878",
+  "name": "Clock of Resignation Reflected in the Mirror",
+  "name_jp": "鏡に映るまやかしの憎悪",
+  "name_na": "",
+  "type": "ability",
+  "rank": "4",
+  "effect1": "",
+  "effect2": "Blast Damage Up [VI / 40%] & Status Ailment Resistance Up [III / 30%]",
+  "chara": "",
+  "obtainability": "limited",
+  "url": "https://magireco.fandom.com/wiki/Clock_of_Resignation_Reflected_in_the_Mirror"
+}, {
+  "id": "1879",
+  "name": "From Now On, With Everyone",
+  "name_jp": "これからも、みんなと",
+  "name_na": "",
+  "type": "ability",
+  "rank": "4",
+  "effect1": "",
+  "effect2": "Attack Up [IV / 20%] & Defense Up [IV / 30%]",
+  "chara": "",
+  "obtainability": "limited",
+  "url": "https://magireco.fandom.com/wiki/From_Now_On%2C_With_Everyone"
+}, {
+  "id": "1880",
+  "name": "Predestined Salvation",
+  "name_jp": "定められた救い",
+  "name_na": "",
+  "type": "skill",
+  "rank": "4",
+  "effect1": "",
+  "effect2": "Attack Up [VI / 30%] & Defense Up [V / 37.5%] (Self / 3 Turns)",
+  "chara": "",
+  "obtainability": "limited",
+  "url": "https://magireco.fandom.com/wiki/Predestined_Salvation"
+}, {
+  "id": "1881",
+  "name": "It Will Surely be a Lovely Story",
+  "name_jp": "きっと愛しい物語に",
+  "name_na": "",
+  "type": "ability",
+  "rank": "4",
+  "effect1": "",
+  "effect2": "Episode Experience Gain Increased [IV / 30%] & Blast Damage Up [III / 25%]",
+  "chara": "",
+  "obtainability": "limited",
+  "url": "https://magireco.fandom.com/wiki/It_Will_Surely_be_a_Lovely_Story"
+}, {
+  "id": "1882",
+  "name": "Serial Connect",
+  "name_jp": "直列コネクト",
+  "name_na": "",
+  "type": "skill",
+  "rank": "4",
+  "effect1": "Damage Increase [IX / 45%] & Doppel Damage Up [II / 10%] (Self / 1 Turn)",
+  "effect2": "Damage Increase [X / 50%] & Doppel Damage Up [III / 15%] (Self / 1 Turn)",
+  "chara": "",
+  "obtainability": "limited",
+  "url": "https://magireco.fandom.com/wiki/Serial_Connect"
+}, {
+  "id": "1883",
+  "name": "Reverted Time Cannot be Reverted",
+  "name_jp": "戻した時間は戻らない",
+  "name_na": "",
+  "type": "ability",
+  "rank": "3",
+  "effect1": "Attack Up While At Max Health [III / 15%] & Defense Up While At Max Health [III / 30%]",
+  "effect2": "Attack Up While At Max Health [IV / 20%] & Defense Up While At Max Health [IV / 40%]",
+  "chara": "",
+  "obtainability": "limited",
+  "url": "https://magireco.fandom.com/wiki/Reverted_Time_Cannot_be_Reverted"
+}, {
+  "id": "1884",
+  "name": "My Possibilities",
+  "name_jp": "私の可能性",
+  "name_na": "",
+  "type": "skill",
+  "rank": "3",
+  "effect1": "",
+  "effect2": "Magia Damage Up [V / 15%] & Skill Quicken (Self / 1 Turn)",
+  "chara": "",
+  "obtainability": "limited",
+  "url": "https://magireco.fandom.com/wiki/My_Possibilities"
 }, {
   "id": "9001",
   "name": "My Victory Pose Is Kawaii Too",
@@ -11990,18 +12242,13 @@ exports.memoria_collection = memoria_collection;
 "use strict";
 
 var _typeof = require("@babel/runtime/helpers/typeof");
-
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.startUp = exports.filterBackgrounds = exports.loadBackgroundList = exports.getSelectedBackground = exports.removeBackground = exports.changeTransparency = exports.setBackground = exports.getBackgrounds = void 0;
-
+exports.startUp = exports.setBackground = exports.removeBackground = exports.loadBackgroundList = exports.getSelectedBackground = exports.getBackgrounds = exports.filterBackgrounds = exports.changeTransparency = void 0;
 var _memoria_elements = require("./memoria_elements.js");
-
 var _background_collection = require("../../collection/background_collection.js");
-
 var storage_api = _interopRequireWildcard(require("./storage_api.js"));
-
 function _getRequireWildcardCache(nodeInterop) {
   if (typeof WeakMap !== "function") return null;
   var cacheBabelInterop = new WeakMap();
@@ -12010,31 +12257,24 @@ function _getRequireWildcardCache(nodeInterop) {
     return nodeInterop ? cacheNodeInterop : cacheBabelInterop;
   })(nodeInterop);
 }
-
 function _interopRequireWildcard(obj, nodeInterop) {
   if (!nodeInterop && obj && obj.__esModule) {
     return obj;
   }
-
   if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") {
     return {
       "default": obj
     };
   }
-
   var cache = _getRequireWildcardCache(nodeInterop);
-
   if (cache && cache.has(obj)) {
     return cache.get(obj);
   }
-
   var newObj = {};
   var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;
-
   for (var key in obj) {
     if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) {
       var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;
-
       if (desc && (desc.get || desc.set)) {
         Object.defineProperty(newObj, key, desc);
       } else {
@@ -12042,13 +12282,10 @@ function _interopRequireWildcard(obj, nodeInterop) {
       }
     }
   }
-
   newObj["default"] = obj;
-
   if (cache) {
     cache.set(obj, newObj);
   }
-
   return newObj;
 }
 /**
@@ -12058,21 +12295,17 @@ function _interopRequireWildcard(obj, nodeInterop) {
 /**
  * Gets all the Home Screen Backgrounds.
  */
-
-
 var getBackgrounds = function getBackgrounds() {
   var backgrounds = _background_collection.background_collection["home screen"];
   return backgrounds;
 };
+
 /**
  * Sets the background of the list with the background_id.
  * 
  * @param {String} background_id 
  */
-
-
 exports.getBackgrounds = getBackgrounds;
-
 var setBackground = function setBackground(background_id) {
   if (background_id) {
     background_select.value = background_id;
@@ -12084,46 +12317,38 @@ var setBackground = function setBackground(background_id) {
     background_select.selectedIndex = -1;
   }
 };
+
 /**
  * Changes the transparency of the list to transparency / 100.
  * 
  * @param {Number} transparency 
  */
-
-
 exports.setBackground = setBackground;
-
 var changeTransparency = function changeTransparency(transparency) {
   _memoria_elements.memoria_elements.memoria_list_content.style.backgroundColor = "rgba(255,255,255,".concat(transparency / 100, ")");
 };
+
 /**
  * Removes the background from the list.
  */
-
-
 exports.changeTransparency = changeTransparency;
-
 var removeBackground = function removeBackground() {
   _memoria_elements.memoria_elements.memoria_list_content.style.backgroundImage = "";
   background_select.selectedIndex = -1;
 };
+
 /**
  * Gets the background_id of the selected background.
  */
-
-
 exports.removeBackground = removeBackground;
-
 var getSelectedBackground = function getSelectedBackground() {
   return background_select.value;
 };
+
 /**
  * Loads the background image previews into the Background Select Dialog.
  */
-
-
 exports.getSelectedBackground = getSelectedBackground;
-
 var loadBackgroundList = function loadBackgroundList() {
   var backgrounds = getBackgrounds();
   backgrounds.forEach(function (background) {
@@ -12139,18 +12364,15 @@ var loadBackgroundList = function loadBackgroundList() {
       background_select.dispatchEvent(new Event("change"));
       backgroundSelectModal.style.display = "none";
     });
-
     _memoria_elements.backgroundSelectDialog.list.append(container);
   });
 };
+
 /**
  * Filters the backgrounds based on the search term.
  * @param {String} search 
  */
-
-
 exports.loadBackgroundList = loadBackgroundList;
-
 var filterBackgrounds = function filterBackgrounds(search) {
   if (!search || search.length == 0) {
     Array.from(backgroundSelectModalList.children).forEach(function (child) {
@@ -12160,13 +12382,11 @@ var filterBackgrounds = function filterBackgrounds(search) {
       }
     });
   }
-
   search = search.toLowerCase();
   Array.from(backgroundSelectModalList.children).forEach(function (child) {
     var background = getBackgrounds().find(function (back) {
       return child.getAttribute("id") === back.id;
     });
-
     if (background.id.includes(search) || background.name.toLowerCase().includes(search) || background.id.toLowerCase().split("_").includes(search)) {
       child.classList.remove("hidden");
       child.style.display = "inline-block";
@@ -12176,13 +12396,11 @@ var filterBackgrounds = function filterBackgrounds(search) {
     }
   });
 };
+
 /**
  * Load the background_select with background names.
  */
-
-
 exports.filterBackgrounds = filterBackgrounds;
-
 var startUp = function startUp() {
   var backgrounds = getBackgrounds();
   backgrounds.forEach(function (background) {
@@ -12190,32 +12408,21 @@ var startUp = function startUp() {
   });
   background_select.selectedIndex = -1;
 };
-
 exports.startUp = startUp;
 
-},{"../../collection/background_collection.js":1,"./memoria_elements.js":6,"./storage_api.js":9,"@babel/runtime/helpers/typeof":30}],4:[function(require,module,exports){
+},{"../../collection/background_collection.js":1,"./memoria_elements.js":6,"./storage_api.js":9,"@babel/runtime/helpers/typeof":33}],4:[function(require,module,exports){
 "use strict";
 
 var _typeof = require("@babel/runtime/helpers/typeof");
-
 var memoria_api = _interopRequireWildcard(require("./memoria_api.js"));
-
 var memoria_list_api = _interopRequireWildcard(require("./memoria_list_api.js"));
-
 var background_api = _interopRequireWildcard(require("./background_api.js"));
-
 var profile_api = _interopRequireWildcard(require("./profile_api.js"));
-
 var storage_api = _interopRequireWildcard(require("./storage_api.js"));
-
 var database_api = _interopRequireWildcard(require("../../shared/js/database_api.js"));
-
 var utils = _interopRequireWildcard(require("../../shared/js/utils.js"));
-
 var _memoria_elements = require("./memoria_elements.js");
-
 var _dialog = require("../../shared/js/dialog.js");
-
 function _getRequireWildcardCache(nodeInterop) {
   if (typeof WeakMap !== "function") return null;
   var cacheBabelInterop = new WeakMap();
@@ -12224,31 +12431,24 @@ function _getRequireWildcardCache(nodeInterop) {
     return nodeInterop ? cacheNodeInterop : cacheBabelInterop;
   })(nodeInterop);
 }
-
 function _interopRequireWildcard(obj, nodeInterop) {
   if (!nodeInterop && obj && obj.__esModule) {
     return obj;
   }
-
   if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") {
     return {
       "default": obj
     };
   }
-
   var cache = _getRequireWildcardCache(nodeInterop);
-
   if (cache && cache.has(obj)) {
     return cache.get(obj);
   }
-
   var newObj = {};
   var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;
-
   for (var key in obj) {
     if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) {
       var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;
-
       if (desc && (desc.get || desc.set)) {
         Object.defineProperty(newObj, key, desc);
       } else {
@@ -12256,20 +12456,15 @@ function _interopRequireWildcard(obj, nodeInterop) {
       }
     }
   }
-
   newObj["default"] = obj;
-
   if (cache) {
     cache.set(obj, newObj);
   }
-
   return newObj;
 }
 /**
  * Event Handlers for the Memoria Page.
  */
-
-
 (function () {
   "use strict";
 
@@ -12277,25 +12472,28 @@ function _interopRequireWildcard(obj, nodeInterop) {
     /* ============================== Content ============================== */
 
     /* ------------------------------ Header Buttons ------------------------------ */
+
     // sign out button.
     signout_button.addEventListener("click", function () {
       var res = confirm("Are you sure you want to Sign Out?");
       if (res) database_api.signout();
-    }); // contact button.
+    });
 
+    // contact button.
     contact_button.addEventListener("click", function () {
       new _dialog.ContactDialog();
-    }); // theme toggle button.
+    });
 
+    // theme toggle button.
     _memoria_elements.memoria_elements.theme_button.addEventListener("click", function () {
       var theme = "light";
       if (_memoria_elements.memoria_elements.theme_button.classList.contains("dark")) theme = "dark";else if (_memoria_elements.memoria_elements.theme_button.classList.contains("light")) theme = "light";
       storage_api.updateSettings("theme", theme);
     });
+
     /* ------------------------------ General Modal Dialogs ------------------------------ */
+
     // hide modal dialogs if not drag
-
-
     var dragging = false;
     window.addEventListener("mousedown", function (event) {
       var x = event.x;
@@ -12319,78 +12517,76 @@ function _interopRequireWildcard(obj, nodeInterop) {
         [_memoria_elements.messageDialog, _memoria_elements.memoriaSelectDialog, _memoria_elements.backgroundSelectDialog, _memoria_elements.importListDialog].forEach(function (dialog) {
           if (e.target == dialog.modal && dialog.isOpen()) return dialog.close();
         });
-
         if (memoria_api.selectedMemoria) {
           memoria_api.deselectDisplay();
         }
       }
     });
-    /* ------------------------------ Message Modal Dialog ------------------------------ */
-    // hide message modal dialog
 
+    /* ------------------------------ Message Modal Dialog ------------------------------ */
+
+    // hide message modal dialog
     _memoria_elements.messageDialog.closeButton.addEventListener("click", function () {
       _memoria_elements.messageDialog.close();
-    }); // message modal dialog copy button.
+    });
 
-
+    // message modal dialog copy button.
     _memoria_elements.messageDialog.copy.addEventListener("click", function () {
       navigator.clipboard.writeText(_memoria_elements.messageDialog.text.value);
     });
+
     /* ------------------------------ Memoria Select Modal Dialog ------------------------------ */
+
     // hide memoria select modal dialog
-
-
     _memoria_elements.memoriaSelectDialog.closeButton.addEventListener("click", function () {
       _memoria_elements.memoriaSelectDialog.close();
-    }); // search change memoria select modal dialog.
+    });
 
-
+    // search change memoria select modal dialog.
     ["keyup", "change", "search"].forEach(function (event) {
       _memoria_elements.memoriaSelectDialog.search.addEventListener(event, function () {
         memoria_api.filterMemoria(_memoria_elements.memoriaSelectDialog.search.value);
       });
     });
-
     _memoria_elements.memoriaSelectDialog.added.addEventListener("click", function () {
       memoria_api.toggleAdded(_memoria_elements.memoriaSelectDialog.added.checked);
     });
+
     /* ------------------------------ Background Select Modal Dialog ------------------------------ */
+
     // hide background select modal dialog
-
-
     _memoria_elements.backgroundSelectDialog.closeButton.addEventListener("click", function () {
       _memoria_elements.backgroundSelectDialog.close();
-    }); // search change background select modal dialog.
+    });
 
-
+    // search change background select modal dialog.
     ["keyup", "change", "search"].forEach(function (event) {
       _memoria_elements.backgroundSelectDialog.search.addEventListener(event, function () {
         background_api.filterBackgrounds(_memoria_elements.backgroundSelectDialog.search.value);
       });
     });
-    /* ------------------------------ Import List Modal Dialog ------------------------------ */
-    // hide import list modal dialog
 
+    /* ------------------------------ Import List Modal Dialog ------------------------------ */
+
+    // hide import list modal dialog
     _memoria_elements.importListDialog.closeButton.addEventListener("click", function () {
       _memoria_elements.importListDialog.close();
-    }); // import the text as a new list.
+    });
 
-
+    // import the text as a new list.
     _memoria_elements.importListDialog.importButton.addEventListener("click", function () {
       memoria_list_api.importList();
     });
     /* ============================== Menu Bar ============================== */
 
     /* ------------------------------ Tabs ------------------------------ */
+
     // toggle visibility of the tab when heading clicked.
-
-
     document.querySelectorAll(".tab_header").forEach(function (element) {
       element.addEventListener("click", function () {
         var contents = element.parentElement.querySelector(".tab_contents");
         var toggle = element.querySelector(".tab_toggle");
         var tab_name = element.querySelector(".tab_heading").getAttribute("tab_name");
-
         if (!contents.classList.contains("hidden")) {
           contents.classList.add("hidden");
           toggle.classList.replace("down", "right");
@@ -12402,9 +12598,10 @@ function _interopRequireWildcard(obj, nodeInterop) {
         }
       });
     });
-    /* ------------------------------ My Memoria Lists Tab ------------------------------ */
-    // show or hide the create new list form, rename list form, and duplicate list form.
 
+    /* ------------------------------ My Memoria Lists Tab ------------------------------ */
+
+    // show or hide the create new list form, rename list form, and duplicate list form.
     [_memoria_elements.memoria_elements.new_list_button, _memoria_elements.memoria_elements.rename_list_button, _memoria_elements.memoria_elements.duplicate_list_button].forEach(function (button) {
       button.addEventListener("click", function () {
         var list_form = document.querySelector("#list_".concat(button.name));
@@ -12414,7 +12611,6 @@ function _interopRequireWildcard(obj, nodeInterop) {
             if (element.style.display === "block") element.style.display = "none";
           }
         });
-
         if (list_form.style.display === "none") {
           list_form.style.visibility = "visible";
           list_form.style.display = "block";
@@ -12424,199 +12620,199 @@ function _interopRequireWildcard(obj, nodeInterop) {
           list_form.style.display = "none";
         }
       });
-    }); // create a new list.
+    });
 
+    // create a new list.
     _memoria_elements.memoria_elements.create_list_create_button.addEventListener("click", function (e) {
       e.preventDefault();
       var newName = _memoria_elements.memoria_elements.create_list_name_field.value;
       if (memoria_list_api.checkListName(newName)) memoria_list_api.createList(newName);
-    }); // rename the selected list.
+    });
 
-
+    // rename the selected list.
     _memoria_elements.memoria_elements.rename_list_create_button.addEventListener("click", function (e) {
       e.preventDefault();
       var newName = _memoria_elements.memoria_elements.rename_list_name_field.value;
       if (memoria_list_api.checkListName(newName)) memoria_list_api.renameList(memoria_list_api.selectedList.listId, newName);
-    }); // duplicate list.
+    });
 
-
+    // duplicate list.
     _memoria_elements.memoria_elements.duplicate_list_create_button.addEventListener("click", function (e) {
       e.preventDefault();
       var newName = _memoria_elements.memoria_elements.duplicate_list_name_field.value;
       if (memoria_list_api.checkListName(newName)) memoria_list_api.duplicateList(memoria_list_api.selectedList.list, newName);
-    }); // delete the selected list.
+    });
 
-
+    // delete the selected list.
     _memoria_elements.memoria_elements.delete_list_button.addEventListener("click", function () {
       if (memoria_list_api.selectedList.listId) {
         var res = confirm("Are you sure you want to delete the list ".concat(memoria_list_api.selectedList.list.name, "?"));
         if (res) memoria_list_api.deleteList(memoria_list_api.selectedList.listId);
       }
     });
+
     /* ------------------------------ Create Memoria Tab ------------------------------ */
+
     // update the available fields on name change and update preview display.
-
-
     _memoria_elements.memoria_elements.name_select.addEventListener("change", function () {
       memoria_api.updateFieldsOnName();
-    }); // open memoria select modal
+    });
 
-
+    // open memoria select modal
     _memoria_elements.memoria_elements.memoriaSelectModalOpen.addEventListener("click", function () {
       _memoria_elements.memoriaSelectDialog.open(memoria_api.loadMemoriaSelectList);
-    }); // update the preview display on form change.
+    });
 
-
+    // update the preview display on form change.
     document.querySelectorAll(".form").forEach(function (element) {
       ["change", "keyup", "input"].forEach(function (event) {
         element.addEventListener(event, function () {
           memoria_api.updatePreviewOnForm();
         });
       });
-    }); // add new memoria display to list.
+    });
 
+    // add new memoria display to list.
     _memoria_elements.memoria_elements.create_button.addEventListener("click", function () {
       if (!_memoria_elements.memoria_elements.create_button.disabled) memoria_api.createMemoria();
-    }); // updates the memoria display with the form.
+    });
 
-
+    // updates the memoria display with the form.
     _memoria_elements.memoria_elements.update_button.addEventListener("click", function () {
       if (!_memoria_elements.memoria_elements.create_button.disabled) memoria_api.updateMemoria();
-    }); // copies the memoria display to the form.
+    });
 
-
+    // copies the memoria display to the form.
     _memoria_elements.memoria_elements.copy_button.addEventListener("click", function () {
       if (!_memoria_elements.memoria_elements.create_button.disabled) memoria_api.copyMemoria();
-    }); // delete the selected memoria display from list.
+    });
 
-
+    // delete the selected memoria display from list.
     _memoria_elements.memoria_elements.delete_button.addEventListener("click", function () {
       if (!_memoria_elements.memoria_elements.create_button.disabled) memoria_api.deleteMemoria();
-    }); // mines all the fields.
+    });
 
-
+    // mines all the fields.
     _memoria_elements.memoria_elements.min_all_button.addEventListener("click", function () {
       if (!_memoria_elements.memoria_elements.min_all_button.disabled) {
         memoria_api.minimizeDisplay();
         memoria_api.updateMemoria();
       }
-    }); // maxes all the fields.
+    });
 
-
+    // maxes all the fields.
     _memoria_elements.memoria_elements.max_all_button.addEventListener("click", function () {
       if (!_memoria_elements.memoria_elements.max_all_button.disabled) {
         memoria_api.maximizeDisplay();
         memoria_api.updateMemoria();
       }
     });
+
     /* ------------------------------ Sorting Profile Tab ------------------------------ */
+
     // check set the profile properties on change.
-
-
     _memoria_elements.memoria_elements.profile_select.addEventListener("change", function () {
       var profileId = _memoria_elements.memoria_elements.profile_select.value;
       if (profileId === "10" || profileId === "11") _memoria_elements.memoria_elements.delete_profile_button.disabled = true;else _memoria_elements.memoria_elements.delete_profile_button.disabled = false;
       profile_api.setProfile(profileId);
       memoria_list_api.applyProfileToList(memoria_list_api.getListId(), profileId);
       memoria_list_api.updateList();
-    }); // show the save new profile form.
+    });
 
-
+    // show the save new profile form.
     _memoria_elements.memoria_elements.new_profile_button.addEventListener("click", function () {
       if (_memoria_elements.memoria_elements.new_profile_button.classList.contains("add")) {
         _memoria_elements.memoria_elements.new_profile_button.classList.replace("add", "minus");
-
         _memoria_elements.memoria_elements.profile_create_block.classList.remove("hidden");
-
         _memoria_elements.memoria_elements.new_profile_field.focus();
       } else {
         _memoria_elements.memoria_elements.new_profile_button.classList.replace("minus", "add");
-
         _memoria_elements.memoria_elements.profile_create_block.classList.add("hidden");
       }
-    }); // check the profile name on change.
+    });
 
-
+    // check the profile name on change.
     _memoria_elements.memoria_elements.new_profile_field.addEventListener("change", function () {
       profile_api.checkProfile(_memoria_elements.memoria_elements.new_profile_field.value);
-    }); // create a new profile.
+    });
 
-
+    // create a new profile.
     _memoria_elements.memoria_elements.create_profile_button.addEventListener("click", function (e) {
       e.preventDefault();
       profile_api.saveProfile();
-    }); // delete the selected profile.
+    });
 
-
+    // delete the selected profile.
     _memoria_elements.memoria_elements.delete_profile_button.addEventListener("click", function () {
       var res = confirm("Are you sure you want to delete the sorting profile ".concat(profile_api.getSelectedProfileName(), "?"));
       if (res) profile_api.deleteProfile();
     });
+
     /* ------------------------------ Display Settings Tab ------------------------------ */
+
     // change the number of displays per row.
-
-
     ["input", "change"].forEach(function (event) {
       _memoria_elements.memoria_elements.displays_per_row.addEventListener(event, function () {
         var value = _memoria_elements.memoria_elements.displays_per_row.value;
         memoria_list_api.changeDisplaysPerRow(value);
         if (event === "change") storage_api.updateSettings("memoria_displays_per_row", value);
       });
-    }); // change the alignment of the list.
+    });
 
+    // change the alignment of the list.
     _memoria_elements.memoria_elements.display_alignment_select.addEventListener("change", function () {
       memoria_list_api.changeAlignment(_memoria_elements.memoria_elements.display_alignment_select.value);
     });
-
     ["input", "change"].forEach(function (event) {
       // change the padding of the list in the top direction.
       _memoria_elements.memoria_elements.display_padding_top_field.addEventListener(event, function () {
         var value = _memoria_elements.memoria_elements.display_padding_top_field.value;
         memoria_list_api.changePadding("top", value);
         if (event === "change") storage_api.updateSettings("padding_top", value);
-      }); // change the padding of the list in the left direction.
+      });
 
-
+      // change the padding of the list in the left direction.
       _memoria_elements.memoria_elements.display_padding_left_field.addEventListener(event, function () {
         var value = _memoria_elements.memoria_elements.display_padding_left_field.value;
         memoria_list_api.changePadding("left", value);
         if (event === "change") storage_api.updateSettings("padding_left", value);
-      }); // change the padding of the list in the right direction.
+      });
 
-
+      // change the padding of the list in the right direction.
       _memoria_elements.memoria_elements.display_padding_right_field.addEventListener(event, function () {
         var value = _memoria_elements.memoria_elements.display_padding_right_field.value;
         memoria_list_api.changePadding("right", value);
         if (event === "change") storage_api.updateSettings("padding_right", value);
-      }); // change the padding of the list in the bottom direction.
+      });
 
-
+      // change the padding of the list in the bottom direction.
       _memoria_elements.memoria_elements.display_padding_bottom_field.addEventListener(event, function () {
         var value = _memoria_elements.memoria_elements.display_padding_bottom_field.value;
         memoria_list_api.changePadding("bottom", value);
         if (event === "change") storage_api.updateSettings("padding_bottom", value);
       });
     });
-    /* ------------------------------ Background Tab ------------------------------ */
-    // open background select modal dialog
 
+    /* ------------------------------ Background Tab ------------------------------ */
+
+    // open background select modal dialog
     _memoria_elements.memoria_elements.backgroundSelectModalOpen.addEventListener("click", function () {
       _memoria_elements.backgroundSelectDialog.open(background_api.loadBackgroundList);
-    }); // set the background.
+    });
 
-
+    // set the background.
     _memoria_elements.memoria_elements.background_select.addEventListener("change", function () {
       background_api.setBackground(_memoria_elements.memoria_elements.background_select.value);
       memoria_list_api.updateList();
-    }); // remove the background.
+    });
 
-
+    // remove the background.
     _memoria_elements.memoria_elements.remove_background_button.addEventListener("click", function () {
       background_api.removeBackground();
       memoria_list_api.updateList();
-    }); // transparency field input.
+    });
 
-
+    // transparency field input.
     ["input", "change"].forEach(function (event) {
       _memoria_elements.memoria_elements.background_transparency_field.addEventListener(event, function () {
         var value = _memoria_elements.memoria_elements.background_transparency_field.value;
@@ -12626,24 +12822,25 @@ function _interopRequireWildcard(obj, nodeInterop) {
         background_api.changeTransparency(_memoria_elements.memoria_elements.background_transparency_range.value);
         if (event === "change") storage_api.updateSettings("background_transparency", background_transparency_field.value);
       });
-    }); // transparency range slider.
+    });
 
+    // transparency range slider.
     ["input", "change", "wheel"].forEach(function (event) {
       _memoria_elements.memoria_elements.background_transparency_range.addEventListener(event, function (e) {
         if (event === "wheel") {
           _memoria_elements.memoria_elements.background_transparency_range.value = parseInt(_memoria_elements.memoria_elements.background_transparency_range.value) - e.deltaY / 100 * (e.shiftKey ? 25 : 1);
         }
-
         _memoria_elements.memoria_elements.background_transparency_field.value = _memoria_elements.memoria_elements.background_transparency_range.value;
         background_api.changeTransparency(_memoria_elements.memoria_elements.background_transparency_range.value);
         if (event === "change") storage_api.updateSettings("background_transparency", background_transparency_range.value);
       });
     });
+
     /* ============================== Main ============================== */
 
     /* ------------------------------ Export and Import ------------------------------ */
-    // export image button.
 
+    // export image button.
     _memoria_elements.memoria_elements.export_image_button.addEventListener("click", function () {
       var date = new Date();
       var time = "_".concat(date.getFullYear(), "-").concat(date.getMonth() + 1, "-").concat(date.getDate(), "_").concat(date.getHours(), "_").concat(date.getMinutes(), "_").concat(date.getSeconds());
@@ -12659,7 +12856,6 @@ function _interopRequireWildcard(obj, nodeInterop) {
         a.remove();
       });
     });
-
     _memoria_elements.memoria_elements.export_open_button.addEventListener("click", function () {
       var date = new Date();
       var time = "_".concat(date.getFullYear(), "-").concat(date.getMonth() + 1, "-").concat(date.getDate(), "_").concat(date.getHours(), "_").concat(date.getMinutes(), "_").concat(date.getSeconds());
@@ -12675,52 +12871,49 @@ function _interopRequireWildcard(obj, nodeInterop) {
         image.setAttribute("download", imageName + time + ".png");
         w.document.write(image.outerHTML);
       });
-    }); // export text button.
+    });
 
-
+    // export text button.
     _memoria_elements.memoria_elements.export_text_button.addEventListener("click", function () {
       memoria_list_api.openExportModal();
-    }); // import text button.
+    });
 
-
+    // import text button.
     _memoria_elements.memoria_elements.import_text_button.addEventListener("click", function () {
       _memoria_elements.importListDialog.open();
     });
+
     /* ------------------------------ Filters ------------------------------ */
+
     // add new filter.
-
-
     _memoria_elements.memoria_elements.add_filter_button.addEventListener("click", function () {
       memoria_list_api.createFilter();
-    }); // apply the filters.
+    });
 
-
+    // apply the filters.
     _memoria_elements.memoria_elements.apply_filter_button.addEventListener("click", function () {
       memoria_list_api.applyFilters();
       memoria_list_api.getStats();
-    }); // reset the filters.
+    });
 
-
+    // reset the filters.
     _memoria_elements.memoria_elements.reset_filter_button.addEventListener("click", function () {
       memoria_list_api.resetFilters();
       memoria_list_api.getStats();
     });
-
     _memoria_elements.memoria_elements.toggle_filter_button.addEventListener("click", function () {
       if (_memoria_elements.memoria_elements.toggle_filter_button.classList.contains("add")) {
         _memoria_elements.memoria_elements.toggle_filter_button.classList.replace("add", "minus");
-
         if (_memoria_elements.memoria_elements.list_filters.classList.contains("hidden")) _memoria_elements.memoria_elements.list_filters.classList.remove("hidden");
       } else if (_memoria_elements.memoria_elements.toggle_filter_button.classList.contains("minus")) {
         _memoria_elements.memoria_elements.toggle_filter_button.classList.replace("minus", "add");
-
         if (!_memoria_elements.memoria_elements.list_filters.classList.contains("hidden")) _memoria_elements.memoria_elements.list_filters.classList.add("hidden");
       }
     });
+
     /* ------------------------------ Zoom ------------------------------ */
+
     // zoom field input.
-
-
     ["input", "change"].forEach(function (event) {
       _memoria_elements.memoria_elements.zoom_field.addEventListener(event, function () {
         var value = zoom_field.value;
@@ -12730,29 +12923,30 @@ function _interopRequireWildcard(obj, nodeInterop) {
         memoria_list_api.changeZoom(_memoria_elements.memoria_elements.zoom_range.value);
         if (event === "change") storage_api.updateSettings("memoria_zoom", _memoria_elements.memoria_elements.zoom_field.value);
       });
-    }); // zoom range slider.
+    });
 
+    // zoom range slider.
     ["input", "change", "wheel"].forEach(function (event) {
       _memoria_elements.memoria_elements.zoom_range.addEventListener(event, function (e) {
         if (event === "wheel") {
           _memoria_elements.memoria_elements.zoom_range.value = parseInt(zoom_range.value) - e.deltaY / 100 * (e.shiftKey ? 50 : 1);
         }
-
         _memoria_elements.memoria_elements.zoom_field.value = _memoria_elements.memoria_elements.zoom_range.value;
         memoria_list_api.changeZoom(_memoria_elements.memoria_elements.zoom_range.value);
         if (event === "change") storage_api.updateSettings("memoria_zoom", zoom_range.value);
       });
     });
-    /* ------------------------------ Stats ------------------------------ */
-    // get more stats button.
 
+    /* ------------------------------ Stats ------------------------------ */
+
+    // get more stats button.
     _memoria_elements.memoria_elements.more_stats_button.addEventListener("click", function () {
       memoria_list_api.openStatsModal();
     });
+
     /* ------------------------------ Memoria Display ------------------------------ */
+
     // deselect currently selected.
-
-
     _memoria_elements.memoria_elements.memoria_list_container.addEventListener("click", function (e) {
       if (memoria_api.selectedMemoria) {
         try {
@@ -12764,24 +12958,27 @@ function _interopRequireWildcard(obj, nodeInterop) {
         }
       }
     });
+
     /* ------------------------------ Memoria List Content ------------------------------ */
+
     // resort when memoria list changes.
-
-
     _memoria_elements.memoria_elements.memoria_list_content.addEventListener("change", function () {
       memoria_list_api.applyProfileToList(memoria_list_api.getListId(), profile_api.getSelectedProfileId());
       memoria_list_api.updateList();
     });
   };
+
   /* ------------------------------ Page Start Up ------------------------------ */
 
+  utils.detectColorScheme();
 
-  utils.detectColorScheme(); // update form and preview display on startup.
+  // update form and preview display on startup.
+  memoria_api.startUp();
 
-  memoria_api.startUp(); // update the background form.
+  // update the background form.
+  background_api.startUp();
 
-  background_api.startUp(); // load the settings, profiles, and memoria lists from storage.
-
+  // load the settings, profiles, and memoria lists from storage.
   database_api.onAuthStateChanged(function (user) {
     if (user) {
       _memoria_elements.memoria_elements.header_username.innerHTML = "Welcome ".concat(user.displayName || "Anonymous");
@@ -12794,34 +12991,24 @@ function _interopRequireWildcard(obj, nodeInterop) {
   });
 })();
 
-},{"../../shared/js/database_api.js":10,"../../shared/js/dialog.js":11,"../../shared/js/utils.js":12,"./background_api.js":3,"./memoria_api.js":5,"./memoria_elements.js":6,"./memoria_list_api.js":7,"./profile_api.js":8,"./storage_api.js":9,"@babel/runtime/helpers/typeof":30}],5:[function(require,module,exports){
+},{"../../shared/js/database_api.js":10,"../../shared/js/dialog.js":11,"../../shared/js/utils.js":12,"./background_api.js":3,"./memoria_api.js":5,"./memoria_elements.js":6,"./memoria_list_api.js":7,"./profile_api.js":8,"./storage_api.js":9,"@babel/runtime/helpers/typeof":33}],5:[function(require,module,exports){
 "use strict";
 
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
-
 var _typeof3 = require("@babel/runtime/helpers/typeof");
-
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.openMemoriaDialog = exports.toggleAdded = exports.filterMemoria = exports.loadMemoriaSelectList = exports.enableButtons = exports.updatePreviewOnForm = exports.findAndSelectDisplay = exports.deselectDisplay = exports.selectDisplay = exports.deleteMemoria = exports.copyMemoria = exports.updateMemoria = exports.createMemoria = exports.updateFieldsOnName = exports.maximizeDisplay = exports.minimizeDisplay = exports.getMaxLevel = exports.createDisplay = exports.getMemoriaDisplay = exports.isValidMemoriaDisplay = exports.getBasicMemoriaDisplay = exports.sanitizeMemoria = exports.getMemoria = exports.startUp = exports.Memoria = exports.Display = exports.selectedMemoria = void 0;
-
+exports.updatePreviewOnForm = exports.updateMemoria = exports.updateFieldsOnName = exports.toggleAdded = exports.startUp = exports.selectedMemoria = exports.selectDisplay = exports.sanitizeMemoria = exports.openMemoriaDialog = exports.minimizeDisplay = exports.maximizeDisplay = exports.loadMemoriaSelectList = exports.isValidMemoriaDisplay = exports.getMemoriaDisplay = exports.getMemoria = exports.getMaxLevel = exports.getBasicMemoriaDisplay = exports.findAndSelectDisplay = exports.filterMemoria = exports.enableButtons = exports.deselectDisplay = exports.deleteMemoria = exports.createMemoria = exports.createDisplay = exports.copyMemoria = exports.Memoria = exports.Display = void 0;
 var _defineProperty2 = _interopRequireDefault(require("@babel/runtime/helpers/defineProperty"));
-
 var _toConsumableArray2 = _interopRequireDefault(require("@babel/runtime/helpers/toConsumableArray"));
-
 var _typeof2 = _interopRequireDefault(require("@babel/runtime/helpers/typeof"));
-
+var _createClass2 = _interopRequireDefault(require("@babel/runtime/helpers/createClass"));
 var _classCallCheck2 = _interopRequireDefault(require("@babel/runtime/helpers/classCallCheck"));
-
 var _memoria_collection = require("../../collection/memoria_collection.js");
-
 var _memoria_elements = require("./memoria_elements.js");
-
 var memoria_list_api = _interopRequireWildcard(require("./memoria_list_api.js"));
-
 var storage_api = _interopRequireWildcard(require("./storage_api.js"));
-
 function _getRequireWildcardCache(nodeInterop) {
   if (typeof WeakMap !== "function") return null;
   var cacheBabelInterop = new WeakMap();
@@ -12830,31 +13017,24 @@ function _getRequireWildcardCache(nodeInterop) {
     return nodeInterop ? cacheNodeInterop : cacheBabelInterop;
   })(nodeInterop);
 }
-
 function _interopRequireWildcard(obj, nodeInterop) {
   if (!nodeInterop && obj && obj.__esModule) {
     return obj;
   }
-
   if (obj === null || _typeof3(obj) !== "object" && typeof obj !== "function") {
     return {
       "default": obj
     };
   }
-
   var cache = _getRequireWildcardCache(nodeInterop);
-
   if (cache && cache.has(obj)) {
     return cache.get(obj);
   }
-
   var newObj = {};
   var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;
-
   for (var key in obj) {
     if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) {
       var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;
-
       if (desc && (desc.get || desc.set)) {
         Object.defineProperty(newObj, key, desc);
       } else {
@@ -12862,64 +13042,41 @@ function _interopRequireWildcard(obj, nodeInterop) {
       }
     }
   }
-
   newObj["default"] = obj;
-
   if (cache) {
     cache.set(obj, newObj);
   }
-
   return newObj;
 }
-
 function ownKeys(object, enumerableOnly) {
   var keys = Object.keys(object);
-
   if (Object.getOwnPropertySymbols) {
     var symbols = Object.getOwnPropertySymbols(object);
-
-    if (enumerableOnly) {
-      symbols = symbols.filter(function (sym) {
-        return Object.getOwnPropertyDescriptor(object, sym).enumerable;
-      });
-    }
-
-    keys.push.apply(keys, symbols);
+    enumerableOnly && (symbols = symbols.filter(function (sym) {
+      return Object.getOwnPropertyDescriptor(object, sym).enumerable;
+    })), keys.push.apply(keys, symbols);
   }
-
   return keys;
 }
-
 function _objectSpread(target) {
   for (var i = 1; i < arguments.length; i++) {
-    var source = arguments[i] != null ? arguments[i] : {};
-
-    if (i % 2) {
-      ownKeys(Object(source), true).forEach(function (key) {
-        (0, _defineProperty2["default"])(target, key, source[key]);
-      });
-    } else if (Object.getOwnPropertyDescriptors) {
-      Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
-    } else {
-      ownKeys(Object(source)).forEach(function (key) {
-        Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
-      });
-    }
+    var source = null != arguments[i] ? arguments[i] : {};
+    i % 2 ? ownKeys(Object(source), !0).forEach(function (key) {
+      (0, _defineProperty2["default"])(target, key, source[key]);
+    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) {
+      Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
+    });
   }
-
   return target;
 }
 /**
  * Memoria API for the Memoria Page.
  */
 
-
 var selectedMemoria = null;
 exports.selectedMemoria = selectedMemoria;
-
-var Display = function Display(id, name, type, rank, ascension, level, archive, protect) {
+var Display = /*#__PURE__*/(0, _createClass2["default"])(function Display(id, name, type, rank, ascension, level, archive, protect) {
   (0, _classCallCheck2["default"])(this, Display);
-
   if ((0, _typeof2["default"])(type) !== undefined) {
     this.memoria_id = id;
     this.name = name;
@@ -12940,22 +13097,18 @@ var Display = function Display(id, name, type, rank, ascension, level, archive, 
     this.archive = name.archive;
     this.protect = name.protect;
   }
-};
-
+});
 exports.Display = Display;
 ;
-
-var Memoria = function Memoria(id, name, type, rank) {
+var Memoria = /*#__PURE__*/(0, _createClass2["default"])(function Memoria(id, name, type, rank) {
   (0, _classCallCheck2["default"])(this, Memoria);
   this.id = id;
   this.name = name;
   this.type = type;
   this.rank = rank;
-};
-
+});
 exports.Memoria = Memoria;
 ;
-
 var startUp = function startUp() {
   // initialize name field.
   (0, _toConsumableArray2["default"])(_memoria_collection.memoria_collection).sort(function (a, b) {
@@ -12964,29 +13117,24 @@ var startUp = function startUp() {
     _memoria_elements.memoria_elements.name_select.options.add(new Option(memoria.name, memoria.id, false));
   });
   _memoria_elements.memoria_elements.name_select.value = 1001;
-
   _memoria_elements.memoria_elements.name_select.dispatchEvent(new Event("change"));
-
   var memoria = getMemoria("1001");
   updateFormEnabled(memoria);
   updatePreviewDisplay(getBasicMemoriaDisplay(memoria));
 };
+
 /**
    * get the name and rank for the memoria.
    * 
    * @param {String} id 
    * @param {Function} callback 
    */
-
-
 exports.startUp = startUp;
-
 var getMemoria = function getMemoria(id) {
   try {
     var memoria = _memoria_collection.memoria_collection.find(function (elem) {
       return elem.id === id;
     });
-
     var name = memoria.name;
     var rank = memoria.rank;
     var type = memoria.type;
@@ -12995,20 +13143,16 @@ var getMemoria = function getMemoria(id) {
     return null;
   }
 };
+
 /**
  * removes the extra properties of the memoria.
  * 
  * @param {Display} memoria 
  */
-
-
 exports.getMemoria = getMemoria;
-
 var sanitizeMemoria = function sanitizeMemoria(memoria) {
   var removeId = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : true;
-
   var newMemoria = _objectSpread({}, memoria);
-
   if (removeId && newMemoria._id) delete newMemoria._id;
   if (newMemoria.name) delete newMemoria.name;
   if (newMemoria.type) delete newMemoria.type;
@@ -13016,18 +13160,17 @@ var sanitizeMemoria = function sanitizeMemoria(memoria) {
   if (newMemoria.obtainability) delete newMemoria.obtainability;
   return newMemoria;
 };
+
 /**
  * gets the basic display for the memoria.
  * 
  * @param {Memoria} memoria 
  */
-
-
 exports.sanitizeMemoria = sanitizeMemoria;
-
 var getBasicMemoriaDisplay = function getBasicMemoriaDisplay(memoria) {
   return new Display(memoria.id, memoria.name, memoria.type, memoria.rank, "0", "1", false, false);
 };
+
 /**
  * check if display is valid.
  * 
@@ -13035,64 +13178,55 @@ var getBasicMemoriaDisplay = function getBasicMemoriaDisplay(memoria) {
  * @param {Display} display 
  * @param {Function} callback 
  */
-
-
 exports.getBasicMemoriaDisplay = getBasicMemoriaDisplay;
-
 var isValidMemoriaDisplay = function isValidMemoriaDisplay(memoria_id, display) {
   var validName = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : true;
   var memoria = getMemoria(memoria_id);
   if (!memoria) return ["Cannot get memoria."];
-  var err = []; // check id.
-
-  if (display.memoria_id !== memoria.id) err.push("Display Id ".concat(display.memoria_id, " does not match Memoria ID ").concat(memoria.id, ".")); // check level.
-
+  var err = [];
+  // check id.
+  if (display.memoria_id !== memoria.id) err.push("Display Id ".concat(display.memoria_id, " does not match Memoria ID ").concat(memoria.id, "."));
+  // check level.
   var maxLevel = getMaxLevel(display.ascension, display.rank);
-  if (parseInt(display.level) < 1 || parseInt(display.level) > maxLevel || !display.level) err.push("Display Level ".concat(display.level, " for Display Rank ").concat(display.rank, " and Display Ascension ").concat(display.ascension, " must be between 1 and ").concat(maxLevel, ".")); // check ascension.
-
+  if (parseInt(display.level) < 1 || parseInt(display.level) > maxLevel || !display.level) err.push("Display Level ".concat(display.level, " for Display Rank ").concat(display.rank, " and Display Ascension ").concat(display.ascension, " must be between 1 and ").concat(maxLevel, "."));
+  // check ascension.
   if (display.ascension < 0 || display.ascension > 4) err.push("Display Magic ".concat(display.ascension, " must be between 0 and 4."));
   return err;
 };
+
 /**
  * get Display from the form.
  * 
  * @return {Display}
  */
-
-
 exports.isValidMemoriaDisplay = isValidMemoriaDisplay;
-
 var getFormDisplay = function getFormDisplay() {
   var memoria = _memoria_collection.memoria_collection.find(function (mem) {
     return mem.id === _memoria_elements.memoria_elements.name_select.value;
   });
-
   var display = new Display(_memoria_elements.memoria_elements.name_select.value, _memoria_elements.memoria_elements.name_select[_memoria_elements.memoria_elements.name_select.options.selectedIndex].text, memoria.type.toLowerCase(), memoria.rank, _memoria_elements.memoria_elements.ascension_select.value, _memoria_elements.memoria_elements.level_select.value, _memoria_elements.memoria_elements.archive_checkbox.checked, _memoria_elements.memoria_elements.protect_checkbox.checked);
   return display;
 };
+
 /**
  * get Display from memoria display.
  * 
  * @param {HTMLDivElement} memoria_display
  * @return {Display}
  */
-
-
 var getMemoriaDisplay = function getMemoriaDisplay(memoria_display) {
   var display = new Display(memoria_display.getAttribute("memoria_id"), memoria_display.getAttribute("name"), memoria_display.getAttribute("type"), memoria_display.getAttribute("rank"), memoria_display.getAttribute("ascension"), memoria_display.getAttribute("level"), memoria_display.getAttribute("archive"), memoria_display.getAttribute("protect"));
   display._id = memoria_display.getAttribute("_id");
   return display;
 };
+
 /**
  * create a memoria display element from Display.
  * 
  * @param {Display} display
  * @return {HTMLDivElement}
  */
-
-
 exports.getMemoriaDisplay = getMemoriaDisplay;
-
 var createDisplay = function createDisplay(display, listener) {
   var memoria_display = document.createElement("div");
   memoria_display.classList.add("memoria_display");
@@ -13106,13 +13240,11 @@ var createDisplay = function createDisplay(display, listener) {
   memoria_display.setAttribute("archive", display.archive);
   memoria_display.setAttribute("protect", display.protect);
   memoria_display.innerHTML = "\n    <img class=\"memoria_image\" src=\"/magireco/assets/memoria/memoria_".concat(display.memoria_id, "_s.png\">\n    <img class=\"archive\" src=\"/magireco/assets/ui/archive/").concat(display.archive, ".png\">\n    <img class=\"protect\" src=\"/magireco/assets/ui/protect/").concat(display.protect, ".png\">\n    <div class=\"level\">\n      <div class=\"level_pre\">Lvl.</div>\n      <div class=\"level_num\">").concat(display.level, "/").concat(getMaxLevel(display.ascension, display.rank), "</div>\n    </div>\n    <img class=\"ascension_rank\" src=\"/magireco/assets/ui/ascension/").concat(display.ascension, ".png\">");
-
   if (listener) {
     memoria_display.addEventListener("click", function () {
       selectDisplay(memoria_display);
     });
   }
-
   memoria_display.addEventListener("contextmenu", function (e) {
     e.preventDefault();
     openMemoriaDialog(_memoria_collection.memoria_collection.find(function (elem) {
@@ -13121,108 +13253,91 @@ var createDisplay = function createDisplay(display, listener) {
   });
   return memoria_display;
 };
+
 /**
  * Gets the maximum level for the rank
  * 
  * @param {String} rank 
  */
-
-
 exports.createDisplay = createDisplay;
-
 var getMaxLevel = function getMaxLevel(ascension, rank) {
   if (rank == "1") return (10 + 5 * parseInt(ascension)).toString();else if (rank == "2") return (15 + 5 * parseInt(ascension)).toString();else if (rank == "3") return (20 + 5 * parseInt(ascension)).toString();else if (rank == "4") return (30 + 5 * parseInt(ascension)).toString();
 };
+
 /**
  * Minimizes all the fields of the preview Memoria Display.
  */
-
-
 exports.getMaxLevel = getMaxLevel;
-
 var minimizeDisplay = function minimizeDisplay() {
   var memoria_display = getMemoriaDisplay(display_preview.children[0]);
-
   var memoria = _memoria_collection.memoria_collection.find(function (elem) {
     return elem.id === memoria_display.memoria_id;
   });
-
   var display = new Display(memoria.id, memoria.name, memoria.type, memoria.rank, "0", "1", _memoria_elements.memoria_elements.archive_checkbox.checked, _memoria_elements.memoria_elements.protect_checkbox.checked);
   updateForm(display);
   updatePreviewDisplay(display);
 };
+
 /**
  * Maximizes all the fields of the preview Memoria Display.
  */
-
-
 exports.minimizeDisplay = minimizeDisplay;
-
 var maximizeDisplay = function maximizeDisplay() {
   var memoria_display = getMemoriaDisplay(display_preview.children[0]);
-
   var memoria = _memoria_collection.memoria_collection.find(function (elem) {
     return elem.id === memoria_display.memoria_id;
   });
-
   var display = new Display(memoria.id, memoria.name, memoria.type, memoria.rank, "4", getMaxLevel("4", memoria.rank), _memoria_elements.memoria_elements.archive_checkbox.checked, _memoria_elements.memoria_elements.protect_checkbox.checked);
   updateForm(display);
   updatePreviewDisplay(display);
 };
+
 /**
  * updates the display preview with Display.
  * 
  * @param {HTMLDivElement} display
  */
-
-
 exports.maximizeDisplay = maximizeDisplay;
-
 var updatePreviewDisplay = function updatePreviewDisplay(display) {
   var memoria_display = createDisplay(display);
   memoria_display.classList.add("preview");
   _memoria_elements.memoria_elements.display_preview.innerHTML = "";
-
   _memoria_elements.memoria_elements.display_preview.appendChild(memoria_display);
 };
+
 /**
  * updates the form with Display.
  * 
  * @param {Display} display
  */
-
-
 var updateForm = function updateForm(display) {
   _memoria_elements.memoria_elements.name_select.value = display.memoria_id;
   _memoria_elements.memoria_elements.level_select.value = display.level;
   _memoria_elements.memoria_elements.ascension_select.value = display.ascension;
 };
+
 /**
  * updates the form with the available options and selects lowest.
  * 
  * @param {Memoria} memoria
  */
-
-
 var updateFormEnabled = function updateFormEnabled(memoria) {};
+
 /**
  * gets the standard display given the display.
  * 
  * @param {Memoria} memoria 
  * @param {*} display 
  */
-
-
 var updateMemoriaWithDisplay = function updateMemoriaWithDisplay(memoria, display) {
   // return the default display.
   if (!display) return getBasicMemoriaDisplay(memoria);
   return new Display(memoria.id, memoria.name, memoria.type, memoria.rank, display.ascension, display.level, display.archive, display.protect);
 };
+
 /**
  * updates the form fields with the selected memoria.
  */
-
-
 var updateFieldsOnName = function updateFieldsOnName() {
   var memoria = getMemoria(name_select.value);
   updateFormEnabled(memoria);
@@ -13230,26 +13345,22 @@ var updateFieldsOnName = function updateFieldsOnName() {
   updateForm(memoria_preview);
   updatePreviewDisplay(memoria_preview);
 };
+
 /**
  * adds a new memoria display to the list.
  */
-
-
 exports.updateFieldsOnName = updateFieldsOnName;
-
 var createMemoria = function createMemoria() {
   var display = getFormDisplay();
   var listId = memoria_list_api.getListId();
   display._id = generatePushID();
   storage_api.addMemoriaToList(listId, display);
 };
+
 /**
  * updates the selected memoria display with the contents of the form.
  */
-
-
 exports.createMemoria = createMemoria;
-
 var updateMemoria = function updateMemoria() {
   var memoria_display = Array.from(document.querySelectorAll(".memoria_display:not(.preview)")).find(function (child) {
     return child.classList.contains("selected");
@@ -13262,13 +13373,11 @@ var updateMemoria = function updateMemoria() {
   };
   storage_api.updateMemoriaOfList(memoria_list_api.getListId(), display._id, display);
 };
+
 /**
  * copies the contents of the selected display to the form.
  */
-
-
 exports.updateMemoria = updateMemoria;
-
 var copyMemoria = function copyMemoria() {
   var memoria_display = Array.from(document.querySelectorAll(".memoria_display:not(.preview)")).find(function (child) {
     return child.classList.contains("selected");
@@ -13282,20 +13391,17 @@ var copyMemoria = function copyMemoria() {
   updateForm(display);
   updatePreviewDisplay(display);
 };
+
 /**
  * deletes the selected memoria display and finds the next display to be selected.
  */
-
-
 exports.copyMemoria = copyMemoria;
-
 var deleteMemoria = function deleteMemoria() {
   var memoria_display = Array.from(document.querySelectorAll(".memoria_display:not(.preview)")).find(function (child) {
     return child.classList.contains("selected");
   });
   if (!memoria_display) return;
   var display = getMemoriaDisplay(memoria_display);
-
   if (memoria_display.nextElementSibling) {
     exports.selectedMemoria = selectedMemoria = {
       memoriaDisplayId: memoria_display.nextElementSibling.getAttribute("_id")
@@ -13307,26 +13413,22 @@ var deleteMemoria = function deleteMemoria() {
   } else {
     exports.selectedMemoria = selectedMemoria = null;
   }
-
   var memoriaListId = memoria_list_api.getListId();
-
   if (Object.keys(storage_api.lists[memoriaListId].memoriaList).length === 1) {
     storage_api.updateListList(memoriaListId, false);
   } else {
     storage_api.deleteMemoriaOfList(memoriaListId, display._id);
   }
 };
+
 /**
  * selects the display element.
  */
-
-
 exports.deleteMemoria = deleteMemoria;
-
 var selectDisplay = function selectDisplay(memoria_display) {
   // return of already selected.
-  if (memoria_display.classList.contains("selected")) return; // deselect all other memoria displays
-
+  if (memoria_display.classList.contains("selected")) return;
+  // deselect all other memoria displays
   document.querySelectorAll(".memoria_display:not(.preview)").forEach(function (child) {
     if (child.classList.contains("selected")) child.classList.remove("selected");
   });
@@ -13334,17 +13436,15 @@ var selectDisplay = function selectDisplay(memoria_display) {
   exports.selectedMemoria = selectedMemoria = {
     memoriaDisplayId: memoria_display.getAttribute("_id")
   };
-  enableButtons(); // update the form.
-
+  enableButtons();
+  // update the form.
   copyMemoria();
 };
+
 /**
  * deselects the select memoria display.
  */
-
-
 exports.selectDisplay = selectDisplay;
-
 var deselectDisplay = function deselectDisplay() {
   if (selectedMemoria && selectedMemoria.memoriaDisplayId) {
     var memoria_display = document.querySelector(".memoria_display:not(.preview)[_id=\"".concat(selectedMemoria.memoriaDisplayId, "\"]"));
@@ -13353,31 +13453,26 @@ var deselectDisplay = function deselectDisplay() {
     enableButtons();
   }
 };
+
 /**
  * finds and select the display element.
  */
-
-
 exports.deselectDisplay = deselectDisplay;
-
 var findAndSelectDisplay = function findAndSelectDisplay() {
   if (selectedMemoria && selectedMemoria.memoriaDisplayId) {
     var memoria_display = document.querySelector(".memoria_display:not(.preview)[_id=\"".concat(selectedMemoria.memoriaDisplayId, "\"]"));
     if (memoria_display) selectDisplay(memoria_display);
   }
 };
+
 /**
  * updates the preview memoria display with the contents of the form.
  */
-
-
 exports.findAndSelectDisplay = findAndSelectDisplay;
-
 var updatePreviewOnForm = function updatePreviewOnForm() {
   var display = getFormDisplay();
   memoria_error_text.innerHTML = '';
   var error = isValidMemoriaDisplay(name_select.value, display);
-
   if (error.length == 0) {
     enableButtons();
     updatePreviewDisplay(display);
@@ -13388,19 +13483,16 @@ var updatePreviewOnForm = function updatePreviewOnForm() {
     memoria_error_text.innerHTML = error.toString();
   }
 };
+
 /**
  * Enable and Disable the Memoria Buttons based on the current state.
  */
-
-
 exports.updatePreviewOnForm = updatePreviewOnForm;
-
 var enableButtons = function enableButtons() {
   if (memoria_list_api.selectedList && memoria_list_api.selectedList.listId) {
     if (_memoria_elements.memoria_elements.create_button.disabled) _memoria_elements.memoria_elements.create_button.disabled = false;
     if (_memoria_elements.memoria_elements.min_all_button.disabled) _memoria_elements.memoria_elements.min_all_button.disabled = false;
     if (_memoria_elements.memoria_elements.max_all_button.disabled) _memoria_elements.memoria_elements.max_all_button.disabled = false;
-
     if (selectedMemoria && selectedMemoria.memoriaDisplayId) {
       if (_memoria_elements.memoria_elements.update_button.disabled) _memoria_elements.memoria_elements.update_button.disabled = false;
       if (_memoria_elements.memoria_elements.copy_button.disabled) _memoria_elements.memoria_elements.copy_button.disabled = false;
@@ -13421,16 +13513,13 @@ var enableButtons = function enableButtons() {
     if (!_memoria_elements.memoria_elements.max_all_button.disabled) _memoria_elements.memoria_elements.max_all_button.disabled = true;
   }
 };
+
 /**
  * opens the modal dialog for memoria selection user interface.
  */
-
-
 exports.enableButtons = enableButtons;
-
 var loadMemoriaSelectList = function loadMemoriaSelectList() {
   _memoria_elements.memoriaSelectDialog.list.innerHTML = "";
-
   _memoria_collection.memoria_collection.forEach(function (memoria) {
     var added = Object.values(storage_api.lists[memoria_list_api.getListId()].memoriaList).filter(function (_char) {
       return _char.memoria_id === memoria.id;
@@ -13442,39 +13531,32 @@ var loadMemoriaSelectList = function loadMemoriaSelectList() {
     image.src = "/magireco/assets/memoria/memoria_".concat(memoria.id, "_s.png");
     image.title = memoria.name;
     container.append(image);
-
     if (added.length > 0) {
       var text = document.createElement("label");
       text.classList.add("memoria_label");
       text.innerHTML = added.length;
       container.append(text);
     }
-
     container.addEventListener("click", function () {
       name_select.value = memoria.id;
       name_select.dispatchEvent(new Event("change"));
-
       _memoria_elements.memoriaSelectDialog.close();
     });
     container.addEventListener("contextmenu", function (e) {
       e.preventDefault();
       openMemoriaDialog(memoria, added);
     });
-
     _memoria_elements.memoriaSelectDialog.list.append(container);
   });
-
   toggleAdded(_memoria_elements.memoriaSelectDialog.added.checked);
 };
+
 /**
  * Filters the memoria_image_preview's based on the search.
  * 
  * @param {String} search
  */
-
-
 exports.loadMemoriaSelectList = loadMemoriaSelectList;
-
 var filterMemoria = function filterMemoria(search) {
   if (!search || search.length == 0) {
     Array.from(memoriaSelectModalList.children).forEach(function (child) {
@@ -13484,13 +13566,11 @@ var filterMemoria = function filterMemoria(search) {
       }
     });
   }
-
   search = search.toLowerCase();
   Array.from(memoriaSelectModalList.children).forEach(function (child) {
     var memoria = _memoria_collection.memoria_collection.find(function (elem) {
       return child.getAttribute("id") === elem.id;
     });
-
     if (memoria.id.includes(search) || memoria.name.toLowerCase().includes(search) || memoria.name_na.toLowerCase().includes(search) || memoria.name_jp.toLowerCase().includes(search) || memoria.type.toLowerCase().includes(search) || memoria.rank.toLowerCase().includes(search) || memoria.chara && memoria.chara.toLowerCase().includes(search) || memoria.effect1 && memoria.effect1.toLowerCase().includes(search) || memoria.effect2 && memoria.effect2.toLowerCase().includes(search) || memoria.obtainability.includes(search)) {
       child.classList.remove("hidden");
       child.style.display = "inline-block";
@@ -13501,15 +13581,13 @@ var filterMemoria = function filterMemoria(search) {
   });
   toggleAdded(_memoria_elements.memoriaSelectDialog.added.checked);
 };
+
 /**
  * Toggles the visibility of the memoria previews of added.
  * 
  * @param {boolean} value 
  */
-
-
 exports.filterMemoria = filterMemoria;
-
 var toggleAdded = function toggleAdded(value) {
   if (value) {
     Array.from(_memoria_elements.memoriaSelectDialog.list.children).forEach(function (child) {
@@ -13521,46 +13599,37 @@ var toggleAdded = function toggleAdded(value) {
     });
   }
 };
+
 /**
  * Opens the Message Dialog with the Memoria Info.
  * 
  * @param {Memoria} memoria 
  * @param {Display} displays 
  */
-
-
 exports.toggleAdded = toggleAdded;
-
 var openMemoriaDialog = function openMemoriaDialog(memoria, displays) {
   var text = "ID: ".concat(memoria.id, "  \nType: ").concat(memoria.type, "  \nRank: ").concat(memoria.rank, "  \nEffect: ").concat(memoria.effect1, "  \nMLB Effect: ").concat(memoria.effect2, "  \nUsable: ").concat(memoria.chara ? memoria.chara : "ALL", "  \nFandom Wiki Link:\n").concat(memoria.url);
   if (displays.length > 0) text += "\n\nYour Memoria".concat(displays.length > 1 ? "s" : "", ":");
   displays.forEach(function (display) {
     text += "\nAscension: ".concat(display.ascension, "    \nLevel: ").concat(display.level, "    \nArchive: ").concat(display.archive, "    \nLocked: ").concat(display.protect, "\n");
   });
-
   _memoria_elements.messageDialog.open("".concat(memoria.name, " Details"), text);
 };
-
 exports.openMemoriaDialog = openMemoriaDialog;
 
-},{"../../collection/memoria_collection.js":2,"./memoria_elements.js":6,"./memoria_list_api.js":7,"./storage_api.js":9,"@babel/runtime/helpers/classCallCheck":17,"@babel/runtime/helpers/defineProperty":18,"@babel/runtime/helpers/interopRequireDefault":21,"@babel/runtime/helpers/toConsumableArray":29,"@babel/runtime/helpers/typeof":30}],6:[function(require,module,exports){
+},{"../../collection/memoria_collection.js":2,"./memoria_elements.js":6,"./memoria_list_api.js":7,"./storage_api.js":9,"@babel/runtime/helpers/classCallCheck":17,"@babel/runtime/helpers/createClass":18,"@babel/runtime/helpers/defineProperty":19,"@babel/runtime/helpers/interopRequireDefault":22,"@babel/runtime/helpers/toConsumableArray":30,"@babel/runtime/helpers/typeof":33}],6:[function(require,module,exports){
 "use strict";
 
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
-
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.importListDialog = exports.backgroundSelectDialog = exports.memoriaSelectDialog = exports.messageDialog = exports.memoria_elements = void 0;
-
+exports.messageDialog = exports.memoria_elements = exports.memoriaSelectDialog = exports.importListDialog = exports.backgroundSelectDialog = void 0;
 var _defineProperty2 = _interopRequireDefault(require("@babel/runtime/helpers/defineProperty"));
-
 var _memoria_elements;
 /**
  * Elements for the Memoria Page.
  */
-
-
 var memoria_elements = (_memoria_elements = {
   // Header
   theme_button: document.querySelector("#theme_button"),
@@ -13632,8 +13701,9 @@ var memoria_elements = (_memoria_elements = {
   sort_dir_2_select: document.querySelector("#sort_dir_2_select"),
   sort_id_dir_select: document.querySelector("#sort_id_dir_select"),
   displays_per_row: document.querySelector("#displays_per_row")
-}, (0, _defineProperty2["default"])(_memoria_elements, "displays_per_row", document.querySelector("#displays_per_row")), (0, _defineProperty2["default"])(_memoria_elements, "display_alignment_select", document.querySelector("#display_alignment_select")), (0, _defineProperty2["default"])(_memoria_elements, "display_padding_top_field", document.querySelector("#display_padding_top_field")), (0, _defineProperty2["default"])(_memoria_elements, "display_padding_left_field", document.querySelector("#display_padding_left_field")), (0, _defineProperty2["default"])(_memoria_elements, "display_padding_right_field", document.querySelector("#display_padding_right_field")), (0, _defineProperty2["default"])(_memoria_elements, "display_padding_bottom_field", document.querySelector("#display_padding_bottom_field")), (0, _defineProperty2["default"])(_memoria_elements, "backgroundSelectModalOpen", document.querySelector("#backgroundSelectModalOpen")), (0, _defineProperty2["default"])(_memoria_elements, "background_select", document.querySelector("#background_select")), (0, _defineProperty2["default"])(_memoria_elements, "remove_background_button", document.querySelector("#remove_background_button")), (0, _defineProperty2["default"])(_memoria_elements, "background_transparency_field", document.querySelector("#background_transparency_field")), (0, _defineProperty2["default"])(_memoria_elements, "background_transparency_range", document.querySelector("#background_transparency_range")), (0, _defineProperty2["default"])(_memoria_elements, "list_name_title", document.querySelector("#list_name_title")), (0, _defineProperty2["default"])(_memoria_elements, "header_content_divider", document.querySelector("#header_content_divider")), (0, _defineProperty2["default"])(_memoria_elements, "content", document.querySelector("#content")), (0, _defineProperty2["default"])(_memoria_elements, "main", document.querySelector("#main")), (0, _defineProperty2["default"])(_memoria_elements, "menu_bar", document.querySelector("#menu_bar")), (0, _defineProperty2["default"])(_memoria_elements, "left_main_divider", document.querySelector("#left_main_divider")), (0, _defineProperty2["default"])(_memoria_elements, "main_header", document.querySelector("#main_header")), (0, _defineProperty2["default"])(_memoria_elements, "export_image_button", document.querySelector("#export_image_button")), (0, _defineProperty2["default"])(_memoria_elements, "export_open_button", document.querySelector("#export_open_button")), (0, _defineProperty2["default"])(_memoria_elements, "export_text_button", document.querySelector("#export_text_button")), (0, _defineProperty2["default"])(_memoria_elements, "import_text_button", document.querySelector("#import_text_button")), (0, _defineProperty2["default"])(_memoria_elements, "zoom_field", document.querySelector("#zoom_field")), (0, _defineProperty2["default"])(_memoria_elements, "zoom_range", document.querySelector("#zoom_range")), (0, _defineProperty2["default"])(_memoria_elements, "list_filters", document.querySelector("#list_filters")), (0, _defineProperty2["default"])(_memoria_elements, "add_filter_button", document.querySelector("#add_filter_button")), (0, _defineProperty2["default"])(_memoria_elements, "apply_filter_button", document.querySelector("#apply_filter_button")), (0, _defineProperty2["default"])(_memoria_elements, "reset_filter_button", document.querySelector("#reset_filter_button")), (0, _defineProperty2["default"])(_memoria_elements, "toggle_filter_button", document.querySelector("#toggle_filter_button")), (0, _defineProperty2["default"])(_memoria_elements, "list_stats_list", document.querySelector("#list_stats_list")), (0, _defineProperty2["default"])(_memoria_elements, "more_stats_button", document.querySelector("#more_stats_button")), (0, _defineProperty2["default"])(_memoria_elements, "memoria_list_container", document.querySelector("#memoria_list_container")), (0, _defineProperty2["default"])(_memoria_elements, "memoria_list_content", document.querySelector("#memoria_list_content")), _memoria_elements); // Message Modal
+}, (0, _defineProperty2["default"])(_memoria_elements, "displays_per_row", document.querySelector("#displays_per_row")), (0, _defineProperty2["default"])(_memoria_elements, "display_alignment_select", document.querySelector("#display_alignment_select")), (0, _defineProperty2["default"])(_memoria_elements, "display_padding_top_field", document.querySelector("#display_padding_top_field")), (0, _defineProperty2["default"])(_memoria_elements, "display_padding_left_field", document.querySelector("#display_padding_left_field")), (0, _defineProperty2["default"])(_memoria_elements, "display_padding_right_field", document.querySelector("#display_padding_right_field")), (0, _defineProperty2["default"])(_memoria_elements, "display_padding_bottom_field", document.querySelector("#display_padding_bottom_field")), (0, _defineProperty2["default"])(_memoria_elements, "backgroundSelectModalOpen", document.querySelector("#backgroundSelectModalOpen")), (0, _defineProperty2["default"])(_memoria_elements, "background_select", document.querySelector("#background_select")), (0, _defineProperty2["default"])(_memoria_elements, "remove_background_button", document.querySelector("#remove_background_button")), (0, _defineProperty2["default"])(_memoria_elements, "background_transparency_field", document.querySelector("#background_transparency_field")), (0, _defineProperty2["default"])(_memoria_elements, "background_transparency_range", document.querySelector("#background_transparency_range")), (0, _defineProperty2["default"])(_memoria_elements, "list_name_title", document.querySelector("#list_name_title")), (0, _defineProperty2["default"])(_memoria_elements, "header_content_divider", document.querySelector("#header_content_divider")), (0, _defineProperty2["default"])(_memoria_elements, "content", document.querySelector("#content")), (0, _defineProperty2["default"])(_memoria_elements, "main", document.querySelector("#main")), (0, _defineProperty2["default"])(_memoria_elements, "menu_bar", document.querySelector("#menu_bar")), (0, _defineProperty2["default"])(_memoria_elements, "left_main_divider", document.querySelector("#left_main_divider")), (0, _defineProperty2["default"])(_memoria_elements, "main_header", document.querySelector("#main_header")), (0, _defineProperty2["default"])(_memoria_elements, "export_image_button", document.querySelector("#export_image_button")), (0, _defineProperty2["default"])(_memoria_elements, "export_open_button", document.querySelector("#export_open_button")), (0, _defineProperty2["default"])(_memoria_elements, "export_text_button", document.querySelector("#export_text_button")), (0, _defineProperty2["default"])(_memoria_elements, "import_text_button", document.querySelector("#import_text_button")), (0, _defineProperty2["default"])(_memoria_elements, "zoom_field", document.querySelector("#zoom_field")), (0, _defineProperty2["default"])(_memoria_elements, "zoom_range", document.querySelector("#zoom_range")), (0, _defineProperty2["default"])(_memoria_elements, "list_filters", document.querySelector("#list_filters")), (0, _defineProperty2["default"])(_memoria_elements, "add_filter_button", document.querySelector("#add_filter_button")), (0, _defineProperty2["default"])(_memoria_elements, "apply_filter_button", document.querySelector("#apply_filter_button")), (0, _defineProperty2["default"])(_memoria_elements, "reset_filter_button", document.querySelector("#reset_filter_button")), (0, _defineProperty2["default"])(_memoria_elements, "toggle_filter_button", document.querySelector("#toggle_filter_button")), (0, _defineProperty2["default"])(_memoria_elements, "list_stats_list", document.querySelector("#list_stats_list")), (0, _defineProperty2["default"])(_memoria_elements, "more_stats_button", document.querySelector("#more_stats_button")), (0, _defineProperty2["default"])(_memoria_elements, "memoria_list_container", document.querySelector("#memoria_list_container")), (0, _defineProperty2["default"])(_memoria_elements, "memoria_list_content", document.querySelector("#memoria_list_content")), _memoria_elements);
 
+// Message Modal
 exports.memoria_elements = memoria_elements;
 var messageDialog = {
   modal: document.querySelector("#messageModal"),
@@ -13661,8 +13731,9 @@ var messageDialog = {
   isOpen: function isOpen() {
     return messageDialog.modal.style.display === "block";
   }
-}; // Memoria Select Modal
+};
 
+// Memoria Select Modal
 exports.messageDialog = messageDialog;
 var memoriaSelectDialog = {
   modal: document.querySelector("#memoriaSelectModal"),
@@ -13685,8 +13756,9 @@ var memoriaSelectDialog = {
   isOpen: function isOpen() {
     return memoriaSelectDialog.modal.style.display === "block";
   }
-}; // Background Select Modal
+};
 
+// Background Select Modal
 exports.memoriaSelectDialog = memoriaSelectDialog;
 var backgroundSelectDialog = {
   modal: document.querySelector("#backgroundSelectModal"),
@@ -13707,8 +13779,9 @@ var backgroundSelectDialog = {
   isOpen: function isOpen() {
     return backgroundSelectDialog.modal.style.display === "block";
   }
-}; // Import List Modal
+};
 
+// Import List Modal
 exports.backgroundSelectDialog = backgroundSelectDialog;
 var importListDialog = {
   modal: document.querySelector("#importListModal"),
@@ -13737,34 +13810,23 @@ var importListDialog = {
 };
 exports.importListDialog = importListDialog;
 
-},{"@babel/runtime/helpers/defineProperty":18,"@babel/runtime/helpers/interopRequireDefault":21}],7:[function(require,module,exports){
+},{"@babel/runtime/helpers/defineProperty":19,"@babel/runtime/helpers/interopRequireDefault":22}],7:[function(require,module,exports){
 "use strict";
 
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
-
 var _typeof = require("@babel/runtime/helpers/typeof");
-
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.importList = exports.openExportModal = exports.openStatsModal = exports.getMoreStats = exports.getStats = exports.resetFilters = exports.applyFilters = exports.getFilters = exports.createFilter = exports.zoom_fit = exports.changeZoom = exports.setPadding = exports.changePadding = exports.changeAlignment = exports.changeDisplaysPerRow = exports.createGroups = exports.displayGroups = exports.applyProfileToList = exports.getSelectedList = exports.checkListName = exports.getMemoriaList = exports.getListId = exports.getListName = exports.updateList = exports.deleteList = exports.duplicateList = exports.renameList = exports.createList = exports.selectList = exports.setLists = exports.DIR_TO_FLEX = exports.selectedList = void 0;
-
+exports.zoom_fit = exports.updateList = exports.setPadding = exports.setLists = exports.selectedList = exports.selectList = exports.resetFilters = exports.renameList = exports.openStatsModal = exports.openExportModal = exports.importList = exports.getStats = exports.getSelectedList = exports.getMoreStats = exports.getMemoriaList = exports.getListName = exports.getListId = exports.getFilters = exports.duplicateList = exports.displayGroups = exports.deleteList = exports.createList = exports.createGroups = exports.createFilter = exports.checkListName = exports.changeZoom = exports.changePadding = exports.changeDisplaysPerRow = exports.changeAlignment = exports.applyProfileToList = exports.applyFilters = exports.DIR_TO_FLEX = void 0;
 var _slicedToArray2 = _interopRequireDefault(require("@babel/runtime/helpers/slicedToArray"));
-
 var _memoria_collection = require("../../collection/memoria_collection.js");
-
 var background_api = _interopRequireWildcard(require("./background_api.js"));
-
 var _memoria_elements = require("./memoria_elements.js");
-
 var memoria_api = _interopRequireWildcard(require("./memoria_api.js"));
-
 var profile_api = _interopRequireWildcard(require("./profile_api.js"));
-
 var storage_api = _interopRequireWildcard(require("./storage_api.js"));
-
 var utils = _interopRequireWildcard(require("../../shared/js/utils.js"));
-
 function _getRequireWildcardCache(nodeInterop) {
   if (typeof WeakMap !== "function") return null;
   var cacheBabelInterop = new WeakMap();
@@ -13773,31 +13835,24 @@ function _getRequireWildcardCache(nodeInterop) {
     return nodeInterop ? cacheNodeInterop : cacheBabelInterop;
   })(nodeInterop);
 }
-
 function _interopRequireWildcard(obj, nodeInterop) {
   if (!nodeInterop && obj && obj.__esModule) {
     return obj;
   }
-
   if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") {
     return {
       "default": obj
     };
   }
-
   var cache = _getRequireWildcardCache(nodeInterop);
-
   if (cache && cache.has(obj)) {
     return cache.get(obj);
   }
-
   var newObj = {};
   var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;
-
   for (var key in obj) {
     if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) {
       var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;
-
       if (desc && (desc.get || desc.set)) {
         Object.defineProperty(newObj, key, desc);
       } else {
@@ -13805,26 +13860,19 @@ function _interopRequireWildcard(obj, nodeInterop) {
       }
     }
   }
-
   newObj["default"] = obj;
-
   if (cache) {
     cache.set(obj, newObj);
   }
-
   return newObj;
 }
-
 function _createForOfIteratorHelper(o, allowArrayLike) {
   var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"];
-
   if (!it) {
     if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") {
       if (it) o = it;
       var i = 0;
-
       var F = function F() {};
-
       return {
         s: F,
         n: function n() {
@@ -13842,13 +13890,11 @@ function _createForOfIteratorHelper(o, allowArrayLike) {
         f: F
       };
     }
-
     throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
   }
-
   var normalCompletion = true,
-      didErr = false,
-      err;
+    didErr = false,
+    err;
   return {
     s: function s() {
       it = it.call(o);
@@ -13871,7 +13917,6 @@ function _createForOfIteratorHelper(o, allowArrayLike) {
     }
   };
 }
-
 function _unsupportedIterableToArray(o, minLen) {
   if (!o) return;
   if (typeof o === "string") return _arrayLikeToArray(o, minLen);
@@ -13880,24 +13925,18 @@ function _unsupportedIterableToArray(o, minLen) {
   if (n === "Map" || n === "Set") return Array.from(o);
   if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);
 }
-
 function _arrayLikeToArray(arr, len) {
   if (len == null || len > arr.length) len = arr.length;
-
-  for (var i = 0, arr2 = new Array(len); i < len; i++) {
-    arr2[i] = arr[i];
-  }
-
+  for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i];
   return arr2;
 }
 /**
  * Memoria List API for the Memoria Page.
  */
 
-
 var selectedList = null;
-/* ------------------------------ Constants and Mappings ------------------------------ */
 
+/* ------------------------------ Constants and Mappings ------------------------------ */
 exports.selectedList = selectedList;
 var DIR_TO_FLEX = {
   "left": "flex-start",
@@ -13921,12 +13960,12 @@ var NUM_TO_WORD = {
   "4": "four",
   "5": "five"
 };
+
 /* ------------------------------ Load and Select Lists ------------------------------ */
 
 /**
  * Loads all the lists.
  */
-
 var setLists = function setLists(lists) {
   exports.selectedList = selectedList = {
     listId: list_name_title.getAttribute("listId"),
@@ -13935,18 +13974,15 @@ var setLists = function setLists(lists) {
   _memoria_elements.memoria_elements.saved_memoria_lists.innerHTML = "";
   _memoria_elements.memoria_elements.list_name_title.innerHTML = "";
   _memoria_elements.memoria_elements.list_stats_list.innerHTML = "";
-
   var _loop = function _loop() {
     var _Object$entries$_i = (0, _slicedToArray2["default"])(_Object$entries[_i], 2),
-        listId = _Object$entries$_i[0],
-        list = _Object$entries$_i[1]; // update the fields of each memoria.
-
-
+      listId = _Object$entries$_i[0],
+      list = _Object$entries$_i[1];
+    // update the fields of each memoria.
     Object.entries(list.memoriaList).forEach(function (_ref) {
       var _ref2 = (0, _slicedToArray2["default"])(_ref, 2),
-          key = _ref2[0],
-          display = _ref2[1];
-
+        key = _ref2[0],
+        display = _ref2[1];
       display._id = key;
     });
     var div = document.createElement("div");
@@ -13960,14 +13996,11 @@ var setLists = function setLists(lists) {
       selectList(listId, list);
     });
     div.append(entry);
-
     _memoria_elements.memoria_elements.saved_memoria_lists.append(div);
   };
-
   for (var _i = 0, _Object$entries = Object.entries(lists); _i < _Object$entries.length; _i++) {
     _loop();
   }
-
   if (Object.entries(lists).length > 0) {
     if (selectedList && selectedList.listId && lists[selectedList.listId]) {
       selectList(selectedList.listId, lists[selectedList.listId]);
@@ -13976,13 +14009,13 @@ var setLists = function setLists(lists) {
     } else {
       var first = Object.entries(lists)[0][0];
       selectList(first, lists[first]);
-    } // enable list rename, duplicate and delete buttons
-
-
+    }
+    // enable list rename, duplicate and delete buttons
     _memoria_elements.memoria_elements.rename_list_button.disabled = false;
     _memoria_elements.memoria_elements.duplicate_list_button.disabled = false;
     _memoria_elements.memoria_elements.delete_list_button.disabled = false;
-  } // disable list rename, duplicate and delete buttons if no list
+  }
+  // disable list rename, duplicate and delete buttons if no list
   else {
     _memoria_elements.memoria_elements.rename_list_button.disabled = true;
     _memoria_elements.memoria_elements.duplicate_list_button.disabled = true;
@@ -13990,30 +14023,26 @@ var setLists = function setLists(lists) {
     _memoria_elements.memoria_elements.memoria_list_content.innerHTML = "";
   }
 };
+
 /**
  * select the list of name and loads the memoria list
  * 
  * @param {String} listId 
  * @param {Object} list 
  */
-
-
 exports.setLists = setLists;
-
 var selectList = function selectList(listId, list) {
   if (!listId || !list) {
     var first = Object.entries(storage_api.lists)[0][0];
     listId = first;
     list = storage_api.lists[first];
   }
-
   var _iterator = _createForOfIteratorHelper(document.querySelectorAll(".memoria_list_entry")),
-      _step;
-
+    _step;
   try {
     for (_iterator.s(); !(_step = _iterator.n()).done;) {
-      var element = _step.value; // element already selected.
-
+      var element = _step.value;
+      // element already selected.
       if (element.getAttribute("listId") === listId) {
         if (element.classList.contains("selected")) return;else {
           element.classList.add("selected");
@@ -14029,15 +14058,12 @@ var selectList = function selectList(listId, list) {
   } finally {
     _iterator.f();
   }
-
   exports.selectedList = selectedList = {
     listId: listId,
     list: list
   };
   _memoria_elements.memoria_elements.list_name_title.innerHTML = list.name;
-
   _memoria_elements.memoria_elements.list_name_title.setAttribute("listId", listId);
-
   profile_api.setProfile(list.selectedProfile);
   applyProfileToList(listId, list.selectedProfile);
   setPadding(storage_api.settings.padding_top, storage_api.settings.padding_left, storage_api.settings.padding_right, storage_api.settings.padding_bottom);
@@ -14049,27 +14075,21 @@ var selectList = function selectList(listId, list) {
   memoria_api.enableButtons();
   storage_api.updateSettings("selected_memoria_list", listId);
 };
+
 /* ------------------------------ Create and Delete List ------------------------------ */
 
 /**
  * creates a new list.
  */
-
-
 exports.selectList = selectList;
-
 var createList = function createList() {
   var listName = _memoria_elements.memoria_elements.create_list_name_field.value;
-
   if (!listName) {
     _memoria_elements.memoria_elements.home_error_text.innerHTML = "The list name must not be empty.";
     return;
   }
-
   _memoria_elements.memoria_elements.create_list_name_field.value = "";
-
   _memoria_elements.memoria_elements.new_list_button.classList.replace("minus", "add");
-
   _memoria_elements.memoria_elements.list_create.style.visibility = "collapse";
   _memoria_elements.memoria_elements.list_create.style.display = "none";
   _memoria_elements.memoria_elements.list_name_title.innerHTML = listName;
@@ -14077,16 +14097,14 @@ var createList = function createList() {
   _memoria_elements.memoria_elements.memoria_list_content.innerHTML = "";
   storage_api.createList(listName);
 };
+
 /**
  * Renames the list listId with name newName.
  * 
  * @param {String} listId 
  * @param {String} newName 
  */
-
-
 exports.createList = createList;
-
 var renameList = function renameList(listId, newName) {
   if (listId && newName && newName.length > 0) {
     storage_api.renameList(listId, newName);
@@ -14095,24 +14113,21 @@ var renameList = function renameList(listId, newName) {
     _memoria_elements.memoria_elements.list_rename.style.display = "none";
   }
 };
+
 /**
  * duplicate the list.
  * 
  * @param {Object} list 
  * @param {String} newName 
  */
-
-
 exports.renameList = renameList;
-
 var duplicateList = function duplicateList(list, newName) {
   if (list && newName && newName.length > 0) {
     var newMemoriaList = {};
     Object.entries(list.memoriaList).forEach(function (_ref3) {
       var _ref4 = (0, _slicedToArray2["default"])(_ref3, 2),
-          key = _ref4[0],
-          value = _ref4[1];
-
+        key = _ref4[0],
+        value = _ref4[1];
       newMemoriaList[generatePushID()] = value;
     });
     list.memoriaList = newMemoriaList;
@@ -14122,27 +14137,23 @@ var duplicateList = function duplicateList(list, newName) {
     _memoria_elements.memoria_elements.list_duplicate.style.display = "none";
   }
 };
+
 /**
  * deletes the list.
  */
-
-
 exports.duplicateList = duplicateList;
-
 var deleteList = function deleteList(listId) {
   exports.selectedList = selectedList = null;
   storage_api.updateSettings("selected_memoria_list", false);
   storage_api.deleteList(listId);
 };
+
 /**
  * updates the list in the database with the list name, memoria, and profile.
  * 
  * @param {String} createdName optional
  */
-
-
 exports.deleteList = deleteList;
-
 var updateList = function updateList() {
   var listId = getListId();
   var listName = getListName();
@@ -14152,10 +14163,10 @@ var updateList = function updateList() {
   });
   var selectedProfile = profile_api.getSelectedProfileId();
   var selectedBackground = background_api.getSelectedBackground();
-  if (!listName) return; // Object.values(memoriaList).forEach(memoria => {
+  if (!listName) return;
+  // Object.values(memoriaList).forEach(memoria => {
   //   memoria.type = memoria_collection.find(elem => memoria.memoria_id == elem.id).type;
   // })
-
   storage_api.updateList(listId, listName, memoriaList, selectedProfile, selectedBackground);
 };
 /* ------------------------------ Get the Selected List ------------------------------ */
@@ -14163,32 +14174,25 @@ var updateList = function updateList() {
 /**
  * returns the list name.
  */
-
-
 exports.updateList = updateList;
-
 var getListName = function getListName() {
   return _memoria_elements.memoria_elements.list_name_title.innerText;
 };
+
 /**
  * returns the list id.
  */
-
-
 exports.getListName = getListName;
-
 var getListId = function getListId() {
   return _memoria_elements.memoria_elements.list_name_title.getAttribute("listId");
 };
+
 /**
  * returns all the memoria displays in a list.
  * 
  * @param {boolean} keep_id
  */
-
-
 exports.getListId = getListId;
-
 var getMemoriaList = function getMemoriaList() {
   var keep_id = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : true;
   var memoriaList = {};
@@ -14200,15 +14204,13 @@ var getMemoriaList = function getMemoriaList() {
   if (Object.keys(memoriaList).length == 0) memoriaList = true;
   return memoriaList;
 };
+
 /**
  * checks if the list name exists.
  * 
  * @param {String} listName
  */
-
-
 exports.getMemoriaList = getMemoriaList;
-
 var checkListName = function checkListName(listName) {
   if (!listName || listName.length === 0) _memoria_elements.memoria_elements.home_error_text.innerHTML = "The list name must not be empty.";else if (storage_api.listExists(listName)) _memoria_elements.memoria_elements.home_error_text.innerHTML = "The list name ".concat(listName, " already exists.");else {
     _memoria_elements.memoria_elements.home_error_text.innerHTML = "";
@@ -14216,17 +14218,14 @@ var checkListName = function checkListName(listName) {
   }
   return false;
 };
+
 /** 
  * returns the selected list.
  */
-
-
 exports.checkListName = checkListName;
-
 var getSelectedList = function getSelectedList() {
   var _iterator2 = _createForOfIteratorHelper(document.querySelectorAll(".memoria_list_entry")),
-      _step2;
-
+    _step2;
   try {
     for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
       var element = _step2.value;
@@ -14237,9 +14236,9 @@ var getSelectedList = function getSelectedList() {
   } finally {
     _iterator2.f();
   }
-
   return null;
 };
+
 /* ------------------------------ Sort Current List ------------------------------ */
 
 /**
@@ -14248,24 +14247,18 @@ var getSelectedList = function getSelectedList() {
  * @param {String} listId 
  * @param {String} profileId 
  */
-
-
 exports.getSelectedList = getSelectedList;
-
 var applyProfileToList = function applyProfileToList(listId, profileId) {
-  var memoriaList = storage_api.lists[listId].memoriaList; // modify the list.
-
+  var memoriaList = storage_api.lists[listId].memoriaList;
+  // modify the list.
   Object.entries(memoriaList).forEach(function (_ref5) {
     var _ref6 = (0, _slicedToArray2["default"])(_ref5, 2),
-        key = _ref6[0],
-        display = _ref6[1];
-
+      key = _ref6[0],
+      display = _ref6[1];
     display._id = key;
-
     var memoria = _memoria_collection.memoria_collection.find(function (memoria) {
       return display.memoria_id == memoria.id;
     });
-
     display.type = memoria.type;
     display.rank = memoria.rank;
     display.obtainability = memoria.obtainability;
@@ -14276,28 +14269,24 @@ var applyProfileToList = function applyProfileToList(listId, profileId) {
   _memoria_elements.memoria_elements.memoria_list_content.innerHTML = '';
   displayGroups(_memoria_elements.memoria_elements.memoria_list_content, groups);
 };
+
 /**
  * Adds the groups to the parent element.
  * 
  * @param {HTMLDivElement} parent 
  * @param {Object} groups 
  */
-
-
 exports.applyProfileToList = applyProfileToList;
-
 var displayGroups = function displayGroups(parent, groups) {
   Object.entries(groups).forEach(function (_ref7) {
     var _ref8 = (0, _slicedToArray2["default"])(_ref7, 2),
-        key = _ref8[0],
-        group = _ref8[1];
-
+      key = _ref8[0],
+      group = _ref8[1];
     var group_row = document.createElement("div");
     group_row.classList.add("memoria_row");
     group_row.style.width = "".concat(storage_api.settings.memoria_displays_per_row * 94, "px");
     group_row.setAttribute("group", key);
     group_row.style.justifyContent = DIR_TO_FLEX[storage_api.settings.display_alignment];
-
     if (group instanceof Array) {
       group.forEach(function (display) {
         var memoria_display = memoria_api.createDisplay(display, true);
@@ -14306,10 +14295,10 @@ var displayGroups = function displayGroups(parent, groups) {
     } else {
       displayGroups(group_row, group);
     }
-
     parent.appendChild(group_row);
   });
 };
+
 /**
  * Create the group and sort order for the memoriaList and rules.
  * 
@@ -14318,21 +14307,17 @@ var displayGroups = function displayGroups(parent, groups) {
  * 
  * @returns {Object}
  */
-
-
 exports.displayGroups = displayGroups;
-
 var createGroups = function createGroups(memoriaList, rules) {
   var groups = [];
-  var sorts = []; // parse the rules;
-
+  var sorts = [];
+  // parse the rules;
   Object.entries(rules).sort(function (a, b) {
     return a[1].index > b[1].index ? 1 : -1;
   }).forEach(function (_ref9) {
     var _ref10 = (0, _slicedToArray2["default"])(_ref9, 2),
-        ruleId = _ref10[0],
-        rule = _ref10[1];
-
+      ruleId = _ref10[0],
+      rule = _ref10[1];
     if (rule.state === "group") {
       groups.push(rule);
     } else if (rule.state === "sort") {
@@ -14349,6 +14334,7 @@ var createGroups = function createGroups(memoriaList, rules) {
   var memoriaGroups = groupAndSort(Object.values(memoriaList), groups, sorts);
   return memoriaGroups;
 };
+
 /**
  * Recursively groups the memoriaList into groups and then sorts.
  * 
@@ -14358,10 +14344,7 @@ var createGroups = function createGroups(memoriaList, rules) {
  * 
  * @returns {Object}
  */
-
-
 exports.createGroups = createGroups;
-
 var groupAndSort = function groupAndSort(memoriaList, rules, sorts) {
   if (rules.length == 0) {
     var sorted = memoriaList;
@@ -14380,14 +14363,14 @@ var groupAndSort = function groupAndSort(memoriaList, rules, sorts) {
     var groups = group_properties(memoriaList, rule.type, rule.direction);
     Object.entries(groups).forEach(function (_ref11) {
       var _ref12 = (0, _slicedToArray2["default"])(_ref11, 2),
-          key = _ref12[0],
-          group = _ref12[1];
-
+        key = _ref12[0],
+        group = _ref12[1];
       groups[key] = groupAndSort(group, rules.slice(1), sorts);
     });
     return groups;
   }
 };
+
 /**
  * adds each display_property to the corresponding group.
  * 
@@ -14395,11 +14378,8 @@ var groupAndSort = function groupAndSort(memoriaList, rules, sorts) {
  * @param {String} group_by
  * @param {Number} group_dir
  */
-
-
 var group_properties = function group_properties(display_properties, group_by, group_dir) {
   var display_groups = {};
-
   if (group_by == "type") {
     if (group_dir == 1) display_groups = {
       "ability": [],
@@ -14490,9 +14470,9 @@ var group_properties = function group_properties(display_properties, group_by, g
       display_groups.none.push(properties);
     });
   }
-
   return display_groups;
 };
+
 /* ------------------------------ Display Settings ------------------------------ */
 
 /**
@@ -14500,23 +14480,19 @@ var group_properties = function group_properties(display_properties, group_by, g
  * 
  * @param {Number} displays 
  */
-
-
 var changeDisplaysPerRow = function changeDisplaysPerRow(displays) {
   storage_api.settings.memoria_displays_per_row = displays;
   document.querySelectorAll(".memoria_row").forEach(function (memoria_row) {
     memoria_row.style.width = "".concat(displays * 94, "px");
   });
 };
+
 /**
  * Sets the alignment of the memoria rows.
  * 
  * @param {String} alignment 
  */
-
-
 exports.changeDisplaysPerRow = changeDisplaysPerRow;
-
 var changeAlignment = function changeAlignment(alignment) {
   storage_api.settings.display_alignment = alignment;
   storage_api.updateSettings("display_alignment", alignment);
@@ -14524,61 +14500,50 @@ var changeAlignment = function changeAlignment(alignment) {
     memoria_row.style.justifyContent = DIR_TO_FLEX[alignment];
   });
 };
+
 /**
  * Changes the padding in the direction.
  * 
  * @param {String} direction 
  * @param {Number} padding 
  */
-
-
 exports.changeAlignment = changeAlignment;
-
 var changePadding = function changePadding(direction, padding) {
   storage_api.settings["padding_".concat(direction)] = padding;
   setPadding(storage_api.settings.padding_top, storage_api.settings.padding_left, storage_api.settings.padding_right, storage_api.settings.padding_bottom);
 };
+
 /**
  * Sets the padding of the list.
  * 
  * @param {Number} x 
  * @param {Number} y 
  */
-
-
 exports.changePadding = changePadding;
-
 var setPadding = function setPadding(x, y) {
   _memoria_elements.memoria_elements.memoria_list_content.style.padding = "".concat(y, "px ").concat(x, "px");
 };
+
 /* ------------------------------ List Zoom ------------------------------ */
 
 /**
  * sets the zoom of the memoria list.
  */
-
-
 exports.setPadding = setPadding;
-
 var changeZoom = function changeZoom(zoom) {
   storage_api.updateSettings("memoria_zoom", zoom);
   _memoria_elements.memoria_elements.memoria_list_content.style.zoom = zoom / 100;
 };
+
 /**
  * sets the zoom of the memoria list to fit.
  */
-
-
 exports.changeZoom = changeZoom;
-
 var zoom_fit = function zoom_fit() {
   if (_memoria_elements.memoria_elements.memoria_list_content.innerHTML) {
     var row = _memoria_elements.memoria_elements.memoria_list_content.querySelector(".memoria_row");
-
     var list_width = row.clientWidth;
-
     var list_height = row.clientHeight * _memoria_elements.memoria_elements.memoria_list_content.querySelectorAll(".memoria_row").length;
-
     var container_width = _memoria_elements.memoria_elements.memoria_list_content.clientWidth;
     var container_height = _memoria_elements.memoria_elements.memoria_list_content.clientHeight;
     var ratio = Math.min((container_width - 40) / list_width, (container_height - 40) / list_height);
@@ -14589,15 +14554,13 @@ var zoom_fit = function zoom_fit() {
     _memoria_elements.memoria_elements.zoom_field.value = Math.round(ratio * 100);
   }
 };
+
 /* ------------------------------ List Filters ------------------------------ */
 
 /**
  * Creates a new filter.
  */
-
-
 exports.zoom_fit = zoom_fit;
-
 var createFilter = function createFilter() {
   var next = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
   var new_filter = document.createElement("div");
@@ -14617,53 +14580,41 @@ var createFilter = function createFilter() {
   });
   new_filter.querySelector(".delete").addEventListener("click", function () {
     new_filter.remove();
-
     if (list_filters.children.length > 0) {
       var first = list_filters.children[0].querySelector(".state_select");
       if (_memoria_elements.memoria_elements.list_filters.children.length >= 1 && !first.classList.contains("collapse")) first.classList.add("collapse");
     } else {
       if (!_memoria_elements.memoria_elements.toggle_filter_button.classList.contains("hidden")) {
         _memoria_elements.memoria_elements.toggle_filter_button.classList.add("hidden");
-
         if (_memoria_elements.memoria_elements.toggle_filter_button.classList.contains("add")) _memoria_elements.memoria_elements.toggle_filter_button.classList.remove("add");
         if (_memoria_elements.memoria_elements.toggle_filter_button.classList.contains("minus")) _memoria_elements.memoria_elements.toggle_filter_button.classList.remove("minus");
       }
     }
-
     getFilters();
   });
-
   if (_memoria_elements.memoria_elements.toggle_filter_button.classList.contains("hidden")) {
     _memoria_elements.memoria_elements.toggle_filter_button.classList.remove("hidden");
-
     _memoria_elements.memoria_elements.toggle_filter_button.classList.add("minus");
   } else {
     if (_memoria_elements.memoria_elements.toggle_filter_button.classList.contains("add")) {
       _memoria_elements.memoria_elements.toggle_filter_button.classList.replace("add", "minus");
-
       if (_memoria_elements.memoria_elements.list_filters.classList.contains("hidden")) _memoria_elements.memoria_elements.list_filters.classList.remove("hidden");
     }
   }
-
   if (_memoria_elements.memoria_elements.list_filters.children.length > 0) new_filter.querySelector(".state_select").classList.remove("collapse");
-
   if (next != null) {
     _memoria_elements.memoria_elements.list_filters.insertBefore(new_filter, next);
-
     if (!_memoria_elements.memoria_elements.list_filters.children[0].querySelector(".state_select").classList.contains("collapse")) list_filters.children[0].querySelector(".state_select").classList.add("collapse");
     if (next.querySelector(".state_select").classList.contains("collapse")) next.querySelector(".state_select").classList.remove("collapse");
   } else _memoria_elements.memoria_elements.list_filters.append(new_filter);
 };
+
 /**
  * Returns the filters.
  */
-
-
 exports.createFilter = createFilter;
-
 var getFilters = function getFilters() {
   var filters = [];
-
   var _loop2 = function _loop2() {
     var list_filter_row = _Array$from[_i2];
     var element = Array.from(list_filter_row.children).find(function (child) {
@@ -14672,7 +14623,6 @@ var getFilters = function getFilters() {
     var state = list_filter_row.querySelector(".state_select").value;
     if (list_filter_row.querySelector(".state_select").classList.contains("collapse")) state = "none";
     var filter = {};
-
     try {
       filter = {
         type: element.classList[1],
@@ -14682,7 +14632,6 @@ var getFilters = function getFilters() {
     } catch (_unused) {
       return "continue";
     }
-
     Array.from(element.children).forEach(function (child) {
       filter.value.push({
         param: child.classList[1].replace("_select", "").replace("_input", ""),
@@ -14691,27 +14640,22 @@ var getFilters = function getFilters() {
     });
     filters.push(filter);
   };
-
   for (var _i2 = 0, _Array$from = Array.from(_memoria_elements.memoria_elements.list_filters.children); _i2 < _Array$from.length; _i2++) {
     var _ret = _loop2();
-
     if (_ret === "continue") continue;
   }
-
   return filters;
 };
+
 /**
  * Applies the filters.
  * 
  * @param {Array} filters 
  */
-
-
 exports.getFilters = getFilters;
-
 var applyFilters = function applyFilters() {
-  var filters = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : getFilters(); // if no filters, then show everything.
-
+  var filters = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : getFilters();
+  // if no filters, then show everything.
   if (filters.length == 0) {
     Array.from(_memoria_elements.memoria_elements.memoria_list_content.querySelectorAll(".memoria_row")).forEach(function (memoria_row) {
       if (memoria_row.classList.contains("hidden")) {
@@ -14722,16 +14666,13 @@ var applyFilters = function applyFilters() {
     Array.from(_memoria_elements.memoria_elements.memoria_list_content.querySelectorAll(".memoria_display")).forEach(function (memoria_display_element) {
       if (memoria_display_element.classList.contains("hidden")) {
         _memoria_elements.memoria_elements.memoria_display_element.classList.remove("hidden");
-
         memoria_display_element.style.display = "flex";
       }
     });
     return;
   }
-
   Array.from(_memoria_elements.memoria_elements.memoria_list_content.querySelectorAll(".memoria_display")).forEach(function (memoria_display_element) {
     var memoria_display = memoria_api.getMemoriaDisplay(memoria_display_element);
-
     if (matchesAllFilters(memoria_display, filters)) {
       if (memoria_display_element.classList.contains("hidden")) {
         memoria_display_element.classList.remove("hidden");
@@ -14761,6 +14702,7 @@ var applyFilters = function applyFilters() {
     }
   });
 };
+
 /**
  * Check if memoria display matches all the filters.
  * 
@@ -14769,10 +14711,7 @@ var applyFilters = function applyFilters() {
  * 
  * @returns {boolean}
  */
-
-
 exports.applyFilters = applyFilters;
-
 var matchesAllFilters = function matchesAllFilters(memoria_display, filters) {
   var matches = Array(filters.length).fill(true);
   var result = [];
@@ -14787,27 +14726,24 @@ var matchesAllFilters = function matchesAllFilters(memoria_display, filters) {
     return value;
   });
 };
+
 /**
  * Check if the memoria display matches the filter.
  * 
  * @param {memoria_api.Display} memoria_display 
  * @param {Array} filter 
  */
-
-
 var matchesFilter = function matchesFilter(memoria_display, filter) {
   if (filter[0].param === "equality") {
     if (filter[1].param === "type") {
       var type = _memoria_collection.memoria_collection.find(function (memoria) {
         return memoria_display.memoria_id == memoria.id;
       }).type;
-
       if (filter[0].value === "eq" && type === filter[1].value) return true;else if (filter[0].value === "neq" && type !== filter[1].value) return true;else return false;
     } else if (filter[1].param === "obtainability") {
       var obtainability = _memoria_collection.memoria_collection.find(function (memoria) {
         return memoria_display.memoria_id == memoria.id;
       }).obtainability;
-
       if (filter[0].value === "eq" && obtainability === filter[1].value) return true;else if (filter[0].value === "neq" && obtainability !== filter[1].value) return true;else return false;
     } else {
       if (filter[0].value === "eq" && memoria_display[filter[1].param] === filter[1].value) return true;else if (filter[0].value === "neq" && memoria_display[filter[1].param] !== filter[1].value) return true;else return false;
@@ -14817,11 +14753,10 @@ var matchesFilter = function matchesFilter(memoria_display, filter) {
     if (filter[0].value === "eq" && param === parseInt(filter[1].value)) return true;else if (filter[0].value === "neq" && param !== parseInt(filter[1].value)) return true;else if (filter[0].value === "lt" && param < parseInt(filter[1].value)) return true;else if (filter[0].value === "gt" && param > parseInt(filter[1].value)) return true;else if (filter[0].value === "lte" && param <= parseInt(filter[1].value)) return true;else if (filter[0].value === "gte" && param >= parseInt(filter[1].value)) return true;else return false;
   }
 };
+
 /**
  * Removes all the filters.
  */
-
-
 var resetFilters = function resetFilters() {
   Array.from(_memoria_elements.memoria_elements.memoria_list_content.querySelectorAll(".memoria_row")).forEach(function (memoria_row) {
     if (memoria_row.classList.contains("hidden")) {
@@ -14840,15 +14775,13 @@ var resetFilters = function resetFilters() {
   if (_memoria_elements.memoria_elements.toggle_filter_button.classList.contains("minus")) _memoria_elements.memoria_elements.toggle_filter_button.classList.remove("minus");
   if (!_memoria_elements.memoria_elements.toggle_filter_button.classList.contains("hidden")) _memoria_elements.memoria_elements.toggle_filter_button.classList.add("hidden");
 };
+
 /* ------------------------------ List Stats ------------------------------ */
 
 /**
  * Returns the simple stats of the list.
  */
-
-
 exports.resetFilters = resetFilters;
-
 var getStats = function getStats() {
   var result = {
     totalMemoria: 0,
@@ -14860,15 +14793,12 @@ var getStats = function getStats() {
   Array.from(_memoria_elements.memoria_elements.memoria_list_content.children).forEach(function (memoria_row) {
     Array.from(memoria_row.children).forEach(function (memoria_display_element) {
       result.totalMemoria++;
-
       if (!memoria_display_element.classList.contains("hidden")) {
         result.totalVisible++;
         var memoria_display = memoria_api.getMemoriaDisplay(memoria_display_element);
-
         var memoria = _memoria_collection.memoria_collection.find(function (memoria) {
           return memoria.id == memoria_display.memoria_id;
         });
-
         if (memoria.obtainability == "limited") result.limited++;
         if (memoria_api.getMaxLevel(memoria.ascension, memoria.rank) == memoria_display.level) result.maxLevel++;
         if (memoria.ascension == 4) result.maxAscension++;
@@ -14878,13 +14808,11 @@ var getStats = function getStats() {
   _memoria_elements.memoria_elements.list_stats_list.innerHTML = "Visible: ".concat(result.totalVisible, "/").concat(result.totalMemoria);
   return result;
 };
+
 /**
  * Returns all the stats of the list.
  */
-
-
 exports.getStats = getStats;
-
 var getMoreStats = function getMoreStats() {
   var result = {
     totalMemoria: 0,
@@ -14902,15 +14830,12 @@ var getMoreStats = function getMoreStats() {
   Array.from(_memoria_elements.memoria_elements.memoria_list_content.children).forEach(function (memoria_row) {
     Array.from(memoria_row.children).forEach(function (memoria_display_element) {
       result.totalMemoria++;
-
       if (!memoria_display_element.classList.contains("hidden")) {
         result.totalVisible++;
         var memoria_display = memoria_api.getMemoriaDisplay(memoria_display_element);
-
         var memoria = _memoria_collection.memoria_collection.find(function (memoria) {
           return memoria_display.memoria_id == memoria.id;
         });
-
         if (memoria.obtainability == "limited") result.limited++;
         if (memoria_api.getMaxLevel(memoria.ascension, memoria.rank) == memoria_display.level) result.maxLevel++;
         if (memoria.ascension == 4) result.maxAscension++;
@@ -14926,84 +14851,68 @@ var getMoreStats = function getMoreStats() {
   });
   return "Total Memoria: ".concat(result.totalMemoria, "\nTotal Visible: ").concat(result.totalVisible, "\nLimited: ").concat(result.limited, "\nUnlimited: ").concat(result.totalVisible - result.limited, "      \nArchive: ").concat(result.archive, "      \nLocked: ").concat(result.protect, "      \nMax Level: ").concat(result.maxLevel, "\nMax Ascension: ").concat(result.maxAscension, "      \nLevels:").concat(Object.entries(result.levels).map(function (_ref13) {
     var _ref14 = (0, _slicedToArray2["default"])(_ref13, 2),
-        level = _ref14[0],
-        count = _ref14[1];
-
+      level = _ref14[0],
+      count = _ref14[1];
     return "\n  ".concat(level, ": ").concat(count);
   }).toString(), "      \nRanks:").concat(Object.entries(result.ranks).map(function (_ref15) {
     var _ref16 = (0, _slicedToArray2["default"])(_ref15, 2),
-        level = _ref16[0],
-        count = _ref16[1];
-
+      level = _ref16[0],
+      count = _ref16[1];
     return "\n  ".concat(level, ": ").concat(count);
   }).toString(), "      \nAscensions:").concat(Object.entries(result.ascensions).map(function (_ref17) {
     var _ref18 = (0, _slicedToArray2["default"])(_ref17, 2),
-        level = _ref18[0],
-        count = _ref18[1];
-
+      level = _ref18[0],
+      count = _ref18[1];
     return "\n  ".concat(level, ": ").concat(count);
   }).toString(), "      \nCopies of Each Rank:").concat(Object.entries(result.rankCopies).map(function (_ref19) {
     var _ref20 = (0, _slicedToArray2["default"])(_ref19, 2),
-        level = _ref20[0],
-        count = _ref20[1];
-
+      level = _ref20[0],
+      count = _ref20[1];
     return "\n  ".concat(level, ": ").concat(count);
   }).toString());
 };
+
 /**
  * Opens the Message Dialog with the list stats.
  */
-
-
 exports.getMoreStats = getMoreStats;
-
 var openStatsModal = function openStatsModal() {
   _memoria_elements.messageDialog.open("Stats of \"".concat(getListName(), "\""), getMoreStats());
 };
+
 /* ------------------------------ Import and Export ------------------------------ */
 
 /**
  * Opens the Export Modal Dialog.
  */
-
-
 exports.openStatsModal = openStatsModal;
-
 var openExportModal = function openExportModal() {
   var list = Object.values(getMemoriaList(false)).map(function (value) {
     return memoria_api.sanitizeMemoria(value);
   }).sort(function (a, b) {
     return a.memoria_id > b.memoria_id ? 1 : -1;
   });
-
   _memoria_elements.messageDialog.open("".concat(selectedList.list.name, " Contents"), JSON.stringify(list, null, 1));
 };
+
 /**
  * Imports the list.
  */
-
-
 exports.openExportModal = openExportModal;
-
 var importList = function importList() {
   var data = _memoria_elements.importListDialog.text.value;
   var listName = _memoria_elements.importListDialog.name.value;
-
   if (!listName) {
     _memoria_elements.importListDialog.error.innerHTML = "The list name must not be empty.";
     return;
   }
-
   if (storage_api.listExists(listName)) {
     _memoria_elements.importListDialog.error.innerHTML = "The list name ".concat(listName, " already exists.");
     return;
   }
-
   _memoria_elements.importListDialog.error.innerHTML = "";
-
   try {
     var memoria_list = JSON.parse(data);
-
     if (validateMemoriaList(memoria_list)) {
       _memoria_elements.memoria_elements.list_name_title.innerHTML = listName;
       _memoria_elements.memoria_elements.profile_select.value = "Default";
@@ -15011,13 +14920,11 @@ var importList = function importList() {
       var newMemoriaList = {};
       Object.entries(memoria_list).forEach(function (_ref21) {
         var _ref22 = (0, _slicedToArray2["default"])(_ref21, 2),
-            key = _ref22[0],
-            value = _ref22[1];
-
+          key = _ref22[0],
+          value = _ref22[1];
         newMemoriaList[generatePushID()] = value;
       });
       storage_api.manualCreateList(listName, newMemoriaList, "10", false);
-
       _memoria_elements.importListDialog.close();
     } else {
       _memoria_elements.importListDialog.error.innerHTML = "The format of the JSON is invalid. Please contact Leo Chan for details.";
@@ -15028,6 +14935,7 @@ var importList = function importList() {
     return;
   }
 };
+
 /**
  * Checks if the memoria list is valid.
  * 
@@ -15035,10 +14943,7 @@ var importList = function importList() {
  * 
  * @returns {boolean}
  */
-
-
 exports.importList = importList;
-
 var validateMemoriaList = function validateMemoriaList(memoria_list) {
   try {
     if (Array.from(memoria_list).every(function (memoria) {
@@ -15049,30 +14954,22 @@ var validateMemoriaList = function validateMemoriaList(memoria_list) {
   } catch (e) {
     return false;
   }
-
   return false;
 };
 
-},{"../../collection/memoria_collection.js":2,"../../shared/js/utils.js":12,"./background_api.js":3,"./memoria_api.js":5,"./memoria_elements.js":6,"./profile_api.js":8,"./storage_api.js":9,"@babel/runtime/helpers/interopRequireDefault":21,"@babel/runtime/helpers/slicedToArray":28,"@babel/runtime/helpers/typeof":30}],8:[function(require,module,exports){
+},{"../../collection/memoria_collection.js":2,"../../shared/js/utils.js":12,"./background_api.js":3,"./memoria_api.js":5,"./memoria_elements.js":6,"./profile_api.js":8,"./storage_api.js":9,"@babel/runtime/helpers/interopRequireDefault":22,"@babel/runtime/helpers/slicedToArray":29,"@babel/runtime/helpers/typeof":33}],8:[function(require,module,exports){
 "use strict";
 
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
-
 var _typeof = require("@babel/runtime/helpers/typeof");
-
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.loadsRules = exports.loadRule = exports.createProfileRule = exports.changeToCustom = exports.getProfileId = exports.getSelectedProfileName = exports.getSelectedProfileId = exports.setProfile = exports.deleteProfile = exports.checkProfile = exports.updateProfile = exports.saveProfile = exports.getSortSettings = exports.setProfiles = exports.selectedProfile = void 0;
-
+exports.updateProfile = exports.setProfiles = exports.setProfile = exports.selectedProfile = exports.saveProfile = exports.loadsRules = exports.loadRule = exports.getSortSettings = exports.getSelectedProfileName = exports.getSelectedProfileId = exports.getProfileId = exports.deleteProfile = exports.createProfileRule = exports.checkProfile = exports.changeToCustom = void 0;
 var _slicedToArray2 = _interopRequireDefault(require("@babel/runtime/helpers/slicedToArray"));
-
 var _memoria_elements = require("./memoria_elements.js");
-
 var memoria_list_api = _interopRequireWildcard(require("./memoria_list_api.js"));
-
 var storage_api = _interopRequireWildcard(require("./storage_api.js"));
-
 function _getRequireWildcardCache(nodeInterop) {
   if (typeof WeakMap !== "function") return null;
   var cacheBabelInterop = new WeakMap();
@@ -15081,31 +14978,24 @@ function _getRequireWildcardCache(nodeInterop) {
     return nodeInterop ? cacheNodeInterop : cacheBabelInterop;
   })(nodeInterop);
 }
-
 function _interopRequireWildcard(obj, nodeInterop) {
   if (!nodeInterop && obj && obj.__esModule) {
     return obj;
   }
-
   if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") {
     return {
       "default": obj
     };
   }
-
   var cache = _getRequireWildcardCache(nodeInterop);
-
   if (cache && cache.has(obj)) {
     return cache.get(obj);
   }
-
   var newObj = {};
   var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;
-
   for (var key in obj) {
     if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) {
       var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;
-
       if (desc && (desc.get || desc.set)) {
         Object.defineProperty(newObj, key, desc);
       } else {
@@ -15113,39 +15003,32 @@ function _interopRequireWildcard(obj, nodeInterop) {
       }
     }
   }
-
   newObj["default"] = obj;
-
   if (cache) {
     cache.set(obj, newObj);
   }
-
   return newObj;
 }
 /**
  * Profile API for the Memoria Page.
  */
 
-
 var selectedProfile = null;
+
 /**
  * Sets the profiles in the profile_select and loads the profile.
  * @param {Object} profiles 
  * @param {String} previous 
  */
-
 exports.selectedProfile = selectedProfile;
-
 var setProfiles = function setProfiles(profiles, previous) {
   _memoria_elements.memoria_elements.profile_select.innerHTML = "";
   Object.entries(profiles).forEach(function (_ref) {
     var _ref2 = (0, _slicedToArray2["default"])(_ref, 2),
-        id = _ref2[0],
-        profile = _ref2[1];
-
+      id = _ref2[0],
+      profile = _ref2[1];
     _memoria_elements.memoria_elements.profile_select.options.add(new Option(profile.name, id, false));
   });
-
   if (selectedProfile !== null && selectedProfile.name !== null) {
     var profileId = getProfileId(selectedProfile.name);
     _memoria_elements.memoria_elements.profile_select.value = profileId;
@@ -15155,29 +15038,22 @@ var setProfiles = function setProfiles(profiles, previous) {
     return option.value === previous;
   })) {
     _memoria_elements.memoria_elements.profile_select.value = previous;
-
     var _listId = memoria_list_api.getListId();
-
     if (_listId) storage_api.updateListProfile(_listId, previous);
   } else {
     _memoria_elements.memoria_elements.profile_select.value = "10";
-
     var _listId2 = memoria_list_api.getListId();
-
     if (_listId2) storage_api.updateListProfile(_listId2, "10");
   }
-
   loadsRules(_memoria_elements.memoria_elements.profile_select.value);
 };
+
 /**
  * Gets the Sorting Settings from the Profile Rules.
  * 
  * @returns {Object}
  */
-
-
 exports.setProfiles = setProfiles;
-
 var getSortSettings = function getSortSettings() {
   var settings = {};
   Array.from(profile_rules.children).forEach(function (child, index) {
@@ -15192,28 +15068,23 @@ var getSortSettings = function getSortSettings() {
   });
   return settings;
 };
+
 /**
  * Saves a new profile.
  */
-
-
 exports.getSortSettings = getSortSettings;
-
 var saveProfile = function saveProfile() {
   var profileName = new_profile_field.value;
-
   if (Object.values(storage_api.profiles).some(function (profile) {
     return profile.name === profileName;
   })) {
     profile_error_text.innerHTML = "The sorting profile ".concat(profileName, " already exists.");
     return;
   }
-
   if (profileName.length === 0) {
     profile_error_text.innerHTML = "The sorting profile name must not be empty.";
     return;
   }
-
   new_profile_field.value = "";
   var properties = getSortSettings();
   exports.selectedProfile = selectedProfile = {
@@ -15224,13 +15095,11 @@ var saveProfile = function saveProfile() {
   if (!profile_create_block.classList.contains("hidden")) profile_create_block.classList.add("hidden");
   if (new_profile_button.classList.contains("minus")) new_profile_button.classList.replace("minus", "add");
 };
+
 /**
  * Updates the selected profile.
  */
-
-
 exports.saveProfile = saveProfile;
-
 var updateProfile = function updateProfile() {
   var profileId = getSelectedProfileId();
   var properties = getSortSettings();
@@ -15238,30 +15107,25 @@ var updateProfile = function updateProfile() {
   if (!profile_create_block.classList.contains("hidden")) profile_create_block.classList.add("hidden");
   if (new_profile_button.classList.contains("minus")) new_profile_button.classList.replace("minus", "add");
 };
+
 /**
  * Check if the profile name exists.
  * 
  * @param {String} profileName 
  */
-
-
 exports.updateProfile = updateProfile;
-
 var checkProfile = function checkProfile(profileName) {
   if (Object.values(storage_api.profiles).some(function (profile) {
     return profile.name === profileName;
   })) profile_error_text.innerHTML = "The sorting profile ".concat(profileName, " already exists.");else profile_error_text.innerHTML = "";
 };
+
 /**
  * Deletes the selected profile.
  */
-
-
 exports.checkProfile = checkProfile;
-
 var deleteProfile = function deleteProfile() {
   var profileId = getSelectedProfileId();
-
   if (storage_api.profiles[profileId].name !== "Default" && storage_api.profiles[profileId].name !== "Custom") {
     storage_api.deleteProfile(profileId);
     exports.selectedProfile = selectedProfile = {
@@ -15273,78 +15137,65 @@ var deleteProfile = function deleteProfile() {
     if (listId) storage_api.updateList(listId, memoria_list_api.getListName(), storage_api.lists[listId].memoriaList, "10", background_api.getSelectedBackground() || "");
   }
 };
+
 /**
  * Sets the profile and loads the rules.
  * 
  * @param {String} profileId 
  */
-
-
 exports.deleteProfile = deleteProfile;
-
 var setProfile = function setProfile(profileId) {
   _memoria_elements.memoria_elements.profile_select.value = profileId;
   if (storage_api.profiles[profileId].rules) loadsRules(profileId);
   if (profileId === "10" || profileId === "11") _memoria_elements.memoria_elements.delete_profile_button.disabled = true;else _memoria_elements.memoria_elements.delete_profile_button.disabled = false;
 };
+
 /**
  * Returns the selected profile id.
  */
-
-
 exports.setProfile = setProfile;
-
 var getSelectedProfileId = function getSelectedProfileId() {
   if (_memoria_elements.memoria_elements.profile_select.selectedIndex > -1) return _memoria_elements.memoria_elements.profile_select.value;else return "10";
 };
+
 /**
  * returns the selected profile name.
  */
-
-
 exports.getSelectedProfileId = getSelectedProfileId;
-
 var getSelectedProfileName = function getSelectedProfileName() {
   if (_memoria_elements.memoria_elements.profile_select.options[_memoria_elements.memoria_elements.profile_select.selectedIndex]) return _memoria_elements.memoria_elements.profile_select.options[_memoria_elements.memoria_elements.profile_select.selectedIndex].text;else return "Default";
 };
+
 /**
  * Returns the profile id of profileName.
  * 
  * @param {String} profileName 
  */
-
-
 exports.getSelectedProfileName = getSelectedProfileName;
-
 var getProfileId = function getProfileId(profileName) {
   var profile = Object.entries(storage_api.profiles).find(function (_ref3) {
     var _ref4 = (0, _slicedToArray2["default"])(_ref3, 2),
-        id = _ref4[0],
-        profile = _ref4[1];
-
+      id = _ref4[0],
+      profile = _ref4[1];
     return profile.name === profileName;
   });
   return profile[0];
 };
+
 /**
  * Changes the profile_select to Custom.
  */
-
-
 exports.getProfileId = getProfileId;
-
 var changeToCustom = function changeToCustom() {
   _memoria_elements.memoria_elements.profile_select.value = "11";
 };
+
 /**
  * Create a new sorting profile rule.
  * 
  * @param {HTMLDivElement} next optional.
  */
-
-
 exports.changeToCustom = changeToCustom;
-
 var createProfileRule = function createProfileRule() {
   var next = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
   var new_rule = document.createElement("div");
@@ -15373,31 +15224,30 @@ var createProfileRule = function createProfileRule() {
     } else if (sort_dir.classList.contains("down")) {
       sort_dir.classList.replace("down", "up");
     }
-
     if (getSelectedProfileName() === "Default") changeToCustom();
     memoria_list_api.updateList();
     updateProfile();
     memoria_list_api.applyProfileToList(memoria_list_api.getListId(), getSelectedProfileId());
-  }); // update the list on sort form change.
+  });
 
+  // update the list on sort form change.
   [state_select, type_select].forEach(function (element) {
     element.addEventListener("change", function () {
       if (getSelectedProfileName() === "Default") changeToCustom();
-
       if (state_select.value && type_select.value) {
         memoria_list_api.updateList();
         updateProfile();
         memoria_list_api.applyProfileToList(memoria_list_api.getListId(), getSelectedProfileId());
       }
     });
-  }); // disable group or id level.
+  });
 
+  // disable group or id level.
   state_select.addEventListener("change", function () {
     if (state_select.value === "group") {
       if (type_select.value === "memoria_id" || type_select.value === "level") {
         type_select.selectedIndex = -1;
       }
-
       type_select.options[3].disabled = true;
       type_select.options[7].disabled = true;
     } else {
@@ -15410,23 +15260,20 @@ var createProfileRule = function createProfileRule() {
       if (state_select.value === "group") {
         state_select.selectedIndex = -1;
       }
-
       state_select.options[1].disabled = true;
     } else state_select.options[1].disabled = false;
   });
   if (next !== null) next.after(new_rule);else profile_rules.append(new_rule);
   return new_rule;
 };
+
 /**
  * Loads the rule with the settings.
  * 
  * @param {String} ruleId 
  * @param {Object} settings 
  */
-
-
 exports.createProfileRule = createProfileRule;
-
 var loadRule = function loadRule(ruleId, settings) {
   var rule = createProfileRule();
   var state_select = rule.querySelector(".state_select");
@@ -15436,36 +15283,30 @@ var loadRule = function loadRule(ruleId, settings) {
   state_select.value = settings.state;
   type_select.value = settings.type;
   if (settings.direction == 1 && sort_dir.classList.contains("down")) sort_dir.classList.replace("down", "up");else if (settings.direction == -1 && sort_dir.classList.contains("up")) sort_dir.classList.replace("up", "down");
-
   if (state_select.value === "group") {
     if (type_select.value === "memoria_id" || type_select.value === "level") {
       type_select.selectedIndex = -1;
     }
-
     type_select.options[3].disabled = true;
     type_select.options[7].disabled = true;
   } else {
     type_select.options[3].disabled = false;
     type_select.options[7].disabled = false;
   }
-
   if (type_select.value === "memoria_id" || type_select.value === "level") {
     if (state_select.value === "group") {
       state_select.selectedIndex = -1;
     }
-
     state_select.options[1].disabled = true;
   } else state_select.options[1].disabled = false;
 };
+
 /**
  * Loads all the rules for the profile.
  * 
  * @param {String} profileId 
  */
-
-
 exports.loadRule = loadRule;
-
 var loadsRules = function loadsRules(profileId) {
   if (!storage_api.profiles[profileId].rules) return;
   profile_rules.innerHTML = "";
@@ -15473,50 +15314,35 @@ var loadsRules = function loadsRules(profileId) {
     return a[1].index > b[1].index ? 1 : -1;
   }).forEach(function (_ref5) {
     var _ref6 = (0, _slicedToArray2["default"])(_ref5, 2),
-        ruleId = _ref6[0],
-        settings = _ref6[1];
-
+      ruleId = _ref6[0],
+      settings = _ref6[1];
     loadRule(ruleId, settings);
   });
-
   if (profile_rules.children.length > 0) {
     var first_rule = profile_rules.children[0].querySelector(".delete");
     if (profile_rules.children.length === 1 && !first_rule.disabled) first_rule.disabled = true;
   }
 };
-
 exports.loadsRules = loadsRules;
 
-},{"./memoria_elements.js":6,"./memoria_list_api.js":7,"./storage_api.js":9,"@babel/runtime/helpers/interopRequireDefault":21,"@babel/runtime/helpers/slicedToArray":28,"@babel/runtime/helpers/typeof":30}],9:[function(require,module,exports){
+},{"./memoria_elements.js":6,"./memoria_list_api.js":7,"./storage_api.js":9,"@babel/runtime/helpers/interopRequireDefault":22,"@babel/runtime/helpers/slicedToArray":29,"@babel/runtime/helpers/typeof":33}],9:[function(require,module,exports){
 "use strict";
 
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
-
 var _typeof = require("@babel/runtime/helpers/typeof");
-
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.updateSettings = exports.deleteProfile = exports.updateProfile = exports.createProfile = exports.deleteMemoriaOfList = exports.updateMemoriaOfList = exports.addMemoriaToList = exports.manualCreateList = exports.duplicateList = exports.deleteList = exports.updateListBackground = exports.updateListProfile = exports.updateListList = exports.updateList = exports.renameList = exports.createList = exports.listExists = exports.startUp = exports.settings = exports.lists = exports.profiles = void 0;
-
+exports.updateSettings = exports.updateProfile = exports.updateMemoriaOfList = exports.updateListProfile = exports.updateListList = exports.updateListBackground = exports.updateList = exports.startUp = exports.settings = exports.renameList = exports.profiles = exports.manualCreateList = exports.lists = exports.listExists = exports.duplicateList = exports.deleteProfile = exports.deleteMemoriaOfList = exports.deleteList = exports.createProfile = exports.createList = exports.addMemoriaToList = void 0;
 var _defineProperty2 = _interopRequireDefault(require("@babel/runtime/helpers/defineProperty"));
-
 var _slicedToArray2 = _interopRequireDefault(require("@babel/runtime/helpers/slicedToArray"));
-
 var _memoria_elements = require("./memoria_elements.js");
-
 var background_api = _interopRequireWildcard(require("./background_api.js"));
-
 var memoria_api = _interopRequireWildcard(require("./memoria_api.js"));
-
 var memoria_list_api = _interopRequireWildcard(require("./memoria_list_api.js"));
-
 var database_api = _interopRequireWildcard(require("../../shared/js/database_api.js"));
-
 var profile_api = _interopRequireWildcard(require("./profile_api.js"));
-
 var utils = _interopRequireWildcard(require("../../shared/js/utils.js"));
-
 function _getRequireWildcardCache(nodeInterop) {
   if (typeof WeakMap !== "function") return null;
   var cacheBabelInterop = new WeakMap();
@@ -15525,31 +15351,24 @@ function _getRequireWildcardCache(nodeInterop) {
     return nodeInterop ? cacheNodeInterop : cacheBabelInterop;
   })(nodeInterop);
 }
-
 function _interopRequireWildcard(obj, nodeInterop) {
   if (!nodeInterop && obj && obj.__esModule) {
     return obj;
   }
-
   if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") {
     return {
       "default": obj
     };
   }
-
   var cache = _getRequireWildcardCache(nodeInterop);
-
   if (cache && cache.has(obj)) {
     return cache.get(obj);
   }
-
   var newObj = {};
   var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;
-
   for (var key in obj) {
     if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) {
       var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;
-
       if (desc && (desc.get || desc.set)) {
         Object.defineProperty(newObj, key, desc);
       } else {
@@ -15557,57 +15376,36 @@ function _interopRequireWildcard(obj, nodeInterop) {
       }
     }
   }
-
   newObj["default"] = obj;
-
   if (cache) {
     cache.set(obj, newObj);
   }
-
   return newObj;
 }
-
 function ownKeys(object, enumerableOnly) {
   var keys = Object.keys(object);
-
   if (Object.getOwnPropertySymbols) {
     var symbols = Object.getOwnPropertySymbols(object);
-
-    if (enumerableOnly) {
-      symbols = symbols.filter(function (sym) {
-        return Object.getOwnPropertyDescriptor(object, sym).enumerable;
-      });
-    }
-
-    keys.push.apply(keys, symbols);
+    enumerableOnly && (symbols = symbols.filter(function (sym) {
+      return Object.getOwnPropertyDescriptor(object, sym).enumerable;
+    })), keys.push.apply(keys, symbols);
   }
-
   return keys;
 }
-
 function _objectSpread(target) {
   for (var i = 1; i < arguments.length; i++) {
-    var source = arguments[i] != null ? arguments[i] : {};
-
-    if (i % 2) {
-      ownKeys(Object(source), true).forEach(function (key) {
-        (0, _defineProperty2["default"])(target, key, source[key]);
-      });
-    } else if (Object.getOwnPropertyDescriptors) {
-      Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
-    } else {
-      ownKeys(Object(source)).forEach(function (key) {
-        Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
-      });
-    }
+    var source = null != arguments[i] ? arguments[i] : {};
+    i % 2 ? ownKeys(Object(source), !0).forEach(function (key) {
+      (0, _defineProperty2["default"])(target, key, source[key]);
+    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) {
+      Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
+    });
   }
-
   return target;
 }
 /**
  * Storage API for the Memoria Page.
  */
-
 
 var profiles = {};
 exports.profiles = profiles;
@@ -15616,12 +15414,12 @@ exports.lists = lists;
 var settings = {};
 exports.settings = settings;
 var userId = null;
+
 /* ------------------------------ Start Up ------------------------------ */
 
 /**
  * Sets the user id, then loads the message or loads everything else.
  */
-
 var startUp = function startUp(user) {
   userId = user.uid;
   loadUserName();
@@ -15636,42 +15434,36 @@ var startUp = function startUp(user) {
     }
   });
 };
+
 /**
  * Loads the user's name.
  */
-
-
 exports.startUp = startUp;
-
 var loadUserName = function loadUserName() {
   database_api.onAuthStateChanged(function (user) {
     var name = user && user.displayName ? user.displayName : "Anonymous";
     _memoria_elements.memoria_elements.header_username.innerHTML = "Welcome " + name;
   });
 };
+
 /**
  * Loads the settings.
  * 
  */
-
-
 var loadSettings = function loadSettings(snapshot) {
-  exports.settings = settings = snapshot.val() ? snapshot.val() : {}; // init expanded tabs
-
+  exports.settings = settings = snapshot.val() ? snapshot.val() : {};
+  // init expanded tabs
   if (!settings.expanded_tabs) database_api.initSettings(userId);
-  if (!settings.memoria_displays_per_row) settings.memoria_displays_per_row = 16; // expand tabs
-
+  if (!settings.memoria_displays_per_row) settings.memoria_displays_per_row = 16;
+  // expand tabs
   Object.entries(settings.expanded_tabs).forEach(function (_ref) {
     var _ref2 = (0, _slicedToArray2["default"])(_ref, 2),
-        tab_id = _ref2[0],
-        expanded = _ref2[1];
-
+      tab_id = _ref2[0],
+      expanded = _ref2[1];
     var tab = document.querySelector("#".concat(tab_id));
-
     if (tab) {
       var tab_contents = tab.querySelector(".tab_contents");
       var tab_toggle = tab.querySelector(".tab_toggle");
-
       if (expanded) {
         if (tab_contents.classList.contains("hidden")) tab_contents.classList.remove("hidden");
         if (tab_toggle.classList.contains("right")) tab_toggle.classList.replace("right", "down");
@@ -15680,8 +15472,8 @@ var loadSettings = function loadSettings(snapshot) {
         if (tab_toggle.classList.contains("down")) tab_toggle.classList.replace("down", "right");
       }
     }
-  }); // display settings
-
+  });
+  // display settings
   _memoria_elements.memoria_elements.memoria_list_content.style.zoom = settings.memoria_zoom / 100;
   _memoria_elements.memoria_elements.zoom_range.value = settings.memoria_zoom;
   _memoria_elements.memoria_elements.zoom_field.value = settings.memoria_zoom;
@@ -15695,31 +15487,32 @@ var loadSettings = function loadSettings(snapshot) {
   _memoria_elements.memoria_elements.display_padding_top_field.value = settings.padding_top;
   _memoria_elements.memoria_elements.display_padding_left_field.value = settings.padding_left;
   _memoria_elements.memoria_elements.display_padding_right_field.value = settings.padding_right;
-  _memoria_elements.memoria_elements.display_padding_bottom_field.value = settings.padding_bottom; // background settings
+  _memoria_elements.memoria_elements.display_padding_bottom_field.value = settings.padding_bottom;
 
+  // background settings
   if (!settings.background_transparency) settings.background_transparency = 0;
   _memoria_elements.memoria_elements.background_transparency_range.value = settings.background_transparency;
-  _memoria_elements.memoria_elements.background_transparency_field.value = settings.background_transparency; // theme
+  _memoria_elements.memoria_elements.background_transparency_field.value = settings.background_transparency;
 
+  // theme
   utils.setTheme(settings.theme);
 };
+
 /**
  * Loads the profiles.
  * 
  */
-
-
 var loadProfiles = function loadProfiles(snapshot) {
   // get the previous profile.
-  var previous = profile_api.getSelectedProfileId(); // get the settings.
-
+  var previous = profile_api.getSelectedProfileId();
+  // get the settings.
   var val = snapshot.val();
   var filtered = Object.keys(val).filter(function (key) {
     return val[key].type == "memoria";
   }).reduce(function (obj, key) {
     return _objectSpread(_objectSpread({}, obj), {}, (0, _defineProperty2["default"])({}, key, val[key]));
-  }, {}); // add index property if undefined.
-
+  }, {});
+  // add index property if undefined.
   Object.values(filtered).forEach(function (profile) {
     if (profile.rules) {
       Object.values(profile.rules).forEach(function (rule, index) {
@@ -15727,16 +15520,15 @@ var loadProfiles = function loadProfiles(snapshot) {
       });
     }
   });
-  exports.profiles = profiles = filtered; // update the profile select.
-
+  exports.profiles = profiles = filtered;
+  // update the profile select.
   profile_api.setProfiles(profiles, previous);
 };
+
 /**
  * Loads the lists.
  * 
  */
-
-
 var loadLists = function loadLists(snapshot) {
   var val = snapshot.val() ? snapshot.val() : {};
   var filtered = Object.keys(val).filter(function (key) {
@@ -15747,36 +15539,32 @@ var loadLists = function loadLists(snapshot) {
   exports.lists = lists = filtered;
   memoria_list_api.setLists(lists);
 };
+
 /**
  * Loads the message.
  */
-
-
 var loadMessage = function loadMessage(message) {
   if (message !== false) {
     _memoria_elements.messageDialog.open("Message", message);
   }
 };
+
 /* ------------------------------ Lists ------------------------------ */
 
 /**
  * Check if list with name name exists.
  */
-
-
 var listExists = function listExists(name) {
   if (Object.entries(lists).some(function (key, list) {
     return list.name === name;
   })) return true;
   return false;
 };
+
 /**
  * Create new List of name name.
  */
-
-
 exports.listExists = listExists;
-
 var createList = function createList(name) {
   database_api.createList(userId, {
     name: name,
@@ -15785,34 +15573,28 @@ var createList = function createList(name) {
     selectedBackground: false
   });
 };
+
 /**
  * Rename the List listId with name name.
  */
-
-
 exports.createList = createList;
-
 var renameList = function renameList(listId, name) {
   if (lists[listId].name != name) database_api.setListProperty(userId, listId, "name", name);
 };
+
 /**
  * Update the list listId.
  */
-
-
 exports.renameList = renameList;
-
 var updateList = function updateList(listId, name, memoriaList, selectedProfile, selectedBackground) {
   if (memoriaList && Object.keys(memoriaList).length > 0) {
     Object.entries(memoriaList).forEach(function (_ref3) {
       var _ref4 = (0, _slicedToArray2["default"])(_ref3, 2),
-          key = _ref4[0],
-          value = _ref4[1];
-
+        key = _ref4[0],
+        value = _ref4[1];
       return memoriaList[key] = memoria_api.sanitizeMemoria(value);
     });
   } else memoriaList = false;
-
   if (!selectedBackground) selectedBackground = false;
   database_api.updateList(userId, listId, {
     name: name,
@@ -15821,53 +15603,43 @@ var updateList = function updateList(listId, name, memoriaList, selectedProfile,
     selectedBackground: selectedBackground
   });
 };
+
 /**
  * Updates the memoriaList of list listId with content.
  */
-
-
 exports.updateList = updateList;
-
 var updateListList = function updateListList(listId, content) {
   database_api.setListProperty(userId, listId, "memoriaList", content);
 };
+
 /**
  * Updates the profile of list listId with profile profileId.
  */
-
-
 exports.updateListList = updateListList;
-
 var updateListProfile = function updateListProfile(listId, profileId) {
   if (lists[listId].selectedProfile != profileId) database_api.setListProperty(userId, listId, "selectedProfile", profileId);
 };
+
 /**
  * Updates the background of list listId with background backgroundId.
  */
-
-
 exports.updateListProfile = updateListProfile;
-
 var updateListBackground = function updateListBackground(listId, backgroundId) {
   if (lists[listId].selectedBackground != backgroundId) database_api.setListProperty(userId, listId, "selectedBackground", backgroundId);
 };
+
 /**
  * Deletes the list listId.
  */
-
-
 exports.updateListBackground = updateListBackground;
-
 var deleteList = function deleteList(listId) {
   database_api.deleteList(userId, listId);
 };
+
 /**
  * Duplicates list with name newName.
  */
-
-
 exports.deleteList = deleteList;
-
 var duplicateList = function duplicateList(list, newName) {
   var selectedProfile = profile_api.getSelectedProfileId() || "10";
   var selectedBackground = background_api.getSelectedBackground() || false;
@@ -15878,13 +15650,11 @@ var duplicateList = function duplicateList(list, newName) {
     selectedBackground: selectedBackground
   });
 };
+
 /**
  * Create and new list with all the parameters passed in.
  */
-
-
 exports.duplicateList = duplicateList;
-
 var manualCreateList = function manualCreateList(name, memoriaList, selectedProfile, selectedBackground) {
   database_api.createList(userId, {
     name: name,
@@ -15893,48 +15663,40 @@ var manualCreateList = function manualCreateList(name, memoriaList, selectedProf
     selectedBackground: selectedBackground
   });
 };
+
 /**
  * Added the memoria memoria to the list listId.
  */
-
-
 exports.manualCreateList = manualCreateList;
-
 var addMemoriaToList = function addMemoriaToList(listId, memoria) {
   var newMemoria = {};
   if (memoria._id) newMemoria[memoria._id] = memoria_api.sanitizeMemoria(_objectSpread({}, memoria));else newMemoria[generatePushID()] = memoria_api.sanitizeMemoria(_objectSpread({}, memoria));
   database_api.updateListProperty(userId, listId, "memoriaList", newMemoria);
 };
+
 /**
  * Updates the memoria memoriaDisplayId with memoria memoria of list listId.
  */
-
-
 exports.addMemoriaToList = addMemoriaToList;
-
 var updateMemoriaOfList = function updateMemoriaOfList(listId, memoriaDisplayId, memoria) {
   var newMemoria = (0, _defineProperty2["default"])({}, memoriaDisplayId, memoria);
   database_api.updateListProperty(userId, listId, "memoriaList", newMemoria);
 };
+
 /**
  * Delete the memoria memoriaDisplayId of list listId.
  */
-
-
 exports.updateMemoriaOfList = updateMemoriaOfList;
-
 var deleteMemoriaOfList = function deleteMemoriaOfList(listId, memoriaDisplayId) {
   database_api.deleteListItem(userId, listId, "memoriaList", memoriaDisplayId);
 };
+
 /* ------------------------------ Profiles ------------------------------ */
 
 /**
  * Create a new memoria profile with name name and settings settings.
  */
-
-
 exports.deleteMemoriaOfList = deleteMemoriaOfList;
-
 var createProfile = function createProfile(name, rules) {
   database_api.createProfile(userId, {
     name: name,
@@ -15942,13 +15704,11 @@ var createProfile = function createProfile(name, rules) {
     rules: rules
   });
 };
+
 /**
  * Updates the profile profileId with settings settings.
  */
-
-
 exports.createProfile = createProfile;
-
 var updateProfile = function updateProfile(profileId, rules) {
   database_api.updateProfile(userId, profileId, {
     name: profiles[profileId].name,
@@ -15956,45 +15716,39 @@ var updateProfile = function updateProfile(profileId, rules) {
     rules: rules
   });
 };
+
 /**
  * Deletes profile profileId and updates the profiles of all other lists to default.
  */
-
-
 exports.updateProfile = updateProfile;
-
 var deleteProfile = function deleteProfile(profileId) {
   database_api.deleteProfile(userId, profileId);
   Object.entries(lists).forEach(function (_ref5) {
     var _ref6 = (0, _slicedToArray2["default"])(_ref5, 2),
-        listId = _ref6[0],
-        list = _ref6[1];
-
+      listId = _ref6[0],
+      list = _ref6[1];
     if (list.selectedProfile === profileId) updateListProfile(listId, "10");
   });
 };
+
 /* ------------------------------ Settings ------------------------------ */
 
 /**
  * Updates the setting settingsName with settings newSettings.
  */
-
-
 exports.deleteProfile = deleteProfile;
-
 var updateSettings = function updateSettings(settingName, newSettings) {
   database_api.updateSettings(userId, settingName, newSettings);
 };
-
 exports.updateSettings = updateSettings;
 
-},{"../../shared/js/database_api.js":10,"../../shared/js/utils.js":12,"./background_api.js":3,"./memoria_api.js":5,"./memoria_elements.js":6,"./memoria_list_api.js":7,"./profile_api.js":8,"@babel/runtime/helpers/defineProperty":18,"@babel/runtime/helpers/interopRequireDefault":21,"@babel/runtime/helpers/slicedToArray":28,"@babel/runtime/helpers/typeof":30}],10:[function(require,module,exports){
+},{"../../shared/js/database_api.js":10,"../../shared/js/utils.js":12,"./background_api.js":3,"./memoria_api.js":5,"./memoria_elements.js":6,"./memoria_list_api.js":7,"./profile_api.js":8,"@babel/runtime/helpers/defineProperty":19,"@babel/runtime/helpers/interopRequireDefault":22,"@babel/runtime/helpers/slicedToArray":29,"@babel/runtime/helpers/typeof":33}],10:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.onMessageUpdate = exports.onceMessageUpdate = exports.deleteListImage = exports.updateListImage = exports.onSettingUpdate = exports.initSettings = exports.getSettings = exports.updateSettings = exports.onProfileUpdate = exports.deleteProfile = exports.updateProfile = exports.createProfile = exports.getProfiles = exports.onListUpdate = exports.deleteList = exports.deleteListItem = exports.updateListProperty = exports.setListProperty = exports.updateList = exports.createList = exports.getLists = exports.updateUserRecentActivity = exports.updateUserSignInCount = exports.updateUserDetails = exports.onUserUpdate = exports.removeUserProperty = exports.setUserProperty = exports.appendUser = exports.updateUser = exports.getUser = exports.deleteUser = exports.createUser = exports.sendEmailVerification = exports.resetPassword = exports.sessionTimeout = exports.onAuthStateChanged = exports.signout = exports.signInAnonymously = exports.signup = exports.signin = void 0;
+exports.updateUserSignInCount = exports.updateUserRecentActivity = exports.updateUserDetails = exports.updateUser = exports.updateSettings = exports.updateProfile = exports.updateListProperty = exports.updateListImage = exports.updateList = exports.signup = exports.signout = exports.signin = exports.signInAnonymously = exports.setUserProperty = exports.setListProperty = exports.sessionTimeout = exports.sendEmailVerification = exports.resetPassword = exports.removeUserProperty = exports.onceMessageUpdate = exports.onUserUpdate = exports.onSettingUpdate = exports.onProfileUpdate = exports.onMessageUpdate = exports.onListUpdate = exports.onAuthStateChanged = exports.initSettings = exports.getUser = exports.getSettings = exports.getProfiles = exports.getLists = exports.deleteUser = exports.deleteProfile = exports.deleteListItem = exports.deleteListImage = exports.deleteList = exports.createUser = exports.createProfile = exports.createList = exports.appendUser = void 0;
 var config = {
   apiKey: "AIzaSyCDOhFHwY8BHUafRA4hvAT7GISB72bUrhQ",
   authDomain: "magia-record-25fb0.firebaseapp.com",
@@ -16002,18 +15756,19 @@ var config = {
   databaseURL: "https://magia-record-25fb0.firebaseio.com",
   storageBucket: "magia-record-25fb0.appspot.com"
 };
-firebase.initializeApp(config); // Get a reference to the database service.
+firebase.initializeApp(config);
 
+// Get a reference to the database service.
 var db = firebase.database().ref();
 var users = db.child("users");
 var userDetails = db.child("userDetails");
 var lists = db.child("lists");
 var profiles = db.child("profiles");
 var settings = db.child("settings");
-var messages = db.child("messages"); // Get a reference to the storage service.
+var messages = db.child("messages");
 
+// Get a reference to the storage service.
 var storage = firebase.storage().ref();
-
 var signin = function signin(email, password, loginHandler, errorHandler) {
   firebase.auth().signInWithEmailAndPassword(email, password).then(function (userCreds) {
     updateUserDetails(userCreds.user.uid, "lastSignIn", "User");
@@ -16022,9 +15777,7 @@ var signin = function signin(email, password, loginHandler, errorHandler) {
     return errorHandler(error.message);
   });
 };
-
 exports.signin = signin;
-
 var signup = function signup(name, email, password, loginHandler, errorHandler) {
   firebase.auth().createUserWithEmailAndPassword(email, password).then(function (userCreds) {
     updateUserDetails(userCreds.user.uid, "signUp", "Email");
@@ -16033,9 +15786,7 @@ var signup = function signup(name, email, password, loginHandler, errorHandler) 
     return errorHandler(error.message);
   });
 };
-
 exports.signup = signup;
-
 var signInAnonymously = function signInAnonymously(loginHandler, errorHandler) {
   firebase.auth().signInAnonymously().then(function (userCreds) {
     updateUserDetails(userCreds.user.uid, "signUp", "Anonymous");
@@ -16044,17 +15795,13 @@ var signInAnonymously = function signInAnonymously(loginHandler, errorHandler) {
     return errorHandler(error);
   });
 };
-
 exports.signInAnonymously = signInAnonymously;
-
 var signout = function signout(details, userId) {
   var user = firebase.auth().currentUser;
   if (!details) details = "User";
   if (user && user.uid) updateUserDetails(user.uid, "lastSignOut", details, signOutRedirect);else if (userId) updateUserDetails(userId, "lastSignOut", details, signOutRedirect);
 };
-
 exports.signout = signout;
-
 var signOutRedirect = function signOutRedirect() {
   firebase.auth().signOut().then(function () {
     if (window.location.pathname != "/magireco/") window.location.href = "/magireco/";
@@ -16062,21 +15809,17 @@ var signOutRedirect = function signOutRedirect() {
     console.error(error);
   });
 };
-
 var onAuthStateChanged = function onAuthStateChanged(callback) {
   firebase.auth().onAuthStateChanged(function (user) {
     sessionTimeout(user, callback);
   });
 };
-
 exports.onAuthStateChanged = onAuthStateChanged;
-
 var sessionTimeout = function sessionTimeout(user, callback) {
   // let user = firebase.auth().currentUser;
   if (user && !user.isAnonymous) {
     // https://stackoverflow.com/a/58899511/7627317
     var userSessionTimeout = null;
-
     if (user === null && userSessionTimeout) {
       clearTimeout(userSessionTimeout);
       userSessionTimeout = null;
@@ -16085,11 +15828,9 @@ var sessionTimeout = function sessionTimeout(user, callback) {
       user.getIdTokenResult().then(function (idTokenResult) {
         var authTime = idTokenResult.claims.auth_time * 1000;
         var sessionDurationInMilliseconds = 3 * 60 * 60 * 1000; // 3 hours
-
-        var expirationInMilliseconds = sessionDurationInMilliseconds - (Date.now() - authTime);
+        var expirationInMilliseconds = Math.max(0, sessionDurationInMilliseconds - (Date.now() - authTime));
         if (expirationInMilliseconds > 1000) callback(user);
         userSessionTimeout = setTimeout(function () {
-          console.log(expirationInMilliseconds, "milliseconds until auto sign out.");
           signout("Session Timeout", user.uid);
         }, expirationInMilliseconds);
       });
@@ -16098,25 +15839,20 @@ var sessionTimeout = function sessionTimeout(user, callback) {
     return callback(user);
   }
 };
-
 exports.sessionTimeout = sessionTimeout;
-
 var resetPassword = function resetPassword(emailAddress, resolve, reject) {
   firebase.auth().sendPasswordResetEmail(emailAddress).then(resolve)["catch"](reject);
 };
-
 exports.resetPassword = resetPassword;
-
 var sendEmailVerification = function sendEmailVerification(resolve, reject, details) {
   var user = firebase.auth().currentUser;
   details = details ? details : "User";
   updateUserDetails(user.uid, "sendEmailVerification", details);
   user.sendEmailVerification().then(resolve)["catch"](reject);
-}; // ---------- users ---------- //
+};
 
-
+// ---------- users ---------- //
 exports.sendEmailVerification = sendEmailVerification;
-
 var createUser = function createUser(userId, name) {
   users.child(userId).update({
     name: name
@@ -16125,54 +15861,39 @@ var createUser = function createUser(userId, name) {
   profiles.child(userId).update(defaultProfiles);
   settings.child(userId).set(defaultSettings);
 };
-
 exports.createUser = createUser;
-
 var deleteUser = function deleteUser(userId) {
   users.child(userId).remove();
   lists.child(userId).remove();
   profiles.child(userId).remove();
   settings.child(userId).remove();
 };
-
 exports.deleteUser = deleteUser;
-
 var getUser = function getUser(userId) {
   return users.child(userId).once('value');
 };
-
 exports.getUser = getUser;
-
 var updateUser = function updateUser(userId, userProperty, content) {
   return users.child("".concat(userId, "/").concat(userProperty)).update(content);
 };
-
 exports.updateUser = updateUser;
-
 var appendUser = function appendUser(userId, userProperty, content) {
   return users.child("".concat(userId, "/").concat(userProperty)).push(content);
 };
-
 exports.appendUser = appendUser;
-
 var setUserProperty = function setUserProperty(userId, userProperty, content) {
   return users.child("".concat(userId, "/").concat(userProperty)).set(content);
 };
-
 exports.setUserProperty = setUserProperty;
-
 var removeUserProperty = function removeUserProperty(userId, userProperty) {
   return users.child("".concat(userId, "/").concat(userProperty)).remove();
 };
-
 exports.removeUserProperty = removeUserProperty;
-
 var onUserUpdate = function onUserUpdate(userId, callback) {
   users.child(userId).on('value', function (snapshot) {
     callback(snapshot);
   });
 };
-
 exports.onUserUpdate = onUserUpdate;
 var typeToEvent = {
   signUp: "Sign Up",
@@ -16180,7 +15901,6 @@ var typeToEvent = {
   lastSignOut: "Sign Out",
   sendEmailVerification: "Send Email Verification"
 };
-
 var updateUserDetails = function updateUserDetails(userId, type, details, callback) {
   var activity = {
     details: details,
@@ -16191,22 +15911,17 @@ var updateUserDetails = function updateUserDetails(userId, type, details, callba
   updateUserRecentActivity(userId, activity, callback);
   if (type === "lastSignIn") updateUserSignInCount(userId);
 };
-
 exports.updateUserDetails = updateUserDetails;
-
 var updateUserSignInCount = function updateUserSignInCount(userId) {
   userDetails.child("".concat(userId, "/signInCount")).once('value', function (snapshot) {
     var count = snapshot.val();
     if (count || count === 0) userDetails.child("".concat(userId, "/signInCount")).set(count + 1);else userDetails.child("".concat(userId, "/signInCount")).set(1);
   });
 };
-
 exports.updateUserSignInCount = updateUserSignInCount;
-
 var updateUserRecentActivity = function updateUserRecentActivity(userId, newActivity, callback) {
   userDetails.child("".concat(userId, "/recentActivity")).once('value', function (snapshot) {
     var activity = snapshot.val();
-
     if (activity && activity.length >= 5) {
       activity.shift();
       activity.push(newActivity);
@@ -16215,13 +15930,12 @@ var updateUserRecentActivity = function updateUserRecentActivity(userId, newActi
     } else {
       activity = [newActivity];
     }
-
     userDetails.child("".concat(userId, "/recentActivity")).set(activity);
     if (callback) callback();
   });
-}; // ---------- character lists ---------- //
+};
 
-
+// ---------- character lists ---------- //
 exports.updateUserRecentActivity = updateUserRecentActivity;
 var defaultLists = {};
 var listId = generatePushID();
@@ -16257,56 +15971,41 @@ defaultLists[memoListId].memoriaList[memoId] = {
   archive: false,
   protect: false
 };
-
 var getLists = function getLists(userId) {
   return lists.child(userId).once('value');
 };
-
 exports.getLists = getLists;
-
 var createList = function createList(userId, content) {
   return lists.child(userId).push(content);
 };
-
 exports.createList = createList;
-
 var updateList = function updateList(userId, listId, content) {
   return lists.child("".concat(userId, "/").concat(listId)).set(content);
 };
-
 exports.updateList = updateList;
-
 var setListProperty = function setListProperty(userId, listId, propertyName, content) {
   return lists.child("".concat(userId, "/").concat(listId, "/").concat(propertyName)).set(content);
 };
-
 exports.setListProperty = setListProperty;
-
 var updateListProperty = function updateListProperty(userId, listId, propertyName, content) {
   return lists.child("".concat(userId, "/").concat(listId, "/").concat(propertyName)).update(content);
 };
-
 exports.updateListProperty = updateListProperty;
-
 var deleteListItem = function deleteListItem(userId, listId, listProperty, content) {
   return lists.child("".concat(userId, "/").concat(listId, "/").concat(listProperty, "/").concat(content)).remove();
 };
-
 exports.deleteListItem = deleteListItem;
-
 var deleteList = function deleteList(userId, listId) {
   return lists.child("".concat(userId, "/").concat(listId)).remove();
 };
-
 exports.deleteList = deleteList;
-
 var onListUpdate = function onListUpdate(userId, callback) {
   lists.child(userId).on('value', function (snapshot) {
     callback(snapshot);
   });
-}; // ---------- profiles ---------- //
+};
 
-
+// ---------- profiles ---------- //
 exports.onListUpdate = onListUpdate;
 var defaultProfiles = {
   "0": {
@@ -16362,38 +16061,29 @@ var defaultProfiles = {
     settings: false
   }
 };
-
 var getProfiles = function getProfiles(userId) {
   return profiles.child(userId).once('value');
 };
-
 exports.getProfiles = getProfiles;
-
 var createProfile = function createProfile(userId, content) {
   return profiles.child("".concat(userId)).push(content);
 };
-
 exports.createProfile = createProfile;
-
 var updateProfile = function updateProfile(userId, profileId, content) {
   return profiles.child("".concat(userId, "/").concat(profileId)).set(content);
 };
-
 exports.updateProfile = updateProfile;
-
 var deleteProfile = function deleteProfile(userId, profileId) {
   return profiles.child("".concat(userId, "/").concat(profileId)).remove();
 };
-
 exports.deleteProfile = deleteProfile;
-
 var onProfileUpdate = function onProfileUpdate(userId, callback) {
   profiles.child(userId).on('value', function (snapshot) {
     callback(snapshot);
   });
-}; // ---------- settings ---------- //
+};
 
-
+// ---------- settings ---------- //
 exports.onProfileUpdate = onProfileUpdate;
 var defaultSettings = {
   expanded_tabs: {
@@ -16419,56 +16109,43 @@ var defaultSettings = {
   memoria_zoom: 100,
   background_transparency: 0
 };
-
 var updateSettings = function updateSettings(userId, settingName, content) {
   return settings.child("".concat(userId, "/").concat(settingName)).set(content);
 };
-
 exports.updateSettings = updateSettings;
-
 var getSettings = function getSettings(userId) {
   return settings.child(userId).once('value');
 };
-
 exports.getSettings = getSettings;
-
 var initSettings = function initSettings(userId) {
   return settings.child(userId).set(defaultSettings);
 };
-
 exports.initSettings = initSettings;
-
 var onSettingUpdate = function onSettingUpdate(userId, callback) {
   settings.child(userId).on('value', function (snapshot) {
     callback(snapshot);
   });
-}; // ---------- storage bucket ---------- //
+};
 
-
+// ---------- storage bucket ---------- //
 exports.onSettingUpdate = onSettingUpdate;
-
 var updateListImage = function updateListImage(playerId, dataURL) {
   return storage.child("images/lists/".concat(playerId, ".png")).putString(dataURL, 'data_url');
 };
-
 exports.updateListImage = updateListImage;
-
 var deleteListImage = function deleteListImage(playerId) {
   return storage.child("images/lists/".concat(playerId, ".png"))["delete"]();
-}; // ---------- messages ---------- //
+};
 
-
+// ---------- messages ---------- //
 exports.deleteListImage = deleteListImage;
-
 var onceMessageUpdate = function onceMessageUpdate(userId, callback) {
   messages.child("global").once('value', function (snapshot) {
     var val = snapshot.val();
     if (val && val.message && !val.excludeUserIds.includes(userId)) callback(val.message, val.blocking);else callback(false);
   });
 };
-
 exports.onceMessageUpdate = onceMessageUpdate;
-
 var onMessageUpdate = function onMessageUpdate(userId, callback) {
   messages.child("global").on('value', function (snapshot) {
     var val = snapshot.val();
@@ -16479,54 +16156,41 @@ var onMessageUpdate = function onMessageUpdate(userId, callback) {
     if (val && val.message) callback(val.message, val.blocking);else callback(false);
   });
 };
-
 exports.onMessageUpdate = onMessageUpdate;
 
 },{}],11:[function(require,module,exports){
 "use strict";
 
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
-
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.ImportListDialog = exports.BackgroundSelectDialog = exports.CharacterSelectDialog = exports.SignOutDialog = exports.AlertDialog = exports.ContactDialog = exports.MessageDialog = exports.Dialog = void 0;
-
+exports.SignOutDialog = exports.MessageDialog = exports.ImportListDialog = exports.Dialog = exports.ContactDialog = exports.CharacterSelectDialog = exports.BackgroundSelectDialog = exports.AlertDialog = void 0;
 var _assertThisInitialized2 = _interopRequireDefault(require("@babel/runtime/helpers/assertThisInitialized"));
-
 var _inherits2 = _interopRequireDefault(require("@babel/runtime/helpers/inherits"));
-
 var _possibleConstructorReturn2 = _interopRequireDefault(require("@babel/runtime/helpers/possibleConstructorReturn"));
-
 var _getPrototypeOf2 = _interopRequireDefault(require("@babel/runtime/helpers/getPrototypeOf"));
-
+var _createClass2 = _interopRequireDefault(require("@babel/runtime/helpers/createClass"));
 var _classCallCheck2 = _interopRequireDefault(require("@babel/runtime/helpers/classCallCheck"));
-
 var _defineProperty2 = _interopRequireDefault(require("@babel/runtime/helpers/defineProperty"));
-
 function _createSuper(Derived) {
   var hasNativeReflectConstruct = _isNativeReflectConstruct();
-
   return function _createSuperInternal() {
     var Super = (0, _getPrototypeOf2["default"])(Derived),
-        result;
-
+      result;
     if (hasNativeReflectConstruct) {
       var NewTarget = (0, _getPrototypeOf2["default"])(this).constructor;
       result = Reflect.construct(Super, arguments, NewTarget);
     } else {
       result = Super.apply(this, arguments);
     }
-
     return (0, _possibleConstructorReturn2["default"])(this, result);
   };
 }
-
 function _isNativeReflectConstruct() {
   if (typeof Reflect === "undefined" || !Reflect.construct) return false;
   if (Reflect.construct.sham) return false;
   if (typeof Proxy === "function") return true;
-
   try {
     Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {}));
     return true;
@@ -16534,10 +16198,8 @@ function _isNativeReflectConstruct() {
     return false;
   }
 }
-
-var Dialog = function Dialog() {
+var Dialog = /*#__PURE__*/(0, _createClass2["default"])(function Dialog() {
   var _this2 = this;
-
   (0, _classCallCheck2["default"])(this, Dialog);
   (0, _defineProperty2["default"])(this, "isOpen", function () {
     return _this2.dialog.style.display === "block";
@@ -16546,8 +16208,9 @@ var Dialog = function Dialog() {
     return;
   });
   this.dialog = document.createElement("div");
-  this.dialog.style.display = "block"; // hide dialog if not drag
+  this.dialog.style.display = "block";
 
+  // hide dialog if not drag
   var dragging = false;
   window.addEventListener("mousedown", function (event) {
     var x = event.x;
@@ -16562,24 +16225,19 @@ var Dialog = function Dialog() {
   window.addEventListener("mouseup", function (event) {
     if (!dragging && event.target == _this2.dialog && _this2.isOpen()) _this2.close();
   });
-};
-
+});
 exports.Dialog = Dialog;
-
 var MessageDialog = /*#__PURE__*/function (_Dialog) {
   (0, _inherits2["default"])(MessageDialog, _Dialog);
-
   var _super = _createSuper(MessageDialog);
-
   function MessageDialog(_ref) {
     var _this3;
-
     var title = _ref.title,
-        text = _ref.text,
-        list = _ref.list,
-        copy = _ref.copy,
-        link_name = _ref.link_name,
-        link_target = _ref.link_target;
+      text = _ref.text,
+      list = _ref.list,
+      copy = _ref.copy,
+      link_name = _ref.link_name,
+      link_target = _ref.link_target;
     (0, _classCallCheck2["default"])(this, MessageDialog);
     _this3 = _super.call(this);
     (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this3), "close", function () {
@@ -16601,40 +16259,28 @@ var MessageDialog = /*#__PURE__*/function (_Dialog) {
     _this3.link = _this3.dialog.querySelector(".modal-link");
     _this3.list = _this3.dialog.querySelector(".modal-list");
     if (!text) _this3.text.style.display = "none";
-
     if (link_name) {
       _this3.link.innerHTML = link_name;
-
       _this3.link.setAttribute("href", link_target);
     } else _this3.link.style.display = "none";
-
     if (!copy) _this3.copyBtn.style.display = "none";
-
     _this3.closeBtn.addEventListener("click", function () {
       _this3.close();
     });
-
     _this3.copyBtn.addEventListener("click", function () {
       _this3.copy();
     });
-
     return _this3;
   }
-
-  return MessageDialog;
+  return (0, _createClass2["default"])(MessageDialog);
 }(Dialog);
-
 exports.MessageDialog = MessageDialog;
 ;
-
 var ContactDialog = /*#__PURE__*/function (_MessageDialog) {
   (0, _inherits2["default"])(ContactDialog, _MessageDialog);
-
   var _super2 = _createSuper(ContactDialog);
-
   function ContactDialog() {
     var _this4;
-
     (0, _classCallCheck2["default"])(this, ContactDialog);
     _this4 = _super2.call(this, {
       title: "Contact / Support",
@@ -16645,28 +16291,20 @@ var ContactDialog = /*#__PURE__*/function (_MessageDialog) {
     _this4.list.innerHTML = "\n    <p>For assistance, support, or feedback, please contact Leo Chan at</p>\n    <li>Discord: Leo_Chan#9150 or <a target=\"_blank\" href=\"https://discord.gg/magiarecord\">PMMM: Magia Record Discord Server</a></li>\n    <li>Reddit: <a target=\"_blank\" href=\"https://www.reddit.com/message/compose/?to=Leochan6\">u/Leochan6</a></li>\n    <p>For more information and how to use, <a target=\"_blank\" href=\"https://github.com/Leochan6/leochan6.github.io/blob/master/magireco/README.md\">check the README file</a></p>\n    <p>If the Navigation Buttons do not appear or the page is not loading, please clear your Cookies and Reload.";
     return _this4;
   }
-
-  return ContactDialog;
+  return (0, _createClass2["default"])(ContactDialog);
 }(MessageDialog);
-
 exports.ContactDialog = ContactDialog;
-
 var AlertDialog = /*#__PURE__*/function (_Dialog2) {
   (0, _inherits2["default"])(AlertDialog, _Dialog2);
-
   var _super3 = _createSuper(AlertDialog);
-
   function AlertDialog(_ref2, callback) {
     var _this5;
-
     var title = _ref2.title,
-        text = _ref2.text,
-        buttons = _ref2.buttons;
+      text = _ref2.text,
+      buttons = _ref2.buttons;
     (0, _classCallCheck2["default"])(this, AlertDialog);
     _this5 = _super3.call(this);
-
     var _this = (0, _assertThisInitialized2["default"])(_this5);
-
     _this5.dialog = document.createElement("div");
     _this5.dialog.className = "alert-modal modal";
     _this5.dialog.innerHTML = "    <div class=\"modal-content modal-fit-width modal-fit-height\">      <div class=\"modal-header\">        <h2 class=\"modal-title\">".concat(title !== null && title !== void 0 ? title : "Message", "</h2>        <button class=\"modal-close\">&times;</span>      </div>      <div class=\"horizontal-divider\"></div>\n      <div class=\"modal-main\">        <textarea class=\"modal-text form_input\" readonly>").concat(text !== null && text !== void 0 ? text : "", "</textarea>        <div class=\"modal-buttons\"></div>\n      </div>    </div>");
@@ -16677,47 +16315,35 @@ var AlertDialog = /*#__PURE__*/function (_Dialog2) {
     _this5.text = _this5.dialog.querySelector(".modal-text");
     _this5.buttons = _this5.dialog.querySelector(".modal-buttons");
     if (!text) _this5.text.style.display = "none";
-
     if (buttons) {
       Object.values(buttons).forEach(function (_ref3) {
         var text = _ref3.text,
-            res = _ref3.res;
+          res = _ref3.res;
         var button = document.createElement("button");
         button.innerHTML = text;
         button.className = "small_btn";
         button.addEventListener("click", function () {
           _this.close();
-
           callback(res);
         });
-
         _this5.buttons.appendChild(button);
       });
     }
-
     _this5.closeBtn.addEventListener("click", function () {
       _this.close();
-
       callback(false);
     });
-
     _this5.close = function () {
       _this5.dialog.remove();
     };
-
     return _this5;
   }
-
-  return AlertDialog;
+  return (0, _createClass2["default"])(AlertDialog);
 }(Dialog);
-
 exports.AlertDialog = AlertDialog;
-
 var SignOutDialog = /*#__PURE__*/function (_AlertDialog) {
   (0, _inherits2["default"])(SignOutDialog, _AlertDialog);
-
   var _super4 = _createSuper(SignOutDialog);
-
   function SignOutDialog(callback) {
     (0, _classCallCheck2["default"])(this, SignOutDialog);
     return _super4.call(this, {
@@ -16734,20 +16360,14 @@ var SignOutDialog = /*#__PURE__*/function (_AlertDialog) {
       }
     }, callback);
   }
-
-  return SignOutDialog;
+  return (0, _createClass2["default"])(SignOutDialog);
 }(AlertDialog);
-
 exports.SignOutDialog = SignOutDialog;
-
 var CharacterSelectDialog = /*#__PURE__*/function (_Dialog3) {
   (0, _inherits2["default"])(CharacterSelectDialog, _Dialog3);
-
   var _super5 = _createSuper(CharacterSelectDialog);
-
   function CharacterSelectDialog() {
     var _this6;
-
     (0, _classCallCheck2["default"])(this, CharacterSelectDialog);
     _this6 = _super5.call(this);
     _this6.dialog.className = "character-select-modal modal";
@@ -16759,25 +16379,17 @@ var CharacterSelectDialog = /*#__PURE__*/function (_Dialog3) {
     _this6.search = _this6.dialog.querySelector(".modal-search");
     _this6.added = _this6.dialog.querySelector("#added");
     _this6.list = _this6.dialog.querySelector(".modal-list");
-
     _this6.search.focus();
-
     return _this6;
   }
-
-  return CharacterSelectDialog;
+  return (0, _createClass2["default"])(CharacterSelectDialog);
 }(Dialog);
-
 exports.CharacterSelectDialog = CharacterSelectDialog;
-
 var BackgroundSelectDialog = /*#__PURE__*/function (_Dialog4) {
   (0, _inherits2["default"])(BackgroundSelectDialog, _Dialog4);
-
   var _super6 = _createSuper(BackgroundSelectDialog);
-
   function BackgroundSelectDialog(loadPreviews) {
     var _this7;
-
     (0, _classCallCheck2["default"])(this, BackgroundSelectDialog);
     _this7 = _super6.call(this);
     _this7.dialog.className = "background-select-modal modal";
@@ -16789,26 +16401,18 @@ var BackgroundSelectDialog = /*#__PURE__*/function (_Dialog4) {
     _this7.search = _this7.dialog.querySelector(".modal-search");
     _this7.added_checkbox = _this7.dialog.querySelector("#added_checkbox");
     _this7.list = _this7.dialog.querySelector(".modal-list");
-
     _this7.search.focus();
-
     loadPreviews();
     return _this7;
   }
-
-  return BackgroundSelectDialog;
+  return (0, _createClass2["default"])(BackgroundSelectDialog);
 }(Dialog);
-
 exports.BackgroundSelectDialog = BackgroundSelectDialog;
-
 var ImportListDialog = /*#__PURE__*/function (_Dialog5) {
   (0, _inherits2["default"])(ImportListDialog, _Dialog5);
-
   var _super7 = _createSuper(ImportListDialog);
-
   function ImportListDialog() {
     var _this8;
-
     (0, _classCallCheck2["default"])(this, ImportListDialog);
     _this8 = _super7.call(this);
     _this8.dialog.className = "import-list-modal modal";
@@ -16824,39 +16428,33 @@ var ImportListDialog = /*#__PURE__*/function (_Dialog5) {
     _this8.error = _this8.dialog.querySelector(".error_text");
     return _this8;
   }
-
-  return ImportListDialog;
+  return (0, _createClass2["default"])(ImportListDialog);
 }(Dialog);
-
 exports.ImportListDialog = ImportListDialog;
 
-},{"@babel/runtime/helpers/assertThisInitialized":16,"@babel/runtime/helpers/classCallCheck":17,"@babel/runtime/helpers/defineProperty":18,"@babel/runtime/helpers/getPrototypeOf":19,"@babel/runtime/helpers/inherits":20,"@babel/runtime/helpers/interopRequireDefault":21,"@babel/runtime/helpers/possibleConstructorReturn":26}],12:[function(require,module,exports){
+},{"@babel/runtime/helpers/assertThisInitialized":16,"@babel/runtime/helpers/classCallCheck":17,"@babel/runtime/helpers/createClass":18,"@babel/runtime/helpers/defineProperty":19,"@babel/runtime/helpers/getPrototypeOf":20,"@babel/runtime/helpers/inherits":21,"@babel/runtime/helpers/interopRequireDefault":22,"@babel/runtime/helpers/possibleConstructorReturn":27}],12:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.setTheme = exports.detectColorScheme = exports.sortArrayBy = void 0;
-
+exports.sortArrayBy = exports.setTheme = exports.detectColorScheme = void 0;
 var sortArrayBy = function sortArrayBy(a, b, sortBy) {
   var i = 0,
-      result = 0;
-
+    result = 0;
   while (i < sortBy.length && result === 0) {
     if (sortBy[i].isString) result = sortBy[i].direction * (a[sortBy[i].prop].toString() < b[sortBy[i].prop].toString() ? -1 : a[sortBy[i].prop].toString() > b[sortBy[i].prop].toString() ? 1 : 0);else result = sortBy[i].direction * (parseInt(a[sortBy[i].prop].toString()) < parseInt(b[sortBy[i].prop].toString()) ? -1 : parseInt(a[sortBy[i].prop].toString()) > parseInt(b[sortBy[i].prop].toString()) ? 1 : 0);
     i++;
   }
-
   return result;
-}; // https://stackoverflow.com/a/56550819/7627317
+};
 
-
+// https://stackoverflow.com/a/56550819/7627317
 exports.sortArrayBy = sortArrayBy;
-
 var detectColorScheme = function detectColorScheme() {
   var theme = "light"; //default to light
-  // local storage is used to override OS theme settings
 
+  // local storage is used to override OS theme settings
   if (window.localStorage.getItem("theme")) {
     if (window.localStorage.getItem("theme") == "dark") {
       theme = "dark";
@@ -16868,84 +16466,83 @@ var detectColorScheme = function detectColorScheme() {
     // OS theme setting detected as dark
     theme = "dark";
   }
-
   setTheme(theme);
 };
-
 exports.detectColorScheme = detectColorScheme;
-
 var setTheme = function setTheme(theme) {
   document.documentElement.setAttribute("data-theme", theme);
   var theme_button = document.querySelector("#theme_button");
-
   if (theme === "light") {
     if (theme_button) {
       if (theme_button.classList.contains("light")) theme_button.classList.replace("light", "dark");else if (!theme_button.classList.contains("dark")) theme_button.classList.add("dark");
     }
-
     window.localStorage.setItem("theme", "light");
   } else if (theme === "dark") {
     if (theme_button) {
       if (theme_button.classList.contains("dark")) theme_button.classList.replace("dark", "light");else if (!theme_button.classList.contains("light")) theme_button.classList.add("light");
     }
-
     window.localStorage.setItem("theme", "dark");
   }
 };
-
 exports.setTheme = setTheme;
 
 },{}],13:[function(require,module,exports){
 function _arrayLikeToArray(arr, len) {
   if (len == null || len > arr.length) len = arr.length;
-
-  for (var i = 0, arr2 = new Array(len); i < len; i++) {
-    arr2[i] = arr[i];
-  }
-
+  for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i];
   return arr2;
 }
-
-module.exports = _arrayLikeToArray;
-module.exports["default"] = module.exports, module.exports.__esModule = true;
+module.exports = _arrayLikeToArray, module.exports.__esModule = true, module.exports["default"] = module.exports;
 },{}],14:[function(require,module,exports){
 function _arrayWithHoles(arr) {
   if (Array.isArray(arr)) return arr;
 }
-
-module.exports = _arrayWithHoles;
-module.exports["default"] = module.exports, module.exports.__esModule = true;
+module.exports = _arrayWithHoles, module.exports.__esModule = true, module.exports["default"] = module.exports;
 },{}],15:[function(require,module,exports){
 var arrayLikeToArray = require("./arrayLikeToArray.js");
-
 function _arrayWithoutHoles(arr) {
   if (Array.isArray(arr)) return arrayLikeToArray(arr);
 }
-
-module.exports = _arrayWithoutHoles;
-module.exports["default"] = module.exports, module.exports.__esModule = true;
+module.exports = _arrayWithoutHoles, module.exports.__esModule = true, module.exports["default"] = module.exports;
 },{"./arrayLikeToArray.js":13}],16:[function(require,module,exports){
 function _assertThisInitialized(self) {
   if (self === void 0) {
     throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
   }
-
   return self;
 }
-
-module.exports = _assertThisInitialized;
-module.exports["default"] = module.exports, module.exports.__esModule = true;
+module.exports = _assertThisInitialized, module.exports.__esModule = true, module.exports["default"] = module.exports;
 },{}],17:[function(require,module,exports){
 function _classCallCheck(instance, Constructor) {
   if (!(instance instanceof Constructor)) {
     throw new TypeError("Cannot call a class as a function");
   }
 }
-
-module.exports = _classCallCheck;
-module.exports["default"] = module.exports, module.exports.__esModule = true;
+module.exports = _classCallCheck, module.exports.__esModule = true, module.exports["default"] = module.exports;
 },{}],18:[function(require,module,exports){
+var toPropertyKey = require("./toPropertyKey.js");
+function _defineProperties(target, props) {
+  for (var i = 0; i < props.length; i++) {
+    var descriptor = props[i];
+    descriptor.enumerable = descriptor.enumerable || false;
+    descriptor.configurable = true;
+    if ("value" in descriptor) descriptor.writable = true;
+    Object.defineProperty(target, toPropertyKey(descriptor.key), descriptor);
+  }
+}
+function _createClass(Constructor, protoProps, staticProps) {
+  if (protoProps) _defineProperties(Constructor.prototype, protoProps);
+  if (staticProps) _defineProperties(Constructor, staticProps);
+  Object.defineProperty(Constructor, "prototype", {
+    writable: false
+  });
+  return Constructor;
+}
+module.exports = _createClass, module.exports.__esModule = true, module.exports["default"] = module.exports;
+},{"./toPropertyKey.js":32}],19:[function(require,module,exports){
+var toPropertyKey = require("./toPropertyKey.js");
 function _defineProperty(obj, key, value) {
+  key = toPropertyKey(key);
   if (key in obj) {
     Object.defineProperty(obj, key, {
       value: value,
@@ -16956,31 +16553,23 @@ function _defineProperty(obj, key, value) {
   } else {
     obj[key] = value;
   }
-
   return obj;
 }
-
-module.exports = _defineProperty;
-module.exports["default"] = module.exports, module.exports.__esModule = true;
-},{}],19:[function(require,module,exports){
+module.exports = _defineProperty, module.exports.__esModule = true, module.exports["default"] = module.exports;
+},{"./toPropertyKey.js":32}],20:[function(require,module,exports){
 function _getPrototypeOf(o) {
-  module.exports = _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) {
+  module.exports = _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function _getPrototypeOf(o) {
     return o.__proto__ || Object.getPrototypeOf(o);
-  };
-  module.exports["default"] = module.exports, module.exports.__esModule = true;
+  }, module.exports.__esModule = true, module.exports["default"] = module.exports;
   return _getPrototypeOf(o);
 }
-
-module.exports = _getPrototypeOf;
-module.exports["default"] = module.exports, module.exports.__esModule = true;
-},{}],20:[function(require,module,exports){
+module.exports = _getPrototypeOf, module.exports.__esModule = true, module.exports["default"] = module.exports;
+},{}],21:[function(require,module,exports){
 var setPrototypeOf = require("./setPrototypeOf.js");
-
 function _inherits(subClass, superClass) {
   if (typeof superClass !== "function" && superClass !== null) {
     throw new TypeError("Super expression must either be null or a function");
   }
-
   subClass.prototype = Object.create(superClass && superClass.prototype, {
     constructor: {
       value: subClass,
@@ -16988,158 +16577,136 @@ function _inherits(subClass, superClass) {
       configurable: true
     }
   });
+  Object.defineProperty(subClass, "prototype", {
+    writable: false
+  });
   if (superClass) setPrototypeOf(subClass, superClass);
 }
-
-module.exports = _inherits;
-module.exports["default"] = module.exports, module.exports.__esModule = true;
-},{"./setPrototypeOf.js":27}],21:[function(require,module,exports){
+module.exports = _inherits, module.exports.__esModule = true, module.exports["default"] = module.exports;
+},{"./setPrototypeOf.js":28}],22:[function(require,module,exports){
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : {
     "default": obj
   };
 }
-
-module.exports = _interopRequireDefault;
-module.exports["default"] = module.exports, module.exports.__esModule = true;
-},{}],22:[function(require,module,exports){
+module.exports = _interopRequireDefault, module.exports.__esModule = true, module.exports["default"] = module.exports;
+},{}],23:[function(require,module,exports){
 function _iterableToArray(iter) {
   if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter);
 }
-
-module.exports = _iterableToArray;
-module.exports["default"] = module.exports, module.exports.__esModule = true;
-},{}],23:[function(require,module,exports){
-function _iterableToArrayLimit(arr, i) {
-  var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"];
-
-  if (_i == null) return;
-  var _arr = [];
-  var _n = true;
-  var _d = false;
-
-  var _s, _e;
-
-  try {
-    for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) {
-      _arr.push(_s.value);
-
-      if (i && _arr.length === i) break;
-    }
-  } catch (err) {
-    _d = true;
-    _e = err;
-  } finally {
-    try {
-      if (!_n && _i["return"] != null) _i["return"]();
-    } finally {
-      if (_d) throw _e;
-    }
-  }
-
-  return _arr;
-}
-
-module.exports = _iterableToArrayLimit;
-module.exports["default"] = module.exports, module.exports.__esModule = true;
+module.exports = _iterableToArray, module.exports.__esModule = true, module.exports["default"] = module.exports;
 },{}],24:[function(require,module,exports){
+function _iterableToArrayLimit(arr, i) {
+  var _i = null == arr ? null : "undefined" != typeof Symbol && arr[Symbol.iterator] || arr["@@iterator"];
+  if (null != _i) {
+    var _s,
+      _e,
+      _x,
+      _r,
+      _arr = [],
+      _n = !0,
+      _d = !1;
+    try {
+      if (_x = (_i = _i.call(arr)).next, 0 === i) {
+        if (Object(_i) !== _i) return;
+        _n = !1;
+      } else for (; !(_n = (_s = _x.call(_i)).done) && (_arr.push(_s.value), _arr.length !== i); _n = !0);
+    } catch (err) {
+      _d = !0, _e = err;
+    } finally {
+      try {
+        if (!_n && null != _i["return"] && (_r = _i["return"](), Object(_r) !== _r)) return;
+      } finally {
+        if (_d) throw _e;
+      }
+    }
+    return _arr;
+  }
+}
+module.exports = _iterableToArrayLimit, module.exports.__esModule = true, module.exports["default"] = module.exports;
+},{}],25:[function(require,module,exports){
 function _nonIterableRest() {
   throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
 }
-
-module.exports = _nonIterableRest;
-module.exports["default"] = module.exports, module.exports.__esModule = true;
-},{}],25:[function(require,module,exports){
+module.exports = _nonIterableRest, module.exports.__esModule = true, module.exports["default"] = module.exports;
+},{}],26:[function(require,module,exports){
 function _nonIterableSpread() {
   throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
 }
-
-module.exports = _nonIterableSpread;
-module.exports["default"] = module.exports, module.exports.__esModule = true;
-},{}],26:[function(require,module,exports){
-var _typeof = require("@babel/runtime/helpers/typeof")["default"];
-
+module.exports = _nonIterableSpread, module.exports.__esModule = true, module.exports["default"] = module.exports;
+},{}],27:[function(require,module,exports){
+var _typeof = require("./typeof.js")["default"];
 var assertThisInitialized = require("./assertThisInitialized.js");
-
 function _possibleConstructorReturn(self, call) {
   if (call && (_typeof(call) === "object" || typeof call === "function")) {
     return call;
+  } else if (call !== void 0) {
+    throw new TypeError("Derived constructors may only return object or undefined");
   }
-
   return assertThisInitialized(self);
 }
-
-module.exports = _possibleConstructorReturn;
-module.exports["default"] = module.exports, module.exports.__esModule = true;
-},{"./assertThisInitialized.js":16,"@babel/runtime/helpers/typeof":30}],27:[function(require,module,exports){
+module.exports = _possibleConstructorReturn, module.exports.__esModule = true, module.exports["default"] = module.exports;
+},{"./assertThisInitialized.js":16,"./typeof.js":33}],28:[function(require,module,exports){
 function _setPrototypeOf(o, p) {
-  module.exports = _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) {
+  module.exports = _setPrototypeOf = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function _setPrototypeOf(o, p) {
     o.__proto__ = p;
     return o;
-  };
-
-  module.exports["default"] = module.exports, module.exports.__esModule = true;
+  }, module.exports.__esModule = true, module.exports["default"] = module.exports;
   return _setPrototypeOf(o, p);
 }
-
-module.exports = _setPrototypeOf;
-module.exports["default"] = module.exports, module.exports.__esModule = true;
-},{}],28:[function(require,module,exports){
+module.exports = _setPrototypeOf, module.exports.__esModule = true, module.exports["default"] = module.exports;
+},{}],29:[function(require,module,exports){
 var arrayWithHoles = require("./arrayWithHoles.js");
-
 var iterableToArrayLimit = require("./iterableToArrayLimit.js");
-
 var unsupportedIterableToArray = require("./unsupportedIterableToArray.js");
-
 var nonIterableRest = require("./nonIterableRest.js");
-
 function _slicedToArray(arr, i) {
   return arrayWithHoles(arr) || iterableToArrayLimit(arr, i) || unsupportedIterableToArray(arr, i) || nonIterableRest();
 }
-
-module.exports = _slicedToArray;
-module.exports["default"] = module.exports, module.exports.__esModule = true;
-},{"./arrayWithHoles.js":14,"./iterableToArrayLimit.js":23,"./nonIterableRest.js":24,"./unsupportedIterableToArray.js":31}],29:[function(require,module,exports){
+module.exports = _slicedToArray, module.exports.__esModule = true, module.exports["default"] = module.exports;
+},{"./arrayWithHoles.js":14,"./iterableToArrayLimit.js":24,"./nonIterableRest.js":25,"./unsupportedIterableToArray.js":34}],30:[function(require,module,exports){
 var arrayWithoutHoles = require("./arrayWithoutHoles.js");
-
 var iterableToArray = require("./iterableToArray.js");
-
 var unsupportedIterableToArray = require("./unsupportedIterableToArray.js");
-
 var nonIterableSpread = require("./nonIterableSpread.js");
-
 function _toConsumableArray(arr) {
   return arrayWithoutHoles(arr) || iterableToArray(arr) || unsupportedIterableToArray(arr) || nonIterableSpread();
 }
-
-module.exports = _toConsumableArray;
-module.exports["default"] = module.exports, module.exports.__esModule = true;
-},{"./arrayWithoutHoles.js":15,"./iterableToArray.js":22,"./nonIterableSpread.js":25,"./unsupportedIterableToArray.js":31}],30:[function(require,module,exports){
+module.exports = _toConsumableArray, module.exports.__esModule = true, module.exports["default"] = module.exports;
+},{"./arrayWithoutHoles.js":15,"./iterableToArray.js":23,"./nonIterableSpread.js":26,"./unsupportedIterableToArray.js":34}],31:[function(require,module,exports){
+var _typeof = require("./typeof.js")["default"];
+function _toPrimitive(input, hint) {
+  if (_typeof(input) !== "object" || input === null) return input;
+  var prim = input[Symbol.toPrimitive];
+  if (prim !== undefined) {
+    var res = prim.call(input, hint || "default");
+    if (_typeof(res) !== "object") return res;
+    throw new TypeError("@@toPrimitive must return a primitive value.");
+  }
+  return (hint === "string" ? String : Number)(input);
+}
+module.exports = _toPrimitive, module.exports.__esModule = true, module.exports["default"] = module.exports;
+},{"./typeof.js":33}],32:[function(require,module,exports){
+var _typeof = require("./typeof.js")["default"];
+var toPrimitive = require("./toPrimitive.js");
+function _toPropertyKey(arg) {
+  var key = toPrimitive(arg, "string");
+  return _typeof(key) === "symbol" ? key : String(key);
+}
+module.exports = _toPropertyKey, module.exports.__esModule = true, module.exports["default"] = module.exports;
+},{"./toPrimitive.js":31,"./typeof.js":33}],33:[function(require,module,exports){
 function _typeof(obj) {
   "@babel/helpers - typeof";
 
-  if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
-    module.exports = _typeof = function _typeof(obj) {
-      return typeof obj;
-    };
-
-    module.exports["default"] = module.exports, module.exports.__esModule = true;
-  } else {
-    module.exports = _typeof = function _typeof(obj) {
-      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
-    };
-
-    module.exports["default"] = module.exports, module.exports.__esModule = true;
-  }
-
-  return _typeof(obj);
+  return (module.exports = _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) {
+    return typeof obj;
+  } : function (obj) {
+    return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+  }, module.exports.__esModule = true, module.exports["default"] = module.exports), _typeof(obj);
 }
-
-module.exports = _typeof;
-module.exports["default"] = module.exports, module.exports.__esModule = true;
-},{}],31:[function(require,module,exports){
+module.exports = _typeof, module.exports.__esModule = true, module.exports["default"] = module.exports;
+},{}],34:[function(require,module,exports){
 var arrayLikeToArray = require("./arrayLikeToArray.js");
-
 function _unsupportedIterableToArray(o, minLen) {
   if (!o) return;
   if (typeof o === "string") return arrayLikeToArray(o, minLen);
@@ -17148,7 +16715,5 @@ function _unsupportedIterableToArray(o, minLen) {
   if (n === "Map" || n === "Set") return Array.from(o);
   if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return arrayLikeToArray(o, minLen);
 }
-
-module.exports = _unsupportedIterableToArray;
-module.exports["default"] = module.exports, module.exports.__esModule = true;
+module.exports = _unsupportedIterableToArray, module.exports.__esModule = true, module.exports["default"] = module.exports;
 },{"./arrayLikeToArray.js":13}]},{},[4]);
