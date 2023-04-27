@@ -864,6 +864,42 @@ export const character_collection = [
     "url": "https://magireco.fandom.com/wiki/Ebony"
   },
   {
+    "id": "1049",
+    "name": "Olga",
+    "name_jp": "オルガ",
+    "name_na": "",
+    "attribute": "Aqua",
+    "ranks": {
+      "1": false,
+      "2": false,
+      "3": false,
+      "4": true,
+      "5": true
+    },
+    "release_date": "2023-04-24",
+    "release_date_na": "2050-01-01",
+    "obtainability": "limited",
+    "url": "https://magireco.fandom.com/wiki/Olga"
+  },
+  {
+    "id": "1050",
+    "name": "Gunhild",
+    "name_jp": "ガンヒルト",
+    "name_na": "",
+    "attribute": "Flame",
+    "ranks": {
+      "1": false,
+      "2": false,
+      "3": false,
+      "4": true,
+      "5": true
+    },
+    "release_date": "2023-04-24",
+    "release_date_na": "2050-01-01",
+    "obtainability": "limited",
+    "url": "https://magireco.fandom.com/wiki/Gunhild"
+  },
+  {
     "id": "1101",
     "name": "Tamaki Iroha (Mizugi ver.)",
     "name_jp": "環 いろは (水着ver.)",
