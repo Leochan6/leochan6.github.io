@@ -900,6 +900,24 @@ export const character_collection = [
     "url": "https://magireco.fandom.com/wiki/Gunhild"
   },
   {
+    "id": "1051",
+    "name": "Heruka",
+    "name_jp": "ヘルカ",
+    "name_na": "",
+    "attribute": "Forest",
+    "ranks": {
+      "1": false,
+      "2": false,
+      "3": false,
+      "4": true,
+      "5": true
+    },
+    "release_date": "2023-05-19",
+    "release_date_na": "2050-01-01",
+    "obtainability": "limited",
+    "url": "https://magireco.fandom.com/wiki/Heruka"
+  },
+  {
     "id": "1101",
     "name": "Tamaki Iroha (Mizugi ver.)",
     "name_jp": "環 いろは (水着ver.)",

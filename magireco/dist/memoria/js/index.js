@@ -12237,7 +12237,7 @@ var memoria_collection = [{
   "url": "https://magireco.fandom.com/wiki/Desert_Walker"
 }, {
   "id": "1894",
-  "name": "The Gallopping Pegasus",
+  "name": "The Gallopping Heavenly Horse",
   "name_jp": "天馬駆ける",
   "name_na": "",
   "type": "ability",
@@ -12246,7 +12246,91 @@ var memoria_collection = [{
   "effect2": "Damage Up [III / 15%] & Chance to Chase [IV / 14%]",
   "chara": "",
   "obtainability": "limited",
-  "url": "https://magireco.fandom.com/wiki/The_Gallopping_Pegasus"
+  "url": "https://magireco.fandom.com/wiki/The_Gallopping_Heavenly_Horse"
+}, {
+  "id": "1891",
+  "name": "Shadow of Læraðr ",
+  "name_jp": "レーラズの影",
+  "name_na": "",
+  "type": "ability",
+  "rank": "4",
+  "effect1": "",
+  "effect2": "Blast Damage Up [IV / 30%] & Accele MP Gain Up [IV / 17.5%]",
+  "chara": "",
+  "obtainability": "limited",
+  "url": "https://magireco.fandom.com/wiki/Shadow_of_L%C3%A6ra%C3%B0r_"
+}, {
+  "id": "1895",
+  "name": "Ashes Return to Earth, then to Flowers",
+  "name_jp": "灰は土に還り、そして花へ",
+  "name_na": "",
+  "type": "skill",
+  "rank": "3",
+  "effect1": "Accele Draw",
+  "effect2": "Accele Draw",
+  "chara": "Heruka",
+  "obtainability": "unlimited",
+  "url": "https://magireco.fandom.com/wiki/Ashes_Return_to_Earth%2C_then_to_Flowers"
+}, {
+  "id": "1896",
+  "name": "A Peaceful Moment when One can be Normal",
+  "name_jp": "普通でいられる穏やかな時",
+  "name_na": "",
+  "type": "skill",
+  "rank": "4",
+  "effect1": "Magia Damage Up [VI / 17.5%] & Doppel Damage Up [VI / 30%] & Forest Attribute Attack Up [X / 27.5%] (Self / 1 Turn)",
+  "effect2": "Magia Damage Up [VII / 20%] & Doppel Damage Up [VII / 35%] & Forest Attribute Attack Up [XI / 30%] (Self / 1 Turn)",
+  "chara": "",
+  "obtainability": "limited",
+  "url": "https://magireco.fandom.com/wiki/A_Peaceful_Moment_when_One_can_be_Normal"
+}, {
+  "id": "1897",
+  "name": "Wanted to be Special",
+  "name_jp": "特別になりたかった",
+  "name_na": "",
+  "type": "ability",
+  "rank": "3",
+  "effect1": "Magia Damage Up [III / 10%] & Accele MP Gain Up [IV / 17.5%] & Status Ailment Resistance Down [II / 7.5%]",
+  "effect2": "Magia Damage Up [IV / 12.5%] & Accele MP Gain Up [V / 20%] & Status Ailment Resistance Down [II / 7.5%]",
+  "chara": "",
+  "obtainability": "limited",
+  "url": "https://magireco.fandom.com/wiki/Wanted_to_be_Special"
+}, {
+  "id": "1899",
+  "name": "The Light I Clung To",
+  "name_jp": "縋ってしまった光",
+  "name_na": "",
+  "type": "skill",
+  "rank": "3",
+  "effect1": "",
+  "effect2": "Regenerate HP [IV / 5%] & Status Ailment Resistance Up [II / 25%] (Self / 3 Turns)",
+  "chara": "",
+  "obtainability": "limited",
+  "url": "https://magireco.fandom.com/wiki/The_Light_I_Clung_To"
+}, {
+  "id": "1900",
+  "name": "The Older Sister Who Dreams",
+  "name_jp": "夢を見る姉",
+  "name_na": "",
+  "type": "ability",
+  "rank": "4",
+  "effect1": "",
+  "effect2": "Aqua Attribute Attack Up [III / 10%] & Blast Damage Up [II / 20%]",
+  "chara": "",
+  "obtainability": "limited",
+  "url": "https://magireco.fandom.com/wiki/The_Older_Sister_Who_Dreams"
+}, {
+  "id": "1901",
+  "name": "The Younger Sister Who Chases Dreams",
+  "name_jp": "夢を追う妹",
+  "name_na": "",
+  "type": "ability",
+  "rank": "4",
+  "effect1": "",
+  "effect2": "Flame Attribute Attack Up [III / 10%] & Magia Damage Up [III / 10%]",
+  "chara": "",
+  "obtainability": "limited",
+  "url": "https://magireco.fandom.com/wiki/The_Younger_Sister_Who_Chases_Dreams"
 }, {
   "id": "9001",
   "name": "My Victory Pose Is Kawaii Too",
