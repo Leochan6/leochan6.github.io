@@ -12296,6 +12296,18 @@ var memoria_collection = [{
   "obtainability": "limited",
   "url": "https://magireco.fandom.com/wiki/Wanted_to_be_Special"
 }, {
+  "id": "1898",
+  "name": "The End of the Road for the Two of Us is Dimly Lit",
+  "name_jp": "ふたりの終着地はまばゆく",
+  "name_na": "",
+  "type": "ability",
+  "rank": "4",
+  "effect1": "",
+  "effect2": "Chance to Dazzle on Attack [III / 20%] (1 Turn) & Attack Up [III / 15%]",
+  "chara": "",
+  "obtainability": "limited",
+  "url": "https://magireco.fandom.com/wiki/The_End_of_the_Road_for_the_Two_of_Us_is_Dimly_Lit"
+}, {
   "id": "1899",
   "name": "The Light I Clung To",
   "name_jp": "縋ってしまった光",
@@ -12331,6 +12343,30 @@ var memoria_collection = [{
   "chara": "",
   "obtainability": "limited",
   "url": "https://magireco.fandom.com/wiki/The_Younger_Sister_Who_Chases_Dreams"
+}, {
+  "id": "1902",
+  "name": "Fresh Position",
+  "name_jp": "新鮮なポジション",
+  "name_na": "",
+  "type": "skill",
+  "rank": "4",
+  "effect1": "Chance to Dazzle [XV / 65%] & Attack Down [VII / 35%] & Damage Down [VII / 35%] (Target / 1 Turn)",
+  "effect2": "Chance to Dazzle [100%] & Attack Down [VIII / 40%] & Damage Down [VIII / 40%] (Target / 1 Turn)",
+  "chara": "",
+  "obtainability": "limited",
+  "url": "https://magireco.fandom.com/wiki/Fresh_Position"
+}, {
+  "id": "1903",
+  "name": "Best Time in Summer",
+  "name_jp": "夏のベストタイム",
+  "name_na": "",
+  "type": "ability",
+  "rank": "4",
+  "effect1": "Damage Cut [VI / 30%] & Defense Up [III / 22.5%]",
+  "effect2": "Damage Cut [VII / 35%] & Defense Up [IV / 30%]",
+  "chara": "",
+  "obtainability": "limited",
+  "url": "https://magireco.fandom.com/wiki/Best_Time_in_Summer"
 }, {
   "id": "9001",
   "name": "My Victory Pose Is Kawaii Too",
