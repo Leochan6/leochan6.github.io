@@ -3078,6 +3078,24 @@ export const character_collection = [
     "url": "https://magireco.fandom.com/wiki/Konoha_%26_Hazuki"
   },
   {
+    "id": "3504",
+    "name": "Masara & Kokoro (Bride ver.)",
+    "name_jp": "まさら・こころ (花嫁ver.)",
+    "name_na": "",
+    "attribute": "Light",
+    "ranks": {
+      "1": false,
+      "2": false,
+      "3": false,
+      "4": true,
+      "5": true
+    },
+    "release_date": "2023-06-09",
+    "release_date_na": "2050-01-01",
+    "obtainability": "limited",
+    "url": "https://magireco.fandom.com/wiki/Masara_%26_Kokoro_(Bride_ver.)"
+  },
+  {
     "id": "3900",
     "name": "Kuro",
     "name_jp": "黒",

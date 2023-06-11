@@ -11531,6 +11531,58 @@ export const memoria_collection = [
     "url": "https://magireco.fandom.com/wiki/Best_Time_in_Summer"
   },
   {
+    "id": "1904",
+    "name": "A Bouquet, For Our Future",
+    "name_jp": "花束を、私たちの未来へ",
+    "name_na": "",
+    "type": "skill",
+    "rank": "3",
+    "effect1": "MP Restore [I / 12.5 MP] (Allies)",
+    "effect2": "MP Restore [II / 15 MP] (Allies)",
+    "chara": "Masara & Kokoro (Bride ver.)",
+    "obtainability": "unlimited",
+    "url": "https://magireco.fandom.com/wiki/A_Bouquet%2C_For_Our_Future"
+  },
+  {
+    "id": "1905",
+    "name": "Happiness within the Connected Hands",
+    "name_jp": "繋いだ手の中にある幸せ",
+    "name_na": "",
+    "type": "ability",
+    "rank": "4",
+    "effect1": "Damage Increase [IV / 20%] & MP Up When Attacked By Weak Element [IV / 5 MP]",
+    "effect2": "Damage Increase [V / 25%] & MP Up When Attacked By Weak Element [V / 6 MP]",
+    "chara": "",
+    "obtainability": "limited",
+    "url": "https://magireco.fandom.com/wiki/Happiness_within_the_Connected_Hands"
+  },
+  {
+    "id": "1906",
+    "name": "Because You're Like That",
+    "name_jp": "そんなあなただから",
+    "name_na": "",
+    "type": "skill",
+    "rank": "3",
+    "effect1": "Attack Up [VII / 35%] & Defense Down [IV / 20%] (Self / 3 Turns)",
+    "effect2": "Attack Up [VIII / 40%] & Defense Down [IV / 20%] (Self / 3 Turns)",
+    "chara": "",
+    "obtainability": "limited",
+    "url": "https://magireco.fandom.com/wiki/Because_You're_Like_That"
+  },
+  {
+    "id": "1908",
+    "name": "Happiness Melts in the Twilight",
+    "name_jp": "幸せは黄昏に溶けて",
+    "name_na": "",
+    "type": "skill",
+    "rank": "3",
+    "effect1": "",
+    "effect2": "MP Gain Up [III / 10%] & Status Ailment Resistance Up [II / 25%] (Self / 3 Turns) ",
+    "chara": "",
+    "obtainability": "limited",
+    "url": "https://magireco.fandom.com/wiki/Happiness_Melts_in_the_Twilight"
+  },
+  {
     "id": "9001",
     "name": "My Victory Pose Is Kawaii Too",
     "name_jp": "",
