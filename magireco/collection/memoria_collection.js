@@ -11648,6 +11648,19 @@ export const memoria_collection = [
     "url": "https://magireco.fandom.com/wiki/Yearning_to_Take_Others_to_the_Glistening_Place"
   },
   {
+    "id": "1913",
+    "name": "Mother's Shadow Shines at Summer's Start",
+    "name_jp": "夏のはじまりに母の影光り",
+    "name_na": "",
+    "type": "ability",
+    "rank": "4",
+    "effect1": "",
+    "effect2": "Chance to Guardian [III / 20%] & Attack Up When At Critical Health [IV / 25%] & Defense Up When At Critical Health [III / 40%]",
+    "chara": "",
+    "obtainability": "limited",
+    "url": "https://magireco.fandom.com/wiki/Mother's_Shadow_Shines_at_Summer's_Start"
+  },
+  {
     "id": "1914",
     "name": "The Warmth in my Memories Is Reborn",
     "name_jp": "記憶の中の温もりは蘇り",
@@ -11672,6 +11685,58 @@ export const memoria_collection = [
     "chara": "",
     "obtainability": "limited",
     "url": "https://magireco.fandom.com/wiki/Rakshasi_of_Salvation"
+  },
+  {
+    "id": "1916",
+    "name": "The Things the Free Child Forgot",
+    "name_jp": "自由なあの子の忘れ物",
+    "name_na": "",
+    "type": "ability",
+    "rank": "3",
+    "effect1": "Charge Combo Charge Count Up [+1] & MP Gain Up [II / 7.5%]",
+    "effect2": "Charge Combo Charge Count Up [+2] & MP Gain Up [III / 10%]",
+    "chara": "Momoe Nagisa (Mizugi ver.)",
+    "obtainability": "unlimited",
+    "url": "https://magireco.fandom.com/wiki/The_Things_the_Free_Child_Forgot"
+  },
+  {
+    "id": "1917",
+    "name": "Summer Final Memory",
+    "name_jp": "ファイナルサマーメモリー",
+    "name_na": "",
+    "type": "skill",
+    "rank": "4",
+    "effect1": "Provoke & Defense Up [VII / 52.5%] & MP Gain Up [VII / 20%] (Self / 1 Turn)",
+    "effect2": "Provoke & Defense Up [VIII / 60%] & MP Gain Up [VIII / 22.5%] (Self / 1 Turn)",
+    "chara": "",
+    "obtainability": "limited",
+    "url": "https://magireco.fandom.com/wiki/Summer_Final_Memory"
+  },
+  {
+    "id": "1918",
+    "name": "To Admire Large Purchases",
+    "name_jp": "大人買いに憧れて",
+    "name_na": "",
+    "type": "ability",
+    "rank": "3",
+    "effect1": "Regenerate HP [II / 3%] & Damage Up [II / 10%]",
+    "effect2": "Regenerate HP [III / 4%] & Damage Up [III / 15%]",
+    "chara": "",
+    "obtainability": "limited",
+    "url": "https://magireco.fandom.com/wiki/To_Admire_Large_Purchases"
+  },
+  {
+    "id": "1920",
+    "name": "Excessive Euphoria",
+    "name_jp": "ありあまるユーフォリア",
+    "name_na": "",
+    "type": "skill",
+    "rank": "3",
+    "effect1": "",
+    "effect2": "Defense Up [IV / 30%] & Status Ailment Resistance Up [IV / 35%] (Self / 3 Turns)",
+    "chara": "",
+    "obtainability": "limited",
+    "url": "https://magireco.fandom.com/wiki/Excessive_Euphoria"
   },
   {
     "id": "9001",

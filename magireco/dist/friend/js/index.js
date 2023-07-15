@@ -6876,7 +6876,7 @@ var character_collection = [{
 }, {
   "id": "2700",
   "name": "Momoe Nagisa (Valentine's ver.)",
-  "name_jp": "百江 なぎさ（バレンタインver.）",
+  "name_jp": "百江 なぎさ（バレンタインver.",
   "name_na": "",
   "attribute": "Dark",
   "ranks": {
@@ -6890,6 +6890,23 @@ var character_collection = [{
   "release_date_na": "2050-01-01",
   "obtainability": "limited",
   "url": "https://magireco.fandom.com/wiki/Momoe_Nagisa_(Valentine's_ver.)"
+}, {
+  "id": "2701",
+  "name": "Momoe Nagisa (Mizugi ver.)",
+  "name_jp": "百江 なぎさ (水着ver.)",
+  "name_na": "",
+  "attribute": "Dark",
+  "ranks": {
+    "1": false,
+    "2": false,
+    "3": false,
+    "4": true,
+    "5": true
+  },
+  "release_date": "2023-07-14",
+  "release_date_na": "2050-01-01",
+  "obtainability": "limited",
+  "url": "https://magireco.fandom.com/wiki/Momoe_Nagisa_(Mizugi_ver.)"
 }, {
   "id": "3001",
   "name": "Yayoi Kanoko",
