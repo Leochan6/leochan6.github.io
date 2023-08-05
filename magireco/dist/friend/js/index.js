@@ -6126,6 +6126,23 @@ var character_collection = [{
   "obtainability": "limited",
   "url": "https://magireco.fandom.com/wiki/Amane_Sisters_(Mizugi_ver.)"
 }, {
+  "id": "1120",
+  "name": "Satori Kagome (Hyakki Yagyou ver.)",
+  "name_jp": "佐鳥 かごめ (百鬼夜行ver.)",
+  "name_na": "",
+  "attribute": "Forest",
+  "ranks": {
+    "1": false,
+    "2": false,
+    "3": false,
+    "4": true,
+    "5": true
+  },
+  "release_date": "2050-01-01",
+  "release_date_na": "2023-08-04",
+  "obtainability": "limited",
+  "url": "https://magireco.fandom.com/wiki/Satori_Kagome_(Hyakki_Yagyou_ver.)"
+}, {
   "id": "1125",
   "name": "Tokime Shizuka (First Sunrise of the Year ver.)",
   "name_jp": "時女 静香 (初日の出ver.)",
