@@ -11726,6 +11726,19 @@ export const memoria_collection = [
     "url": "https://magireco.fandom.com/wiki/To_Admire_Large_Purchases"
   },
   {
+    "id": "1919",
+    "name": "Small Influencer",
+    "name_jp": "小さなインフルエンサー",
+    "name_na": "",
+    "type": "ability",
+    "rank": "4",
+    "effect1": "",
+    "effect2": "Charged Attack Damage Up [IV / 12.5%] & Blast Damage Up [III / 25%]",
+    "chara": "",
+    "obtainability": "limited",
+    "url": "https://magireco.fandom.com/wiki/Small_Influencer"
+  },
+  {
     "id": "1920",
     "name": "Excessive Euphoria",
     "name_jp": "ありあまるユーフォリア",
@@ -11854,6 +11867,19 @@ export const memoria_collection = [
     "chara": "",
     "obtainability": "limited",
     "url": "https://magireco.fandom.com/wiki/Kamihama_Seven_Wonders_Investigation_Corps...%3F"
+  },
+  {
+    "id": "1930",
+    "name": "The Light of Hyakki Yagyou",
+    "name_jp": "百鬼夜行の灯",
+    "name_na": "",
+    "type": "skill",
+    "rank": "4",
+    "effect1": "",
+    "effect2": "Guardian & Defense Up [VIII / 60%] (Self / 1 Turn)",
+    "chara": "",
+    "obtainability": "limited",
+    "url": "https://magireco.fandom.com/wiki/The_Light_of_Hyakki_Yagyou"
   },
   {
     "id": "1931",
