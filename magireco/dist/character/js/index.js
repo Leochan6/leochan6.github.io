@@ -7240,6 +7240,23 @@ var character_collection = [{
   "obtainability": "limited",
   "url": "https://magireco.fandom.com/wiki/Tamaki_Iroha_(Anime_ver.)"
 }, {
+  "id": "1502",
+  "name": "Nanami Yachiyo (Historia ver.)",
+  "name_jp": "七海 やちよ (ヒストリアver.)",
+  "name_na": "",
+  "attribute": "Aqua",
+  "ranks": {
+    "1": false,
+    "2": false,
+    "3": false,
+    "4": true,
+    "5": true
+  },
+  "release_date": "2022-08-17",
+  "release_date_na": "2050-01-01",
+  "obtainability": "limited",
+  "url": "https://magireco.fandom.com/wiki/Nanami_Yachiyo_(Historia_ver.)"
+}, {
   "id": "1601",
   "name": "Infinite Iroha",
   "name_jp": "∞いろは",
@@ -7511,6 +7528,23 @@ var character_collection = [{
   "release_date_na": "2050-01-01",
   "obtainability": "limited",
   "url": "https://magireco.fandom.com/wiki/Akuma_Homura-chan"
+}, {
+  "id": "2202",
+  "name": "Devil Homura",
+  "name_jp": "悪魔ほむら",
+  "name_na": "",
+  "attribute": "Dark",
+  "ranks": {
+    "1": false,
+    "2": false,
+    "3": false,
+    "4": true,
+    "5": true
+  },
+  "release_date": "2022-08-22",
+  "release_date_na": "2050-01-01",
+  "obtainability": "limited",
+  "url": "https://magireco.fandom.com/wiki/Devil_Homura"
 }, {
   "id": "2203",
   "name": "Akemi Homura (Haregi ver.)",
