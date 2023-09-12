@@ -2466,6 +2466,24 @@ export const character_collection = [
     "url": "https://magireco.fandom.com/wiki/Suzuka_Sakuya"
   },
   {
+    "id": "3022",
+    "name": "Inami Mitsuru",
+    "name_jp": "伊並 満",
+    "name_na": "",
+    "attribute": "Flame",
+    "ranks": {
+      "1": false,
+      "2": false,
+      "3": false,
+      "4": true,
+      "5": true
+    },
+    "release_date": "2023-09-11",
+    "release_date_na": "2050-01-01",
+    "obtainability": "limited",
+    "url": "https://magireco.fandom.com/wiki/Inami_Mitsuru"
+  },
+  {
     "id": "3023",
     "name": "Eri Aimi",
     "name_jp": "江利 あいみ",
