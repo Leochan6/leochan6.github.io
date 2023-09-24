@@ -3816,6 +3816,42 @@ export const character_collection = [
     "url": "https://magireco.fandom.com/wiki/Yagami_Hayate"
   },
   {
+    "id": "4061",
+    "name": "Nishikigi Chisato",
+    "name_jp": "錦木 千束",
+    "name_na": "",
+    "attribute": "Light",
+    "ranks": {
+      "1": false,
+      "2": false,
+      "3": false,
+      "4": true,
+      "5": true
+    },
+    "release_date": "2023-09-22",
+    "release_date_na": "2050-01-01",
+    "obtainability": "limited",
+    "url": "https://magireco.fandom.com/wiki/Nishikigi_Chisato"
+  },
+  {
+    "id": "4062",
+    "name": "Inoue Takina",
+    "name_jp": "井ノ上 たきな",
+    "name_na": "",
+    "attribute": "Dark",
+    "ranks": {
+      "1": false,
+      "2": false,
+      "3": false,
+      "4": true,
+      "5": true
+    },
+    "release_date": "2023-09-22",
+    "release_date_na": "2050-01-01",
+    "obtainability": "limited",
+    "url": "https://magireco.fandom.com/wiki/Inoue_Takina"
+  },
+  {
     "id": "4121",
     "name": "Isabeau (Witch ver.)",
     "name_jp": "イザボー (魔女ver.)",
