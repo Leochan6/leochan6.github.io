@@ -132,7 +132,11 @@ export const isValidCharacterDisplay = (character_id, display, validName = true)
   // check doppel.
   if (!(display.doppel === true || display.doppel === false) || (display.doppel === true && (display.magia < 5 || display.rank < 5))) err.push(`Doppel ${display.doppel} can only be true if Magia 5 and Rank 5.`);
   // check se.
-  if ((display.se < 0 || display.se > 100)) err.push(`Spirit Enhancement ${display.se} must be between 0 and 100.`)
+  if (character_id == 2101 || character_id == 2202) {
+    if (display.se < 0 || display.se > 105) err.push(`Spirit Enhancement ${display.se} must be between 0 and 105.`)
+  } else {
+    if (display.se < 0 || display.se > 100) err.push(`Spirit Enhancement ${display.se} must be between 0 and 100.`)
+  }
   return err;
 };
 
@@ -213,7 +217,7 @@ export const createDisplay = (display, listener = false) => {
     <div class="level_pre">Lvl.</div>
     <div class="level_num">${display.level}</div>
   </div>
-  <div class="se">${display.se}/100</div>
+  <div class="se">${display.se}/${display.character_id == 2101 || display.character_id == 2202 ? "105" : "100"}</div>
   <img class="doppel" src="/magireco/assets/ui/doppel/${display.doppel}.png">
   <img class="post_awaken" src="/magireco/assets/ui/gift/gift_${display.post_awaken}.png">`;
 
@@ -288,7 +292,7 @@ export const maximizeDisplay = () => {
   let maxRank = getMaxRank(character.ranks);
   let level = RANK_TO_LEVEL[maxRank];
   let attribute = character.attribute.toLowerCase();
-  let display = new Display(character.id, character.name, maxRank, true, attribute, level, "3", "5", "5", maxRank == "5" ? true : false, "100");
+  let display = new Display(character.id, character.name, maxRank, true, attribute, level, "3", "5", "5", maxRank == "5" ? true : false, character.id == 2101 || character.id == 2202 ? "105" : "100");
   updateForm(display);
   updatePreviewDisplay(display);
 };
@@ -320,6 +324,7 @@ const updateForm = (display) => {
   elements.episode_select.value = display.episode;
   elements.doppel_checkbox.checked = display.doppel === "true" || display.doppel === true ? true : false;
   elements.se_select.value = display.se;
+  elements.se_select.setAttribute("max", display.character_id == 2101 || display.character_id == 2202 ? "105" : "100");
 };
 
 /**

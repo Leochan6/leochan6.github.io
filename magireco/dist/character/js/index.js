@@ -388,7 +388,11 @@ var isValidCharacterDisplay = function isValidCharacterDisplay(character_id, dis
   // check doppel.
   if (!(display.doppel === true || display.doppel === false) || display.doppel === true && (display.magia < 5 || display.rank < 5)) err.push("Doppel ".concat(display.doppel, " can only be true if Magia 5 and Rank 5."));
   // check se.
-  if (display.se < 0 || display.se > 100) err.push("Spirit Enhancement ".concat(display.se, " must be between 0 and 100."));
+  if (character_id == 2101 || character_id == 2202) {
+    if (display.se < 0 || display.se > 105) err.push("Spirit Enhancement ".concat(display.se, " must be between 0 and 105."));
+  } else {
+    if (display.se < 0 || display.se > 100) err.push("Spirit Enhancement ".concat(display.se, " must be between 0 and 100."));
+  }
   return err;
 };
 
@@ -440,7 +444,7 @@ var createDisplay = function createDisplay(display) {
   character_display.setAttribute("level", display.level);
   character_display.setAttribute("doppel", display.doppel);
   character_display.setAttribute("se", display.se);
-  character_display.innerHTML = "\n  <img class=\"background\" src=\"/magireco/assets/ui/bg/".concat(display.attribute, ".png\">\n  <img class=\"card_image\" src=\"/magireco/assets/image/card_").concat(display.character_id).concat(display.rank, "_f.png\">\n  <img class=\"frame_rank\" src=\"/magireco/assets/ui/frame/").concat(display.rank, ".png\">\n  <img class=\"star_rank\" src=\"/magireco/assets/ui/star/").concat(display.rank, ".png\">\n  <img class=\"attribute\" src=\"/magireco/assets/ui/attribute/").concat(display.attribute, ".png\">\n  <img class=\"magic\" src=\"/magireco/assets/ui/magic/").concat(display.magic, ".png\">\n  <img class=\"magia\" src=\"/magireco/assets/ui/magia/").concat(display.magia, "-").concat(display.episode, ".png\">\n  <div class=\"level\">\n    <div class=\"level_pre\">Lvl.</div>\n    <div class=\"level_num\">").concat(display.level, "</div>\n  </div>\n  <div class=\"se\">").concat(display.se, "/100</div>\n  <img class=\"doppel\" src=\"/magireco/assets/ui/doppel/").concat(display.doppel, ".png\">\n  <img class=\"post_awaken\" src=\"/magireco/assets/ui/gift/gift_").concat(display.post_awaken, ".png\">");
+  character_display.innerHTML = "\n  <img class=\"background\" src=\"/magireco/assets/ui/bg/".concat(display.attribute, ".png\">\n  <img class=\"card_image\" src=\"/magireco/assets/image/card_").concat(display.character_id).concat(display.rank, "_f.png\">\n  <img class=\"frame_rank\" src=\"/magireco/assets/ui/frame/").concat(display.rank, ".png\">\n  <img class=\"star_rank\" src=\"/magireco/assets/ui/star/").concat(display.rank, ".png\">\n  <img class=\"attribute\" src=\"/magireco/assets/ui/attribute/").concat(display.attribute, ".png\">\n  <img class=\"magic\" src=\"/magireco/assets/ui/magic/").concat(display.magic, ".png\">\n  <img class=\"magia\" src=\"/magireco/assets/ui/magia/").concat(display.magia, "-").concat(display.episode, ".png\">\n  <div class=\"level\">\n    <div class=\"level_pre\">Lvl.</div>\n    <div class=\"level_num\">").concat(display.level, "</div>\n  </div>\n  <div class=\"se\">").concat(display.se, "/").concat(display.character_id == 2101 || display.character_id == 2202 ? "105" : "100", "</div>\n  <img class=\"doppel\" src=\"/magireco/assets/ui/doppel/").concat(display.doppel, ".png\">\n  <img class=\"post_awaken\" src=\"/magireco/assets/ui/gift/gift_").concat(display.post_awaken, ".png\">");
   if (listener) {
     character_display.addEventListener("click", function () {
       selectDisplay(character_display);
@@ -534,7 +538,7 @@ var maximizeDisplay = function maximizeDisplay() {
   var maxRank = getMaxRank(character.ranks);
   var level = RANK_TO_LEVEL[maxRank];
   var attribute = character.attribute.toLowerCase();
-  var display = new Display(character.id, character.name, maxRank, true, attribute, level, "3", "5", "5", maxRank == "5" ? true : false, "100");
+  var display = new Display(character.id, character.name, maxRank, true, attribute, level, "3", "5", "5", maxRank == "5" ? true : false, character.id == 2101 || character.id == 2202 ? "105" : "100");
   updateForm(display);
   updatePreviewDisplay(display);
 };
@@ -567,6 +571,7 @@ var updateForm = function updateForm(display) {
   _character_elements.character_elements.episode_select.value = display.episode;
   _character_elements.character_elements.doppel_checkbox.checked = display.doppel === "true" || display.doppel === true ? true : false;
   _character_elements.character_elements.se_select.value = display.se;
+  _character_elements.character_elements.se_select.setAttribute("max", display.character_id == 2101 || display.character_id == 2202 ? "105" : "100");
 };
 
 /**
@@ -7410,6 +7415,23 @@ var character_collection = [{
   "obtainability": "limited",
   "url": "https://magireco.fandom.com/wiki/Momoe_Nagisa"
 }, {
+  "id": "2009",
+  "name": "Aki Mabayu",
+  "name_jp": "愛生 まばゆ",
+  "name_na": "",
+  "attribute": "Void",
+  "ranks": {
+    "1": false,
+    "2": false,
+    "3": true,
+    "4": true,
+    "5": false
+  },
+  "release_date": "2023-10-03",
+  "release_date_na": "2050-01-01",
+  "obtainability": "limited",
+  "url": "https://magireco.fandom.com/wiki/Aki_Mabayu"
+}, {
   "id": "2100",
   "name": "Kaname Madoka (Haregi ver.)",
   "name_jp": "鹿目 まどか (晴着ver.)",
@@ -7494,6 +7516,23 @@ var character_collection = [{
   "release_date_na": "2050-01-01",
   "obtainability": "limited",
   "url": "https://magireco.fandom.com/wiki/Madoka_%26_Iroha"
+}, {
+  "id": "2105",
+  "name": "Kaname Madoka (scene0 ver.)",
+  "name_jp": "鹿目 まどか (scene0 ver.)",
+  "name_na": "",
+  "attribute": "Light",
+  "ranks": {
+    "1": false,
+    "2": false,
+    "3": false,
+    "4": true,
+    "5": true
+  },
+  "release_date": "2023-10-03",
+  "release_date_na": "2050-01-01",
+  "obtainability": "limited",
+  "url": "https://magireco.fandom.com/wiki/Kaname_Madoka_(scene0_ver.)"
 }, {
   "id": "2106",
   "name": "Kaname Madoka (Mizugi ver.)",

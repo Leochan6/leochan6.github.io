@@ -1746,6 +1746,24 @@ export const character_collection = [
     "url": "https://magireco.fandom.com/wiki/Momoe_Nagisa"
   },
   {
+    "id": "2009",
+    "name": "Aki Mabayu",
+    "name_jp": "愛生 まばゆ",
+    "name_na": "",
+    "attribute": "Void",
+    "ranks": {
+      "1": false,
+      "2": false,
+      "3": true,
+      "4": true,
+      "5": false
+    },
+    "release_date": "2023-10-03",
+    "release_date_na": "2050-01-01",
+    "obtainability": "limited",
+    "url": "https://magireco.fandom.com/wiki/Aki_Mabayu"
+  },
+  {
     "id": "2100",
     "name": "Kaname Madoka (Haregi ver.)",
     "name_jp": "鹿目 まどか (晴着ver.)",
@@ -1834,6 +1852,24 @@ export const character_collection = [
     "release_date_na": "2050-01-01",
     "obtainability": "limited",
     "url": "https://magireco.fandom.com/wiki/Madoka_%26_Iroha"
+  },
+  {
+    "id": "2105",
+    "name": "Kaname Madoka (scene0 ver.)",
+    "name_jp": "鹿目 まどか (scene0 ver.)",
+    "name_na": "",
+    "attribute": "Light",
+    "ranks": {
+      "1": false,
+      "2": false,
+      "3": false,
+      "4": true,
+      "5": true
+    },
+    "release_date": "2023-10-03",
+    "release_date_na": "2050-01-01",
+    "obtainability": "limited",
+    "url": "https://magireco.fandom.com/wiki/Kaname_Madoka_(scene0_ver.)"
   },
   {
     "id": "2106",
