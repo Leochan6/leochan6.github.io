@@ -1218,10 +1218,28 @@ export const character_collection = [
       "4": true,
       "5": true
     },
-    "release_date": "2050-01-01",
-    "release_date_na": "2023-08-04",
+    "release_date": "2023-08-04",
+    "release_date_na": "2050-01-01",
     "obtainability": "limited",
     "url": "https://magireco.fandom.com/wiki/Satori_Kagome_(Hyakki_Yagyou_ver.)"
+  },
+  {
+    "id": "1121",
+    "name": "Yuna & Juri (Vampire ver.)",
+    "name_jp": "結菜・樹里 (ヴァンパイアver.)",
+    "name_na": "",
+    "attribute": "Flame",
+    "ranks": {
+      "1": false,
+      "2": false,
+      "3": false,
+      "4": true,
+      "5": true
+    },
+    "release_date": "2023-10-23",
+    "release_date_na": "2050-01-01",
+    "obtainability": "limited",
+    "url": "https://magireco.fandom.com/wiki/Yuna_%26_Juri_(Vampire_ver.)"
   },
   {
     "id": "1125",
