@@ -12441,6 +12441,45 @@ export const memoria_collection = [
     "url": "https://magireco.fandom.com/wiki/Nice_To_Meet_You_in_the_Middle_of_the_Night"
   },
   {
+    "id": "1977",
+    "name": "Solitary Determination",
+    "name_jp": "孤高の覚悟",
+    "name_na": "",
+    "type": "skill",
+    "rank": "3",
+    "effect1": "Extend Buffs (Allies / 1 Turn) & Extend Debuffs (Target / 1 Turn)",
+    "effect2": "Extend Buffs (Allies / 1 Turn) & Extend Debuffs (Target / 1 Turn)",
+    "chara": "Akemi Homura (scene0 ver.)",
+    "obtainability": "unlimited",
+    "url": "https://magireco.fandom.com/wiki/Solitary_Determination"
+  },
+  {
+    "id": "1978",
+    "name": "I Will Protect You",
+    "name_jp": "私が守るから",
+    "name_na": "",
+    "type": "skill",
+    "rank": "4",
+    "effect1": "Attack Up [V / 25%] & MP Gain Up [III / 10%] (Self / 3 Turns)",
+    "effect2": "Attack Up [VI / 30%] & MP Gain Up [IV / 12.5%] (Self / 3 Turns)",
+    "chara": "",
+    "obtainability": "limited",
+    "url": "https://magireco.fandom.com/wiki/I_Will_Protect_You"
+  },
+  {
+    "id": "1979",
+    "name": "Entrance to Coldheartedness",
+    "name_jp": "無情の入口",
+    "name_na": "",
+    "type": "skill",
+    "rank": "3",
+    "effect1": "Blast Damage Up [III / 25%] & Magia Damage Up [II / 7.5%] (Self / 1 Turn)",
+    "effect2": "Blast Damage Up [V / 35%] & Magia Damage Up [IV / 12.5%] (Self / 1 Turn)",
+    "chara": "",
+    "obtainability": "limited",
+    "url": "https://magireco.fandom.com/wiki/Entrance_to_Coldheartedness"
+  },
+  {
     "id": "9001",
     "name": "My Victory Pose Is Kawaii Too",
     "name_jp": "",
