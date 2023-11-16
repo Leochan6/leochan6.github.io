@@ -13244,6 +13244,54 @@ var memoria_collection = [{
   "obtainability": "limited",
   "url": "https://magireco.fandom.com/wiki/Entrance_to_Coldheartedness"
 }, {
+  "id": "1980",
+  "name": "Just a Game",
+  "name_jp": "ただのゲーム",
+  "name_na": "",
+  "type": "skill",
+  "rank": "3",
+  "effect1": "Remove Debuffs & Remove Status Ailments (Self)",
+  "effect2": "Remove Debuffs & Remove Status Ailments (Self)",
+  "chara": "Sakura Kyouko (scene0 ver.)",
+  "obtainability": "unlimited",
+  "url": "https://magireco.fandom.com/wiki/Just_a_Game"
+}, {
+  "id": "1981",
+  "name": "Vow of Commandment",
+  "name_jp": "戒めの誓約",
+  "name_na": "",
+  "type": "skill",
+  "rank": "4",
+  "effect1": "Magia Damage Up [VI / 17.5%] & Doppel Damage Up [VI / 30%] & Flame Attribute Attack Up [X / 27.5%] (Self / 1 Turn)",
+  "effect2": "Magia Damage Up [VII / 20%] & Doppel Damage Up [VII / 35%] & Flame Attribute Attack Up [XI / 30%] (Self / 1 Turn)",
+  "chara": "",
+  "obtainability": "limited",
+  "url": "https://magireco.fandom.com/wiki/Vow_of_Commandment"
+}, {
+  "id": "1982",
+  "name": "A Secret Prayer",
+  "name_jp": "ひそかな祈りを",
+  "name_na": "",
+  "type": "skill",
+  "rank": "3",
+  "effect1": "Anti-Debuff [1 Debuff] (Self / 3 Turns)",
+  "effect2": "Anti-Debuff [1 Debuff] (Self / 3 Turns)",
+  "chara": "",
+  "obtainability": "limited",
+  "url": "https://magireco.fandom.com/wiki/A_Secret_Prayer"
+}, {
+  "id": "1983",
+  "name": "The Shape of a Wish",
+  "name_jp": "願いの形",
+  "name_na": "",
+  "type": "ability",
+  "rank": "4",
+  "effect1": "",
+  "effect2": "Damage Up Versus Witches [IV / 20%] & Magia Damage Up [V / 15%]",
+  "chara": "",
+  "obtainability": "limited",
+  "url": "https://magireco.fandom.com/wiki/The_Shape_of_a_Wish"
+}, {
   "id": "9001",
   "name": "My Victory Pose Is Kawaii Too",
   "name_jp": "",

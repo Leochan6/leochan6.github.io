@@ -2090,7 +2090,7 @@ export const character_collection = [
   {
     "id": "2600",
     "name": "Sakura Kyouko (Mizugi ver.)",
-    "name_jp": "佐倉 杏子（水着ver.",
+    "name_jp": "佐倉 杏子（水着ver.)",
     "name_na": "Kyoko Sakura (Swimsuit)",
     "attribute": "Flame",
     "ranks": {
@@ -2104,6 +2104,24 @@ export const character_collection = [
     "release_date_na": "2020-08-03",
     "obtainability": "limited",
     "url": "https://magireco.fandom.com/wiki/Sakura_Kyouko_(Mizugi_ver.)"
+  },
+  {
+    "id": "2601",
+    "name": "Sakura Kyouko (scene0 ver.)",
+    "name_jp": "佐倉 杏子 (scene0 ver.)",
+    "name_na": "",
+    "attribute": "Flame",
+    "ranks": {
+      "1": false,
+      "2": false,
+      "3": false,
+      "4": true,
+      "5": true
+    },
+    "release_date": "2023-11-15",
+    "release_date_na": "2050-01-01",
+    "obtainability": "limited",
+    "url": "https://magireco.fandom.com/wiki/Sakura_Kyouko_(scene0_ver.)"
   },
   {
     "id": "2602",
