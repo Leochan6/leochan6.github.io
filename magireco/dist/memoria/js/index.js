@@ -13292,6 +13292,66 @@ var memoria_collection = [{
   "obtainability": "limited",
   "url": "https://magireco.fandom.com/wiki/The_Shape_of_a_Wish"
 }, {
+  "id": "1984",
+  "name": "We Don't Need Tomorrow",
+  "name_jp": "私たちに明日はいらない",
+  "name_na": "",
+  "type": "skill",
+  "rank": "4",
+  "effect1": "Attack Down [V / 25%] & Damage Down [III / 15%] (Target / 3 Turns)",
+  "effect2": "Attack Down [VI / 30%] & Damage Down [IV / 20%] (Target / 3 Turns)",
+  "chara": "",
+  "obtainability": "limited",
+  "url": "https://magireco.fandom.com/wiki/We_Don't_Need_Tomorrow"
+}, {
+  "id": "1985",
+  "name": "Bittersweet Heart",
+  "name_jp": "ビタースイート・ハート",
+  "name_na": "",
+  "type": "ability",
+  "rank": "3",
+  "effect1": "Defense Up While At Max Health [IV / 40%] & Defense Up [III / 22.5%] & Regenerate HP [II / 3%]",
+  "effect2": "Defense Up While At Max Health [V / 50%] & Defense Up [IV / 30%] & Regenerate HP [III / 4%]",
+  "chara": "Miki Sayaka (scene0 ver.)",
+  "obtainability": "unlimited",
+  "url": "https://magireco.fandom.com/wiki/Bittersweet_Heart"
+}, {
+  "id": "1986",
+  "name": "A Song to Share",
+  "name_jp": "分け合う調べ",
+  "name_na": "",
+  "type": "ability",
+  "rank": "4",
+  "effect1": "Chance to Guardian [III / 20%] & Defense Up [IV / 30%] & Damage Cut [III / 15%]",
+  "effect2": "Chance to Guardian [IV / 25%] & Defense Up [V / 37.5%] & Damage Cut [IV / 20%]",
+  "chara": "",
+  "obtainability": "limited",
+  "url": "https://magireco.fandom.com/wiki/A_Song_to_Share"
+}, {
+  "id": "1987",
+  "name": "Guided by the Melody",
+  "name_jp": "旋律に導かれて",
+  "name_na": "",
+  "type": "skill",
+  "rank": "3",
+  "effect1": "Guardian & Defense Up [II / 15%] (Self / 1 Turn)",
+  "effect2": "Guardian & Defense Up [III / 22.5%] (Self / 1 Turn)",
+  "chara": "",
+  "obtainability": "limited",
+  "url": "https://magireco.fandom.com/wiki/Guided_by_the_Melody"
+}, {
+  "id": "1988",
+  "name": "Life of a Movie Otaku",
+  "name_jp": "映画オタクの生態",
+  "name_na": "",
+  "type": "ability",
+  "rank": "4",
+  "effect1": "",
+  "effect2": "Damage Up Versus Witches [V / 25%] & Damage Cut [V / 25%]",
+  "chara": "",
+  "obtainability": "limited",
+  "url": "https://magireco.fandom.com/wiki/Life_of_a_Movie_Otaku"
+}, {
   "id": "9001",
   "name": "My Victory Pose Is Kawaii Too",
   "name_jp": "",
