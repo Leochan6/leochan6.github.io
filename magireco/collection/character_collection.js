@@ -1332,6 +1332,24 @@ export const character_collection = [
     "url": "https://magireco.fandom.com/wiki/Kuroe_(Mizugi_ver.)"
   },
   {
+    "id": "1144",
+    "name": "Uwasa Mikoto",
+    "name_jp": "ウワサのみこと",
+    "name_na": "",
+    "attribute": "Void",
+    "ranks": {
+      "1": false,
+      "2": false,
+      "3": false,
+      "4": true,
+      "5": true
+    },
+    "release_date": "2023-12-18",
+    "release_date_na": "2050-01-01",
+    "obtainability": "limited",
+    "url": "https://magireco.fandom.com/wiki/Uwasa_Mikoto"
+  },
+  {
     "id": "1201",
     "name": "Iroha-chan",
     "name_jp": "いろはちゃん",
