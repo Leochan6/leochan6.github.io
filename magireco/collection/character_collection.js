@@ -1152,6 +1152,24 @@ export const character_collection = [
     "url": "https://magireco.fandom.com/wiki/Karin_%26_Alina_(Halloween_ver.)"
   },
   {
+    "id": "1113",
+    "name": "Tatsuki Asuka (New Year Dragon God ver.)",
+    "name_jp": "竜城 明日香 (新春龍神ver.)",
+    "name_na": "",
+    "attribute": "Aqua",
+    "ranks": {
+      "1": false,
+      "2": false,
+      "3": false,
+      "4": true,
+      "5": true
+    },
+    "release_date": "2024-01-01",
+    "release_date_na": "2050-01-01",
+    "obtainability": "limited",
+    "url": "https://magireco.fandom.com/wiki/Tatsuki_Asuka_(New_Year_Dragon_God_ver.)"
+  },
+  {
     "id": "1116",
     "name": "Izumi Kanagi (Vampire ver.)",
     "name_jp": "十咎ももこ (シスターver.)",
