@@ -12766,6 +12766,58 @@ export const memoria_collection = [
     "url": "https://magireco.fandom.com/wiki/Rising_Dragon_from_New_Year_Greeting"
   },
   {
+    "id": "2004",
+    "name": "Predecessors Won't Miss",
+    "name_jp": "先達は見逃さない",    
+    "name_na": "",
+    "type": "skill",
+    "rank": "3",
+    "effect1": "Accele Draw",
+    "effect2": "Accele Draw",
+    "chara": "Tomoe Mami (scene0 ver.)",
+    "obtainability": "unlimited",
+    "url": "https://magireco.fandom.com/wiki/Predecessors_Won't_Miss"
+  },
+  {
+    "id": "2005",
+    "name": "Betting One's Survival",
+    "name_jp": "生き残りを賭けて",
+    "name_na": "",
+    "type": "skill",
+    "rank": "4",
+    "effect1": "Damage Increase [IV / 20%] & Forest Attribute Attack Up [VI / 17.5%] (Self / 3 Turns)",
+    "effect2": "Damage Increase [V / 25%] & Forest Attribute Attack Up [VII / 20%] (Self / 3 Turns)",
+    "chara": "",
+    "obtainability": "limited",
+    "url": "https://magireco.fandom.com/wiki/Betting_One's_Survival"
+  },
+  {
+    "id": "2006",
+    "name": "A Parallel World",
+    "name_jp": "平行な世界",
+    "name_na": "",
+    "type": "skill",
+    "rank": "3",
+    "effect1": "Chance to Evade [VII / 40%] (Self / 1 Turn) & Status Ailment Resistance Up [II / 25%] (Self / 3 Turns)",
+    "effect2": "Chance to Evade [VIII / 45%] (Self / 1 Turn) & Status Ailment Resistance Up [III / 30%] (Self / 3 Turns)",        
+    "chara": "",
+    "obtainability": "limited",
+    "url": "https://magireco.fandom.com/wiki/A_Parallel_World"
+  },
+  {
+    "id": "2007",
+    "name": "Endless Loop",
+    "name_jp": "エンドレス・ループ",
+    "name_na": "",
+    "type": "ability",
+    "rank": "4",
+    "effect1": "",
+    "effect2": "Damage Up Versus Witches [VI / 30%] & Status Ailment Resistance Up [III / 30%]",
+    "chara": "",
+    "obtainability": "limited",
+    "url": "https://magireco.fandom.com/wiki/Endless_Loop"
+  },
+  {
     "id": "9001",
     "name": "My Victory Pose Is Kawaii Too",
     "name_jp": "",

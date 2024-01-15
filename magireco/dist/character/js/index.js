@@ -7789,6 +7789,23 @@ var character_collection = [{
   "obtainability": "limited",
   "url": "https://magireco.fandom.com/wiki/Holy_Mami_(Anime_ver.)"
 }, {
+  "id": "2503",
+  "name": "Tomoe Mami (scene0 ver.)",
+  "name_jp": "巴 マミ (scene0 ver.)",
+  "name_na": "",
+  "attribute": "Forest",
+  "ranks": {
+    "1": false,
+    "2": false,
+    "3": false,
+    "4": true,
+    "5": true
+  },
+  "release_date": "2024-01-12",
+  "release_date_na": "2050-01-01",
+  "obtainability": "limited",
+  "url": "https://magireco.fandom.com/wiki/Tomoe_Mami_(scene0_ver.)"
+}, {
   "id": "2600",
   "name": "Sakura Kyouko (Mizugi ver.)",
   "name_jp": "佐倉 杏子（水着ver.)",
