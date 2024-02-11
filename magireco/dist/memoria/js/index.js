@@ -13556,6 +13556,78 @@ var memoria_collection = [{
   "obtainability": "limited",
   "url": "https://magireco.fandom.com/wiki/Endless_Loop"
 }, {
+  "id": "2008",
+  "name": "Warmth of Awakening",
+  "name_jp": "目覚めの温もり",
+  "name_na": "",
+  "type": "ability",
+  "rank": "4",
+  "effect1": "MP Gain Up [III / 10%] & Attack Up [I / 5%] & Anti-Skill Seal",
+  "effect2": "MP Gain Up [IV / 12.5%] & Attack Up [II / 10%] & Anti-Skill Seal",
+  "chara": "",
+  "obtainability": "limited",
+  "url": "https://magireco.fandom.com/wiki/Warmth_of_Awakening"
+}, {
+  "id": "2009",
+  "name": "Settling The Score",
+  "name_jp": "引縄批根",
+  "name_na": "",
+  "type": "ability",
+  "rank": "4",
+  "effect1": "",
+  "effect2": "Attack Up [VI / 30%] & Chance to Defense Pierce [III / 20%]",
+  "chara": "",
+  "obtainability": "limited",
+  "url": "https://magireco.fandom.com/wiki/Settling_The_Score"
+}, {
+  "id": "2010",
+  "name": "Sleeping Memories",
+  "name_jp": "眠っていた思い出",
+  "name_na": "",
+  "type": "skill",
+  "rank": "3",
+  "effect1": "Charge Draw",
+  "effect2": "Charge Draw",
+  "chara": "Reira & Seika",
+  "obtainability": "unlimited",
+  "url": "https://magireco.fandom.com/wiki/Sleeping_Memories"
+}, {
+  "id": "2011",
+  "name": "Connect Our Hearts and Start Running",
+  "name_jp": "心繋がり走り出す",
+  "name_na": "",
+  "type": "ability",
+  "rank": "4",
+  "effect1": "Blast Damage Up [III / 25%] & Damage Increase [III / 15%] & Flame Attribute Attack Up [IV / 12.5%]",
+  "effect2": "Blast Damage Up [IV / 30%] & Damage Increase [IV / 20%] & Flame Attribute Attack Up [V / 15%]",
+  "chara": "",
+  "obtainability": "limited",
+  "url": "https://magireco.fandom.com/wiki/Connect_Our_Hearts_and_Start_Running"
+}, {
+  "id": "2012",
+  "name": "Piling Up On The Pile",
+  "name_jp": "積もり積もって",
+  "name_na": "",
+  "type": "skill",
+  "rank": "3",
+  "effect1": "Flame Attribute Attack Up [III / 10%] & Attack Up [II / 10%] (Self / 3 Turns)",
+  "effect2": "Flame Attribute Attack Up [IV / 12.5%] & Attack Up [III / 15%] (Self / 3 Turns)",
+  "chara": "",
+  "obtainability": "limited",
+  "url": "https://magireco.fandom.com/wiki/Piling_Up_On_The_Pile"
+}, {
+  "id": "2014",
+  "name": "This Road Goes On",
+  "name_jp": "この道はこの先も",
+  "name_na": "",
+  "type": "ability",
+  "rank": "3",
+  "effect1": "",
+  "effect2": "Charged Attack Damage Up [III / 10%] & Blast Damage Up [II / 20%]",
+  "chara": "",
+  "obtainability": "limited",
+  "url": "https://magireco.fandom.com/wiki/This_Road_Goes_On"
+}, {
   "id": "9001",
   "name": "My Victory Pose Is Kawaii Too",
   "name_jp": "",

@@ -7033,7 +7033,7 @@ var character_collection = [{
   "url": "https://magireco.fandom.com/wiki/Holy_Mami_(Anime_ver.)"
 }, {
   "id": "2503",
-  "name": "Tomoe Mami (scene0 ver.)",
+  "name": "Tomoe Mami (  ver.)",
   "name_jp": "巴 マミ (scene0 ver.)",
   "name_na": "",
   "attribute": "Forest",
@@ -8204,6 +8204,23 @@ var character_collection = [{
   "release_date_na": "2050-01-01",
   "obtainability": "limited",
   "url": "https://magireco.fandom.com/wiki/Masara_%26_Kokoro_(Bride_ver.)"
+}, {
+  "id": "3505",
+  "name": "Reira & Seika",
+  "name_jp": "れいら・せいか",
+  "name_na": "",
+  "attribute": "Flame",
+  "ranks": {
+    "1": false,
+    "2": false,
+    "3": false,
+    "4": true,
+    "5": true
+  },
+  "release_date": "2024-02-05",
+  "release_date_na": "2050-01-01",
+  "obtainability": "limited",
+  "url": "https://magireco.fandom.com/wiki/Reira_%26_Seika"
 }, {
   "id": "3900",
   "name": "Kuro",
