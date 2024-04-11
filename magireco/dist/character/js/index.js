@@ -7602,6 +7602,23 @@ var character_collection = [{
   "obtainability": "limited",
   "url": "https://magireco.fandom.com/wiki/Kaname_Madoka_(Mizugi_ver.)"
 }, {
+  "id": "2107",
+  "name": "Madoka-senpai & Iroha-chan",
+  "name_jp": "まどか先輩・いろはちゃん",
+  "name_na": "",
+  "attribute": "Light",
+  "ranks": {
+    "1": false,
+    "2": false,
+    "3": false,
+    "4": true,
+    "5": true
+  },
+  "release_date": "2024-04-08",
+  "release_date_na": "2050-01-01",
+  "obtainability": "limited",
+  "url": "https://magireco.fandom.com/wiki/Madoka-senpai_%26_Iroha-chan"
+}, {
   "id": "2201",
   "name": "Akuma Homura-chan",
   "name_jp": "悪魔ほむらちゃん",
