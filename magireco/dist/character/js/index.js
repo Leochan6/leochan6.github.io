@@ -9013,6 +9013,23 @@ var character_collection = [{
   "obtainability": "limited",
   "url": "https://magireco.fandom.com/wiki/Kuro"
 }, {
+  "id": "3901",
+  "name": "Yuu",
+  "name_jp": "ユゥ",
+  "name_na": "",
+  "attribute": "Void",
+  "ranks": {
+    "1": false,
+    "2": false,
+    "3": false,
+    "4": true,
+    "5": true
+  },
+  "release_date": "2024-04-22",
+  "release_date_na": "2025-01-01",
+  "obtainability": "limited",
+  "url": "https://magireco.fandom.com/wiki/Yuu"
+}, {
   "id": "4001",
   "name": "Mikuni Oriko",
   "name_jp": "美国 織莉子",
