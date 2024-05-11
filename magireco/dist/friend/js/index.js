@@ -6590,6 +6590,23 @@ var character_collection = [{
   "obtainability": "limited",
   "url": "https://magireco.fandom.com/wiki/Infinity_Iroha-chan"
 }, {
+  "id": "1801",
+  "name": "Iroha & Kuroe",
+  "name_jp": "いろは・黒江",
+  "name_na": "",
+  "attribute": "Light",
+  "ranks": {
+    "1": false,
+    "2": false,
+    "3": false,
+    "4": true,
+    "5": true
+  },
+  "release_date": "2024-05-10",
+  "release_date_na": "2050-01-01",
+  "obtainability": "limited",
+  "url": "https://magireco.fandom.com/wiki/Iroha_%26_Kuroe"
+}, {
   "id": "2001",
   "name": "Kaname Madoka",
   "name_jp": "鹿目 まどか",
@@ -8272,6 +8289,23 @@ var character_collection = [{
   "release_date_na": "2025-01-01",
   "obtainability": "limited",
   "url": "https://magireco.fandom.com/wiki/Yuu"
+}, {
+  "id": "3902",
+  "name": "Shi",
+  "name_jp": "シィ",
+  "name_na": "",
+  "attribute": "Dark",
+  "ranks": {
+    "1": false,
+    "2": false,
+    "3": false,
+    "4": true,
+    "5": true
+  },
+  "release_date": "2024-05-10",
+  "release_date_na": "2025-01-01",
+  "obtainability": "limited",
+  "url": "https://magireco.fandom.com/wiki/Shi"
 }, {
   "id": "4001",
   "name": "Mikuni Oriko",
