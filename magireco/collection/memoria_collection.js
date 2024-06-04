@@ -8881,16 +8881,16 @@ export const memoria_collection = [
   },
   {
     "id": "1700",
-    "name": "",
-    "name_jp": "",
+    "name": "I Had a Feeling We Could Become Magical Girls",
+    "name_jp": "魔法少女になれる気がしたの ",
     "name_na": "",
     "type": "skill",
     "rank": "4",
     "effect1": "",
-    "effect2": "",
-    "chara": "",
+    "effect2": "Negate Status Ailments [1 Status Ailment] (Allies / 3 Turns) & Remove Status Ailments (Allies)",
+    "chara": "Tamaki Iroha;Kaname Madoka",
     "obtainability": "limited",
-    "url": ""
+    "url": "https://magireco.fandom.com/wiki/I_Had_a_Feeling_We_Could_Become_Magical_Girls"
   },
   {
     "id": "1701",
@@ -9102,16 +9102,16 @@ export const memoria_collection = [
   },
   {
     "id": "1717",
-    "name": "",
-    "name_jp": "",
+    "name": "New Year's Day When Two Stand Together",
+    "name_jp": "ふたりで立つ年始め",
     "name_na": "",
     "type": "ability",
     "rank": "4",
     "effect1": "",
-    "effect2": "",
+    "effect2": "CC Gain Up [III / 15%]",
     "chara": "",
     "obtainability": "limited",
-    "url": ""
+    "url": "https://magireco.fandom.com/wiki/New_Year's_Day_When_Two_Stand_Together"
   },
   {
     "id": "1718",
@@ -13221,6 +13221,19 @@ export const memoria_collection = [
     "url": "https://magireco.fandom.com/wiki/Modest_and_Warm"
   },
   {
+    "id": "2040",
+    "name": "The Small Wish in the Stars",
+    "name_jp": "星屑の小さな願い",
+    "name_na": "",
+    "type": "ability",
+    "rank": "4",
+    "effect1": "",
+    "effect2": "Attack Up [III / 15%] & Defense Up [II / 15%] & Status Ailment Resistance Up [II / 25%]",
+    "chara": "",
+    "obtainability": "limited",
+    "url": "https://magireco.fandom.com/wiki/The_Small_Wish_in_the_Stars"
+  },
+  {
     "id": "2041",
     "name": "Nightmare Incarnate",
     "name_jp": "悪夢の化身",
@@ -13271,6 +13284,19 @@ export const memoria_collection = [
     "chara": "",
     "obtainability": "limited",
     "url": "https://magireco.fandom.com/wiki/Two_People_in_the_Corner_of_the_World"
+  },
+  {
+    "id": "2045",
+    "name": "Illuminated by the Midsummer Sunset",
+    "name_jp": "真夏の夕陽に照らされ",
+    "name_na": "",
+    "type": "skill",
+    "rank": "4",
+    "effect1": "",
+    "effect2": "Redraw Discs",
+    "chara": "",
+    "obtainability": "limited",
+    "url": "https://magireco.fandom.com/wiki/Illuminated_by_the_Midsummer_Sunset"
   },
   {
     "id": "9001",
