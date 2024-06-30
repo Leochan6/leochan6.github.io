@@ -2283,6 +2283,7 @@ var getMoreStats = function getMoreStats() {
     magics: {},
     maxMagia: 0,
     magias: {},
+    doppel: 0,
     maxEpisode: 0,
     episodes: {},
     rankCopies: {},
@@ -2303,6 +2304,7 @@ var getMoreStats = function getMoreStats() {
       if (character_display.rank == maxRank) result.maxRank++;
       if (character_display.magic == "3") result.maxMagic++;
       if (character_display.magia == "5") result.maxMagia++;
+      if (character_display.doppel == "true") result.doppel++;
       if (character_display.episode == "5") result.maxEpisode++;
       result.ranks[character_display.rank] = result.ranks[character_display.rank] + 1 || 1;
       result.levels[character_display.level] = result.levels[character_display.level] + 1 || 1;
@@ -2313,41 +2315,41 @@ var getMoreStats = function getMoreStats() {
       var totalCopies = 0;
       if (minRank == 1) totalCopies = 10 * parseInt(character_display.magic) + 1;else if (minRank == 2) totalCopies = 10 * parseInt(character_display.magic) + 1;else if (minRank == 3) totalCopies = 3 * parseInt(character_display.magic) + 1;else if (minRank == 4) totalCopies = 1 * parseInt(character_display.magic) + 1;
       result.rankCopies[minRank] = result.rankCopies[minRank] ? result.rankCopies[minRank] + totalCopies : totalCopies;
-      if (character_display.se == "60") result.maxSe++;
+      if (character_display.se == (character_display.character_id == 2101 || character_display.character_id == 2202 ? "105" : "100")) result.maxSe++;
       result.ses[character_display.se] = result.ses[character_display.se] + 1 || 1;
     }
   });
-  return "Total Characters: ".concat(result.totalCharacters, "\nTotal Visible: ").concat(result.totalVisible, "\nLimited: ").concat(result.limited, "\nUnlimited: ").concat(result.totalVisible - result.limited, "      \nMax Level: ").concat(result.maxLevel, "\nMax Rank: ").concat(result.maxRank, "\nMax Magic: ").concat(result.maxMagic, "\nMax Magia: ").concat(result.maxMagia, "\nMax Episode: ").concat(result.maxEpisode, "      \nMax Spirit Enhancement: ").concat(result.maxSe, "      \nLevels:").concat(Object.entries(result.levels).map(function (_ref13) {
+  return "Total Characters: ".concat(result.totalCharacters, "\nTotal Visible: ").concat(result.totalVisible, "\nLimited: ").concat(result.limited, "\nUnlimited: ").concat(result.totalVisible - result.limited, "\nMax Level: ").concat(result.maxLevel, "\nMax Rank: ").concat(result.maxRank, "\nMax Magic: ").concat(result.maxMagic, "\nMax Magia: ").concat(result.maxMagia, "\nMax Episode: ").concat(result.maxEpisode, "\nDoppels: ").concat(result.doppel, "\nMax Spirit Enhancement: ").concat(result.maxSe, "\nLevels:").concat(Object.entries(result.levels).map(function (_ref13) {
     var _ref14 = (0, _slicedToArray2["default"])(_ref13, 2),
       level = _ref14[0],
       count = _ref14[1];
     return "\n  ".concat(level, ": ").concat(count);
-  }).toString(), "      \nRanks:").concat(Object.entries(result.ranks).map(function (_ref15) {
+  }).toString(), "\nRanks:").concat(Object.entries(result.ranks).map(function (_ref15) {
     var _ref16 = (0, _slicedToArray2["default"])(_ref15, 2),
       level = _ref16[0],
       count = _ref16[1];
     return "\n  ".concat(level, ": ").concat(count);
-  }).toString(), "      \nMagic Levels:").concat(Object.entries(result.magics).map(function (_ref17) {
+  }).toString(), "\nMagic Levels:").concat(Object.entries(result.magics).map(function (_ref17) {
     var _ref18 = (0, _slicedToArray2["default"])(_ref17, 2),
       level = _ref18[0],
       count = _ref18[1];
     return "\n  ".concat(level, ": ").concat(count);
-  }).toString(), "      \nMagia Levels:").concat(Object.entries(result.magias).map(function (_ref19) {
+  }).toString(), "\nMagia Levels:").concat(Object.entries(result.magias).map(function (_ref19) {
     var _ref20 = (0, _slicedToArray2["default"])(_ref19, 2),
       level = _ref20[0],
       count = _ref20[1];
     return "\n  ".concat(level, ": ").concat(count);
-  }).toString(), "      \nEpisode Levels:").concat(Object.entries(result.episodes).map(function (_ref21) {
+  }).toString(), "\nEpisode Levels:").concat(Object.entries(result.episodes).map(function (_ref21) {
     var _ref22 = (0, _slicedToArray2["default"])(_ref21, 2),
       level = _ref22[0],
       count = _ref22[1];
     return "\n  ".concat(level, ": ").concat(count);
-  }).toString(), "      \nSpirit Enhancement Levels:").concat(Object.entries(result.ses).map(function (_ref23) {
+  }).toString(), "\nSpirit Enhancement Levels:").concat(Object.entries(result.ses).map(function (_ref23) {
     var _ref24 = (0, _slicedToArray2["default"])(_ref23, 2),
       level = _ref24[0],
       count = _ref24[1];
     return "\n  ".concat(level, ": ").concat(count);
-  }).toString(), "      \nCopies of Each Rank:").concat(Object.entries(result.rankCopies).map(function (_ref25) {
+  }).toString(), "\nCopies of Each Rank:").concat(Object.entries(result.rankCopies).map(function (_ref25) {
     var _ref26 = (0, _slicedToArray2["default"])(_ref25, 2),
       level = _ref26[0],
       count = _ref26[1];

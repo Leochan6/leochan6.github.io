@@ -80,10 +80,13 @@ import { ContactDialog, MessageDialog } from '../../shared/js/dialog.js'
 
     window.addEventListener("keyup", e => {
       if (e.key === "Escape") {
-        [messageDialog, characterSelectDialog, backgroundSelectDialog, importListDialog].forEach(dialog => {
-          if (e.target == dialog.modal && dialog.isOpen()) return dialog.close();
+        let closedDialogs = [messageDialog, characterSelectDialog, backgroundSelectDialog, importListDialog].some(dialog => {
+          if (dialog.isOpen()) {
+            dialog.close();
+            return true;
+          }
         });
-        if (character_api.selectedCharacter) {
+        if (!closedDialogs && character_api.selectedCharacter) {
           character_api.deselectDisplay();
         }
       }

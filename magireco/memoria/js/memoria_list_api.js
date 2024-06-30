@@ -871,14 +871,18 @@ export const getMoreStats = () => {
     });
   });
 
-  return `Total Memoria: ${result.totalMemoria}\nTotal Visible: ${result.totalVisible}\nLimited: ${result.limited}\nUnlimited: ${result.totalVisible - result.limited}\
-      \nArchive: ${result.archive}\
-      \nLocked: ${result.protect}\
-      \nMax Level: ${result.maxLevel}\nMax Ascension: ${result.maxAscension}\
-      \nLevels:${Object.entries(result.levels).map(([level, count]) => `\n  ${level}: ${count}`).toString()}\
-      \nRanks:${Object.entries(result.ranks).map(([level, count]) => `\n  ${level}: ${count}`).toString()}\
-      \nAscensions:${Object.entries(result.ascensions).map(([level, count]) => `\n  ${level}: ${count}`).toString()}\
-      \nCopies of Each Rank:${Object.entries(result.rankCopies).map(([level, count]) => `\n  ${level}: ${count}`).toString()}`;
+  return `Total Memoria: ${result.totalMemoria}\
+\nTotal Visible: ${result.totalVisible}\
+\nLimited: ${result.limited}\
+\nUnlimited: ${result.totalVisible - result.limited}\
+\nArchive: ${result.archive}\
+\nLocked: ${result.protect}\
+\nMax Level: ${result.maxLevel}\
+\nMax Ascension: ${result.maxAscension}\
+\nLevels:${Object.entries(result.levels).map(([level, count]) => `\n  ${level}: ${count}`).toString()}\
+\nRanks:${Object.entries(result.ranks).map(([level, count]) => `\n  ${level}: ${count}`).toString()}\
+\nAscensions:${Object.entries(result.ascensions).map(([level, count]) => `\n  ${level}: ${count}`).toString()}\
+\nCopies of Each Rank:${Object.entries(result.rankCopies).map(([level, count]) => `\n  ${level}: ${count}`).toString()}`;
 };
 
 /**

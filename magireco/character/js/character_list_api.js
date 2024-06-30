@@ -1003,6 +1003,7 @@ export const getMoreStats = () => {
     magics: {},
     maxMagia: 0,
     magias: {},
+    doppel: 0,
     maxEpisode: 0,
     episodes: {},
     rankCopies: {},
@@ -1026,6 +1027,7 @@ export const getMoreStats = () => {
       if (character_display.rank == maxRank) result.maxRank++;
       if (character_display.magic == "3") result.maxMagic++;
       if (character_display.magia == "5") result.maxMagia++;
+      if (character_display.doppel == "true") result.doppel++;
       if (character_display.episode == "5") result.maxEpisode++;
       result.ranks[character_display.rank] = result.ranks[character_display.rank] + 1 || 1;
       result.levels[character_display.level] = result.levels[character_display.level] + 1 || 1;
@@ -1039,21 +1041,29 @@ export const getMoreStats = () => {
       else if (minRank == 3) totalCopies = 3 * (parseInt(character_display.magic)) + 1;
       else if (minRank == 4) totalCopies = 1 * (parseInt(character_display.magic)) + 1;
       result.rankCopies[minRank] = result.rankCopies[minRank] ? result.rankCopies[minRank] + totalCopies : totalCopies;
-      if (character_display.se == "60") result.maxSe++;
+      if (character_display.se == (character_display.character_id == 2101 || character_display.character_id == 2202 ? "105" : "100")) result.maxSe++;
       result.ses[character_display.se] = result.ses[character_display.se] + 1 || 1;
     }
   });
 
-  return `Total Characters: ${result.totalCharacters}\nTotal Visible: ${result.totalVisible}\nLimited: ${result.limited}\nUnlimited: ${result.totalVisible - result.limited}\
-      \nMax Level: ${result.maxLevel}\nMax Rank: ${result.maxRank}\nMax Magic: ${result.maxMagic}\nMax Magia: ${result.maxMagia}\nMax Episode: ${result.maxEpisode}\
-      \nMax Spirit Enhancement: ${result.maxSe}\
-      \nLevels:${Object.entries(result.levels).map(([level, count]) => `\n  ${level}: ${count}`).toString()}\
-      \nRanks:${Object.entries(result.ranks).map(([level, count]) => `\n  ${level}: ${count}`).toString()}\
-      \nMagic Levels:${Object.entries(result.magics).map(([level, count]) => `\n  ${level}: ${count}`).toString()}\
-      \nMagia Levels:${Object.entries(result.magias).map(([level, count]) => `\n  ${level}: ${count}`).toString()}\
-      \nEpisode Levels:${Object.entries(result.episodes).map(([level, count]) => `\n  ${level}: ${count}`).toString()}\
-      \nSpirit Enhancement Levels:${Object.entries(result.ses).map(([level, count]) => `\n  ${level}: ${count}`).toString()}\
-      \nCopies of Each Rank:${Object.entries(result.rankCopies).map(([level, count]) => `\n  ${level}: ${count}`).toString()}`;
+  return `Total Characters: ${result.totalCharacters}\
+\nTotal Visible: ${result.totalVisible}\
+\nLimited: ${result.limited}\
+\nUnlimited: ${result.totalVisible - result.limited}\
+\nMax Level: ${result.maxLevel}\
+\nMax Rank: ${result.maxRank}\
+\nMax Magic: ${result.maxMagic}\
+\nMax Magia: ${result.maxMagia}\
+\nMax Episode: ${result.maxEpisode}\
+\nDoppels: ${result.doppel}\
+\nMax Spirit Enhancement: ${result.maxSe}\
+\nLevels:${Object.entries(result.levels).map(([level, count]) => `\n  ${level}: ${count}`).toString()}\
+\nRanks:${Object.entries(result.ranks).map(([level, count]) => `\n  ${level}: ${count}`).toString()}\
+\nMagic Levels:${Object.entries(result.magics).map(([level, count]) => `\n  ${level}: ${count}`).toString()}\
+\nMagia Levels:${Object.entries(result.magias).map(([level, count]) => `\n  ${level}: ${count}`).toString()}\
+\nEpisode Levels:${Object.entries(result.episodes).map(([level, count]) => `\n  ${level}: ${count}`).toString()}\
+\nSpirit Enhancement Levels:${Object.entries(result.ses).map(([level, count]) => `\n  ${level}: ${count}`).toString()}\
+\nCopies of Each Rank:${Object.entries(result.rankCopies).map(([level, count]) => `\n  ${level}: ${count}`).toString()}`;
 };
 
 /**

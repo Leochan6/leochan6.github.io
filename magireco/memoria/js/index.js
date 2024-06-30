@@ -64,10 +64,13 @@ import { ContactDialog } from '../../shared/js/dialog.js'
 
     window.addEventListener("keyup", e => {
       if (e.key === "Escape") {
-        [messageDialog, memoriaSelectDialog, backgroundSelectDialog, importListDialog].forEach(dialog => {
-          if (e.target == dialog.modal && dialog.isOpen()) return dialog.close();
+        let closedDialogs = [messageDialog, memoriaSelectDialog, backgroundSelectDialog, importListDialog].some(dialog => {
+          if (dialog.isOpen()) {
+            dialog.close();
+            return true;
+          }
         });
-        if (memoria_api.selectedMemoria) {
+        if (!closedDialogs && memoria_api.selectedMemoria) {
           memoria_api.deselectDisplay();
         }
       }

@@ -14374,10 +14374,13 @@ function _interopRequireWildcard(obj, nodeInterop) {
     });
     window.addEventListener("keyup", function (e) {
       if (e.key === "Escape") {
-        [_memoria_elements.messageDialog, _memoria_elements.memoriaSelectDialog, _memoria_elements.backgroundSelectDialog, _memoria_elements.importListDialog].forEach(function (dialog) {
-          if (e.target == dialog.modal && dialog.isOpen()) return dialog.close();
+        var closedDialogs = [_memoria_elements.messageDialog, _memoria_elements.memoriaSelectDialog, _memoria_elements.backgroundSelectDialog, _memoria_elements.importListDialog].some(function (dialog) {
+          if (dialog.isOpen()) {
+            dialog.close();
+            return true;
+          }
         });
-        if (memoria_api.selectedMemoria) {
+        if (!closedDialogs && memoria_api.selectedMemoria) {
           memoria_api.deselectDisplay();
         }
       }
@@ -16709,22 +16712,22 @@ var getMoreStats = function getMoreStats() {
       }
     });
   });
-  return "Total Memoria: ".concat(result.totalMemoria, "\nTotal Visible: ").concat(result.totalVisible, "\nLimited: ").concat(result.limited, "\nUnlimited: ").concat(result.totalVisible - result.limited, "      \nArchive: ").concat(result.archive, "      \nLocked: ").concat(result.protect, "      \nMax Level: ").concat(result.maxLevel, "\nMax Ascension: ").concat(result.maxAscension, "      \nLevels:").concat(Object.entries(result.levels).map(function (_ref13) {
+  return "Total Memoria: ".concat(result.totalMemoria, "\nTotal Visible: ").concat(result.totalVisible, "\nLimited: ").concat(result.limited, "\nUnlimited: ").concat(result.totalVisible - result.limited, "\nArchive: ").concat(result.archive, "\nLocked: ").concat(result.protect, "\nMax Level: ").concat(result.maxLevel, "\nMax Ascension: ").concat(result.maxAscension, "\nLevels:").concat(Object.entries(result.levels).map(function (_ref13) {
     var _ref14 = (0, _slicedToArray2["default"])(_ref13, 2),
       level = _ref14[0],
       count = _ref14[1];
     return "\n  ".concat(level, ": ").concat(count);
-  }).toString(), "      \nRanks:").concat(Object.entries(result.ranks).map(function (_ref15) {
+  }).toString(), "\nRanks:").concat(Object.entries(result.ranks).map(function (_ref15) {
     var _ref16 = (0, _slicedToArray2["default"])(_ref15, 2),
       level = _ref16[0],
       count = _ref16[1];
     return "\n  ".concat(level, ": ").concat(count);
-  }).toString(), "      \nAscensions:").concat(Object.entries(result.ascensions).map(function (_ref17) {
+  }).toString(), "\nAscensions:").concat(Object.entries(result.ascensions).map(function (_ref17) {
     var _ref18 = (0, _slicedToArray2["default"])(_ref17, 2),
       level = _ref18[0],
       count = _ref18[1];
     return "\n  ".concat(level, ": ").concat(count);
-  }).toString(), "      \nCopies of Each Rank:").concat(Object.entries(result.rankCopies).map(function (_ref19) {
+  }).toString(), "\nCopies of Each Rank:").concat(Object.entries(result.rankCopies).map(function (_ref19) {
     var _ref20 = (0, _slicedToArray2["default"])(_ref19, 2),
       level = _ref20[0],
       count = _ref20[1];
