@@ -7829,7 +7829,7 @@ var character_collection = [{
   "url": "https://magireco.fandom.com/wiki/Holy_Mami_(Anime_ver.)"
 }, {
   "id": "2503",
-  "name": "Tomoe Mami (  ver.)",
+  "name": "Tomoe Mami (scene0 ver.)",
   "name_jp": "巴 マミ (scene0 ver.)",
   "name_na": "",
   "attribute": "Forest",

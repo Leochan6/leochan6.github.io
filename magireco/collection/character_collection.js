@@ -2179,7 +2179,7 @@ export const character_collection = [
   },
   {
     "id": "2503",
-    "name": "Tomoe Mami (  ver.)",
+    "name": "Tomoe Mami (scene0 ver.)",
     "name_jp": "巴 マミ (scene0 ver.)",
     "name_na": "",
     "attribute": "Forest",
